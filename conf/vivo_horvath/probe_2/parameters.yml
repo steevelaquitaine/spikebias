@@ -1,0 +1,15 @@
+
+animal: rat
+state: anesthetized
+activity: spontaneous
+
+run:
+  probe: 'vivo_horvath'
+  recording: 'raw'
+  sampling_frequency: 20000
+  preprocessing: # high-pass filtering (as in Kilosort3, Pachitariu, 2023)
+    min_filter_freq: 300
+    max_filter_freq: 9999  #up to Nyquist frequency SAMPLING_FREQ/2
+
+probe:
+    n_contacts: 128

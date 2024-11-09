@@ -1,0 +1,123 @@
+
+# set raw (NWB) data path
+raw_data:
+    input: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/raw/raw_buccino/sub-MEAREC-250neuron-Neuropixels_ecephys.nwb'
+
+# set recording datasets
+recording: 
+    input: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/raw/raw_buccino/sub-MEAREC-250neuron-Neuropixels_ecephys.nwb'
+    output: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/2_bernstein_2023/dataeng/0_silico/buccino/recording/traces' # raw recording to read with spikeinterface
+
+# A probe is already wired to the Buccino dataset
+probe_wiring:
+    full:
+        input: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/2_bernstein_2023/dataeng/0_silico/buccino/recording/traces'
+        output: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/2_bernstein_2023/dataeng/0_silico/buccino/recording/traces_gain_fitd_int16' # raw recording to read with spikeinterface
+
+# set paths for lfp preprocessing pipeline
+preprocessing:
+    full:
+        output:
+            trace_file_path: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/2_bernstein_2023/dataeng/0_silico/buccino/preprocessed/traces_gain_ftd'
+    fitting:
+        # produced by fitting
+        fitted_gain: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/2_bernstein_2023/dataeng/0_silico/buccino/preprocessed/fitted_gain.npy'
+        # tuned gain
+        tuned_gain: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/2_bernstein_2023/dataeng/0_silico/buccino/preprocessed/tuned_gain.npy'
+
+# set paths for sorting pipeline
+sorting:
+    simulation:
+        ground_truth:
+            input: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/raw/raw_buccino/sub-MEAREC-250neuron-Neuropixels_ecephys.nwb'
+            output: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/2_bernstein_2023/sorting/0_silico/buccino/SortingTrue'
+            10m:
+                output: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/2_bernstein_2023/sorting/0_silico/buccino/SortingTrue'
+    sorters:
+        kilosort4:
+            10m:
+                output: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/sorting/0_silico/buccino/SortingKS4/'
+                sort_output: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/sorting/0_silico/buccino/KS4_output/'            
+        kilosort3:
+            # butterworth filtering
+            input: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/sorters/Kilosort3_buttw'
+            10m:
+                output: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/sorting/0_silico/buccino/SortingKS3/'
+                sort_output: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/sorting/0_silico/buccino/KS3_output/'
+        kilosort2_5: # see notebook for installation
+            input: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/sorters/Kilosort-2.5/'
+            10m:
+                output: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/sorting/0_silico/buccino/SortingKS2_5/'
+                sort_output: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/sorting/0_silico/buccino/KS2_5_output/'
+        kilosort2: # wget -c https://github.com/MouseLand/Kilosort/archive/refs/tags/v2.0.2.tar.gz -O - | tar -xz
+            input: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/sorters/Kilosort-2.0.2/'
+            10m:
+                output: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/sorting/0_silico/buccino/SortingKS2/'
+                sort_output: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/sorting/0_silico/buccino/KS2_output/'
+        kilosort: # git clone https://github.com/cortex-lab/KiloSort.git
+            input: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/sorters/KiloSort/'
+            10m:
+                output: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/sorting/0_silico/buccino/SortingKS/'
+                sort_output: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/sorting/0_silico/buccino/KS_output/'
+        hdsort: # git clone https://git.bsse.ethz.ch/hima_public/HDsort.git - KO
+            input: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/sorters/HDsort/'
+            10m:
+                output: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/sorting/0_silico/buccino/SortingHDsort/'
+                sort_output: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/sorting/0_silico/buccino/hdsort_output/'
+        herdingspikes: # pip install herdingspikes
+            10m:
+                output: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/sorting/0_silico/buccino/SortingHerdingspikes/'
+                sort_output: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/sorting/0_silico/buccino/Herdingspikes_output/'
+
+# set descriptive datasets
+features:
+    ground_truth:
+        firing_rates: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/2_bernstein_2023/features/0_silico/buccino/firing_rates/ground_truth/firing_rates.npy'
+    sorted_ks3:
+        firing_rates: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/2_bernstein_2023/features/0_silico/buccino/firing_rates/sorted_ks3/firing_rates.npy'
+    trace:
+        amplitude_to_noise_ratio: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/2_bernstein_2023/features/0_silico/buccino/amplitude_to_noise_ratio.npy'
+ 
+# set paths for postprocessing pipeline
+postprocessing:    
+    unit_accuracies: /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/postprocessing/buccino/accuracy/unit_accuracies.npy
+    waveform:
+        sorted:
+            study:
+                kilosort4: 
+                    10m: /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/postprocessing/buccino/waveform/sorted/wvf_ks4.npy
+                kilosort3: 
+                    10m: /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/postprocessing/buccino/waveform/sorted/wvf_ks3.npy
+                kilosort2: 
+                    10m: /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/postprocessing/buccino/waveform/sorted/wvf_ks2.npy
+                kilosort2_5: 
+                    10m: /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/postprocessing/buccino/waveform/sorted/wvf_ks2_5.npy
+                kilosort: 
+                    10m: /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/postprocessing/buccino/waveform/sorted/wvf_ks.npy
+                herdingspikes: 
+                    10m: /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/postprocessing/buccino/waveform/sorted/wvf_hs.npy
+
+validation:
+    10m:
+        trace_snr: /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/postprocessing/buccino/realism/trace_snr.npy
+    full:
+        trace_snr: /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/postprocessing/buccino/realism/trace_snr_full.npy
+    psd:
+        raw: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/postprocessing/buccino/realism/full_raw_power_welch_10m_gain_ftd.npy'
+        preprocessed: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/postprocessing/buccino/realism/full_prep_buttw_power_welch_10m_gain_ftd.npy'
+    noise:
+        full: /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/postprocessing/hybrid/buccino/realism/lfp/noise_full.npy # preprocessed (buttw)
+
+# set paths for output figures
+figures:
+    sorters:
+        kilosort2_and_3_replication_of_Buccino_2020: '/gpfs/bbp.cscs.ch/project/proj85/home/laquitai/spike-sorting/notebooks/0_method/1_sorters/figures/kilosort2_and_3_replication_of_Buccino_2020'
+    biases:
+        population_bias_Buccino2020: '/gpfs/bbp.cscs.ch/project/proj85/home/laquitai/spike-sorting/notebooks/1_results/1_buccino2020/figures/population_bias_Buccino2020'
+
+analyses:
+    trace:
+        10m:
+            noise: /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/postprocessing/hybrid/buccino/realism/lfp/noise.npy # preprocessed (buttw)
+    noise_stats:
+        buttw: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/postprocessing/buccino/realism/lfp/noise/buttw_noise.npy'

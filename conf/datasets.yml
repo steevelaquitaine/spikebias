@@ -1,0 +1,94 @@
+
+# Vivo
+vivo_horvath:
+  experiment: in-vivo
+  animal: rat
+  brain_areas: somatosensory cortex
+  wakefulness: anesthetized
+  activity: spontaneous
+  samp_freq_hz: 20000
+  probe: 
+    type: neuropixels 1.0
+    contacts: 
+      number: 128
+  columns: 4
+
+vivo_marques:
+  experiment: in-vivo
+  animal: rat
+  age: adults, between 6 weeks and 8 months
+  brain_areas: somatosensory cortex
+  wakefulness: anesthetized
+  activity: spontaneous
+  samp_freq_hz: 30000
+  probe: 
+    type: neuropixels 1.0 Phase3A Option 1
+    contacts: 
+      number: 384
+    columns: 4
+
+# IN SILICO
+silico_horvath:
+  animal: rat
+  brain_areas: somatosensory cortex 
+  activity: spontaneous
+  campaign_1:
+    rou: 0.4
+    pfr: 0.3
+    run_duration_min: 10
+    n_simulation_seeds: 12
+    seed_duration_ms: 50000
+    samp_freq_hz: 20000
+    simulated_circuit: hex0 # 1 column
+    connectivity: connected
+    contacts:
+      number: 128  
+    probe_1:
+      weights_1: /gpfs/bbp.cscs.ch/project/proj68/scratch/tharayil/newCoeffs/b3122c45-e2d9-4205-821c-88f28791dc69/0/horvath/horvathProbes/horvath1.h5
+    probe_2:      
+      weights_2: /gpfs/bbp.cscs.ch/project/proj68/scratch/tharayil/newCoeffs/b3122c45-e2d9-4205-821c-88f28791dc69/0/horvath/horvathProbes/horvath2.h5
+    probe_3:      
+      weights_3: /gpfs/bbp.cscs.ch/project/proj68/scratch/tharayil/newCoeffs/b3122c45-e2d9-4205-821c-88f28791dc69/0/horvath/horvathProbes/horvath3.h5
+  campaign_2:
+    rou: 0.4
+    pfr: 0.3
+    run_duration_min: 10
+    n_simulation_seeds: 12
+    seed_duration_ms: 50000
+    samp_freq_hz: 20000
+    simulated_circuit: hex0 # 1 column
+    connectivity: connected
+    contacts:
+      number: 128  
+    weights_1: /gpfs/bbp.cscs.ch/project/proj68/scratch/tharayil/newCoeffs/b3122c45-e2d9-4205-821c-88f28791dc69/0/horvath/horvathProbes/horvath1.h5
+
+silico_neuropixels:
+  experiment: in-silico
+  animal: rat
+  age: P14  # postnatal days (Juvenile)
+  probe: neuropixels
+  ca: 1.05
+  run: 2023_10_18 # the one we are using for the preprint as a match to Marques et al.
+    purpose: "a single column"
+    rou: 0.4
+    pfr: 0.3
+    run_duration_min: 10
+    n_simulation_seeds: 12
+    seed_duration_ms: 50000
+    samp_freq_hz: 40000
+    simulated_circuit: hex0 # 1 column
+    connectivity: connected
+    contacts:
+      number: 384      
+    weights: '/gpfs/bbp.cscs.ch/project/proj68/scratch/tharayil/newCoeffs/b3122c45-e2d9-4205-821c-88f28791dc69/0/neuropixels_full_O1/coeffsneuropixels.h5'
+
+# Synthetic simulation
+buccino_2020:
+  experiment: in-silico
+  probe: neuropixels
+  samp_freq: 32000
+  duration: 600 #secs
+
+silico_reyes:
+  experiment: in-silico
+  reyes_probe_lfp_4sec_2023_01_11 # TODO: rerun campaign; keep the trace of one unit at least for spatial variation?

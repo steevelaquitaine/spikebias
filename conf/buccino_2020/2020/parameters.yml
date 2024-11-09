@@ -1,0 +1,5 @@
+
+run:
+  preprocessing:
+    min_filter_freq: 300
+    max_filter_freq: 15999 # not more than 32000/2 - 1 Hz (Nyquist)

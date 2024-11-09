@@ -1,0 +1,14 @@
+# purpose: create spack environment
+#
+# One env is needed for the project to enable python3.9.7
+# as interpreter
+#   
+#   module load spack
+#   . /gpfs/bbp.cscs.ch/ssd/apps/bsd/2023-02-23/spack/share/spack/setup-env.sh
+#   spack env create spack_python3_9 envs/spack_python3_9.yaml
+#   spack env activate spack_python3_9 -p
+#   spack install
+
+spack:
+    specs:
+    - python@3.9.7

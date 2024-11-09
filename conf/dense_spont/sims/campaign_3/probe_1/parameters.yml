@@ -1,0 +1,18 @@
+run:
+  probe: 'silico_horvath_probe_1'
+  recording: 'raw'
+  preprocessing:
+    min_filter_freq: 300
+    max_filter_freq: 9999 # not more than SAMPLING_FREQ/2 (here 20 KHz)
+circuit:
+  radius: 50
+probe:
+  n_cols: 4
+  n_contact_per_col: 32
+  x_pitch: 22.5
+  y_pitch: 22.5
+  stagger: 0
+  shape: 'square'
+  width: 20
+  #contact_ids: 'np.reshape(np.arange(0,128,1), newshape=(32,4)).T.flatten()'
+  contact_ids: 'np.arange(0,128,1)' # test default ones

@@ -1,0 +1,317 @@
+Run Default
+{
+
+    CircuitPath $CircuitPath
+    nrnPath $nrnPath
+    CellLibraryFile $CellLibraryFile
+
+    BioName $BioName
+    Atlas $Atlas
+
+    # METypePath /gpfs/bbp.cscs.ch/project/proj45/scratch/S1full/METypes
+    METypePath /gpfs/bbp.cscs.ch/project/proj68/scratch/METypes
+    MEComboInfoFile $MEComboInfoFile
+    MorphologyPath $MorphologyPath
+    MorphologyType $MorphologyType
+
+    CurrentDir $path
+    OutputRoot $path
+    TargetFile $path/user.target
+
+    # channel weights for Horvath probe depth 2    
+    LFPWeightsPath /gpfs/bbp.cscs.ch/project/proj68/scratch/tharayil/newCoeffs/b3122c45-e2d9-4205-821c-88f28791dc69/0/horvath/horvathProbes/horvath2.h5
+
+    CircuitTarget $circuit_target
+    Duration $sim_duration
+    Dt 0.025
+
+    RNGMode Random123
+    BaseSeed $seed
+    StimulusSeed $seed
+
+    Simulator CORENEURON
+    RunMode WholeCell
+    SecondOrder 0
+
+    ExtracellularCalcium $ca
+    SpikeLocation AIS
+    SpikeThreshold -30
+    Celsius 34
+    V_Init -80
+
+    depol_stdev_mean_ratio $depol_stdev_mean_ratio
+
+    desired_connected_proportion_of_invivo_frs $desired_connected_proportion_of_invivo_frs
+
+    desired_unconnected_fr_L1I $desired_unconnected_fr_L1I
+    desired_unconnected_fr_L23E $desired_unconnected_fr_L23E
+    desired_unconnected_fr_L23I $desired_unconnected_fr_L23I
+    desired_unconnected_fr_L4E $desired_unconnected_fr_L4E
+    desired_unconnected_fr_L4I $desired_unconnected_fr_L4I
+    desired_unconnected_fr_L5E $desired_unconnected_fr_L5E
+    desired_unconnected_fr_L5I $desired_unconnected_fr_L5I
+    desired_unconnected_fr_L6E $desired_unconnected_fr_L6E
+    desired_unconnected_fr_L6I $desired_unconnected_fr_L6I
+
+    desired_connected_fr_L1I $desired_connected_fr_L1I
+    desired_connected_fr_L23E $desired_connected_fr_L23E
+    desired_connected_fr_L23I $desired_connected_fr_L23I
+    desired_connected_fr_L4E $desired_connected_fr_L4E
+    desired_connected_fr_L4I $desired_connected_fr_L4I
+    desired_connected_fr_L5E $desired_connected_fr_L5E
+    desired_connected_fr_L5I $desired_connected_fr_L5I
+    desired_connected_fr_L6E $desired_connected_fr_L6E
+    desired_connected_fr_L6I $desired_connected_fr_L6I
+
+
+
+}
+
+Conditions Default
+{
+    randomize_Gaba_risetime False
+    SYNAPSES__init_depleted 1
+    SYNAPSES__minis_single_vesicle 1
+}
+
+Projection Thalamocortical_input_VPM
+{
+    Path $Projection_Thalamocortical_input_VPM.Path
+    Source proj_Thalamocortical_VPM_Source
+    PopulationID $Projection_Thalamocortical_input_VPM.PopulationID
+}
+
+Projection Thalamocortical_input_POM
+{
+    Path $Projection_Thalamocortical_input_POM.Path
+    Source proj_Thalamocortical_POM_Source
+    PopulationID $Projection_Thalamocortical_input_POM.PopulationID
+}
+
+# [steeve] Target: AllCompartments or "Mosaic" to sum all unit traces into a single lfp
+# [steeve] updated Dt to 0.05 for 20 KHz
+Report lfp
+{
+        Target Mosaic 
+        Type lfp
+        ReportOn v
+        Unit mV
+        Format SONATA
+        Dt 0.05
+        StartTime 0
+        EndTime 110000
+}
+
+# No minis from virtual fibers proj_Thalamocortical_VPM_Source
+
+Connection no_minis-proj_Thalamocortical_VPM_Source
+{
+    Source proj_Thalamocortical_VPM_Source
+    Destination Mosaic
+    SpontMinis 0.0
+    Weight 1.0
+}
+
+
+# No minis from virtual fibers proj_Thalamocortical_POM_Source
+
+Connection no_minis-proj_Thalamocortical_POM_Source
+{
+    Source proj_Thalamocortical_POM_Source
+    Destination Mosaic
+    SpontMinis 0.0
+    Weight 1.0
+}
+
+# Delayed reconnection protocol
+
+## Connect all, minis use this weight
+
+Connection all_to_all
+{
+    Source Mosaic
+    Destination Mosaic
+    Weight 1.0
+}
+
+## Disconnect immediately
+
+Connection all_disconnect
+{
+    Source Mosaic
+    Destination Mosaic
+    Delay 0.025
+    Weight 0.0
+}
+
+## Reconnect after 1000 ms
+
+Connection all_reconnect
+{
+    Source Mosaic
+    Destination Mosaic
+    Delay $reconn_delay
+    Weight 1.0
+}
+
+Stimulus gExc_L1
+{
+    Mode Conductance
+    Pattern RelativeOrnsteinUhlenbeck
+    Delay $ornstein_uhlenbeck_delay
+    Duration $sim_duration
+    Reversal 0
+    Tau 2.7
+    MeanPercent $ornstein_uhlenbeck_mean_pct_L1I
+    SDPercent $ornstein_uhlenbeck_sd_pct_L1I
+}
+
+Stimulus gExc_L23E
+{
+    Mode Conductance
+    Pattern RelativeOrnsteinUhlenbeck
+    Delay $ornstein_uhlenbeck_delay
+    Duration $sim_duration
+    Reversal 0
+    Tau 2.7
+    MeanPercent $ornstein_uhlenbeck_mean_pct_L23E
+    SDPercent $ornstein_uhlenbeck_sd_pct_L23E
+}
+
+Stimulus gExc_L23I
+{
+    Mode Conductance
+    Pattern RelativeOrnsteinUhlenbeck
+    Delay $ornstein_uhlenbeck_delay
+    Duration $sim_duration
+    Reversal 0
+    Tau 2.7
+    MeanPercent $ornstein_uhlenbeck_mean_pct_L23I
+    SDPercent $ornstein_uhlenbeck_sd_pct_L23I
+}
+
+Stimulus gExc_L4E
+{
+    Mode Conductance
+    Pattern RelativeOrnsteinUhlenbeck
+    Delay $ornstein_uhlenbeck_delay
+    Duration $sim_duration
+    Reversal 0
+    Tau 2.7
+    MeanPercent $ornstein_uhlenbeck_mean_pct_L4E
+    SDPercent $ornstein_uhlenbeck_sd_pct_L4E
+}
+
+Stimulus gExc_L4I
+{
+    Mode Conductance
+    Pattern RelativeOrnsteinUhlenbeck
+    Delay $ornstein_uhlenbeck_delay
+    Duration $sim_duration
+    Reversal 0
+    Tau 2.7
+    MeanPercent $ornstein_uhlenbeck_mean_pct_L4I
+    SDPercent $ornstein_uhlenbeck_sd_pct_L4I
+}
+
+Stimulus gExc_L5E
+{
+    Mode Conductance
+    Pattern RelativeOrnsteinUhlenbeck
+    Delay $ornstein_uhlenbeck_delay
+    Duration $sim_duration
+    Reversal 0
+    Tau 2.7
+    MeanPercent $ornstein_uhlenbeck_mean_pct_L5E
+    SDPercent $ornstein_uhlenbeck_sd_pct_L5E
+}
+
+Stimulus gExc_L5I
+{
+    Mode Conductance
+    Pattern RelativeOrnsteinUhlenbeck
+    Delay $ornstein_uhlenbeck_delay
+    Duration $sim_duration
+    Reversal 0
+    Tau 2.7
+    MeanPercent $ornstein_uhlenbeck_mean_pct_L5I
+    SDPercent $ornstein_uhlenbeck_sd_pct_L5I
+}
+
+Stimulus gExc_L6E
+{
+    Mode Conductance
+    Pattern RelativeOrnsteinUhlenbeck
+    Delay $ornstein_uhlenbeck_delay
+    Duration $sim_duration
+    Reversal 0
+    Tau 2.7
+    MeanPercent $ornstein_uhlenbeck_mean_pct_L6E
+    SDPercent $ornstein_uhlenbeck_sd_pct_L6E
+}
+
+Stimulus gExc_L6I
+{
+    Mode Conductance
+    Pattern RelativeOrnsteinUhlenbeck
+    Delay $ornstein_uhlenbeck_delay
+    Duration $sim_duration
+    Reversal 0
+    Tau 2.7
+    MeanPercent $ornstein_uhlenbeck_mean_pct_L6I
+    SDPercent $ornstein_uhlenbeck_sd_pct_L6I
+}
+
+StimulusInject inject_gExc_L1
+{
+    Stimulus gExc_L1
+    Target Layer1
+}
+
+StimulusInject inject_gExc_L23E
+{
+    Stimulus gExc_L23E
+    Target Layer23Excitatory
+}
+
+StimulusInject inject_gExc_L23I
+{
+    Stimulus gExc_L23I
+    Target Layer23Inhibitory
+}
+
+StimulusInject inject_gExc_L4E
+{
+    Stimulus gExc_L4E
+    Target Layer4Excitatory
+}
+
+StimulusInject inject_gExc_L4I
+{
+    Stimulus gExc_L4I
+    Target Layer4Inhibitory
+}
+
+StimulusInject inject_gExc_L5E
+{
+    Stimulus gExc_L5E
+    Target Layer5Excitatory
+}
+
+StimulusInject inject_gExc_L5I
+{
+    Stimulus gExc_L5I
+    Target Layer5Inhibitory
+}
+
+StimulusInject inject_gExc_L6E
+{
+    Stimulus gExc_L6E
+    Target Layer6Excitatory
+}
+
+StimulusInject inject_gExc_L6I
+{
+    Stimulus gExc_L6I
+    Target Layer6Inhibitory
+}

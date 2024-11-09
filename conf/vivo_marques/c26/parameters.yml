@@ -1,0 +1,24 @@
+
+animal: rat
+state: anesthetized
+activity: spontaneous
+layer_border: # bottom border of each layer, estimated from P23-36 in Meyer et al., PNAS, 2011
+  pial_surface: 0
+  L1: 117     # reported in Meyer et al., PNAS, 2011
+  L2_3: 530   # reported in Meyer et al., PNAS, 2011
+  L4: 866     # reported in Meyer et al., PNAS, 2011
+  L5A: 1092   # reported in Meyer et al., PNAS, 2011
+  L5: 1300    # L5B border estimated from Fig S5 in Meyer et al., PNAS, 2011
+  L6: 2270    # reported in Meyer et al., PNAS, 2011
+run:
+  probe: 'vivo_marques'       # used by "src/../probe_wiring" node
+  recording: 'raw'
+  sampling_frequency: 30000
+  preprocessing:              # high-pass filtering (as in Kilosort3, Pachitariu, 2023)
+    min_filter_freq: 300
+    max_filter_freq: 14999    # up to Nyquist frequency SAMPLING_FREQ/2-1
+probe:
+    n_contacts: 384
+    n_columns: 4
+    n_contacts_per_column: 96
+dtype: 'int16'                # trace values data type

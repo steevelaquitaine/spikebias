@@ -1,0 +1,24 @@
+# author: steeve.laquitaine@epfl.ch
+#
+# 1. Install python 3.10.8 - dandi not compatible with python 3.9.7 used so far
+#
+#   module purge
+#   module load archive/2023-03
+#   module load python/3.10.8
+#
+# 2. Setup a virtual environment with dandi:
+# 
+#   mkdir /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/envs # create envs folder
+#   python -m venv /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/envs/dandi2 # create env
+#   source /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/envs/dandi2/bin/activate
+#   /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/envs/dandi2/bin/python -m pip install -r /gpfs/bbp.cscs.ch/project/proj85/home/laquitai/preprint_2023/envs/dandi2.txt
+#
+# 3. Install
+#
+# pip install -r envs/dandi.txt
+
+dandi
+pynwb
+ipykernel
+matplotlib==3.8.4
+nwbinspector

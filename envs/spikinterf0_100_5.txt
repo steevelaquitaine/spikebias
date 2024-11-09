@@ -1,0 +1,254 @@
+
+# author: steeve.laquitaine@epfl.ch
+#
+# most recent environment:
+# - Kilsort 4
+# - ability to disable preprocessing
+
+# 1. Setup a spack environment with python 3.9:
+#
+#   module purge
+#   module load spack
+#   . /gpfs/bbp.cscs.ch/ssd/apps/bsd/2024-02-01/spack/share/spack/setup-env.sh
+#   spack reindex
+#   spack env create spack_python3_9 envs/spack_python3_9.yaml
+#   spack env activate spack_python3_9 -p
+#   spack install
+
+# 2. Setup a virtual environment with spikinterf0_100_5:
+# 
+#   mkdir /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/envs # create envs folder
+#   python3.9 -m venv /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/envs/spikinterf0_100_5 # create env
+#   source /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/envs/spikinterf0_100_5/bin/activate
+#   /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/envs/spikinterf0_100_5/bin/python3.9 -m pip install -r /gpfs/bbp.cscs.ch/project/proj85/home/laquitai/preprint_2023/envs/spikinterf0_100_5.txt
+
+# 3. Install bluepy
+#
+#   /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/envs/spikinterf0_100_5/bin/python3.9 -m pip install ~/bluepy-configfile/
+#   cd ~/bluepy/
+#   git checkout lfp-reports  # checkout the lfp package
+#   /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/envs/spikinterf0_100_5/bin/python3.9 -m pip install . # install
+
+# 4. install the bug fixed version of spikeinterface to run Kilosort 4, recommended by Alessio Buccino
+# pip install git+https://github.com/SpikeInterface/spikeinterface.git@refs/pull/2827/merge
+
+# 5. Setup the spike sorters:
+# wget -c https://github.com/MouseLand/Kilosort/archive/refs/tags/v2.0.2.tar.gz -O - | tar -xz # download Kilosort 2 release
+# wget -c https://github.com/MouseLand/Kilosort/archive/refs/tags/v2.5.tar.gz -O - | tar -xz # download Kilosort 2.5 release
+
+
+pynwb==2.8.2                # read nwb datasets
+ipykernel                   
+ipywidgets==8.0.6           # version important; or notebook and bluepy fail
+jupyter==1.0.0              # version important: or notebook and and bluepy fail
+pandas==1.5.2               # version important; bluepy fails with 1.5.3
+pyyaml
+scikit-learn
+statsmodels
+networkx
+seaborn
+matplotlib==3.8.4
+MEAutility==1.5.1           # reconstruct probes
+PyWavelets==1.6.0
+neurom[plotly]             # reconstruct cell morphologies
+tmd                        # reconstruct cell morphologies
+wget                       # reconstruct cell morphologies
+spikeinterface==0.100.5    # contains the newly released spikinterf0_100_5
+numpy                      # 1.26.4
+herdingspikes==0.3.102     # spike sorter
+kilosort==4.0              # spike sorter install Kilosort 4.0
+# git+https://github.com/SpikeInterface/spikeinterface.git@refs/pull/2827/merge
+scikit-posthocs==0.9.0      # posthoc statistics
+mpi4py-mpich                # distributed computing on multiple computer nodes
+numba==0.59.1               # parallelized computing
+
+# for spike clustering [TODO: to add]
+umap-learn==0.5.3
+python-louvain==0.16
+
+## exact environment: 
+# anyio==4.3.0
+# argon2-cffi==23.1.0
+# argon2-cffi-bindings==21.2.0
+# arrow==1.3.0
+# asciitree==0.3.3
+# asttokens==2.4.1
+# async-lru==2.0.4
+# attrs==23.2.0
+# Babel==2.14.0
+# beautifulsoup4==4.12.3
+# bleach==6.1.0
+# bluepy==2.4.5
+# bluepy-configfile==0.1.19.dev0
+# bluepysnap==0.13.2
+# cached-property==1.5.2
+# certifi==2024.2.2
+# cffi==1.16.0
+# charset-normalizer==3.3.2
+# click==8.1.7
+# comm==0.2.2
+# contourpy==1.2.1
+# cycler==0.12.1
+# debugpy==1.8.1
+# decorator==5.1.1
+# defusedxml==0.7.1
+# deprecation==2.1.0
+# elephant==1.1.0
+# exceptiongroup==1.2.1
+# executing==2.0.1
+# faiss-cpu==1.8.0
+# fasteners==0.19
+# fastjsonschema==2.19.1
+# filelock==3.13.4
+# fonttools==4.51.0
+# fqdn==1.5.1
+# fsspec==2024.3.1
+# h11==0.14.0
+# h5py==3.11.0
+# hdmf==3.13.0
+# herdingspikes==0.3.102
+# httpcore==1.0.5
+# httpx==0.27.0
+# idna==3.7
+# importlib_metadata==7.1.0
+# importlib_resources==6.4.0
+# install==1.3.5
+# ipdb==0.13.13
+# ipykernel==6.29.4
+# ipython==8.18.1
+# ipywidgets==8.0.6
+# isoduration==20.11.0
+# jedi==0.19.1
+# Jinja2==3.1.3
+# joblib==1.4.0
+# json5==0.9.25
+# jsonpointer==2.4
+# jsonschema==4.21.1
+# jsonschema-specifications==2023.12.1
+# jupyter==1.0.0
+# jupyter-console==6.6.3
+# jupyter-events==0.10.0
+# jupyter-lsp==2.2.5
+# jupyter_client==8.6.1
+# jupyter_core==5.7.2
+# jupyter_server==2.14.0
+# jupyter_server_terminals==0.5.3
+# jupyterlab==4.1.8
+# jupyterlab_pygments==0.3.0
+# jupyterlab_server==2.27.1
+# jupyterlab_widgets==3.0.10
+# kilosort==4.0.6
+# kiwisolver==1.4.5
+# libsonata==0.1.14
+# llvmlite==0.42.0
+# MarkupSafe==2.1.5
+# matplotlib==3.8.4
+# matplotlib-inline==0.1.7
+# MEAutility==1.5.1
+# mistune==3.0.2
+# more-itertools==10.2.0
+# morph-tool==2.10.2
+# morphio==3.3.9
+# mpi4py_mpich==3.1.5
+# mpmath==1.3.0
+# munkres==1.1.4
+# nbclient==0.10.0
+# nbconvert==7.16.3
+# nbformat==5.10.4
+# neo==0.13.0
+# nest-asyncio==1.6.0
+# networkx==3.2.1
+# neurom==3.2.10
+# notebook==7.1.3
+# notebook_shim==0.2.4
+# nptyping==2.5.0
+# numba==0.59.1
+# numcodecs==0.12.1
+# numpy==1.26.4
+# nvidia-cublas-cu12==12.1.3.1
+# nvidia-cuda-cupti-cu12==12.1.105
+# nvidia-cuda-nvrtc-cu12==12.1.105
+# nvidia-cuda-runtime-cu12==12.1.105
+# nvidia-cudnn-cu12==8.9.2.26
+# nvidia-cufft-cu12==11.0.2.54
+# nvidia-curand-cu12==10.3.2.106
+# nvidia-cusolver-cu12==11.4.5.107
+# nvidia-cusparse-cu12==12.1.0.106
+# nvidia-nccl-cu12==2.20.5
+# nvidia-nvjitlink-cu12==12.4.127
+# nvidia-nvtx-cu12==12.1.105
+# overrides==7.7.0
+# packaging==24.0
+# pandas==1.5.2
+# pandocfilters==1.5.1
+# parso==0.8.4
+# patsy==0.5.6
+# pexpect==4.9.0
+# pillow==10.3.0
+# platformdirs==4.2.1
+# plotly==5.22.0
+# probeinterface==0.2.21
+# prometheus_client==0.20.0
+# prompt-toolkit==3.0.43
+# psutil==5.9.8
+# ptyprocess==0.7.0
+# pure-eval==0.2.2
+# pycparser==2.22
+# Pygments==2.17.2
+# pynrrd==1.0.0
+# pynwb==2.6.0
+# pyparsing==3.1.2
+# python-dateutil==2.9.0.post0
+# python-json-logger==2.0.7
+# pytz==2024.1
+# PyWavelets==1.6.0
+# PyYAML==6.0.1
+# pyzmq==26.0.2
+# qtconsole==5.5.1
+# QtPy==2.4.1
+# quantities==0.15.0
+# referencing==0.35.0
+# requests==2.31.0
+# rfc3339-validator==0.1.4
+# rfc3986-validator==0.1.1
+# rpds-py==0.18.0
+# ruamel.yaml==0.18.6
+# ruamel.yaml.clib==0.2.8
+# scikit-learn==1.4.2
+# scikit-posthocs==0.9.0
+# scipy==1.13.0
+# seaborn==0.13.2
+# Send2Trash==1.8.3
+# six==1.16.0
+# sniffio==1.3.1
+# soupsieve==2.5
+# spikeinterface @ git+https://github.com/SpikeInterface/spikeinterface.git@2d88acd02969c388af16e87ee20b8e51d588be54
+# stack-data==0.6.3
+# starbars==1.3.2
+# statsmodels==0.14.2
+# sympy==1.12
+# tenacity==8.2.3
+# terminado==0.18.1
+# threadpoolctl==3.4.0
+# tinycss2==1.3.0
+# TMD==2.4.2
+# tomli==2.0.1
+# torch==2.3.0
+# tornado==6.4
+# tqdm==4.66.2
+# traitlets==5.14.3
+# triton==2.3.0
+# types-python-dateutil==2.9.0.20240316
+# typing_extensions==4.11.0
+# uri-template==1.3.0
+# urllib3==2.2.1
+# voxcell==3.1.9
+# wcwidth==0.2.13
+# webcolors==1.13
+# webencodings==0.5.1
+# websocket-client==1.8.0
+# wget==3.2
+# widgetsnbextension==4.0.10
+# xmltodict==0.13.0
+# zarr==2.17.2
+# zipp==3.18.1
