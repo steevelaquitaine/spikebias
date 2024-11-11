@@ -1,6 +1,4 @@
-"""pipeline for data processing of horvath silico concatenated recordings with probe 1, 2 or 3
-from raw bbp-workflow simulation files to single traces and spikes concatenated over
-campaigns
+"""pipeline for preprocessing the dense probe's simulated recordings
 
 usage:
 
@@ -8,7 +6,7 @@ usage:
     sbatch cluster/prepro/dense_spont/process_probe2_nwb.sh
     sbatch cluster/prepro/dense_spont/process_probe3_nwb.sh
 
-duration: takes 1h on a compute node
+duration: takes about 1h on a compute node
 
 Regression-testing: 07.11.2024 - OK
 """
@@ -23,25 +21,26 @@ import shutil
 import spikeinterface.extractors as se
 
 # move to project path
-PROJ_PATH = "/gpfs/bbp.cscs.ch/project/proj85/home/laquitai/preprint_2023/"
+with open("./proj_cfg.yml", "r", encoding="utf-8") as proj_cfg:
+    PROJ_PATH = yaml.load(proj_cfg, Loader=yaml.FullLoader)["proj_path"]
 os.chdir(PROJ_PATH)
 
 from src.nodes.utils import get_config
 from src.nodes.dataeng.silico import recording, probe_wiring
 from src.nodes.prepro import preprocess
 from src.nodes.truth.silico import ground_truth
-from src.pipes.metadata.dense_spont import label_layers
 
+#from src.pipes.metadata.dense_spont import label_layers
+from src.nodes.prepro.preprocess import label_layers
 
 # SETUP PIPELINE
-TUNE_FIT = True        # tune fitted noise
 FIT_CAST = True
 OFFSET = True
 SCALE_AND_ADD_NOISE = {"gain_adjust": 0.90}
 WIRE = True
 SAVE_METADATA = True
-PREPROCESS = False
-GROUND_TRUTH = False
+PREPROCESS = True
+GROUND_TRUTH = True
 
 
 # SETUP LOGGING
@@ -55,46 +54,14 @@ logger = logging.getLogger("root")
 job_dict = {"n_jobs": 1, "progress_bar": True}
 
 
-def _save_metadata(Recording, blueconfig: str):
+def _save_metadata(data_conf, Recording, blueconfig=None, load_atlas_metadata=True):
     """Save layer metadata to the Recording Extractor
     """
-    return label_layers(Recording, blueconfig)
+    return label_layers(data_conf, Recording, blueconfig, n_sites=128,
+                        load_atlas_metadata=load_atlas_metadata)
 
 
-def tune_fit(data_conf, noise_tuning):
-    """manually tune the best fit noise RMS
-    for each layer
-
-    Args:
-        data_conf (_type_): _description_
-    """
-    # path
-    FITTED_PATH = data_conf["preprocessing"]["fitting"]["fitted_noise"]
-    TUNED_PATH = data_conf["preprocessing"]["fitting"]["missing_noise_path"]
-    
-    if os.path.isfile(FITTED_PATH + "L1.npy"):
-        l1_out = np.load(FITTED_PATH + "L1.npy", allow_pickle=True).item()
-        l1_out["missing_noise_rms"] += noise_tuning
-        np.save(TUNED_PATH + "L1.npy", l1_out)
-    if os.path.isfile(FITTED_PATH + "L2_3.npy"):
-        l23_out = np.load(FITTED_PATH + "L2_3.npy", allow_pickle=True).item()
-        l23_out["missing_noise_rms"] += noise_tuning
-        np.save(TUNED_PATH + "L2_3.npy", l23_out)
-    if os.path.isfile(FITTED_PATH + "L4.npy"):
-        l4_out = np.load(FITTED_PATH + "L4.npy", allow_pickle=True).item()
-        l4_out["missing_noise_rms"] += noise_tuning
-        np.save(TUNED_PATH + "L4.npy", l4_out)
-    if os.path.isfile(FITTED_PATH + "L5.npy"):
-        l5_out = np.load(FITTED_PATH + "L5.npy", allow_pickle=True).item()
-        l5_out["missing_noise_rms"] += noise_tuning
-        np.save(TUNED_PATH + "L5.npy", l5_out)
-    if os.path.isfile(FITTED_PATH + "L6.npy"):
-        l6_out = np.load(FITTED_PATH + "L6.npy", allow_pickle=True).item()
-        l6_out["missing_noise_rms"] += noise_tuning
-        np.save(TUNED_PATH + "L6.npy", l6_out)
-    
-    
-def fit_and_cast_as_extractor(data_conf):
+def fit_and_cast_as_extractor(data_conf: dict, param_conf: dict):
     """Cast as a SpikeInterface RecordingExtractor 
     Rescale, offset, cast as Spikeinterface Recording Extractor object
     Traces need rescaling as the simulation produces floats with nearly all values below an amplitude of 1. 
@@ -109,7 +76,7 @@ def fit_and_cast_as_extractor(data_conf):
     logger.info("Starting ...")
 
     # cast (30 secs)
-    Recording = recording.run_from_nwb(data_conf, offset=OFFSET, scale_and_add_noise=SCALE_AND_ADD_NOISE)
+    Recording = recording.run_from_nwb(data_conf, param_conf, offset=OFFSET, scale_and_add_noise=SCALE_AND_ADD_NOISE)
 
     # remove 129th "test" channel (actually 128 because starts at 0)
     if len(Recording.channel_ids) == 129:
@@ -119,13 +86,28 @@ def fit_and_cast_as_extractor(data_conf):
 
 
 def wire_probe(
-        data_conf, param_conf, Recording, blueconfig, save_metadata: bool,
-        job_dict: dict
+        data_conf: dict, 
+        param_conf: dict, 
+        Recording, 
+        blueconfig, 
+        save_metadata: bool,
+        job_dict: dict, 
+        load_atlas_metadata=True, 
+        load_filtered_cells_metadata=True
         ):
-    """wire a neuropixels 1.0 probe
+    """wire a the dense probe (from Horvath et al.)
+    128 electrodes
     
-    takes 12 min (versus 48 min w/o multiprocessing)
-
+    Args:
+        data_conf (dict):
+        param_conf (dict):
+        Recording (RecordingExtractor):
+        blueconfig (None): DEPRECATED should always be None
+        save_metadata (bool)
+        job_dict: dict, 
+        load_atlas_metadata (Boolean): True: loads existing metadata, else requires the Atlas (download on Zenodo)
+        load_filtered_cells_metadata: True: loads existing metadata; can only be true
+        
     note: The wired Recording Extractor is written via 
     multiprocessing on 8 CPU cores, with 1G of memory per job 
     (n_jobs=8 and chunk_memory=1G)
@@ -135,20 +117,22 @@ def wire_probe(
     
     to check the number of logical cpu cores on your machine:
         nproc
-    """
-
+    """    
     # track time
     t0 = time.time()
     logger.info("Starting ...")
     
+    # get write path
     WRITE_PATH = data_conf["probe_wiring"]["full"]["output"]
     
     # run and write
-    Recording = probe_wiring.run(Recording, data_conf, param_conf)
+    Recording = probe_wiring.run(Recording, data_conf, 
+                                 param_conf, load_filtered_cells_metadata)
 
     # save metadata
     if save_metadata:
-        Recording = _save_metadata(Recording, blueconfig)
+        Recording = _save_metadata(data_conf, Recording, blueconfig, 
+                                   load_atlas_metadata=load_atlas_metadata)
 
     # write (parallel processing works for 10 min recordings, else use 1 node for 1h recording otherwise
     # you get "out of memory error: "slurmstepd: error: Detected 50 oom-kill event(s). 
@@ -158,13 +142,13 @@ def wire_probe(
     logger.info(f"Done in {np.round(time.time()-t0,2)} secs")
 
 
-def preprocess_recording(data_conf, param_conf):
+def preprocess_recording(data_conf, param_conf, job_dict):
     """preprocess recording
 
-    takes 15 min (vs. 32 min w/o multiprocessing)
+    takes 15 min (w/ multiprocessing, else 32 mins)
     """
 
-    # takes 32 min
+    # track time
     t0 = time.time()
     logger.info("Starting 'preprocess_recording'")
     
@@ -183,7 +167,7 @@ def preprocess_recording(data_conf, param_conf):
     logger.info(f"Done in {np.round(time.time()-t0,2)} secs")
 
 
-def extract_ground_truth(data_conf, param_conf):
+def extract_ground_truth(data_conf):
 
     # takes about 3 hours
     t0 = time.time()
@@ -200,32 +184,38 @@ def extract_ground_truth(data_conf, param_conf):
     logger.info(f"Done in {np.round(time.time()-t0,2)} secs")
 
 
-def run(experiment: str, run: str, noise_tuning):
+def run(experiment: str, run: str):
     """_summary_
 
     Args:
         run_i (str): e.g., concatenated/probe_1
         experiment (str, optional): _description_. Defaults to "silico_horvath".
     """
-
     # get config
     data_conf, param_conf = get_config(experiment, run).values()
     logger.info(f"Checking parameters: exp={experiment} and run={run}")
 
-    # set paths
-    BLUECONFIG = data_conf["dataeng"]["blueconfig"]
-
     # track time
     t0 = time.time()
-    if TUNE_FIT:
-        tune_fit(data_conf, noise_tuning)  
+    
     if FIT_CAST:
-        Recording = fit_and_cast_as_extractor(data_conf)
+        Recording = fit_and_cast_as_extractor(data_conf, 
+                                              param_conf)
+    
     if WIRE:
-        wire_probe(data_conf, param_conf, Recording, BLUECONFIG,
-                   save_metadata=SAVE_METADATA, job_dict=job_dict)
+        wire_probe(data_conf,
+                   param_conf,
+                   Recording,
+                   blueconfig=None, # data_conf["dataeng"]["blueconfig"], # None
+                   save_metadata=SAVE_METADATA,
+                   job_dict=job_dict, 
+                   load_atlas_metadata=True, # False
+                   load_filtered_cells_metadata=True) # False
+    
     if PREPROCESS:
-        preprocess_recording(data_conf, param_conf)
+        preprocess_recording(data_conf, param_conf, job_dict)
+    
     if GROUND_TRUTH:
-        extract_ground_truth(data_conf, param_conf)
+        extract_ground_truth(data_conf)
+        
     logger.info(f"Done in {np.round(time.time()-t0,2)} secs")

@@ -1,6 +1,6 @@
 """Node to create in-silico probes and wire them to simulated recordings into a SpikeInterface Recording object
 
-author: steeve.laquitaine@epfl.ch
+author: steeve.laquitaine@epfl.ch; laquitainesteeve@gmail.com
 
 Returns:
     _type_: _description_
@@ -17,6 +17,7 @@ import pandas as pd
 import spikeinterface.extractors as se
 import spikeinterface.full as si
 import yaml
+import os
 from probeinterface import (
     Probe,
     generate_linear_probe,
@@ -25,6 +26,8 @@ from probeinterface import (
     )
 from sklearn.decomposition import PCA
 
+# custom package
+from src.nodes import utils
 from src.nodes.dataeng.silico import recording
 from src.nodes.dataeng.silico.filtering import (filter_microcircuit_cells,
                                                 get_hex_01_cells)
@@ -738,7 +741,7 @@ def run_vivo_reyes_1_x_16(data_conf:dict, param_conf:dict):
     return Recording.set_probe(probe, in_place=True)
 
 
-def run_silico_horvath_1(Recording, data_conf: dict, param_conf: dict):
+def run_silico_horvath_1(Recording, data_conf: dict, param_conf: dict, load_filtered_cells_metadata=True):
     """create in silico horvath probe at depth 1
 
     Args:
@@ -783,8 +786,13 @@ def run_silico_horvath_1(Recording, data_conf: dict, param_conf: dict):
     # get the microcircuit (hex_01) cells to position the probe at its centroid
     # calculate circuit's centroid by averaging of cell soma coordinates
     # get the campaign parameters from the first simulation
-    simulation = load_campaign_params(data_conf)
-    filtered_cells = get_hex_01_cells(simulation)
+    # load/save filtered cells metadata
+    if load_filtered_cells_metadata:
+        filtered_cells = np.load(data_conf["metadata"]["filtered_cells"], allow_pickle=True).item()
+    else:
+        simulation = load_campaign_params(data_conf)
+        filtered_cells = get_hex_01_cells(simulation)
+        np.save(data_conf["metadata"]["filtered_cells"], filtered_cells)
     circuit_centroid = np.mean(filtered_cells["soma_location"], axis=0).values
 
     # rotate and center probe to circuit center
@@ -810,7 +818,7 @@ def run_silico_horvath_1(Recording, data_conf: dict, param_conf: dict):
     return Recording.set_probe(Probe)
 
 
-def run_silico_horvath_2(Recording, data_conf: dict, param_conf: dict):
+def run_silico_horvath_2(Recording, data_conf: dict, param_conf: dict, load_filtered_cells_metadata=True):
     """create in silico horvath probe at depth 2
 
     Args:
@@ -855,8 +863,15 @@ def run_silico_horvath_2(Recording, data_conf: dict, param_conf: dict):
     # get the microcircuit (hex_01) cells to position the probe at its centroid
     # calculate circuit's centroid by averaging of cell soma coordinates
     # get the campaign parameters from the first simulation
-    simulation = load_campaign_params(data_conf)
-    filtered_cells = get_hex_01_cells(simulation)
+    if load_filtered_cells_metadata:
+        filtered_cells = np.load(data_conf["metadata"]["filtered_cells"], filtered_cells, allow_pickle=True).item()
+    else:
+        simulation = load_campaign_params(data_conf)
+        filtered_cells = get_hex_01_cells(simulation)
+        # save
+        utils.create_if_not_exists(os.path.dirname(data_conf["metadata"]["filtered_cells"]))
+        np.save(data_conf["metadata"]["filtered_cells"], filtered_cells)
+        
     circuit_centroid = np.mean(filtered_cells["soma_location"], axis=0).values
 
     # rotate and center probe to circuit center
@@ -881,7 +896,7 @@ def run_silico_horvath_2(Recording, data_conf: dict, param_conf: dict):
     return Recording.set_probe(Probe)
 
 
-def run_silico_horvath_3(Recording, data_conf: dict, param_conf: dict):
+def run_silico_horvath_3(Recording, data_conf: dict, param_conf: dict, load_filtered_cells_metadata=True):
     """create in silico horvath probe at depth 3
 
     Args:
@@ -926,10 +941,16 @@ def run_silico_horvath_3(Recording, data_conf: dict, param_conf: dict):
     # get the microcircuit (hex_01) cells to position the probe at its centroid
     # calculate circuit's centroid by averaging of cell soma coordinates
     # get the campaign parameters from the first simulation
-    simulation = load_campaign_params(data_conf)
-    filtered_cells = get_hex_01_cells(simulation)
+    if load_filtered_cells_metadata:
+        filtered_cells = np.load(data_conf["metadata"]["filtered_cells"], filtered_cells, allow_pickle=True).item()
+    else:
+        simulation = load_campaign_params(data_conf)
+        filtered_cells = get_hex_01_cells(simulation)
+        # save
+        utils.create_if_not_exists(os.path.dirname(data_conf["metadata"]["filtered_cells"]))
+        np.save(data_conf["metadata"]["filtered_cells"], filtered_cells)
     circuit_centroid = np.mean(filtered_cells["soma_location"], axis=0).values
-
+    
     # rotate and center probe to circuit center
     pca = PCA(n_components=3)
     pca.fit(filtered_cells["soma_location"])
@@ -1045,7 +1066,7 @@ def run_vivo_marques_old(data_conf: dict, param_conf: dict):
     return trace_recording.set_probe(probe)
 
 
-def run(Recording, data_conf: dict, param_conf: dict):
+def run(Recording, data_conf: dict, param_conf: dict, load_filtered_cells_metadata=True):
     """Wire the recording with the probe configured in
     conf/../parameters.yml
 
@@ -1069,13 +1090,13 @@ def run(Recording, data_conf: dict, param_conf: dict):
         return run_vivo_reyes_1_x_16(data_conf, param_conf)
     if param_conf["run"]["probe"] == "silico_horvath_probe_1":
         logger.info("probe: silico_horvath_probe_1")
-        return run_silico_horvath_1(Recording, data_conf, param_conf)        
+        return run_silico_horvath_1(Recording, data_conf, param_conf, load_filtered_cells_metadata=load_filtered_cells_metadata)
     if param_conf["run"]["probe"] == "silico_horvath_probe_2":
         logger.info("probe: silico_horvath_probe_2")
-        return run_silico_horvath_2(Recording, data_conf, param_conf)
+        return run_silico_horvath_2(Recording, data_conf, param_conf, load_filtered_cells_metadata=load_filtered_cells_metadata)
     if param_conf["run"]["probe"] == "silico_horvath_probe_3":
         logger.info("probe: silico_horvath_probe_3")
-        return run_silico_horvath_3(Recording, data_conf, param_conf)
+        return run_silico_horvath_3(Recording, data_conf, param_conf, load_filtered_cells_metadata=load_filtered_cells_metadata)
     if param_conf["run"]["probe"] == "vivo_marques":
         logger.info("probe: vivo_marques")
         return run_vivo_marques(Recording, data_conf)

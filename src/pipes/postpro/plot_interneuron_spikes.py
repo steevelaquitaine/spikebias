@@ -17,8 +17,9 @@ import yaml
 from matplotlib import pyplot as plt
 from src.nodes.prepro import preprocess
 
-# SET PROJECT PATH
-PROJ_PATH = "/gpfs/bbp.cscs.ch/project/proj68/home/laquitai/bernstein_2023"
+# move to project path
+with open("./proj_cfg.yml", "r", encoding="utf-8") as proj_cfg:
+    PROJ_PATH = yaml.load(proj_cfg, Loader=yaml.FullLoader)["proj_path"]
 os.chdir(PROJ_PATH)
 
 from src.nodes.load import load_campaign_params

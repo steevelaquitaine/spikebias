@@ -10,7 +10,7 @@ import spikeinterface.preprocessing as spre
 import shutil 
 
 # move to PROJECT PATH
-PROJ_PATH = "/gpfs/bbp.cscs.ch/project/proj68/home/laquitai/preprint_2023/"
+PROJ_PATH = "/gpfs/bbp.cscs.ch/project/proj68/home/laquitai/spikebias/"
 os.chdir(PROJ_PATH)
 
 from src.nodes.utils import get_config

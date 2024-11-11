@@ -9,9 +9,10 @@ author: steeve.laquitaine@epfl.ch; laquitainesteeve@gmail.com
 
 TODO:
 
-- make all NWB files and upload to DANDI archive
-- keep only the electrode location from the weights, much lighter dataset.
-- only keep the raw wired recordings.
+- get all data from blueconfig to skip blueconfig [DOING]
+- make all NWB files of raw wired recordings and upload to DANDI archive [DOING]
+- keep only the electrode location from the weights - much lighter dataset.
+- remove all hard coded paths of the codebase (mostly in /pipes)
 
 ## NEUROPIXELS 
 
@@ -45,7 +46,6 @@ TODO:
     - nwb path: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/raw/raw_buccino/sub-MEAREC-250neuron-Neuropixels_ecephys.nwb'
     - size: 28G
 
-
 ## DENSE PROBE
 
 ### Horvath 
@@ -57,14 +57,20 @@ TODO:
 
 - recordings:
 
-    - path depth 1: /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/0_silico/horvath/concatenated_campaigns/probe1_hex0_rou04_pfr03_20Khz/raw/traces.pkl
-    - nwb path: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/0_silico/horvath/concatenated_campaigns/probe1_hex0_rou04_pfr03_20Khz/nwb/dense_biophy_spont.nwb'            
+    - depth 1:
+      - raw path: /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/0_silico/horvath/concatenated_campaigns/probe1_hex0_rou04_pfr03_20Khz/raw/traces.pkl
+      - nwb path: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/0_silico/horvath/concatenated_campaigns/probe1_hex0_rou04_pfr03_20Khz/nwb/dense_biophy_spont1.nwb'
+        - size: 14 GB
     
-    - path depth 2: /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/0_silico/horvath/concatenated_campaigns/probe2_hex0_rou04_pfr03_20Khz/raw/traces.pkl
-    - nwb path: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/0_silico/horvath/concatenated_campaigns/probe2_hex0_rou04_pfr03_20Khz/nwb/dense_biophy_spont.nwb'            
+    - depth 2:
+      - raw path : /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/0_silico/horvath/concatenated_campaigns/probe2_hex0_rou04_pfr03_20Khz/raw/traces.pkl
+      - nwb path: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/0_silico/horvath/concatenated_campaigns/probe2_hex0_rou04_pfr03_20Khz/nwb/dense_biophy_spont2.nwb'
+        - size: 9.3 GB
 
-    - path depth 3: /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/0_silico/horvath/concatenated_campaigns/probe3_hex0_rou04_pfr03_20Khz/raw/traces.pkl
-    - nwb path: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/0_silico/horvath/concatenated_campaigns/probe3_hex0_rou04_pfr03_20Khz/nwb/dense_biophy_spont.nwb'            
+    - depth 3:
+      - raw path: /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/0_silico/horvath/concatenated_campaigns/probe3_hex0_rou04_pfr03_20Khz/raw/traces.pkl
+      - nwb path: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/0_silico/horvath/concatenated_campaigns/probe3_hex0_rou04_pfr03_20Khz/nwb/dense_biophy_spont3.nwb'      
+        - size: 15 GB      
 
 - spikes:
 
@@ -72,21 +78,25 @@ TODO:
     - path depth 2: /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/0_silico/horvath/concatenated_campaigns/probe2_hex0_rou04_pfr03_20Khz/raw/spiketrains.pkl
     - path depth 3: /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/0_silico/horvath/concatenated_campaigns/probe3_hex0_rou04_pfr03_20Khz/raw/spiketrains.pkl
 
+## Auxiliary:
 
-## Auxiliary datasets:
+- Weight files:
 
+  - neuropixels probe:
+    - path: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/dataset/weights/coeffsneuropixels.h5'
+    - size: 227 GB
 
-- weights neuropixels: 
-  - path: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/dataset/weights/coeffsneuropixels.h5'
-  - size: 227 GB
+  - dense probe:
+    - depth 1:
+      - path : /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/dataset/weights/coeffsdenseprobe1.h5
+      - size: 77 GB
+    - depth 2:
+      - path: /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/dataset/weights/coeffsdenseprobe1.h5
+      - size: 77 GB
+    - depth 3:
+      - path : /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/dataset/weights/coeffsdenseprobe1.h5
+      - size: 77 GB
 
-- weights dense probes: 
-  - depth 1:
-    - path : /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/dataset/weights/coeffsdenseprobe1.h5
-    - size: 77 GB
-  - depth 2:
-    - path: /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/dataset/weights/coeffsdenseprobe1.h5
-    - size: 77 GB
-  - depth 3:
-    - path : /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/dataset/weights/coeffsdenseprobe1.h5
-    - size: 77 GB
+- Metadata files:
+  - Atlas metadata: codebase repo at assets/metadata/ or load the open source Atlas: https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/QREN2T
+  - Filtered_cells metadata (cells within 50 microns): assets/metadata/

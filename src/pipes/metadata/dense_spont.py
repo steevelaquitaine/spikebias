@@ -10,23 +10,30 @@ time: takes 1 hour
 """
 import os
 import numpy as np
+import yaml
 
-# set project path
-PROJ_PATH = "/gpfs/bbp.cscs.ch/project/proj85/home/laquitai/preprint_2023/"
+# move to project path
+with open("./proj_cfg.yml", "r", encoding="utf-8") as proj_cfg:
+    PROJ_PATH = yaml.load(proj_cfg, Loader=yaml.FullLoader)["proj_path"]
 os.chdir(PROJ_PATH)
 
-from src.nodes.validation.layer import getAtlasInfo
+from src.nodes.validation.layer import getAtlasInfo, loadAtlasInfo
 
-
-def label_layers(Recording, blueconfig):
-    """add site layer metadata probe wired RecordingExtractor
+def label_layers(data_conf, Recording, blueconfig, load_atlas_metadata=True):
+    """record electrode site layer property in RecordingExtractor
+    
+    Args:
+        blueconfig (None): is always None
     """
 
     # load probe.wired trace
     probe = Recording.get_probe()
 
     # get site layers and curare
-    _, site_layers = getAtlasInfo(blueconfig, probe.contact_positions)
+    if load_atlas_metadata:
+        _, site_layers = loadAtlasInfo(data_conf)
+    else:
+        _, site_layers = getAtlasInfo(data_conf, blueconfig, probe.contact_positions)
     site_layers = np.array(site_layers)
     site_layers[site_layers == "L2"] = "L2_3"
     site_layers[site_layers == "L3"] = "L2_3"

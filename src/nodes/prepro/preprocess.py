@@ -27,9 +27,12 @@ import spikeinterface.full as si
 import yaml
 import spikeinterface.extractors as se 
 import spikeinterface.preprocessing as spre
+
+
 from src.nodes.dataeng.silico import probe_wiring
 from src.nodes.prepro.filtering import wavelet_filter
 from src.nodes.utils import get_config
+from src.nodes.validation.layer import getAtlasInfo, loadAtlasInfo
 
 
 # setup logging
@@ -1085,6 +1088,33 @@ def run_wavelet_filtering(dataset_conf: dict, param_conf: dict):
         bandpassed, reference="global", operator="median"
     )
     return referenced
+
+
+def label_layers(data_conf, Recording, blueconfig, n_sites:int, load_atlas_metadata=True):
+    """record electrode site layer property in RecordingExtractor
+    
+    Args:
+        blueconfig (None): is always None
+    """
+
+    # load probe.wired trace
+    probe = Recording.get_probe()
+
+    # get site layers and curare
+    if load_atlas_metadata:
+        _, site_layers = loadAtlasInfo(data_conf)
+    else:
+        _, site_layers = getAtlasInfo(data_conf, blueconfig, probe.contact_positions)
+    site_layers = np.array(site_layers)
+    site_layers[site_layers == "L2"] = "L2_3"
+    site_layers[site_layers == "L3"] = "L2_3"
+
+    # sanity check
+    assert len(site_layers) == n_sites, """site count does not match horvath's probe'"""
+
+    # add metadata to RecordingExtractor
+    Recording.set_property('layers', values=site_layers)
+    return Recording
 
 
 def write(preprocessed, data_conf:dict, job_dict:dict):

@@ -16,9 +16,10 @@ import logging.config
 import time 
 from mpi4py import MPI
 
-# set project path
-proj_path = "/gpfs/bbp.cscs.ch/project/proj85/home/laquitai/preprint_2023/"
-os.chdir(proj_path)
+# move to project path
+with open("./proj_cfg.yml", "r", encoding="utf-8") as proj_cfg:
+    PROJ_PATH = yaml.load(proj_cfg, Loader=yaml.FullLoader)["proj_path"]
+os.chdir(PROJ_PATH)
 
 from src.nodes.utils import get_config
 from src.nodes.metrics import quality

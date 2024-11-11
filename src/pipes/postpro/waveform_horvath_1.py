@@ -20,9 +20,11 @@ import spikeinterface as si
 from spikeinterface.comparison import GroundTruthStudy
 from src.nodes.prepro import preprocess
 
-# SET PROJECT PATH
-PROJ_PATH = "/gpfs/bbp.cscs.ch/project/proj68/home/laquitai/sfn_2023"
+# move to project path
+with open("./proj_cfg.yml", "r", encoding="utf-8") as proj_cfg:
+    PROJ_PATH = yaml.load(proj_cfg, Loader=yaml.FullLoader)["proj_path"]
 os.chdir(PROJ_PATH)
+
 from src.nodes.utils import get_config
 
 # SET PARAMETERS

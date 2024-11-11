@@ -22,3 +22,5 @@ pynwb
 ipykernel
 matplotlib==3.8.4
 nwbinspector
+
+spikeinterface==0.100.5    # contains the newly released spikinterf0_100_5

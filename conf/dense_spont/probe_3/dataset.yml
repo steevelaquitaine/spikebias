@@ -1,4 +1,5 @@
 # purpose: replicate Horvath recording at depth 3 in-silico
+# Description: this is the config to process the simulated recordings starting from Blue Brain's raw simulations
 
 dataeng:
     blueconfig: /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/raw/silico_horvath_probe3_lfp_10m_128ch_hex0_rou04_pfr03_20Khz_2023_11_28_campaign02/93b9ab3c-1789-40f3-8830-50c321cf367e/0/BlueConfig # to get sampling frequency

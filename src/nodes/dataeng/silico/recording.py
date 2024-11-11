@@ -31,6 +31,7 @@ import copy
 import time
 from src.nodes.load import load_campaign_params
 import torch
+import json
 
 # setup logging
 with open("conf/logging.yml", "r", encoding="utf-8") as logging_conf:
@@ -66,6 +67,29 @@ def _load_stored_fit_results(data_conf: dict):
         noises += (np.load(NOISE_PATH + "L5.npy", allow_pickle=True).item(),)
     if os.path.isfile(NOISE_PATH + "L6.npy"):
         noises += (np.load(NOISE_PATH + "L6.npy", allow_pickle=True).item(),)
+    return noises
+
+
+def _load_stored_fit_results_nwb(data_conf: dict):
+    """load results from fitting silico trace amplitude and noise to 
+    in vivo traces per layer
+
+    Args:
+        data_conf (dict): _description_
+
+    Returns:
+        list: list of dictionaries containing fit results per layer
+    """
+    # get config
+    NOISE_PATH = data_conf["preprocessing"]["fitting"]["missing_noise_path"]
+
+    # return concatenated noise per layer
+    noises = ()
+    layers = ["L1", "L2_3", "L4", "L5", "L6"]
+    for layer in layers:
+        if os.path.isfile(NOISE_PATH + f"{layer}_tuned.json"):
+            with open(NOISE_PATH + f"{layer}_tuned.json", 'r') as file:
+                noises += (json.load(file),)
     return noises
 
 
@@ -198,49 +222,6 @@ def _scale_adj_and_add_noise(traces: np.array, data_conf: dict):
     return fitted_traces.T
 
 
-# def _scale_adj_by_and_add_noise(traces: np.array, data_conf: dict, gain_prms:dict):
-#     """load gain and missing noise best fitted
-#     to the in vivo traces per layer and transform silico traces
-
-#     Returns:
-#         np.array: traces with amplitude and noise fitted to the in vivo
-#         traces
-#     """
-
-#     # get stored results for the best fit scaling factor and missing noise
-#     fit_out = _load_stored_fit_results(data_conf)
-    
-#     # set seed for reproducibility
-#     np.random.seed(fit_out[0]["seed"])
-
-#     # make writable (40s/h recording)
-#     fitted_traces = copy.copy(traces).T
-#     nsites = traces.shape[1]
-#     ntimepoints = traces.shape[0]
-
-#     # - scale trace and add missing noise to each site
-#     for ix, _ in enumerate(fit_out):
-
-#         # get sites, scaling factor and missing noise
-#         sites = fit_out[ix]["layer_sites_ix"]
-#         gain = fit_out[ix]["gain"] * gain_prms["gain_adjust"] # adjust gain
-#         missing_noise = fit_out[ix]["missing_noise_rms"]
-
-#         # reconstruct fitted missing noise traces
-#         missing_noise_traces = np.random.normal(
-#             0,
-#             missing_noise,
-#             [nsites, ntimepoints],
-#         )
-
-#         # scale traces and add missing noise
-#         fitted_traces[sites,:] = traces[:, sites].T * gain + missing_noise_traces[sites,:] 
-        
-#         # release memory
-#         del missing_noise_traces
-#     return fitted_traces.T
-
-
 def _scale_adj_by_and_add_noise(traces: np.array, data_conf: dict, gain_prms:dict):
     """load gain and missing noise best fitted
     to the in vivo traces per layer and transform silico traces
@@ -251,6 +232,30 @@ def _scale_adj_by_and_add_noise(traces: np.array, data_conf: dict, gain_prms:dic
     """
     # get fitted results
     fit_out = _load_stored_fit_results(data_conf)
+
+    # get the tuned gain
+    gain = fit_out[0]["gain"] * gain_prms["gain_adjust"]
+    
+    # create missing noise
+    missing_noise = create_noise_matrix(fit_out, traces.shape[1], traces.shape[0])
+    
+    # add noise and cast as array
+    traces = torch.from_numpy(traces)
+    fitted_traces = (traces.T * gain) + missing_noise
+    fitted_traces = fitted_traces.cpu().detach().numpy()
+    return fitted_traces.T
+
+
+def _scale_adj_by_and_add_noise_nwb(traces: np.array, data_conf: dict, gain_prms:dict):
+    """load gain and missing noise best fitted
+    to the in vivo traces per layer and transform silico traces
+
+    Returns:
+        np.array: traces with amplitude and noise fitted to the in vivo
+        traces
+    """
+    # get fitted results
+    fit_out = _load_stored_fit_results_nwb(data_conf)
 
     # get the tuned gain
     gain = fit_out[0]["gain"] * gain_prms["gain_adjust"]
@@ -1052,12 +1057,13 @@ def run(data_conf: dict, offset:bool, scale_and_add_noise: bool):
     )
 
 
-def run_from_nwb(data_conf: dict, offset:bool, scale_and_add_noise: bool):
-    """Rescale, and/or add missing noise and cast traces as a SpikeInterface
-    RecordingExtractor
+def run_from_nwb(data_conf: dict, param_conf: dict, offset:bool, scale_and_add_noise: bool):
+    """Rescale, and/or add missing noise and cast traces from NWB file 
+    as a SpikeInterface RecordingExtractor
 
     Args:
         data_conf (dict): _description_
+        param_conf (dict): 
         offset (bool): true or false, removes each trace's mean
         scale_and_add_noise (bool): "scale_and_add_noise", "noise_20_perc_lower", "scale"
         - if true load best scaling factor and missing noise fitted
@@ -1071,10 +1077,8 @@ def run_from_nwb(data_conf: dict, offset:bool, scale_and_add_noise: bool):
 
     # set traces read path
     NWB_PATH = data_conf["nwb"]
-
-    # get campaign parameters from one simulation
-    simulation = load_campaign_params(data_conf)
-
+    SFREQ = param_conf["sampling_freq"]
+    
     # read and cast raw trace as array (1 min/h recording)
     Recording = se.NwbRecordingExtractor(NWB_PATH)
     trace = Recording.get_traces()
@@ -1086,81 +1090,16 @@ def run_from_nwb(data_conf: dict, offset:bool, scale_and_add_noise: bool):
         logger.info(f"Subtracted trace means in {np.round(time.time()-t0,2)} secs")
 
     # scale and add missing noise (2h:10 / h recording)
-    if scale_and_add_noise == "scale_and_add_noise":
-        trace = _scale_and_add_noise(trace, data_conf)
-        logger.info(f"Scaled traces and added noise in {np.round(time.time()-t0,2)} secs")
-    
-    # scale and add missing noise (2h:10 / h recording)
-    if scale_and_add_noise == "scale_adj_and_add_noise":
-        trace = _scale_adj_and_add_noise(trace, data_conf)
-        logger.info(f"Scaled traces with adjusted gain and added noise in {np.round(time.time()-t0,2)} secs")
-
-    # scale and add missing noise (2h:10 / h recording)
     if isinstance(scale_and_add_noise, dict):
-        trace = _scale_adj_by_and_add_noise(trace, data_conf, scale_and_add_noise)
-        logger.info(f"Scaled traces with adjusted gain and added noise in {np.round(time.time()-t0,2)} secs")
-                
-    # scaling only
-    elif scale_and_add_noise == "scale":
-        trace = _scale(trace, data_conf)
-        logger.info(f"Only scaled traces in {np.round(time.time()-t0,2)} secs")
-
-    # scale and add 20% of fitted noise
-    elif scale_and_add_noise == "noise_20_perc_lower":
-        trace = _scale_and_add_noise_20_perc_lower(trace, data_conf)
-        logger.info(f"Scaled traces and added noise reduced by 20% in {np.round(time.time()-t0,2)} secs")
-
-    # scale and add 50% of fitted noise
-    elif scale_and_add_noise == "noise_50_perc_lower":
-        trace = _scale_and_add_noise_50_perc_lower(trace, data_conf)
-        logger.info(f"Scaled traces and added noise reduced by 50% in {np.round(time.time()-t0,2)} secs")
-
-    # scale and add 75% of fitted noise
-    elif scale_and_add_noise == "noise_75_perc_lower":
-        trace = _scale_and_add_noise_75_perc_lower(trace, data_conf)
-        logger.info(f"Scaled traces and added noise reduced by 75% in {np.round(time.time()-t0,2)} secs")
-
-    # scale and add 80% of fitted noise
-    elif scale_and_add_noise == "noise_80_perc_lower":
-        trace = _scale_and_add_noise_80_perc_lower(trace, data_conf)
-        logger.info(f"Scaled traces and added noise reduced by 80% in {np.round(time.time()-t0,2)} secs")
-
-    # scale and add 90% of fitted noise
-    elif scale_and_add_noise == "noise_90_perc_lower":
-        trace = _scale_and_add_noise_90_perc_lower(trace, data_conf)
-        logger.info(f"Scaled traces and added noise reduced by 90% in {np.round(time.time()-t0,2)} secs")
-
-    # scale and add 95% of fitted noise
-    elif scale_and_add_noise == "noise_95_perc_lower":
-        trace = _scale_and_add_noise_95_perc_lower(trace, data_conf)
-        logger.info(f"Scaled traces and added noise reduced by 95% in {np.round(time.time()-t0,2)} secs")
-
-    # scale and add 99% of fitted noise
-    elif scale_and_add_noise == "noise_99_perc_lower":
-        trace = _scale_and_add_noise_99_perc_lower(trace, data_conf)
-        logger.info(f"Scaled traces and added noise reduced by 99% in {np.round(time.time()-t0,2)} secs")
-    
-    # scale and add 60% (40% lower) of fitted noise
-    elif scale_and_add_noise == "noise_40_perc_lower":
-        trace = _scale_and_add_noise_40_perc_lower(trace, data_conf)
-        logger.info(f"Scaled traces and added noise reduced by 40% in {np.round(time.time()-t0,2)} secs")
-
-    # scale and add 40% (60% lower) of fitted noise
-    elif scale_and_add_noise == "noise_60_perc_lower":
-        trace = _scale_and_add_noise_60_perc_lower(trace, data_conf)
-        logger.info(f"Scaled traces and added noise reduced by 60% in {np.round(time.time()-t0,2)} secs")
-               
-    # scale only
-    elif isinstance(scale_and_add_noise, (int, float)):
-        trace *= scale_and_add_noise
-        logger.info(f"Only scaled traces with {scale_and_add_noise} in {np.round(time.time()-t0,2)} secs")        
+        trace = _scale_adj_by_and_add_noise_nwb(trace, data_conf, scale_and_add_noise)
+        logger.info(f"Scaled traces with adjusted gain and added noise in {np.round(time.time()-t0,2)} secs")                
     else:
         NotImplementedError
 
     # cast trace as a SpikeInterface Recording object
     return se.NumpyRecording(
         traces_list=[trace],
-        sampling_frequency=simulation["lfp_sampling_freq"],
+        sampling_frequency=SFREQ,
     )
 
 

@@ -40,8 +40,8 @@ spack env activate python3_9 -p
 source /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/envs/spikinterf0_100_5/bin/activate
 
 # add custom package to python path
-cd /gpfs/bbp.cscs.ch/project/proj85/home/laquitai/preprint_2023/   
+cd /gpfs/bbp.cscs.ch/project/proj85/home/laquitai/spikebias/   
 export PYTHONPATH=$(pwd)
 
 # run pipeline
-srun -n 1 python3.9 -c "from src.pipes.prepro.dense_spont.process_nwb import run; run(experiment='dense_spont', run='probe_2', noise_tuning=4.3)"
+srun -n 1 python3.9 -c "from src.pipes.prepro.dense_spont.process_nwb import run; run(experiment='dense_spont_from_nwb', run='probe_2')"
