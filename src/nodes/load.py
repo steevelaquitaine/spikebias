@@ -45,14 +45,10 @@ def load_prep_recording(data_conf: dict):
 
 def load_campaign_params(data_conf: dict):
     """Load the configuration of one simulation of the campaign produced
-    by one BlueConfig file
+    by one BlueConfig file    
 
-    TODO:
-    - simplify:
-        - ideally reduce all to "blue_config = bp.Simulation("BlueConfig").config" ...
-        - ... and calculate sampling frequencies from config parameters
-    - move to src.nodes
-
+    TODO: DELETE!
+    
     Returns:
         dict: the campaign parameters
     """
@@ -82,7 +78,7 @@ def load_campaign_params(data_conf: dict):
     SPIKE_SAMPLING_FREQ = (
         1 / float(simulation.config["Run_Default"]["Dt"])
     ) * 1000
-
+    
     return {
         "blue_config": simulation.config,
         "paths": {

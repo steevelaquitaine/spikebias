@@ -1,3 +1,6 @@
+sampling_freq: 20000
+spike:
+  Dt: 0.025
 run:
   probe: neuropixels_384_hex_O1
   recording: 'raw'

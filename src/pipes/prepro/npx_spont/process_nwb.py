@@ -31,8 +31,6 @@ import logging.config
 import yaml
 import time 
 import numpy as np
-import shutil 
-import spikeinterface.extractors as se 
 
 # move to project path
 with open("./proj_cfg.yml", "r", encoding="utf-8") as proj_cfg:
@@ -42,7 +40,6 @@ os.chdir(PROJ_PATH)
 # custom package
 from src.nodes.utils import get_config
 from src.nodes.prepro import preprocess
-from src.nodes.truth.silico import ground_truth
 
 
 # SETUP PARAMETERS
@@ -67,23 +64,8 @@ logger = logging.getLogger("root")
 # SETUP PARALLEL PROCESSING
 # required, else fit and cast as extractor crashes due to lack of 
 # memory
-job_dict = {"n_jobs": 1, "chunk_memory": None, "progress_bar": True} # butterworth
+job_dict = {"n_jobs": 1, "chunk_memory": None, "progress_bar": True}
  
-
-def extract_ground_truth(data_conf):
-
-    # get ground truth sorting extractor
-    t0 = time.time()
-    logger.info("Starting 'extract_ground_truth'")
-
-    # write
-    NWB_PATH = data_conf["nwb"]
-    SortingTrue = se.NwbSortingExtractor(NWB_PATH)
-    
-    # save
-    ground_truth.write(SortingTrue, data_conf)
-    logger.info(f"Done in {np.round(time.time()-t0,2)} secs")
-
 
 def run(filtering: str="wavelet"):
     """
@@ -104,21 +86,21 @@ def run(filtering: str="wavelet"):
         preprocess.wire_probe(data_conf=data_conf,
                               param_conf=param_conf,
                               Recording=Recording,
-                              blueconfig=data_conf["dataeng"]["blueconfig"], # None
+                              blueconfig=None,
                               save_metadata=SAVE_METADATA,
                               job_dict=job_dict, 
                               n_sites=384,
-                              load_atlas_metadata=False, # False
-                              load_filtered_cells_metadata=False) # False
+                              load_atlas_metadata=True,
+                              load_filtered_cells_metadata=True)
     
     if PREPROCESS:
-        preprocess.preprocess_recording_npx_probe(data_conf=data_conf, 
-                                            param_conf=param_conf, 
-                                            job_dict=job_dict, 
-                                            filtering=filtering)
+        preprocess.preprocess_recording_npx_probe(data_conf=data_conf,
+                                                  param_conf=param_conf,
+                                                  job_dict=job_dict,
+                                                  filtering=filtering)
         
     if GROUND_TRUTH:
-        extract_ground_truth(data_conf)
+        preprocess.save_ground_truth_from_nwb(data_conf)
 
     # report time
     logger.info(f"Pipeline done in {np.round(time.time()-t0,2)} secs")

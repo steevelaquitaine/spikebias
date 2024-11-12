@@ -1,4 +1,6 @@
 sampling_freq: 20000
+spike:
+  Dt: 0.025
 run:
   probe: 'silico_horvath_probe_3'
   recording: 'raw'

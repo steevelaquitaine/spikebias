@@ -32,6 +32,8 @@ job_dict = {"n_jobs": 1, "chunk_memory": None, "progress_bar": True}
 def save_raw_rec_extractor(data_conf):
     """Write raw simulated recording as a spikeinterface
     RecordingExtractor
+    
+    TODO: DELETE!
 
     Args:
         data_conf (_type_): _description_
@@ -68,7 +70,6 @@ def save_raw_rec_extractor(data_conf):
 
     # log
     logger.info("Probe wiring done in  %s secs", round(time.time() - t0, 1))    
-    
     
     
 def fit_and_cast_as_extractor(data_conf, offset, scale_and_add_noise):

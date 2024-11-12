@@ -30,9 +30,10 @@ import spikeinterface.preprocessing as spre
 import pandas as pd
 
 # custom package
+from src.nodes.utils import get_config
 from src.nodes.dataeng.silico import recording, probe_wiring
 from src.nodes.prepro.filtering import wavelet_filter
-from src.nodes.utils import get_config
+from src.nodes.truth.silico import ground_truth
 from src.nodes.validation.layer import getAtlasInfo, loadAtlasInfo
 
 
@@ -248,7 +249,7 @@ def wire_probe(
     """    
     # track time
     t0 = time()
-    logger.info("Starting ...")
+    logger.info("Starting probe wiring ...")
     
     # get write path
     WRITE_PATH = data_conf["probe_wiring"]["full"]["output"]
@@ -1371,6 +1372,50 @@ def preprocess_recording_npx_probe(data_conf, param_conf, job_dict: dict, filter
     print(Preprocessed.is_filtered())
     logger.info(f"Done in {np.round(time()-t0,2)} secs")
     
+# Ground truth spikes ---------------------
+    
+def save_ground_truth(data_conf: dict, param_conf: dict):
+    """Save Ground truth SortingExtractor
+    with no metadata
+    """
+    
+    # takes about 3 hours
+    t0 = time()
+    logger.info("Starting Ground truth spike timestamps extraction'")
+
+    # set paths
+    WRITE_PATH = data_conf["ground_truth"]["full"]["output"]
+
+    # cast ground truth spikes as a SpikeInterface 
+    # Sorting Extractor object (1.5h for 534 units)
+    SortingTrue = ground_truth.run(data_conf, param_conf)
+
+    # write
+    shutil.rmtree(WRITE_PATH, ignore_errors=True)
+    SortingTrue["ground_truth_sorting_object"].save(folder=WRITE_PATH, n_jobs=-1, total_memory="2G")
+    logger.info("Done writting Ground truth SortingExtractor in %s", round(time()-t0, 1))
+    
+    
+def save_ground_truth_from_nwb(data_conf):
+
+    # get ground truth sorting extractor
+    t0 = time()
+    logger.info("Starting 'extract_ground_truth'")
+
+    # read path
+    NWB_PATH = data_conf["nwb"]
+    
+    # get write paths
+    WRITE_PATH = data_conf["ground_truth"]["output"]
+    
+    # get SortingExtractor
+    SortingTrue = se.NwbSortingExtractor(NWB_PATH)
+    
+    # save
+    shutil.rmtree(WRITE_PATH, ignore_errors=True)
+    SortingTrue.save(folder=WRITE_PATH, n_jobs=-1, total_memory="2G")
+    logger.info("written Ground truth SortingExtractor in %s", round(time() - t0, 1))    
+
 # io ---------------------------------------
     
 def write(preprocessed, data_conf:dict, job_dict:dict):

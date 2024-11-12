@@ -17,8 +17,6 @@ import logging.config
 import yaml
 import time 
 import numpy as np
-import shutil
-import spikeinterface.extractors as se
 
 # move to project path
 with open("./proj_cfg.yml", "r", encoding="utf-8") as proj_cfg:
@@ -28,7 +26,6 @@ os.chdir(PROJ_PATH)
 # custom package
 from src.nodes.utils import get_config
 from src.nodes.prepro import preprocess
-from src.nodes.truth.silico import ground_truth
 
 # SETUP PIPELINE
 FIT_CAST = True
@@ -48,23 +45,6 @@ logger = logging.getLogger("root")
 
 # SETUP PARALLEL PROCESSING
 job_dict = {"n_jobs": 1, "progress_bar": True}
-
-
-def extract_ground_truth(data_conf):
-
-    # takes about 3 hours
-    t0 = time.time()
-    logger.info("Starting 'extract_ground_truth'")
-
-    # write path
-    NWB_PATH = data_conf["nwb"]
-    
-    # load ground truth
-    SortingTrue = se.NwbSortingExtractor(NWB_PATH)
-
-    # save
-    ground_truth.write(SortingTrue, data_conf)
-    logger.info(f"Done in {np.round(time.time()-t0,2)} secs")
 
 
 def run(experiment: str, run: str):
@@ -89,21 +69,22 @@ def run(experiment: str, run: str):
     
     if WIRE:
         preprocess.wire_probe(data_conf,
-                   param_conf,
-                   Recording,
-                   blueconfig=None, # data_conf["dataeng"]["blueconfig"], # None
-                   save_metadata=SAVE_METADATA,
-                   job_dict=job_dict,
-                   n_sites=128,
-                   load_atlas_metadata=True, # False
-                   load_filtered_cells_metadata=True) # False
+                              param_conf,
+                              Recording,
+                              blueconfig=None,
+                              save_metadata=SAVE_METADATA,
+                              job_dict=job_dict,
+                              n_sites=128,
+                              load_atlas_metadata=True,
+                              load_filtered_cells_metadata=True)
     
     if PREPROCESS:
         preprocess.preprocess_recording_dense_probe(data_conf=data_conf,
-                                        param_conf=param_conf,
-                                        job_dict=job_dict)
+                                                    param_conf=param_conf,
+                                                    job_dict=job_dict)
     
     if GROUND_TRUTH:
-        extract_ground_truth(data_conf)
+        preprocess.save_ground_truth_from_nwb(data_conf)
+
         
     logger.info(f"Done in {np.round(time.time()-t0,2)} secs")

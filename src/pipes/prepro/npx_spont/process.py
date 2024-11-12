@@ -24,6 +24,7 @@ import logging.config
 import yaml
 import time 
 import numpy as np
+import shutil
 
 # move to project path
 with open("./proj_cfg.yml", "r", encoding="utf-8") as proj_cfg:
@@ -32,10 +33,8 @@ os.chdir(PROJ_PATH)
 
 # custom package
 from src.nodes.utils import get_config
-from src.nodes.load import load_campaign_params
 from src.nodes.prepro import preprocess
 from src.nodes.truth.silico import ground_truth
-from src.nodes.prepro import preprocess
 
 # pipeline
 from src.pipes.prepro.npx_spont.supp import concat
@@ -53,14 +52,14 @@ logger = logging.getLogger("root")
 # SETUP PIPELINE
 STACK = False           # done once then set to False
 SAVE_REC_EXTRACTOR = False
-TUNE_FIT = True         # tune fitted noise
-FIT_CAST = True         # done once then set to False (2h18 min)
-OFFSET = True
+TUNE_FIT = False         # tune fitted noise
+FIT_CAST = False         # done once then set to False (2h18 min)
+OFFSET = False
 SCALE_AND_ADD_NOISE = {"gain_adjust": 0.90}
-WIRE = True             # done once then set to False (25 mins)
-SAVE_METADATA = True    # True to add new metadata to wired probe
+WIRE = False             # done once then set to False (25 mins)
+SAVE_METADATA = False    # True to add new metadata to wired probe
 PREPROCESS = False      # True to update after adding new metadata (butterworth: 1h40, wavelet: 3h)
-GROUND_TRUTH = False    # done once then set to False
+GROUND_TRUTH = True    # done once then set to False
 
 # SETUP PARALLEL PROCESSING
 # required, else fit and cast as extractor crashes due to lack of 
@@ -110,23 +109,6 @@ def tune_fit(data_conf):
     np.save(TUNED_PATH + "L6.npy", l6_out)
 
 
-def extract_ground_truth():
-
-    # takes about 3 hours
-    t0 = time.time()
-    logger.info("Starting 'extract_ground_truth'")
-
-    # get simulation parameters
-    simulation = load_campaign_params(data_conf)
-
-    # cast ground truth spikes as a SpikeInterface Sorting Extractor object (1.5h for 534 units)
-    SortingTrue = ground_truth.run(simulation, data_conf, param_conf)
-
-    # write
-    ground_truth.write(SortingTrue["ground_truth_sorting_object"], data_conf)   
-    logger.info(f"Done in {np.round(time.time()-t0,2)} secs")
-
-
 def run(filtering: str="wavelet"):
     """
     args:
@@ -168,7 +150,7 @@ def run(filtering: str="wavelet"):
                                                   filtering=filtering)
     
     if GROUND_TRUTH:
-        extract_ground_truth()
+        preprocess.save_ground_truth(data_conf, param_conf)
 
     # report time
     logger.info(f"Pipeline done in {np.round(time.time()-t0,2)} secs")

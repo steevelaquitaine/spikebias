@@ -22,14 +22,13 @@ duration:
 """
 
 import os
-import shutil
 import logging
 import logging.config
 import yaml
 import time 
 import numpy as np
 import warnings
-warnings.filterwarnings("ignore", category=DeprecationWarning) 
+warnings.filterwarnings("ignore", category=DeprecationWarning)
 
 # move to project path
 with open("./proj_cfg.yml", "r", encoding="utf-8") as proj_cfg:
@@ -39,7 +38,6 @@ os.chdir(PROJ_PATH)
 from src.nodes.utils import get_config
 from src.nodes.load import load_campaign_params
 from src.nodes.prepro import preprocess
-from src.nodes.truth.silico import ground_truth
 from src.nodes.dataeng.lfp_only import stacking
 
 
@@ -58,13 +56,13 @@ job_dict = {"n_jobs": 1, "chunk_memory": None, "progress_bar": True}
 # SETUP PIPELINE
 STACK = False           # done once then set to False (0h:30)
 SAVE_REC_EXTRACTOR = False
-TUNE_FIT = True        # tune fitted noise
-FIT_CAST = True        # done once then set to False (2h18 min)
-OFFSET = True
+TUNE_FIT = False        # tune fitted noise
+FIT_CAST = False        # done once then set to False (2h18 min)
+OFFSET = False
 SCALE_AND_ADD_NOISE = {"gain_adjust": 0.90}
-WIRE = True              # done once then set to False
-SAVE_METADATA = True     # True to add new metadata to wired probe (3h:40)
-PREPROCESS = True        # True to update after adding new metadata (1h:50)
+WIRE = False              # done once then set to False
+SAVE_METADATA = False     # True to add new metadata to wired probe (3h:40)
+PREPROCESS = False        # True to update after adding new metadata (1h:50)
 GROUND_TRUTH = True      # done once then set to False (13 min)
 
 
@@ -123,28 +121,6 @@ def tune_fit(data_conf):
     np.save(TUNED_PATH + "L6.npy", l6_out)
 
 
-def extract_ground_truth():
-
-    # set paths
-    WRITE_PATH = data_conf["ground_truth"]["full"]["output"]
-    
-    # takes about 3 hours
-    t0 = time.time()
-    logger.info("Starting 'extract_ground_truth'")
-
-    # get simulation parameters
-    simulation = load_campaign_params(data_conf)
-
-    # cast ground truth spikes as a SpikeInterface Sorting Extractor object (1.5h for 534 units)
-    SortingTrue = ground_truth.run(simulation, data_conf, param_conf)
-
-    # write
-    t0 = time.time()
-    shutil.rmtree(WRITE_PATH, ignore_errors=True)
-    SortingTrue["ground_truth_sorting_object"].save(folder=WRITE_PATH, n_jobs=-1, total_memory="2G")
-    logger.info("Done writting Ground truth SortingExtractor in %s", round(time.time()-t0, 1))
-
-
 def run(filtering: str="wavelet"):
     
     # track time
@@ -163,26 +139,26 @@ def run(filtering: str="wavelet"):
     if FIT_CAST:
         Recording = preprocess.fit_and_cast_as_extractor(data_conf=data_conf,
                                                          offset=OFFSET,
-                                                         scale_and_add_noise=SCALE_AND_ADD_NOISE)        
+                                                         scale_and_add_noise=SCALE_AND_ADD_NOISE)
     if WIRE:
         preprocess.wire_probe(data_conf=data_conf,
                               param_conf=param_conf,
                               Recording=Recording,
-                              blueconfig=data_conf["dataeng"]["blueconfig"], # None
+                              blueconfig=None,
                               save_metadata=SAVE_METADATA,
-                              job_dict=job_dict, 
+                              job_dict=job_dict,
                               n_sites=384,
-                              load_atlas_metadata=False, # False
-                              load_filtered_cells_metadata=False) # False     
+                              load_atlas_metadata=True,
+                              load_filtered_cells_metadata=True)
            
     if PREPROCESS:
-        preprocess.preprocess_recording_npx_probe(data_conf=data_conf, 
-                                                  param_conf=param_conf, 
-                                                  job_dict=job_dict, 
+        preprocess.preprocess_recording_npx_probe(data_conf=data_conf,
+                                                  param_conf=param_conf,
+                                                  job_dict=job_dict,
                                                   filtering=filtering)
         
     if GROUND_TRUTH:
-        extract_ground_truth()
+        preprocess.save_ground_truth(data_conf, param_conf)
 
     # report time
     logger.info(f"Pipeline done in {np.round(time.time()-t0,2)} secs")

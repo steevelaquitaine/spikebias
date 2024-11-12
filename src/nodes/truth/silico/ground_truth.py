@@ -24,7 +24,6 @@ Refs:
 import logging
 import logging.config
 import shutil
-import sys
 from time import time
 
 import numpy as np
@@ -62,10 +61,13 @@ def create_sorting_object(sampling_freq, times, unit_ids):
     )
 
 
-def load_spike(simulation: dict, dataset_conf: dict, param_conf: dict):
+def load_spike(dataset_conf: dict, param_conf: dict):
     """Load raw ground truth spikes and write into a 
     SpikeInterface SortingExtractor object
 
+    note: this function is only relevant to the raw Blue Brain simulations not 
+    to the NWB DANDI archive dataset
+    
     Args:
         simulation (dict): _description_
         dataset_conf (dict): _description_
@@ -88,9 +90,8 @@ def load_spike(simulation: dict, dataset_conf: dict, param_conf: dict):
     trace = pd.read_pickle(TRACE_FILE_PATH)
 
     # carefully deal with numerical precision issues
-    simulation = load_campaign_params(dataset_conf)
-    SPIKE_SAMP_FREQ = get_spike_sampling_freq(simulation)
-    TRACE_SAMP_FREQ = get_lfp_sampling_freq(simulation)
+    SPIKE_SAMP_FREQ = get_spike_sampling_freq(param_conf)
+    TRACE_SAMP_FREQ = get_lfp_sampling_freq(param_conf)
     SPIKE_SFREQ_MS = SPIKE_SAMP_FREQ / 1000
     TRACE_SFREQ_MS = TRACE_SAMP_FREQ / 1000
 
@@ -121,7 +122,7 @@ def load_spike(simulation: dict, dataset_conf: dict, param_conf: dict):
     # find spike location on lfp (different sampling frequency)
     unit_id = spike.values
     return create_sorting_object(
-        simulation["lfp_sampling_freq"],
+        TRACE_SAMP_FREQ,
         times=spike_loc,
         unit_ids=unit_id,
     )
@@ -196,19 +197,22 @@ def load_spike_2X(simulation: dict, dataset_conf: dict, param_conf: dict):
     )
 
 
-def get_spike_sampling_freq(simulation:dict):
+def get_spike_sampling_freq(param_conf: dict):
     return (
-        1 / float(simulation["blue_config"]["Run_Default"]["Dt"])
+        1 / param_conf["spike"]["Dt"]
     ) * 1000
 
 
-def get_lfp_sampling_freq(simulation:dict):
-    return simulation["lfp_sampling_freq"]
+def get_lfp_sampling_freq(param_conf: dict):
+    return param_conf["sampling_freq"]
 
 
-def load_spike_same_sampling_freq_as_lfp(simulation: dict, dataset_conf: dict, param_conf: dict):
+def load_spike_same_sampling_freq_as_lfp(dataset_conf: dict, param_conf: dict):
     """Load raw ground truth spikes and write into a SpikeInterface Sorting extractor object
     when spike and lfp were acquired with the same sampling frequency
+    
+    note: this function is only relevant to the raw Blue Brain simulations not to the NWB DANDI archive
+    dataset
 
     Args:
         simulation (dict): _description_
@@ -230,7 +234,8 @@ def load_spike_same_sampling_freq_as_lfp(simulation: dict, dataset_conf: dict, p
     # get spike sampling frequency (fastest way)
     # and accurate when lfp and spike were acquired with the same 
     # sampling frequency
-    SPIKE_SAMPLING_FREQ = get_spike_sampling_freq(simulation)
+    #SPIKE_SAMPLING_FREQ = get_spike_sampling_freq(simulation)
+    SPIKE_SAMPLING_FREQ = get_spike_sampling_freq(param_conf)
     
     # get spike locations (as timepoints)
     spike_loc = np.int_(
@@ -247,7 +252,7 @@ def load_spike_same_sampling_freq_as_lfp(simulation: dict, dataset_conf: dict, p
 
 
 def load_spike_same_sampling_freq_as_lfp_2X(simulation: dict, dataset_conf: dict, param_conf: dict):
-    """Load raw ground truth spikes for 2X-accelerated traces and write into a 
+    """Load raw ground truth spikes for 2X-accelerated traces and write into a
     SpikeInterface Sorting extractor object when spike and lfp were acquired with 
     the same sampling frequency
 
@@ -321,7 +326,7 @@ def load(data_conf: dict):
     return GtSortingExtractor
 
 
-def run(simulation: dict, dataset_conf: dict, param_conf: dict):
+def run(dataset_conf: dict, param_conf: dict):
     """record ground truth spike timestamps into a spikeinterface 
     SortingExtractor object
     
@@ -333,11 +338,11 @@ def run(simulation: dict, dataset_conf: dict, param_conf: dict):
         dict: _description_
     """
     t0 = time()
-    if get_spike_sampling_freq(simulation) == get_lfp_sampling_freq(simulation):
-        sorting_object = load_spike_same_sampling_freq_as_lfp(simulation, dataset_conf, param_conf)        
+    if get_spike_sampling_freq(param_conf) == get_lfp_sampling_freq(param_conf):
+        sorting_object = load_spike_same_sampling_freq_as_lfp(dataset_conf, param_conf)        
     else:
-        sorting_object = load_spike(simulation, dataset_conf, param_conf)
-        logger.info("converted spike sampling freq in %s", round(time()-t0,1))
+        sorting_object = load_spike(dataset_conf, param_conf)
+        logger.info("converted spike sampling freq in %s", round(time()-t0, 1))
     return {"ground_truth_sorting_object": sorting_object}
 
 

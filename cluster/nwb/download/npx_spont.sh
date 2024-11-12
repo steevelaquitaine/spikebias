@@ -15,9 +15,9 @@
 ## Setup job config
 
 #!/bin/bash -l
-#SBATCH -J nwb-download-npx_spont                       # job name
+#SBATCH -J nwb-download-npx_spont                        # job name
 #SBATCH -N 1                                             # Use 1 node
-#SBATCH -t 10:00:00                                      # Set 1 hour time limit
+#SBATCH -t 24:00:00                                      # Set 1 hour time limit
 #SBATCH -p prod                                          # Submit to the production 'partition'
 #SBATCH -C "cpu"                                         # Constraint the job to run on nodes without SSDs.
 #SBATCH --exclusive                                      # to allocate whole node

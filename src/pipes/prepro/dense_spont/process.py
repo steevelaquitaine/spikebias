@@ -8,6 +8,11 @@ usage:
     sbatch cluster/prepro/dense_spont/process_probe2.sh # (13m)
     sbatch cluster/prepro/dense_spont/process_probe3.sh # (19m)
 
+    or 
+    
+    source /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/envs/spikinterf0_100_5/bin/activate
+    python3.9 -c "from src.pipes.prepro.dense_spont.process import run; run(experiment='dense_spont', run='probe_1', noise_tuning=1)"
+    
 duration: takes 1h on a compute node
 """
 
@@ -17,32 +22,25 @@ import logging.config
 import yaml
 import time 
 import numpy as np
-import pandas as pd
-import spikeinterface.extractors as se
-import shutil
 
 # move to project path
 with open("./proj_cfg.yml", "r", encoding="utf-8") as proj_cfg:
     PROJ_PATH = yaml.load(proj_cfg, Loader=yaml.FullLoader)["proj_path"]
 os.chdir(PROJ_PATH)
 
+# custom package
 from src.nodes.utils import get_config
-from src.nodes.load import load_campaign_params
-from src.nodes.prepro import preprocess
-from src.nodes.truth.silico import ground_truth
 #from src.nodes.dataeng.silico import campaign_stacking
-from src.nodes.dataeng.dataeng import save_raw_rec_extractor
 from src.nodes.prepro import preprocess
 
-# pipelines (run with script)
+# pipelines
 from src.pipes.prepro.dense_spont import concat
-
 
 
 # SETUP PIPELINE
 #STACK_SIM = False
-STACK = True
-SAVE_REC_EXTRACTOR = True
+STACK = False
+SAVE_REC_EXTRACTOR = False
 FIT_CAST = False
 OFFSET = False
 TUNE_FIT = False        # tune fitted noise
@@ -52,7 +50,7 @@ SCALE_AND_ADD_NOISE = {"gain_adjust": 0.90}
 WIRE = False
 SAVE_METADATA = False
 PREPROCESS = False
-GROUND_TRUTH = False
+GROUND_TRUTH = True
 
 
 # SETUP LOGGING
@@ -123,23 +121,6 @@ def tune_fit(data_conf, noise_tuning):
         np.save(TUNED_PATH + "L6.npy", l6_out)
     
 
-def extract_ground_truth(data_conf, param_conf):
-
-    # takes about 3 hours
-    t0 = time.time()
-    logger.info("Starting 'extract_ground_truth'")
-
-    # get simulation parameters
-    simulation = load_campaign_params(data_conf)
-
-    # cast ground truth spikes as a SpikeInterface Sorting Extractor object (1.5h for 534 units)
-    SortingTrue = ground_truth.run(simulation, data_conf, param_conf)
-
-    # write
-    ground_truth.write(SortingTrue["ground_truth_sorting_object"], data_conf)   
-    logger.info(f"Done in {np.round(time.time()-t0,2)} secs")
-
-
 def run(experiment: str, run: str, noise_tuning):
     """_summary_
 
@@ -162,10 +143,10 @@ def run(experiment: str, run: str, noise_tuning):
         stack(experiment, run)
         
     if SAVE_REC_EXTRACTOR:
-        save_raw_rec_extractor(data_conf)
+        preprocess.save_raw_rec_extractor(data_conf, param_conf, job_dict)
         
     if TUNE_FIT:
-        tune_fit(data_conf, noise_tuning)  
+        tune_fit(data_conf, noise_tuning)
         
     if FIT_CAST:
         Recording = preprocess.fit_and_cast_as_extractor_dense_probe(data_conf=data_conf,
@@ -176,7 +157,7 @@ def run(experiment: str, run: str, noise_tuning):
         preprocess.wire_probe(data_conf=data_conf,
                               param_conf=param_conf,
                               Recording=Recording,
-                              blueconfig=data_conf["dataeng"]["blueconfig"],
+                              blueconfig=None,
                               save_metadata=SAVE_METADATA,
                               job_dict=job_dict,
                               n_sites=128,
@@ -184,10 +165,10 @@ def run(experiment: str, run: str, noise_tuning):
         
     if PREPROCESS:
         preprocess.preprocess_recording_dense_probe(data_conf=data_conf,
-                                        param_conf=param_conf,
-                                        job_dict=job_dict)
+                                                    param_conf=param_conf,
+                                                    job_dict=job_dict)
         
     if GROUND_TRUTH:
-        extract_ground_truth(data_conf, param_conf)
+        preprocess.save_ground_truth(data_conf, param_conf)
         
     logger.info(f"Done in {np.round(time.time()-t0,2)} secs")
