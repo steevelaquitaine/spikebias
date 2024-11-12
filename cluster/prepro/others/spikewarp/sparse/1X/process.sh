@@ -36,7 +36,7 @@
 # load matlab after clean up, compile cuda code and setup python3.9 interpreter via spack env
 module purge 
 module load spack
-cd /gpfs/bbp.cscs.ch/project/proj85/home/laquitai/preprint_2023/   
+cd /gpfs/bbp.cscs.ch/project/proj85/home/laquitai/spikebias/   
 . /gpfs/bbp.cscs.ch/ssd/apps/bs
 d/2023-02-23/spack/share/spack/setup-env.sh
 spack env activate python3_9 -p

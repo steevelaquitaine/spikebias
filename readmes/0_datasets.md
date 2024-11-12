@@ -1,4 +1,3 @@
-
 # Datasets
 
 author: steeve.laquitaine@epfl.ch; laquitainesteeve@gmail.com
@@ -78,7 +77,7 @@ TODO:
     - path depth 2: /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/0_silico/horvath/concatenated_campaigns/probe2_hex0_rou04_pfr03_20Khz/raw/spiketrains.pkl
     - path depth 3: /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/0_silico/horvath/concatenated_campaigns/probe3_hex0_rou04_pfr03_20Khz/raw/spiketrains.pkl
 
-## Auxiliary:
+## Auxiliary
 
 - Weight files:
 
@@ -99,4 +98,8 @@ TODO:
 
 - Metadata files:
   - Atlas metadata: codebase repo at assets/metadata/ or load the open source Atlas: https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/QREN2T
+    - layers
+    - regions
   - Filtered_cells metadata (cells within 50 microns): assets/metadata/
+  - Spike sampling frequency metadata: Dt [TODO]
+  - Extracellular trace sampling frequency metadata: Dt [TODO]

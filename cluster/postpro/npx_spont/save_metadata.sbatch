@@ -32,12 +32,12 @@
 # setup python 3.9 environment
 module purge 
 module load spack
-cd /gpfs/bbp.cscs.ch/project/proj85/home/laquitai/preprint_2023/   
+cd /gpfs/bbp.cscs.ch/project/proj85/home/laquitai/spikebias/   
 . /gpfs/bbp.cscs.ch/ssd/apps/bsd/2023-02-23/spack/share/spack/setup-env.sh
 spack env activate python3_9 -p
 source /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/envs/kilosort4/bin/activate
 
 # add custom package to python path and run pipe
-cd /gpfs/bbp.cscs.ch/project/proj85/home/laquitai/preprint_2023/   
+cd /gpfs/bbp.cscs.ch/project/proj85/home/laquitai/spikebias/   
 export PYTHONPATH=$(pwd)
-srun -n 1 python3.9 /gpfs/bbp.cscs.ch/project/proj85/home/laquitai/preprint_2023/src/pipes/postpro/npx_spont/save_metadata.py silico_neuropixels concatenated
+srun -n 1 python3.9 /gpfs/bbp.cscs.ch/project/proj85/home/laquitai/spikebias/src/pipes/postpro/npx_spont/save_metadata.py silico_neuropixels concatenated

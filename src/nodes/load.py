@@ -28,7 +28,7 @@ import numpy as np
 import pandas as pd
 import yaml
 
-from src.nodes.utils import create_if_not_exists, get_config
+from src.nodes.utils import get_config
 
 # setup logging
 with open("conf/logging.yml", "r", encoding="utf-8") as logging_conf:
@@ -83,20 +83,6 @@ def load_campaign_params(data_conf: dict):
         1 / float(simulation.config["Run_Default"]["Dt"])
     ) * 1000
 
-    # this should be the same for all pieces
-    # locations = load_locations_from_weights(weightspath, N_SITES)
-
-    # recursively create writing path, if not exists
-    # create_if_not_exists(CHANNEL_LOCATION_PATH)
-
-    # write channel locations
-    # np.save(CHANNEL_LOCATION_FILE, locations, allow_pickle=True)
-
-    # log
-    # logger.info(
-    #     "Channel locations have been written in file: %s",
-    #     CHANNEL_LOCATION_FILE,
-    # )
     return {
         "blue_config": simulation.config,
         "paths": {

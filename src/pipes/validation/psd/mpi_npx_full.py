@@ -34,7 +34,7 @@ import logging
 import logging.config
 
 # move to PROJECT PATH
-PROJ_PATH = "/gpfs/bbp.cscs.ch/project/proj85/home/laquitai/preprint_2023/"
+PROJ_PATH = "/gpfs/bbp.cscs.ch/project/proj85/home/laquitai/spikebias/"
 os.chdir(PROJ_PATH)
 
 from src.nodes.utils import get_config, demean

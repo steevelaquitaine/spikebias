@@ -50,31 +50,6 @@ logger = logging.getLogger("root")
 job_dict = {"n_jobs": 1, "progress_bar": True}
 
 
-def preprocess_recording(data_conf, param_conf, job_dict):
-    """preprocess recording
-
-    takes 15 min (w/ multiprocessing, else 32 mins)
-    """
-
-    # track time
-    t0 = time.time()
-    logger.info("Starting 'preprocess_recording'")
-    
-    # write path
-    WRITE_PATH = data_conf["preprocessing"]["full"]["output"]["trace_file_path"]
-    
-    # preprocess, write
-    Preprocessed = preprocess.run(data_conf, param_conf)
-    
-    # save
-    shutil.rmtree(WRITE_PATH, ignore_errors=True)
-    Preprocessed.save(folder=WRITE_PATH, format="binary", **job_dict)
-    
-    # check is preprocessed
-    print(Preprocessed.is_filtered())
-    logger.info(f"Done in {np.round(time.time()-t0,2)} secs")
-
-
 def extract_ground_truth(data_conf):
 
     # takes about 3 hours
@@ -124,7 +99,9 @@ def run(experiment: str, run: str):
                    load_filtered_cells_metadata=True) # False
     
     if PREPROCESS:
-        preprocess_recording(data_conf, param_conf, job_dict)
+        preprocess.preprocess_recording_dense_probe(data_conf=data_conf,
+                                        param_conf=param_conf,
+                                        job_dict=job_dict)
     
     if GROUND_TRUTH:
         extract_ground_truth(data_conf)

@@ -51,7 +51,7 @@ module load matlab2022toolboxes
 cd /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/sorters/KiloSort/CUDA
 matlab -batch mexGPUall
 module load spack
-cd /gpfs/bbp.cscs.ch/project/proj85/home/laquitai/preprint_2023/   
+cd /gpfs/bbp.cscs.ch/project/proj85/home/laquitai/spikebias/   
 . /gpfs/bbp.cscs.ch/ssd/apps/bsd/2023-02-23/spack/share/spack/setup-env.sh
 spack env activate python3_9 -p
 source /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/envs/spikinterf0_100_5/bin/activate

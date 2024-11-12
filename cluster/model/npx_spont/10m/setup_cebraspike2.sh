@@ -39,4 +39,4 @@ spack env activate python3_9 -p
 # 2. Setup cebraspike virtual environment:
 python3.9 -m venv /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/envs/cebraspike2 # create env
 source /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/envs/cebraspike2/bin/activate
-/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/envs/cebraspike/bin/python3.9 -m pip install -r /gpfs/bbp.cscs.ch/project/proj85/home/laquitai/preprint_2023/envs/cebraspike.txt
+/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/envs/cebraspike/bin/python3.9 -m pip install -r /gpfs/bbp.cscs.ch/project/proj85/home/laquitai/spikebias/envs/cebraspike.txt

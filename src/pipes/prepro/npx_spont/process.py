@@ -8,7 +8,12 @@ SpikeInterface's Recording and Sorting Extractors
  usage:
 
     sbatch cluster/prepro/npx_spont/process.sh
-
+    
+    or 
+    
+    source /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/envs/spikinterf0_100_5/bin/activate
+    python3.9 -c "from src.pipes.prepro.npx_spont.process import run; run(filtering='butterworth')"
+    
 duration: 3h:54
 """
 
@@ -19,19 +24,20 @@ import logging.config
 import yaml
 import time 
 import numpy as np
-import shutil
 
 # move to project path
 with open("./proj_cfg.yml", "r", encoding="utf-8") as proj_cfg:
     PROJ_PATH = yaml.load(proj_cfg, Loader=yaml.FullLoader)["proj_path"]
 os.chdir(PROJ_PATH)
 
+# custom package
 from src.nodes.utils import get_config
 from src.nodes.load import load_campaign_params
 from src.nodes.prepro import preprocess
 from src.nodes.truth.silico import ground_truth
 from src.nodes.prepro import preprocess
 
+# pipeline
 from src.pipes.prepro.npx_spont.supp import concat
 
 # SETUP PARAMETERS
@@ -45,15 +51,15 @@ logger = logging.getLogger("root")
 
 
 # SETUP PIPELINE
-STACK = False            # done once then set to False
+STACK = False           # done once then set to False
 SAVE_REC_EXTRACTOR = False
-TUNE_FIT = True        # tune fitted noise
-FIT_CAST = True        # done once then set to False (2h18 min)
+TUNE_FIT = True         # tune fitted noise
+FIT_CAST = True         # done once then set to False (2h18 min)
 OFFSET = True
 SCALE_AND_ADD_NOISE = {"gain_adjust": 0.90}
 WIRE = True             # done once then set to False (25 mins)
 SAVE_METADATA = True    # True to add new metadata to wired probe
-PREPROCESS = False       # True to update after adding new metadata (butterworth: 1h40, wavelet: 3h)
+PREPROCESS = False      # True to update after adding new metadata (butterworth: 1h40, wavelet: 3h)
 GROUND_TRUTH = False    # done once then set to False
 
 # SETUP PARALLEL PROCESSING
@@ -102,34 +108,6 @@ def tune_fit(data_conf):
     np.save(TUNED_PATH + "L4.npy", l4_out)
     np.save(TUNED_PATH + "L5.npy", l5_out)
     np.save(TUNED_PATH + "L6.npy", l6_out)
-
-
-def preprocess_recording(job_dict: dict, filtering='butterworth'):
-    """preprocess recording and write
-
-    Args:   
-        job_dict
-        filtering: 'butterworth' or 'wavelet'
-
-    takes 15 min (vs. 32 min w/o multiprocessing)
-    """
-    # write path
-    WRITE_PATH = data_conf["preprocessing"]["full"]["output"]["trace_file_path"]
-
-    # takes 32 min
-    t0 = time.time()
-    logger.info("Starting 'preprocess_recording'")
-    
-    # preprocess
-    Preprocessed = preprocess.run_butterworth_filtering_noise_ftd_gain_ftd_adj10perc_less(data_conf,
-                                  param_conf)
-    # save
-    shutil.rmtree(WRITE_PATH, ignore_errors=True)
-    Preprocessed.save(folder=WRITE_PATH, format="binary", **job_dict)
-    
-    # check is preprocessed
-    print(Preprocessed.is_filtered())
-    logger.info(f"Done in {np.round(time.time()-t0,2)} secs")
 
 
 def extract_ground_truth():
@@ -184,7 +162,10 @@ def run(filtering: str="wavelet"):
                               load_filtered_cells_metadata=False)
     
     if PREPROCESS:
-        preprocess_recording(job_dict, filtering)
+        preprocess.preprocess_recording_npx_probe(data_conf=data_conf, 
+                                                  param_conf=param_conf, 
+                                                  job_dict=job_dict, 
+                                                  filtering=filtering)
     
     if GROUND_TRUTH:
         extract_ground_truth()

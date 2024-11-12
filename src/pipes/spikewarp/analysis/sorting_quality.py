@@ -21,7 +21,7 @@ from mpi4py import MPI
 import spikeinterface as si
 
 # set project path
-proj_path = "/gpfs/bbp.cscs.ch/project/proj85/home/laquitai/preprint_2023/"
+proj_path = "/gpfs/bbp.cscs.ch/project/proj85/home/laquitai/spikebias/"
 os.chdir(proj_path)
 
 from src.nodes.utils import get_config

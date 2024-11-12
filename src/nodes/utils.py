@@ -18,6 +18,7 @@ with open("conf/logging.yml", "r", encoding="utf-8") as logging_conf:
 logging.config.dictConfig(LOG_CONF)
 logger = logging.getLogger("root")
 
+
 def get_config(exp: str, simulation_date: str):
     """Choose an available experiment pipeline configuration
 

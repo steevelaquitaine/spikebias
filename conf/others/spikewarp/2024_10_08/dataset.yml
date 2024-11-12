@@ -9,11 +9,11 @@ campaign:
     source_weights: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/dataset/weights/coeffsneuropixels.h5' 
     # source_weights: /gpfs/bbp.cscs.ch/project/proj85/scratch/from68/newCoeffs/b3122c45-e2d9-4205-821c-88f28791dc69/0/neuropixels_full_O1/coeffsneuropixels.h5 # this is a copy
 dataeng:
-    blueconfig: '/gpfs/bbp.cscs.ch/project/proj83/scratch/home/isbister/post_physiology_2023/sim_data/campaigns/spikesorting_stimulus_tests/17_spikesorting_stimulus_test_neuropixels_8-10-24/17_spikesorting_stimulus_test_neuropixels_8-10-24__8slc_60f_72r_250t_200ms_0/a9bf068a-b940-4514-9e6c-6055283272cc/0/BlueConfig' # BlueConfig from which params are loaded. All are identical. 
+    blueconfig: '/gpfs/bbp.cscs.ch/project/proj83/home/isbister/simulations/spike_sorting/17_spikesorting_stimulus_test_neuropixels_8-10-24/17_spikesorting_stimulus_test_neuropixels_8-10-24__8slc_60f_72r_250t_200ms_0/a9bf068a-b940-4514-9e6c-6055283272cc/0/BlueConfig' # BlueConfig from which params are loaded. All are identical. 
     simulations: 
         ids: [0,1,2,3,4,5,6,7,8,9,10,11] # selected simulations to stack into a campaign
     campaign:
-        input: '/gpfs/bbp.cscs.ch/project/proj83/scratch/home/isbister/post_physiology_2023/sim_data/campaigns/spikesorting_stimulus_tests/17_spikesorting_stimulus_test_neuropixels_8-10-24/17_spikesorting_stimulus_test_neuropixels_8-10-24__8slc_60f_72r_250t_200ms_0/a9bf068a-b940-4514-9e6c-6055283272cc/' # the path where bbp_worklfow has written your N simulations (folders 0, 1, .., N)
+        input: '/gpfs/bbp.cscs.ch/project/proj83/home/isbister/simulations/spike_sorting/17_spikesorting_stimulus_test_neuropixels_8-10-24/17_spikesorting_stimulus_test_neuropixels_8-10-24__8slc_60f_72r_250t_200ms_0/a9bf068a-b940-4514-9e6c-6055283272cc/' # the path where bbp_worklfow has written your N simulations (folders 0, 1, .., N)
         output:
             root: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/dataeng/0_silico/17_spikesorting_stimulus_test_neuropixels_8-10-24__8slc_60f_72r_250t_200ms_0/a9bf068a-b940-4514-9e6c-6055283272cc/campaign/'
             spike_file_path: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/dataeng/0_silico/17_spikesorting_stimulus_test_neuropixels_8-10-24__8slc_60f_72r_250t_200ms_0/a9bf068a-b940-4514-9e6c-6055283272cc/campaign/raw/spiketrains.pkl'

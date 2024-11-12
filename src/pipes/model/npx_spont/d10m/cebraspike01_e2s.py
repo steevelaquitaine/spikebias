@@ -11,7 +11,7 @@ Usage:
 
     # run as a module
     source /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/envs/cebraspike3/bin/activate
-    cd /gpfs/bbp.cscs.ch/project/proj85/home/laquitai/preprint_2023/
+    cd /gpfs/bbp.cscs.ch/project/proj85/home/laquitai/spikebias/
     export PYTHONPATH=$(pwd)
     python3.9 -c "from src.pipes.model.npx_spont.d10m.cebraspike01 import run; run()"
     

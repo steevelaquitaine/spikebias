@@ -36,6 +36,6 @@ spack env activate python3_9 -p
 source /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/envs/npx_10m_384ch_unit_classes/bin/activate
 
 # add custom package to python path and run pipe
-cd /gpfs/bbp.cscs.ch/project/proj85/home/laquitai/preprint_2023/   
+cd /gpfs/bbp.cscs.ch/project/proj85/home/laquitai/spikebias/   
 export PYTHONPATH=$(pwd)
-srun -n 1 python3.9 /gpfs/bbp.cscs.ch/project/proj85/home/laquitai/preprint_2023/src/pipes/postpro/marques_stimulus/save_metadata.py silico_neuropixels stimulus
+srun -n 1 python3.9 /gpfs/bbp.cscs.ch/project/proj85/home/laquitai/spikebias/src/pipes/postpro/marques_stimulus/save_metadata.py silico_neuropixels stimulus

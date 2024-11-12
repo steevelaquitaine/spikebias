@@ -70,34 +70,6 @@ logger = logging.getLogger("root")
 job_dict = {"n_jobs": 1, "chunk_memory": None, "progress_bar": True} # butterworth
  
 
-def preprocess_recording(data_conf: dict, param_conf: dict, job_dict: dict):
-    """preprocess recording and write
-
-    Args:
-        job_dict
-        filtering: 'butterworth' or 'wavelet'
-
-    takes 15 min (vs. 32 min w/o multiprocessing)
-    """
-    # takes 32 min
-    t0 = time.time()
-    logger.info("Starting 'preprocess_recording'")
-
-    # write path
-    WRITE_PATH = data_conf["preprocessing"]["full"]["output"]["trace_file_path"]
-    
-    # preprocess
-    Preprocessed = preprocess.run_butterworth_filtering_noise_ftd_gain_ftd_adj10perc_less(data_conf,
-                                  param_conf)
-    # save
-    shutil.rmtree(WRITE_PATH, ignore_errors=True)
-    Preprocessed.save(folder=WRITE_PATH, format="binary", **job_dict)
-    
-    # check is preprocessed
-    print(Preprocessed.is_filtered())
-    logger.info(f"Done in {np.round(time.time()-t0,2)} secs")
-
-
 def extract_ground_truth(data_conf):
 
     # get ground truth sorting extractor
@@ -140,7 +112,10 @@ def run(filtering: str="wavelet"):
                               load_filtered_cells_metadata=False) # False
     
     if PREPROCESS:
-        preprocess_recording(data_conf, param_conf, job_dict)
+        preprocess.preprocess_recording_npx_probe(data_conf=data_conf, 
+                                            param_conf=param_conf, 
+                                            job_dict=job_dict, 
+                                            filtering=filtering)
         
     if GROUND_TRUTH:
         extract_ground_truth(data_conf)

@@ -123,25 +123,6 @@ def tune_fit(data_conf, noise_tuning):
         np.save(TUNED_PATH + "L6.npy", l6_out)
     
 
-def preprocess_recording(data_conf, param_conf):
-    """preprocess recording
-
-    takes 15 min (vs. 32 min w/o multiprocessing)
-    """
-
-    # takes 32 min
-    t0 = time.time()
-    logger.info("Starting 'preprocess_recording'")
-
-    # preprocess, write
-    Preprocessed = preprocess.run(data_conf, param_conf)
-    preprocess.write(Preprocessed, data_conf, job_dict)
-
-    # sanity check is preprocessed
-    print(Preprocessed.is_filtered())
-    logger.info(f"Done in {np.round(time.time()-t0,2)} secs")
-
-
 def extract_ground_truth(data_conf, param_conf):
 
     # takes about 3 hours
@@ -191,7 +172,7 @@ def run(experiment: str, run: str, noise_tuning):
                                                                      offset=OFFSET,
                                                                      scale_and_add_noise=SCALE_AND_ADD_NOISE)
         
-    if WIRE:        
+    if WIRE:
         preprocess.wire_probe(data_conf=data_conf,
                               param_conf=param_conf,
                               Recording=Recording,
@@ -202,7 +183,9 @@ def run(experiment: str, run: str, noise_tuning):
                               load_atlas_metadata=False)
         
     if PREPROCESS:
-        preprocess_recording(data_conf, param_conf)
+        preprocess.preprocess_recording_dense_probe(data_conf=data_conf,
+                                        param_conf=param_conf,
+                                        job_dict=job_dict)
         
     if GROUND_TRUTH:
         extract_ground_truth(data_conf, param_conf)

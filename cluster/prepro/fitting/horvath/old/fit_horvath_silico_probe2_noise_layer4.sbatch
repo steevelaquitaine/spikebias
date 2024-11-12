@@ -39,7 +39,7 @@ spack env activate python3_9 -p
 source /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/envs/npx_10m_384ch_unit_classes/bin/activate
 
 # add custom package to python path
-cd /gpfs/bbp.cscs.ch/project/proj85/home/laquitai/preprint_2023/
+cd /gpfs/bbp.cscs.ch/project/proj85/home/laquitai/spikebias/
 export PYTHONPATH=$(pwd)
 
 # run pipeline

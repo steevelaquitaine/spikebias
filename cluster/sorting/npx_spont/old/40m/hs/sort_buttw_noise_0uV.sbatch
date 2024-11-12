@@ -34,7 +34,7 @@
 # clean up
 module purge 
 module load spack
-cd /gpfs/bbp.cscs.ch/project/proj85/home/laquitai/preprint_2023/   
+cd /gpfs/bbp.cscs.ch/project/proj85/home/laquitai/spikebias/   
 export SPACK_SYSTEM_CONFIG_PATH=/gpfs/bbp.cscs.ch/ssd/apps/bsd/2024-02-01/config
 export SPACK_USER_CACHE_PATH=/gpfs/bbp.cscs.ch/home/laquitai/spack_install
 spack env activate python3_9 -p
