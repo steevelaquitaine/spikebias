@@ -28,17 +28,14 @@ os.chdir(PROJ_PATH)
 
 from src.nodes.utils import get_config
 from src.nodes.load import load_campaign_params
-from src.nodes.dataeng.silico import recording, probe_wiring
 from src.nodes.prepro import preprocess
 from src.nodes.truth.silico import ground_truth
-from src.nodes.dataeng import dataeng
+from src.nodes.prepro import preprocess
 
-from src.pipes.metadata.marques_silico import label_layers
 from src.pipes.prepro.npx_spont.supp import concat
 
 # SETUP PARAMETERS
 data_conf, param_conf = get_config("silico_neuropixels", "npx_spont").values()
-BLUECONFIG = data_conf["dataeng"]["blueconfig"]
 
 # SETUP LOGGING
 with open("conf/logging.yml", "r", encoding="utf-8") as logging_conf:
@@ -48,14 +45,14 @@ logger = logging.getLogger("root")
 
 
 # SETUP PIPELINE
-STACK = True            # done once then set to False
-SAVE_REC_EXTRACTOR = True
-TUNE_FIT = False        # tune fitted noise
-FIT_CAST = False        # done once then set to False (2h18 min)
-OFFSET = False
+STACK = False            # done once then set to False
+SAVE_REC_EXTRACTOR = False
+TUNE_FIT = True        # tune fitted noise
+FIT_CAST = True        # done once then set to False (2h18 min)
+OFFSET = True
 SCALE_AND_ADD_NOISE = {"gain_adjust": 0.90}
-WIRE = False             # done once then set to False (25 mins)
-SAVE_METADATA = False    # True to add new metadata to wired probe
+WIRE = True             # done once then set to False (25 mins)
+SAVE_METADATA = True    # True to add new metadata to wired probe
 PREPROCESS = False       # True to update after adding new metadata (butterworth: 1h40, wavelet: 3h)
 GROUND_TRUTH = False    # done once then set to False
 
@@ -63,12 +60,6 @@ GROUND_TRUTH = False    # done once then set to False
 # required, else fit and cast as extractor crashes due to lack of 
 # memory
 job_dict = {"n_jobs": 1, "chunk_memory": None, "progress_bar": True} # butterworth
-
-
-def _save_metadata(Recording, blueconfig:str):
-    """Save layer metadata to the Recording Extractor
-    """
-    return label_layers(Recording, blueconfig)
 
 
 def stack():
@@ -111,45 +102,6 @@ def tune_fit(data_conf):
     np.save(TUNED_PATH + "L4.npy", l4_out)
     np.save(TUNED_PATH + "L5.npy", l5_out)
     np.save(TUNED_PATH + "L6.npy", l6_out)
-
-
-def wire_probe(Recording, save_metadata:bool, job_dict=job_dict):
-    """wire a neuropixels 1.0 probe and write
-    
-    takes 12 min (versus 48 min w/o multiprocessing)
-
-    note: The wired Recording Extractor is written via 
-    multiprocessing on 8 CPU cores, with 1G of memory per job 
-    (n_jobs=8 and chunk_memory=1G)
-
-    to check the number of physical cpu cores on your machine:
-        cat /proc/cpuinfo | grep 'physical id' | sort -u | wc -l
-    
-    to check the number of logical cpu cores on your machine:
-        nproc
-    """
-
-    logger.info("Starting ...")
-
-    # track time
-    t0 = time.time()
-
-    # get write path
-    WRITE_PATH = data_conf["probe_wiring"]["full"]["output"]
-
-    # run and write
-    Recording = probe_wiring.run(Recording, data_conf, param_conf)
-
-    # save metadata
-    if save_metadata:
-        Recording = _save_metadata(Recording, BLUECONFIG)
-
-    # write (parallel processing works for 10 min recordings, else use 1 node for 1h recording otherwise
-    # you get "out of memory error: "slurmstepd: error: Detected 50 oom-kill event(s). 
-    # Some of your processes may have been killed by the cgroup out-of-memory handler."")
-    shutil.rmtree(WRITE_PATH, ignore_errors=True)
-    Recording.save(folder=WRITE_PATH, format="binary", **job_dict)        
-    logger.info(f"Done in {np.round(time.time()-t0,2)} secs")
 
 
 def preprocess_recording(job_dict: dict, filtering='butterworth'):
@@ -197,7 +149,7 @@ def extract_ground_truth():
     logger.info(f"Done in {np.round(time.time()-t0,2)} secs")
 
 
-def run(filtering:str="wavelet"):
+def run(filtering: str="wavelet"):
     """
     args:
         filtering: "butterworth" or "wavelet"
@@ -206,21 +158,34 @@ def run(filtering:str="wavelet"):
     # track time
     t0 = time.time()
 
-    # run pipeline
     if STACK:
         stack()
+    
     if SAVE_REC_EXTRACTOR:
-        #save_raw_rec_extractor(data_conf)
-        dataeng.save_raw_rec_extractor(data_conf)
+        preprocess.save_raw_rec_extractor(data_conf, param_conf, job_dict)
+    
     if TUNE_FIT:
         tune_fit(data_conf)
+    
     if FIT_CAST:
-        #Recording = fit_and_cast_as_extractor()
-        Recording = dataeng.fit_and_cast_as_extractor(data_conf, OFFSET, SCALE_AND_ADD_NOISE)
+        Recording = preprocess.fit_and_cast_as_extractor(data_conf=data_conf,
+                                                         offset=OFFSET,
+                                                         scale_and_add_noise=SCALE_AND_ADD_NOISE)
+    
     if WIRE:
-        wire_probe(Recording, save_metadata=SAVE_METADATA, job_dict=job_dict)
+        preprocess.wire_probe(data_conf=data_conf,
+                              param_conf=param_conf,
+                              Recording=Recording,
+                              blueconfig=data_conf["dataeng"]["blueconfig"],
+                              save_metadata=SAVE_METADATA,
+                              job_dict=job_dict,
+                              n_sites=384,
+                              load_atlas_metadata=False,
+                              load_filtered_cells_metadata=False)
+    
     if PREPROCESS:
         preprocess_recording(job_dict, filtering)
+    
     if GROUND_TRUTH:
         extract_ground_truth()
 

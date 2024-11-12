@@ -3,12 +3,17 @@
 author: laquitainesteeve@gmail.com
 
 Usage:
-
+    
+    sbatch cluster/dandi/upload.sh
+    
     1. Login to dandiarchive
     2. New dandiset - name and description
     3. Copy the **API key** (click on your initial upper right):
     4. Copy the Dataset: click on the link dots to the left of the title, copy its **link**:
         * It should look like: https://gui-staging.dandiarchive.org/#/dandiset/100792
+
+duration: slack
+    - just under 8 hours for 100 GB
 """
 # nwb software package
 # other utils package

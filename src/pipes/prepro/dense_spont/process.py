@@ -28,14 +28,15 @@ os.chdir(PROJ_PATH)
 
 from src.nodes.utils import get_config
 from src.nodes.load import load_campaign_params
-from src.nodes.dataeng.silico import recording, probe_wiring
 from src.nodes.prepro import preprocess
 from src.nodes.truth.silico import ground_truth
 #from src.nodes.dataeng.silico import campaign_stacking
 from src.nodes.dataeng.dataeng import save_raw_rec_extractor
+from src.nodes.prepro import preprocess
 
+# pipelines (run with script)
 from src.pipes.prepro.dense_spont import concat
-from src.pipes.metadata.dense_spont import label_layers
+
 
 
 # SETUP PIPELINE
@@ -63,12 +64,6 @@ logger = logging.getLogger("root")
 
 # SETUP PARALLEL PROCESSING
 job_dict = {"n_jobs": 1, "progress_bar": True}
-
-
-def _save_metadata(Recording, blueconfig: str):
-    """Save layer metadata to the Recording Extractor
-    """
-    return label_layers(Recording, blueconfig)
 
 
 # def stack_raw_sims(data_conf, blue_config):
@@ -127,65 +122,6 @@ def tune_fit(data_conf, noise_tuning):
         l6_out["missing_noise_rms"] += noise_tuning
         np.save(TUNED_PATH + "L6.npy", l6_out)
     
-    
-def fit_and_cast_as_extractor(data_conf):
-    """Cast as a SpikeInterface RecordingExtractor 
-    Rescale, offset, cast as Spikeinterface Recording Extractor object
-    Traces need rescaling as the simulation produces floats with nearly all values below an amplitude of 1. 
-    As traces are binarized to int16 to be used by Kilosort, nearly all spikes disappear (set to 0).
-    return_scale=True does not seem to work as default so we have to rewrite the traces with the new 
-
-    takes 54 min
-    note: RecordingExtractor is not dumpable and can't be processed in parallel
-    """
-    # track time
-    t0 = time.time()
-    logger.info("Starting ...")
-
-    # cast (30 secs)
-    Recording = recording.run(data_conf, offset=OFFSET, scale_and_add_noise=SCALE_AND_ADD_NOISE)
-
-    # remove 129th "test" channel (actually 128 because starts at 0)
-    if len(Recording.channel_ids) == 129:
-        Recording = Recording.remove_channels([128])
-    logger.info(f"Done in {np.round(time.time()-t0,2)} secs")
-    return Recording   
-
-
-def wire_probe(
-        data_conf, param_conf, Recording, blueconfig, save_metadata: bool,
-        job_dict: dict
-        ):
-    """wire a neuropixels 1.0 probe
-    
-    takes 12 min (versus 48 min w/o multiprocessing)
-
-    note: The wired Recording Extractor is written via 
-    multiprocessing on 8 CPU cores, with 1G of memory per job 
-    (n_jobs=8 and chunk_memory=1G)
-
-    to check the number of physical cpu cores on your machine:
-        cat /proc/cpuinfo | grep 'physical id' | sort -u | wc -l
-    
-    to check the number of logical cpu cores on your machine:
-        nproc
-    """
-
-    # track time
-    t0 = time.time()
-    logger.info("Starting ...")
-
-    # run and write
-    Recording = probe_wiring.run(Recording, data_conf, param_conf)
-
-    # save metadata
-    if save_metadata:
-        Recording = _save_metadata(Recording, blueconfig)
-
-    # write
-    probe_wiring.write(Recording, data_conf, job_dict)
-    logger.info(f"Done in {np.round(time.time()-t0,2)} secs")
-
 
 def preprocess_recording(data_conf, param_conf):
     """preprocess recording
@@ -205,7 +141,6 @@ def preprocess_recording(data_conf, param_conf):
     print(Preprocessed.is_filtered())
     logger.info(f"Done in {np.round(time.time()-t0,2)} secs")
 
-#/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/dataeng/0_silico/silico_horvath_probe2_lfp_10m_128ch_hex0_rou04_pfr03_20Khz_2023_10_28/de7adc53-05d5-44f7-ad3e-9e92c575c7fc/campaign/raw/traces.pkl
 
 def extract_ground_truth(data_conf, param_conf):
 
@@ -232,31 +167,44 @@ def run(experiment: str, run: str, noise_tuning):
         experiment (str, optional): _description_. Defaults to "silico_horvath".
     """
 
-
     # get config
     data_conf, param_conf = get_config(experiment, run).values()
     logger.info(f"Checking parameters: exp={experiment} and run={run}")
 
-    # set paths
-    BLUECONFIG = data_conf["dataeng"]["blueconfig"]
-
     # track time
     t0 = time.time()
+    
     # if STACK_SIM:
     #     stack_raw_sims(data_conf, blue_config)
+    
     if STACK:
         stack(experiment, run)
+        
     if SAVE_REC_EXTRACTOR:
         save_raw_rec_extractor(data_conf)
+        
     if TUNE_FIT:
         tune_fit(data_conf, noise_tuning)  
+        
     if FIT_CAST:
-        Recording = fit_and_cast_as_extractor(data_conf)
-    if WIRE:
-        wire_probe(data_conf, param_conf, Recording, BLUECONFIG,
-                   save_metadata=SAVE_METADATA, job_dict=job_dict)
+        Recording = preprocess.fit_and_cast_as_extractor_dense_probe(data_conf=data_conf,
+                                                                     offset=OFFSET,
+                                                                     scale_and_add_noise=SCALE_AND_ADD_NOISE)
+        
+    if WIRE:        
+        preprocess.wire_probe(data_conf=data_conf,
+                              param_conf=param_conf,
+                              Recording=Recording,
+                              blueconfig=data_conf["dataeng"]["blueconfig"],
+                              save_metadata=SAVE_METADATA,
+                              job_dict=job_dict,
+                              n_sites=128,
+                              load_atlas_metadata=False)
+        
     if PREPROCESS:
         preprocess_recording(data_conf, param_conf)
+        
     if GROUND_TRUTH:
         extract_ground_truth(data_conf, param_conf)
+        
     logger.info(f"Done in {np.round(time.time()-t0,2)} secs")

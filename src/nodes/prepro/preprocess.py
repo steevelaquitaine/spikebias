@@ -27,9 +27,10 @@ import spikeinterface.full as si
 import yaml
 import spikeinterface.extractors as se 
 import spikeinterface.preprocessing as spre
+import pandas as pd
 
-
-from src.nodes.dataeng.silico import probe_wiring
+# custom package
+from src.nodes.dataeng.silico import recording, probe_wiring
 from src.nodes.prepro.filtering import wavelet_filter
 from src.nodes.utils import get_config
 from src.nodes.validation.layer import getAtlasInfo, loadAtlasInfo
@@ -1090,7 +1091,140 @@ def run_wavelet_filtering(dataset_conf: dict, param_conf: dict):
     return referenced
 
 
-def label_layers(data_conf, Recording, blueconfig, n_sites:int, load_atlas_metadata=True):
+def save_raw_rec_extractor(data_conf: dict, param_conf: dict, job_dict: dict):
+    """Write raw simulated recording as a spikeinterface
+    RecordingExtractor
+
+    Args:
+        data_conf (_type_): _description_
+
+    Returns:
+        _type_: _description_
+    """
+    # track time
+    t0 = time()
+    logger.info("Starting ...")
+    
+    # set traces read write paths
+    READ_PATH = data_conf["recording"]["input"]
+    WRITE_PATH = data_conf["recording"]["output"]
+
+    # read and cast raw trace as array (1 min/h recording)
+    trace = pd.read_pickle(READ_PATH)
+    trace = np.array(trace)
+    
+    # cast trace as a SpikeInterface Recording object
+    Recording = se.NumpyRecording(
+        traces_list=[trace],
+        sampling_frequency=param_conf["sampling_freq"],
+    )
+    
+    # write (parallel processing works for 10 min recordings, else use 1 node for 1h recording otherwise
+    # you get "out of memory error: "slurmstepd: error: Detected 50 oom-kill event(s). 
+    # Some of your processes may have been killed by the cgroup out-of-memory handler."")
+    shutil.rmtree(WRITE_PATH, ignore_errors=True)
+    Recording.save(folder=WRITE_PATH, format="binary", **job_dict)
+
+    # log
+    logger.info("Probe wiring done in  %s secs", round(time() - t0, 1))    
+    
+    
+def fit_and_cast_as_extractor(data_conf, offset, scale_and_add_noise):
+    """Cast as a SpikeInterface RecordingExtractor 
+    Rescale, offset, cast as Spikeinterface Recording Extractor object
+    Traces need rescaling as the simulation produces floats with nearly all values below an amplitude of 1. 
+    As traces are binarized to int16 to be used by Kilosort, nearly all spikes disappear (set to 0).
+    return_scale=True does not seem to work as default so we have to rewrite the traces with the new 
+
+    takes 54 min
+    note: RecordingExtractor is not dumpable and can't be processed in parallel
+    """
+    
+    # track time
+    t0 = time()
+    logger.info("Starting ...")
+
+    # cast (30 secs)
+    Recording = recording.run(data_conf, offset=offset, scale_and_add_noise=scale_and_add_noise)
+    logger.info(f"Done in {np.round(time()-t0,2)} secs")
+    return Recording
+
+
+def fit_and_cast_as_extractor_for_nwb(data_conf: dict, param_conf: dict,
+                                      offset: bool, scale_and_add_noise):
+    """Cast as a SpikeInterface RecordingExtractor 
+    Rescale, offset, cast as Spikeinterface Recording Extractor object
+    Traces need rescaling as the simulation produces floats with nearly all values below an amplitude of 1. 
+    As traces are binarized to int16 to be used by Kilosort, nearly all spikes disappear (set to 0).
+    return_scale=True does not seem to work as default so we have to rewrite the traces with the new 
+
+    takes 54 min
+    note: RecordingExtractor is not dumpable and can't be processed in parallel
+    """
+    # track time
+    t0 = time()
+    logger.info("Starting ...")
+
+    # cast (30 secs)
+    Recording = recording.run_from_nwb(data_conf, param_conf, offset=offset,
+                                       scale_and_add_noise=scale_and_add_noise)
+    logger.info(f"Done in {np.round(time()-t0,2)} secs")
+    return Recording
+
+
+def fit_and_cast_as_extractor_dense_probe(data_conf: dict, offset: bool,
+                                          scale_and_add_noise):
+    """Cast as a SpikeInterface RecordingExtractor 
+    Rescale, offset, cast as Spikeinterface Recording Extractor object
+    Traces need rescaling as the simulation produces floats with nearly all values below an amplitude of 1. 
+    As traces are binarized to int16 to be used by Kilosort, nearly all spikes disappear (set to 0).
+    return_scale=True does not seem to work as default so we have to rewrite the traces with the new 
+
+    takes 54 min
+    note: RecordingExtractor is not dumpable and can't be processed in parallel
+    """
+    # track time
+    t0 = time()
+    logger.info("Starting ...")
+
+    # cast (30 secs)
+    Recording = recording.run(data_conf, offset=offset, 
+                              scale_and_add_noise=scale_and_add_noise)
+
+    # remove 129th "test" channel (actually 128 because starts at 0)
+    if len(Recording.channel_ids) == 129:
+        Recording = Recording.remove_channels([128])
+    logger.info(f"Done in {np.round(time()-t0,2)} secs")
+    return Recording
+
+
+def fit_and_cast_as_extractor_dense_probe_for_nwb(data_conf: dict, param_conf: dict, 
+                                                  offset: bool, scale_and_add_noise):
+    """Cast as a SpikeInterface RecordingExtractor 
+    Rescale, offset, cast as Spikeinterface Recording Extractor object
+    Traces need rescaling as the simulation produces floats with nearly all values below an amplitude of 1. 
+    As traces are binarized to int16 to be used by Kilosort, nearly all spikes disappear (set to 0).
+    return_scale=True does not seem to work as default so we have to rewrite the traces with the new 
+
+    takes 54 min
+    note: RecordingExtractor is not dumpable and can't be processed in parallel
+    """
+    # track time
+    t0 = time()
+    logger.info("Starting ...")
+
+    # cast (30 secs)
+    Recording = recording.run_from_nwb(data_conf, param_conf, offset=offset, 
+                                       scale_and_add_noise=scale_and_add_noise)
+
+    # remove 129th "test" channel (actually 128 because starts at 0)
+    if len(Recording.channel_ids) == 129:
+        Recording = Recording.remove_channels([128])
+    logger.info(f"Done in {np.round(time()-t0,2)} secs")
+    return Recording
+
+
+def label_layers(data_conf, Recording, blueconfig, n_sites: int, load_atlas_metadata=True):
     """record electrode site layer property in RecordingExtractor
     
     Args:
@@ -1115,6 +1249,71 @@ def label_layers(data_conf, Recording, blueconfig, n_sites:int, load_atlas_metad
     # add metadata to RecordingExtractor
     Recording.set_property('layers', values=site_layers)
     return Recording
+
+
+def set_property_layer(data_conf, Recording, blueconfig=None, n_sites=int, load_atlas_metadata=True):
+    """Save layer metadata to the Recording Extractor
+    """
+    return label_layers(data_conf, Recording, blueconfig, n_sites=n_sites,
+                        load_atlas_metadata=load_atlas_metadata)
+
+
+def wire_probe(
+        data_conf: dict,
+        param_conf: dict, 
+        Recording, 
+        blueconfig, 
+        save_metadata: bool,
+        job_dict: dict, 
+        n_sites: int, 
+        load_atlas_metadata=True, 
+        load_filtered_cells_metadata=True
+        ):
+    """wire the probe to the recording
+    
+    Args:
+        data_conf (dict):
+        param_conf (dict):
+        Recording (RecordingExtractor):
+        blueconfig (None): DEPRECATED should always be None
+        save_metadata (bool)
+        job_dict: dict, 
+        load_atlas_metadata (Boolean): True: loads existing metadata, else requires the Atlas (download on Zenodo)
+        load_filtered_cells_metadata: True: loads existing metadata; can only be true
+        
+    note: The wired Recording Extractor is written via 
+    multiprocessing on 8 CPU cores, with 1G of memory per job 
+    (n_jobs=8 and chunk_memory=1G)
+
+    to check the number of physical cpu cores on your machine:
+        cat /proc/cpuinfo | grep 'physical id' | sort -u | wc -l
+    
+    to check the number of logical cpu cores on your machine:
+        nproc
+    """    
+    # track time
+    t0 = time()
+    logger.info("Starting ...")
+    
+    # get write path
+    WRITE_PATH = data_conf["probe_wiring"]["full"]["output"]
+    
+    # run and write
+    Recording = probe_wiring.run(Recording, data_conf, 
+                                 param_conf, load_filtered_cells_metadata)
+
+    # save metadata
+    if save_metadata:
+        Recording = set_property_layer(data_conf, Recording, blueconfig, 
+                                       n_sites=n_sites,
+                                       load_atlas_metadata=load_atlas_metadata)
+
+    # write (parallel processing works for 10 min recordings, else use 1 node for 1h recording otherwise
+    # you get "out of memory error: "slurmstepd: error: Detected 50 oom-kill event(s). 
+    # Some of your processes may have been killed by the cgroup out-of-memory handler."")
+    shutil.rmtree(WRITE_PATH, ignore_errors=True)
+    Recording.save(folder=WRITE_PATH, format="binary", **job_dict)
+    logger.info(f"Done in {np.round(time()-t0,2)} secs")
 
 
 def write(preprocessed, data_conf:dict, job_dict:dict):
@@ -1150,7 +1349,6 @@ def load(data_conf: dict):
     return si.load_extractor(
         data_conf["preprocessing"]["output"]["trace_file_path"]
     )
-
 
 
 if __name__ == "__main__":

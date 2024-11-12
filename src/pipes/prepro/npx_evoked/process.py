@@ -39,13 +39,11 @@ from src.nodes.prepro import preprocess
 from src.nodes.truth.silico import ground_truth
 from src.nodes.dataeng.lfp_only import stacking
 from src.nodes.dataeng import dataeng
-
-from src.pipes.metadata.marques_silico import label_layers
+from src.nodes.prepro import preprocess
 
 
 # SETUP PARAMETERS
 data_conf, param_conf = get_config("silico_neuropixels", "npx_evoked").values()
-BLUECONFIG = data_conf["dataeng"]["blueconfig"]
 
 # SETUP LOGGING
 with open("conf/logging.yml", "r", encoding="utf-8") as logging_conf:
@@ -69,12 +67,6 @@ PREPROCESS = False        # True to update after adding new metadata (1h:50)
 GROUND_TRUTH = False      # done once then set to False (13 min)
 
 
-def _save_metadata(Recording, blueconfig:str):
-    """Save layer metadata to the Recording Extractor
-    """
-    return label_layers(Recording, blueconfig)
-
-
 def stack():
     """Stack bbp_workflow simulations into a single pandas dataframe
     This is done once.
@@ -96,47 +88,6 @@ def stack():
     stacking.run(data_conf, param_conf, campaign_params["blue_config"])
     logger.info(f"Done in {np.round(time.time()-t0,2)} secs")
 
-
-# def save_raw_rec_extractor(data_conf):
-#     """Write raw simulated recording as a spikeinterface
-#     RecordingExtractor
-
-#     Args:
-#         data_conf (_type_): _description_
-
-#     Returns:
-#         _type_: _description_
-#     """
-#     # track time
-#     t0 = time.time()
-#     logger.info("Starting ...")
-    
-#     # set traces read write paths
-#     READ_PATH = data_conf["recording"]["input"]
-#     WRITE_PATH = data_conf["recording"]["output"]
-
-#     # get campaign parameters from one simulation
-#     simulation = load_campaign_params(data_conf)
-
-#     # read and cast raw trace as array (1 min/h recording)
-#     trace = pd.read_pickle(READ_PATH)
-#     trace = np.array(trace)
-    
-#     # cast trace as a SpikeInterface Recording object
-#     Recording = se.NumpyRecording(
-#         traces_list=[trace],
-#         sampling_frequency=simulation["lfp_sampling_freq"],
-#     )
-    
-#     # write (parallel processing works for 10 min recordings, else use 1 node for 1h recording otherwise
-#     # you get "out of memory error: "slurmstepd: error: Detected 50 oom-kill event(s). 
-#     # Some of your processes may have been killed by the cgroup out-of-memory handler."")
-#     shutil.rmtree(WRITE_PATH, ignore_errors=True)
-#     Recording.save(folder=WRITE_PATH, format="binary", **job_dict)
-
-#     # log
-#     logger.info("Probe wiring done in  %s secs", round(time.time() - t0, 1))    
-    
     
 def tune_fit(data_conf):
     """manually tune the best fit noise RMS
@@ -169,32 +120,18 @@ def tune_fit(data_conf):
     np.save(TUNED_PATH + "L4.npy", l4_out)
     np.save(TUNED_PATH + "L5.npy", l5_out)
     np.save(TUNED_PATH + "L6.npy", l6_out)
-    
-    
-# def fit_and_cast_as_extractor():
-#     """Cast as a SpikeInterface RecordingExtractor 
-#     Rescale, offset, cast as Spikeinterface Recording Extractor object
-#     Traces need rescaling as the simulation produces floats with nearly all values below an amplitude of 1. 
-#     As traces are binarized to int16 to be used by Kilosort, nearly all spikes disappear (set to 0).
-#     return_scale=True does not seem to work as default so we have to rewrite the traces with the new 
-
-#     takes 54 min
-#     note: RecordingExtractor is not dumpable and can't be processed in parallel
-#     """
-    
-#     # track time
-#     t0 = time.time()
-#     logger.info("Starting ...")
-
-#     # cast (30 secs)
-#     Recording = recording.run(data_conf, offset=OFFSET, scale_and_add_noise=SCALE_AND_ADD_NOISE)
-
-#     # write (2 mins)
-#     logger.info(f"Done in {np.round(time.time()-t0,2)} secs")
-#     return Recording
 
 
-def wire_probe(Recording, save_metadata:bool, job_dict:dict):
+def wire_probe(
+        data_conf: dict, 
+        param_conf: dict, 
+        Recording, 
+        blueconfig, 
+        save_metadata: bool,
+        job_dict: dict, 
+        load_atlas_metadata=True, 
+        load_filtered_cells_metadata=True
+        ):
     """wire a neuropixels 1.0 probe
     
     takes 12 min (versus 48 min w/o multiprocessing)
@@ -218,11 +155,14 @@ def wire_probe(Recording, save_metadata:bool, job_dict:dict):
     WRITE_PATH = data_conf["probe_wiring"]["full"]["output"]
 
     # run and write
-    Recording = probe_wiring.run(Recording, data_conf, param_conf)
+    Recording = probe_wiring.run(Recording, data_conf, param_conf, 
+                                 load_filtered_cells_metadata=load_filtered_cells_metadata)
 
     # save metadata
     if save_metadata:
-        Recording = _save_metadata(Recording, BLUECONFIG)
+        Recording = set_property_layer(data_conf=data_conf, Recording=Recording,
+                                       blueconfig=blueconfig, n_sites=384,
+                                       load_atlas_metadata=load_atlas_metadata)
 
     # write (parallel processing works for 10 min recordings, else use 1 node for 1h recording otherwise
     # you get "out of memory error: "slurmstepd: error: Detected 50 oom-kill event(s). 
@@ -273,16 +213,13 @@ def extract_ground_truth():
     SortingTrue = ground_truth.run(simulation, data_conf, param_conf)
 
     # write
-    #ground_truth.write(SortingTrue["ground_truth_sorting_object"], data_conf)   
-    
-    # write
     t0 = time.time()
     shutil.rmtree(WRITE_PATH, ignore_errors=True)
     SortingTrue["ground_truth_sorting_object"].save(folder=WRITE_PATH, n_jobs=-1, total_memory="2G")
     logger.info("Done writting Ground truth SortingExtractor in %s", round(time.time()-t0, 1))
 
 
-def run(filtering:str="wavelet"):
+def run(filtering: str="wavelet"):
     
     # track time
     t0 = time.time()
@@ -290,17 +227,30 @@ def run(filtering:str="wavelet"):
     # run pipeline
     if STACK:
         stack()
+        
     if SAVE_REC_EXTRACTOR:
         dataeng.save_raw_rec_extractor(data_conf)
+        
     if TUNE_FIT:
         tune_fit(data_conf)
+        
     if FIT_CAST:
-        #Recording = fit_and_cast_as_extractor()
         Recording = dataeng.fit_and_cast_as_extractor(data_conf, OFFSET, SCALE_AND_ADD_NOISE)
+        
     if WIRE:
-        wire_probe(Recording, save_metadata=SAVE_METADATA, job_dict=job_dict)
+        preprocess.wire_probe(data_conf=data_conf,
+                              param_conf=param_conf,
+                              Recording=Recording,
+                              blueconfig=data_conf["dataeng"]["blueconfig"], # None
+                              save_metadata=SAVE_METADATA,
+                              job_dict=job_dict, 
+                              n_sites=384,
+                              load_atlas_metadata=False, # False
+                              load_filtered_cells_metadata=False) # False     
+           
     if PREPROCESS:
         preprocess_recording(job_dict, filtering)
+        
     if GROUND_TRUTH:
         extract_ground_truth()
 

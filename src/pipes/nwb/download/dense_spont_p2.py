@@ -6,7 +6,8 @@ Description: download NWB dataset for the dense probe at depth 2
 Usage:  
 
     sh cluster/nwb/download/dense_spont_p1.sh
-    or 
+    
+    or
     
     # activate dandi2 python environment
     source /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/envs/dandi2/bin/activate

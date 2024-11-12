@@ -8,7 +8,7 @@
 ##
 ## usage:
 ##
-##      sh cluster/nwb/download/npx_spont.sh
+##      sbatch cluster/nwb/download/npx_spont.sh
 ##
 ## stats: 20 mins
 
@@ -17,7 +17,7 @@
 #!/bin/bash -l
 #SBATCH -J nwb-download-npx_spont                       # job name
 #SBATCH -N 1                                             # Use 1 node
-#SBATCH -t 08:00:00                                      # Set 1 hour time limit
+#SBATCH -t 10:00:00                                      # Set 1 hour time limit
 #SBATCH -p prod                                          # Submit to the production 'partition'
 #SBATCH -C "cpu"                                         # Constraint the job to run on nodes without SSDs.
 #SBATCH --exclusive                                      # to allocate whole node

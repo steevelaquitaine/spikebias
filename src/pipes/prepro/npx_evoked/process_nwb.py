@@ -40,7 +40,7 @@ from src.nodes.utils import get_config
 from src.nodes.dataeng.silico import recording, probe_wiring
 from src.nodes.prepro import preprocess
 from src.nodes.truth.silico import ground_truth
-from src.pipes.metadata.marques_silico import label_layers
+from src.nodes.prepro import preprocess
 
 # SETUP PARAMETERS
 data_conf, param_conf = get_config("silico_neuropixels", "stimulus").values()
@@ -68,12 +68,6 @@ GROUND_TRUTH = False    # done once then set to False
 # required, else fit and cast as extractor crashes due to lack of 
 # memory
 job_dict = {"n_jobs": 1, "chunk_memory": None, "progress_bar": True} # butterworth
-
-
-def _save_metadata(Recording, blueconfig:str):
-    """Save layer metadata to the Recording Extractor
-    """
-    return label_layers(Recording, blueconfig)
 
 
 def tune_fit(data_conf):
@@ -130,45 +124,6 @@ def fit_and_cast_as_extractor():
     return Recording
 
 
-def wire_probe(Recording, save_metadata:bool, job_dict=job_dict):
-    """wire a neuropixels 1.0 probe and write
-    
-    takes 12 min (versus 48 min w/o multiprocessing)
-
-    note: The wired Recording Extractor is written via 
-    multiprocessing on 8 CPU cores, with 1G of memory per job 
-    (n_jobs=8 and chunk_memory=1G)
-
-    to check the number of physical cpu cores on your machine:
-        cat /proc/cpuinfo | grep 'physical id' | sort -u | wc -l
-    
-    to check the number of logical cpu cores on your machine:
-        nproc
-    """
-
-    logger.info("Starting ...")
-
-    # track time
-    t0 = time.time()
-
-    # get write path
-    WRITE_PATH = data_conf["probe_wiring"]["full"]["output"]
-
-    # run and write
-    Recording = probe_wiring.run(Recording, data_conf, param_conf)
-
-    # save metadata
-    if save_metadata:
-        Recording = _save_metadata(Recording, BLUECONFIG)
-
-    # write (parallel processing works for 10 min recordings, else use 1 node for 1h recording otherwise
-    # you get "out of memory error: "slurmstepd: error: Detected 50 oom-kill event(s). 
-    # Some of your processes may have been killed by the cgroup out-of-memory handler."")
-    shutil.rmtree(WRITE_PATH, ignore_errors=True)
-    Recording.save(folder=WRITE_PATH, format="binary", **job_dict)
-    logger.info(f"Done in {np.round(time.time()-t0,2)} secs")
-
-
 def preprocess_recording(job_dict: dict):
     """preprocess recording and write
 
@@ -221,15 +176,26 @@ def run(filtering: str="wavelet"):
     # track time
     t0 = time.time()
 
-    # run pipeline
     if TUNE_FIT:
         tune_fit(data_conf)
+        
     if FIT_CAST:
         Recording = fit_and_cast_as_extractor()
+        
     if WIRE:
-        wire_probe(Recording, save_metadata=SAVE_METADATA, job_dict=job_dict)
+        preprocess.wire_probe(data_conf=data_conf,
+                              param_conf=param_conf,
+                              Recording=Recording,
+                              blueconfig=data_conf["dataeng"]["blueconfig"], # None
+                              save_metadata=SAVE_METADATA,
+                              job_dict=job_dict, 
+                              n_sites=384,
+                              load_atlas_metadata=False, # False
+                              load_filtered_cells_metadata=False) # False     
+        
     if PREPROCESS:
         preprocess_recording(job_dict, filtering)
+        
     if GROUND_TRUTH:
         extract_ground_truth()
 

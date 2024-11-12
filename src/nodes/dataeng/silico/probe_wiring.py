@@ -263,7 +263,7 @@ def run_neuropixels_32(data_conf: dict, param_conf: dict):
     return trace_recording.set_probe(ProbeNeuropix32)
 
 
-def _run_neuropixels_384_hex_O1(Recording, data_conf: dict, param_conf: dict):
+def _run_neuropixels_384_hex_O1(Recording, data_conf: dict, param_conf: dict, load_filtered_cells_metadata=False):
     """Wires 384-contact 1-shank neuropixel 1 ProbeInterface probe to lfp trace
     into a SpikeInterface recording extractor object
     Loads preprocessed traces from config path and wires probe
@@ -343,11 +343,21 @@ def _run_neuropixels_384_hex_O1(Recording, data_conf: dict, param_conf: dict):
     pi_ProbeNeuropix384_3D.set_device_channel_indices(np.arange(n_contacts))
 
     # get the campaign parameters from the first simulation
-    simulation = load_campaign_params(data_conf)
-
     # get the microcircuit (hex0) cells to position the probe at its centroid
-    filtered_cells = get_hex_01_cells(simulation)
+    # get the campaign parameters from one of the simulation
+    # get the microcircuit (hex_01) cells to position the probe at its centroid
+    # calculate circuit's centroid by averaging of cell soma coordinates
+    # get the campaign parameters from the first simulation
+    if load_filtered_cells_metadata:
+        filtered_cells = np.load(data_conf["metadata"]["filtered_cells"], allow_pickle=True).item()
+    else:
+        simulation = load_campaign_params(data_conf)
+        filtered_cells = get_hex_01_cells(simulation)
+        # save
+        utils.create_if_not_exists(os.path.dirname(data_conf["metadata"]["filtered_cells"]))
+        np.save(data_conf["metadata"]["filtered_cells"], filtered_cells)
     circuit_centroid = np.mean(filtered_cells["soma_location"], axis=0).values
+    
     pca = PCA(n_components=3)
     pca.fit(filtered_cells["soma_location"])
     main_axis = pca.components_[0]
@@ -864,7 +874,7 @@ def run_silico_horvath_2(Recording, data_conf: dict, param_conf: dict, load_filt
     # calculate circuit's centroid by averaging of cell soma coordinates
     # get the campaign parameters from the first simulation
     if load_filtered_cells_metadata:
-        filtered_cells = np.load(data_conf["metadata"]["filtered_cells"], filtered_cells, allow_pickle=True).item()
+        filtered_cells = np.load(data_conf["metadata"]["filtered_cells"], allow_pickle=True).item()
     else:
         simulation = load_campaign_params(data_conf)
         filtered_cells = get_hex_01_cells(simulation)
@@ -942,7 +952,7 @@ def run_silico_horvath_3(Recording, data_conf: dict, param_conf: dict, load_filt
     # calculate circuit's centroid by averaging of cell soma coordinates
     # get the campaign parameters from the first simulation
     if load_filtered_cells_metadata:
-        filtered_cells = np.load(data_conf["metadata"]["filtered_cells"], filtered_cells, allow_pickle=True).item()
+        filtered_cells = np.load(data_conf["metadata"]["filtered_cells"], allow_pickle=True).item()
     else:
         simulation = load_campaign_params(data_conf)
         filtered_cells = get_hex_01_cells(simulation)
@@ -1080,14 +1090,14 @@ def run(Recording, data_conf: dict, param_conf: dict, load_filtered_cells_metada
     if param_conf["run"]["probe"] == "neuropixels_32":
         logger.info("probe: neuropixels_32")
         return run_neuropixels_32(data_conf, param_conf)
-    if param_conf["run"]["probe"] == "neuropixels_384_hex_O1":
-        logger.info("probe: neuropixels_384_hex_O1")
-        return _run_neuropixels_384_hex_O1(Recording, data_conf, param_conf)    
     if param_conf["run"]["probe"] == "reyes_128":
         logger.info("probe: reyes_128")
     if param_conf["run"]["probe"] == "vivo_reyes":
         logger.info("probe: vivo_reyes")
         return run_vivo_reyes_1_x_16(data_conf, param_conf)
+    if param_conf["run"]["probe"] == "neuropixels_384_hex_O1":
+        logger.info("probe: neuropixels_384_hex_O1")
+        return _run_neuropixels_384_hex_O1(Recording, data_conf, param_conf, load_filtered_cells_metadata=load_filtered_cells_metadata)
     if param_conf["run"]["probe"] == "silico_horvath_probe_1":
         logger.info("probe: silico_horvath_probe_1")
         return run_silico_horvath_1(Recording, data_conf, param_conf, load_filtered_cells_metadata=load_filtered_cells_metadata)
