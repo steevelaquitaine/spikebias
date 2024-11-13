@@ -57,7 +57,6 @@ def postprocess_10m(cfg, duration_sec=600, create_full_study=False):
     STUDY_FULL_PATH = cfg["postprocessing"]["waveform"]["ground_truth"]["study"]
     STUDY_10M_PATH = cfg["postprocessing"]["waveform"]["ground_truth"]["10m"]["study"]
     PREP_PATH = cfg["preprocessing"]["full"]["output"]["trace_file_path"]
-    BLUE_CFG = cfg["dataeng"]["blueconfig"]
     
     # load recording
     Prep = si.load_extractor(PREP_PATH)
@@ -67,7 +66,7 @@ def postprocess_10m(cfg, duration_sec=600, create_full_study=False):
     SortingTrue = si.load_extractor(GT_FULL_PATH)
     
     # saves true units' properties metadata
-    SortingTrue = cell_type.label_true_cell_properties(cfg, SortingTrue, BLUE_CFG, GT_FULL_PATH, save=True)
+    SortingTrue = cell_type.label_true_cell_properties(cfg, SortingTrue, None, GT_FULL_PATH, save=True)
 
     # save study for the full SortingExtractor
     if create_full_study:

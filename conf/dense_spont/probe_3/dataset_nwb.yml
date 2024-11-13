@@ -3,8 +3,8 @@
 
 nwb: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/0_silico/horvath/concatenated_campaigns/probe3_hex0_rou04_pfr03_20Khz/nwb/dense_biophy_spont3.nwb'
 
-dataeng:
-    blueconfig: /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/raw/silico_horvath_probe3_lfp_10m_128ch_hex0_rou04_pfr03_20Khz_2023_11_28_campaign02/93b9ab3c-1789-40f3-8830-50c321cf367e/0/BlueConfig # to get sampling frequency
+#dataeng:
+#    blueconfig: /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/raw/silico_horvath_probe3_lfp_10m_128ch_hex0_rou04_pfr03_20Khz_2023_11_28_campaign02/93b9ab3c-1789-40f3-8830-50c321cf367e/0/BlueConfig # to get sampling frequency
 
 ground_truth:
     full:

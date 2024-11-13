@@ -3,8 +3,8 @@
 
 nwb: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/0_silico/horvath/concatenated_campaigns/probe2_hex0_rou04_pfr03_20Khz/nwb/dense_biophy_spont2.nwb'            
 
-dataeng:
-    blueconfig: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/raw/silico_horvath_probe2_lfp_10m_128ch_hex0_rou04_pfr03_20Khz_2023_10_28/de7adc53-05d5-44f7-ad3e-9e92c575c7fc/0/BlueConfig' # to get sampling frequency
+#dataeng:
+#    blueconfig: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/raw/silico_horvath_probe2_lfp_10m_128ch_hex0_rou04_pfr03_20Khz_2023_10_28/de7adc53-05d5-44f7-ad3e-9e92c575c7fc/0/BlueConfig' # to get sampling frequency
 
 # metadata for each experiment are stored in the repo at assets/metadata/
 metadata:
