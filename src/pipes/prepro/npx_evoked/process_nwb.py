@@ -8,7 +8,7 @@ modified: 05.07.2024
 
  usage:
 
-    sbatch cluster/prepro/npx_evoked/process.sh
+    sbatch cluster/prepro/npx_evoked/process_nwb.sh
 
 Note:
     - if preprocessing write crashes because of memory issue. Rerun with all pipeline nodes
@@ -38,8 +38,7 @@ from src.nodes.utils import get_config
 from src.nodes.prepro import preprocess
 
 # SETUP PARAMETERS
-data_conf, param_conf = get_config("silico_neuropixels", "stimulus").values()
-BLUECONFIG = data_conf["dataeng"]["blueconfig"]
+data_conf, param_conf = get_config("silico_neuropixels_from_nwb", "npx_evoked").values()
 
 # SETUP LOGGING
 with open("conf/logging.yml", "r", encoding="utf-8") as logging_conf:
@@ -49,19 +48,18 @@ logger = logging.getLogger("root")
 
 
 # SETUP PIPELINE
-STACK = False          # done once then set to False
-FIT_CAST = True        # done once then set to False (2h18 min)
-OFFSET = True
+FIT_CAST = False         # done once then set to False (2h18 min)
+OFFSET = False
 SCALE_AND_ADD_NOISE = {"gain_adjust": 0.90}
-WIRE = True             # done once then set to False (25 mins)
-SAVE_METADATA = True    # True to add new metadata to wired probe
-PREPROCESS = False      # True to update after adding new metadata (butterworth: 1h40, wavelet: 3h)
-GROUND_TRUTH = False    # done once then set to False
+WIRE = False             # done once then set to False (25 mins)
+SAVE_METADATA = False    # True to add new metadata to wired probe
+PREPROCESS = False       # True to update after adding new metadata (butterworth: 1h40, wavelet: 3h)
+GROUND_TRUTH = True     # done once then set to False
 
 # SETUP PARALLEL PROCESSING
 # required, else fit and cast as extractor crashes due to lack of 
 # memory
-job_dict = {"n_jobs": 1, "chunk_memory": None, "progress_bar": True} # butterworth
+job_dict = {"n_jobs": 1, "chunk_memory": None, "progress_bar": True}
 
 
 def run(filtering: str="wavelet"):
@@ -82,9 +80,9 @@ def run(filtering: str="wavelet"):
         preprocess.wire_probe(data_conf=data_conf,
                               param_conf=param_conf,
                               Recording=Recording,
-                              blueconfig=None
+                              blueconfig=None,
                               save_metadata=SAVE_METADATA,
-                              job_dict=job_dict, 
+                              job_dict=job_dict,
                               n_sites=384,
                               load_atlas_metadata=True,
                               load_filtered_cells_metadata=True)

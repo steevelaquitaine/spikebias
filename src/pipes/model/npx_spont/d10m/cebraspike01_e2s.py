@@ -153,7 +153,7 @@ cfg_ns, _ = get_config("silico_neuropixels", "concatenated").values()
 KS4_ns_10m = cfg_ns["sorting"]["sorters"]["kilosort4"]["10m"][
     "output"
 ]  # sorting with KS4
-GT_ns_10m = cfg_ns["sorting"]["simulation"]["ground_truth"]["10m"]["output"] # KS4 sorting
+GT_ns_10m = cfg_ns["ground_truth"]["10m"]["output"] # KS4 sorting
 STUDY_ns = cfg_ns["postprocessing"]["waveform"]["sorted"]["study"]["kilosort4"][
     "10m"
 ]  # WaveformExtractor
@@ -163,7 +163,7 @@ REC_ns = cfg_ns["probe_wiring"]["full"]["output"]  # Wired
 # npx evoked biophy.
 cfg_ne, _ = get_config("silico_neuropixels", "stimulus").values()
 KS4_ne_10m = cfg_ne["sorting"]["sorters"]["kilosort4"]["10m"]["output"]
-GT_ne_10m = cfg_ne["sorting"]["simulation"]["ground_truth"]["10m"]["output"]
+GT_ne_10m = cfg_ne["ground_truth"]["10m"]["output"]
 STUDY_ne = cfg_ne["postprocessing"]["waveform"]["sorted"]["study"]["kilosort4"][
     "10m"
 ]  # WaveformExtractor

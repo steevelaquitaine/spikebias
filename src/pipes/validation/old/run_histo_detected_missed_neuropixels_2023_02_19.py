@@ -45,7 +45,7 @@ def run(TruthExtractor_path: str, SortingExtractor_path: str):
         KS3_SORTING_PATH = data_conf["sorting"]["sorters"]["kilosort3"]["output"]
 
         # set ground truth spikes and cells path
-        GT_SORTING_PATH = data_conf["sorting"]["simulation"]["ground_truth"]["output"]
+        GT_SORTING_PATH = data_conf["ground_truth"]["full"]["output"]
 
         # run
         from src.pipes.figures import run_histo_detected_missed_neuropixels_2023_02_19 as pipe

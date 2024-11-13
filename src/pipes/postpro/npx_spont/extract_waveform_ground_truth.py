@@ -33,7 +33,7 @@ MS_AFTER = 3
 
 # SETUP CONFIG
 data_conf, param_conf = get_config("silico_neuropixels", "2023_10_18").values()
-GROUND_TRUTH_PATH = data_conf["sorting"]["simulation"]["ground_truth"]["output"]
+GROUND_TRUTH_PATH = data_conf["ground_truth"]["full"]["output"]
 STUDY_FOLDER = data_conf["postprocessing"]["waveform"]["ground_truth"]["study"]
 
 # setup logging

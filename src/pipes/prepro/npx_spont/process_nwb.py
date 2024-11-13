@@ -9,27 +9,21 @@ regression-test: OK!
 
  usage:
 
-    sbatch cluster/prepro/npx_spont/process.sh
+    sbatch cluster/prepro/npx_spont/process_nwb.sh
 
 Note:
     - if preprocessing write crashes because of memory issue. Rerun with all pipeline nodes
     set to False except PREPROCESS=True
     - the trace array requires 240 GB RAM (we typically have 636 GB available RAM on our compute node)
 
-Duration: 
-    - total: 3h:54
-        - 1h40 up to probe wiring.
+Duration: 2 h 20
 
-References:
-    https://spikeinterface.readthedocs.io/en/latest/modules/core.html?highlight=%22total_memory%22#parallel-processing-and-job-kwargs
 """
-
 import os
 import logging
 import logging.config
-import logging.config
 import yaml
-import time 
+import time
 import numpy as np
 
 # move to project path
@@ -43,8 +37,7 @@ from src.nodes.prepro import preprocess
 
 
 # SETUP PARAMETERS
-data_conf, param_conf = get_config("silico_neuropixels", "npx_spont").values()
-BLUECONFIG = data_conf["dataeng"]["blueconfig"]
+data_conf, param_conf = get_config("silico_neuropixels_from_nwb", "npx_spont").values()
 
 # SETUP PIPELINE
 FIT_CAST = True        # done once then set to False (2h18 min)

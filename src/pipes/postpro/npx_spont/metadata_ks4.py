@@ -47,7 +47,7 @@ if __name__ == "__main__":
 
     data_conf, _ = get_config(EXPERIMENT, RUN).values()
     SORTING_PATH = data_conf["sorting"]["sorters"]["kilosort4"]["output"]
-    GT_SORTING_PATH = data_conf["sorting"]["simulation"]["ground_truth"]["output"]
+    GT_SORTING_PATH = data_conf["ground_truth"]["full"]["output"]
     RECORDING_PATH = data_conf["probe_wiring"]["input"]
     BLUECONFIG_PATH = data_conf["dataeng"]["blueconfig"]
 

@@ -25,7 +25,7 @@ from src.nodes.postpro.accuracy import get_sorting_accuracies
 EXPERIMENT_pfr03 = "silico_neuropixels"
 SIMULATION_DATE_pfr03 = "2023_10_18"
 data_conf_pfr03, param_conf_pfr03 = get_config(EXPERIMENT_pfr03, SIMULATION_DATE_pfr03).values()
-GT_SORTING_PATH_pfr03 = data_conf_pfr03["sorting"]["simulation"]["ground_truth"]["output"]
+GT_SORTING_PATH_pfr03 = data_conf_pfr03["ground_truth"]["full"]["output"]
 KS3_SORTING_PATH_pfr03 = data_conf_pfr03["sorting"]["sorters"]["kilosort3"]["output"]
 
 # npx-384 - 7 cols
@@ -33,7 +33,7 @@ EXPERIMENT_pfr05 = "silico_neuropixels"
 SIMULATION_DATE_pfr05 = "2023_09_12"
 data_conf_pfr05, _ = get_config(EXPERIMENT_pfr05, SIMULATION_DATE_pfr05).values()
 KS3_SORTING_PATH_pfr05 = data_conf_pfr05["sorting"]["sorters"]["kilosort3"]["output"]
-GT_SORTING_PATH_pfr05 = data_conf_pfr05["sorting"]["simulation"]["ground_truth"]["output"]
+GT_SORTING_PATH_pfr05 = data_conf_pfr05["ground_truth"]["full"]["output"]
 
 
 ### COMPUTE  ------------

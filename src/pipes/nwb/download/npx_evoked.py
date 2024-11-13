@@ -13,6 +13,8 @@ Usage:
     source /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/envs/dandi2/bin/activate
     python -m src.pipes.nwb.download.npx_evoked
 
+Duration: 23 h 30
+    
 Returns:
     _type_: _description_
 """

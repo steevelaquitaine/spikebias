@@ -25,19 +25,25 @@ TODO:
 
 **Spontaneous**
 
-  - recording:
-    - path: /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/0_silico/neuropixels/concatenated_campaigns/raw/traces.pkl  (TO DELETE)
-    - size: 119G
-  - spikes:
-  - nwb path (both): /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/0_silico/neuropixels/concatenated_campaigns/nwb/npx_biophy_spont.nwb
+  - RecordingExtractor and Ground truth SortingExtractor files:
+    - path: 001250/sub-001/sub-001_ecephys.nwb
+    - size: 109.9 GB (downloading takes 20 hours)
+  - Electrode and cell metadata files: spikebias/assets/metadata/silico_neuropixels/npx_spont/
+    - cell_properties.h5
+    - filtered_cells.npy
+    - layers.npy
+    - regions.npy
 
 **Evoked**
 
-  - recording:
-    - path: /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/dataeng/0_silico/4_spikesorting_stimulus_test_neuropixels_8-1-24__8slc_80f_360r_50t_200ms_1_smallest_fiber_gids/0fcb7709-b1e9-4d84-b056-5801f20d55af/campaign/raw/traces.pkl (TO DELETE)
-    - size: 105G
-  - spikes:
-  - nwb path: /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/dataeng/0_silico/4_spikesorting_stimulus_test_neuropixels_8-1-24__8slc_80f_360r_50t_200ms_1_smallest_fiber_gids/0fcb7709-b1e9-4d84-b056-5801f20d55af/campaign/nwb/npx_biophy_evoked.nwb  
+  - RecordingExtractor and Ground truth SortingExtractor files:
+    - path: 001250/sub-002/sub-002_ecephys.nwb
+    - size: 97.6 GB (downloading takes 23 hours)
+  - Electrode and cell metadata files: spikebias/assets/metadata/silico_neuropixels/npx_evoked/
+    - cell_properties.h5
+    - filtered_cells.npy
+    - layers.npy
+    - regions.npy
 
 ### Synthetic Buccino (2020)
 
@@ -54,28 +60,35 @@ TODO:
 
 ### Biophysical simulation
 
-- recordings:
+- DEPTH 1:
+  - RecordingExtractor and Ground truth SortingExtractor files:
+    - path: 001250/sub-003/sub-003_ecephys.nwb
+    - size: 14.6 GB (downloading takes < 8 hours)
+  - Electrode and cell metadata files: spikebias/assets/metadata/dense_spont/probe_1/
+    - cell_properties.h5
+    - filtered_cells.npy
+    - layers.npy
+    - regions.npy
 
-    - depth 1:
-      - raw path: /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/0_silico/horvath/concatenated_campaigns/probe1_hex0_rou04_pfr03_20Khz/raw/traces.pkl
-      - nwb path: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/0_silico/horvath/concatenated_campaigns/probe1_hex0_rou04_pfr03_20Khz/nwb/dense_biophy_spont1.nwb'
-        - size: 14 GB
-    
-    - depth 2:
-      - raw path : /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/0_silico/horvath/concatenated_campaigns/probe2_hex0_rou04_pfr03_20Khz/raw/traces.pkl
-      - nwb path: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/0_silico/horvath/concatenated_campaigns/probe2_hex0_rou04_pfr03_20Khz/nwb/dense_biophy_spont2.nwb'
-        - size: 9.3 GB
+- DEPTH 2:
+  - RecordingExtractor and Ground truth SortingExtractor files:
+    - path: 001250/sub-004/sub-004_ecephys.nwb
+    - size: 9.9 GB (downloading takes < 8 hours)
+  - Electrode and cell metadata files: spikebias/assets/metadata/dense_spont/probe_2/
+    - cell_properties.h5
+    - filtered_cells.npy
+    - layers.npy
+    - regions.npy
 
-    - depth 3:
-      - raw path: /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/0_silico/horvath/concatenated_campaigns/probe3_hex0_rou04_pfr03_20Khz/raw/traces.pkl
-      - nwb path: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/0_silico/horvath/concatenated_campaigns/probe3_hex0_rou04_pfr03_20Khz/nwb/dense_biophy_spont3.nwb'      
-        - size: 15 GB      
-
-- spikes:
-
-    - path depth 1: /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/0_silico/horvath/concatenated_campaigns/probe1_hex0_rou04_pfr03_20Khz/raw/spiketrains.pkl
-    - path depth 2: /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/0_silico/horvath/concatenated_campaigns/probe2_hex0_rou04_pfr03_20Khz/raw/spiketrains.pkl
-    - path depth 3: /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/0_silico/horvath/concatenated_campaigns/probe3_hex0_rou04_pfr03_20Khz/raw/spiketrains.pkl
+- DEPTH 3:
+  - RecordingExtractor and Ground truth SortingExtractor files:
+    - path: 001250/sub-005/sub-005_ecephys.nwb
+    - size: 15.6 GB (downloading takes < 8 hours)
+  - Electrode and cell metadata files: spikebias/assets/metadata/dense_spont/probe_3/
+    - cell_properties.h5
+    - filtered_cells.npy
+    - layers.npy
+    - regions.npy
 
 ## Auxiliary
 
@@ -96,10 +109,4 @@ TODO:
       - path : /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/dataset/weights/coeffsdenseprobe1.h5
       - size: 77 GB
 
-- Metadata files:
-  - Atlas metadata: codebase repo at assets/metadata/ or load the open source Atlas: https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/QREN2T
-    - layers
-    - regions
-  - Filtered_cells metadata (cells within 50 microns): assets/metadata/
-  - Spike sampling frequency metadata: Dt [TODO]
-  - Extracellular trace sampling frequency metadata: Dt [TODO]
+  - Atlas (optional): https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/QREN2T

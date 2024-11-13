@@ -5,6 +5,9 @@ a spikeinterface WaveformExtractor object saved in a
 study folder.
 
 author: steeve.laquitaine@epfl.ch
+
+
+
 """
 import logging
 import logging.config
@@ -42,8 +45,8 @@ def postprocess_10m(cfg, duration_sec=600, create_full_study=False):
     t0 = time()
     
     # get paths
-    GT_FULL_PATH = cfg["sorting"]["simulation"]["ground_truth"]["output"]
-    GT_10m_PATH = cfg["sorting"]["simulation"]["ground_truth"]["10m"]["output"]
+    GT_FULL_PATH = cfg["ground_truth"]["full"]["output"]
+    GT_10m_PATH = cfg["ground_truth"]["10m"]["output"]
     STUDY_FULL_PATH = cfg["postprocessing"]["waveform"]["ground_truth"]["study"]
     STUDY_10M_PATH = cfg["postprocessing"]["waveform"]["ground_truth"]["10m"]["study"]
     PREP_PATH = cfg["preprocessing"]["full"]["output"]["trace_file_path"]

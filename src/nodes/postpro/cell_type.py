@@ -13,33 +13,45 @@ Returns:
     _type_: _description_
 """
 import shutil
-import bluepy
-import spikeinterface as si
-from src.nodes.load import load_campaign_params 
+import pandas as pd
 from src.nodes.truth.silico import ground_truth 
 
 
-def label_true_cell_properties(Sorting, blueconfig_path: str, true_sorting_path: str, save:bool):
+def label_true_cell_properties(data_cfg: dict, Sorting, blueconfig_path: str, true_sorting_path: str, save: bool):
     """set true cell properties in spikeinterface's sorting extractor 
 
     Args:
+        data_cfg: datasets path config 
         Sorting: Ground truth Sorting Extractor
-        blueconfig_path (str): _description_
+        blueconfig_path (None): path of BBP's blueconfig. Is not available so should always be None.
+        anymore after publication.
         true_sorting_path (str): Ground Truth Sorting Extractor
+    
     Returns:
         Sorting Extractor
     """
-    # get unit properties
-    simulation = bluepy.Simulation(blueconfig_path)
-    cell_properties = list(simulation.circuit.cells.available_properties)
-    df = simulation.circuit.cells.get(
-        Sorting.unit_ids, properties=list(cell_properties)
-    )
-    cell_properties = [prop.replace("@dynamics:", "dynamics_") for prop in cell_properties]
-    df.columns = cell_properties
+    # get circuit's cell properties    
+    if blueconfig_path:
+        import bluepy
+        simulation = bluepy.Simulation(blueconfig_path)
+        cell_properties = list(simulation.circuit.cells.available_properties)
+        df = simulation.circuit.cells.get(
+            Sorting.unit_ids, properties=list(cell_properties)
+        )
+        cell_properties = [prop.replace("@dynamics:", "dynamics_") for prop in cell_properties]
+        df.columns = cell_properties
+    
+        # cast as string for saving as h5
+        df.orientation = df.orientation.astype(str)
 
+        # save cell properties to h5 file in the local project path
+        df.to_hdf(data_cfg["metadata"]["cell_properties"], key="cell_properties", format='t', mode="w")
+    else:
+        # cell properties to h5 file in the local project path
+        df = pd.read_hdf(data_cfg["metadata"]["cell_properties"], key="cell_properties")
+    
     # add as property to Sorting Extractor
-    for prop in cell_properties:
+    for prop in df.columns:
         Sorting.set_property(prop, df[prop].values.tolist())
     
     # make a "layers" copy of "layer"
@@ -67,6 +79,7 @@ def get_interneurons(data_conf:dict, cell_type:str):
         _type_: _description_
     """
     # filter all near-contact pyramidal cells
+    from src.nodes.load import load_campaign_params 
     simulation = load_campaign_params(data_conf)
     SortingTrue = ground_truth.load(data_conf)
 
@@ -79,6 +92,7 @@ def get_interneurons(data_conf:dict, cell_type:str):
 def get_pyramidal(data_conf:dict):
     
     # filter all near-contact pyramidal cells
+    from src.nodes.load import load_campaign_params 
     simulation = load_campaign_params(data_conf)
     SortingTrue = ground_truth.load(data_conf)
 

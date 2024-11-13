@@ -44,7 +44,7 @@ def postprocess_40m(cfg, duration_sec=600, create_full_study=False):
     t0 = time()
     
     # get paths
-    GT_FULL_PATH = cfg["sorting"]["simulation"]["ground_truth"]["output"]
+    GT_FULL_PATH = cfg["ground_truth"]["full"]["output"]
     GT_40m_PATH = cfg["sorting"]["simulation"]["ground_truth"]["40m"]["output"]
     STUDY_FULL_PATH = cfg["postprocessing"]["waveform"]["ground_truth"]["study"]
     STUDY_40M_PATH = cfg["postprocessing"]["waveform"]["ground_truth"]["40m"]["study"]

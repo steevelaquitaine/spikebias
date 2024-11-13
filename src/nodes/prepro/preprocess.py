@@ -1406,7 +1406,7 @@ def save_ground_truth_from_nwb(data_conf):
     NWB_PATH = data_conf["nwb"]
     
     # get write paths
-    WRITE_PATH = data_conf["ground_truth"]["output"]
+    WRITE_PATH = data_conf["ground_truth"]["full"]["output"]
     
     # get SortingExtractor
     SortingTrue = se.NwbSortingExtractor(NWB_PATH)

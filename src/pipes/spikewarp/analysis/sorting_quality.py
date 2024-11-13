@@ -44,7 +44,7 @@ THR_GOOD = 0.8
 # NPX
 # Evoked (10m)
 cfg_nb, _ = get_config("others/spikewarp", "2024_04_13").values()
-GT_10m = cfg_nb["sorting"]["simulation"]["ground_truth"]["10m"]["output"]
+GT_10m = cfg_nb["ground_truth"]["10m"]["output"]
 KS4_nb_10m = cfg_nb["sorting"]["sorters"]["kilosort4"]["10m"]["output"]
 KS3_nb_10m = cfg_nb["sorting"]["sorters"]["kilosort3"]["10m"]["output"]
 KS2_5_nb_10m = cfg_nb["sorting"]["sorters"]["kilosort2_5"]["10m"]["output"]

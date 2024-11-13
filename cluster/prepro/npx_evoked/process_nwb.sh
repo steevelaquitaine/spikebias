@@ -25,8 +25,8 @@
 #SBATCH --mem=0                                          # allocate entire memory to the job
 #SBATCH --constraint=volta                               # setup node with GPU
 #SBATCH --gres=gpu:1                                     # setup one GPU
-#SBATCH -o ./cluster/logs/cluster/output/prepro/npx_evoked/%x_id_%A.out   # set log output file path
-#SBATCH -e ./cluster/logs/cluster/output/prepro/npx_evoked/%x_id_%A.err   # set log error file path
+#SBATCH -o ./cluster/logs/cluster/output/prepro/npx_evoked_from_nwb/%x_id_%A.out   # set log output file path
+#SBATCH -e ./cluster/logs/cluster/output/prepro/npx_evoked_from_nwb/%x_id_%A.err   # set log error file path
 #SBATCH --mail-type=BEGIN
 #SBATCH --mail-type=END
 #SBATCH --mail-type=FAIL
@@ -35,7 +35,6 @@
 # load matlab after clean up, compile cuda code and setup python3.9 interpreter via spack env
 module purge 
 module load spack
-cd /gpfs/bbp.cscs.ch/project/proj85/home/laquitai/spikebias/   
 . /gpfs/bbp.cscs.ch/ssd/apps/bsd/2023-02-23/spack/share/spack/setup-env.sh
 spack env activate python3_9 -p
 source /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/envs/spikinterf0_100_5/bin/activate

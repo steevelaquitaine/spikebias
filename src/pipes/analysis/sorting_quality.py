@@ -43,7 +43,7 @@ THR_GOOD = 0.8
 # NPX
 # Synthetic (10m)
 cfg_nb, _ = get_config("buccino_2020", "2020").values()
-GT_nb_10m = cfg_nb["sorting"]["simulation"]["ground_truth"]["10m"]["output"]
+GT_nb_10m = cfg_nb["ground_truth"]["10m"]["output"]
 KS4_nb_10m = cfg_nb["sorting"]["sorters"]["kilosort4"]["10m"]["output"]
 KS3_nb_10m = cfg_nb["sorting"]["sorters"]["kilosort3"]["10m"]["output"]
 KS2_5_nb_10m = cfg_nb["sorting"]["sorters"]["kilosort2_5"]["10m"]["output"]
@@ -60,7 +60,7 @@ KS2_5_ns_10m = cfg_ns["sorting"]["sorters"]["kilosort2_5"]["10m"]["output"]
 KS2_ns_10m = cfg_ns["sorting"]["sorters"]["kilosort2"]["10m"]["output"]
 KS_ns_10m = cfg_ns["sorting"]["sorters"]["kilosort"]["10m"]["output"]
 HS_ns_10m = cfg_ns["sorting"]["sorters"]["herdingspikes"]["10m"]["output"]
-GT_ns_10m = cfg_ns["sorting"]["simulation"]["ground_truth"]["10m"]["output"]
+GT_ns_10m = cfg_ns["ground_truth"]["10m"]["output"]
 REC_ns = cfg_ns["probe_wiring"]["full"]["output"]
 
 # biophy evoked
@@ -71,7 +71,7 @@ KS2_5_ne_10m = cfg_ne["sorting"]["sorters"]["kilosort2_5"]["10m"]["output"]
 KS2_ne_10m = cfg_ne["sorting"]["sorters"]["kilosort2"]["10m"]["output"]
 KS_ne_10m = cfg_ne["sorting"]["sorters"]["kilosort"]["10m"]["output"]
 HS_ne_10m = cfg_ne["sorting"]["sorters"]["herdingspikes"]["10m"]["output"]
-GT_ne_10m = cfg_ne["sorting"]["simulation"]["ground_truth"]["10m"]["output"]
+GT_ne_10m = cfg_ne["ground_truth"]["10m"]["output"]
 REC_ne = cfg_ne["probe_wiring"]["full"]["output"]
 
 # DENSE PROBE 
@@ -84,7 +84,7 @@ K2_d1 = cfg_ds1["sorting"]["sorters"]["kilosort2"]["10m"]["output"]
 K_d1 = cfg_ds1["sorting"]["sorters"]["kilosort"]["10m"]["output"]
 H_d1 = cfg_ds1["sorting"]["sorters"]["herdingspikes"]["10m"]["output"]
 R_d1 = cfg_ds1["probe_wiring"]["full"]["output"]
-T_d1 = cfg_ds1["sorting"]["simulation"]["ground_truth"]["10m"]["output"]
+T_d1 = cfg_ds1["ground_truth"]["10m"]["output"]
 
 # depth 2
 cfg_ds2, _ = get_config("silico_horvath", "concatenated/probe_2").values()
@@ -95,7 +95,7 @@ K2_d2 = cfg_ds2["sorting"]["sorters"]["kilosort2"]["10m"]["output"]
 K_d2 = cfg_ds2["sorting"]["sorters"]["kilosort"]["10m"]["output"]
 H_d2 = cfg_ds2["sorting"]["sorters"]["herdingspikes"]["10m"]["output"]
 R_d2 = cfg_ds2["probe_wiring"]["full"]["output"]
-T_d2 = cfg_ds2["sorting"]["simulation"]["ground_truth"]["10m"]["output"]
+T_d2 = cfg_ds2["ground_truth"]["10m"]["output"]
 
 # depth 3
 cfg_ds3, _ = get_config("silico_horvath", "concatenated/probe_3").values()
@@ -106,7 +106,7 @@ K2_d3 = cfg_ds3["sorting"]["sorters"]["kilosort2"]["10m"]["output"]
 K_d3 = cfg_ds3["sorting"]["sorters"]["kilosort"]["10m"]["output"]
 H_d3 = cfg_ds3["sorting"]["sorters"]["herdingspikes"]["10m"]["output"]
 R_d3 = cfg_ds3["probe_wiring"]["full"]["output"]
-T_d3 = cfg_ds3["sorting"]["simulation"]["ground_truth"]["10m"]["output"]
+T_d3 = cfg_ds3["ground_truth"]["10m"]["output"]
 
 
 # saved dataframe of sorted unit quality

@@ -36,7 +36,7 @@ logger = logging.getLogger("root")
 recording_path = data_conf["preprocessing"]["output"]["trace_file_path"]
 
 # SET WRITE PATHS
-GT_SORTING_PATH = data_conf["sorting"]["simulation"]["ground_truth"]["output"]
+GT_SORTING_PATH = data_conf["ground_truth"]["full"]["output"]
 KS3_SORTING_PATH = data_conf["sorting"]["sorters"]["kilosort3"]["output"]
 KS3_OUTPUT_PATH = data_conf["sorting"]["sorters"]["kilosort3"]["kilosort3_output"]
 
