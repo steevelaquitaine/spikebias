@@ -29,6 +29,10 @@ import spikeinterface.extractors as se
 import spikeinterface.preprocessing as spre
 import pandas as pd
 
+# on dandi hub
+from dandi.dandiapi import DandiAPIClient
+import spikeinterface.extractors as se
+
 # custom package
 from src.nodes.utils import get_config
 from src.nodes.dataeng.silico import recording, probe_wiring
@@ -1451,6 +1455,53 @@ def load(data_conf: dict):
     return si.load_extractor(
         data_conf["preprocessing"]["output"]["trace_file_path"]
     )
+
+# on DANDI hub  ---------------------------------------
+
+def load_on_dandihub(data_conf: dict):
+    """load one dataset on the DANDI hub
+    """
+    
+    # dataset id
+    dandiset_id = data_conf["dandiset_id"]
+    filepath = data_conf["dandiset_filepath"]
+
+    # get tthe file path on S3
+    with DandiAPIClient() as client:
+        asset = client.get_dandiset(dandiset_id, 'draft').get_asset_by_path(filepath)
+        s3_path = asset.get_content_url(follow_redirects=1, strip_query=True)
+    print(s3_path)
+
+    # get RecordingExtractor
+    Recording = se.NwbRecordingExtractor(file_path=s3_path, stream_mode="remfile")
+    Sorting = se.NwbSortingExtractor(file_path=s3_path, stream_mode="remfile")
+    return Recording, Sorting
+    
+    
+def fit_and_cast_as_extractor_dense_probe_on_dandihub(Recording, data_conf: dict, param_conf: dict, 
+                                                  offset: bool, scale_and_add_noise):
+    """Cast as a SpikeInterface RecordingExtractor 
+    Rescale, offset, cast as Spikeinterface Recording Extractor object
+    Traces need rescaling as the simulation produces floats with nearly all values below an amplitude of 1. 
+    As traces are binarized to int16 to be used by Kilosort, nearly all spikes disappear (set to 0).
+    return_scale=True does not seem to work as default so we have to rewrite the traces with the new 
+
+    takes 54 min
+    note: RecordingExtractor is not dumpable and can't be processed in parallel
+    """
+    # track time
+    t0 = time()
+    logger.info("Starting ...")
+
+    # cast (30 secs)
+    Recording = recording.run_on_dandihub(Recording, data_conf, param_conf, offset=offset, 
+                                       scale_and_add_noise=scale_and_add_noise)
+
+    # remove 129th "test" channel (actually 128 because starts at 0)
+    if len(Recording.channel_ids) == 129:
+        Recording = Recording.remove_channels([128])
+    logger.info(f"Done in {np.round(time()-t0,2)} secs")
+    return Recording
 
 # entry point -----------------------------
 

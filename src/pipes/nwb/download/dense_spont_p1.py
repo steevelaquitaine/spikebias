@@ -17,9 +17,7 @@ Returns:
 """
 # SETUP PACKAGES 
 import os
-import numpy as np
 import warnings
-from pynwb import NWBHDF5IO
 import logging
 import logging.config
 import yaml

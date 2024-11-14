@@ -13,7 +13,6 @@ import spikeinterface as si
 import numpy as np
 import warnings
 from pynwb.file import NWBFile, Subject
-from pynwb import NWBHDF5IO
 from datetime import datetime
 from pathlib import Path
 from pynwb import NWBHDF5IO

@@ -1101,6 +1101,50 @@ def run_from_nwb(data_conf: dict, param_conf: dict, offset:bool, scale_and_add_n
         traces_list=[trace],
         sampling_frequency=SFREQ,
     )
+    
+    
+def run_on_dandihub(Recording, data_conf: dict, param_conf: dict, offset:bool, scale_and_add_noise: bool):
+    """Rescale, and/or add missing noise and cast traces from NWB file 
+    as a SpikeInterface RecordingExtractor
+
+    Args:
+        data_conf (dict): _description_
+        param_conf (dict): 
+        offset (bool): true or false, removes each trace's mean
+        scale_and_add_noise (bool): "scale_and_add_noise", "noise_20_perc_lower", "scale"
+        - if true load best scaling factor and missing noise fitted
+        to the in vivo traces per layer
+
+    Returns:
+        Recording:  raw SpikeInterface Recording Extractor object
+    """
+    # track time
+    t0 = time.time()
+
+    # set traces read path
+    SFREQ = param_conf["sampling_freq"]
+    
+    # read and cast raw trace as array (1 min/h recording)
+    trace = Recording.get_traces()
+    
+    # remove the mean (offset, 10 min/h recording)
+    if offset:
+        for ix in range(trace.shape[1]):
+            trace[:, ix] -= np.mean(trace[:, ix])
+        logger.info(f"Subtracted trace means in {np.round(time.time()-t0,2)} secs")
+
+    # scale and add missing noise (2h:10 / h recording)
+    if isinstance(scale_and_add_noise, dict):
+        trace = _scale_adj_by_and_add_noise_nwb(trace, data_conf, scale_and_add_noise)
+        logger.info(f"Scaled traces with adjusted gain and added noise in {np.round(time.time()-t0,2)} secs")                
+    else:
+        NotImplementedError
+
+    # cast trace as a SpikeInterface Recording object
+    return se.NumpyRecording(
+        traces_list=[trace],
+        sampling_frequency=SFREQ,
+    )
 
 
 def load(data_conf: dict):
