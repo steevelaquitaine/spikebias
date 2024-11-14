@@ -58,7 +58,7 @@ def run(experiment: str, run: str):
     # track time
     t0 = time.time()
     
-    # load RecordingExtractor
+    # load RecordingExtractor and Ground truth SortingExtractor
     Recording, Sorting = preprocess.load_on_dandihub(data_conf)
 
 
@@ -87,7 +87,7 @@ def run(experiment: str, run: str):
                                                     job_dict=job_dict)
     
     if GROUND_TRUTH:
-        preprocess.save_ground_truth_from_nwb(data_conf)
+        preprocess.save_ground_truth_on_dandihub(Sorting, data_conf)
 
         
     logger.info(f"Done in {np.round(time.time()-t0,2)} secs")

@@ -1503,6 +1503,21 @@ def fit_and_cast_as_extractor_dense_probe_on_dandihub(Recording, data_conf: dict
     logger.info(f"Done in {np.round(time()-t0,2)} secs")
     return Recording
 
+
+def save_ground_truth_on_dandihub(SortingTrue, data_conf):
+
+    # get ground truth sorting extractor
+    t0 = time()
+    logger.info("Starting 'saving ground truth sorting extractor'")
+
+    # get write paths
+    WRITE_PATH = data_conf["ground_truth"]["full"]["output"]
+        
+    # save
+    shutil.rmtree(WRITE_PATH, ignore_errors=True)
+    SortingTrue.save(folder=WRITE_PATH, n_jobs=-1, total_memory="2G")
+    logger.info("Done writing Ground truth SortingExtractor in %s", round(time() - t0, 1))    
+
 # entry point -----------------------------
 
 if __name__ == "__main__":
