@@ -1,0 +1,139 @@
+
+
+# download/save NWB file from DANDI archive to your local path
+dandiset_id: '001250'
+dandiset_filepath: 'sub-001/sub-001_ecephys.nwb'
+
+# ground truth spike timestamps
+ground_truth:
+    full:
+        output: '/home/jovyan/steevelaquitaine/spikebias/tmp_dataset/npx_spont/preprocessed/ground_truth_nwb'
+    10m:
+        output: '/home/jovyan/steevelaquitaine/spikebias/tmp_dataset/npx_spont/preprocessed/ground_truth_10m_nwb'
+
+probe_wiring: 
+    full:
+        output: '/home/jovyan/steevelaquitaine/spikebias/tmp_dataset/npx_spont/dataeng/recording/traces_nwb'
+
+# metadata for each experiment are stored in the repo at assets/metadata/
+metadata:
+    atlas: '/home/jovyan/steevelaquitaine/spikebias/assets/metadata/silico_neuropixels/npx_spont/'
+    filtered_cells: '/home/jovyan/steevelaquitaine/spikebias/assets/metadata/silico_neuropixels/npx_spont/filtered_cells.npy'
+    cell_properties: '/home/jovyan/steevelaquitaine/spikebias/assets/metadata/silico_neuropixels/npx_spont/cell_properties.h5'
+
+preprocessing:
+    full:
+        output:
+            trace_file_path: '/home/jovyan/steevelaquitaine/spikebias/tmp_dataset/npx_spont/preprocessed/traces_nwb'
+            spike_file_path: /home/jovyan/steevelaquitaine/spikebias/tmp_dataset/npx_spont/preprocessed/spiketrains_nwb.pkl'
+    fitting:
+        missing_noise_path: '/gpfs/bbp.cscs.ch/project/proj85/home/laquitai/spikebias/conf/silico_neuropixels/npx_spont/noise_gain_'
+
+# Sorting
+# - gain and noise were fitted
+# - full and 10 min recordings
+# - butterworth filtering
+sorting:                
+    sorters: 
+        kilosort4:
+            output: '/home/jovyan/steevelaquitaine/spikebias/tmp_dataset/npx_spont/SortingKS4_nwb/'
+            sort_output: '/home/jovyan/steevelaquitaine/spikebias/tmp_dataset/npx_spont/KS4_output_nwb/'
+            10m:
+                output: '/home/jovyan/steevelaquitaine/spikebias/tmp_dataset/npx_spont/SortingKS4_noise_fitd_gain_ftd_10m_nwb/'
+                sort_output: '/home/jovyan/steevelaquitaine/spikebias/tmp_dataset/npx_spont/KS4_output_noise_fitd_gain_ftd_10m_nwb/'
+        kilosort3:
+            input: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/sorters/Kilosort3_buttw'
+            output: '/home/jovyan/steevelaquitaine/spikebias/tmp_dataset/npx_spont/SortingKS3_nwb/'
+            sort_output: '/home/jovyan/steevelaquitaine/spikebias/tmp_dataset/npx_spont/KS3_output_nwb/'            
+            10m:
+                output: '/home/jovyan/steevelaquitaine/spikebias/tmp_dataset/npx_spont/SortingKS3_noise_ftd_gain_ftd_10m_nwb/'
+                sort_output: '/home/jovyan/steevelaquitaine/spikebias/tmp_dataset/npx_spont/KS3_output_noise_ftd_gain_ftd_10m_nwb/'                
+        kilosort2_5:
+            input: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/sorters/Kilosort-2.5/'
+            output: '/home/jovyan/steevelaquitaine/spikebias/tmp_dataset/npx_spont/SortingKS2_5_nwb/'
+            sort_output: '/home/jovyan/steevelaquitaine/spikebias/tmp_dataset/npx_spont/KS2_5_output_nwb/'
+            10m:
+                output: '/home/jovyan/steevelaquitaine/spikebias/tmp_dataset/npx_spont/SortingKS2_5_10m_nwb/'
+                sort_output: '/home/jovyan/steevelaquitaine/spikebias/tmp_dataset/npx_spont/KS2_5_output_10m_nwb/'
+        kilosort2:
+            input: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/sorters/Kilosort-2.0.2/'
+            output: '/home/jovyan/steevelaquitaine/spikebias/tmp_dataset/npx_spont/SortingKS2_nwb/'
+            sort_output: '/home/jovyan/steevelaquitaine/spikebias/tmp_dataset/npx_spont/KS2_output_nwb/'
+            10m:
+                output: '/home/jovyan/steevelaquitaine/spikebias/tmp_dataset/npx_spont/SortingKS2_10m_nwb/'
+                sort_output: '/home/jovyan/steevelaquitaine/spikebias/tmp_dataset/npx_spont/KS2_output_10m_nwb/'
+        kilosort:
+            input: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/sorters/KiloSort/'
+            output: '/home/jovyan/steevelaquitaine/spikebias/tmp_dataset/npx_spont/SortingKS_nwb/'
+            sort_output: '/home/jovyan/steevelaquitaine/spikebias/tmp_dataset/npx_spont/KS_output_nwb/'
+            10m:
+                output: '/home/jovyan/steevelaquitaine/spikebias/tmp_dataset/npx_spont/SortingKS_10m_nwb/'
+                sort_output: '/home/jovyan/steevelaquitaine/spikebias/tmp_dataset/npx_spont/KS_output_10m_nwb/'
+        herdingspikes:
+            output: '/home/jovyan/steevelaquitaine/spikebias/tmp_dataset/npx_spont/SortingHerdingspikes_nwb/'
+            sort_output: '/home/jovyan/steevelaquitaine/spikebias/tmp_dataset/npx_spont/Herdingspikes_output_nwb/'
+            10m:
+                output: '/home/jovyan/steevelaquitaine/spikebias/tmp_dataset/npx_spont/SortingHerdingspikes_10m_nwb/'
+                sort_output: '/home/jovyan/steevelaquitaine/spikebias/tmp_dataset/npx_spont/Herdingspikes_output_10m_nwb/'
+
+postprocessing: 
+    snr_plot_data_mean: '/home/jovyan/steevelaquitaine/spikebias/tmp_dataset/npx_spont/postpro/realism/lfp/snr_plot_data_mean_nwb.ny'
+    snr_plot_data_ci: '/home/jovyan/steevelaquitaine/spikebias/tmp_dataset/npx_spont/postpro/realism/lfp/snr_plot_data_ci_nwb.ny'
+    snr_plot_data_bin: '/home/jovyan/steevelaquitaine/spikebias/tmp_dataset/npx_spont/postpro/realism/lfp/snr_plot_data_bin_nwb.ny'
+    waveform:
+        ground_truth:    
+            study: '/home/jovyan/steevelaquitaine/spikebias/tmp_dataset/npx_spont/postpro/realism/spike/ground_truth/study_nwb'
+            10m:
+                study: '/home/jovyan/steevelaquitaine/spikebias/tmp_dataset/npx_spont/postpro/realism/spike/ground_truth/study_10m_nwb'
+            WaveformExtractor: '/home/jovyan/steevelaquitaine/spikebias/tmp_dataset/npx_spont/postpro/realism/spike/ground_truth/WaveformExtractor_nwb'
+        sorted:    
+            study: 
+                kilosort4: 
+                    full: '/home/jovyan/steevelaquitaine/spikebias/tmp_dataset/npx_spont/postpro/realism/spike/sorted/study_ks4_nwb'
+                    10m: '/home/jovyan/steevelaquitaine/spikebias/tmp_dataset/npx_spont/postpro/realism/spike/sorted/study_ks4_10m_nwb'
+                kilosort3: 
+                    full: '/home/jovyan/steevelaquitaine/spikebias/tmp_dataset/npx_spont/postpro/realism/spike/sorted/study_ks3_nwb'
+                    10m: '/home/jovyan/steevelaquitaine/spikebias/tmp_dataset/npx_spont/postpro/realism/spike/sorted/study_ks3_10m_nwb'
+                kilosort2_5: 
+                    full: '/home/jovyan/steevelaquitaine/spikebias/tmp_dataset/npx_spont/postpro/realism/spike/sorted/study_ks2_5_nwb'
+                    10m: '/home/jovyan/steevelaquitaine/spikebias/tmp_dataset/npx_spont/postpro/realism/spike/sorted/study_ks2_5_10m_nwb'
+                kilosort2: 
+                    full: '/home/jovyan/steevelaquitaine/spikebias/tmp_dataset/npx_spont/postpro/realism/spike/sorted/study_ks2_nwb'
+                    10m: '/home/jovyan/steevelaquitaine/spikebias/tmp_dataset/npx_spont/postpro/realism/spike/sorted/study_ks2_10m_nwb'
+                kilosort: 
+                    full: '/home/jovyan/steevelaquitaine/spikebias/tmp_dataset/npx_spont/postpro/realism/spike/sorted/study_ks_nwb'
+                    10m: '/home/jovyan/steevelaquitaine/spikebias/tmp_dataset/npx_spont/postpro/realism/spike/sorted/study_ks_10m_nwb'                    
+                herdingspikes: 
+                    full: '/home/jovyan/steevelaquitaine/spikebias/tmp_dataset/npx_spont/postpro/realism/spike/sorted/study_hs_nwb'
+                    10m: '/home/jovyan/steevelaquitaine/spikebias/tmp_dataset/npx_spont/postpro/realism/spike/sorted/study_hs_10m_nwb'                                        
+    sorted_neuron_metadata: '/home/jovyan/steevelaquitaine/spikebias/tmp_dataset/npx_spont/postpro/sorted_neuron_metadata_nwb.csv'
+    qmetrics:
+        truth: '/home/jovyan/steevelaquitaine/spikebias/tmp_dataset/npx_spont/postpro/qmetrics/truth/qmetrics_nwb.csv'
+        truth_noise_0uV_gain_1e5_int16: '/home/jovyan/steevelaquitaine/spikebias/tmp_dataset/npx_spont/postpro/qmetrics/truth/qmetrics_noise_0uV_gain_1e5_int16_nwb.csv'
+
+validation:
+    10m:
+        trace_snr: '/home/jovyan/steevelaquitaine/spikebias/tmp_dataset/npx_spont/postpro/realism/lfp/trace_snr_nwb.npy'
+        trace_snr_adj10perc_less_noise_fitd_int16: '/home/jovyan/steevelaquitaine/spikebias/tmp_dataset/npx_spont/postpro/realism/lfp/trace_snr_adj10perc_less_noise_fitd_int16_nwb.npy'
+    full:
+        trace_snr_adj10perc_less_noise_fitd_int16: '/home/jovyan/steevelaquitaine/spikebias/tmp_dataset/npx_spont/postpro/realism/lfp/trace_snr_adj10perc_less_noise_fitd_int16_full_nwb.npy'
+    psd:
+        raw: '/home/jovyan/steevelaquitaine/spikebias/tmp_dataset/npx_spont/postpro/realism/lfp/full_raw_power_welch_10m_gain_ftd_10perc_less_nwb.npy'
+        preprocessed: '/home/jovyan/steevelaquitaine/spikebias/tmp_dataset/npx_spont/postpro/realism/lfp/full_prep_buttw_power_welch_10m_gain_ftd_10perc_less_nwb.npy'
+    noise:
+        full: '/home/jovyan/steevelaquitaine/spikebias/tmp_dataset/npx_spont/postpro/realism/lfp/noise/noise_full_nwb.npy'
+
+analyses:
+    trace:
+        10m:            
+            noise: '/home/jovyan/steevelaquitaine/spikebias/tmp_dataset/npx_spont/postpro/realism/lfp/noise_nwb.npy' # preprocessed traces (buutw)
+        power: 
+            raw: '/home/jovyan/steevelaquitaine/spikebias/tmp_dataset/npx_spont/postpro/realism/lfp/raw_power_nwb.npy'
+            preprocessed: '/home/jovyan/steevelaquitaine/spikebias/tmp_dataset/npx_spont/postpro/realism/lfp/preprocessed_power_nwb.npy'
+        
+    noise_stats:
+        buttw_noise_0uV: '/home/jovyan/steevelaquitaine/spikebias/tmp_dataset/npx_spont/postpro/realism/lfp/noise/buttw_noise_0uV_nwb.npy'
+        buttw_noise_20_perc_lower: '/home/jovyan/steevelaquitaine/spikebias/tmp_dataset/npx_spont/postpro/realism/lfp/noise/buttw_noise_20_perc_lower_nwb.npy'
+
+    # accuracy versus delta_time_vs_shift for KS 3.0
+    acc_dt_shift:  '/home/jovyan/steevelaquitaine/spikebias/tmp_dataset/npx_spont/postpro/accuracy/acc_dt_shift_nwb.npy'
