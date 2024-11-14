@@ -1503,6 +1503,27 @@ def fit_and_cast_as_extractor_dense_probe_on_dandihub(Recording, data_conf: dict
     logger.info(f"Done in {np.round(time()-t0,2)} secs")
     return Recording
 
+def fit_and_cast_as_extractor_npx_probe_on_dandihub(Recording, data_conf: dict, param_conf: dict,
+                                      offset: bool, scale_and_add_noise):
+    """Cast as a SpikeInterface RecordingExtractor 
+    Rescale, offset, cast as Spikeinterface Recording Extractor object
+    Traces need rescaling as the simulation produces floats with nearly all values below an amplitude of 1. 
+    As traces are binarized to int16 to be used by Kilosort, nearly all spikes disappear (set to 0).
+    return_scale=True does not seem to work as default so we have to rewrite the traces with the new 
+
+    takes 54 min
+    note: RecordingExtractor is not dumpable and can't be processed in parallel
+    """
+    # track time
+    t0 = time()
+    logger.info("Starting ...")
+
+    # cast (30 secs)
+    Recording = recording.run_on_dandihub(Recording, data_conf, param_conf, offset=offset,
+                                       scale_and_add_noise=scale_and_add_noise)
+    logger.info(f"Done in {np.round(time()-t0,2)} secs")
+    return Recording
+
 
 def save_ground_truth_on_dandihub(SortingTrue, data_conf):
 

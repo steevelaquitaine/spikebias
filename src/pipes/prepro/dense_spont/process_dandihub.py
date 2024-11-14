@@ -2,7 +2,7 @@
 
 usage:
 
-duration: takes about 1h on a compute node
+duration: 13 min on DANDI hub's "large" server.
 
 Specs recommendations:
     - between 30 and 64 GB RAM is enough for 10 GB NWB datasets (free -g); this was tested on 750 GB RAM.

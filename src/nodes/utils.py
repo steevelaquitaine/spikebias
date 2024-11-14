@@ -86,6 +86,10 @@ def get_config(exp: str, simulation_date: str):
         data_conf, param_conf = get_config_silico_neuropixels_from_nwb(
             simulation_date
         ).values()
+    elif exp == "silico_neuropixels_on_dandihub":
+        data_conf, param_conf = get_config_silico_neuropixels_on_dandihub(
+            simulation_date
+        ).values()        
     elif exp == "vivo_marques":
         data_conf, param_conf = get_config_vivo_marques(
             simulation_date
@@ -260,6 +264,35 @@ def get_config_silico_neuropixels_from_nwb(simulation_date: str):
     ) as dataset_conf:
         dataset_conf = yaml.safe_load(dataset_conf)
         dataset_conf["exp"] = "silico_neuropixels_from_nwb"
+        dataset_conf["date"] = simulation_date
+    with open(
+        f"conf/silico_neuropixels/{simulation_date}/parameters.yml",
+        "r",
+        encoding="utf-8",
+    ) as param_conf:
+        param_conf = yaml.safe_load(param_conf)
+    return {"dataset_conf": dataset_conf, "param_conf": param_conf}
+
+
+def get_config_silico_neuropixels_on_dandihub(simulation_date: str):
+    """Get pipeline's configuration for James spike time project
+
+    Args:
+        simulation_date (str): _description_
+        - probe_1, probe_2, probe_3
+
+    Returns:
+        dict: dataset paths and parameter configurations
+    """
+    logger.info(f"conf/silico_neuropixels/{simulation_date} config")
+    
+    with open(
+        f"conf/silico_neuropixels/{simulation_date}/dataset_on_dandihub.yml",
+        "r",
+        encoding="utf-8",
+    ) as dataset_conf:
+        dataset_conf = yaml.safe_load(dataset_conf)
+        dataset_conf["exp"] = "silico_neuropixels_on_dandihub"
         dataset_conf["date"] = simulation_date
     with open(
         f"conf/silico_neuropixels/{simulation_date}/parameters.yml",

@@ -5,12 +5,6 @@
 dandiset_id: '001250'
 dandiset_filepath: 'sub-004/sub-004_ecephys.nwb'
 
-# metadata for each experiment are stored in the repo at assets/metadata/
-metadata:
-    atlas: '/home/jovyan/steevelaquitaine/spikebias/assets/metadata/dense_spont/probe_2/'
-    filtered_cells: '/home/jovyan/steevelaquitaine/spikebias/assets/metadata/dense_spont/probe_2/filtered_cells.npy'
-    cell_properties: '/home/jovyan/steevelaquitaine/spikebias/assets/metadata/dense_spont/probe_2/cell_properties.h5'
-
 # ground truth spike timestamps
 ground_truth:
     full:
@@ -22,6 +16,13 @@ ground_truth:
 probe_wiring: 
     full:
         output: '/home/jovyan/steevelaquitaine/spikebias/tmp_dataset/dense_spont/probe_2/dataeng/recording/traces_nwb'
+
+# metadata for each experiment are stored in the repo at assets/metadata/
+metadata:
+    atlas: '/home/jovyan/steevelaquitaine/spikebias/assets/metadata/dense_spont/probe_2/'
+    filtered_cells: '/home/jovyan/steevelaquitaine/spikebias/assets/metadata/dense_spont/probe_2/filtered_cells.npy'
+    cell_properties: '/home/jovyan/steevelaquitaine/spikebias/assets/metadata/dense_spont/probe_2/cell_properties.h5'
+
 
 # Preprocessed recording used to validate traces
 preprocessing:
