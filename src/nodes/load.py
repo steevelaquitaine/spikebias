@@ -22,7 +22,6 @@ import os
 import sys
 from sys import argv
 import spikeinterface as si
-import bluepy as bp
 import h5py
 import numpy as np
 import pandas as pd
@@ -52,6 +51,7 @@ def load_campaign_params(data_conf: dict):
     Returns:
         dict: the campaign parameters
     """
+    import bluepy as bp
     # read simulation
     simulation = bp.Simulation(data_conf["dataeng"]["blueconfig"])
     
@@ -135,6 +135,7 @@ def read_simulation(data_conf: dict):
     Returns:
         _type_: _description_
     """
+    import bluepy as bp
     simulation = bp.Simulation(data_conf["dataeng"]["blueconfig"])
     single_piece_sim = True
     BlueConfig_path = data_conf["dataeng"]["blueconfig"]
