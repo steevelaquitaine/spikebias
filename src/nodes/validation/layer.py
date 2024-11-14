@@ -6,7 +6,6 @@ The voxel package too
 Returns:
     _type_: _description_
 """
-from voxcell.nexus.voxelbrain import Atlas
 import numpy as np
 import os
 from src.nodes import utils
@@ -23,7 +22,8 @@ def getAtlasInfo(data_conf, BlueConfig, electrodePositions: np.array):
     Returns:
         _type_: _description_
     """
-
+    from voxcell.nexus.voxelbrain import Atlas
+    
     # save path
     save_path = data_conf["metadata"]["atlas"]
     
