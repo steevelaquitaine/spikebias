@@ -4,8 +4,8 @@ usage:
 
 duration: takes about 1h on a compute node
 
-specs requirement:
-- more than 30 GB RAM (free -g); current specs is 750 GB RAM
+Specs recommendations:
+    - between 30 and 64 GB RAM is enough for 10 GB NWB datasets (free -g); this was tested on 750 GB RAM.
 """
 
 import os

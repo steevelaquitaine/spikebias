@@ -4,6 +4,9 @@ cluster/logs/*
 chance_df.csv
 igeom.pkl
 
+# dataset
+tmp_dataset/*
+
 # slurm logs
 slurm*
 
