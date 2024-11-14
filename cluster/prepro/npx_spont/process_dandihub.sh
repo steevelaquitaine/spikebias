@@ -43,4 +43,4 @@ cd /home/jovyan/steevelaquitaine/spikebias
 export PYTHONPATH=$(pwd)
 
 # run pipeline
-srun -n 1 python3.9 -c "from src.pipes.prepro.npx_spont.process_dandihub import run; run(filtering='butterworth')"
+python3.11 -c "from src.pipes.prepro.npx_spont.process_dandihub import run; run(filtering='butterworth')"
