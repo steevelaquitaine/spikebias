@@ -4,7 +4,8 @@ usage:
 
 duration: takes about 1h on a compute node
 
-Regression-testing: 07.11.2024 - OK
+specs requirement:
+- more than 30 GB RAM (free -g); current specs is 750 GB RAM
 """
 
 import os
