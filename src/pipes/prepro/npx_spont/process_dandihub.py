@@ -73,10 +73,10 @@ def run(filtering: str="wavelet"):
     Recording, Sorting = preprocess.load_on_dandihub(data_conf)
 
     if FIT_CAST:
-        Recording = preprocess.fit_and_cast_as_extractor_npx_probe_on_dandihub(data_conf=data_conf,
-                                                                 param_conf=param_conf,
-                                                                 offset=OFFSET,
-                                                                 scale_and_add_noise=SCALE_AND_ADD_NOISE)
+        Recording = preprocess.fit_and_cast_as_extractor_npx_probe_on_dandihub(Recording, data_conf=data_conf,
+                                                                               param_conf=param_conf,
+                                                                               offset=OFFSET,
+                                                                               scale_and_add_noise=SCALE_AND_ADD_NOISE)
         
     if WIRE:
         preprocess.wire_probe(data_conf=data_conf,
