@@ -58,7 +58,7 @@ def run(experiment: str, run: str):
     t0 = time.time()
     
     # load RecordingExtractor
-    Recording = preprocess.load_on_dandihub(data_conf)
+    Recording, Sorting = preprocess.load_on_dandihub(data_conf)
 
 
     # fit noise and gain
