@@ -1,8 +1,6 @@
 import logging
 import logging.config
 from copy import copy
-
-import bluepy as bp
 import numpy as np
 import yaml
 
@@ -25,6 +23,7 @@ def filter_microcircuit_cells(simulation):
     Returns:
         dict: _description_
     """
+    import bluepy as bp
     soma_location = simulation["circuit"].cells.get(
         {"$target": "hex0"}, properties=[bp.Cell.X, bp.Cell.Y, bp.Cell.Z]
     )
@@ -43,6 +42,7 @@ def get_hex_01_cells(simulation):
     Returns:
         dict: _description_
     """
+    import bluepy as bp
     soma_location = simulation["circuit"].cells.get(
         {"$target": "hex_O1"}, properties=[bp.Cell.X, bp.Cell.Y, bp.Cell.Z]
     )
