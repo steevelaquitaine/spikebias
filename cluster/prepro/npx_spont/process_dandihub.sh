@@ -8,7 +8,7 @@
 ##
 ## usage:
 ##
-##      sbatch cluster/prepro/npx_spont/process_dandihub.sh
+##      . cluster/prepro/npx_spont/process_dandihub.sh
 ##
 ## duration: 26 min (for 1 hour recording)
 
