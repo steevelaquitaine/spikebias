@@ -8,7 +8,7 @@
 #   mkdir /home/jovyan/steevelaquitaine/assets/envs
 #   python3.11 -m venv /home/jovyan/steevelaquitaine/assets/envs/spikinterf0_100_5 # create env
 #   source /home/jovyan/steevelaquitaine/assets/envs/spikinterf0_100_5/bin/activate
-#   python3.11 -m pip install -r /home/jovyan/steevelaquitaine/spikebias/envs/spikinterf0_100_5.txt
+#   python3.11 -m pip install -r /home/jovyan/steevelaquitaine/spikebias/envs/spikinterf0_100_5_dandihub.txt
 #
 # 2. Install the bug fixed version of spikeinterface to run Kilosort 4, recommended by Alessio Buccino
 #   pip install git+https://github.com/SpikeInterface/spikeinterface.git@refs/pull/2827/merge
@@ -18,7 +18,7 @@
 #   wget -c https://github.com/MouseLand/Kilosort/archive/refs/tags/v2.5.tar.gz -O - | tar -xz # download Kilosort 2.5 release
 
 pynwb==2.8.2                # read NWB files
-ipykernel                   
+ipykernel             
 ipywidgets==8.0.6           # version important; or notebook and bluepy fail
 jupyter==1.0.0              # version important: or notebook and and bluepy fail
 pandas==1.5.2               # version important; bluepy fails with 1.5.3
@@ -28,16 +28,14 @@ statsmodels
 networkx
 seaborn
 matplotlib==3.8.4
-MEAutility==1.5.1          # reconstruct probes
+MEAutility==1.5.1           # reconstruct probes
 PyWavelets==1.6.0
-neurom[plotly]             # reconstruct cell morphologies
-tmd                        # reconstruct cell morphologies
-wget                       # reconstruct cell morphologies
-spikeinterface==0.100.5    # spikeinterface
-numpy                      # 1.26.4
-herdingspikes==0.3.102     # spike sorter
-kilosort==4.0              # spike sorter install Kilosort 4.0
-# git+https://github.com/SpikeInterface/spikeinterface.git@refs/pull/2827/merge
+neurom[plotly]              # reconstruct cell morphologies
+tmd                         # reconstruct cell morphologies
+wget                        # reconstruct cell morphologies
+spikeinterface==0.100.5     # spikeinterface
+numpy                       # 1.26.4
+kilosort==4.0               # spike sorter install Kilosort 4.0
 scikit-posthocs==0.9.0      # posthoc statistics
 mpi4py-mpich                # distributed computing on multiple computer nodes
 numba==0.59.1               # parallelized computing
@@ -45,4 +43,7 @@ fastparquet==2024.11.0      # save metadata
 pyarrow                     # save metadata
 umap-learn==0.5.3           # for spike clustering
 python-louvain==0.16        # for spike clustering
+dandi                       # on dandihub
 remfile                     # on dandihub
+
+# git+https://github.com/SpikeInterface/spikeinterface.git@refs/pull/2827/merge

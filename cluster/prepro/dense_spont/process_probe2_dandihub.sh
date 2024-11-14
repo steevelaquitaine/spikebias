@@ -8,7 +8,7 @@
 # #
 # # usage:
 # #      
-# #      sbatch cluster/prepro/dense_spont/process_probe2_dandihub.sh
+# #      sh cluster/prepro/dense_spont/process_probe2_dandihub.sh
 # #
 # # duration: 2:30 hours (for 40 min recording)
 
@@ -43,4 +43,4 @@ cd /home/jovyan/steevelaquitaine/spikebias
 export PYTHONPATH=$(pwd)
 
 # run pipeline
-python3.11 -c "from src.pipes.prepro.dense_spont.process_dandihub import run; run(experiment='dense_spont_from_nwb', run='probe_2')"
+python3.11 -c "from src.pipes.prepro.dense_spont.process_dandihub import run; run(experiment='dense_spont_on_dandihub', run='probe_2')"
