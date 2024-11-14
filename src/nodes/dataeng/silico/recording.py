@@ -255,13 +255,15 @@ def _scale_adj_by_and_add_noise_nwb(traces: np.array, data_conf: dict, gain_prms
         traces
     """
     # get fitted results
-    fit_out = _load_stored_fit_results_nwb(data_conf)
+    fit_out = _load_stored_fit_results_nwb(data_conf)    
 
     # get the tuned gain
     gain = fit_out[0]["gain"] * gain_prms["gain_adjust"]
     
     # create missing noise
+    logger.info(f"Creating noise matrix ...")
     missing_noise = create_noise_matrix(fit_out, traces.shape[1], traces.shape[0])
+    logger.info(f"Done creating noise matrix.")
     
     # add noise and cast as array
     traces = torch.from_numpy(traces)
@@ -1135,6 +1137,7 @@ def run_on_dandihub(Recording, data_conf: dict, param_conf: dict, offset:bool, s
 
     # scale and add missing noise (2h:10 / h recording)
     if isinstance(scale_and_add_noise, dict):
+        logger.info(f"Started scaling traces with adjusted gain and added noise ...")                
         trace = _scale_adj_by_and_add_noise_nwb(trace, data_conf, scale_and_add_noise)
         logger.info(f"Scaled traces with adjusted gain and added noise in {np.round(time.time()-t0,2)} secs")                
     else:
