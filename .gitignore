@@ -6,6 +6,9 @@ igeom.pkl
 # dataset
 tmp_dataset/*
 
+# docker containers
+assets/containers/*
+
 # slurm logs
 slurm*
 
