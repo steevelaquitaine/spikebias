@@ -14,7 +14,7 @@
 #!/bin/bash -l
 #SBATCH -J dandi-upload                                  # job name
 #SBATCH -N 1                                             # Use 1 node
-#SBATCH -t 08:00:00                                      # Set 1 hour time limit
+#SBATCH -t 24:00:00                                      # Set 24 hour time limit
 #SBATCH -p prod                                          # Submit to the production 'partition'
 #SBATCH -C "cpu"                                         # Constraint the job to run on nodes without SSDs.
 #SBATCH --exclusive                                      # to allocate whole node
@@ -37,4 +37,4 @@ cd /gpfs/bbp.cscs.ch/project/proj85/home/laquitai/spikebias/
 source /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/envs/dandi2/bin/activate
 
 # run pipeline
-srun -n 1 python -m src.pipes.dandi_upload.dandi_upload
+srun -n 1 python -m src.pipes.dandi.upload.raw.upload

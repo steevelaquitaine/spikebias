@@ -1,10 +1,10 @@
-"""Upload to Dandi archive
+"""Upload all fitted and wired biophysically-simulated datasets to Dandi Archive
 
-author: laquitainesteeve@gmail.com
+author: steeve.laquitaine@epfl.ch; laquitainesteeve@gmail.com
 
 Usage:
     
-    sbatch cluster/dandi/upload.sh
+    sbatch cluster/dandi/upload/fitted/upload.sh
     
     1. Login to dandiarchive
     2. New dandiset - name and description
@@ -12,7 +12,7 @@ Usage:
     4. Copy the Dataset: click on the link dots to the left of the title, copy its **link**:
         * It should look like: https://gui-staging.dandiarchive.org/#/dandiset/100792
 
-duration: slack
+duration:
     - just under 8 hours for 100 GB
 """
 # nwb software package
@@ -41,25 +41,25 @@ logger = logging.getLogger("root")
 
 # spontaneous
 cfg_ns, _ = get_config("silico_neuropixels", "npx_spont").values()
-NS = os.path.dirname(cfg_ns["nwb"])
+NS = os.path.dirname(cfg_ns["probe_wiring_nwb"])
 
 # evoked
 cfg_e, _ = get_config("silico_neuropixels", "npx_evoked").values()
-NE = os.path.dirname(cfg_e["nwb"])
+NE = os.path.dirname(cfg_e["probe_wiring_nwb"])
 
 # DENSE SPONT BIOPHY -------------------------------
 
 # dense spontaneous depth 1
 cfg_ds1, _ = get_config("dense_spont", "probe_1").values()
-DENSE_SP_P1 = os.path.dirname(cfg_ds1["nwb"])
+DENSE_SP_P1 = os.path.dirname(cfg_ds1["probe_wiring_nwb"])
 
 # dense spontaneous depth 2
 cfg_ds2, _ = get_config("dense_spont", "probe_2").values()
-DENSE_SP_P2 = os.path.dirname(cfg_ds2["nwb"])
+DENSE_SP_P2 = os.path.dirname(cfg_ds2["probe_wiring_nwb"])
 
 # dense spontaneous depth 3
 cfg_ds3, _ = get_config("dense_spont", "probe_3").values()
-DENSE_SP_P3 = os.path.dirname(cfg_ds3["nwb"])
+DENSE_SP_P3 = os.path.dirname(cfg_ds3["probe_wiring_nwb"])
 
 # path of the dandiset to upload
 DANDISET = "/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/dandiset"
@@ -70,7 +70,7 @@ os.chdir(DANDISET)
 # 2. move to downloaded folder
 # 3. organize files according to dandiset rules
 # 4. uploads
-logger.info("Uploading to DANDI archive...")
+logger.info("Uploading NWB files with fitted and wired recordings/sorting to DANDI archive...")
 
 os.system(
     f"""
