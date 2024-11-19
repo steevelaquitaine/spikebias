@@ -13,7 +13,9 @@ Usage:
         * It should look like: https://gui-staging.dandiarchive.org/#/dandiset/100792
 
 duration:
-    - just under 8 hours for 100 GB
+    - 11 min for the three dense probe recordings
+    - just under 8 hours for npx_spont 100 GB raw
+    - just 1 hour on the week end for fitted npx_spont and npx_evoked 200 GB total
 """
 # nwb software package
 # other utils package

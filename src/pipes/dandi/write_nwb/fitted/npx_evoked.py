@@ -6,7 +6,7 @@ Usage:
 
     sbatch cluster/dandi/write_nwb/fitted/npx_evoked.sh
 
-Duration: 1 hour
+Duration: 1h30
 
 Returns:
     NWB: write nwb file

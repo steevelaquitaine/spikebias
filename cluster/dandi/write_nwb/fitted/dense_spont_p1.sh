@@ -17,7 +17,7 @@
 #!/bin/bash -l
 #SBATCH -J dandi-fitted-ds1                              # job name
 #SBATCH -N 1                                             # Use 1 node
-#SBATCH -t 08:00:00                                      # Set 1 hour time limit
+#SBATCH -t 24:00:00                                      # Set 1 hour time limit
 #SBATCH -p prod                                          # Submit to the production 'partition'
 #SBATCH -C "cpu"                                         # Constraint the job to run on nodes without SSDs.
 #SBATCH --exclusive                                      # to allocate whole node
@@ -25,8 +25,8 @@
 #SBATCH --mem=0                                          # allocate entire memory to the job
 #SBATCH --constraint=volta                               # setup node with GPU
 #SBATCH --gres=gpu:1                                     # get one GPU
-#SBATCH -o ./cluster/logs/cluster/output/dandi/%x_id_%A.out   # set log output file path
-#SBATCH -e ./cluster/logs/cluster/output/dandi/%x_id_%A.err   # set log error file path
+#SBATCH -o ./cluster/logs/cluster/output/dandi/write_nwb/%x_id_%A.out   # set log output file path
+#SBATCH -e ./cluster/logs/cluster/output/dandi/write_nwb/%x_id_%A.err   # set log error file path
 #SBATCH --mail-type=BEGIN
 #SBATCH --mail-type=END
 #SBATCH --mail-type=FAIL

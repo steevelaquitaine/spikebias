@@ -1,4 +1,4 @@
-"""Write fitted and wired recording and sorting for the dense probe at depth 1 to NWB files
+"""Write fitted and wired recording and sorting for the dense probe at depth to NWB files
 
 author: laquitainesteeve@gmail.com
 

@@ -7,8 +7,9 @@
 ##
 ##      sbatch cluster/dandi/upload/fitted/upload.sh
 ##
-## stats: 21 mins
-
+## Duration: 
+## - 11 mins for the dense probes only
+##
 ## Setup job config
 
 #!/bin/bash -l

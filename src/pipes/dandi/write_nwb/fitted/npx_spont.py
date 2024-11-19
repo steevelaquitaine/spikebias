@@ -6,7 +6,7 @@ Usage:
 
     sbatch cluster/dandi/write_nwb/fitted/npx_spont.sh
 
-Duration: 1 hour
+Duration: 1 h 40
 
 Returns:
     NWB: write nwb file
