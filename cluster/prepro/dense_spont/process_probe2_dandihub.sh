@@ -8,7 +8,7 @@
 # #
 # # usage:
 # #      
-# #      sh cluster/prepro/dense_spont/process_probe2_dandihub.sh
+# #      . cluster/prepro/dense_spont/process_probe2_dandihub.sh
 # #
 # # duration: 2:30 hours (for 40 min recording)
 
