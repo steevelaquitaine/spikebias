@@ -1,4 +1,4 @@
-"""Upload to Dandi archive
+"""Upload all biophysically simulated datasets to Dandi Archive
 
 author: laquitainesteeve@gmail.com
 
@@ -12,7 +12,7 @@ Usage:
     4. Copy the Dataset: click on the link dots to the left of the title, copy its **link**:
         * It should look like: https://gui-staging.dandiarchive.org/#/dandiset/100792
 
-duration: slack
+duration:
     - just under 8 hours for 100 GB
 """
 # nwb software package

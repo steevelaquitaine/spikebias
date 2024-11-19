@@ -56,7 +56,7 @@ wget                       # reconstruct cell morphologies
 spikeinterface==0.100.5    # contains the newly released spikinterf0_100_5
 numpy                      # 1.26.4
 herdingspikes==0.3.102     # spike sorter
-kilosort==4.0              # spike sorter install Kilosort 4.0
+kilosort==4.0.6            # spike sorter install Kilosort 4.0
 # git+https://github.com/SpikeInterface/spikeinterface.git@refs/pull/2827/merge
 scikit-posthocs==0.9.0      # posthoc statistics
 mpi4py-mpich                # distributed computing on multiple computer nodes

@@ -8,7 +8,7 @@ author: laquitainesteeve@gmail.com
 Download the NWB file of the dense probe at depth 1 saved in DANDI archive.
 
 ```bash
-sh cluster/nwb/download/dense_spont_p1.sh
+sh cluster/dandi/download/raw/dense_spont_p1.sh
 ```
 
 2. Preprocess
