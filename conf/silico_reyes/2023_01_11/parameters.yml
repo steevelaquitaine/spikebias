@@ -1,0 +1,21 @@
+sampling_freq: 20000
+spike:
+  Dt: 0.025
+run:
+  probe: reyes_128
+  recording: 'raw'
+  preprocessing:
+    min_filter_freq: 300
+    max_filter_freq: 6000 # not more than 2*10 KHz
+circuit:
+  single_piece: True        # BlueConfig file
+  n_trace_spike_files: 30   # number of spike and trace files written by the simulation
+  radius: 50
+probe:
+  reyes_16_x_8:
+    y_pitch: 75
+    x_pitch: 200
+    n_shank: 8
+    n_elec: 16
+    r_elec: 12.5 
+    shank_spacing: 200

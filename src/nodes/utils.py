@@ -34,7 +34,7 @@ def get_config(exp: str, simulation_date: str):
         dict: dataset paths and parameter configurations
     """
     logger.info("Reading experiment config.")
-    if exp == "supp/silico_reyes":
+    if exp == "silico_reyes":
         data_conf, param_conf = get_config_silico_reyes(
             simulation_date
         ).values()
@@ -99,7 +99,7 @@ def get_config(exp: str, simulation_date: str):
             simulation_date
         ).values()
     else:
-        raise NotImplementedError("""This experiment is not implemented, 
+        raise NotImplementedError("""This experiment is not implemented,
                                   Add it to get_config() in
                                   src/nodes/utils.py""")
     logger.info("Reading experiment config. - done")
@@ -342,15 +342,15 @@ def get_config_silico_reyes(simulation_date: str):
     """
 
     with open(
-        f"conf/supp/silico_reyes/{simulation_date}/dataset.yml",
+        f"conf/silico_reyes/{simulation_date}/dataset.yml",
         "r",
         encoding="utf-8",
     ) as dataset_conf:
         dataset_conf = yaml.safe_load(dataset_conf)
-        dataset_conf["exp"] = "supp/silico_reyes"
+        dataset_conf["exp"] = "silico_reyes"
         dataset_conf["date"] = simulation_date
     with open(
-        f"conf/supp/silico_reyes/{simulation_date}/parameters.yml",
+        f"conf/silico_reyes/{simulation_date}/parameters.yml",
         "r",
         encoding="utf-8",
     ) as param_conf:

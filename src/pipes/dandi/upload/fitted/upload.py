@@ -63,6 +63,12 @@ DENSE_SP_P2 = os.path.dirname(cfg_ds2["probe_wiring_nwb"])
 cfg_ds3, _ = get_config("dense_spont", "probe_3").values()
 DENSE_SP_P3 = os.path.dirname(cfg_ds3["probe_wiring_nwb"])
 
+# REYES SPONT BIOPHY -------------------------------
+
+cfg_reyes, _ = get_config("silico_reyes", "2023_01_11").values()
+REYES_SUMMED = os.path.dirname(cfg_reyes["probe_wiring_nwb"])
+REYES_ISOLATED = os.path.dirname(cfg_reyes["probe_wiring_isolated_cell_nwb"])
+
 # path of the dandiset to upload
 DANDISET = "/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/dandiset"
 
@@ -99,6 +105,14 @@ os.system(
     dandi organize {DENSE_SP_P3} -f dry;
     dandi organize {DENSE_SP_P3};
     dandi upload
+
+    dandi organize {REYES_SUMMED} -f dry;
+    dandi organize {REYES_SUMMED};
+    dandi upload    
+    
+    dandi organize {REYES_ISOLATED} -f dry;
+    dandi organize {REYES_ISOLATED};
+    dandi upload    
     """
 )
 

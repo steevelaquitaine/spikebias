@@ -92,18 +92,26 @@ def load_spike(dataset_conf: dict, param_conf: dict):
     # carefully deal with numerical precision issues
     SPIKE_SAMP_FREQ = get_spike_sampling_freq(param_conf)
     TRACE_SAMP_FREQ = get_lfp_sampling_freq(param_conf)
+    
+    # convert to ms
     SPIKE_SFREQ_MS = SPIKE_SAMP_FREQ / 1000
     TRACE_SFREQ_MS = TRACE_SAMP_FREQ / 1000
-
+    
     # get number of timepoints on spike index reference
     spike_npoint_for_40KHz = spike.index.values * SPIKE_SFREQ_MS
 
-    # get number of timepoints on trace index reference
+    # get the corresponding sample location on the trace
     conv_factor = TRACE_SFREQ_MS / SPIKE_SFREQ_MS
     spike_tpoints_for_20KHz = (spike_npoint_for_40KHz * conv_factor).astype(int)
 
+    # keep only spikes within the recording duration
+    max_ntpoints_trace = trace.index.shape[0]
+    spike_tpoints_for_20KHz = spike_tpoints_for_20KHz[spike_tpoints_for_20KHz <= max_ntpoints_trace]
+    spike = spike.iloc[:len(spike_tpoints_for_20KHz)]
+    
     # narrow the search space for each spike
     spike_loc = []
+    
     for s_i, spike_ms_i in enumerate(spike.index):
         
         # define narrower search window
@@ -159,7 +167,7 @@ def load_spike_2X(simulation: dict, dataset_conf: dict, param_conf: dict):
     TRACE_SAMP_FREQ = get_lfp_sampling_freq(simulation)
     SPIKE_SFREQ_MS = SPIKE_SAMP_FREQ / 1000
     TRACE_SFREQ_MS = TRACE_SAMP_FREQ / 1000
-
+        
     # get number of timepoints on spike index reference
     spike_npoint_for_40KHz = spike.index.values * SPIKE_SFREQ_MS
 

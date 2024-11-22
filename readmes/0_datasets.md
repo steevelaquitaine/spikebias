@@ -90,6 +90,19 @@ TODO:
     - layers.npy
     - regions.npy
 
+## REYES PROBE
+
+- Summed extracellular recording
+  - RecordingExtractor and SortingExtractor file:
+    - path: sub-biophy-summed-traces-reyes/sub-biophy-summed-traces-reyes_ses-006_ecephys
+  
+- Isolated extracellular recording
+  - RecordingExtractor and SortingExtractor file:
+    - path: sub-biophy-isolated-traces-reyes/sub-biophy-isolated-traces-reyes_ses-006_ecephys
+
+- Cell 3754013 morphology metadata:
+  - spikebias/assets/morph_cell_3754013.h5
+
 ## Auxiliary
 
 - Weight files:
@@ -112,3 +125,18 @@ TODO:
       - size: 77 GB
 
   - Atlas (optional): https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/QREN2T
+
+
+* O1 sonata circuit: https://zenodo.org/records/11113043 (51 GB)
+* full sonata circuit: https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/HISHXN **(300 GB)**
+    * this is the largest circuit which includes the cortical column cells used for all biophysical simulations
+* note: cell id in the sonata circuit is the cell id in the old circuit - 1.
+* all the cell properties can be retrieved from these circuits.
+
+  ## Spike variation with electrode position
+
+
+
+## INTERMEDIATE DATASET
+
+* quality_paths:  spikebias/tmp_dataset/sorting_quality.csv

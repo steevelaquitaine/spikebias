@@ -1,6 +1,4 @@
-"""pipeline to process the "silico_neuropixels" experiment - run "concatenated" 
-(simulation of Marques probe) from raw bbp_workflow simulation files to ready-to-sort 
-SpikeInterface's Recording and Sorting Extractors
+"""pipeline to process the "Buccino"'s experiment
 
   author: steeve.laquitaine@epfl.ch
     date: 13.12.2023
@@ -8,9 +6,10 @@ modified: 10.07.2024
 
  usage:
 
-    sbatch cluster/prepro/buccino/process_gain_ftd.sbatch
+    sbatch cluster/prepro/buccino/process_gain_ftd.sh
            
 Note:
+
     - if preprocessing write crashes because of memory issue. Rerun with all pipeline nodes
     set to False except PREPROCESS=True
     - the trace array requires 240 GB RAM (free RAM is typically 636 GB on a compute core)
@@ -31,6 +30,7 @@ import numpy as np
 import shutil 
 import spikeinterface as si
 import spikeinterface.preprocessing as spre
+import spikeinterface.extractors as se
 
 # move to project path
 with open("./proj_cfg.yml", "r", encoding="utf-8") as proj_cfg:
@@ -58,7 +58,7 @@ def fit_gain(gain_adjust: float, cfg_b: dict, cfg_v: dict):
     t0 = time.time()
     
     # get marques-smith config
-    RAW_PATH_v = cfg_v["probe_wiring"]["output"]
+    RAW_PATH_v = cfg_v["probe_wiring"]["full"]["output"]
 
     # get synth. model config
     RAW_PATH_b = cfg_b["probe_wiring"]["full"]["input"]
@@ -171,6 +171,13 @@ def run(gain_adjust:float, filtering:str="wavelet"):
     
     # Synthetic model's config
     cfg_b, prm_b = get_config("buccino_2020", "2020").values()    
+    
+    # save RecordingExtractor
+    Recording = se.NwbRecordingExtractor(cfg_b["recording"]["input"])
+    shutil.rmtree(cfg_b["recording"]["output"], ignore_errors=True)
+    Recording.save(
+        folder=cfg_b["recording"]["output"], format="binary", **job_dict
+        )
     
     # fit gain
     fit_gain(gain_adjust, cfg_b, cfg_v)

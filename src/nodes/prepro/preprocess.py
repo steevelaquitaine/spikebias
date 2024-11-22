@@ -30,7 +30,6 @@ import spikeinterface.preprocessing as spre
 import pandas as pd
 
 # on dandi hub
-from dandi.dandiapi import DandiAPIClient
 import spikeinterface.extractors as se
 
 # custom package
@@ -1461,6 +1460,7 @@ def load(data_conf: dict):
 def load_on_dandihub(data_conf: dict):
     """load one dataset on the DANDI hub
     """
+    from dandi.dandiapi import DandiAPIClient
     
     # dataset id
     dandiset_id = data_conf["dandiset_id"]
