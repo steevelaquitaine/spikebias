@@ -48,10 +48,10 @@ def postprocess_full(cfg, create_full_study=False):
     t0 = time()
     
     # get paths
-    GT_FULL_PATH = cfg["sorting"]["simulation"]["ground_truth"]["full"]["output"]
+    GT_FULL_PATH = cfg["ground_truth"]["full"]["output"]
     STUDY_FULL_PATH = cfg["postprocessing"]["waveform"]["ground_truth"]["full"]["study"]
     PREP_PATH = cfg["preprocessing"]["full"]["output"]["trace_file_path"]
-    BLUE_CFG = cfg["dataeng"]["blueconfig"]
+    #BLUE_CFG = cfg["dataeng"]["blueconfig"]
     
     # load recording
     Prep = si.load_extractor(PREP_PATH)
@@ -60,8 +60,8 @@ def postprocess_full(cfg, create_full_study=False):
     SortingTrue = si.load_extractor(GT_FULL_PATH)
     
     # saves true units' properties metadata
-    SortingTrue = cell_type.label_true_cell_properties(SortingTrue, BLUE_CFG, GT_FULL_PATH, save=True)
-
+    SortingTrue = cell_type.label_true_cell_properties(cfg, SortingTrue, None, GT_FULL_PATH, save=True)
+    
     # save study for the full SortingExtractor
     if create_full_study:
         create_study(SortingTrue, Prep, STUDY_FULL_PATH)
@@ -118,7 +118,7 @@ def create_study(Sorting, Prep, study_path: str):
 
 # SETUP CONFIG
 exp = "silico_neuropixels"
-run = "stimulus"
+run = "npx_evoked"
 cfg, _ = get_config(exp, run).values()
 
 # setup logging

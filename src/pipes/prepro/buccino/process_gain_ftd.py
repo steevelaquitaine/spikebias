@@ -39,6 +39,7 @@ os.chdir(PROJ_PATH)
 
 from src.nodes.utils import get_config
 from src.nodes.prepro import preprocess
+from src.nodes import utils
 
 # SETUP LOGGING
 with open("conf/logging.yml", "r", encoding="utf-8") as logging_conf:
@@ -51,6 +52,8 @@ logger = logging.getLogger("root")
 # memory
 job_dict = {"n_jobs": 1, "chunk_memory": None, "progress_bar": True} # butterworth
 
+
+SAVE_RECORDINGEXTRACTOR = False
 
 def fit_gain(gain_adjust: float, cfg_b: dict, cfg_v: dict):
     
@@ -81,6 +84,7 @@ def fit_gain(gain_adjust: float, cfg_b: dict, cfg_v: dict):
     
     # calculate gain differemce
     fitted_gain = max_v / max_b
+    utils.create_if_not_exists(os.path.dirname(FIT_PATH))
     np.save(FIT_PATH, fitted_gain)
     
     # tune gain
@@ -102,9 +106,9 @@ def fit_and_save(cfg: dict):
     t0 = time.time()
     
     # get paths
+    RAW_PATH_b = cfg["probe_wiring"]["full"]["input"]
     FITD_PATH = cfg["probe_wiring"]["full"]["output"]
     TUNED_GAIN = cfg["preprocessing"]["fitting"]["tuned_gain"]
-    RAW_PATH_b = cfg["probe_wiring"]["output"]
     
     # load data
     Wired = si.load_extractor(RAW_PATH_b)
@@ -141,7 +145,7 @@ def preprocess_recording(Wired, cfg, prm, job_dict: dict, filtering='butterworth
     takes 15 min (vs. 32 min w/o multiprocessing)
     """
     # write path
-    WRITE_PATH = cfg["preprocessing"]["output"]["trace_file_path_gain_ftd"]
+    WRITE_PATH = cfg["preprocessing"]["full"]["output"]["trace_file_path"]
 
     # takes 32 min
     t0 = time.time()
@@ -173,11 +177,13 @@ def run(gain_adjust:float, filtering:str="wavelet"):
     cfg_b, prm_b = get_config("buccino_2020", "2020").values()    
     
     # save RecordingExtractor
-    Recording = se.NwbRecordingExtractor(cfg_b["recording"]["input"])
-    shutil.rmtree(cfg_b["recording"]["output"], ignore_errors=True)
-    Recording.save(
-        folder=cfg_b["recording"]["output"], format="binary", **job_dict
-        )
+    if SAVE_RECORDINGEXTRACTOR:
+        
+        Recording = se.NwbRecordingExtractor(cfg_b["recording"]["input"])
+        shutil.rmtree(cfg_b["recording"]["output"], ignore_errors=True)
+        Recording.save(
+            folder=cfg_b["recording"]["output"], format="binary", **job_dict
+            )
     
     # fit gain
     fit_gain(gain_adjust, cfg_b, cfg_v)

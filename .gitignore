@@ -3,9 +3,6 @@ cluster/logs/*
 chance_df.csv
 igeom.pkl
 
-# dataset
-tmp_dataset/
-
 # docker containers
 assets/atlas/*
 assets/containers/*

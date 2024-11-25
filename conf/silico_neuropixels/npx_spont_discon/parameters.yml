@@ -1,0 +1,22 @@
+sampling_freq: 40000
+spike:
+  Dt: 0.025
+run:
+  probe: neuropixels_384_hex_O1
+  recording: 'raw'
+  preprocessing:
+    min_filter_freq: 300
+    max_filter_freq: 19999 # not more than SAMPLING_FREQ/2 (here 10 KHz)
+circuit:
+  # target: 'hex0_1'
+  single_piece: True        # BlueConfig file
+  radius: 50
+probe:
+  name: 'Neuropixels-384' # probe name in MEAUtils
+  neuropixels_384:
+    contact_ids: 'np.arange(0, 384, 1)' # 0 to 383 channels 
+wavelet_filtering: # 'han' threshold
+  duration_s: 1215
+  wavelet: 'haar'
+  method: 'hard'
+  nlevel: 6       # 6 produces a high-pass. cutoff of 312.5 Hz
