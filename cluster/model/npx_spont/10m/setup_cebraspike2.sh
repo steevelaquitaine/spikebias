@@ -33,10 +33,10 @@
 module purge 
 module load spack
 cd /gpfs/bbp.cscs.ch/project/proj85/home/laquitai/spikebias/   
-. /gpfs/bbp.cscs.ch/ssd/apps/bsd/2023-02-23/spack/share/spack/setup-env.sh
+. /gpfs/bbp.cscs.ch/ssd/apps/bsd/2024-02-01/spack/share/spack/setup-env.sh
 spack env activate python3_9 -p
 
 # 2. Setup cebraspike virtual environment:
-python3.9 -m venv /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/envs/cebraspike2 # create env
-source /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/envs/cebraspike2/bin/activate
-/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/envs/cebraspike/bin/python3.9 -m pip install -r /gpfs/bbp.cscs.ch/project/proj85/home/laquitai/spikebias/envs/cebraspike.txt
+python3.9 -m venv /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/envs/cebraspike2 # create env
+source /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/envs/cebraspike2/bin/activate
+/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/envs/cebraspike/bin/python3.9 -m pip install -r /gpfs/bbp.cscs.ch/project/proj85/home/laquitai/spikebias/envs/cebraspike.txt

@@ -111,3 +111,26 @@ def run(rec_path: str, gt_path: str, nwb_path: str,  params: dict):
     utils.create_if_not_exists(os.path.dirname(nwb_path))
     with NWBHDF5IO(path=nwb_path, mode="w") as io:
         io.write(nwbfile)
+        
+        
+def run_for_vivo(rec_path: str, nwb_path: str,  params: dict):
+    """write NWB files
+
+    Args:
+        rec_path (_type_): RecordingExtractor path
+        gt_path (_type_): Ground truth SortingExtractor path
+        nwb_path (str): write path of nwb file
+        params (_type_): nwb file metadata
+    """
+
+    # get gain and noise fitted and wired RecordingExtractor
+    Recording = si.load_extractor(rec_path)
+
+    # create NWB file and add extractors
+    nwbfile = init_nwbfile(**params)
+    add_recording(recording=Recording, nwbfile=nwbfile)
+
+    # save this to a NWB file
+    utils.create_if_not_exists(os.path.dirname(nwb_path))
+    with NWBHDF5IO(path=nwb_path, mode="w") as io:
+        io.write(nwbfile)

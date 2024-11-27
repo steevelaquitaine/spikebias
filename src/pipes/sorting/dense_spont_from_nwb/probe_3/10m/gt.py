@@ -11,7 +11,7 @@ Usage:
     
     or
     
-    source /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/envs/spikinterf0_100_5/bin/activate
+    source /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/envs/spikinterf0_100_5/bin/activate
     python3.9 -m src.pipes.sorting.dense_spont_from_nwb.probe_3.10m.gt
 
 Duration: 3 min    

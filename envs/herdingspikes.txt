@@ -16,17 +16,17 @@
 #
 # 2. Install herdingspikes virtual env. with python3.9:
 # 
-#   mkdir /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/envs # create envs folder
-#   python3.9 -m venv /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/envs/herdingspikes # create env
-#   source /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/envs/herdingspikes/bin/activate
-#   /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/envs/herdingspikes/bin/python3.9 -m pip install -r /gpfs/bbp.cscs.ch/project/proj85/home/laquitai/spikebias/envs/herdingspikes.txt
+#   mkdir /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/envs # create envs folder
+#   python3.9 -m venv /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/envs/herdingspikes # create env
+#   source /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/envs/herdingspikes/bin/activate
+#   /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/envs/herdingspikes/bin/python3.9 -m pip install -r /gpfs/bbp.cscs.ch/project/proj85/home/laquitai/spikebias/envs/herdingspikes.txt
 #
 # 3. Install bluepy (read Biophysical model's unit metadata)
 #
-#   /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/envs/herdingspikes/bin/python3.9 -m pip install ~/bluepy-configfile/
+#   /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/envs/herdingspikes/bin/python3.9 -m pip install ~/bluepy-configfile/
 #   cd ~/bluepy/
 #   git checkout lfp-reports  # checkout the lfp package
-#   /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/envs/herdingspikes/bin/python3.9 -m pip install . # install
+#   /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/envs/herdingspikes/bin/python3.9 -m pip install . # install
 
 spikeinterface==0.100.5 
 # git+https://github.com/SpikeInterface/spikeinterface.git@refs/pull/2827/merge

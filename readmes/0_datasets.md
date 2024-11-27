@@ -26,20 +26,43 @@ TODO:
 **Spontaneous**
 
   - RecordingExtractor and Ground truth SortingExtractor files:
-    - path: 001250/sub-001/sub-001_ecephys.nwb
-    - size: 109.9 GB (downloading takes 20 hours)
+    - raw:
+      - path: 001250/sub-001/sub-001_ecephys.nwb
+      - size: 109.9 GB (downloading takes 20 hours)
+    - fitted:
+      - path: 001250/sub-001-fitted/sub-001-fitted_ecephys.nwb
+      - size: 117.4 GB (downloading takes 20 hours)
+
   - Electrode and cell metadata files: spikebias/assets/metadata/silico_neuropixels/npx_spont/
     - cell_properties.h5
     - filtered_cells.npy
     - layers.npy
     - regions.npy
 
-**Evoked**
+**Evoked (20Hz)**
 
   - RecordingExtractor and Ground truth SortingExtractor files:
-    - path: 001250/sub-002/sub-002_ecephys.nwb
-    - size: 97.6 GB (downloading takes 23 hours)
+    - raw
+      - path: 001250/sub-002/sub-002_ecephys.nwb    
+      - size: 97.6 GB (downloading takes 23 hours)
+    - fitted
+      - path: 001250/sub-002-fitted/sub-002-fitted_ecephys.nwb    
+      - size: 103.2 GB (downloading takes 23 hours)
+
   - Electrode and cell metadata files: spikebias/assets/metadata/silico_neuropixels/npx_evoked/
+    - cell_properties.h5
+    - filtered_cells.npy
+    - layers.npy
+    - regions.npy
+
+**Evoked (40 Hz)**
+  
+  - RecordingExtractor and Ground truth SortingExtractor files:
+    - raw
+      - path: 001250/sub-002/sub-002_ecephys.nwb
+      - size: 97.6 GB (downloading takes 23 hours)
+
+  - Electrode and cell metadata files: spikebias/assets/metadata/silico_neuropixels/npx_evoked_40Khz/
     - cell_properties.h5
     - filtered_cells.npy
     - layers.npy
@@ -108,20 +131,20 @@ TODO:
 - Weight files:
 
   - neuropixels probe:
-    - path: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/dataset/weights/coeffsneuropixels.h5'
-    - path (doing): /gpfs/bbp.cscs.ch/project/proj85/laquitai/4_preprint_2023/dataset/weights/coeffsneuropixels.h5
+    - path: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/dataset/weights/coeffsneuropixels.h5'
+    - path (doing): /gpfs/bbp.cscs.ch/project/proj85/laquitai/preprint_2024/dataset/weights/coeffsneuropixels.h5
     - size: 227 GB
 
   - dense probe:
     - depth 1:
-      - path : /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/dataset/weights/coeffsdenseprobe1.h5
-      - path (doing): /gpfs/bbp.cscs.ch/project/proj85/laquitai/4_preprint_2023/dataset/weights/coeffsdenseprobe1.h5
+      - path : /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/dataset/weights/coeffsdenseprobe1.h5
+      - path (doing): /gpfs/bbp.cscs.ch/project/proj85/laquitai/preprint_2024/dataset/weights/coeffsdenseprobe1.h5
       - size: 77 GB
     - depth 2:
-      - path: /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/dataset/weights/coeffsdenseprobe1.h5
+      - path: /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/dataset/weights/coeffsdenseprobe1.h5
       - size: 77 GB
     - depth 3:
-      - path : /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/dataset/weights/coeffsdenseprobe1.h5
+      - path : /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/dataset/weights/coeffsdenseprobe1.h5
       - size: 77 GB
 
   - Atlas (optional): https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/QREN2T

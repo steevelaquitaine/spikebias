@@ -113,15 +113,15 @@
 # def save_psd_results(out_raw_sili, out_prep_sili):
 
 #     os.makedirs(
-#         "/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/postprocessing/hybrid/buccino/realism/lfp/",
+#         "/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postprocessing/hybrid/buccino/realism/lfp/",
 #         exist_ok=True,
 #     )    
 #     np.save(
-#         "/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/postprocessing/hybrid/buccino/realism/lfp/raw_power_welch_10m",
+#         "/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postprocessing/hybrid/buccino/realism/lfp/raw_power_welch_10m",
 #         out_raw_sili,
 #     )
 #     np.save(
-#         "/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/postprocessing/hybrid/buccino/realism/lfp/prep_buttw_power_welch_10m",
+#         "/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postprocessing/hybrid/buccino/realism/lfp/prep_buttw_power_welch_10m",
 #         out_prep_sili,
 #     )
 
@@ -130,19 +130,19 @@
 #     raw_traces_sili, prep_traces_sili
 # ):
 #     os.makedirs(
-#         "/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/dataeng/hybrid/buccino/recording/",
+#         "/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/dataeng/hybrid/buccino/recording/",
 #         exist_ok=True,
 #     )
 #     os.makedirs(
-#         "/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/dataeng/hybrid/buccino/preprocessed/",
+#         "/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/dataeng/hybrid/buccino/preprocessed/",
 #         exist_ok=True,
 #     )        
 #     np.save(
-#         "/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/dataeng/hybrid/buccino/recording/traces_10m",
+#         "/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/dataeng/hybrid/buccino/recording/traces_10m",
 #         raw_traces_sili,
 #     )
 #     np.save(
-#         "/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/dataeng/hybrid/buccino/preprocessed/traces_10m",
+#         "/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/dataeng/hybrid/buccino/preprocessed/traces_10m",
 #         prep_traces_sili,
 #     )
 
@@ -150,11 +150,11 @@
 # def load_saved_traces_in_ctx():
 
 #     raw_traces_sili = np.load(
-#         "/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/dataeng/hybrid/buccino/recording/traces_10m",
+#         "/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/dataeng/hybrid/buccino/recording/traces_10m",
 #     )
 
 #     prep_traces_sili = np.load(
-#         "/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/dataeng/hybrid/buccino/preprocessed/traces_10m",
+#         "/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/dataeng/hybrid/buccino/preprocessed/traces_10m",
 #     )
 #     return raw_traces_sili, prep_traces_sili
 
@@ -163,14 +163,14 @@
 
 #     # raw
 #     out_raw_sili = np.load(
-#         "/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/postprocessing/hybrid/buccino/realism/lfp/raw_power_welch_10m",
+#         "/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postprocessing/hybrid/buccino/realism/lfp/raw_power_welch_10m",
 #         allow_pickle=True,
 #     )
 #     out_raw_sili = out_raw_sili.item()
     
 #     # preprocessed
 #     out_prep_sili = np.load(
-#         "/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/postprocessing/hybrid/buccino/realism/lfp/prep_buttw_power_welch_10m",
+#         "/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postprocessing/hybrid/buccino/realism/lfp/prep_buttw_power_welch_10m",
 #         allow_pickle=True,
 #     )
 #     out_prep_sili = out_prep_sili.item()

@@ -50,7 +50,7 @@ GT_ns_10m = cfg_ns["ground_truth"]["10m"]["output"] # KS4 sorting
 STUDY_ns = cfg_ns["postprocessing"]["waveform"]["sorted"]["study"]["kilosort4"][
     "10m"
 ]  # WaveformExtractor
-STUDY_ns_su = '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/0_silico/neuropixels/concatenated_campaigns/postpro/realism/spike/sorted/study_ks4_10m_single_units'
+STUDY_ns_su = '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/0_silico/neuropixels/concatenated_campaigns/postpro/realism/spike/sorted/study_ks4_10m_single_units'
 
 # npx evoked biophy.
 cfg_ne, _ = get_config("silico_neuropixels", "stimulus").values()
@@ -59,18 +59,18 @@ GT_ne_10m = cfg_ne["ground_truth"]["10m"]["output"]
 STUDY_ne = cfg_ne["postprocessing"]["waveform"]["sorted"]["study"]["kilosort4"][
     "10m"
 ]  # WaveformExtractor
-STUDY_ne_su = '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/0_silico/4_spikesorting_stimulus_test_neuropixels_8-1-24__8slc_80f_360r_50t_200ms_1_smallest_fiber_gids/0fcb7709-b1e9-4d84-b056-5801f20d55af/postpro/realism/spike/sorted/study_ks4_10m_single_units'
+STUDY_ne_su = '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/0_silico/4_spikesorting_stimulus_test_neuropixels_8-1-24__8slc_80f_360r_50t_200ms_1_smallest_fiber_gids/0fcb7709-b1e9-4d84-b056-5801f20d55af/postpro/realism/spike/sorted/study_ks4_10m_single_units'
 
 
 
 # PATHS
 
 # pre-computed sorted unit quality
-quality_path = "/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/analysis/sorting_quality/sorting_quality.csv"
+quality_path = "/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/analysis/sorting_quality/sorting_quality.csv"
 
 # model save path
-MODEL_PATH_40Khz_s2s_pooled_pm1 = "/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/analysis/sorting_quality/models/cebra/sf_40Khz/s2s_pooled_pm1"
-MODEL_PATH_40Khz_s2s_pooled_pm1_qmetrics = "/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/analysis/sorting_quality/models/cebra/sf_40Khz/s2s_pooled_pm1_qmetrics"
+MODEL_PATH_40Khz_s2s_pooled_pm1 = "/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/analysis/sorting_quality/models/cebra/sf_40Khz/s2s_pooled_pm1"
+MODEL_PATH_40Khz_s2s_pooled_pm1_qmetrics = "/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/analysis/sorting_quality/models/cebra/sf_40Khz/s2s_pooled_pm1_qmetrics"
 
 # axes
 plt.rcParams["font.family"] = "Arial"

@@ -49,6 +49,16 @@ NS = os.path.dirname(cfg_ns["probe_wiring_nwb"])
 cfg_e, _ = get_config("silico_neuropixels", "npx_evoked").values()
 NE = os.path.dirname(cfg_e["probe_wiring_nwb"])
 
+# evoked 40 Khz
+cfg_e40, _ = get_config("others/spikewarp", "2024_04_13").values()
+NE40 = os.path.dirname(cfg_e40["probe_wiring_nwb"])
+
+# NEUROPIXELS VIVO  -------------------------------
+
+# marques-smith data
+cfg_ms, _ = get_config("vivo_marques", "c26").values()
+MS = os.path.dirname(cfg_ms["probe_wiring_nwb"])
+
 # DENSE SPONT BIOPHY -------------------------------
 
 # dense spontaneous depth 1
@@ -63,14 +73,31 @@ DENSE_SP_P2 = os.path.dirname(cfg_ds2["probe_wiring_nwb"])
 cfg_ds3, _ = get_config("dense_spont", "probe_3").values()
 DENSE_SP_P3 = os.path.dirname(cfg_ds3["probe_wiring_nwb"])
 
+# DENSE VIVO  -------------------------------
+
+# dense spontaneous depth 1
+cfg_hv1, _ = get_config("vivo_horvath", "probe_1").values()
+HV1 = os.path.dirname(cfg_hv1["probe_wiring_nwb"])
+
+# dense spontaneous depth 2
+cfg_hv2, _ = get_config("vivo_horvath", "probe_2").values()
+HV2 = os.path.dirname(cfg_hv2["probe_wiring_nwb"])
+
+# dense spontaneous depth 3
+cfg_hv3, _ = get_config("vivo_horvath", "probe_3").values()
+HV3 = os.path.dirname(cfg_hv3["probe_wiring_nwb"])
+
 # REYES SPONT BIOPHY -------------------------------
 
 cfg_reyes, _ = get_config("silico_reyes", "2023_01_11").values()
 REYES_SUMMED = os.path.dirname(cfg_reyes["probe_wiring_nwb"])
 REYES_ISOLATED = os.path.dirname(cfg_reyes["probe_wiring_isolated_cell_nwb"])
 
+
+
+
 # path of the dandiset to upload
-DANDISET = "/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/dandiset"
+DANDISET = "/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/dandiset"
 
 os.chdir(DANDISET)
 
@@ -113,6 +140,26 @@ os.system(
     dandi organize {REYES_ISOLATED} -f dry;
     dandi organize {REYES_ISOLATED};
     dandi upload    
+    
+    dandi organize {MS} -f dry;
+    dandi organize {MS};
+    dandi upload        
+
+    dandi organize {NE40} -f dry;
+    dandi organize {NE40};
+    dandi upload  
+
+    dandi organize {HV1} -f dry;
+    dandi organize {HV1};
+    dandi upload            
+    
+    dandi organize {HV2} -f dry;
+    dandi organize {HV2};
+    dandi upload
+    
+    dandi organize {HV3} -f dry;
+    dandi organize {HV3};
+    dandi upload        
     """
 )
 

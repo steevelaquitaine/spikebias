@@ -30,7 +30,7 @@
 # install python 3.9 binary via spack and activate python env
 module load spack
 cd /gpfs/bbp.cscs.ch/project/proj68/home/laquitai/bernstein_2023/   
-. /gpfs/bbp.cscs.ch/ssd/apps/bsd/2023-02-23/spack/share/spack/setup-env.sh
+. /gpfs/bbp.cscs.ch/ssd/apps/bsd/2024-02-01/spack/share/spack/setup-env.sh
 spack env activate python3_9 -p
 source /gpfs/bbp.cscs.ch/project/proj68/scratch/laquitai/2_bernstein_2023/envs/npx_10m_384ch_unit_classes/bin/activate
 

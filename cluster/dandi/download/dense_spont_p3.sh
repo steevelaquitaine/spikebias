@@ -33,8 +33,8 @@
 #SBATCH --mail-user=laquitainesteeve@gmail.com
 
 cd /gpfs/bbp.cscs.ch/project/proj85/home/laquitai/spikebias/
-. /gpfs/bbp.cscs.ch/ssd/apps/bsd/2023-02-23/spack/share/spack/setup-env.sh
-source /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/envs/dandi2/bin/activate
+. /gpfs/bbp.cscs.ch/ssd/apps/bsd/2024-02-01/spack/share/spack/setup-env.sh
+source /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/envs/dandi2/bin/activate
 
 # run pipeline
 srun -n 1 python -m src.pipes.nwb.download.dense_spont_p3

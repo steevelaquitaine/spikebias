@@ -174,33 +174,33 @@ def get_site_welch_psd_marques_vivo(trace, site):
 def save_psd_results(out_raw_sili, out_prep_sili, out_raw_vivo, out_prep_vivo):
 
     os.makedirs(
-        "/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/0_silico/neuropixels/concatenated_campaigns/postpro/realism/lfp/",
+        "/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/0_silico/neuropixels/concatenated_campaigns/postpro/realism/lfp/",
         exist_ok=True,
     )
     os.makedirs(
-        "/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/realism/1_vivo/marques/c26_fixed/postpro/",
+        "/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/realism/1_vivo/marques/c26_fixed/postpro/",
         exist_ok=True,
     )
 
     # save sili
     np.save(
-        "/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/0_silico/neuropixels/concatenated_campaigns/postpro/realism/lfp/full_raw_power_welch_noise_ftd_gain_ftd_adj_10m",
+        "/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/0_silico/neuropixels/concatenated_campaigns/postpro/realism/lfp/full_raw_power_welch_noise_ftd_gain_ftd_adj_10m",
         out_raw_sili,
     )
 
     np.save(
-        "/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/0_silico/neuropixels/concatenated_campaigns/postpro/realism/lfp/full_prep_buttw_power_welch_noise_ftd_gain_ftd_adj_10m",
+        "/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/0_silico/neuropixels/concatenated_campaigns/postpro/realism/lfp/full_prep_buttw_power_welch_noise_ftd_gain_ftd_adj_10m",
         out_prep_sili,
     )
 
     # save vivo
     np.save(
-        "/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/realism/1_vivo/marques/c26_fixed/postpro/full_raw_power_welch_10m.npy",
+        "/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/realism/1_vivo/marques/c26_fixed/postpro/full_raw_power_welch_10m.npy",
         out_raw_vivo,
     )
 
     np.save(
-        "/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/realism/1_vivo/marques/c26_fixed/postpro/full_prep_buttw_power_welch_10m.npy",
+        "/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/realism/1_vivo/marques/c26_fixed/postpro/full_prep_buttw_power_welch_10m.npy",
         out_prep_vivo,
     )
 
@@ -211,22 +211,22 @@ def save_traces_in_ctx(
 
     # vivo (1m)
     np.save(
-        "/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/dataeng/1_vivo/marques/campaign/c26_fixed/traces_in_ctx_10m_noise_fitd",
+        "/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/dataeng/1_vivo/marques/campaign/c26_fixed/traces_in_ctx_10m_noise_fitd",
         raw_traces_vivo,
     )
     np.save(
-        "/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/preprocessed/1_vivo/marques/campaign/c26_fixed/traces_in_ctx_10m_noise_fitd",
+        "/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/preprocessed/1_vivo/marques/campaign/c26_fixed/traces_in_ctx_10m_noise_fitd",
         prep_traces_vivo,
     )
 
     # silico
     np.save(
-        "/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/0_silico/neuropixels/concatenated_campaigns/dataeng/recording/traces_in_ctx_10m_noise_ftd_gain_ftd_adj",
+        "/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/0_silico/neuropixels/concatenated_campaigns/dataeng/recording/traces_in_ctx_10m_noise_ftd_gain_ftd_adj",
         raw_traces_sili,
     )
 
     np.save(
-        "/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/0_silico/neuropixels/concatenated_campaigns/preprocessed/traces_in_ctx_10m_noise_ftd_gain_ftd_adj",
+        "/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/0_silico/neuropixels/concatenated_campaigns/preprocessed/traces_in_ctx_10m_noise_ftd_gain_ftd_adj",
         prep_traces_sili,
     )
 

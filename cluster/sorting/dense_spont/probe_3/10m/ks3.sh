@@ -37,13 +37,13 @@ module purge
 module use --append ~/modulefiles/
 module load matlab2022toolboxes
 matlab -r "disp(ver); disp('Can matlab find GPU:'); disp(getenv('HOSTNAME')); disp(gpuDevice(1)); exit;"
-cd /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/sorters/Kilosort3_buttw/CUDA
+cd /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/sorters/Kilosort3_buttw/CUDA
 matlab -batch mexGPUall
 module load spack
 cd /gpfs/bbp.cscs.ch/project/proj85/home/laquitai/spikebias/   
-. /gpfs/bbp.cscs.ch/ssd/apps/bsd/2023-02-23/spack/share/spack/setup-env.sh
+. /gpfs/bbp.cscs.ch/ssd/apps/bsd/2024-02-01/spack/share/spack/setup-env.sh
 spack env activate python3_9 -p
-source /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/envs/spikinterf0_100_5/bin/activate
+source /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/envs/spikinterf0_100_5/bin/activate
 
 # run pipeline
 srun -n 1 python3.9 -m src.pipes.sorting.dense_bioph.probe_3.10m.ks3

@@ -20,7 +20,7 @@ from src.nodes.postpro.marques_silico import get_sorted_units_site_and_layer
 from src.nodes.utils import get_config
 from src.nodes.postpro import biases, get_waveforms, layer, spikestats, cell_type, accuracy
 from src.nodes.postpro import layer
-from src.pipes import postpro
+from src.pipes.migration import postpro
 
 # Setup pipeline
 EXTRACT_WAVEFORM = False

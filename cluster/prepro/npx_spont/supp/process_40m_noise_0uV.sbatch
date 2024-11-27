@@ -35,9 +35,9 @@
 module purge 
 module load spack
 cd /gpfs/bbp.cscs.ch/project/proj85/home/laquitai/spikebias/   
-. /gpfs/bbp.cscs.ch/ssd/apps/bsd/2023-02-23/spack/share/spack/setup-env.sh
+. /gpfs/bbp.cscs.ch/ssd/apps/bsd/2024-02-01/spack/share/spack/setup-env.sh
 spack env activate python3_9 -p
-source /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/envs/npx_10m_384ch_unit_classes/bin/activate
+source /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/envs/npx_10m_384ch_unit_classes/bin/activate
 
 # add custom package to python path
 cd /gpfs/bbp.cscs.ch/project/proj85/home/laquitai/spikebias/   

@@ -13,7 +13,7 @@ run: 40m noise ftd gain ftd adj 10 perc less
     
     or
     
-    source /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/envs/spikinterf0_100_5/bin/activate
+    source /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/envs/spikinterf0_100_5/bin/activate
     python3.9 -c "from src.pipes.prepro.npx_evoked.process import run; run(filtering='butterworth')"
     
 duration:

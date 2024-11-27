@@ -45,27 +45,27 @@ sorting:
                 sort_output: '/home/jovyan/steevelaquitaine/spikebias/tmp_dataset/dense_spont/probe_2/KS4_output_10m_nwb/'    
         kilosort3:
             # butterworth filtering
-            input: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/sorters/Kilosort3_buttw'
+            input: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/sorters/Kilosort3_buttw'
             10m:
                 output: '/home/jovyan/steevelaquitaine/spikebias/tmp_dataset/dense_spont/probe_2/SortingKS3_10m_nwb/'
                 sort_output: '/home/jovyan/steevelaquitaine/spikebias/tmp_dataset/dense_spont/probe_2/KS3_output_10m_nwb/'
         kilosort2_5: # see notebook for installation
-            input: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/sorters/Kilosort-2.5/'
+            input: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/sorters/Kilosort-2.5/'
             10m:
                 output: '/home/jovyan/steevelaquitaine/spikebias/tmp_dataset/dense_spont/probe_2/SortingKS2_5_10m_nwb/'
                 sort_output: '/home/jovyan/steevelaquitaine/spikebias/tmp_dataset/dense_spont/probe_2/KS2_5_output_10m_nwb/'
         kilosort2: # wget -c https://github.com/MouseLand/Kilosort/archive/refs/tags/v2.0.tar.gz -O - | tar -xz
-            input: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/sorters/Kilosort-2.0.2/'
+            input: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/sorters/Kilosort-2.0.2/'
             10m:
                 output: '/home/jovyan/steevelaquitaine/spikebias/tmp_dataset/dense_spont/probe_2/SortingKS2_10m_nwb/'
                 sort_output: '/home/jovyan/steevelaquitaine/spikebias/tmp_dataset/dense_spont/probe_2/KS2_output_10m_nwb/'
         kilosort: # git clone https://github.com/cortex-lab/KiloSort.git
-            input: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/sorters/KiloSort/'
+            input: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/sorters/KiloSort/'
             10m:
                 output: '/home/jovyan/steevelaquitaine/spikebias/tmp_dataset/dense_spont/probe_2/SortingKS_10m_nwb/'
                 sort_output: '/home/jovyan/steevelaquitaine/spikebias/tmp_dataset/dense_spont/probe_2/KS_output_10m_nwb/'
         hdsort: # git clone https://git.bsse.ethz.ch/hima_public/HDsort.git - KO
-            input: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/sorters/HDsort/'
+            input: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/sorters/HDsort/'
             10m:
                 output: '/home/jovyan/steevelaquitaine/spikebias/tmp_dataset/dense_spont/probe_2/SortingHDsort_10m_nwb/'
                 sort_output: '/home/jovyan/steevelaquitaine/spikebias/tmp_dataset/dense_spont/probe_2/hdsort_output_10m_nwb/'

@@ -35,7 +35,7 @@ ground_truth:
     full:
         output: '/gpfs/bbp.cscs.ch/data/scratch/proj85/laquitai/dataeng/0_silico/reyes_probe_lfp_4sec_2023_01_11/campaign/preprocessed/ground_truth'
 
-probe_wiring_nwb: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/0_silico/neuropixels/concatenated_campaigns/nwb/biophy_summed_reyes.nwb'
+probe_wiring_nwb: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/0_silico/neuropixels/concatenated_campaigns/nwb/biophy_summed_reyes.nwb'
 
 # ISOLATED CELL -------------------------------------------
 
@@ -49,7 +49,7 @@ ground_truth_isolated_cell:
     full:
         output: '/gpfs/bbp.cscs.ch/data/scratch/proj85/laquitai/dataeng/0_silico/reyes_probe_lfp_4sec_2023_01_11/campaign/preprocessed/ground_truth_isolated_cell'
 
-probe_wiring_isolated_cell_nwb: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/0_silico/neuropixels/concatenated_campaigns/nwb/biophy_isolated_reyes.nwb'
+probe_wiring_isolated_cell_nwb: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/0_silico/neuropixels/concatenated_campaigns/nwb/biophy_isolated_reyes.nwb'
 
 # # set paths for lfp preprocessing pipeline
 # preprocessing:

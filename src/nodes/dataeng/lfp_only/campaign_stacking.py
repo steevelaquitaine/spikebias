@@ -139,7 +139,22 @@ def load_locations_from_weights(data_conf: dict, nsites: int):
             WEIGHT_PATH = data_conf["campaign"]["source_weights"]
             return load_locations_from_weights_npx_384ch(
                 WEIGHT_PATH, nsites - 1
-            )        
+            )       
+        if data_conf["date"] == "npx_spont_discon/sims/2024_11_16_disconnected":
+            WEIGHT_PATH = data_conf["campaign"]["source_weights"]
+            return load_locations_from_weights_npx_384ch(
+                WEIGHT_PATH, nsites - 1
+            )             
+        if data_conf["date"] == "npx_spont_discon/sims/2024_11_16_disconnected_campaign2":
+            WEIGHT_PATH = data_conf["campaign"]["source_weights"]
+            return load_locations_from_weights_npx_384ch(
+                WEIGHT_PATH, nsites - 1
+            )               
+        if data_conf["date"] == "npx_spont_discon/sims/2024_11_24_disconnected_campaign3":
+            WEIGHT_PATH = data_conf["campaign"]["source_weights"]
+            return load_locations_from_weights_npx_384ch(
+                WEIGHT_PATH, nsites - 1
+            )                                            
         # the probe sites are located with respect to hex_01
         # not hex_0
         if data_conf["date"] == "npx_evoked":
@@ -147,6 +162,7 @@ def load_locations_from_weights(data_conf: dict, nsites: int):
             return load_locations_from_weights_npx_384ch(
                 WEIGHT_PATH, nsites - 1
             )
+            
     # case horvath in-silico probe 
     elif data_conf["exp"] == "dense_spont":
 

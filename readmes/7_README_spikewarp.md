@@ -10,7 +10,7 @@ This are required for the preprocessing and some dowstream analyses.
 ## Datasets
 
 - Weight file: 
-    - path: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/dataset/weights/coeffsneuropixels.h5'
+    - path: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/dataset/weights/coeffsneuropixels.h5'
     - size: 227G
 
 ## Configuration

@@ -37,7 +37,7 @@ matlab -batch mexGPUall
 # access python3.9 interpreter via spack env
 cd /gpfs/bbp.cscs.ch/project/proj68/home/laquitai/cns_2023_on_git/
 module load spack
-. /gpfs/bbp.cscs.ch/ssd/apps/bsd/2023-02-23/spack/share/spack/setup-env.sh
+. /gpfs/bbp.cscs.ch/ssd/apps/bsd/2024-02-01/spack/share/spack/setup-env.sh
 spack env activate spack_python3_9 -p
 
 # activate python env

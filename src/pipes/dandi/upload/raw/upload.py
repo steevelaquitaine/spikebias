@@ -4,7 +4,7 @@ author: laquitainesteeve@gmail.com
 
 Usage:
     
-    sbatch cluster/dandi/upload.sh
+    sbatch cluster/dandi/upload/raw/upload.sh
     
     1. Login to dandiarchive
     2. New dandiset - name and description
@@ -47,6 +47,11 @@ NS = os.path.dirname(cfg_ns["nwb"])
 cfg_e, _ = get_config("silico_neuropixels", "npx_evoked").values()
 NE = os.path.dirname(cfg_e["nwb"])
 
+# dense spontaneous depth 3
+cfg_e40, _ = get_config("others/spikewarp", "2024_04_13").values()
+Ne40 = os.path.dirname(cfg_e40["nwb"])
+
+
 # DENSE SPONT BIOPHY -------------------------------
 
 # dense spontaneous depth 1
@@ -61,8 +66,9 @@ DENSE_SP_P2 = os.path.dirname(cfg_ds2["nwb"])
 cfg_ds3, _ = get_config("dense_spont", "probe_3").values()
 DENSE_SP_P3 = os.path.dirname(cfg_ds3["nwb"])
 
+
 # path of the dandiset to upload
-DANDISET = "/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/4_preprint_2023/dandiset"
+DANDISET = "/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/dandiset"
 
 os.chdir(DANDISET)
 
@@ -96,6 +102,10 @@ os.system(
     
     dandi organize {DENSE_SP_P3} -f dry;
     dandi organize {DENSE_SP_P3};
+    dandi upload
+    
+    dandi organize {Ne40} -f dry;
+    dandi organize {Ne40};
     dandi upload
     """
 )
