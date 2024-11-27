@@ -86,29 +86,26 @@ postprocessing:
         sorted:
             study:
                 kilosort4: 
-                    10m: /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/postprocessing/buccino/waveform/sorted/wvf_ks4.npy
+                    10m: /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postprocessing/buccino/waveform/sorted/wvf_ks4.npy
                 kilosort3: 
-                    10m: /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/postprocessing/buccino/waveform/sorted/wvf_ks3.npy
-
-                    rsync -rv /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/postprocessing/buccino/waveform/sorted/wvf_ks4.npy /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postprocessing/buccino/waveform/sorted/
-
+                    10m: /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postprocessing/buccino/waveform/sorted/wvf_ks3.npy
                 kilosort2: 
-                    10m: /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/postprocessing/buccino/waveform/sorted/wvf_ks2.npy
+                    10m: /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postprocessing/buccino/waveform/sorted/wvf_ks2.npy
                 kilosort2_5: 
-                    10m: /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/postprocessing/buccino/waveform/sorted/wvf_ks2_5.npy
+                    10m: /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postprocessing/buccino/waveform/sorted/wvf_ks2_5.npy
                 kilosort: 
-                    10m: /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/postprocessing/buccino/waveform/sorted/wvf_ks.npy
+                    10m: /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postprocessing/buccino/waveform/sorted/wvf_ks.npy
                 herdingspikes: 
-                    10m: /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/postprocessing/buccino/waveform/sorted/wvf_hs.npy
+                    10m: /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postprocessing/buccino/waveform/sorted/wvf_hs.npy
 
 validation:
     10m:
-        trace_snr: /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/postprocessing/buccino/realism/trace_snr.npy
+        trace_snr: /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postprocessing/buccino/realism/trace_snr.npy
     full:
-        trace_snr: /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/postprocessing/buccino/realism/trace_snr_full.npy
+        trace_snr: /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postprocessing/buccino/realism/trace_snr_full.npy
     psd:
-        raw: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/postprocessing/buccino/realism/full_raw_power_welch_10m_gain_ftd.npy'
-        preprocessed: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/postprocessing/buccino/realism/full_prep_buttw_power_welch_10m_gain_ftd.npy'
+        raw: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postprocessing/buccino/realism/full_raw_power_welch_10m_gain_ftd.npy'
+        preprocessed: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postprocessing/buccino/realism/full_prep_buttw_power_welch_10m_gain_ftd.npy'
     noise:
         full: /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postprocessing/hybrid/buccino/realism/lfp/noise_full.npy # preprocessed (buttw)
 
@@ -124,4 +121,4 @@ analyses:
         10m:
             noise: /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postprocessing/hybrid/buccino/realism/lfp/noise.npy # preprocessed (buttw)
     noise_stats:
-        buttw: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/postprocessing/buccino/realism/lfp/noise/buttw_noise.npy'
+        buttw: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postprocessing/buccino/realism/lfp/noise/buttw_noise.npy'

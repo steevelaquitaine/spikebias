@@ -4,15 +4,11 @@
 #
 # herdingspikes require an older version of numpy than the spikeinterface virtual env.
 #
-# 1. Install python3.9 via spack env (from github repo path).
-#
-#   module load spack
-#   export SPACK_SYSTEM_CONFIG_PATH=/gpfs/bbp.cscs.ch/ssd/apps/bsd/2024-02-01/config
-#   export SPACK_USER_CACHE_PATH=/gpfs/bbp.cscs.ch/home/laquitai/spack_install
-#   spack reindex
-#   #spack env create spack_python3_9 envs/spack_python3_9.yaml
-#   spack env activate spack_python3_9 -p
-#   spack install
+# 1. Install python3.9
+#   
+#   module purge
+#   module load archive/2022-09 # load old archive (no need to use spack)
+#   module load python-dev/0.4 # load python 3.9
 #
 # 2. Install herdingspikes virtual env. with python3.9:
 # 

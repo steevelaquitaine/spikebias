@@ -5,7 +5,7 @@
 ##
 ## usage:
 ##
-##      sbatch cluster/dandi/upload.sh
+##      sbatch cluster/dandi/upload/raw/upload.sh
 ##
 ## stats: 21 mins
 
@@ -37,4 +37,4 @@ cd /gpfs/bbp.cscs.ch/project/proj85/home/laquitai/spikebias/
 source /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/envs/dandi2/bin/activate
 
 # run pipeline
-srun -n 1 python -m src.pipes.dandi.upload.raw.upload
+srun -n 1 python3 -m src.pipes.dandi.upload.raw.upload

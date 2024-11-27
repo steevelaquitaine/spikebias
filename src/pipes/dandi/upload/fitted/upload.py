@@ -53,11 +53,16 @@ NE = os.path.dirname(cfg_e["probe_wiring_nwb"])
 cfg_e40, _ = get_config("others/spikewarp", "2024_04_13").values()
 NE40 = os.path.dirname(cfg_e40["probe_wiring_nwb"])
 
+# evoked 40 Khz
+cfg_discon, _ = get_config("silico_neuropixels", "npx_spont_discon").values()
+NS_disc = os.path.dirname(cfg_discon["probe_wiring_nwb"])
+
 # NEUROPIXELS VIVO  -------------------------------
 
 # marques-smith data
 cfg_ms, _ = get_config("vivo_marques", "c26").values()
 MS = os.path.dirname(cfg_ms["probe_wiring_nwb"])
+
 
 # DENSE SPONT BIOPHY -------------------------------
 
@@ -73,6 +78,7 @@ DENSE_SP_P2 = os.path.dirname(cfg_ds2["probe_wiring_nwb"])
 cfg_ds3, _ = get_config("dense_spont", "probe_3").values()
 DENSE_SP_P3 = os.path.dirname(cfg_ds3["probe_wiring_nwb"])
 
+
 # DENSE VIVO  -------------------------------
 
 # dense spontaneous depth 1
@@ -86,6 +92,7 @@ HV2 = os.path.dirname(cfg_hv2["probe_wiring_nwb"])
 # dense spontaneous depth 3
 cfg_hv3, _ = get_config("vivo_horvath", "probe_3").values()
 HV3 = os.path.dirname(cfg_hv3["probe_wiring_nwb"])
+
 
 # REYES SPONT BIOPHY -------------------------------
 
@@ -159,7 +166,11 @@ os.system(
     
     dandi organize {HV3} -f dry;
     dandi organize {HV3};
-    dandi upload        
+    dandi upload      
+    
+    dandi organize {NS_disc} -f dry;
+    dandi organize {NS_disc};
+    dandi upload      
     """
 )
 

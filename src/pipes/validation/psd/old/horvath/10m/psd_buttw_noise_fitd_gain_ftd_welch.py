@@ -178,7 +178,7 @@
 # def save_psd_results(out_raw_sili, out_prep_sili, out_raw_vivo, out_prep_vivo):
 
 #     os.makedirs(
-#         '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postpro/1_vivo/horvath/probe_2/postpro/realism/lfp/',
+#         '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postprocessing/vivo/horvath/probe_2/postpro/realism/lfp/',
 #         exist_ok=True,
 #     )
 #     os.makedirs(
@@ -199,12 +199,12 @@
 
 #     # save vivo
 #     np.save(
-#         "/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postpro/1_vivo/horvath/probe_2/postpro/realism/lfp/full_raw_power_welch_10m.npy",
+#         "/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postprocessing/vivo/horvath/probe_2/postpro/realism/lfp/full_raw_power_welch_10m.npy",
 #         out_raw_vivo,
 #     )
 
 #     np.save(
-#         "/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postpro/1_vivo/horvath/probe_2/postpro/realism/lfp/full_prep_buttw_power_welch_10m.npy",
+#         "/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postprocessing/vivo/horvath/probe_2/postpro/realism/lfp/full_prep_buttw_power_welch_10m.npy",
 #         out_prep_vivo,
 #     )
 

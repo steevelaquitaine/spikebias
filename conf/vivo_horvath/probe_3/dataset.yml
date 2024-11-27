@@ -60,19 +60,19 @@ postprocessing:
         sorted:
             study: 
                 kilosort4:
-                    10m: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postpro/1_vivo/horvath/sorted/probe_3/study_ks4_10m'
+                    10m: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postprocessing/vivo/horvath/sorted/probe_3/study_ks4_10m'
                 kilosort3:
-                    10m: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postpro/1_vivo/horvath/sorted/probe_3/study_ks3_10m'
+                    10m: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postprocessing/vivo/horvath/sorted/probe_3/study_ks3_10m'
                 kilosort2_5:
-                    10m: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postpro/1_vivo/horvath/sorted/probe_3/study_ks2_5_10m'
+                    10m: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postprocessing/vivo/horvath/sorted/probe_3/study_ks2_5_10m'
                 kilosort2:
-                    10m: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postpro/1_vivo/horvath/sorted/probe_3/study_ks2_10m'
+                    10m: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postprocessing/vivo/horvath/sorted/probe_3/study_ks2_10m'
                 kilosort:
-                    10m: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postpro/1_vivo/horvath/sorted/probe_3/study_ks_10m'
+                    10m: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postprocessing/vivo/horvath/sorted/probe_3/study_ks_10m'
                 herdingspikes:
-                    10m: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postpro/1_vivo/horvath/sorted/probe_3/study_hs_10m'
-    sorted_neuron_metadata: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postpro/1_vivo/horvath/probe_3/sorted_neuron_metadata.csv'
-    trace_snr: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postpro/1_vivo/horvath/probe_3/postpro/realism/lfp/trace_snr.npy'
+                    10m: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postprocessing/vivo/horvath/sorted/probe_3/study_hs_10m'
+    sorted_neuron_metadata: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postprocessing/vivo/horvath/probe_3/sorted_neuron_metadata.csv'
+    trace_snr: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postprocessing/vivo/horvath/probe_3/postpro/realism/lfp/trace_snr.npy'
 
 features:
     sorted_ks3:
@@ -80,16 +80,16 @@ features:
 
 validation:
     10m:
-        trace_snr: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postpro/1_vivo/horvath/probe_3/postpro/realism/lfp/trace_snr.npy'
+        trace_snr: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postprocessing/vivo/horvath/probe_3/postpro/realism/lfp/trace_snr.npy'
     full:
-        trace_snr: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postpro/1_vivo/horvath/probe_3/postpro/realism/lfp/trace_snr_full.npy'
+        trace_snr: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postprocessing/vivo/horvath/probe_3/postpro/realism/lfp/trace_snr_full.npy'
     psd:
-        raw: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postpro/1_vivo/horvath/probe_3/postpro/realism/lfp/full_raw_power_welch_10m.npy'
-        preprocessed: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postpro/1_vivo/horvath/probe_3/postpro/realism/lfp/full_prepro_power_welch_10m.npy'
+        raw: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postprocessing/vivo/horvath/probe_3/postpro/realism/lfp/full_raw_power_welch_10m.npy'
+        preprocessed: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postprocessing/vivo/horvath/probe_3/postpro/realism/lfp/full_prepro_power_welch_10m.npy'
 
 analyses:
     traces:
         power: 
-            raw: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postpro/1_vivo/horvath/probe_3/postpro/realism/lfp/raw_power.npy'
-            preprocessed: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postpro/1_vivo/horvath/probe_3/postpro/realism/lfp/preprocessed_power.npy'
-        noise: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postpro/1_vivo/horvath/probe_3/postpro/realism/lfp/noise.csv'
+            raw: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postprocessing/vivo/horvath/probe_3/postpro/realism/lfp/raw_power.npy'
+            preprocessed: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postprocessing/vivo/horvath/probe_3/postpro/realism/lfp/preprocessed_power.npy'
+        noise: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postprocessing/vivo/horvath/probe_3/postpro/realism/lfp/noise.csv'

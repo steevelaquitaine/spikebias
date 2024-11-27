@@ -29,7 +29,7 @@ def get_config(exp: str, simulation_date: str):
         - "silico_neuropixels": in-silico simulated lfp recordings with neuropixel probes
         simulation_date (str): _description_
         ....
-
+obe
     Returns:
         dict: dataset paths and parameter configurations
     """

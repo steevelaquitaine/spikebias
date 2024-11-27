@@ -38,18 +38,22 @@ logger = logging.getLogger("root")
 # GET NWB DATASETS PATHS
 
 # NEUROPIXELS BIOPHY  -------------------------------
-
-# spontaneous
+ 
+# spontaneous 40 Khz
 cfg_ns, _ = get_config("silico_neuropixels", "npx_spont").values()
 NS = os.path.dirname(cfg_ns["nwb"])
 
-# evoked
+# evoked 20 Khz
 cfg_e, _ = get_config("silico_neuropixels", "npx_evoked").values()
 NE = os.path.dirname(cfg_e["nwb"])
 
-# dense spontaneous depth 3
+# evoked 40 Khz
 cfg_e40, _ = get_config("others/spikewarp", "2024_04_13").values()
 Ne40 = os.path.dirname(cfg_e40["nwb"])
+
+# spontaneous disconnected (40 Khz)
+cfg_disc, _ = get_config("silico_neuropixels", "npx_spont_discon").values()
+NS_disc = os.path.dirname(cfg_disc["nwb"])
 
 
 # DENSE SPONT BIOPHY -------------------------------
@@ -107,6 +111,10 @@ os.system(
     dandi organize {Ne40} -f dry;
     dandi organize {Ne40};
     dandi upload
+    
+    dandi organize {NS_disc} -f dry;
+    dandi organize {NS_disc};
+    dandi upload    
     """
 )
 

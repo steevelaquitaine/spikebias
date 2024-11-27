@@ -7,15 +7,11 @@
 # TODO: list all dependencies and subdependencies with their versions
 # to bypass the search for compatibility. Else this can take a while.
 #
-# 1. Setup a spack environment with python 3.9:
-#
+# 1. Install python3.9
+#   
 #   module purge
-#   module load spack
-#   . /gpfs/bbp.cscs.ch/ssd/apps/bsd/2024-02-01/spack/share/spack/setup-env.sh
-#   # spack reindex
-#   # spack env create spack_python3_9 envs/spack_python3_9.yaml
-#   spack env activate spack_python3_9 -p
-#   # spack install
+#   module load archive/2022-09 # load old archive (no need to use spack)
+#   module load python-dev/0.4 # load python 3.9
 
 # 2. Setup cebraspike virtual environment:
 # 

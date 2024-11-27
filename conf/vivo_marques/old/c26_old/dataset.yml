@@ -34,9 +34,9 @@ features:
 postprocessing:
     waveform:
         sorted:
-            study: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postpro/1_vivo/marques/recording_c26/study'
-            WaveformExtractor: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postpro/1_vivo/marques/recording_c26/WaveformExtractor'
-    sorted_neuron_metadata: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postpro/1_vivo/marques/recording_c26/sorted_neuron_metadata.csv'
+            study: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postprocessing/vivo/marques/recording_c26/study'
+            WaveformExtractor: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postprocessing/vivo/marques/recording_c26/WaveformExtractor'
+    sorted_neuron_metadata: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postprocessing/vivo/marques/recording_c26/sorted_neuron_metadata.csv'
     trace_snr: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/realism/1_vivo/marques/recording_c26/trace_snr.npy'
     snr_plot_data_mean: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/realism/1_vivo/marques/recording_c26/snr_plot_data_mean.ny'
     snr_plot_data_ci: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/realism/1_vivo/marques/recording_c26/snr_plot_data_ci.ny'

@@ -100,28 +100,28 @@ postprocessing:
         sorted:
             study: 
                 kilosort4: 
-                    full: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postpro/1_vivo/marques/c26_fixed/study_ks4'
-                    10m: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postpro/1_vivo/marques/c26_fixed/study_ks4_10m'
+                    full: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postprocessing/vivo/marques/c26_fixed/study_ks4'
+                    10m: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postprocessing/vivo/marques/c26_fixed/study_ks4_10m'
                 kilosort3: 
-                    full: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postpro/1_vivo/marques/c26_fixed/study_ks3'
-                    10m: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postpro/1_vivo/marques/c26_fixed/study_ks3_10m'
+                    full: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postprocessing/vivo/marques/c26_fixed/study_ks3'
+                    10m: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postprocessing/vivo/marques/c26_fixed/study_ks3_10m'
                 kilosort2_5: 
-                    full: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postpro/1_vivo/marques/c26_fixed/study_ks2_5'
-                    10m: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postpro/1_vivo/marques/c26_fixed/study_ks2_5_10m'                    
+                    full: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postprocessing/vivo/marques/c26_fixed/study_ks2_5'
+                    10m: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postprocessing/vivo/marques/c26_fixed/study_ks2_5_10m'                    
                 kilosort2: 
-                    full: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postpro/1_vivo/marques/c26_fixed/study_ks2'
-                    10m: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postpro/1_vivo/marques/c26_fixed/study_ks2_10m'                                        
+                    full: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postprocessing/vivo/marques/c26_fixed/study_ks2'
+                    10m: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postprocessing/vivo/marques/c26_fixed/study_ks2_10m'                                        
                 kilosort: 
-                    full: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postpro/1_vivo/marques/c26_fixed/study_ks'
-                    10m: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postpro/1_vivo/marques/c26_fixed/study_ks_10m'                                        
+                    full: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postprocessing/vivo/marques/c26_fixed/study_ks'
+                    10m: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postprocessing/vivo/marques/c26_fixed/study_ks_10m'                                        
                 herdingspikes:
-                    full: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postpro/1_vivo/marques/c26_fixed/study_hs'
-                    10m: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postpro/1_vivo/marques/c26_fixed/study_hs_10m'                                        
-            WaveformExtractor: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postpro/1_vivo/marques/c26_fixed/WaveformExtractor'
+                    full: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postprocessing/vivo/marques/c26_fixed/study_hs'
+                    10m: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postprocessing/vivo/marques/c26_fixed/study_hs_10m'                                        
+            WaveformExtractor: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postprocessing/vivo/marques/c26_fixed/WaveformExtractor'
             for_wavemap:
-                study: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postpro/1_vivo/marques/c26_fixed/spike/sorted/study_for_wavemap/'
-                WaveformExtractor: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postpro/1_vivo/marques/c26_fixed/spike/sorted/WaveformExtractor_for_wavemap'
-    sorted_neuron_metadata: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postpro/1_vivo/marques/c26_fixed/sorted_neuron_metadata.csv'
+                study: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postprocessing/vivo/marques/c26_fixed/spike/sorted/study_for_wavemap/'
+                WaveformExtractor: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postprocessing/vivo/marques/c26_fixed/spike/sorted/WaveformExtractor_for_wavemap'
+    sorted_neuron_metadata: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postprocessing/vivo/marques/c26_fixed/sorted_neuron_metadata.csv'
     snr_plot_data_mean: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/realism/1_vivo/marques/c26_fixed/snr_plot_data_mean.ny'
     snr_plot_data_ci: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/realism/1_vivo/marques/c26_fixed/snr_plot_data_ci.ny'
     snr_plot_data_bin: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/realism/1_vivo/marques/c26_fixed/snr_plot_data_bin.ny'
