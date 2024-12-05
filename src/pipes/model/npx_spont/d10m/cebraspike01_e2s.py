@@ -10,7 +10,7 @@ Run parameters:
 Usage:
 
     # run as a module
-    source /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/envs/cebraspike3/bin/activate
+    source /gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/envs/cebraspike3/bin/activate
     cd /gpfs/bbp.cscs.ch/project/proj85/home/laquitai/spikebias/
     export PYTHONPATH=$(pwd)
     python3.9 -c "from src.pipes.model.npx_spont.d10m.cebraspike01 import run; run()"
@@ -157,7 +157,7 @@ GT_ns_10m = cfg_ns["ground_truth"]["10m"]["output"] # KS4 sorting
 STUDY_ns = cfg_ns["postprocessing"]["waveform"]["sorted"]["study"]["kilosort4"][
     "10m"
 ]  # WaveformExtractor
-STUDY_ns_su = '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/0_silico/neuropixels/concatenated_campaigns/postpro/realism/spike/sorted/study_ks4_10m_single_units'
+STUDY_ns_su = '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/0_silico/neuropixels/concatenated_campaigns/postpro/realism/spike/sorted/study_ks4_10m_single_units'
 REC_ns = cfg_ns["probe_wiring"]["full"]["output"]  # Wired
 
 # npx evoked biophy.
@@ -168,13 +168,13 @@ STUDY_ne = cfg_ne["postprocessing"]["waveform"]["sorted"]["study"]["kilosort4"][
     "10m"
 ]  # WaveformExtractor
 REC_ne = cfg_ne["probe_wiring"]["full"]["output"]  # Wired
-STUDY_ne_su = '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postprocessing/biophy/4_spikesorting_stimulus_test_neuropixels_8-1-24__8slc_80f_360r_50t_200ms_1_smallest_fiber_gids/sorted/study_ks4_10m_single_units'
+STUDY_ne_su = '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/postprocessing/biophy/4_spikesorting_stimulus_test_neuropixels_8-1-24__8slc_80f_360r_50t_200ms_1_smallest_fiber_gids/sorted/study_ks4_10m_single_units'
 
 # job parameters
 job_kwargs = dict(n_jobs=-1, progress_bar=True)
 
 # pre-computed sorted unit quality
-quality_path = "/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/analysis/sorting_quality/sorting_quality.csv"
+quality_path = "/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/analysis/sorting_quality/sorting_quality.csv"
 
 # parameters
 
@@ -209,8 +209,8 @@ MODEL_CFG = {           # model parameters
     "device": "cuda_if_available",
     "verbose": True,
 }
-MODEL_SAVE_PATH = "/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/analysis/sorting_quality/models/cebra/sf_20Khz/e2s_pm4_mixed_dataset_1dwave_qmall/"
-RESULTS_SAVE_PATH = "/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/analysis/sorting_quality/models/cebra/sf_20Khz/e2s_pm4_mixed_dataset_1dwave_qmall/results.pickle"
+MODEL_SAVE_PATH = "/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/analysis/sorting_quality/models/cebra/sf_20Khz/e2s_pm4_mixed_dataset_1dwave_qmall/"
+RESULTS_SAVE_PATH = "/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/analysis/sorting_quality/models/cebra/sf_20Khz/e2s_pm4_mixed_dataset_1dwave_qmall/results.pickle"
 
 
 # SETUP PLOTS  ***************************

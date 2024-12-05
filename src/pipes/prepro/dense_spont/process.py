@@ -10,7 +10,7 @@ usage:
 
     or 
     
-    source /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/envs/spikinterf0_100_5/bin/activate
+    source /gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/envs/spikinterf0_100_5/bin/activate
     python3.9 -c "from src.pipes.prepro.dense_spont.process import run; run(experiment='dense_spont', run='probe_1', noise_tuning=1)"
     
 duration: takes 1h on a compute node

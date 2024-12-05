@@ -6,7 +6,7 @@
 campaign:
     exp: 'silico_horvath_probe3_lfp_10m_128ch_hex0_rou04_pfr03_20Khz_2023_12_01_campaign03'
     run: '3b47a0a5-6616-435a-acab-a52bf78aa76f'    
-    source_weights: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/dataset/weights/coeffsdenseprobe3.h5' 
+    source_weights: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/dataset/weights/coeffsdenseprobe3.h5' 
 
 # engineer campaign spikes and trace data
 dataeng:    
@@ -17,48 +17,48 @@ dataeng:
     campaign:
         input: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/raw/silico_horvath_probe3_lfp_10m_128ch_hex0_rou04_pfr03_20Khz_2023_12_01_campaign03/3b47a0a5-6616-435a-acab-a52bf78aa76f/' # the path where bbp_worklfow has written your N simulations (folders 0, 1, .., N)
         output:
-            root: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/dataeng/0_silico/silico_horvath_probe3_lfp_10m_128ch_hex0_rou04_pfr03_20Khz_2023_12_01_campaign03/3b47a0a5-6616-435a-acab-a52bf78aa76f/campaign/'
-            spike_file_path: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/dataeng/0_silico/silico_horvath_probe3_lfp_10m_128ch_hex0_rou04_pfr03_20Khz_2023_12_01_campaign03/3b47a0a5-6616-435a-acab-a52bf78aa76f/campaign/raw/spiketrains.pkl'
-            trace_file_path: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/dataeng/0_silico/silico_horvath_probe3_lfp_10m_128ch_hex0_rou04_pfr03_20Khz_2023_12_01_campaign03/3b47a0a5-6616-435a-acab-a52bf78aa76f/campaign/raw/traces.pkl'
-            channel_location_path: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/dataeng/0_silico/silico_horvath_probe3_lfp_10m_128ch_hex0_rou04_pfr03_20Khz_2023_12_01_campaign03/3b47a0a5-6616-435a-acab-a52bf78aa76f/campaign/raw/channel_location/'
-            near_probe_cells_file_path: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/dataeng/0_silico/silico_horvath_probe3_lfp_10m_128ch_hex0_rou04_pfr03_20Khz_2023_12_01_campaign03/3b47a0a5-6616-435a-acab-a52bf78aa76f/campaign/raw/info_near_probe_cells.pkl'
+            root: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/dataeng/0_silico/silico_horvath_probe3_lfp_10m_128ch_hex0_rou04_pfr03_20Khz_2023_12_01_campaign03/3b47a0a5-6616-435a-acab-a52bf78aa76f/campaign/'
+            spike_file_path: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/dataeng/0_silico/silico_horvath_probe3_lfp_10m_128ch_hex0_rou04_pfr03_20Khz_2023_12_01_campaign03/3b47a0a5-6616-435a-acab-a52bf78aa76f/campaign/raw/spiketrains.pkl'
+            trace_file_path: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/dataeng/0_silico/silico_horvath_probe3_lfp_10m_128ch_hex0_rou04_pfr03_20Khz_2023_12_01_campaign03/3b47a0a5-6616-435a-acab-a52bf78aa76f/campaign/raw/traces.pkl'
+            channel_location_path: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/dataeng/0_silico/silico_horvath_probe3_lfp_10m_128ch_hex0_rou04_pfr03_20Khz_2023_12_01_campaign03/3b47a0a5-6616-435a-acab-a52bf78aa76f/campaign/raw/channel_location/'
+            near_probe_cells_file_path: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/dataeng/0_silico/silico_horvath_probe3_lfp_10m_128ch_hex0_rou04_pfr03_20Khz_2023_12_01_campaign03/3b47a0a5-6616-435a-acab-a52bf78aa76f/campaign/raw/info_near_probe_cells.pkl'
 
 # Cast as SpikeInterface Recording Extractor object
 recording: 
-    input: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/dataeng/0_silico/silico_horvath_probe3_lfp_10m_128ch_hex0_rou04_pfr03_20Khz_2023_12_01_campaign03/3b47a0a5-6616-435a-acab-a52bf78aa76f/campaign/raw/traces.pkl'
-    output: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/dataeng/0_silico/silico_horvath_probe3_lfp_10m_128ch_hex0_rou04_pfr03_20Khz_2023_12_01_campaign03/3b47a0a5-6616-435a-acab-a52bf78aa76f/campaign/recording/traces.pkl' # raw rec to read with spikeinterface
+    input: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/dataeng/0_silico/silico_horvath_probe3_lfp_10m_128ch_hex0_rou04_pfr03_20Khz_2023_12_01_campaign03/3b47a0a5-6616-435a-acab-a52bf78aa76f/campaign/raw/traces.pkl'
+    output: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/dataeng/0_silico/silico_horvath_probe3_lfp_10m_128ch_hex0_rou04_pfr03_20Khz_2023_12_01_campaign03/3b47a0a5-6616-435a-acab-a52bf78aa76f/campaign/recording/traces.pkl' # raw rec to read with spikeinterface
 
 # reconstruct and wire probe to recording
 probe_wiring:
-    input: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/dataeng/0_silico/silico_horvath_probe3_lfp_10m_128ch_hex0_rou04_pfr03_20Khz_2023_12_01_campaign03/3b47a0a5-6616-435a-acab-a52bf78aa76f/campaign/recording/traces' 
-    output: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/dataeng/0_silico/silico_horvath_probe3_lfp_10m_128ch_hex0_rou04_pfr03_20Khz_2023_12_01_campaign03/3b47a0a5-6616-435a-acab-a52bf78aa76f/campaign/recording/traces' # raw recording to read with spikeinterface
+    input: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/dataeng/0_silico/silico_horvath_probe3_lfp_10m_128ch_hex0_rou04_pfr03_20Khz_2023_12_01_campaign03/3b47a0a5-6616-435a-acab-a52bf78aa76f/campaign/recording/traces' 
+    output: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/dataeng/0_silico/silico_horvath_probe3_lfp_10m_128ch_hex0_rou04_pfr03_20Khz_2023_12_01_campaign03/3b47a0a5-6616-435a-acab-a52bf78aa76f/campaign/recording/traces' # raw recording to read with spikeinterface
 
 # set paths for lfp preprocessing pipeline
 preprocessing:
     output:
-        trace_file_path: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/dataeng/0_silico/silico_horvath_probe3_lfp_10m_128ch_hex0_rou04_pfr03_20Khz_2023_12_01_campaign03/3b47a0a5-6616-435a-acab-a52bf78aa76f/campaign/preprocessed/traces.pkl'
-        spike_file_path: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/dataeng/0_silico/silico_horvath_probe3_lfp_10m_128ch_hex0_rou04_pfr03_20Khz_2023_12_01_campaign03/3b47a0a5-6616-435a-acab-a52bf78aa76f/campaign/preprocessed/spiketrains.pkl'
+        trace_file_path: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/dataeng/0_silico/silico_horvath_probe3_lfp_10m_128ch_hex0_rou04_pfr03_20Khz_2023_12_01_campaign03/3b47a0a5-6616-435a-acab-a52bf78aa76f/campaign/preprocessed/traces.pkl'
+        spike_file_path: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/dataeng/0_silico/silico_horvath_probe3_lfp_10m_128ch_hex0_rou04_pfr03_20Khz_2023_12_01_campaign03/3b47a0a5-6616-435a-acab-a52bf78aa76f/campaign/preprocessed/spiketrains.pkl'
 
 # set paths for sorting pipeline
 sorting:
     simulation:
         ground_truth:
-            output: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/sorting/0_silico/silico_horvath_probe3_lfp_10m_128ch_hex0_rou04_pfr03_20Khz_2023_12_01_campaign03/3b47a0a5-6616-435a-acab-a52bf78aa76f/campaign/true_spikes'
-            firing_rates: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/sorting/0_silico/silico_horvath_probe3_lfp_10m_128ch_hex0_rou04_pfr03_20Khz_2023_12_01_campaign03/3b47a0a5-6616-435a-acab-a52bf78aa76f/campaign/firing_rates/firing_rates.npy'
+            output: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/sorting/0_silico/silico_horvath_probe3_lfp_10m_128ch_hex0_rou04_pfr03_20Khz_2023_12_01_campaign03/3b47a0a5-6616-435a-acab-a52bf78aa76f/campaign/true_spikes'
+            firing_rates: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/sorting/0_silico/silico_horvath_probe3_lfp_10m_128ch_hex0_rou04_pfr03_20Khz_2023_12_01_campaign03/3b47a0a5-6616-435a-acab-a52bf78aa76f/campaign/firing_rates/firing_rates.npy'
     sorters:
         kilosort3:
-            input: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/sorters/Kilosort3/'
-            output: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/sorting/0_silico/silico_horvath_probe3_lfp_10m_128ch_hex0_rou04_pfr03_20Khz_2023_12_01_campaign03/3b47a0a5-6616-435a-acab-a52bf78aa76f/SortingKS3/'
-            ks3_output: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/sorting/0_silico/silico_horvath_probe3_lfp_10m_128ch_hex0_rou04_pfr03_20Khz_2023_12_01_campaign03/3b47a0a5-6616-435a-acab-a52bf78aa76f/KS3_output/'
+            input: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/sorters/Kilosort3/'
+            output: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/sorting/0_silico/silico_horvath_probe3_lfp_10m_128ch_hex0_rou04_pfr03_20Khz_2023_12_01_campaign03/3b47a0a5-6616-435a-acab-a52bf78aa76f/SortingKS3/'
+            ks3_output: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/sorting/0_silico/silico_horvath_probe3_lfp_10m_128ch_hex0_rou04_pfr03_20Khz_2023_12_01_campaign03/3b47a0a5-6616-435a-acab-a52bf78aa76f/KS3_output/'
 
 # set descriptive datasets
 features:
     sorted_ks3:
-        firing_rates: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/features/2_silico/horvath/campaign_03/probe_03/firing_rates/sorted_ks3/firing_rates.npy'
+        firing_rates: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/features/2_silico/horvath/campaign_03/probe_03/firing_rates/sorted_ks3/firing_rates.npy'
 
 # set postprocessing pipeline
 postprocessing:
     waveform:
-        study: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postpro/2_silico/horvath/campaign_03/probe_03/study'
-        WaveformExtractor: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postpro/2_silico/horvath/campaign_03/probe_03/WaveformExtractor'
-    sorted_neuron_metadata: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postpro/2_silico/horvath/campaign_03/probe_03/sorted_neuron_metadata.csv'
+        study: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/postpro/2_silico/horvath/campaign_03/probe_03/study'
+        WaveformExtractor: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/postpro/2_silico/horvath/campaign_03/probe_03/WaveformExtractor'
+    sorted_neuron_metadata: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/postpro/2_silico/horvath/campaign_03/probe_03/sorted_neuron_metadata.csv'

@@ -131,20 +131,20 @@ TODO:
 - Weight files:
 
   - neuropixels probe:
-    - path: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/dataset/weights/coeffsneuropixels.h5'
+    - path: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/dataset/weights/coeffsneuropixels.h5'
     - path (doing): /gpfs/bbp.cscs.ch/project/proj85/laquitai/preprint_2024/dataset/weights/coeffsneuropixels.h5
     - size: 227 GB
 
   - dense probe:
     - depth 1:
-      - path : /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/dataset/weights/coeffsdenseprobe1.h5
+      - path : /gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/dataset/weights/coeffsdenseprobe1.h5
       - path (doing): /gpfs/bbp.cscs.ch/project/proj85/laquitai/preprint_2024/dataset/weights/coeffsdenseprobe1.h5
       - size: 77 GB
     - depth 2:
-      - path: /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/dataset/weights/coeffsdenseprobe1.h5
+      - path: /gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/dataset/weights/coeffsdenseprobe1.h5
       - size: 77 GB
     - depth 3:
-      - path : /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/dataset/weights/coeffsdenseprobe1.h5
+      - path : /gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/dataset/weights/coeffsdenseprobe1.h5
       - size: 77 GB
 
   - Atlas (optional): https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/QREN2T

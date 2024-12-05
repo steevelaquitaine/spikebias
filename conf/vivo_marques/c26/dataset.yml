@@ -7,92 +7,92 @@ channel_map: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/raw/vivo_rat_cor
 # Cast as SpikeInterface Recording Extractor object
 recording: 
     input: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/raw/vivo_rat_cortex_marques/c26/c26_npx_raw-001.bin'
-    output: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/dataeng/1_vivo/marques/campaign/c26_fixed/traces'
+    output: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/dataeng/1_vivo/marques/campaign/c26_fixed/traces'
 
 # reconstruct and wire probe to recording
 probe_wiring:
     full:
-        input: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/dataeng/1_vivo/marques/campaign/c26_fixed/traces' 
-        output: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/dataeng/1_vivo/marques/campaign/c26_fixed/traces' # raw recording to read with spikeinterface
+        input: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/dataeng/1_vivo/marques/campaign/c26_fixed/traces' 
+        output: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/dataeng/1_vivo/marques/campaign/c26_fixed/traces' # raw recording to read with spikeinterface
 
-probe_wiring_nwb: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/dataeng/1_vivo/marques/campaign/c26_fixed/wired_vivo_marques.nwb'
+probe_wiring_nwb: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/dataeng/1_vivo/marques/campaign/c26_fixed/wired_vivo_marques.nwb'
 
 # set paths for lfp preprocessing pipeline
 preprocessing:
     full:
         output:
-            trace_file_path: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/preprocessed/1_vivo/marques/campaign/c26_fixed/traces'        
+            trace_file_path: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/preprocessed/1_vivo/marques/campaign/c26_fixed/traces'        
 
 # set paths for sorting pipeline
 sorting:
     sorters:
         # full (final)
         kilosort4:
-            output: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/sorters/Kilosort4/'
-            sort_output: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/sorting/1_vivo/marques/campaign/c26_fixed/SortingKS4/'
+            output: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/sorters/Kilosort4/'
+            sort_output: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/sorting/1_vivo/marques/campaign/c26_fixed/SortingKS4/'
             10m:
-                output: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/sorters/Kilosort4_10m/'
-                sort_output: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/sorting/1_vivo/marques/campaign/c26_fixed/SortingKS4_10m/'
+                output: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/sorters/Kilosort4_10m/'
+                sort_output: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/sorting/1_vivo/marques/campaign/c26_fixed/SortingKS4_10m/'
         kilosort3:
             # butterworth filtering (final)
-            input: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/sorters/Kilosort3_buttw'                        
-            #input: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/sorters/Kilosort3/' # wavelet filtering
-            output: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/sorting/1_vivo/marques/campaign/c26_fixed/SortingKS3/'
-            sort_output: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/sorting/1_vivo/marques/campaign/c26_fixed/KS3_output/'
+            input: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/sorters/Kilosort3_buttw'                        
+            #input: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/sorters/Kilosort3/' # wavelet filtering
+            output: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/sorting/1_vivo/marques/campaign/c26_fixed/SortingKS3/'
+            sort_output: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/sorting/1_vivo/marques/campaign/c26_fixed/KS3_output/'
             10m:
-                output: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/sorting/1_vivo/marques/campaign/c26_fixed/SortingKS3_10m/'
-                sort_output: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/sorting/1_vivo/marques/campaign/c26_fixed/KS3_output_10m/'
+                output: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/sorting/1_vivo/marques/campaign/c26_fixed/SortingKS3_10m/'
+                sort_output: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/sorting/1_vivo/marques/campaign/c26_fixed/KS3_output_10m/'
         kilosort2_5: # see notebook for installation
-            input: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/sorters/Kilosort-2.5/'
-            output: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/sorting/1_vivo/marques/campaign/c26_fixed/SortingKS2_5/'
-            sort_output: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/sorting/1_vivo/marques/campaign/c26_fixed/KS2_5_output/'
+            input: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/sorters/Kilosort-2.5/'
+            output: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/sorting/1_vivo/marques/campaign/c26_fixed/SortingKS2_5/'
+            sort_output: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/sorting/1_vivo/marques/campaign/c26_fixed/KS2_5_output/'
             10m:
-                output: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/sorting/1_vivo/marques/campaign/c26_fixed/SortingKS2_5_10m/'
-                sort_output: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/sorting/1_vivo/marques/campaign/c26_fixed/KS2_5_output_10m/'
+                output: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/sorting/1_vivo/marques/campaign/c26_fixed/SortingKS2_5_10m/'
+                sort_output: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/sorting/1_vivo/marques/campaign/c26_fixed/KS2_5_output_10m/'
         kilosort2: # wget -c https://github.com/MouseLand/Kilosort/archive/refs/tags/v2.0.2.tar.gz -O - | tar -xz
-            input: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/sorters/Kilosort-2.0.2/'
-            output: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/sorting/1_vivo/marques/campaign/c26_fixed/SortingKS2/'
-            sort_output: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/sorting/1_vivo/marques/campaign/c26_fixed/KS2_output/'
+            input: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/sorters/Kilosort-2.0.2/'
+            output: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/sorting/1_vivo/marques/campaign/c26_fixed/SortingKS2/'
+            sort_output: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/sorting/1_vivo/marques/campaign/c26_fixed/KS2_output/'
             10m:
-                output: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/sorting/1_vivo/marques/campaign/c26_fixed/SortingKS2_10m/'
-                sort_output: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/sorting/1_vivo/marques/campaign/c26_fixed/KS2_output_10m/'
+                output: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/sorting/1_vivo/marques/campaign/c26_fixed/SortingKS2_10m/'
+                sort_output: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/sorting/1_vivo/marques/campaign/c26_fixed/KS2_output_10m/'
         kilosort: # git clone https://github.com/cortex-lab/KiloSort.git
-            input: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/sorters/KiloSort/'
-            output: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/sorting/1_vivo/marques/campaign/c26_fixed/SortingKS/'
-            sort_output: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/sorting/1_vivo/marques/campaign/c26_fixed/KS_output/'
+            input: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/sorters/KiloSort/'
+            output: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/sorting/1_vivo/marques/campaign/c26_fixed/SortingKS/'
+            sort_output: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/sorting/1_vivo/marques/campaign/c26_fixed/KS_output/'
             10m:
-                output: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/sorting/1_vivo/marques/campaign/c26_fixed/SortingKS_10m/'
-                sort_output: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/sorting/1_vivo/marques/campaign/c26_fixed/KS_output_10m/'
+                output: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/sorting/1_vivo/marques/campaign/c26_fixed/SortingKS_10m/'
+                sort_output: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/sorting/1_vivo/marques/campaign/c26_fixed/KS_output_10m/'
         hdsort: # git clone https://git.bsse.ethz.ch/hima_public/HDsort.git - KO
-            input: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/sorters/HDsort/'
-            output: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/sorting/1_vivo/marques/campaign/c26_fixed/SortingHDsort/'
-            hdsort_output: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/sorting/1_vivo/marques/campaign/c26_fixed/hdsort_output/'
+            input: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/sorters/HDsort/'
+            output: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/sorting/1_vivo/marques/campaign/c26_fixed/SortingHDsort/'
+            hdsort_output: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/sorting/1_vivo/marques/campaign/c26_fixed/hdsort_output/'
             10m:
-                output: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/sorting/1_vivo/marques/campaign/c26_fixed/SortingHDsort_10m/'
-                sort_output: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/sorting/1_vivo/marques/campaign/c26_fixed/hdsort_output_10m/'
+                output: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/sorting/1_vivo/marques/campaign/c26_fixed/SortingHDsort_10m/'
+                sort_output: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/sorting/1_vivo/marques/campaign/c26_fixed/hdsort_output_10m/'
         herdingspikes: # pip install herdingspikes
-            output: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/sorting/1_vivo/marques/campaign/c26_fixed/SortingHerdingspikes/'
-            herdingspikes_output: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/sorting/1_vivo/marques/campaign/c26_fixed/Herdingspikes_output/'
+            output: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/sorting/1_vivo/marques/campaign/c26_fixed/SortingHerdingspikes/'
+            herdingspikes_output: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/sorting/1_vivo/marques/campaign/c26_fixed/Herdingspikes_output/'
             10m:
-                output: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/sorting/1_vivo/marques/campaign/c26_fixed/SortingHerdingspikes_10m/'
-                sort_output: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/sorting/1_vivo/marques/campaign/c26_fixed/Herdingspikes_output_10m/'
+                output: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/sorting/1_vivo/marques/campaign/c26_fixed/SortingHerdingspikes_10m/'
+                sort_output: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/sorting/1_vivo/marques/campaign/c26_fixed/Herdingspikes_output_10m/'
         klusta: # see envs/klusta.txt - KO
-            output: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/sorting/1_vivo/marques/campaign/c26_fixed/SortingKlusta/'
-            klusta_output: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/sorting/1_vivo/marques/campaign/c26_fixed/Klusta_output/'
+            output: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/sorting/1_vivo/marques/campaign/c26_fixed/SortingKlusta/'
+            klusta_output: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/sorting/1_vivo/marques/campaign/c26_fixed/Klusta_output/'
             10m:
-                output: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/sorting/1_vivo/marques/campaign/c26_fixed/SortingKlusta_10m/'
-                klusta_output: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/sorting/1_vivo/marques/campaign/c26_fixed/Klusta_output_10m/'
+                output: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/sorting/1_vivo/marques/campaign/c26_fixed/SortingKlusta_10m/'
+                klusta_output: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/sorting/1_vivo/marques/campaign/c26_fixed/Klusta_output_10m/'
         mountainsort4: # see envs/mountainsort4.txt
-            output: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/sorting/1_vivo/marques/campaign/c26_fixed/SortingMountainsort4/'
-            sort_output: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/sorting/1_vivo/marques/campaign/c26_fixed/Mountainsort4_output/'
+            output: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/sorting/1_vivo/marques/campaign/c26_fixed/SortingMountainsort4/'
+            sort_output: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/sorting/1_vivo/marques/campaign/c26_fixed/Mountainsort4_output/'
             10m:
-                output: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/sorting/1_vivo/marques/campaign/c26_fixed/SortingMountainsort4_10m/'
-                sort_output: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/sorting/1_vivo/marques/campaign/c26_fixed/Mountainsort4_output_10m/'
+                output: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/sorting/1_vivo/marques/campaign/c26_fixed/SortingMountainsort4_10m/'
+                sort_output: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/sorting/1_vivo/marques/campaign/c26_fixed/Mountainsort4_output_10m/'
 
 # set descriptive datasets
 features:
     sorted_ks3:
-        firing_rates: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/features/1_vivo/marques/c26_fixed/firing_rates/sorted_ks3/firing_rates.npy'
+        firing_rates: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/features/1_vivo/marques/c26_fixed/firing_rates/sorted_ks3/firing_rates.npy'
 
 # set postprocessing pipeline
 postprocessing:
@@ -100,52 +100,52 @@ postprocessing:
         sorted:
             study: 
                 kilosort4: 
-                    full: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postprocessing/vivo/marques/c26_fixed/study_ks4'
-                    10m: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postprocessing/vivo/marques/c26_fixed/study_ks4_10m'
+                    full: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/postprocessing/vivo/marques/c26_fixed/study_ks4'
+                    10m: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/postprocessing/vivo/marques/c26_fixed/study_ks4_10m'
                 kilosort3: 
-                    full: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postprocessing/vivo/marques/c26_fixed/study_ks3'
-                    10m: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postprocessing/vivo/marques/c26_fixed/study_ks3_10m'
+                    full: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/postprocessing/vivo/marques/c26_fixed/study_ks3'
+                    10m: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/postprocessing/vivo/marques/c26_fixed/study_ks3_10m'
                 kilosort2_5: 
-                    full: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postprocessing/vivo/marques/c26_fixed/study_ks2_5'
-                    10m: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postprocessing/vivo/marques/c26_fixed/study_ks2_5_10m'                    
+                    full: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/postprocessing/vivo/marques/c26_fixed/study_ks2_5'
+                    10m: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/postprocessing/vivo/marques/c26_fixed/study_ks2_5_10m'                    
                 kilosort2: 
-                    full: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postprocessing/vivo/marques/c26_fixed/study_ks2'
-                    10m: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postprocessing/vivo/marques/c26_fixed/study_ks2_10m'                                        
+                    full: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/postprocessing/vivo/marques/c26_fixed/study_ks2'
+                    10m: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/postprocessing/vivo/marques/c26_fixed/study_ks2_10m'                                        
                 kilosort: 
-                    full: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postprocessing/vivo/marques/c26_fixed/study_ks'
-                    10m: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postprocessing/vivo/marques/c26_fixed/study_ks_10m'                                        
+                    full: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/postprocessing/vivo/marques/c26_fixed/study_ks'
+                    10m: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/postprocessing/vivo/marques/c26_fixed/study_ks_10m'                                        
                 herdingspikes:
-                    full: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postprocessing/vivo/marques/c26_fixed/study_hs'
-                    10m: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postprocessing/vivo/marques/c26_fixed/study_hs_10m'                                        
-            WaveformExtractor: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postprocessing/vivo/marques/c26_fixed/WaveformExtractor'
+                    full: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/postprocessing/vivo/marques/c26_fixed/study_hs'
+                    10m: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/postprocessing/vivo/marques/c26_fixed/study_hs_10m'                                        
+            WaveformExtractor: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/postprocessing/vivo/marques/c26_fixed/WaveformExtractor'
             for_wavemap:
-                study: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postprocessing/vivo/marques/c26_fixed/spike/sorted/study_for_wavemap/'
-                WaveformExtractor: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postprocessing/vivo/marques/c26_fixed/spike/sorted/WaveformExtractor_for_wavemap'
-    sorted_neuron_metadata: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postprocessing/vivo/marques/c26_fixed/sorted_neuron_metadata.csv'
-    snr_plot_data_mean: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/realism/1_vivo/marques/c26_fixed/snr_plot_data_mean.ny'
-    snr_plot_data_ci: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/realism/1_vivo/marques/c26_fixed/snr_plot_data_ci.ny'
-    snr_plot_data_bin: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/realism/1_vivo/marques/c26_fixed/snr_plot_data_bin.ny'
+                study: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/postprocessing/vivo/marques/c26_fixed/spike/sorted/study_for_wavemap/'
+                WaveformExtractor: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/postprocessing/vivo/marques/c26_fixed/spike/sorted/WaveformExtractor_for_wavemap'
+    sorted_neuron_metadata: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/postprocessing/vivo/marques/c26_fixed/sorted_neuron_metadata.csv'
+    snr_plot_data_mean: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/realism/1_vivo/marques/c26_fixed/snr_plot_data_mean.ny'
+    snr_plot_data_ci: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/realism/1_vivo/marques/c26_fixed/snr_plot_data_ci.ny'
+    snr_plot_data_bin: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/realism/1_vivo/marques/c26_fixed/snr_plot_data_bin.ny'
         
 validation:
     10m:
-        trace_snr: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/realism/1_vivo/marques/c26_fixed/trace_snr.npy'
+        trace_snr: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/realism/1_vivo/marques/c26_fixed/trace_snr.npy'
     full:
-        trace_snr: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/realism/1_vivo/marques/c26_fixed/trace_snr_40m.npy'
+        trace_snr: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/realism/1_vivo/marques/c26_fixed/trace_snr_40m.npy'
     psd:
-        raw: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/realism/1_vivo/marques/c26_fixed/validation/full_raw_power_welch_10m.npy'
-        preprocessed: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/realism/1_vivo/marques/c26_fixed/validation/full_prep_buttw_power_welch_10m.npy'
+        raw: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/realism/1_vivo/marques/c26_fixed/validation/full_raw_power_welch_10m.npy'
+        preprocessed: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/realism/1_vivo/marques/c26_fixed/validation/full_prep_buttw_power_welch_10m.npy'
     noise:
-        full: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/realism/1_vivo/marques/c26_fixed/validation/noise/noise_full.npy'
+        full: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/realism/1_vivo/marques/c26_fixed/validation/noise/noise_full.npy'
         
 analyses:
     trace:
         10m:
-            noise: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/realism/1_vivo/marques/c26_fixed/noise.npy' # preprocessed (buttw)
+            noise: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/realism/1_vivo/marques/c26_fixed/noise.npy' # preprocessed (buttw)
         power: 
-            raw: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/realism/1_vivo/marques/c26_fixed/raw_power.npy'
-            preprocessed: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/realism/1_vivo/marques/c26_fixed/preprocessed_power.npy'
-            freqs: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/realism/1_vivo/marques/c26_fixed/freqs.npy'
+            raw: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/realism/1_vivo/marques/c26_fixed/raw_power.npy'
+            preprocessed: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/realism/1_vivo/marques/c26_fixed/preprocessed_power.npy'
+            freqs: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/realism/1_vivo/marques/c26_fixed/freqs.npy'
     noise_stats:
-        buttw_noise_0uV: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/realism/1_vivo/marques/c26_fixed/lfp/noise/buttw_noise_0uV.npy'
-        buttw_noise_20_perc_lower: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/realism/1_vivo/marques/c26_fixed/lfp/noise/buttw_noise_20_perc_lower.npy'
+        buttw_noise_0uV: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/realism/1_vivo/marques/c26_fixed/lfp/noise/buttw_noise_0uV.npy'
+        buttw_noise_20_perc_lower: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/realism/1_vivo/marques/c26_fixed/lfp/noise/buttw_noise_20_perc_lower.npy'
 

@@ -54,7 +54,7 @@ HS_nb_10m = cfg["sorting"]["sorters"]["herdingspikes"]["output"]
 REC_nb = cfg["probe_wiring"]["full"]["output"]
 
 # saved dataframe of sorted unit quality
-quality_path = "/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postprocessing/biophy/8_spikesorting_stimulus_test_neuropixels_13-4-24__8slc_100f_72r_250t_200ms_0/12c5ef9a-1f3b-4b18-b3f5-ec6a417f645c/analysis/sorting_quality/sorting_quality_40m.csv /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/dataeng/0_silico/4_spikesorting_stimulus_test_neuropixels_8-1-24__8slc_80f_360r_50t_200ms_1_smallest_fiber_gids/0fcb7709-b1e9-4d84-b056-5801f20d55af/analysis/sorting_quality/sorting_quality_40m.csv"
+quality_path = "/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/postprocessing/biophy/8_spikesorting_stimulus_test_neuropixels_13-4-24__8slc_100f_72r_250t_200ms_0/12c5ef9a-1f3b-4b18-b3f5-ec6a417f645c/analysis/sorting_quality/sorting_quality_40m.csv /gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/dataeng/0_silico/4_spikesorting_stimulus_test_neuropixels_8-1-24__8slc_80f_360r_50t_200ms_1_smallest_fiber_gids/0fcb7709-b1e9-4d84-b056-5801f20d55af/analysis/sorting_quality/sorting_quality_40m.csv"
 
 
 def main(rank):

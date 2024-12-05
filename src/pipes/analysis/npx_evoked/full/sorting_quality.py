@@ -53,7 +53,7 @@ HS_nb_10m = cfg["sorting"]["sorters"]["herdingspikes"]["full"]["output"]
 REC_nb = cfg["probe_wiring"]["full"]["output"]
 
 # saved dataframe of sorted unit quality
-quality_path = "/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/dataeng/0_silico/4_spikesorting_stimulus_test_neuropixels_8-1-24__8slc_80f_360r_50t_200ms_1_smallest_fiber_gids/0fcb7709-b1e9-4d84-b056-5801f20d55af/analysis/sorting_quality/sorting_quality_1h.csv"
+quality_path = "/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/dataeng/0_silico/4_spikesorting_stimulus_test_neuropixels_8-1-24__8slc_80f_360r_50t_200ms_1_smallest_fiber_gids/0fcb7709-b1e9-4d84-b056-5801f20d55af/analysis/sorting_quality/sorting_quality_1h.csv"
 
 # full recording duration
 DUR = si.load_extractor(REC_nb).get_total_duration()

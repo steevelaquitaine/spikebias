@@ -72,7 +72,7 @@ DENSE_SP_P3 = os.path.dirname(cfg_ds3["nwb"])
 
 
 # path of the dandiset to upload
-DANDISET = "/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/dandiset"
+DANDISET = "/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/dandiset"
 
 os.chdir(DANDISET)
 

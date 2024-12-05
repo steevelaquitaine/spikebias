@@ -34,13 +34,13 @@
 # load matlab after clean up, compile cuda code and setup python3.9 interpreter via spack env
 module purge 
 module load matlab/r2019b
-cd /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/sorters/Kilosort3/CUDA
+cd /gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/sorters/Kilosort3/CUDA
 matlab -batch mexGPUall
 module load spack
 cd /gpfs/bbp.cscs.ch/project/proj85/home/laquitai/spikebias/   
 . /gpfs/bbp.cscs.ch/ssd/apps/bsd/2024-02-01/spack/share/spack/setup-env.sh
 spack env activate python3_9 -p
-source /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/envs/spikinterf0_100_5/bin/activate
+source /gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/envs/spikinterf0_100_5/bin/activate
 
 # run pipeline
 srun -n 1 python3.9 -m src.pipes.sorting.marques_silico.10m.buttw.ks3.sort_noise_90_perc_lower

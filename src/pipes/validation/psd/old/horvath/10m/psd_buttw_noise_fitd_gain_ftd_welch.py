@@ -178,33 +178,33 @@
 # def save_psd_results(out_raw_sili, out_prep_sili, out_raw_vivo, out_prep_vivo):
 
 #     os.makedirs(
-#         '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postprocessing/vivo/horvath/probe_2/postpro/realism/lfp/',
+#         '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/postprocessing/vivo/horvath/probe_2/postpro/realism/lfp/',
 #         exist_ok=True,
 #     )
 #     os.makedirs(
-#         '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/0_silico/horvath/concatenated_campaigns/probe2_hex0_rou04_pfr03_20Khz/postpro/realism/lfp/',
+#         '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/0_silico/horvath/concatenated_campaigns/probe2_hex0_rou04_pfr03_20Khz/postpro/realism/lfp/',
 #         exist_ok=True,
 #     )
     
 
 #     # save sili
 #     np.save(
-#         "/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/0_silico/horvath/concatenated_campaigns/probe2_hex0_rou04_pfr03_20Khz/postpro/realism/lfp/full_raw_power_welch_10m_gain_ftd",
+#         "/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/0_silico/horvath/concatenated_campaigns/probe2_hex0_rou04_pfr03_20Khz/postpro/realism/lfp/full_raw_power_welch_10m_gain_ftd",
 #         out_raw_sili,
 #     )
 #     np.save(
-#         "/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/0_silico/horvath/concatenated_campaigns/probe2_hex0_rou04_pfr03_20Khz/postpro/realism/lfp/full_prep_buttw_power_welch_10m_gain_ftd",
+#         "/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/0_silico/horvath/concatenated_campaigns/probe2_hex0_rou04_pfr03_20Khz/postpro/realism/lfp/full_prep_buttw_power_welch_10m_gain_ftd",
 #         out_prep_sili,
 #     )
 
 #     # save vivo
 #     np.save(
-#         "/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postprocessing/vivo/horvath/probe_2/postpro/realism/lfp/full_raw_power_welch_10m.npy",
+#         "/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/postprocessing/vivo/horvath/probe_2/postpro/realism/lfp/full_raw_power_welch_10m.npy",
 #         out_raw_vivo,
 #     )
 
 #     np.save(
-#         "/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postprocessing/vivo/horvath/probe_2/postpro/realism/lfp/full_prep_buttw_power_welch_10m.npy",
+#         "/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/postprocessing/vivo/horvath/probe_2/postpro/realism/lfp/full_prep_buttw_power_welch_10m.npy",
 #         out_prep_vivo,
 #     )
 
@@ -215,21 +215,21 @@
 
 #     # vivo (1m)
 #     np.save(
-#         "/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/dataeng/1_vivo/horvath/probe_2/recording/traces_in_ctx_10m",
+#         "/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/dataeng/1_vivo/horvath/probe_2/recording/traces_in_ctx_10m",
 #         raw_traces_vivo,
 #     )
 #     np.save(
-#         "/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/preprocessed/1_vivo/horvath/probe_2/recording/traces_in_ctx_10m",
+#         "/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/preprocessed/1_vivo/horvath/probe_2/recording/traces_in_ctx_10m",
 #         prep_traces_vivo,
 #     )
 
 #     # silico
 #     np.save(
-#         "/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/0_silico/horvath/concatenated_campaigns/probe2_hex0_rou04_pfr03_20Khz/dataeng/recording/traces_in_ctx_10m_noise_fitd_gain_ftd",
+#         "/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/0_silico/horvath/concatenated_campaigns/probe2_hex0_rou04_pfr03_20Khz/dataeng/recording/traces_in_ctx_10m_noise_fitd_gain_ftd",
 #         raw_traces_sili,
 #     )
 #     np.save(
-#         "/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/0_silico/horvath/concatenated_campaigns/probe2_hex0_rou04_pfr03_20Khz/preprocessed/traces_in_ctx_10m_noise_fitd_gain_ftd",
+#         "/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/0_silico/horvath/concatenated_campaigns/probe2_hex0_rou04_pfr03_20Khz/preprocessed/traces_in_ctx_10m_noise_fitd_gain_ftd",
 #         prep_traces_sili,
 #     )
 

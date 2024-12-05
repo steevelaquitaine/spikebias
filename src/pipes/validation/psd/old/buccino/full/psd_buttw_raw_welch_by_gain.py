@@ -330,56 +330,56 @@ out_prep_sili_6x_ftd = get_welch_psd_parallelized(prep_traces_sili_6x_ftd)
 
 # SAVE PSDS *******************************************************
 os.makedirs(
-    "/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postprocessing/hybrid/buccino/realism/lfp/",
+    "/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/postprocessing/hybrid/buccino/realism/lfp/",
     exist_ok=True,
 )    
 
 # save PSD for gain=2
 np.save(
-    "/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postprocessing/hybrid/buccino/realism/lfp/raw_power_welch_10m_gain_2",
+    "/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/postprocessing/hybrid/buccino/realism/lfp/raw_power_welch_10m_gain_2",
     out_raw_sili_gain_2,
 )
 np.save(
-    "/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postprocessing/hybrid/buccino/realism/lfp/prep_buttw_power_welch_10m_gain_2",
+    "/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/postprocessing/hybrid/buccino/realism/lfp/prep_buttw_power_welch_10m_gain_2",
     out_prep_sili_gain_2,
 )
 
 # save PSD for fitting gain
 np.save(
-    "/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postprocessing/hybrid/buccino/realism/lfp/raw_power_welch_10m_gain_fitd",
+    "/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/postprocessing/hybrid/buccino/realism/lfp/raw_power_welch_10m_gain_fitd",
     out_raw_sili_ftd,
 )
 np.save(
-    "/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postprocessing/hybrid/buccino/realism/lfp/prep_buttw_power_welch_10m_gain_fitd",
+    "/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/postprocessing/hybrid/buccino/realism/lfp/prep_buttw_power_welch_10m_gain_fitd",
     out_prep_sili_ftd,
 )
 
 # save PSD for half fitting gain
 np.save(
-    "/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postprocessing/hybrid/buccino/realism/lfp/raw_power_welch_10m_gain_half_fitd",
+    "/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/postprocessing/hybrid/buccino/realism/lfp/raw_power_welch_10m_gain_half_fitd",
     out_raw_sili_half_ftd,
 )
 np.save(
-    "/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postprocessing/hybrid/buccino/realism/lfp/prep_buttw_power_welch_10m_gain_half_fitd",
+    "/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/postprocessing/hybrid/buccino/realism/lfp/prep_buttw_power_welch_10m_gain_half_fitd",
     out_prep_sili_half_ftd,
 )
 
 # save PSD for 4x fitting gain
 np.save(
-    "/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postprocessing/hybrid/buccino/realism/lfp/raw_power_welch_10m_gain_4x_fitd",
+    "/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/postprocessing/hybrid/buccino/realism/lfp/raw_power_welch_10m_gain_4x_fitd",
     out_raw_sili_4x_ftd,
 )
 np.save(
-    "/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postprocessing/hybrid/buccino/realism/lfp/prep_buttw_power_welch_10m_gain_4x_fitd",
+    "/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/postprocessing/hybrid/buccino/realism/lfp/prep_buttw_power_welch_10m_gain_4x_fitd",
     out_prep_sili_4x_ftd,
 )
 
 # save PSD for 6x fitting gain
 np.save(
-    "/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postprocessing/hybrid/buccino/realism/lfp/raw_power_welch_10m_gain_6x_fitd",
+    "/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/postprocessing/hybrid/buccino/realism/lfp/raw_power_welch_10m_gain_6x_fitd",
     out_raw_sili_6x_ftd,
 )
 np.save(
-    "/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postprocessing/hybrid/buccino/realism/lfp/prep_buttw_power_welch_10m_gain_6x_fitd",
+    "/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/postprocessing/hybrid/buccino/realism/lfp/prep_buttw_power_welch_10m_gain_6x_fitd",
     out_prep_sili_6x_ftd,
 )

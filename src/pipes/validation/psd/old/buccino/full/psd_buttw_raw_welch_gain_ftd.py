@@ -180,7 +180,7 @@ out_prep_sili_ftd = get_welch_psd_parallelized(prep_traces_sili_ftd)
 
 # SAVE PSDS *******************************************************
 os.makedirs(
-    "/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postprocessing/hybrid/buccino/realism/lfp/",
+    "/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/postprocessing/hybrid/buccino/realism/lfp/",
     exist_ok=True,
 )    
 

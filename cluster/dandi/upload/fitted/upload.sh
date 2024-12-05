@@ -35,7 +35,7 @@ module purge
 module load archive/2023-03
 module load python/3.10.8
 cd /gpfs/bbp.cscs.ch/project/proj85/home/laquitai/spikebias/   
-source /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/envs/dandi2/bin/activate
+source /gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/envs/dandi2/bin/activate
 
 # run pipeline
 srun -n 1 python -m src.pipes.dandi.upload.fitted.upload

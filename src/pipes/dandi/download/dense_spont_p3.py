@@ -10,7 +10,7 @@ Usage:
     or 
     
     # activate dandi2 python environment
-    source /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/envs/dandi2/bin/activate
+    source /gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/envs/dandi2/bin/activate
     python -m src.pipes.nwb.download.dense_spont_p3
 
 Returns:

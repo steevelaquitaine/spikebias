@@ -7,7 +7,7 @@ campaign:
     exp: 'npx_384ch_hex01_rou04_pfr03_40Khz_2024_11_16_disconnected'
     run: '3d803ad9-1e0d-4f7b-a892-5a28fca7a536'
     # the channel weights from Jo. Tharayil with 384 channels, 30 (see workflows/BlueConfig__)
-    source_weights: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/dataset/weights/coeffsneuropixels.h5' 
+    source_weights: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/dataset/weights/coeffsneuropixels.h5' 
 
 # engineer campaign spikes and trace data
 dataeng:    

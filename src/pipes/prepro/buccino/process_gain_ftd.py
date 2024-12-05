@@ -6,7 +6,7 @@ modified: 10.07.2024
 
  usage:
 
-    sbatch cluster/prepro/buccino/process_gain_ftd.sh
+    sbatch cluster/prepro/buccino/gain_ftd.sh
            
 Note:
 
@@ -54,6 +54,10 @@ job_dict = {"n_jobs": 1, "chunk_memory": None, "progress_bar": True} # butterwor
 
 
 SAVE_RECORDINGEXTRACTOR = False
+FIT = False
+WIRE = False
+PREPROCESS = False
+GROUND_TRUTH = True
 
 def fit_gain(gain_adjust: float, cfg_b: dict, cfg_v: dict):
     
@@ -185,12 +189,22 @@ def run(gain_adjust:float, filtering:str="wavelet"):
             folder=cfg_b["recording"]["output"], format="binary", **job_dict
             )
     
-    # fit gain
-    fit_gain(gain_adjust, cfg_b, cfg_v)
+    if FIT:
+        # fit gain
+        fit_gain(gain_adjust, cfg_b, cfg_v)
     
-    # apply gain and save wired recording
-    Wired = fit_and_save(cfg_b)
+    if WIRE:
+        # apply gain and save wired recording
+        Wired = fit_and_save(cfg_b)
     
-    # preprocessing
-    preprocess_recording(Wired, cfg_b, prm_b, job_dict, filtering)
-    logger.info(f"Pipeline done in {np.round(time.time()-t0,2)} secs")
+    if PREPROCESS:
+        # preprocessing
+        preprocess_recording(Wired, cfg_b, prm_b, job_dict, filtering)
+        logger.info(f"Pipeline done in {np.round(time.time()-t0,2)} secs")
+        
+    if GROUND_TRUTH:
+        SortingTrue = se.NwbSortingExtractor(cfg_b["ground_truth"]["full"]["input"])
+        shutil.rmtree(cfg_b["ground_truth"]["full"]["output"], ignore_errors=True)
+        SortingTrue.save(
+            folder=cfg_b["ground_truth"]["full"]["output"], **job_dict
+            )

@@ -42,28 +42,28 @@ sorting:
                 output: '/home/jovyan/steevelaquitaine/spikebias/tmp_dataset/npx_spont/SortingKS4_noise_fitd_gain_ftd_10m_nwb/'
                 sort_output: '/home/jovyan/steevelaquitaine/spikebias/tmp_dataset/npx_spont/KS4_output_noise_fitd_gain_ftd_10m_nwb/'
         kilosort3:
-            input: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/sorters/Kilosort3_buttw'
+            input: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/sorters/Kilosort3_buttw'
             output: '/home/jovyan/steevelaquitaine/spikebias/tmp_dataset/npx_spont/SortingKS3_nwb/'
             sort_output: '/home/jovyan/steevelaquitaine/spikebias/tmp_dataset/npx_spont/KS3_output_nwb/'            
             10m:
                 output: '/home/jovyan/steevelaquitaine/spikebias/tmp_dataset/npx_spont/SortingKS3_noise_ftd_gain_ftd_10m_nwb/'
                 sort_output: '/home/jovyan/steevelaquitaine/spikebias/tmp_dataset/npx_spont/KS3_output_noise_ftd_gain_ftd_10m_nwb/'                
         kilosort2_5:
-            input: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/sorters/Kilosort-2.5/'
+            input: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/sorters/Kilosort-2.5/'
             output: '/home/jovyan/steevelaquitaine/spikebias/tmp_dataset/npx_spont/SortingKS2_5_nwb/'
             sort_output: '/home/jovyan/steevelaquitaine/spikebias/tmp_dataset/npx_spont/KS2_5_output_nwb/'
             10m:
                 output: '/home/jovyan/steevelaquitaine/spikebias/tmp_dataset/npx_spont/SortingKS2_5_10m_nwb/'
                 sort_output: '/home/jovyan/steevelaquitaine/spikebias/tmp_dataset/npx_spont/KS2_5_output_10m_nwb/'
         kilosort2:
-            input: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/sorters/Kilosort-2.0.2/'
+            input: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/sorters/Kilosort-2.0.2/'
             output: '/home/jovyan/steevelaquitaine/spikebias/tmp_dataset/npx_spont/SortingKS2_nwb/'
             sort_output: '/home/jovyan/steevelaquitaine/spikebias/tmp_dataset/npx_spont/KS2_output_nwb/'
             10m:
                 output: '/home/jovyan/steevelaquitaine/spikebias/tmp_dataset/npx_spont/SortingKS2_10m_nwb/'
                 sort_output: '/home/jovyan/steevelaquitaine/spikebias/tmp_dataset/npx_spont/KS2_output_10m_nwb/'
         kilosort:
-            input: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/sorters/KiloSort/'
+            input: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/sorters/KiloSort/'
             output: '/home/jovyan/steevelaquitaine/spikebias/tmp_dataset/npx_spont/SortingKS_nwb/'
             sort_output: '/home/jovyan/steevelaquitaine/spikebias/tmp_dataset/npx_spont/KS_output_nwb/'
             10m:

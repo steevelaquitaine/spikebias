@@ -37,7 +37,7 @@ module load spack
 cd /gpfs/bbp.cscs.ch/project/proj85/home/laquitai/spikebias/   
 . /gpfs/bbp.cscs.ch/ssd/apps/bsd/2024-02-01/spack/share/spack/setup-env.sh
 spack env activate python3_9 -p
-source /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/envs/npx_10m_384ch_unit_classes/bin/activate
+source /gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/envs/npx_10m_384ch_unit_classes/bin/activate
 
 # run pipeline
 srun -n 1 python3.9 -c "from src.pipes.prepro.fit_marques_silico import run; run(layer='L4')"

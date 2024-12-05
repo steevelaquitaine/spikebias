@@ -54,7 +54,7 @@ HS_nb_10m = cfg_nb["sorting"]["sorters"]["herdingspikes"]["10m"]["output"]
 REC_nb = cfg_nb["probe_wiring"]["full"]["output"]
 
 # saved dataframe of sorted unit quality
-quality_path = "/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/postprocessing/biophy/17_spikesorting_stimulus_test_neuropixels_8-10-24__8slc_60f_72r_250t_200ms_0/a9bf068a-b940-4514-9e6c-6055283272cc/analysis/sorting_quality/sorting_quality.csv"
+quality_path = "/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/postprocessing/biophy/17_spikesorting_stimulus_test_neuropixels_8-10-24__8slc_60f_72r_250t_200ms_0/a9bf068a-b940-4514-9e6c-6055283272cc/analysis/sorting_quality/sorting_quality.csv"
 
 
 def main(rank):

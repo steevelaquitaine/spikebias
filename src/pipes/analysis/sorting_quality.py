@@ -110,7 +110,7 @@ T_d3 = cfg_ds3["ground_truth"]["10m"]["output"]
 
 
 # saved dataframe of sorted unit quality
-quality_path = "/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/analysis/sorting_quality/sorting_quality.csv"
+quality_path = "/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/analysis/sorting_quality/sorting_quality.csv"
 
 
 def main(rank):

@@ -37,12 +37,12 @@ module purge
 module load spack
 . /gpfs/bbp.cscs.ch/ssd/apps/bsd/2024-02-01/spack/share/spack/setup-env.sh
 spack env activate python3_9 -p
-source /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/envs/spikinterf0_100_5/bin/activate
+source /gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/envs/spikinterf0_100_5/bin/activate
 
 # add custom package to python path
 cd /gpfs/bbp.cscs.ch/project/proj85/home/laquitai/spikebias/
 export PYTHONPATH=$(pwd)
 
 # run pipeline
-alias python3.9=/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/envs/spikinterf0_100_5/bin/python3.9 # alias python3.9
+alias python3.9=/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/envs/spikinterf0_100_5/bin/python3.9 # alias python3.9
 srun -n 1 python3.9 -c "from src.pipes.prepro.npx_spont_discon.process import run; run(filtering='butterworth')" # run pipeline

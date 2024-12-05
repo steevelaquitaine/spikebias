@@ -10,7 +10,7 @@ campaign:
     exp: '8_spikesorting_stimulus_test_neuropixels_13-4-24__8slc_100f_72r_250t_200ms_0'
     run: '12c5ef9a-1f3b-4b18-b3f5-ec6a417f645c'
     # the channel weights from Jo. Tharayil with 384 channels, 30 (see workflows/BlueConfig__)
-    source_weights: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/dataset/weights/coeffsneuropixels.h5' 
+    source_weights: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/dataset/weights/coeffsneuropixels.h5' 
 
 dataeng:    
     blueconfig: '/gpfs/bbp.cscs.ch/project/proj83/scratch/home/isbister/post_physiology_2023/sim_data/campaigns/spikesorting_stimulus_tests/8_spikesorting_stimulus_test_neuropixels_13-4-24/8_spikesorting_stimulus_test_neuropixels_13-4-24__8slc_100f_72r_250t_200ms_0/12c5ef9a-1f3b-4b18-b3f5-ec6a417f645c/0/BlueConfig' # BlueConfig from which params are loaded. All are identical. 
@@ -19,108 +19,108 @@ dataeng:
     campaign:
         input: '/gpfs/bbp.cscs.ch/project/proj83/scratch/home/isbister/post_physiology_2023/sim_data/campaigns/spikesorting_stimulus_tests/8_spikesorting_stimulus_test_neuropixels_13-4-24/8_spikesorting_stimulus_test_neuropixels_13-4-24__8slc_100f_72r_250t_200ms_0/12c5ef9a-1f3b-4b18-b3f5-ec6a417f645c/' # the path where bbp_worklfow has written your N simulations (folders 0, 1, .., N)
         output:
-            root: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/dataeng/0_silico/8_spikesorting_stimulus_test_neuropixels_13-4-24__8slc_100f_72r_250t_200ms_0/12c5ef9a-1f3b-4b18-b3f5-ec6a417f645c/campaign/'
-            spike_file_path: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/dataeng/0_silico/8_spikesorting_stimulus_test_neuropixels_13-4-24__8slc_100f_72r_250t_200ms_0/12c5ef9a-1f3b-4b18-b3f5-ec6a417f645c/campaign/raw/spiketrains.pkl'
-            trace_file_path: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/dataeng/0_silico/8_spikesorting_stimulus_test_neuropixels_13-4-24__8slc_100f_72r_250t_200ms_0/12c5ef9a-1f3b-4b18-b3f5-ec6a417f645c/campaign/raw/traces.pkl'
-            channel_location_path: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/dataeng/0_silico/8_spikesorting_stimulus_test_neuropixels_13-4-24__8slc_100f_72r_250t_200ms_0/12c5ef9a-1f3b-4b18-b3f5-ec6a417f645c/campaign/raw/channel_location/'
-            near_probe_cells_file_path: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/dataeng/0_silico/8_spikesorting_stimulus_test_neuropixels_13-4-24__8slc_100f_72r_250t_200ms_0/12c5ef9a-1f3b-4b18-b3f5-ec6a417f645c/campaign/raw/info_near_probe_cells.pkl'
+            root: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/dataeng/0_silico/8_spikesorting_stimulus_test_neuropixels_13-4-24__8slc_100f_72r_250t_200ms_0/12c5ef9a-1f3b-4b18-b3f5-ec6a417f645c/campaign/'
+            spike_file_path: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/dataeng/0_silico/8_spikesorting_stimulus_test_neuropixels_13-4-24__8slc_100f_72r_250t_200ms_0/12c5ef9a-1f3b-4b18-b3f5-ec6a417f645c/campaign/raw/spiketrains.pkl'
+            trace_file_path: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/dataeng/0_silico/8_spikesorting_stimulus_test_neuropixels_13-4-24__8slc_100f_72r_250t_200ms_0/12c5ef9a-1f3b-4b18-b3f5-ec6a417f645c/campaign/raw/traces.pkl'
+            channel_location_path: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/dataeng/0_silico/8_spikesorting_stimulus_test_neuropixels_13-4-24__8slc_100f_72r_250t_200ms_0/12c5ef9a-1f3b-4b18-b3f5-ec6a417f645c/campaign/raw/channel_location/'
+            near_probe_cells_file_path: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/dataeng/0_silico/8_spikesorting_stimulus_test_neuropixels_13-4-24__8slc_100f_72r_250t_200ms_0/12c5ef9a-1f3b-4b18-b3f5-ec6a417f645c/campaign/raw/info_near_probe_cells.pkl'
 
 # Cast as SpikeInterface Recording Extractor object
 recording: 
-    input: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/dataeng/0_silico/8_spikesorting_stimulus_test_neuropixels_13-4-24__8slc_100f_72r_250t_200ms_0/12c5ef9a-1f3b-4b18-b3f5-ec6a417f645c/campaign/raw/traces.pkl'
-    output: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/dataeng/0_silico/8_spikesorting_stimulus_test_neuropixels_13-4-24__8slc_100f_72r_250t_200ms_0/12c5ef9a-1f3b-4b18-b3f5-ec6a417f645c/campaign/recording/traces.pkl' # raw rec to read with spikeinterface
+    input: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/dataeng/0_silico/8_spikesorting_stimulus_test_neuropixels_13-4-24__8slc_100f_72r_250t_200ms_0/12c5ef9a-1f3b-4b18-b3f5-ec6a417f645c/campaign/raw/traces.pkl'
+    output: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/dataeng/0_silico/8_spikesorting_stimulus_test_neuropixels_13-4-24__8slc_100f_72r_250t_200ms_0/12c5ef9a-1f3b-4b18-b3f5-ec6a417f645c/campaign/recording/traces.pkl' # raw rec to read with spikeinterface
 
 # reconstruct and wire probe to recording
 probe_wiring:
     full:
         # original recording: noise and gain fitted
-        input: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/dataeng/0_silico/8_spikesorting_stimulus_test_neuropixels_13-4-24__8slc_100f_72r_250t_200ms_0/12c5ef9a-1f3b-4b18-b3f5-ec6a417f645c/campaign/recording/traces' 
+        input: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/dataeng/0_silico/8_spikesorting_stimulus_test_neuropixels_13-4-24__8slc_100f_72r_250t_200ms_0/12c5ef9a-1f3b-4b18-b3f5-ec6a417f645c/campaign/recording/traces' 
         # speed up 2X
-        output: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/dataeng/0_silico/8_spikesorting_stimulus_test_neuropixels_13-4-24__8slc_100f_72r_250t_200ms_0/12c5ef9a-1f3b-4b18-b3f5-ec6a417f645c/campaign/recording/traces_speed2X' # raw recording to read with spikeinterface
+        output: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/dataeng/0_silico/8_spikesorting_stimulus_test_neuropixels_13-4-24__8slc_100f_72r_250t_200ms_0/12c5ef9a-1f3b-4b18-b3f5-ec6a417f645c/campaign/recording/traces_speed2X' # raw recording to read with spikeinterface
 
 # set paths for lfp preprocessing pipeline
 preprocessing:
     full:
         output:
-            trace_file_path: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/dataeng/0_silico/8_spikesorting_stimulus_test_neuropixels_13-4-24__8slc_100f_72r_250t_200ms_0/12c5ef9a-1f3b-4b18-b3f5-ec6a417f645c/campaign/preprocessed/traces_speed2X'
+            trace_file_path: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/dataeng/0_silico/8_spikesorting_stimulus_test_neuropixels_13-4-24__8slc_100f_72r_250t_200ms_0/12c5ef9a-1f3b-4b18-b3f5-ec6a417f645c/campaign/preprocessed/traces_speed2X'
     fitting: # there is a file for each layer (file was created for 2023_10_18 (same probe location))
         # fitted
-        fitted_noise: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/dataeng/0_silico/neuropixels_lfp_10m_384ch_hex0_40Khz_2023_10_18/be011315-9555-493e-a59c-27f42d1058ed/campaign/preprocessed/vers_04072024/missing_noise_'
+        fitted_noise: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/dataeng/0_silico/neuropixels_lfp_10m_384ch_hex0_40Khz_2023_10_18/be011315-9555-493e-a59c-27f42d1058ed/campaign/preprocessed/vers_04072024/missing_noise_'
         # tuned
-        missing_noise_path: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/dataeng/0_silico/neuropixels_lfp_10m_384ch_hex0_40Khz_2023_10_18/be011315-9555-493e-a59c-27f42d1058ed/campaign/preprocessed/missing_noise_'
+        missing_noise_path: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/dataeng/0_silico/neuropixels_lfp_10m_384ch_hex0_40Khz_2023_10_18/be011315-9555-493e-a59c-27f42d1058ed/campaign/preprocessed/missing_noise_'
 
 # set paths for sorting pipeline
 sorting:
     simulation:
         # 2X-accelerated
         ground_truth:
-            output: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/sorting/0_silico/8_spikesorting_stimulus_test_neuropixels_13-4-24__8slc_100f_72r_250t_200ms_0/12c5ef9a-1f3b-4b18-b3f5-ec6a417f645c/campaign/ground_truth_speed2X'
+            output: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/sorting/0_silico/8_spikesorting_stimulus_test_neuropixels_13-4-24__8slc_100f_72r_250t_200ms_0/12c5ef9a-1f3b-4b18-b3f5-ec6a417f645c/campaign/ground_truth_speed2X'
             10m:
-                output: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/sorting/0_silico/8_spikesorting_stimulus_test_neuropixels_13-4-24__8slc_100f_72r_250t_200ms_0/12c5ef9a-1f3b-4b18-b3f5-ec6a417f645c/campaign/ground_truth_10m_speed2X'
+                output: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/sorting/0_silico/8_spikesorting_stimulus_test_neuropixels_13-4-24__8slc_100f_72r_250t_200ms_0/12c5ef9a-1f3b-4b18-b3f5-ec6a417f645c/campaign/ground_truth_10m_speed2X'
     sorters:
         kilosort4:
-            output: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/sorting/0_silico/8_spikesorting_stimulus_test_neuropixels_13-4-24__8slc_100f_72r_250t_200ms_0/12c5ef9a-1f3b-4b18-b3f5-ec6a417f645c/SortingKS4_speed2X/'
-            sort_output: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/sorting/0_silico/8_spikesorting_stimulus_test_neuropixels_13-4-24__8slc_100f_72r_250t_200ms_0/12c5ef9a-1f3b-4b18-b3f5-ec6a417f645c/KS4_output_speed2X/'
+            output: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/sorting/0_silico/8_spikesorting_stimulus_test_neuropixels_13-4-24__8slc_100f_72r_250t_200ms_0/12c5ef9a-1f3b-4b18-b3f5-ec6a417f645c/SortingKS4_speed2X/'
+            sort_output: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/sorting/0_silico/8_spikesorting_stimulus_test_neuropixels_13-4-24__8slc_100f_72r_250t_200ms_0/12c5ef9a-1f3b-4b18-b3f5-ec6a417f645c/KS4_output_speed2X/'
             10m:
-                output: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/sorting/0_silico/8_spikesorting_stimulus_test_neuropixels_13-4-24__8slc_100f_72r_250t_200ms_0/12c5ef9a-1f3b-4b18-b3f5-ec6a417f645c/SortingKS4_10m_speed2X/'
-                sort_output: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/sorting/0_silico/8_spikesorting_stimulus_test_neuropixels_13-4-24__8slc_100f_72r_250t_200ms_0/12c5ef9a-1f3b-4b18-b3f5-ec6a417f645c/KS4_output_10m_speed2X/'
+                output: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/sorting/0_silico/8_spikesorting_stimulus_test_neuropixels_13-4-24__8slc_100f_72r_250t_200ms_0/12c5ef9a-1f3b-4b18-b3f5-ec6a417f645c/SortingKS4_10m_speed2X/'
+                sort_output: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/sorting/0_silico/8_spikesorting_stimulus_test_neuropixels_13-4-24__8slc_100f_72r_250t_200ms_0/12c5ef9a-1f3b-4b18-b3f5-ec6a417f645c/KS4_output_10m_speed2X/'
         kilosort3:
-            input: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/sorters/Kilosort3_buttw'
-            output: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/sorting/0_silico/8_spikesorting_stimulus_test_neuropixels_13-4-24__8slc_100f_72r_250t_200ms_0/12c5ef9a-1f3b-4b18-b3f5-ec6a417f645c/SortingKS3_speed2X/'
-            sort_output: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/sorting/0_silico/8_spikesorting_stimulus_test_neuropixels_13-4-24__8slc_100f_72r_250t_200ms_0/12c5ef9a-1f3b-4b18-b3f5-ec6a417f645c/KS3_output_speed2X/'
+            input: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/sorters/Kilosort3_buttw'
+            output: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/sorting/0_silico/8_spikesorting_stimulus_test_neuropixels_13-4-24__8slc_100f_72r_250t_200ms_0/12c5ef9a-1f3b-4b18-b3f5-ec6a417f645c/SortingKS3_speed2X/'
+            sort_output: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/sorting/0_silico/8_spikesorting_stimulus_test_neuropixels_13-4-24__8slc_100f_72r_250t_200ms_0/12c5ef9a-1f3b-4b18-b3f5-ec6a417f645c/KS3_output_speed2X/'
             10m:
-                output: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/sorting/0_silico/8_spikesorting_stimulus_test_neuropixels_13-4-24__8slc_100f_72r_250t_200ms_0/12c5ef9a-1f3b-4b18-b3f5-ec6a417f645c/SortingKS3_10m_speed2X/'
-                sort_output: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/sorting/0_silico/8_spikesorting_stimulus_test_neuropixels_13-4-24__8slc_100f_72r_250t_200ms_0/12c5ef9a-1f3b-4b18-b3f5-ec6a417f645c/KS3_output_10m_speed2X/'
+                output: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/sorting/0_silico/8_spikesorting_stimulus_test_neuropixels_13-4-24__8slc_100f_72r_250t_200ms_0/12c5ef9a-1f3b-4b18-b3f5-ec6a417f645c/SortingKS3_10m_speed2X/'
+                sort_output: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/sorting/0_silico/8_spikesorting_stimulus_test_neuropixels_13-4-24__8slc_100f_72r_250t_200ms_0/12c5ef9a-1f3b-4b18-b3f5-ec6a417f645c/KS3_output_10m_speed2X/'
         kilosort2_5:
-            input: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/sorters/Kilosort-2.5/'
-            output: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/sorting/0_silico/8_spikesorting_stimulus_test_neuropixels_13-4-24__8slc_100f_72r_250t_200ms_0/12c5ef9a-1f3b-4b18-b3f5-ec6a417f645c/SortingKS2_5_speed2X/'
-            sort_output: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/sorting/0_silico/8_spikesorting_stimulus_test_neuropixels_13-4-24__8slc_100f_72r_250t_200ms_0/12c5ef9a-1f3b-4b18-b3f5-ec6a417f645c/KS2_5_output_speed2X/'
+            input: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/sorters/Kilosort-2.5/'
+            output: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/sorting/0_silico/8_spikesorting_stimulus_test_neuropixels_13-4-24__8slc_100f_72r_250t_200ms_0/12c5ef9a-1f3b-4b18-b3f5-ec6a417f645c/SortingKS2_5_speed2X/'
+            sort_output: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/sorting/0_silico/8_spikesorting_stimulus_test_neuropixels_13-4-24__8slc_100f_72r_250t_200ms_0/12c5ef9a-1f3b-4b18-b3f5-ec6a417f645c/KS2_5_output_speed2X/'
             10m:
-                output: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/sorting/0_silico/8_spikesorting_stimulus_test_neuropixels_13-4-24__8slc_100f_72r_250t_200ms_0/12c5ef9a-1f3b-4b18-b3f5-ec6a417f645c/SortingKS2_5_10m_speed2X/'
-                sort_output: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/sorting/0_silico/8_spikesorting_stimulus_test_neuropixels_13-4-24__8slc_100f_72r_250t_200ms_0/12c5ef9a-1f3b-4b18-b3f5-ec6a417f645c/KS2_5_output_10m_speed2X/'
+                output: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/sorting/0_silico/8_spikesorting_stimulus_test_neuropixels_13-4-24__8slc_100f_72r_250t_200ms_0/12c5ef9a-1f3b-4b18-b3f5-ec6a417f645c/SortingKS2_5_10m_speed2X/'
+                sort_output: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/sorting/0_silico/8_spikesorting_stimulus_test_neuropixels_13-4-24__8slc_100f_72r_250t_200ms_0/12c5ef9a-1f3b-4b18-b3f5-ec6a417f645c/KS2_5_output_10m_speed2X/'
         kilosort2:
-            input: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/sorters/Kilosort-2.0.2/'
-            output: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/sorting/0_silico/8_spikesorting_stimulus_test_neuropixels_13-4-24__8slc_100f_72r_250t_200ms_0/12c5ef9a-1f3b-4b18-b3f5-ec6a417f645c/SortingKS2_speed2X/'
-            sort_output: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/sorting/0_silico/8_spikesorting_stimulus_test_neuropixels_13-4-24__8slc_100f_72r_250t_200ms_0/12c5ef9a-1f3b-4b18-b3f5-ec6a417f645c/KS2_output_speed2X/'
+            input: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/sorters/Kilosort-2.0.2/'
+            output: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/sorting/0_silico/8_spikesorting_stimulus_test_neuropixels_13-4-24__8slc_100f_72r_250t_200ms_0/12c5ef9a-1f3b-4b18-b3f5-ec6a417f645c/SortingKS2_speed2X/'
+            sort_output: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/sorting/0_silico/8_spikesorting_stimulus_test_neuropixels_13-4-24__8slc_100f_72r_250t_200ms_0/12c5ef9a-1f3b-4b18-b3f5-ec6a417f645c/KS2_output_speed2X/'
             10m:
-                output: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/sorting/0_silico/8_spikesorting_stimulus_test_neuropixels_13-4-24__8slc_100f_72r_250t_200ms_0/12c5ef9a-1f3b-4b18-b3f5-ec6a417f645c/SortingKS2_10m_speed2X/'
-                sort_output: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/sorting/0_silico/8_spikesorting_stimulus_test_neuropixels_13-4-24__8slc_100f_72r_250t_200ms_0/12c5ef9a-1f3b-4b18-b3f5-ec6a417f645c/KS2_output_10m_speed2X/'
+                output: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/sorting/0_silico/8_spikesorting_stimulus_test_neuropixels_13-4-24__8slc_100f_72r_250t_200ms_0/12c5ef9a-1f3b-4b18-b3f5-ec6a417f645c/SortingKS2_10m_speed2X/'
+                sort_output: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/sorting/0_silico/8_spikesorting_stimulus_test_neuropixels_13-4-24__8slc_100f_72r_250t_200ms_0/12c5ef9a-1f3b-4b18-b3f5-ec6a417f645c/KS2_output_10m_speed2X/'
         kilosort:
-            input: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/sorters/KiloSort/'
-            output: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/sorting/0_silico/8_spikesorting_stimulus_test_neuropixels_13-4-24__8slc_100f_72r_250t_200ms_0/12c5ef9a-1f3b-4b18-b3f5-ec6a417f645c/SortingKS_speed2X/'
-            sort_output: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/sorting/0_silico/8_spikesorting_stimulus_test_neuropixels_13-4-24__8slc_100f_72r_250t_200ms_0/12c5ef9a-1f3b-4b18-b3f5-ec6a417f645c/KS_output_speed2X/'
+            input: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/sorters/KiloSort/'
+            output: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/sorting/0_silico/8_spikesorting_stimulus_test_neuropixels_13-4-24__8slc_100f_72r_250t_200ms_0/12c5ef9a-1f3b-4b18-b3f5-ec6a417f645c/SortingKS_speed2X/'
+            sort_output: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/sorting/0_silico/8_spikesorting_stimulus_test_neuropixels_13-4-24__8slc_100f_72r_250t_200ms_0/12c5ef9a-1f3b-4b18-b3f5-ec6a417f645c/KS_output_speed2X/'
             10m:
-                output: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/sorting/0_silico/8_spikesorting_stimulus_test_neuropixels_13-4-24__8slc_100f_72r_250t_200ms_0/12c5ef9a-1f3b-4b18-b3f5-ec6a417f645c/SortingKS_10m_speed2X/'
-                sort_output: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/sorting/0_silico/8_spikesorting_stimulus_test_neuropixels_13-4-24__8slc_100f_72r_250t_200ms_0/12c5ef9a-1f3b-4b18-b3f5-ec6a417f645c/KS_output_10m_speed2X/'
+                output: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/sorting/0_silico/8_spikesorting_stimulus_test_neuropixels_13-4-24__8slc_100f_72r_250t_200ms_0/12c5ef9a-1f3b-4b18-b3f5-ec6a417f645c/SortingKS_10m_speed2X/'
+                sort_output: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/sorting/0_silico/8_spikesorting_stimulus_test_neuropixels_13-4-24__8slc_100f_72r_250t_200ms_0/12c5ef9a-1f3b-4b18-b3f5-ec6a417f645c/KS_output_10m_speed2X/'
         herdingspikes:
-            output: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/sorting/0_silico/8_spikesorting_stimulus_test_neuropixels_13-4-24__8slc_100f_72r_250t_200ms_0/12c5ef9a-1f3b-4b18-b3f5-ec6a417f645c/SortingHS_speed2X/'
-            sort_output: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/sorting/0_silico/8_spikesorting_stimulus_test_neuropixels_13-4-24__8slc_100f_72r_250t_200ms_0/12c5ef9a-1f3b-4b18-b3f5-ec6a417f645c/HS_output_speed2X/'
+            output: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/sorting/0_silico/8_spikesorting_stimulus_test_neuropixels_13-4-24__8slc_100f_72r_250t_200ms_0/12c5ef9a-1f3b-4b18-b3f5-ec6a417f645c/SortingHS_speed2X/'
+            sort_output: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/sorting/0_silico/8_spikesorting_stimulus_test_neuropixels_13-4-24__8slc_100f_72r_250t_200ms_0/12c5ef9a-1f3b-4b18-b3f5-ec6a417f645c/HS_output_speed2X/'
             10m:
-                output: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/sorting/0_silico/8_spikesorting_stimulus_test_neuropixels_13-4-24__8slc_100f_72r_250t_200ms_0/12c5ef9a-1f3b-4b18-b3f5-ec6a417f645c/SortingHS_10m_speed2X/'
-                sort_output: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/sorting/0_silico/8_spikesorting_stimulus_test_neuropixels_13-4-24__8slc_100f_72r_250t_200ms_0/12c5ef9a-1f3b-4b18-b3f5-ec6a417f645c/HS_output_10m_speed2X/'
+                output: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/sorting/0_silico/8_spikesorting_stimulus_test_neuropixels_13-4-24__8slc_100f_72r_250t_200ms_0/12c5ef9a-1f3b-4b18-b3f5-ec6a417f645c/SortingHS_10m_speed2X/'
+                sort_output: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/sorting/0_silico/8_spikesorting_stimulus_test_neuropixels_13-4-24__8slc_100f_72r_250t_200ms_0/12c5ef9a-1f3b-4b18-b3f5-ec6a417f645c/HS_output_10m_speed2X/'
 
 # postprocessing
 postprocessing: 
     waveform:
         ground_truth:
-            study: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/0_silico/8_spikesorting_stimulus_test_neuropixels_13-4-24__8slc_100f_72r_250t_200ms_0/12c5ef9a-1f3b-4b18-b3f5-ec6a417f645c/postpro/realism/spike/ground_truth/study_speed2X'
+            study: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/postprocessing/biophy/8_spikesorting_stimulus_test_neuropixels_13-4-24__8slc_100f_72r_250t_200ms_0/12c5ef9a-1f3b-4b18-b3f5-ec6a417f645c/analysis/ground_truth/study_speed2X'
         sorted:
             study: 
                 kilosort4: 
-                    full: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/0_silico/8_spikesorting_stimulus_test_neuropixels_13-4-24__8slc_100f_72r_250t_200ms_0/12c5ef9a-1f3b-4b18-b3f5-ec6a417f645c/postpro/realism/spike/sorted/study_ks4_speed2X'
-                    10m: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/0_silico/8_spikesorting_stimulus_test_neuropixels_13-4-24__8slc_100f_72r_250t_200ms_0/12c5ef9a-1f3b-4b18-b3f5-ec6a417f645c/postpro/realism/spike/sorted/study_ks4_10m_speed2X'
+                    full: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/postprocessing/biophy/8_spikesorting_stimulus_test_neuropixels_13-4-24__8slc_100f_72r_250t_200ms_0/12c5ef9a-1f3b-4b18-b3f5-ec6a417f645c/analysis/sorted/study_ks4_speed2X'
+                    10m: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/postprocessing/biophy/8_spikesorting_stimulus_test_neuropixels_13-4-24__8slc_100f_72r_250t_200ms_0/12c5ef9a-1f3b-4b18-b3f5-ec6a417f645c/analysis/sorted/study_ks4_10m_speed2X'
                 kilosort3: 
-                    full: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/0_silico/8_spikesorting_stimulus_test_neuropixels_13-4-24__8slc_100f_72r_250t_200ms_0/12c5ef9a-1f3b-4b18-b3f5-ec6a417f645c/postpro/realism/spike/sorted/study_ks3_speed2X'
-                    10m: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/0_silico/8_spikesorting_stimulus_test_neuropixels_13-4-24__8slc_100f_72r_250t_200ms_0/12c5ef9a-1f3b-4b18-b3f5-ec6a417f645c/postpro/realism/spike/sorted/study_ks3_10m_speed2X'                    
+                    full: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/postprocessing/biophy/8_spikesorting_stimulus_test_neuropixels_13-4-24__8slc_100f_72r_250t_200ms_0/12c5ef9a-1f3b-4b18-b3f5-ec6a417f645c/analysis/sorted/study_ks3_speed2X'
+                    10m: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/postprocessing/biophy/8_spikesorting_stimulus_test_neuropixels_13-4-24__8slc_100f_72r_250t_200ms_0/12c5ef9a-1f3b-4b18-b3f5-ec6a417f645c/analysis/sorted/study_ks3_10m_speed2X'                    
                 kilosort2_5: 
-                    full: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/0_silico/8_spikesorting_stimulus_test_neuropixels_13-4-24__8slc_100f_72r_250t_200ms_0/12c5ef9a-1f3b-4b18-b3f5-ec6a417f645c/postpro/realism/spike/sorted/study_ks2_5_speed2X'
-                    10m: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/0_silico/8_spikesorting_stimulus_test_neuropixels_13-4-24__8slc_100f_72r_250t_200ms_0/12c5ef9a-1f3b-4b18-b3f5-ec6a417f645c/postpro/realism/spike/sorted/study_ks2_5_10m_speed2X'                                        
+                    full: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/postprocessing/biophy/8_spikesorting_stimulus_test_neuropixels_13-4-24__8slc_100f_72r_250t_200ms_0/12c5ef9a-1f3b-4b18-b3f5-ec6a417f645c/analysis/sorted/study_ks2_5_speed2X'
+                    10m: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/postprocessing/biophy/8_spikesorting_stimulus_test_neuropixels_13-4-24__8slc_100f_72r_250t_200ms_0/12c5ef9a-1f3b-4b18-b3f5-ec6a417f645c/analysis/sorted/study_ks2_5_10m_speed2X'                                        
                 kilosort2: 
-                    full: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/0_silico/8_spikesorting_stimulus_test_neuropixels_13-4-24__8slc_100f_72r_250t_200ms_0/12c5ef9a-1f3b-4b18-b3f5-ec6a417f645c/postpro/realism/spike/sorted/study_ks2_speed2X'
-                    10m: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/0_silico/8_spikesorting_stimulus_test_neuropixels_13-4-24__8slc_100f_72r_250t_200ms_0/12c5ef9a-1f3b-4b18-b3f5-ec6a417f645c/postpro/realism/spike/sorted/study_ks2_10m_speed2X'                                                            
+                    full: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/postprocessing/biophy/8_spikesorting_stimulus_test_neuropixels_13-4-24__8slc_100f_72r_250t_200ms_0/12c5ef9a-1f3b-4b18-b3f5-ec6a417f645c/analysis/sorted/study_ks2_speed2X'
+                    10m: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/postprocessing/biophy/8_spikesorting_stimulus_test_neuropixels_13-4-24__8slc_100f_72r_250t_200ms_0/12c5ef9a-1f3b-4b18-b3f5-ec6a417f645c/analysis/sorted/study_ks2_10m_speed2X'                                                            
                 kilosort: 
-                    full: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/0_silico/8_spikesorting_stimulus_test_neuropixels_13-4-24__8slc_100f_72r_250t_200ms_0/12c5ef9a-1f3b-4b18-b3f5-ec6a417f645c/postpro/realism/spike/sorted/study_ks_speed2X'
-                    10m: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/0_silico/8_spikesorting_stimulus_test_neuropixels_13-4-24__8slc_100f_72r_250t_200ms_0/12c5ef9a-1f3b-4b18-b3f5-ec6a417f645c/postpro/realism/spike/sorted/study_ks_10m_speed2X'                                                                                
+                    full: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/postprocessing/biophy/8_spikesorting_stimulus_test_neuropixels_13-4-24__8slc_100f_72r_250t_200ms_0/12c5ef9a-1f3b-4b18-b3f5-ec6a417f645c/analysis/sorted/study_ks_speed2X'
+                    10m: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/postprocessing/biophy/8_spikesorting_stimulus_test_neuropixels_13-4-24__8slc_100f_72r_250t_200ms_0/12c5ef9a-1f3b-4b18-b3f5-ec6a417f645c/analysis/sorted/study_ks_10m_speed2X'                                                                                
                 herdingspikes: 
-                    full: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/0_silico/8_spikesorting_stimulus_test_neuropixels_13-4-24__8slc_100f_72r_250t_200ms_0/12c5ef9a-1f3b-4b18-b3f5-ec6a417f645c/postpro/realism/spike/sorted/study_hs_speed2X'
-                    10m: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/0_silico/8_spikesorting_stimulus_test_neuropixels_13-4-24__8slc_100f_72r_250t_200ms_0/12c5ef9a-1f3b-4b18-b3f5-ec6a417f645c/postpro/realism/spike/sorted/study_hs_10m_speed2X'                                                                                                    
+                    full: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/postprocessing/biophy/8_spikesorting_stimulus_test_neuropixels_13-4-24__8slc_100f_72r_250t_200ms_0/12c5ef9a-1f3b-4b18-b3f5-ec6a417f645c/analysis/sorted/study_hs_speed2X'
+                    10m: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/postprocessing/biophy/8_spikesorting_stimulus_test_neuropixels_13-4-24__8slc_100f_72r_250t_200ms_0/12c5ef9a-1f3b-4b18-b3f5-ec6a417f645c/analysis/sorted/study_hs_10m_speed2X'                                                                                                    

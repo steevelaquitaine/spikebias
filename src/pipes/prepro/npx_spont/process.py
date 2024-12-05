@@ -11,7 +11,7 @@ SpikeInterface's Recording and Sorting Extractors
     
     or 
     
-    source /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/preprint_2024/envs/spikinterf0_100_5/bin/activate
+    source /gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/envs/spikinterf0_100_5/bin/activate
     python3.9 -c "from src.pipes.prepro.npx_spont.process import run; run(filtering='butterworth')"
     
 duration: 3h:54
