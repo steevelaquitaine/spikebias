@@ -53,7 +53,7 @@ HS_nb_10m = cfg_nb["sorting"]["sorters"]["herdingspikes"]["10m"]["output"]
 REC_nb = cfg_nb["probe_wiring"]["full"]["output"]
 
 # biophy spont (10m)
-cfg_ns, _ = get_config("silico_neuropixels", "concatenated").values()
+cfg_ns, _ = get_config("silico_neuropixels", "npx_spont").values()
 KS4_ns_10m = cfg_ns["sorting"]["sorters"]["kilosort4"]["10m"]["output"]
 KS3_ns_10m = cfg_ns["sorting"]["sorters"]["kilosort3"]["10m"]["output"]
 KS2_5_ns_10m = cfg_ns["sorting"]["sorters"]["kilosort2_5"]["10m"]["output"]
@@ -64,7 +64,7 @@ GT_ns_10m = cfg_ns["ground_truth"]["10m"]["output"]
 REC_ns = cfg_ns["probe_wiring"]["full"]["output"]
 
 # biophy evoked
-cfg_ne, _ = get_config("silico_neuropixels", "stimulus").values()
+cfg_ne, _ = get_config("silico_neuropixels", "npx_evoked").values()
 KS4_ne_10m = cfg_ne["sorting"]["sorters"]["kilosort4"]["10m"]["output"]
 KS3_ne_10m = cfg_ne["sorting"]["sorters"]["kilosort3"]["10m"]["output"]
 KS2_5_ne_10m = cfg_ne["sorting"]["sorters"]["kilosort2_5"]["10m"]["output"]

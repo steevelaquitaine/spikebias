@@ -66,7 +66,7 @@ POWER_PREP_vivo = data_conf_vivo["analyses"]["traces"]["power"]["preprocessed"]
 
 # silico
 data_conf_sili, param_conf_sili = get_config(
-    "silico_neuropixels", "concatenated"
+    "silico_neuropixels", "npx_spont"
 ).values()
 RAW_PATH_sili = data_conf_sili["probe_wiring"]["output_noise_0uV"]
 PREP_PATH_sili = data_conf_sili["preprocessing"]["output"]["trace_file_path_noise_0uV"]

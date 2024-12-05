@@ -53,7 +53,7 @@ PRE_PSD_PATH_NV = cfg_nv["validation"]["psd"]["preprocessed"]
 
 # neuropixels (Biophy. spont.)
 cfg_ns, _ = get_config(
-    "silico_neuropixels", "concatenated"
+    "silico_neuropixels", "npx_spont"
 ).values()
 RAW_PATH_NS = cfg_ns["probe_wiring"]["40m"]["output_noise_fitd_gain_fitd_adj10perc_less_int16"]
 PRE_PATH_NS = cfg_ns["preprocessing"]["output"]["full"]["trace_file_path_gain_fitd_adj10perc_less_noise_fitd_int16"]
@@ -62,7 +62,7 @@ RAW_PSD_PATH_NS = cfg_ns["validation"]["psd"]["raw"]
 PRE_PSD_PATH_NS = cfg_ns["validation"]["psd"]["preprocessed"]
 
 # neuropixels (Biophy. evoked)
-cfg_ne, _ = get_config("silico_neuropixels", "stimulus").values()
+cfg_ne, _ = get_config("silico_neuropixels", "npx_evoked").values()
 RAW_PATH_NE = cfg_ne["probe_wiring"]["output"]
 PRE_PATH_NE = cfg_ne["preprocessing"]["output"]["full"]["trace_file_path_gain_fitd_adj10perc_less_noise_fitd_int16"]
 RAW_PSD_PATH_NE = cfg_ne["validation"]["psd"]["raw"]

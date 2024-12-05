@@ -56,7 +56,7 @@ RAW_PATH_vivo = data_conf_vivo["probe_wiring"]["output"]
 PREP_PATH_vivo = data_conf_vivo["preprocessing"]["output"]["trace_file_path"]
 
 # silico
-data_conf_sili, param_conf_sili = get_config("silico_neuropixels", "concatenated").values()
+data_conf_sili, param_conf_sili = get_config("silico_neuropixels", "npx_spont").values()
 RAW_PATH_sili = data_conf_sili["probe_wiring"]["40m"]["output_noise_fitd_gain_fitd_adj_int16"]
 PREP_PATH_sili = data_conf_sili["preprocessing"]["output"]["40m"]["trace_file_path_gain_fitd_adj_noise_fitd_int16"]
 

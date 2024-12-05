@@ -78,7 +78,7 @@ sorter_params = {
 }
 
 # SETUP CONFIG
-data_conf, _ = get_config("silico_neuropixels", "stimulus").values()
+data_conf, _ = get_config("silico_neuropixels", "npx_evoked").values()
 
 # setup logging
 with open("conf/logging.yml", "r", encoding="utf-8") as logging_conf:

@@ -40,7 +40,7 @@ PREP_PATH_v =  cfg["preprocessing"]["full"]["output"]["trace_file_path"]
 NOISE_PATH_v = cfg["validation"]["noise"]["full"]
 
 # silico best fitted gain and noise
-cfg, _ = get_config("silico_neuropixels", "concatenated").values()
+cfg, _ = get_config("silico_neuropixels", "npx_spont").values()
 PREP_PATH_s = cfg["preprocessing"]["full"]["output"]["trace_file_path"]
 NOISE_PATH_s = cfg["validation"]["noise"]["full"]
 
@@ -50,7 +50,7 @@ PREP_PATH_b = cfg["preprocessing"]["full"]["output"]["trace_file_path"]
 NOISE_PATH_b = cfg["validation"]["noise"]["full"]
 
 # neuropixels (evoked biophysical model)
-cfg, _ = get_config("silico_neuropixels", "stimulus").values()
+cfg, _ = get_config("silico_neuropixels", "npx_evoked").values()
 PREP_PATH_ne =  cfg["preprocessing"]["full"]["output"]["trace_file_path"]
 NOISE_PATH_ne = cfg["validation"]["noise"]["full"]
 

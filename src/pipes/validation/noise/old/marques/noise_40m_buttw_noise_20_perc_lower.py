@@ -34,7 +34,7 @@ NOISE_VIVO_DATAPATH = data_conf_h_vivo["analyses"]["noise_stats"]["buttw_noise_2
 CONTACTS_h = np.arange(0,128,1)
 
 # silico
-data_cfg, _ = get_config("silico_neuropixels", "concatenated").values()
+data_cfg, _ = get_config("silico_neuropixels", "npx_spont").values()
 PREPRO_SILI = data_cfg["preprocessing"]["output"]["trace_file_path_noise_20_perc_lower"]
 NOISE_SILI_DATAPATH = data_cfg["analyses"]["noise_stats"]["buttw_noise_20_perc_lower"]
 BLUECONFIG = data_cfg["dataeng"]["blueconfig"]

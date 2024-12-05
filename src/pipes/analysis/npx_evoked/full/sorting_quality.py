@@ -42,7 +42,7 @@ THR_GOOD = 0.8
 
 # NPX
 # Evoked (10m)
-cfg, _ = get_config("silico_neuropixels", "stimulus").values()
+cfg, _ = get_config("silico_neuropixels", "npx_evoked").values()
 GT_10m = cfg["sorting"]["simulation"]["ground_truth"]["full"]["output"]
 KS4_nb_10m = cfg["sorting"]["sorters"]["kilosort4"]["full"]["output"]
 KS3_nb_10m = cfg["sorting"]["sorters"]["kilosort3"]["full"]["output"]

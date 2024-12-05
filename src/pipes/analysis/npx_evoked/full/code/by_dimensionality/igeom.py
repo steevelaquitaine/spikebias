@@ -49,7 +49,7 @@ N_BOOT = 200
 SAMPLE_DIR = np.arange(0, 360, 45) # sample 8 directions out of the 360; (4, 5, 6, fails, 8 worked directions)
 
 # SETUP CONFIG
-data_conf, _ = get_config("silico_neuropixels", "stimulus").values()
+data_conf, _ = get_config("silico_neuropixels", "npx_evoked").values()
 GT = data_conf["sorting"]["simulation"]["ground_truth"]["full"]["output"]
 K4 = data_conf["sorting"]["sorters"]["kilosort4"]["full"]["output"]
 K3 = data_conf["sorting"]["sorters"]["kilosort3"]["full"]["output"]

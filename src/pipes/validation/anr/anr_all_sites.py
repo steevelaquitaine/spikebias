@@ -69,11 +69,11 @@ def main(rank, n_ranks):
     PREP_PATH_nv = cfg_nv["preprocessing"]["output"]["trace_file_path"]
 
     # neuropixels (biophysical model)
-    cfg_ns, _ = get_config("silico_neuropixels", "concatenated").values()
+    cfg_ns, _ = get_config("silico_neuropixels", "npx_spont").values()
     PREP_PATH_ns = cfg_ns["preprocessing"]["output"]["full"]["trace_file_path_gain_fitd_adj10perc_less_noise_fitd_int16"]
 
     # neuropixels (evoked biophysical model)
-    cfg_ne, _ = get_config("silico_neuropixels", "stimulus").values()
+    cfg_ne, _ = get_config("silico_neuropixels", "npx_evoked").values()
     PREP_PATH_ne = cfg_ne["preprocessing"]["output"]["full"]["trace_file_path_gain_fitd_adj10perc_less_noise_fitd_int16"]
 
     # denser probe (horvath)  ------

@@ -44,7 +44,7 @@ from src.pipes.metadata.marques_silico import label_layers
 from src.pipes.prepro.marques_silico.supp import concat
 
 # SETUP PARAMETERS
-data_conf, param_conf = get_config("silico_neuropixels", "concatenated").values()
+data_conf, param_conf = get_config("silico_neuropixels", "npx_spont").values()
 BLUECONFIG = data_conf["dataeng"]["blueconfig"]
 
 # SETUP LOGGING

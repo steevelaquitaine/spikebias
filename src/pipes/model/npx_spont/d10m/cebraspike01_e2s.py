@@ -149,7 +149,7 @@ from src.nodes.models.models import CebraSpike1
 # SETUP DATASET PATHS  *************************************
 
 # npx spont. biophy.
-cfg_ns, _ = get_config("silico_neuropixels", "concatenated").values()
+cfg_ns, _ = get_config("silico_neuropixels", "npx_spont").values()
 KS4_ns_10m = cfg_ns["sorting"]["sorters"]["kilosort4"]["10m"][
     "output"
 ]  # sorting with KS4
@@ -161,7 +161,7 @@ STUDY_ns_su = '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/0_silic
 REC_ns = cfg_ns["probe_wiring"]["full"]["output"]  # Wired
 
 # npx evoked biophy.
-cfg_ne, _ = get_config("silico_neuropixels", "stimulus").values()
+cfg_ne, _ = get_config("silico_neuropixels", "npx_evoked").values()
 KS4_ne_10m = cfg_ne["sorting"]["sorters"]["kilosort4"]["10m"]["output"]
 GT_ne_10m = cfg_ne["ground_truth"]["10m"]["output"]
 STUDY_ne = cfg_ne["postprocessing"]["waveform"]["sorted"]["study"]["kilosort4"][
