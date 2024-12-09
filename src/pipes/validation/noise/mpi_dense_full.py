@@ -51,17 +51,17 @@ NOISE_PATH_hv3 = cfg["analyses"]["traces"]["noise"]
 
 # models ----------
 # probe 1
-cfg, _ = get_config("silico_horvath", "concatenated/probe_1").values()
+cfg, _ = get_config("dense_spont", "probe_1").values()
 PREP_PATH_hs1 = cfg["preprocessing"]["output"]["trace_file_path"]
 NOISE_PATH_hs1 = cfg["analyses"]["traces"]["noise"]
 
 # probe 2
-cfg, _ = get_config("silico_horvath", "concatenated/probe_2").values()
+cfg, _ = get_config("dense_spont", "probe_2").values()
 PREP_PATH_hs2 = cfg["preprocessing"]["output"]["trace_file_path"]
 NOISE_PATH_hs2 = cfg["analyses"]["traces"]["noise"]
 
 # probe 3
-cfg, _ = get_config("silico_horvath", "concatenated/probe_3").values()
+cfg, _ = get_config("dense_spont", "probe_3").values()
 PREP_PATH_hs3 = cfg["preprocessing"]["output"]["trace_file_path"]
 NOISE_PATH_hs3 = cfg["analyses"]["traces"]["noise"]
 

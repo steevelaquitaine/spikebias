@@ -40,7 +40,7 @@ sorter_params = {
     }
 
 # SETUP CONFIG
-data_conf, _ = get_config("silico_horvath", "concatenated/probe_1").values()
+data_conf, _ = get_config("dense_spont", "probe_1").values()
 
 # setup logging
 with open("conf/logging.yml", "r", encoding="utf-8") as logging_conf:

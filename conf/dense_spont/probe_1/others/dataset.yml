@@ -45,37 +45,37 @@ sorting:
     sorters: 
         kilosort4:
             10m:
-                output: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/0_silico/horvath/concatenated_campaigns/probe1_hex0_rou04_pfr03_20Khz/SortingKS4_10m/'
+                output: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/sorting/0_silico/horvath/concatenated_campaigns/probe1_hex0_rou04_pfr03_20Khz/SortingKS4_10m/'
                 sort_output: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/0_silico/horvath/concatenated_campaigns/probe1_hex0_rou04_pfr03_20Khz/KS4_output_10m/'    
         kilosort3:
             # butterworth filtering
             input: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/sorters/Kilosort3_buttw'
             10m:
-                output: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/0_silico/horvath/concatenated_campaigns/probe1_hex0_rou04_pfr03_20Khz/SortingKS3_10m/'
+                output: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/sorting/0_silico/horvath/concatenated_campaigns/probe1_hex0_rou04_pfr03_20Khz/SortingKS3_10m/'
                 sort_output: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/0_silico/horvath/concatenated_campaigns/probe1_hex0_rou04_pfr03_20Khz/KS3_output_10m/'
         kilosort2_5: # see notebook for installation
             input: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/sorters/Kilosort-2.5/'
             10m:
-                output: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/0_silico/horvath/concatenated_campaigns/probe1_hex0_rou04_pfr03_20Khz/SortingKS2_5_10m/'
+                output: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/sorting/0_silico/horvath/concatenated_campaigns/probe1_hex0_rou04_pfr03_20Khz/SortingKS2_5_10m/'
                 sort_output: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/0_silico/horvath/concatenated_campaigns/probe1_hex0_rou04_pfr03_20Khz/KS2_5_output_10m/'
         kilosort2: # wget -c https://github.com/MouseLand/Kilosort/archive/refs/tags/v2.0.tar.gz -O - | tar -xz
             input: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/sorters/Kilosort-2.0/'
             10m:
-                output: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/0_silico/horvath/concatenated_campaigns/probe1_hex0_rou04_pfr03_20Khz/SortingKS2_10m/'
+                output: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/sorting/0_silico/horvath/concatenated_campaigns/probe1_hex0_rou04_pfr03_20Khz/SortingKS2_10m/'
                 sort_output: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/0_silico/horvath/concatenated_campaigns/probe1_hex0_rou04_pfr03_20Khz/KS2_output_10m/'
         kilosort: # git clone https://github.com/cortex-lab/KiloSort.git
             input: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/sorters/KiloSort/'
             10m:
-                output: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/0_silico/horvath/concatenated_campaigns/probe1_hex0_rou04_pfr03_20Khz/SortingKS_10m/'
+                output: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/sorting/0_silico/horvath/concatenated_campaigns/probe1_hex0_rou04_pfr03_20Khz/SortingKS_10m/'
                 sort_output: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/0_silico/horvath/concatenated_campaigns/probe1_hex0_rou04_pfr03_20Khz/KS_output_10m/'
         hdsort: # git clone https://git.bsse.ethz.ch/hima_public/HDsort.git - KO
             input: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/sorters/HDsort/'
             10m:
-                output: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/0_silico/horvath/concatenated_campaigns/probe1_hex0_rou04_pfr03_20Khz/SortingHDsort_10m/'
+                output: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/sorting/0_silico/horvath/concatenated_campaigns/probe1_hex0_rou04_pfr03_20Khz/SortingHDsort_10m/'
                 hdsort_output: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/0_silico/horvath/concatenated_campaigns/probe1_hex0_rou04_pfr03_20Khz/hdsort_output_10m/'
         herdingspikes:
             10m:
-                output: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/0_silico/horvath/concatenated_campaigns/probe1_hex0_rou04_pfr03_20Khz/SortingHerdingspikes_10m/'
+                output: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/sorting/0_silico/horvath/concatenated_campaigns/probe1_hex0_rou04_pfr03_20Khz/SortingHerdingspikes_10m/'
                 herdingspikes_output: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/0_silico/horvath/concatenated_campaigns/probe1_hex0_rou04_pfr03_20Khz/Herdingspikes_output_10m/'
 
 postprocessing: 

@@ -90,13 +90,13 @@ def main(rank, n_ranks):
 
     # biophy. model
     # (probe 1)
-    cfg_hs1, _ = get_config("silico_horvath", "concatenated/probe_1").values()
+    cfg_hs1, _ = get_config("dense_spont", "probe_1").values()
     PREP_PATH_hs1 = cfg_hs1["preprocessing"]["output"]["trace_file_path"]
     # probe 2
-    cfg_hs2, _ = get_config("silico_horvath", "concatenated/probe_2").values()
+    cfg_hs2, _ = get_config("dense_spont", "probe_2").values()
     PREP_PATH_hs2 = cfg_hs2["preprocessing"]["output"]["trace_file_path"]
     # probe 3
-    cfg_hs3, _ = get_config("silico_horvath", "concatenated/probe_3").values()
+    cfg_hs3, _ = get_config("dense_spont", "probe_3").values()
     PREP_PATH_hs3 = cfg_hs3["preprocessing"]["output"]["trace_file_path"]
     
     logger.info(f"Done in {np.round(time.time()-t0,2)} secs")

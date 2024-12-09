@@ -33,12 +33,12 @@ PREP_PATH_hv = data_conf_hv["preprocessing"]["output"]["trace_file_path"]
 
 # silico
 # probe 1
-data_conf_hs_p1, param_conf_hs_p1 = get_config("silico_horvath", "concatenated/probe_1").values()
+data_conf_hs_p1, param_conf_hs_p1 = get_config("dense_spont", "probe_1").values()
 RAW_PATH_hs_p1 = data_conf_hs_p1["dataeng"]["campaign"]["output"]["trace_file_path"]
 PREP_PATH_hs_p1 = data_conf_hs_p1["preprocessing"]["output"]["trace_file_path"]
 
 # probe 2
-data_conf_hs_p2, param_conf_hs_p2 = get_config("silico_horvath", "concatenated/probe_2").values()
+data_conf_hs_p2, param_conf_hs_p2 = get_config("dense_spont", "probe_2").values()
 RAW_PATH_hs_p2 = data_conf_hs_p2["dataeng"]["campaign"]["output"]["trace_file_path"]
 PREP_PATH_hs_p2 = data_conf_hs_p2["preprocessing"]["output"]["trace_file_path"]
 

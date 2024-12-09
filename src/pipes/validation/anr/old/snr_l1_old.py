@@ -85,7 +85,7 @@ def main(rank, n_ranks):
 
     # biophy. model
     # (probe 1)
-    cfg_hs1, _ = get_config("silico_horvath", "concatenated/probe_1").values()
+    cfg_hs1, _ = get_config("dense_spont", "probe_1").values()
     PREP_PATH_hs1 = cfg_hs1["preprocessing"]["output"]["trace_file_path"]
 
     logger.info(f"Done in {np.round(time.time()-t0,2)} secs")

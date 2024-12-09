@@ -76,7 +76,7 @@ REC_ne = cfg_ne["probe_wiring"]["full"]["output"]
 
 # DENSE PROBE 
 # depth 1
-cfg_ds1, _ = get_config("silico_horvath", "concatenated/probe_1").values()
+cfg_ds1, _ = get_config("dense_spont", "probe_1").values()
 K4_d1 = cfg_ds1["sorting"]["sorters"]["kilosort4"]["10m"]["output"]
 K3_d1 = cfg_ds1["sorting"]["sorters"]["kilosort3"]["10m"]["output"]
 K25_d1 = cfg_ds1["sorting"]["sorters"]["kilosort2_5"]["10m"]["output"]
@@ -87,7 +87,7 @@ R_d1 = cfg_ds1["probe_wiring"]["full"]["output"]
 T_d1 = cfg_ds1["ground_truth"]["10m"]["output"]
 
 # depth 2
-cfg_ds2, _ = get_config("silico_horvath", "concatenated/probe_2").values()
+cfg_ds2, _ = get_config("dense_spont", "probe_2").values()
 K4_d2 = cfg_ds2["sorting"]["sorters"]["kilosort4"]["10m"]["output"]
 K3_d2 = cfg_ds2["sorting"]["sorters"]["kilosort3"]["10m"]["output"]
 K25_d2 = cfg_ds2["sorting"]["sorters"]["kilosort2_5"]["10m"]["output"]
@@ -98,7 +98,7 @@ R_d2 = cfg_ds2["probe_wiring"]["full"]["output"]
 T_d2 = cfg_ds2["ground_truth"]["10m"]["output"]
 
 # depth 3
-cfg_ds3, _ = get_config("silico_horvath", "concatenated/probe_3").values()
+cfg_ds3, _ = get_config("dense_spont", "probe_3").values()
 K4_d3 = cfg_ds3["sorting"]["sorters"]["kilosort4"]["10m"]["output"]
 K3_d3 = cfg_ds3["sorting"]["sorters"]["kilosort3"]["10m"]["output"]
 K25_d3 = cfg_ds3["sorting"]["sorters"]["kilosort2_5"]["10m"]["output"]

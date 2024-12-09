@@ -1,0 +1,26 @@
+
+
+# statistics (kruskal-Wallis and Mann-Whitney U test) neuropixels probe peak amplitudes
+fig2m_data_peak_amplitudes_npx: "/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/statistics/fig2m_data_peak_amplitudes_npx.parquet"
+
+# statistics (kruskal-Wallis and Mann-Whitney U test) neuropixels noise
+fig2n_data_noise_npx: "/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/statistics/fig2n_data_noise_npx.parquet"
+
+# statistics (kruskal-Wallis and Mann-Whitney U test) dense probe peak amplitudes
+fig2o_data_peak_amplitudes_dense: "/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/statistics/fig2o_data_peak_amplitudes_dense.parquet"
+
+# statistics (kruskal-Wallis and Mann-Whitney U test) dense probe peak amplitudes
+fig2p_data_noise_dense: "/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/statistics/fig2p_data_noise_dense.parquet"
+
+
+# statistics (kruskal-Wallis) npx AP power
+fig2s_data_APpower_npx: "/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/statistics/fig2s_data_APpower_npx.parquet"
+
+# statistics (kruskal-Wallis) npx frequency scaling slope
+fig2t_data_fscaling_npx: "/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/statistics/fig2t_data_fscaling_npx.parquet"
+
+# statistics (kruskal-Wallis) npx AP power
+fig2u_data_APpower_dense: "/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/statistics/fig2s_data_APpower_dense.parquet"
+
+# statistics (kruskal-Wallis) dense frequency scaling slope
+fig2v_data_fscaling_dense: "/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/statistics/fig2v_data_fscaling_dense.parquet"

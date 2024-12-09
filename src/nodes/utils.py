@@ -19,6 +19,13 @@ logging.config.dictConfig(LOG_CONF)
 logger = logging.getLogger("root")
 
 
+def get_proj_path():
+    """Must run at code repository's root path
+    """
+    with open("./proj_cfg.yml", "r", encoding="utf-8") as proj_cfg:
+        proj_path = yaml.load(proj_cfg, Loader=yaml.FullLoader)["proj_path"]
+    return proj_path
+    
 def get_config(exp: str, simulation_date: str):
     """Choose an available experiment pipeline configuration
 
@@ -215,6 +222,7 @@ def get_config_dense_spont_from_nwb(simulation_date: str):
     ) as param_conf:
         param_conf = yaml.safe_load(param_conf)
     return {"dataset_conf": dataset_conf, "param_conf": param_conf}
+
 
 def get_config_dense_spont_on_dandihub(simulation_date: str):
     """Get pipeline's configuration for James spike time project
@@ -737,3 +745,23 @@ def get_amplitude(Sorting):
         return Sorting.get_property("Amplitude").tolist()
     else:
         raise ValueError("Amplitude has wrong shape")
+    
+    
+
+def get_stats_config():
+    """Get pipeline's configuration for silico Reyes probe experiment
+
+    Args:
+        simulation_date (str): _description_
+
+    Returns:
+        dict: dataset paths and parameter configurations
+    """
+
+    with open(
+        f"conf/statistics.yml",
+        "r",
+        encoding="utf-8",
+    ) as dataset_conf:
+        dataset_conf = yaml.safe_load(dataset_conf)
+    return dataset_conf
