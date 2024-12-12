@@ -46,6 +46,7 @@ metadata:
     atlas: '/gpfs/bbp.cscs.ch/project/proj85/home/laquitai/spikebias/assets/metadata/silico_neuropixels/npx_evoked_40Khz/'
     filtered_cells: '/gpfs/bbp.cscs.ch/project/proj85/home/laquitai/spikebias/assets/metadata/silico_neuropixels/npx_evoked_40Khz/filtered_cells.npy'
     cell_properties: '/gpfs/bbp.cscs.ch/project/proj85/home/laquitai/spikebias/assets/metadata/silico_neuropixels/npx_evoked_40Khz/cell_properties.h5'
+    cell_morphs: '/gpfs/bbp.cscs.ch/project/proj85/home/laquitai/spikebias/assets/metadata/silico_neuropixels/npx_evoked_40Khz/cell_morphs.h5'
 
 
 # set paths for lfp preprocessing pipeline

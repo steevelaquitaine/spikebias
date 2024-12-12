@@ -2,7 +2,7 @@
 
 # note: we cannot change the name of the raw experiment, as BluePy reads the original name
 dataeng:
-    blueconfig: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/4_preprint_2023/raw/neuropixels/npx_384ch_hex01_rou04_pfr03_40Khz_2024_11_16_disconnected/3d803ad9-1e0d-4f7b-a892-5a28fca7a536/0/BlueConfig' # BlueConfig from which params are loaded. All are identical. 
+    blueconfig: /gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/raw/neuropixels_lfp_10m_384ch_hex01_rou04_pfr03_40Khz_2024_11_16_disconnected/3d803ad9-1e0d-4f7b-a892-5a28fca7a536/0/BlueConfig
     concatenated: ['npx_spont_discon/sims/2024_11_16_disconnected', 'npx_spont_discon/sims/2024_11_16_disconnected_campaign2', 'npx_spont_discon/sims/2024_11_24_disconnected_campaign3']
     campaign:
         output:
@@ -22,6 +22,7 @@ metadata:
     atlas: '/gpfs/bbp.cscs.ch/project/proj85/home/laquitai/spikebias/assets/metadata/silico_neuropixels/npx_spont_discon/'
     filtered_cells: '/gpfs/bbp.cscs.ch/project/proj85/home/laquitai/spikebias/assets/metadata/silico_neuropixels/npx_spont_discon/filtered_cells.npy'
     cell_properties: '/gpfs/bbp.cscs.ch/project/proj85/home/laquitai/spikebias/assets/metadata/silico_neuropixels/npx_spont_discon/cell_properties.h5'
+    cell_morphs: '/gpfs/bbp.cscs.ch/project/proj85/home/laquitai/spikebias/assets/metadata/silico_neuropixels/npx_spont_discon/cell_morphs.h5'
 
 ground_truth:
     full:

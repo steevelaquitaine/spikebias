@@ -2,7 +2,8 @@
 
 # note: we cannot change the name of the raw experiment, as BluePy reads the original name
 dataeng:
-    blueconfig: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/raw/neuropixels_lfp_10m_384ch_hex0_40Khz_2023_10_18/be011315-9555-493e-a59c-27f42d1058ed/0/BlueConfig' # BlueConfig from which params are loaded. All are identical. 
+    #blueconfig: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/raw/neuropixels_lfp_10m_384ch_hex0_40Khz_2023_10_18/be011315-9555-493e-a59c-27f42d1058ed/0/BlueConfig' # BlueConfig from which params are loaded. All are identical. 
+    blueconfig: /gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/raw/neuropixels_lfp_10m_384ch_hex0_rou04_pfr03_40Khz_2024_01_30_campaign02/6284fc61-cc73-4a86-a123-2b8047a7d688/0/BlueConfig
     concatenated: ['npx_spont/sims/2023_10_18', 'npx_spont/sims/2024_01_30', 'npx_spont/sims/2024_02_01', 'npx_spont/sims/2024_02_02']
     campaign:
         output:
@@ -23,7 +24,7 @@ metadata:
     atlas: '/gpfs/bbp.cscs.ch/project/proj85/home/laquitai/spikebias/assets/metadata/silico_neuropixels/npx_spont/'
     filtered_cells: '/gpfs/bbp.cscs.ch/project/proj85/home/laquitai/spikebias/assets/metadata/silico_neuropixels/npx_spont/filtered_cells.npy'
     cell_properties: '/gpfs/bbp.cscs.ch/project/proj85/home/laquitai/spikebias/assets/metadata/silico_neuropixels/npx_spont/cell_properties.h5'
-
+    cell_morphs: '/gpfs/bbp.cscs.ch/project/proj85/home/laquitai/spikebias/assets/metadata/silico_neuropixels/npx_spont/cell_morphs.h5'
 
 ground_truth:
     full:
@@ -109,14 +110,12 @@ postprocessing:
             study: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/0_silico/neuropixels/concatenated_campaigns/postpro/realism/spike/ground_truth/study'
             10m:
                 study: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/0_silico/neuropixels/concatenated_campaigns/postpro/realism/spike/ground_truth/study_10m'
-            #WaveformExtractor: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/0_silico/neuropixels/concatenated_campaigns/postpro/realism/spike/ground_truth/WaveformExtractor'
-            #WaveformExtractor_buttw_noise_fitd_si01005: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/0_silico/neuropixels/concatenated_campaigns/postpro/realism/spike/ground_truth/WaveformExtractor_buttw_noise_fitd_si01005'
-            #WaveformExtractor_buttw_noise_0uV_gain_1e5_int16: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/0_silico/neuropixels/concatenated_campaigns/postpro/realism/spike/ground_truth/WaveformExtractor_buttw_noise_0uV_gain_1e5_int16'
         sorted:    
             study: 
                 kilosort4: 
                     full: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/0_silico/neuropixels/concatenated_campaigns/postpro/realism/spike/sorted/study_ks4'
                     10m: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/0_silico/neuropixels/concatenated_campaigns/postpro/realism/spike/sorted/study_ks4_10m'
+                    10m_single_units: /gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/0_silico/neuropixels/concatenated_campaigns/postpro/realism/spike/sorted/study_ks4_10m_single_units
                 kilosort3: 
                     full: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/0_silico/neuropixels/concatenated_campaigns/postpro/realism/spike/sorted/study_ks3'
                     10m: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/0_silico/neuropixels/concatenated_campaigns/postpro/realism/spike/sorted/study_ks3_10m'

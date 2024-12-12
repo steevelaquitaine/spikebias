@@ -34,6 +34,7 @@ metadata:
     atlas: '/gpfs/bbp.cscs.ch/project/proj85/home/laquitai/spikebias/assets/metadata/silico_neuropixels/npx_evoked/'
     filtered_cells: '/gpfs/bbp.cscs.ch/project/proj85/home/laquitai/spikebias/assets/metadata/silico_neuropixels/npx_evoked/filtered_cells.npy'
     cell_properties: '/gpfs/bbp.cscs.ch/project/proj85/home/laquitai/spikebias/assets/metadata/silico_neuropixels/npx_evoked/cell_properties.h5'
+    cell_morphs: '/gpfs/bbp.cscs.ch/project/proj85/home/laquitai/spikebias/assets/metadata/silico_neuropixels/npx_evoked/cell_morphs.h5'
 
 ground_truth:
     full:
@@ -141,6 +142,7 @@ postprocessing:
                     full: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/postprocessing/biophy/4_spikesorting_stimulus_test_neuropixels_8-1-24__8slc_80f_360r_50t_200ms_1_smallest_fiber_gids/sorted/study_ks4_full'
                     40m: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/postprocessing/biophy/4_spikesorting_stimulus_test_neuropixels_8-1-24__8slc_80f_360r_50t_200ms_1_smallest_fiber_gids/sorted/study_ks4_40m'
                     10m: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/postprocessing/biophy/4_spikesorting_stimulus_test_neuropixels_8-1-24__8slc_80f_360r_50t_200ms_1_smallest_fiber_gids/sorted/study_ks4_10m'
+                    10m_single_units: /gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/postprocessing/biophy/4_spikesorting_stimulus_test_neuropixels_8-1-24__8slc_80f_360r_50t_200ms_1_smallest_fiber_gids/sorted/study_ks4_10m_single_units
                 kilosort3: 
                     full: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/postprocessing/biophy/4_spikesorting_stimulus_test_neuropixels_8-1-24__8slc_80f_360r_50t_200ms_1_smallest_fiber_gids/sorted/study_ks3_full'
                     40m: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/postprocessing/biophy/4_spikesorting_stimulus_test_neuropixels_8-1-24__8slc_80f_360r_50t_200ms_1_smallest_fiber_gids/sorted/study_ks3_40m'
