@@ -138,3 +138,6 @@ postprocessing:
                     10m: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/postprocessing/biophy/8_spikesorting_stimulus_test_neuropixels_13-4-24__8slc_100f_72r_250t_200ms_0/12c5ef9a-1f3b-4b18-b3f5-ec6a417f645c/analysis/sorted/study_hs_10m'
                                   
     #sorted_neuron_metadata: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/0_silico/8_spikesorting_stimulus_test_neuropixels_13-4-24__8slc_100f_72r_250t_200ms_0/12c5ef9a-1f3b-4b18-b3f5-ec6a417f645c/postpro/metadata/sorted_neuron_metadata.csv'
+
+analyses: 
+    quality: /gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/postprocessing/biophy/8_spikesorting_stimulus_test_neuropixels_13-4-24__8slc_100f_72r_250t_200ms_0/12c5ef9a-1f3b-4b18-b3f5-ec6a417f645c/analysis/sorting_quality/sorting_quality.csv

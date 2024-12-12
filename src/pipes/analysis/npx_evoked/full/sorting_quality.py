@@ -51,9 +51,7 @@ KS2_nb_10m = cfg["sorting"]["sorters"]["kilosort2"]["full"]["output"]
 KS_nb_10m = cfg["sorting"]["sorters"]["kilosort"]["full"]["output"]
 HS_nb_10m = cfg["sorting"]["sorters"]["herdingspikes"]["full"]["output"]
 REC_nb = cfg["probe_wiring"]["full"]["output"]
-
-# saved dataframe of sorted unit quality
-quality_path = "/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/dataeng/0_silico/4_spikesorting_stimulus_test_neuropixels_8-1-24__8slc_80f_360r_50t_200ms_1_smallest_fiber_gids/0fcb7709-b1e9-4d84-b056-5801f20d55af/analysis/sorting_quality/sorting_quality_1h.csv"
+QUALITY_PATH = cfg["analyses"]["quality"]
 
 # full recording duration
 DUR = si.load_extractor(REC_nb).get_total_duration()
@@ -293,11 +291,11 @@ def main(rank):
         logger.info(f"Concatenated dataframe on rank {rank} in {np.round(time.time()-t0,2)} secs")
 
         # save        
-        create_if_not_exists(os.path.dirname(quality_path))
-        df.to_csv(quality_path, index=False)
+        create_if_not_exists(os.path.dirname(QUALITY_PATH))
+        df.to_csv(QUALITY_PATH, index=False)
         logger.info(f"Saved csv on {rank} in {np.round(time.time()-t0,2)} secs")
 
-    logger.info(f"Done saving results at : {quality_path}")
+    logger.info(f"Done saving results at : {QUALITY_PATH}")
     logger.info(f"All completed in {np.round(time.time()-t_start,2)} secs")
     
 # run

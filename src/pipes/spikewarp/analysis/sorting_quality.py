@@ -52,9 +52,7 @@ KS2_nb_10m = cfg_nb["sorting"]["sorters"]["kilosort2"]["10m"]["output"]
 KS_nb_10m = cfg_nb["sorting"]["sorters"]["kilosort"]["10m"]["output"]
 HS_nb_10m = cfg_nb["sorting"]["sorters"]["herdingspikes"]["10m"]["output"]
 REC_nb = cfg_nb["probe_wiring"]["full"]["output"]
-
-# saved dataframe of sorted unit quality
-quality_path = "/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/postprocessing/biophy/8_spikesorting_stimulus_test_neuropixels_13-4-24__8slc_100f_72r_250t_200ms_0/12c5ef9a-1f3b-4b18-b3f5-ec6a417f645c/analysis/sorting_quality/sorting_quality.csv"
+quality_path = cfg_nb["analyses"]["quality"]
 
 
 def main(rank):

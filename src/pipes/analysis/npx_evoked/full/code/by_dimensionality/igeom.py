@@ -58,9 +58,7 @@ K2 = data_conf["sorting"]["sorters"]["kilosort2"]["full"]["output"]
 KS = data_conf["sorting"]["sorters"]["kilosort"]["full"]["output"]
 HS = data_conf["sorting"]["sorters"]["herdingspikes"]["full"]["output"]
 IGEOM = data_conf["analyses"]["neural_code"]["by_dimensionality"]["igeom"]
-
-# sorted unit quality path
-quality_path = "/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/dataeng/0_silico/4_spikesorting_stimulus_test_neuropixels_8-1-24__8slc_80f_360r_50t_200ms_1_smallest_fiber_gids/0fcb7709-b1e9-4d84-b056-5801f20d55af/analysis/sorting_quality/sorting_quality_1h.csv"
+QUALITY_PATH = data_conf["analyses"]["quality"]
 
 # COMMON DATASETS
 # get task epoch infos
@@ -84,7 +82,7 @@ n_exple_per_class = sum(stimulus_labels == 0)
 # parameters
 params = {
     "stimulus_intervals_ms": stimulus_intervals_ms,
-    "quality_path": quality_path,
+    "quality_path": QUALITY_PATH,
     "block": BLOCK,
     "n_boot": N_BOOT,
 }
@@ -97,7 +95,7 @@ igeom_params = {
 }
 
 # load sorted unit quality table  
-quality_df = pd.read_csv(quality_path)
+quality_df = pd.read_csv(QUALITY_PATH)
 
 
 def main(rank):

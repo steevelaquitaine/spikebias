@@ -861,9 +861,3 @@ def get_outliers(data: pd.Series):
     whisker_low_gt = q1_gt - (q3_gt - q1_gt) * 1.5
     whisker_high_gt = q3_gt + (q3_gt - q1_gt) * 1.5
     return data[(data > whisker_high_gt) | (data < whisker_low_gt)]
-    return data[(data > whisker_high_gt) | (data < whisker_low_gt)]
-    return data[(data > whisker_high_gt) | (data < whisker_low_gt)]
-    return data[(data > whisker_high_gt) | (data < whisker_low_gt)]
-    return data[(data > whisker_high_gt) | (data < whisker_low_gt)]
-    return data[(data > whisker_high_gt) | (data < whisker_low_gt)]
-    return data[(data > whisker_high_gt) | (data < whisker_low_gt)]

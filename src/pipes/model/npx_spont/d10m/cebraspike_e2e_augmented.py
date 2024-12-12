@@ -51,8 +51,10 @@ STUDY_ne_su = '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/postpro
 
 # PATHS ************************
 
-# pre-computed sorted unit quality
-quality_path = "/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/analysis/sorting_quality/sorting_quality.csv"
+# pre-computed sorted unit quality path
+with open("conf/quality.yml", "r", encoding="utf-8") as yml_file:
+    cfg_quality = yaml.load(yml_file, Loader=yaml.FullLoader)
+quality_path = cfg_quality["quality"]
 
 # model save path
 MODEL_PATH_40Khz_e2e_pooled_pm1 = "/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/analysis/sorting_quality/models/cebra/sf_40Khz/e2e_pooled_pm1"

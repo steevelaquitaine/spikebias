@@ -182,6 +182,8 @@ analyses:
             raw: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/realism/0_silico/4_spikesorting_stimulus_test_neuropixels_8-1-24__8slc_80f_360r_50t_200ms_1_smallest_fiber_gids/0fcb7709-b1e9-4d84-b056-5801f20d55af/raw_power.npy'
             preprocessed: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/realism/0_silico/4_spikesorting_stimulus_test_neuropixels_8-1-24__8slc_80f_360r_50t_200ms_1_smallest_fiber_gids/0fcb7709-b1e9-4d84-b056-5801f20d55af/preprocessed_power.npy'
 
+    quality:  /gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/dataeng/0_silico/4_spikesorting_stimulus_test_neuropixels_8-1-24__8slc_80f_360r_50t_200ms_1_smallest_fiber_gids/0fcb7709-b1e9-4d84-b056-5801f20d55af/analysis/sorting_quality/sorting_quality_1h.csv
+
     neural_code:
         igeom: /gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/realism/0_silico/4_spikesorting_stimulus_test_neuropixels_8-1-24__8slc_80f_360r_50t_200ms_1_smallest_fiber_gids/0fcb7709-b1e9-4d84-b056-5801f20d55af/analysis/neural_code/igeometrics.csv
         igeom0: /gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/realism/0_silico/4_spikesorting_stimulus_test_neuropixels_8-1-24__8slc_80f_360r_50t_200ms_1_smallest_fiber_gids/0fcb7709-b1e9-4d84-b056-5801f20d55af/analysis/neural_code/igeometrics_00_1.csv

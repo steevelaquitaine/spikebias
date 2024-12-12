@@ -110,3 +110,6 @@ postprocessing:
                 herdingspikes: 
                     full: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/postprocessing/biophy/17_spikesorting_stimulus_test_neuropixels_8-10-24__8slc_60f_72r_250t_200ms_0/a9bf068a-b940-4514-9e6c-6055283272cc/analysis//postpro/realism/spike/sorted/study_hs'
                     10m: '/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/postprocessing/biophy/17_spikesorting_stimulus_test_neuropixels_8-10-24__8slc_60f_72r_250t_200ms_0/a9bf068a-b940-4514-9e6c-6055283272cc/analysis//postpro/realism/spike/sorted/study_hs_10m'
+
+analyses:
+    quality: /gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/postprocessing/biophy/17_spikesorting_stimulus_test_neuropixels_8-10-24__8slc_60f_72r_250t_200ms_0/a9bf068a-b940-4514-9e6c-6055283272cc/analysis/sorting_quality/sorting_quality.csv

@@ -108,9 +108,10 @@ H_d3 = cfg_ds3["sorting"]["sorters"]["herdingspikes"]["10m"]["output"]
 R_d3 = cfg_ds3["probe_wiring"]["full"]["output"]
 T_d3 = cfg_ds3["ground_truth"]["10m"]["output"]
 
-
-# saved dataframe of sorted unit quality
-quality_path = "/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/analysis/sorting_quality/sorting_quality.csv"
+# load save path for unit quality categorization
+with open("conf/quality.yml", "r", encoding="utf-8") as yml_file:
+    cfg_quality = yaml.load(yml_file, Loader=yaml.FullLoader)
+QUALITY_PATH = cfg_quality["quality"]
 
 
 def main(rank):
@@ -536,10 +537,10 @@ def main(rank):
         logger.info(f"Concatenated dataframe on rank {rank} in {np.round(time.time()-t0,2)} secs")
 
         # save
-        df.to_csv(quality_path, index=False)
+        df.to_csv(QUALITY_PATH, index=False)
         logger.info(f"Saved csv on {rank} in {np.round(time.time()-t0,2)} secs")
 
-    logger.info(f"Done saving results at : {quality_path}")
+    logger.info(f"Done saving results at : {QUALITY_PATH}")
     logger.info(f"All completed in {np.round(time.time()-t_start,2)} secs")
     
 # run
