@@ -1,3 +1,8 @@
+
+# dataset
+dataset/00_raw/*
+dataset/01_intermediate/*
+
 # logs
 cluster/logs/*
 chance_df.csv
