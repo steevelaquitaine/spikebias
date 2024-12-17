@@ -3,13 +3,30 @@
 # description: main python virtual environment
 # author: steeve.laquitaine@epfl.ch, laquitainesteeve@gmail.com
 #
-# Install python 3.9.7, cd to repo, setup env:
+# 1. Install python 3.9.7
+# 2. cd to repo (e.g., ~/Desktop/spikebias/)
+# 3. Setup env.
 #
+#   # create, activate and env
 #   python3.9 -m venv ./envs/envs/spikinterf0_100_5/
 #   source ./envs/envs/spikinterf0_100_5/bin/activate
 #   pip install -r ./envs/spikinterf0_100_5.txt
 #
-# Setup the spike sorters:
+#   # install bluepy (TO DELETE?)
+#   pip install ./assets/bluepy-configfile
+#   cd ./assets/bluepy/
+#   git checkout lfp-reports
+#   python3.9 -m pip install .
+#   cd ../../
+#
+#   # the env get automatically associated with the project after it is selected as interpreter 
+#   # and selected as kernel the first time to a jupyter 
+#   # notebook
+#
+# 4. install the bug fixed version of spikeinterface to run Kilosort 4, recommended by Alessio Buccino [TO REMOVE?] 
+# pip install git+https://github.com/SpikeInterface/spikeinterface.git@refs/pull/2827/merge
+
+# 5. Setup the spike sorters:
 # wget -c https://github.com/MouseLand/Kilosort/archive/refs/tags/v2.0.2.tar.gz -O - | tar -xz # download Kilosort 2 release
 # wget -c https://github.com/MouseLand/Kilosort/archive/refs/tags/v2.5.tar.gz -O - | tar -xz # download Kilosort 2.5 release
 
