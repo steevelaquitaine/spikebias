@@ -1,38 +1,26 @@
+# spikeinterf0_100_5
+#
+# description: main python virtual environment
+# author: steeve.laquitaine@epfl.ch, laquitainesteeve@gmail.com
+#
+# 1. Install python 3.9.7
+# 2. cd to repo (e.g., ~/Desktop/spikebias/)
+# 3. Setup env.
+#
+#   # create, activate and env
+#   python3.9 -m venv ./envs/envs/spikinterf0_100_5/
+#   source ./envs/envs/spikinterf0_100_5/bin/activate
+#   pip install -r ./envs/spikinterf0_100_5.txt
+#
+#   # install bluepy
+#   pip install ./assets/bluepy-configfile
+#   cd ./assets/bluepy/
+#   git checkout lfp-reports
+#   python3.9 -m pip install .
+#   cd ../../
 
-# author: steeve.laquitaine@epfl.ch
-#
-# most recent environment:
-# - Kilsort 4
-# - ability to disable preprocessing
-#
-# 1. Install python3.9
-#   
-#   module purge
-#   module load archive/2022-09 # load old archive (no need to use spack)
-#   module load python-dev/0.4 # load python 3.9
-#
-# 2. Setup a virtual env "spikinterf0_100_5":
-#
-#   # if you use vscode, clear vscode automatic settings, this prevents 
-#   # an env to automatically associate with the project you open in vscode
-#   rm -rf  /gpfs/bbp.cscs.ch/home/laquitai/.vscode-server 
-#
-#   # create your working python3.9 environment
-#   mkdir /gpfs/bbp.cscs.ch/project/proj85/home/laquitai/spikebias/envs/envs # create envs folder
-#   python3.9 -m venv /gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/envs/spikinterf0_100_5/
-#
-#   # restart the node here (or open a new terminal tab), else pip freeze will not show the content of your newly created python env
-#   # but the content of the base environment. Actiavet environment. pip freeze should display nothing.
-#   source /gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/envs/spikinterf0_100_5/bin/activate
-#   pip install -r /gpfs/bbp.cscs.ch/project/proj85/home/laquitai/spikebias/envs/spikinterf0_100_5.txt
-#
-# 3. Install bluepy
-#
-#   pip install /gpfs/bbp.cscs.ch/project/proj85/home/laquitai/spikebias/assets/bluepy-configfile
-#   cd /gpfs/bbp.cscs.ch/project/proj85/home/laquitai/spikebias/assets/bluepy/
-#   git checkout lfp-reports  # checkout the lfp package
-#   python3.9 -m pip install . # install
-#   cd /gpfs/bbp.cscs.ch/project/proj85/home/laquitai/spikebias/
+    git --git-dir=./assets/bluepy/ checkout lfp-reports
+
 #
 #   # the env get automatically associated with the project after it is selected as interpreter 
 #   # and selected as kernel the first time to a jupyter 
@@ -81,7 +69,7 @@ tmd                         # simulate cell morphologies
 wget                        # simulate cell morphologies
 spikeinterface==0.100.5     # contains the newly released spikinterf0_100_5
 numpy                       # 1.26.4
-herdingspikes==0.3.102      # spike sorter
+# herdingspikes==0.3.102      # spike sorter
 kilosort==4.0.6             # spike sorter install Kilosort 4.0
 # git+https://github.com/SpikeInterface/spikeinterface.git@refs/pull/2827/merge
 scikit-posthocs==0.9.0      # posthoc statistics

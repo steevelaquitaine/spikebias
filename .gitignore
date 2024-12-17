@@ -3,6 +3,9 @@
 dataset/00_raw/*
 dataset/01_intermediate/*
 
+# python virtual environments 
+envs/envs/spikinterf0_100_5/*
+
 # logs
 cluster/logs/*
 chance_df.csv
