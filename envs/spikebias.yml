@@ -13,7 +13,7 @@ dependencies:
   - ipython=8.18.1
   - pandas=1.5.2               # version important; bluepy fails with 1.5.3
   - pyyaml=6.0.2               # read yaml config files
-  - tables=3.9.2               # read h5 files
+  - pytables=3.9.2             # read h5 files
   - scikit-learn=1.6.0         # machine learning
   - statsmodels=0.14.4         # stats
   - networkx=3.2.1
