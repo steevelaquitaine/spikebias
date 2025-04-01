@@ -64,7 +64,7 @@ Conda install takes 30 minutes.
 
 How to run the software on the manuscript's data.
 
-1. You can run the notebooks with the virtual environment by running the command below, then selecting the kernel in the notebook
+1. You can run the notebooks in notebooks/1_results and notebooks/2_supp_results with the installed virtual environment by running the command below, then selecting the kernel "spikebias" in the notebook:
 
 ```bash
 python -m ipykernel install --user --name spikebias --display-name "spikebias"
