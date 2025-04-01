@@ -10,7 +10,7 @@ Versions:
 * OS: Ubuntu 24.04.1 LTS and Mac OS X 10.15.7 (BuildVersion: 19H2026) 
 * Conda 24.11.3 and 24.9.2
 * Software dependencies:
-  * python 3.11.10
+  * python 3.9.7
   * dependencies listed in envs/spikebias.yml for the main analyses:
   * spike sorters:
     * kilosort cloned from https://github.com/cortex-lab/KiloSort.git
