@@ -1,7 +1,7 @@
 
 # usage: 
-# 1. move to repo and create env with $ mamba env create -f envs/spikebias.yml --prefix ./envs/envs/spikebias
-# 2. activate env: $ mamba activate ./envs/envs/spikebias
+# 1. move to repo and create env with $ mamba env create -f envs/spikebias.yml --prefix ./envs/spikebias
+# 2. activate env: $ mamba activate ./envs/spikebias
 
 name: spikebias
 dependencies:

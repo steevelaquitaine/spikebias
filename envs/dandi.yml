@@ -1,0 +1,18 @@
+# author: laquitainesteeve@gmail.com
+# 
+# purpose: create dandi2 virtual environment, dandi package requires at least python 3.10.8 and is not compatible with python 3.9.7 used by the spikebias package.
+# 
+# usage: 
+# 1. move to repo and create env with $ conda env create -f envs/dandi.yml --prefix ./envs/dandi
+# 2. activate env: $ conda activate envs/dandi
+
+name: dandi
+dependencies:
+  - python=3.10.8
+  - dandi
+  - pynwb=2.8.2                # read nwb datasets
+  - ipykernel=6.29.5                   
+  - matplotlib=3.8.4
+  - nwbinspector
+  - pip:
+    - spikeinterface==0.100.5
