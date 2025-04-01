@@ -16,3 +16,4 @@ dependencies:
   - nwbinspector
   - pip:
     - spikeinterface==0.100.5
+    - remfile==0.1.13
