@@ -31,6 +31,6 @@ mamba activate ./envs/envs/spikebias # activate
 
 ## Typical install time
 
+## Instructions for use 
 
-
-
+How to run the software on the manuscript's data.
