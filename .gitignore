@@ -1,6 +1,3 @@
-# envs
-/home/jovyan/steevelaquitaine/spikebias/envs/spikinterf0_100_5
-
 # temporary datasets
 tmp_dataset/*
 !tmp_dataset/sorting_quality_evoked_1h.csv
@@ -12,7 +9,7 @@ dataset/00_raw/*
 dataset/01_intermediate/*
 
 # python virtual environments 
-envs/envs/spikebias/*
+envs/spikebias/*
 
 # logs
 cluster/logs/*
