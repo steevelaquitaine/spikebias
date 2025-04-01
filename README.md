@@ -8,8 +8,10 @@ All software dependencies and operating systems (including version numbers)
 Versions: 
 
 * OS: Ubuntu 24.04.1 LTS and Mac OS X 10.15.7 (BuildVersion: 19H2026)  
-* Software dependencies: 
-  * python 3.11.10 and the dependencies listed in envs/spikebias.yml for the main analyses:
+* Conda 24.11.3 and 24.9.2
+* Software dependencies:
+  * python 3.11.10
+  * dependencies listed in envs/spikebias.yml for the main analyses:
   * spike sorters:
     * kilosort cloned from https://github.com/cortex-lab/KiloSort.git
     * kilosort 2 release: https://github.com/MouseLand/Kilosort/archive/refs/tags/v2.0.2.tar.gz
@@ -33,7 +35,7 @@ Create and activate the main python virtual environment (spikinterf0_100_5) to r
 
 ```bash 
 conda env create -f envs/spikebias.yml --prefix ./envs/spikebias # create
-mamba activate ./envs/spikebias # activate
+conda activate ./envs/spikebias # activate
 ```
 
 ## Typical install time
