@@ -1,5 +1,3 @@
-# envs
-/home/jovyan/steevelaquitaine/spikebias/envs/spikinterf0_100_5
 
 # temporary datasets
 tmp_dataset/*
@@ -12,7 +10,7 @@ dataset/00_raw/*
 dataset/01_intermediate/*
 
 # python virtual environments 
-envs/envs/spikebias/*
+envs/spikebias/*
 
 # logs
 cluster/logs/*
