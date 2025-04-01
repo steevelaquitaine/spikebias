@@ -12,6 +12,9 @@ Versions:
 
 Versions the software has been tested on: the versions referenced above.
 
+Any required non-standard hardware: 
+* part of the raw source code necessary to generate the small intermediate dataset requires MPI and parallel computing on at least ten computer nodes.
+* spike sorting require GPU.
 
 # Installation guide
 
