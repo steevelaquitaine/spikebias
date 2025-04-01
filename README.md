@@ -38,6 +38,21 @@ conda env create -f envs/spikebias.yml --prefix ./envs/spikebias # create
 conda activate ./envs/spikebias # activate
 ```
 
+2. Run a function from the custom package 
+
+```bash
+# move to repository path
+import os
+os.chdir("/home/jovyan/steevelaquitaine/spikebias/")
+
+# import a module from the custom package
+from src.nodes.utils import get_config
+from src.nodes.validation import noise
+
+# calculate mean absolute deviation of a recording trace
+trace_mad = noise.torch_mad(trace)
+```
+
 ## Typical install time
 
 Conda install takes 30 minutes.
