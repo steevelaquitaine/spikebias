@@ -22,10 +22,11 @@ Any required non-standard hardware:
 
 Create and activate the main python virtual environment (spikinterf0_100_5) to run spikebias:
 
-```bash
-python3.11 -m venv /home/jovyan/steevelaquitaine/spikebias/envs/spikinterf0_100_5 # create env
-source /home/jovyan/steevelaquitaine/spikebias/envs/spikinterf0_100_5/bin/activate
-python3.11 -m pip install -r /home/jovyan/steevelaquitaine/spikebias/envs/spikinterf0_100_5_dandihub.txt
+1. move to the root path of the repository and create env with: 
+
+```bash 
+conda env create -f envs/spikebias.yml --prefix ./envs/spikebias # create
+mamba activate ./envs/envs/spikebias # activate
 ```
 
 ## Typical install time
