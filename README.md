@@ -42,9 +42,15 @@ conda activate ./envs/spikebias # activate
 
 Conda install takes 30 minutes.
 
-## Demo [TODO]
+# Demo [TODO]
 
 
-## Instructions for use 
+# Instructions for use 
 
 How to run the software on the manuscript's data.
+
+1. You can run the notebooks with the virtual environment by running the command below, then selecting the kernel in the notebook
+
+```bash
+python -m ipykernel install --user --name spikebias --display-name "spikebias"
+```
