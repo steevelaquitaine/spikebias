@@ -34,6 +34,6 @@ dependencies:
     - mpi4py-mpich==3.1.2       # distributed computing on multiple computer nodes
     - tmd==2.4.3                # simulate cell morphologies
     - remfile==0.1.13           # on dandihub
-    - kilosort==4.0.6           # spike sorter install Kilosort 4.0neurom
+    - kilosort==4.0.6           # spike sorter install Kilosort 4.0
     - neurom[plotly]==4.0.4     # simulate cell morphologies
     - neuroconv==0.6.5          # convert to nwb
