@@ -26,7 +26,7 @@ Create and activate the main python virtual environment (spikinterf0_100_5) to r
 
 ```bash 
 conda env create -f envs/spikebias.yml --prefix ./envs/spikebias # create
-mamba activate ./envs/envs/spikebias # activate
+mamba activate ./envs/spikebias # activate
 ```
 
 ## Typical install time
