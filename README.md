@@ -40,6 +40,7 @@ conda activate ./envs/spikebias # activate
 
 ## Typical install time
 
+Conda install takes 30 minutes.
 
 ## Demo [TODO]
 
