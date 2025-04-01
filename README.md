@@ -2,7 +2,17 @@
 
 author: laquitainesteeve@gmail.com
 
+# System requirements
+
+All software dependencies and operating systems (including version numbers)
+Versions: 
+
+* OS: Ubuntu 24.04.1 LTS and Mac OS X 10.15.7 (BuildVersion: 19H2026)  
+* Software dependencies: python3.11 and the dependencies listed in envs/  
+
 # Installation guide
+
+
 
 ## Instructions
 
