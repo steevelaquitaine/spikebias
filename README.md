@@ -10,9 +10,10 @@ Versions:
 * OS: Ubuntu 24.04.1 LTS and Mac OS X 10.15.7 (BuildVersion: 19H2026)  
 * Software dependencies: python 3.11.10 and the dependencies listed in envs/  
 
+Versions the software has been tested on: the versions referenced above.
+
+
 # Installation guide
-
-
 
 ## Instructions
 
