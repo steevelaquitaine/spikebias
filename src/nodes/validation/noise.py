@@ -1,11 +1,11 @@
 """noise validation node
 
-[TODO]: 
-
-- move STATS to stats module
+Note: setup spikebias virtual environment
 
 Returns:
     _type_: _description_
+
+
 """
 import numpy as np
 import pandas as pd
@@ -29,12 +29,17 @@ def torch_mad(trace):
     return (trace - trace.mean(dtype=torch.float32)).abs().mean(dtype=torch.float32)
 
 
-def measure_trace_noise(traces, sfreq, wind_end):
+def measure_trace_noise(traces: np.ndarray, sfreq: int, wind_end: int):
     """measure noise (mean absolute deviation)
     at consecutive segments of 1 second
 
     Args:
-        traces: 2D array
+        traces: 2D array (1 site x n_timepoints)
+        sfreq: sampling frequency
+        wind_end: number of segments to measure 
+
+    Returns:
+        mads: mean absolute deviations (number of segments x 1)
     """
     traces = torch.from_numpy(traces)
     winds = np.arange(0, wind_end, 1)

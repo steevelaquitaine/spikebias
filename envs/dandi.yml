@@ -16,5 +16,5 @@ dependencies:
   - nwbinspector
   - pip:
     - spikeinterface==0.101.2 # newly released compatible with neuroconv (spikebias works with 0.100.5, not compatible with neuroconv)
-    - neuronconv==0.6.5 # to convert spikeinterface extractors to nwb, compatible with spikeinterface >= 0.101.2
+    - neuroconv==0.6.5 # to convert spikeinterface extractors to nwb, compatible with spikeinterface >= 0.101.2
     - remfile==0.1.13
