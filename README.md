@@ -7,7 +7,7 @@ author: laquitainesteeve@gmail.com
 All software dependencies and operating systems (including version numbers)
 Versions: 
 
-* OS: Ubuntu 24.04.1 LTS and Mac OS X 10.15.7 (BuildVersion: 19H2026) 
+* OS: Ubuntu 24.04.1 LTS (16 cores) and Mac OS X 10.15.7 (8 cores, 8 GB RAM, BuildVersion: 19H2026) 
 * Conda 24.11.3 and 24.9.2
 * Software dependencies:
   * python 3.9.7
