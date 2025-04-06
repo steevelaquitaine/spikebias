@@ -16,6 +16,7 @@ dependencies:
   - nwbinspector               # validate nwb file
   - scikit-posthocs=0.9.0      # post-hoc tests 
   - pytorch=2.4.0              # pytorch on cpu only
+  - scikit-learn=1.6.1         # machine learning  
   - pip:
     - spikeinterface==0.101.2 # newly released compatible with neuroconv (spikebias works with 0.100.5, not compatible with neuroconv)
     - neuroconv==0.6.5        # to convert spikeinterface extractors to nwb, compatible with spikeinterface >= 0.101.2
