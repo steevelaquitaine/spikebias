@@ -399,6 +399,68 @@ def plot_anr_pdf_l5(
     #axis.set_box_aspect(1)
     return axis
 
+
+def plot_anr_pdf_l5_demo(
+    axis, mean_s, mean_e, ci_s, ci_e, bins, color_s:tuple, color_e:tuple, pm: dict
+):
+    """Plot distribution of voltage trace signal-to-noise ratio
+    with mean and 95% confidence intervals for the in vivo data and the biophysical 
+    model
+    
+    Args:
+    
+    Returns
+    """
+
+    # silico
+    plot_proba_dist_stats(
+        axis,
+        mean_s[mean_s > 0],
+        ci_s[mean_s > 0],
+        bins[:-1][mean_s > 0],
+        color=color_s,
+        ci_color=color_s,
+        label="silico",
+        pm=pm
+    )
+    # evoked
+    if len(mean_e) > 1:
+        plot_proba_dist_stats(
+            axis,
+            mean_e[mean_e > 0],
+            ci_e[mean_e > 0],
+            bins[:-1][mean_e > 0],
+            color=color_e,
+            ci_color=color_e,
+            label="evoked",
+            pm=pm
+        )
+         
+    # legend
+    axis.set_yscale("log")
+    axis.spines[["right", "top"]].set_visible(False)
+    axis.tick_params(which="both")
+
+    # show minor ticks
+    axis.tick_params(which="major")
+    # y
+    locmaj = matplotlib.ticker.LogLocator(base=10, numticks=N_MAJOR_TICKS)
+    locmin = matplotlib.ticker.LogLocator(
+        base=10.0,
+        subs=(0.5, 1),
+        numticks=2,
+    )
+    axis.yaxis.set_major_locator(locmaj)
+    axis.yaxis.set_minor_locator(locmin)
+    axis.yaxis.set_minor_formatter(matplotlib.ticker.NullFormatter())
+
+    # disconnect axes (R style)
+    axis.spines["bottom"].set_position(("axes", -0.05))
+    axis.yaxis.set_ticks_position("left")
+    axis.spines["left"].set_position(("axes", -0.05))
+    return axis
+
+
 def plot_proba_dist_stats(
         axis, dist_mean, dist_ci, bins, color: list, ci_color: list, label: str, pm:dict
         ):
