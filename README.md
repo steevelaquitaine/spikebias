@@ -7,12 +7,17 @@ author: laquitainesteeve@gmail.com
 All software dependencies and operating systems (including version numbers)
 Versions: 
 
-* OS: Ubuntu 24.04.1 LTS (16 cores) and Mac OS X 10.15.7 (8 cores, 8 GB RAM, BuildVersion: 19H2026) 
-* Conda 24.11.3 and 24.9.2
+* Tested OS for demo:
+    * Ubuntu 24.04.1 LTS (16 cores, 62 GB RAM, Intel Xeon Platinum 8259CL ＠2.50GHz)
+    * Mac OS X 10.15.7 (8 cores, 8 GB RAM, BuildVersion: 19H2026, Quad-Core Intel Core i7 ＠2.50GHz) 
+* Tested Conda versions:
+    * 24.11.3
+    * 24.9.2
 * Software dependencies:
   * python 3.9.7
-  * dependencies listed in envs/spikebias.yml for the main analyses:
-  * spike sorters:
+  * python 3.10.8 (demo)
+  * the python dependencies are listed in envs/demo.yml for the demo and envs/spikebias.yml for the paper's analyses:
+  * the spike sorters tested are:
     * kilosort cloned from https://github.com/cortex-lab/KiloSort.git
     * kilosort 2 release: https://github.com/MouseLand/Kilosort/archive/refs/tags/v2.0.2.tar.gz
     * kilosort 2.5 release https://github.com/MouseLand/Kilosort/archive/refs/tags/v2.5.tar.gz
@@ -22,8 +27,8 @@ Versions:
 Versions the software has been tested on: the versions referenced above.
 
 Any required non-standard hardware: 
-* part of the raw source code necessary to generate the small intermediate dataset requires MPI and parallel computing on at least ten computer nodes.
-* spike sorting require GPU.
+* most of the raw source code necessary to generate the small intermediate dataset were run on a supercomputer and require MPI and parallel computing on about ten computer nodes.
+* spike sorting requires GPU.
 
 # Installation guide
 
