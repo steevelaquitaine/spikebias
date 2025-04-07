@@ -1,11 +1,11 @@
 """noise validation node
 
-[TODO]: 
-
-- move STATS to stats module
+Note: setup spikebias virtual environment
 
 Returns:
     _type_: _description_
+
+
 """
 import numpy as np
 import pandas as pd
@@ -29,12 +29,17 @@ def torch_mad(trace):
     return (trace - trace.mean(dtype=torch.float32)).abs().mean(dtype=torch.float32)
 
 
-def measure_trace_noise(traces, sfreq, wind_end):
+def measure_trace_noise(traces: np.ndarray, sfreq: int, wind_end: int):
     """measure noise (mean absolute deviation)
     at consecutive segments of 1 second
 
     Args:
-        traces: 2D array
+        traces: 2D array (1 site x n_timepoints)
+        sfreq: sampling frequency
+        wind_end: number of segments to measure 
+
+    Returns:
+        mads: mean absolute deviations (number of segments x 1)
     """
     traces = torch.from_numpy(traces)
     winds = np.arange(0, wind_end, 1)
@@ -390,6 +395,18 @@ def get_kk(df, exp):
     print(f"""N_L6 = {count_sites(df, exp, "L6")} sites""")
 
 
+def get_kk_demo(df, exp):
+    """kruskall wallis test
+    """
+    h, p = kruskal(
+        get_noise(df, exp, "L5"),
+        get_noise(df, exp, "L6"),
+    )
+    print(f"H={h}, p={p}")
+    print(f"""N_L5 = {count_sites(df, exp, "L5")} sites""")
+    print(f"""N_L6 = {count_sites(df, exp, "L6")} sites""")
+
+
 def get_posthoc_dunn_holm_sidak(plot_data, exp):
     """posthoc test after kruskall wallis with Dunn and holm_sidak
     multiple comparison correction of p-values
@@ -416,4 +433,30 @@ def get_posthoc_dunn_holm_sidak(plot_data, exp):
     df = sp.posthoc_dunn(data, p_adjust="holm-sidak")
     df.columns = ["L1", "L2/3", "L4", "L5", "L6"]
     df.index = ["L1", "L2/3", "L4", "L5", "L6"]
+    return df
+
+
+def get_posthoc_dunn_holm_sidak_demo(plot_data, exp):
+    """posthoc test after kruskall wallis with Dunn and holm_sidak
+    multiple comparison correction of p-values
+
+    Args:
+        plot_data (_type_): _description_
+        exp (_type_): _description_
+
+    Returns:
+        _type_: _description_
+    """
+    data = [
+        get_noise(plot_data, exp, "L5"),
+        get_noise(plot_data, exp, "L6"),
+    ]
+    # holm sidak method has more power than Bonferroni which is more conservative
+    # Non-significance can indicate subtle differences, power issues, samll sample size,
+    # or the balancing be due to how the Holm-Sidak correction controls Type I errors
+    # while retaining power.
+    # we can still look at the p-values to identify trends.
+    df = sp.posthoc_dunn(data, p_adjust="holm-sidak")
+    df.columns = ["L5", "L6"]
+    df.index = ["L5", "L6"]
     return df

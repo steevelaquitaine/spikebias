@@ -1,0 +1,66 @@
+# spikeinterf0_100_5
+#
+# description: main python virtual environment
+# author: steeve.laquitaine@epfl.ch, laquitainesteeve@gmail.com
+#
+# Install python 3.9.7, cd to repo, setup env:
+#
+#   python3.9 -m venv ./envs/envs/spikinterf0_100_5/
+#   source ./envs/envs/spikinterf0_100_5/bin/activate
+#   pip install -r ./envs/spikinterf0_100_5.txt
+#
+# Setup the spike sorters:
+# wget -c https://github.com/MouseLand/Kilosort/archive/refs/tags/v2.0.2.tar.gz -O - | tar -xz # download Kilosort 2 release
+# wget -c https://github.com/MouseLand/Kilosort/archive/refs/tags/v2.5.tar.gz -O - | tar -xz # download Kilosort 2.5 release
+
+# nwb
+pynwb==2.8.2                # read nwb datasets
+neuroconv                   # convert dataset to nwb 
+
+# jupyter notebook
+ipykernel===6.29.5                   
+ipywidgets==8.0.6           # version important; or notebook and bluepy fail
+jupyter==1.0.0              # version important: or notebook and and bluepy fail
+ipython
+
+# data wrangling
+pandas==1.5.2               # version important; bluepy fails with 1.5.3
+
+# config
+pyyaml                      # read yaml config files
+
+# h5 files
+tables                      # read h5 files
+
+# machine learning and stats
+scikit-learn                # machine learning
+statsmodels                 # stats
+networkx
+
+# plotting
+seaborn                     # plotting
+matplotlib==3.8.4           # plotting
+
+# simulations
+MEAutility==1.5.1           # simulate recording probes
+PyWavelets==1.6.0
+neurom[plotly]              # simulate cell morphologies
+tmd                         # simulate cell morphologies
+wget                        # simulate cell morphologies
+spikeinterface==0.100.5     # contains the newly released spikinterf0_100_5
+numpy                       # 1.26.4
+# herdingspikes==0.3.102      # spike sorter
+kilosort==4.0.6             # spike sorter install Kilosort 4.0
+# git+https://github.com/SpikeInterface/spikeinterface.git@refs/pull/2827/merge
+scikit-posthocs==0.9.0      # posthoc statistics
+mpi4py-mpich                # distributed computing on multiple computer nodes
+numba==0.59.1               # parallelized computing
+fastparquet==2024.11.0      # save metadata
+pyarrow                     # save metadata
+
+# for spike clustering [TODO: to add]
+umap-learn==0.5.3
+python-louvain==0.16
+
+# on dandihub
+remfile

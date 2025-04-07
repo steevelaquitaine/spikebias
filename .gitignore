@@ -1,7 +1,27 @@
 
+# demo
+notebooks/0_demo/demo_recording
+notebooks/0_demo/demo_sorting
+notebooks/0_demo/001250
+dataset/03_demo/study_npx_evoked
+
+# to remove
+.nfs3284e2262de35b4000000018
+
+# temporary datasets
+tmp_dataset/*
+!tmp_dataset/sorting_quality_evoked_1h.csv
+!tmp_dataset/sorting_quality.csv
+
 # dataset
+dataset.zip
 dataset/00_raw/*
 dataset/01_intermediate/*
+
+# python virtual environments 
+envs/spikebias/*
+envs/dandi/*
+envs/demo/*
 
 # logs
 cluster/logs/*

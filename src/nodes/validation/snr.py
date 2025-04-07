@@ -504,8 +504,14 @@ def get_site_snr(trace: np.array, site: int):
         site: silent argument used by 
         ProcessPoolExecutor()
     """
-    mad = pd.DataFrame(trace).mad().values
-    return trace / mad
+    # mad = pd.DataFrame(trace).mad().values
+    mad_ = mad(trace)
+    return trace / mad_
+
+
+def mad(data):
+    mean_data = np.mean(data)
+    return np.mean(np.absolute(data - mean_data))
 
 
 def get_snrs_parallel(traces: np.ndarray):

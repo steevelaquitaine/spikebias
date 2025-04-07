@@ -2,20 +2,13 @@
 
 author: steeve.laquitaine@epfl.ch; laquitainesteeve@gmail.com
 
-* Config. must be edited in: 
+* Datasets configuration must be edited in two nodes of the codebase: 
   * `src/nodes/utils.py`
   * `src/nodes/dataeng/lfp_only/campaign_stacking.py`
 
-TODO:
+## NEUROPIXELS
 
-- get all data from blueconfig to skip blueconfig [DOING]
-- make all NWB files of raw wired recordings and upload to DANDI archive [DOING]
-- keep only the electrode location from the weights - much lighter dataset.
-- remove all hard coded paths of the codebase (mostly in /pipes)
-
-## NEUROPIXELS 
-
-### Marques-Smith (2023)
+### Marques-Smith et al., (2023)
 
   - type: binary
   - path: /gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/raw/vivo_rat_cortex_marques/c26/c26_npx_raw-001.bin
@@ -39,7 +32,10 @@ TODO:
     - layers.npy
     - regions.npy
 
-**Evoked (20Hz)**
+**Spontaneous disconnected**
+
+
+**Evoked (20 kHz)**
 
   - RecordingExtractor and Ground truth SortingExtractor files:
     - raw
@@ -55,7 +51,7 @@ TODO:
     - layers.npy
     - regions.npy
 
-**Evoked (40 Hz)**
+**Evoked (40 kHz)**
   
   - RecordingExtractor and Ground truth SortingExtractor files:
     - raw
@@ -68,7 +64,7 @@ TODO:
     - layers.npy
     - regions.npy
 
-### Synthetic Buccino (2020)
+### Synthetic Buccino et al.,　(2020)
 
   - recording:
     - nwb path: '/gpfs/bbp.cscs.ch/project/proj85/scratch/laquitai/raw/raw_buccino/sub-MEAREC-250neuron-Neuropixels_ecephys.nwb'
@@ -76,12 +72,12 @@ TODO:
 
 ## DENSE PROBE
 
-### Horvath 
+### Horvath et al., 
 
   - path: 
   - size: 
 
-### Biophysical simulation
+### Spontaneous biophysical simulation
 
 - DEPTH 1:
   - RecordingExtractor and Ground truth SortingExtractor files:
@@ -126,7 +122,7 @@ TODO:
 - Cell 3754013 morphology metadata:
   - spikebias/assets/morph_cell_3754013.h5
 
-## Auxiliary
+## Auxiliary data
 
 - Weight files:
 
@@ -149,17 +145,8 @@ TODO:
 
   - Atlas (optional): https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/QREN2T
 
-
 * O1 sonata circuit: https://zenodo.org/records/11113043 (51 GB)
 * full sonata circuit: https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/HISHXN **(300 GB)**
     * this is the largest circuit which includes the cortical column cells used for all biophysical simulations
 * note: cell id in the sonata circuit is the cell id in the old circuit - 1.
 * all the cell properties can be retrieved from these circuits.
-
-  ## Spike variation with electrode position
-
-
-
-## INTERMEDIATE DATASET
-
-* quality_paths:  spikebias/tmp_dataset/sorting_quality.csv

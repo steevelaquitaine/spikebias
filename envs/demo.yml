@@ -1,0 +1,26 @@
+# author: laquitainesteeve@gmail.com
+# 
+# purpose: create demo virtual environment, dandi package requires at least python 3.10.8 and is not compatible with python 3.9.7 used by the spikebias package.
+# 
+# usage: 
+# 1. move to repo and create env with $ conda env create -f envs/demo.yml --prefix ./envs/demo
+# 2. activate env: $ conda activate envs/demo
+
+name: demo
+dependencies:
+  - python=3.10.8              # version >=3.10.8 required by dandi
+  - dandi=0.67.2               # download and upload nwb files to dandi archive cloud
+  - pynwb=2.8.2                # read nwb files
+  - ipykernel=6.29.5           # jupyter notebook                   
+  - matplotlib=3.8.4           # plotting  
+  - nwbinspector               # validate nwb file
+  - scikit-posthocs=0.9.0      # post-hoc tests 
+  - pytorch=2.4.0              # pytorch on cpu only
+  - numpy=2.1                  # numerical computing, version<=2.1 required by umap
+  - scikit-learn=1.6.1         # machine learning  
+  - umap-learn=0.5.3           # machine learning: spike waveform clustering
+  - python-louvain=0.16        # machine learning: Louvain community detection
+  - pip:
+    - spikeinterface==0.101.2 # newly released compatible with neuroconv (spikebias works with 0.100.5, not compatible with neuroconv)
+    - neuroconv==0.6.5        # to convert spikeinterface extractors to nwb, compatible with spikeinterface >= 0.101.2
+    - remfile==0.1.13         # to read rem files
