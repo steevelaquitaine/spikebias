@@ -62,8 +62,9 @@ trace_mad = noise.torch_mad(trace)
 
 Conda install takes 30 minutes.
 
-# Demo [TODO]
+# Demo
 
+See jupyter notebooks in notebooks/0_demo/
 
 # Instructions for use 
 
