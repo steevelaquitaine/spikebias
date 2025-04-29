@@ -24,3 +24,5 @@ dependencies:
     - spikeinterface==0.101.2 # newly released compatible with neuroconv (spikebias works with 0.100.5, not compatible with neuroconv)
     - neuroconv==0.6.5        # to convert spikeinterface extractors to nwb, compatible with spikeinterface >= 0.101.2
     - remfile==0.1.13         # to read rem files
+    - spython==0.3.14         # TESTING for SPIKE SORTING - use apptainer for spike sorting
+    - cuda-python             # TESTING for SPIKE SORTING - use gpu for spike sorting
