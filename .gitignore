@@ -1,3 +1,7 @@
+# dataset
+dataset.zip
+dataset/00_raw/*
+dataset/01_intermediate/*
 
 # demo
 notebooks/0_demo/demo_recording
@@ -12,11 +16,6 @@ dataset/03_demo/study_npx_evoked
 tmp_dataset/*
 !tmp_dataset/sorting_quality_evoked_1h.csv
 !tmp_dataset/sorting_quality.csv
-
-# dataset
-dataset.zip
-dataset/00_raw/*
-dataset/01_intermediate/*
 
 # python virtual environments 
 envs/spikebias/*
