@@ -1,17 +1,18 @@
-"""Pipeline to compute power spectral densities for the biophysical 
-simulation of neuropixels recording in the spontaneous regime
 
-Method: 
+"""Computs power spectral densities of Horvath probe 3
 
-* Welch method
-* Buttwerworth temporal filtering
-* entire duration of the recordings
-
-Duration: 5 mins
+Uses multiprocessing on a single machine to speed up 
+the computation
 
 Usage:
 
-    python src/pipes/validation/psd/multiproc_npx_spont.py
+    python src/pipes/validation/psd/multiproc_horvath_probe3.py
+
+Returns:
+    (.npy): writes power spectral densities
+
+Execution time: 5 mins
+
 """
 
 import warnings
@@ -25,11 +26,10 @@ import spikeinterface as si
 from concurrent.futures import ProcessPoolExecutor
 import spikeinterface.preprocessing as spre
 from scipy import signal
-import time 
 import yaml
 import logging
 import logging.config
-
+import time
 
 # move to PROJECT PATH
 PROJ_PATH = '/home/steeve/steeve/epfl/code/spikebias/'
@@ -47,29 +47,26 @@ logging.config.dictConfig(LOG_CONF)
 logger = logging.getLogger("root")
 
 # setup load paths
-RAW_PATH_NS = os.path.join(PROJ_PATH, "dataset/00_raw/recording_npx_spont/")
+RAW_PATH = os.path.join(PROJ_PATH, "dataset/00_raw/recording_horvath_probe3/")
 
 # setup save paths
-RAW_PSD_PATH_NS = os.path.join(PROJ_PATH, "dataset/01_intermediate/psd_raw_npx_spont.npy")
+RAW_PSD_PATH = os.path.join(PROJ_PATH, "dataset/01_intermediate/psd_raw_horvath_probe3.npy")
 
-# layers    
-layers = ["L1", "L2_3", "L4", "L5", "L6"]
-            
-# sampling frequency
-SF_NS = 40000  # Biophy. spontaneous
+# SETUP PARAMETERS
+SF = 20000
 
-# SETUP WELCH PSD PARAMETERS
-
+# SETUP WELCH PSD PARAMETERS *******************
 FILT_WINDOW = "hann"
 
-# neuropixels (Biophy. spontaneous)
-FILT_WIND_NS = 40000 # 1Hz resolution
-FILT_OVERL_NS = int(
-    FILT_WIND_NS // 1.5
+# vivo
+FILT_WIND_SIZE = SF # 1Hz freq. resolution
+FILT_WIND_OVERLAP = int(
+    FILT_WIND_SIZE // 1.5
 )
 
-def get_welch_psd_ns_parallelized(traces: np.ndarray):
-    """compute power spectrum density for Marques Silico
+
+def get_welch_psd_parallelized(traces: np.ndarray):
+    """compute power spectrum density for horvath Silico
     using parallel computing
 
     Args:
@@ -85,7 +82,7 @@ def get_welch_psd_ns_parallelized(traces: np.ndarray):
     # in parallel with a pool of workers
     with ProcessPoolExecutor() as executor:
         power_by_site = executor.map(
-            get_site_welch_psd_ns,
+            get_site_welch_psd,
             traces.T,
             np.arange(0, nsites, 1),
         )
@@ -102,9 +99,8 @@ def get_welch_psd_ns_parallelized(traces: np.ndarray):
     return {"power": powers, "freq": freqs}
 
 
-def get_site_welch_psd_ns(trace, site):
-    """calculate the welch frequency powers contained in 
-    the voltage traces of the Marques-Smith's in vivo dataset
+def get_site_welch_psd(trace, site):
+    """calculate the welch frequency powers in the input trace
 
     Args:
         traces (np.ndarray): timepoints x sites voltage trace
@@ -116,51 +112,47 @@ def get_site_welch_psd_ns(trace, site):
     """
     (freq, power) = signal.welch(
         trace,
-        SF_NS,
+        SF,
         window=FILT_WINDOW,
-        nperseg=FILT_WIND_NS,
-        noverlap=FILT_OVERL_NS,
+        nperseg=FILT_WIND_SIZE,
+        noverlap=FILT_WIND_OVERLAP,
     )
     return np.array(power), np.array(freq)
 
-
-def save_psd(data, write_path:str):
+    
+def save_psd(data, write_path: str):
     parent_path = os.path.dirname(write_path)
     if not os.path.isdir(parent_path):
         os.makedirs(parent_path)
     np.save(write_path, data)
-
-
+    
+    
 def main():
-
+    
     # Load datasets
     t0 = time.time()
-
-    logger.info(f"Started pipeline..")
-
+    logger.info(f"Started pipeline")
+    
     # compress from floats to integers
-    RawNS = si.load_extractor(RAW_PATH_NS)
-    RawNS = spre.astype(RawNS, "int16")
-    
-    # Select sites in cortex
-    sites_ns = RawNS.get_property("layers")
-    sites_ns = [
-        "L2_3" if l_i == "L2" or l_i == "L3" else l_i for l_i in sites_ns
-    ]
-    IN_CTX = np.isin(sites_ns, layers)
-    sites_ns = np.where(IN_CTX)[0]
-    
-    # Remove the DC component by subtracting the means
-    raw_traces_ns = demean(RawNS.get_traces()[:, sites_ns])
+    Raw = si.load_extractor(RAW_PATH)
+    Raw = spre.astype(Raw, "int16")
+
+    # select sites in cortex
+    layers = ["L6"]
+    sites = Raw.get_property("layers")
+    sites = np.where(np.isin(sites, layers))[0]
+
+    # Remove DC component by subtracting the mean
+    raw_traces = demean(Raw.get_traces()[:, sites])
     logger.info(f"Detrended traces.")
     
-    # Calculate psd
-    out_raw_ns = get_welch_psd_ns_parallelized(raw_traces_ns)
+    # compute psd
+    out_raw = get_welch_psd_parallelized(raw_traces)
     logger.info(f"Calculated PSDs.")
-    
+
     # save
-    save_psd(out_raw_ns, RAW_PSD_PATH_NS)
-    logger.info(f"Completed and saved in {np.round(time.time()-t0,2)} secs")
+    save_psd(out_raw, RAW_PSD_PATH)
+    logger.info(f"Completed on rank in {np.round(time.time()-t0,2)} secs")
 
 
 if __name__== "__main__":
