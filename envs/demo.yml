@@ -3,7 +3,7 @@
 # purpose: create demo virtual environment, dandi package requires at least python 3.10.8 and is not compatible with python 3.9.7 used by the spikebias package.
 # 
 # usage: 
-# 1. move to repo and create env with $ conda env create -f envs/demo.yml --prefix ./envs/demo
+# 1. move to repo and create env with $ conda env create -f envs/demo.yml --prefix envs/demo
 # 2. activate env: $ conda activate envs/demo
 
 name: demo
@@ -24,3 +24,4 @@ dependencies:
     - spikeinterface==0.101.2 # newly released compatible with neuroconv (spikebias works with 0.100.5, not compatible with neuroconv)
     - neuroconv==0.6.5        # to convert spikeinterface extractors to nwb, compatible with spikeinterface >= 0.101.2
     - remfile==0.1.13         # to read rem files
+    - etelemetry>=0.2.2
