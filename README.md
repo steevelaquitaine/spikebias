@@ -7,13 +7,14 @@ author: laquitainesteeve@gmail.com
 All software dependencies and operating systems (including version numbers)
 Versions: 
 
-* Tested OS for demo:
+* Tested OS:
+    * Ubuntu 24.04.1 LTS (32 cores, 188 GB RAM, Intel(R) Core(TM) i9-14900K ＠3.2 GHz/5.8 GHz)
     * Ubuntu 24.04.1 LTS (16 cores, 62 GB RAM, Intel Xeon Platinum 8259CL ＠2.50GHz)
     * Mac OS X 10.15.7 (8 cores, 8 GB RAM, BuildVersion: 19H2026, Quad-Core Intel Core i7 ＠2.50GHz) 
 * Tested Conda versions:
     * 24.11.3
     * 24.9.2
-* Software dependencies:
+* Tested Software:
   * python 3.9.7
   * python 3.10.8 (demo)
   * the python dependencies are listed in envs/demo.yml for the demo and envs/spikebias.yml for the paper's analyses:
