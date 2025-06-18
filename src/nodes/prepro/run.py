@@ -29,8 +29,8 @@ def run(recording, freq_min:int=300):
     t0 = time()
 
     # compress to int16 (like the Kilosort sorters)
-    recording = spre.astype(recording, "int16")
-    logger.info(f"Compressed to int16 in {np.round(time()-t0,2)} secs")
+    #recording = spre.astype(recording, "int16")
+    #logger.info(f"Compressed to int16 in {np.round(time()-t0,2)} secs")
     
     # band-pass filter
     recording = spre.highpass_filter(recording, freq_min=freq_min)

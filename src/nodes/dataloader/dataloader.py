@@ -1,7 +1,4 @@
-"""Module to load datasets
-
-Returns:
-    _type_: _description_
+"""Modules to load dataset
 """
 
 from dandi.dandiapi import DandiAPIClient

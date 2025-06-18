@@ -7,6 +7,7 @@ import pandas as pd
 import probeinterface as pi
 import spikeinterface.extractors as se
 import spikeinterface.postprocessing as spost
+import spikeinterface.core.template_tools as ttools
 from matplotlib import pyplot as plt
 from spikeinterface.comparison import GroundTruthStudy
 
@@ -157,7 +158,7 @@ def plot(WaveformExtractor, cell_id: int, colors, linewidth_instance, linewidth_
     plt.ioff()
 
     # get channels where spike amplitude is maximal
-    max_chids = spost.get_template_extremum_channel(
+    max_chids = ttools.get_template_extremum_channel(
         WaveformExtractor, peak_sign="both"
     )
 
@@ -184,7 +185,7 @@ def plot(WaveformExtractor, cell_id: int, colors, linewidth_instance, linewidth_
     ax = fig.add_subplot(1, 1, 1)
 
     # plot waveform instances
-    waveform_instances = waveform[:nspike, :, max_chids[cell_id]].T
+    waveform_instances = waveform[:nspike, :, int(max_chids[cell_id])].T
     ax.plot(
         time_axis,
         waveform_instances,
@@ -197,7 +198,7 @@ def plot(WaveformExtractor, cell_id: int, colors, linewidth_instance, linewidth_
     tmp = WaveformExtractor.get_template(cell_id)
     ax.plot(
         time_axis,
-        tmp[:, max_chids[cell_id]],
+        tmp[:, int(max_chids[cell_id])],
         color=colors[1],
         label="average spike",
         lw=linewidth_mean
@@ -210,11 +211,12 @@ def plot(WaveformExtractor, cell_id: int, colors, linewidth_instance, linewidth_
     )
     ax.set_ylabel("extracellular potential (V)", fontsize=10)
     ax.set_title(
-        f"Cell id: {cell_id} on Channel {max_chids[cell_id]}", fontsize=10
+        f"Cell id: {cell_id} on Channel {int(max_chids[cell_id])}", fontsize=10
     )
     handles, labels = ax.get_legend_handles_labels()
     display = (0, waveform_instances.shape[1])
     return fig, ax
+
 
 def plot2(WaveformExtractor, cell_id: int, ms_before, ms_after, colors, linewidth_instance, linewidth_mean, nspike):
     """plot waveform for cell
@@ -232,7 +234,7 @@ def plot2(WaveformExtractor, cell_id: int, ms_before, ms_after, colors, linewidt
     plt.ioff()
 
     # get channels where spike amplitude is maximal
-    max_chids = spost.get_template_extremum_channel(
+    max_chids = ttools.get_template_extremum_channel(
         WaveformExtractor, peak_sign="both"
     )
 
@@ -282,6 +284,7 @@ def plot2(WaveformExtractor, cell_id: int, ms_before, ms_after, colors, linewidt
     handles, labels = ax.get_legend_handles_labels()
     display = (0, waveform_instances.shape[1])
     return fig, ax
+
 
 def plot_by_channel(
     WaveformExtractor, channel_ids: list, cell_id: int, figsize: tuple
