@@ -23,18 +23,18 @@ logging.config.dictConfig(LOG_CONF)
 logger = logging.getLogger("root")
 
 
-def run(recording, freq_min:int=300):
+def run(recording, freq_min:int=300, freq_max:int=None):
     
     # intialize time tracking
     t0 = time()
 
-    # compress to int16 (like the Kilosort sorters)
-    #recording = spre.astype(recording, "int16")
-    #logger.info(f"Compressed to int16 in {np.round(time()-t0,2)} secs")
-    
     # band-pass filter
-    recording = spre.highpass_filter(recording, freq_min=freq_min)
-    logger.info(f"High-pass filtered in {np.round(time()-t0,2)} secs")
+    if freq_max is None:
+        recording = spre.highpass_filter(recording, freq_min=freq_min)
+        logger.info(f"High-pass filtered in {np.round(time()-t0,2)} secs")
+    else: 
+        recording = spre.bandpass_filter(recording, freq_min=freq_min, freq_max=freq_max)
+        logger.info(f"Band-pass filtered in {np.round(time()-t0,2)} secs")
 
     # apply common reference
     recording = spre.common_reference(
