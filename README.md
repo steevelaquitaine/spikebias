@@ -18,6 +18,10 @@ Versions:
   * python 3.9.7
   * python 3.10.8 (demo)
   * the python dependencies are listed in envs/demo.yml for the demo and envs/spikebias.yml for the paper's analyses:
+  * Matlab R2022b with: 
+    * the Parallel Computing Toolbox (Version 7.7)
+    * the Signal Processing Toolbox (Version 9.1) 
+    * the Statistics and Machine Learning Toolbox (version 12.4)
   * the spike sorters tested are:
     * kilosort cloned from https://github.com/cortex-lab/KiloSort.git
     * kilosort 2 release: https://github.com/MouseLand/Kilosort/archive/refs/tags/v2.0.2.tar.gz
