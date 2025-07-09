@@ -13,6 +13,7 @@ dataset/03_demo/study_npx_evoked
 .nfs3284e2262de35b4000000018
 
 # temporary datasets
+temp/*
 tmp_dataset/*
 !tmp_dataset/sorting_quality_evoked_1h.csv
 !tmp_dataset/sorting_quality.csv
