@@ -19,9 +19,10 @@ tmp_dataset/*
 !tmp_dataset/sorting_quality.csv
 
 # python virtual environments 
-envs/spikebias/*
 envs/dandi/*
 envs/demo/*
+envs/spikebias/*
+envs/spikesort_rtx5090/*
 
 # logs
 cluster/logs/*
