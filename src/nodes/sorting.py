@@ -54,7 +54,7 @@ def remove_the_bad_channels(Wired):
     
 def sort(sorter, wired_path, sorting_path, output_path, params: dict, duration_s: float, 
          copy_binary_recording=False, remove_bad_channels=False):
-    """Apply sorting
+    """Spike sort
     Setup recording (copy as int16 binary, (setup_recording=True),
     take a shorter duration) and sort ...
     or directly sort from an existing recording (setup_recording=True)
@@ -66,7 +66,8 @@ def sort(sorter, wired_path, sorting_path, output_path, params: dict, duration_s
         output_path (_type_): _description_
         params (dict): _description_
         duration_s (float): _description_
-        copy_binary_recording (False): _description_
+        copy_binary_recording (False): save once as binary to avoid 
+        ... subsequent copying by Kilosort sorters
 
     Returns:    
         Sorting (SortingExtractor): contains metadata:
