@@ -1,0 +1,885 @@
+Traceback (most recent call last):
+  File "/home/steeve/steeve/epfl/code/spikebias/envs/dandi/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/home/steeve/steeve/epfl/code/spikebias/envs/dandi/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/home/steeve/steeve/epfl/code/spikebias/src/pipes/sorting/test_params/driftcorr/npx_vivo/10m/ks3.py", line 97, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+spikeinterface 0.100.5
+Setting KILOSORT3_PATH environment variable for subprocess calls to: /home/steeve/steeve/epfl/code/spikebias/dataset/01_intermediate/sorters/Kilosort3_buttw_forwcomp
+2025-07-20 19:30:42,700 - root - ks3.py - <module> - INFO - Starting the sorting pipeline...
+2025-07-20 19:30:42,700 - root - ks3.py - <module> - INFO - Sorting with drift correction...
+2025-07-20 19:30:42,700 - root - sorting.py - sort_and_postprocess_10m - INFO - Started sorting 10 minutes recording.
+/home/steeve/steeve/epfl/code/spikebias/envs/spikesort_rtx5090/lib/python3.9/site-packages/spikeinterface/core/base.py:1079: UserWarning: Versions are not the same. This might lead to compatibility errors. Using spikeinterface==0.101.2 is recommended
+  warnings.warn(
+2025-07-20 19:30:42,703 - root - sorting.py - sort - INFO - Selected first 10.0 minutes in: 0.0
+2025-07-20 19:30:42,703 - root - sorting.py - sort - INFO - Done converting recording as int16 in: 0.0
+2025-07-20 19:30:42,703 - root - sorting.py - sort - INFO - Saving int16 binary recording...
+write_binary_recording with n_jobs = 32 and chunk_size = 300000
+write_binary_recording:   0%|          | 0/60 [00:00<?, ?it/s]write_binary_recording:   2%|▏         | 1/60 [00:01<01:38,  1.67s/it]write_binary_recording:   3%|▎         | 2/60 [00:08<04:36,  4.77s/it]write_binary_recording:  57%|█████▋    | 34/60 [00:15<00:09,  2.71it/s]write_binary_recording: 100%|██████████| 60/60 [00:15<00:00,  3.96it/s]
+2025-07-20 19:30:58,393 - root - sorting.py - sort - INFO - Done copying int16 binary recording in: 15.7
+2025-07-20 19:30:58,394 - root - sorting.py - sort - INFO - Start sorting...
+RUNNING SHELL SCRIPT: /home/steeve/steeve/epfl/code/spikebias/temp/npx_vivo/KS3_output_10m_RTX5090_DriftCorr/sorter_output/run_kilosort3.sh
+
+
+                            < M A T L A B (R) >
+
+                  Copyright 1984-2024 The MathWorks, Inc.
+
+                  R2025a (25.1.0.2943329) 64-bit (glnxa64)
+
+                               April 16, 2025
+
+
+
+ 
+
+To get started, type doc.
+
+For product information, visit www.mathworks.com.
+
+ 
+
+Steeve - forward compatibility enabled for more recent GPUs - edit startup.m file to disable
+
+Time   0s. Computing whitening matrix.. 
+
+Getting channel whitening matrix... 
+
+[Warning: Recompiling GPU libraries because your device is more recent than the
+
+libraries. Compilation can take several minutes.] 
+
+[> In get_whitening_matrix (line 25)
+
+In preprocessDataSub (line 62)
+
+In kilosort3_master (line 71)] 
+
+Channel-whitening matrix computed. 
+
+Time  21s. Loading raw data and applying filters... 
+
+Time  71s. Finished preprocessing 274 batches. 
+
+Drift correction ENABLED
+
+running datashift2...
+
+running extractTemplatesfromSnippets...
+
+running isolated_peaks_new...
+
+running isolated_peaks_new...
+
+running isolated_peaks_new...
+
+running isolated_peaks_new...
+
+running isolated_peaks_new...
+
+running isolated_peaks_new...
+
+running isolated_peaks_new...
+
+running isolated_peaks_new...
+
+running isolated_peaks_new...
+
+running isolated_peaks_new...
+
+running isolated_peaks_new...
+
+extractTemplatesfromSnippets done
+
+vertical pitch size is 20 
+
+horizontal pitch size is 32 
+
+    11    27    43    59
+
+
+
+   766
+
+
+
+0.14 sec, 1 batches, 712 spikes 
+
+5.36 sec, 101 batches, 112984 spikes 
+
+10.58 sec, 201 batches, 253524 spikes 
+
+14.39 sec, 274 batches, 356239 spikes 
+
+time 32.61, Shifted up/down 274 batches. 
+
+datashift2 done
+
+running extractTemplatesfromSnippets...
+
+running isolated_peaks_new...
+
+running isolated_peaks_new...
+
+running isolated_peaks_new...
+
+running isolated_peaks_new...
+
+running isolated_peaks_new...
+
+running isolated_peaks_new...
+
+running isolated_peaks_new...
+
+running isolated_peaks_new...
+
+running isolated_peaks_new...
+
+running isolated_peaks_new...
+
+running isolated_peaks_new...
+
+extractTemplatesfromSnippets done
+
+0.12 sec, 1 batches, 773 spikes 
+
+5.09 sec, 101 batches, 130866 spikes 
+
+10.08 sec, 201 batches, 296337 spikes 
+
+13.73 sec, 274 batches, 416461 spikes 
+
+time 0.00, GROUP 1/96, units 0 
+
+time 21.26, GROUP 6/96, units 43 
+
+time 25.53, GROUP 11/96, units 94 
+
+time 27.04, GROUP 16/96, units 119 
+
+time 29.78, GROUP 21/96, units 155 
+
+time 37.52, GROUP 26/96, units 239 
+
+time 40.26, GROUP 31/96, units 277 
+
+time 40.28, GROUP 36/96, units 282 
+
+time 41.03, GROUP 41/96, units 294 
+
+time 42.31, GROUP 46/96, units 310 
+
+time 43.50, GROUP 51/96, units 331 
+
+time 45.39, GROUP 56/96, units 357 
+
+time 49.05, GROUP 61/96, units 399 
+
+time 54.99, GROUP 66/96, units 464 
+
+time 59.02, GROUP 71/96, units 511 
+
+time 60.62, GROUP 76/96, units 536 
+
+time 60.64, GROUP 81/96, units 541 
+
+time 60.66, GROUP 86/96, units 545 
+
+time 60.69, GROUP 91/96, units 550 
+
+time 60.72, GROUP 96/96, units 555 
+
+Elapsed time is 60.716697 seconds.
+
+Time  62s. Final spike extraction ...
+
+62.92 sec, 1 / 274 batches, 555 units, nspks: 1215, mu: 12.6300, nst0: 1215 
+
+69.53 sec, 101 / 274 batches, 555 units, nspks: 182795, mu: 12.6300, nst0: 1887 
+
+75.96 sec, 201 / 274 batches, 555 units, nspks: 413502, mu: 12.6300, nst0: 2319 
+
+Elapsed time is 80.482063 seconds.
+
+time 0.00, GROUP 1/96, units 0 
+
+time 3.69, GROUP 6/96, units 44 
+
+time 8.44, GROUP 11/96, units 94 
+
+time 11.29, GROUP 16/96, units 137 
+
+time 17.87, GROUP 21/96, units 202 
+
+time 25.99, GROUP 26/96, units 280 
+
+time 28.09, GROUP 31/96, units 308 
+
+time 28.15, GROUP 36/96, units 313 
+
+time 28.66, GROUP 41/96, units 320 
+
+time 29.01, GROUP 46/96, units 327 
+
+time 29.98, GROUP 51/96, units 340 
+
+time 32.21, GROUP 56/96, units 366 
+
+time 38.58, GROUP 61/96, units 419 
+
+time 47.14, GROUP 66/96, units 507 
+
+time 52.00, GROUP 71/96, units 553 
+
+time 55.08, GROUP 76/96, units 592 
+
+time 55.27, GROUP 81/96, units 598 
+
+time 55.28, GROUP 86/96, units 602 
+
+time 55.29, GROUP 91/96, units 607 
+
+time 55.36, GROUP 96/96, units 612 
+
+Elapsed time is 55.356958 seconds.
+
+
+
+ans =
+
+
+
+   293
+
+
+
+initialized spike counts
+
+merged 524 into 515 
+
+merged 84 into 67 
+
+merged 82 into 67 
+
+merged 243 into 238 
+
+merged 373 into 372 
+
+merged 50 into 69 
+
+merged 308 into 303 
+
+merged 402 into 394 
+
+merged 408 into 410 
+
+merged 291 into 265 
+
+merged 536 into 537 
+
+merged 456 into 467 
+
+merged 405 into 409 
+
+merged 51 into 69 
+
+merged 255 into 252 
+
+merged 511 into 529 
+
+merged 306 into 303 
+
+merged 19 into 24 
+
+merged 375 into 372 
+
+merged 289 into 277 
+
+merged 432 into 453 
+
+merged 292 into 265 
+
+merged 565 into 554 
+
+merged 49 into 69 
+
+merged 305 into 303 
+
+merged 575 into 586 
+
+merged 307 into 303 
+
+merged 56 into 69 
+
+merged 209 into 219 
+
+merged 164 into 158 
+
+merged 213 into 214 
+
+merged 295 into 284 
+
+merged 374 into 372 
+
+merged 576 into 569 
+
+merged 18 into 24 
+
+merged 499 into 472 
+
+merged 390 into 389 
+
+merged 498 into 471 
+
+merged 81 into 67 
+
+merged 293 into 265 
+
+merged 165 into 158 
+
+merged 434 into 450 
+
+merged 562 into 554 
+
+merged 144 into 139 
+
+merged 433 into 453 
+
+merged 397 into 384 
+
+merged 368 into 363 
+
+merged 257 into 236 
+
+merged 415 into 413 
+
+merged 378 into 372 
+
+merged 489 into 473 
+
+merged 525 into 515 
+
+merged 449 into 468 
+
+merged 430 into 427 
+
+merged 530 into 508 
+
+merged 469 into 453 
+
+merged 263 into 267 
+
+merged 9 into 17 
+
+merged 395 into 382 
+
+merged 391 into 400 
+
+merged 172 into 186 
+
+merged 383 into 372 
+
+merged 409 into 413 
+
+merged 250 into 235 
+
+merged 329 into 330 
+
+
+
+ans =
+
+
+
+   244
+
+
+
+Saving results to Phy
+
+kilosort3 run time 281.92s
+2025-07-20 19:35:40,529 - root - sorting.py - sort - INFO - Removing empty units...
+2025-07-20 19:35:40,572 - root - sorting.py - sort - INFO - Done removing empty units.
+2025-07-20 19:35:40,572 - root - sorting.py - sort - INFO - Done sorting: took 282.2
+2025-07-20 19:35:40,572 - root - sorting.py - sort - INFO - Done running kilosort3 in: 282.2
+2025-07-20 19:35:40,572 - root - sorting.py - sort - INFO - Saved sorting metadata.
+/home/steeve/steeve/epfl/code/spikebias/envs/spikesort_rtx5090/lib/python3.9/site-packages/spikeinterface/core/basesorting.py:239: UserWarning: The registered recording will not be persistent on disk, but only available in memory
+  warnings.warn("The registered recording will not be persistent on disk, but only available in memory")
+2025-07-20 19:35:40,584 - root - sorting.py - sort - INFO - Done saving kilosort3 in: 0.0
+2025-07-20 19:35:40,584 - root - sorting.py - sort_and_postprocess_10m - INFO - Done sorting with kilosort3 in: 297.9
+2025-07-20 19:35:40,584 - root - sorting.py - sort_and_postprocess_10m - INFO - Skipped postprocessing for kilosort3 in 297.9
+2025-07-20 19:35:40,585 - root - sorting.py - sort_and_postprocess_10m - INFO - Started sorting 10 minutes recording.
+/home/steeve/steeve/epfl/code/spikebias/envs/spikesort_rtx5090/lib/python3.9/site-packages/spikeinterface/core/base.py:1079: UserWarning: Versions are not the same. This might lead to compatibility errors. Using spikeinterface==0.101.2 is recommended
+  warnings.warn(
+2025-07-20 19:35:40,586 - root - sorting.py - sort_and_postprocess_10m - INFO - Skipped sorting for kilosort3 in 0.0
+2025-07-20 19:35:40,755 - root - metadata.py - set_site_and_layer - INFO - Extracting waveforms into a WaveformExtractor...
+2025-07-20 19:35:40,755 - root - metadata.py - set_site_and_layer - INFO - Opened file limits:
+2025-07-20 19:35:40,755 - root - metadata.py - set_site_and_layer - INFO - - soft: 1048576
+2025-07-20 19:35:40,755 - root - metadata.py - set_site_and_layer - INFO - - hard (max): 1048576
+2025-07-20 19:35:40,755 - root - metadata.py - set_site_and_layer - INFO - Max out limit
+extract waveforms shared_memory multi buffer:   0%|          | 0/600 [00:00<?, ?it/s]extract waveforms shared_memory multi buffer:  25%|██▍       | 149/600 [00:00<00:00, 1368.81it/s]extract waveforms shared_memory multi buffer:  48%|████▊     | 286/600 [00:00<00:00, 542.86it/s] extract waveforms shared_memory multi buffer:  61%|██████    | 365/600 [00:00<00:00, 489.04it/s]extract waveforms shared_memory multi buffer:  71%|███████   | 426/600 [00:00<00:00, 438.09it/s]extract waveforms shared_memory multi buffer:  80%|████████  | 481/600 [00:00<00:00, 444.64it/s]extract waveforms shared_memory multi buffer:  88%|████████▊ | 530/600 [00:01<00:00, 450.04it/s]extract waveforms shared_memory multi buffer:  96%|█████████▋| 579/600 [00:01<00:00, 439.23it/s]extract waveforms shared_memory multi buffer: 100%|██████████| 600/600 [00:01<00:00, 495.06it/s]
+extract waveforms shared_memory multi buffer:   0%|          | 0/600 [00:00<?, ?it/s]extract waveforms shared_memory multi buffer:  27%|██▋       | 164/600 [00:00<00:00, 1590.95it/s]extract waveforms shared_memory multi buffer:  54%|█████▍    | 324/600 [00:00<00:00, 883.24it/s] extract waveforms shared_memory multi buffer:  72%|███████▏  | 429/600 [00:00<00:00, 785.15it/s]extract waveforms shared_memory multi buffer:  86%|████████▌ | 516/600 [00:00<00:00, 687.17it/s]extract waveforms shared_memory multi buffer:  98%|█████████▊| 590/600 [00:00<00:00, 698.71it/s]extract waveforms shared_memory multi buffer: 100%|██████████| 600/600 [00:00<00:00, 772.41it/s]
+extract waveforms shared_memory multi buffer:   0%|          | 0/600 [00:00<?, ?it/s]extract waveforms shared_memory multi buffer:  38%|███▊      | 227/600 [00:00<00:00, 1980.94it/s]extract waveforms shared_memory multi buffer:  71%|███████   | 426/600 [00:00<00:00, 1848.38it/s]extract waveforms shared_memory multi buffer: 100%|██████████| 600/600 [00:00<00:00, 1862.67it/s]
+/home/steeve/steeve/epfl/code/spikebias/envs/spikesort_rtx5090/lib/python3.9/site-packages/spikeinterface/core/baserecordingsnippets.py:244: UserWarning: There is no Probe attached to this recording. Creating a dummy one with contact positions
+  warn("There is no Probe attached to this recording. Creating a dummy one with contact positions")
+extract waveforms memmap multi buffer:   0%|          | 0/600 [00:00<?, ?it/s]extract waveforms memmap multi buffer:   9%|▉         | 53/600 [00:00<00:02, 184.60it/s]extract waveforms memmap multi buffer:  12%|█▏        | 72/600 [00:00<00:03, 173.61it/s]extract waveforms memmap multi buffer:  15%|█▍        | 89/600 [00:00<00:03, 150.00it/s]extract waveforms memmap multi buffer:  17%|█▋        | 104/600 [00:00<00:03, 149.26it/s]extract waveforms memmap multi buffer:  20%|█▉        | 119/600 [00:00<00:03, 134.42it/s]extract waveforms memmap multi buffer:  22%|██▏       | 133/600 [00:00<00:03, 129.20it/s]extract waveforms memmap multi buffer:  24%|██▍       | 147/600 [00:01<00:03, 122.65it/s]extract waveforms memmap multi buffer:  27%|██▋       | 160/600 [00:01<00:04, 108.36it/s]extract waveforms memmap multi buffer:  31%|███       | 187/600 [00:01<00:02, 138.16it/s]extract waveforms memmap multi buffer:  34%|███▍      | 204/600 [00:01<00:02, 137.71it/s]extract waveforms memmap multi buffer:  36%|███▋      | 218/600 [00:01<00:02, 134.43it/s]extract waveforms memmap multi buffer:  39%|███▉      | 236/600 [00:01<00:02, 136.62it/s]extract waveforms memmap multi buffer:  42%|████▏     | 250/600 [00:01<00:02, 120.59it/s]extract waveforms memmap multi buffer:  45%|████▌     | 272/600 [00:02<00:02, 121.57it/s]extract waveforms memmap multi buffer:  48%|████▊     | 286/600 [00:02<00:02, 123.70it/s]extract waveforms memmap multi buffer:  51%|█████     | 305/600 [00:02<00:02, 133.82it/s]extract waveforms memmap multi buffer:  54%|█████▎    | 321/600 [00:02<00:02, 138.05it/s]extract waveforms memmap multi buffer:  56%|█████▌    | 336/600 [00:02<00:02, 114.94it/s]extract waveforms memmap multi buffer:  60%|█████▉    | 357/600 [00:02<00:01, 131.31it/s]extract waveforms memmap multi buffer:  62%|██████▏   | 371/600 [00:02<00:01, 122.10it/s]extract waveforms memmap multi buffer:  65%|██████▍   | 388/600 [00:02<00:01, 130.55it/s]extract waveforms memmap multi buffer:  67%|██████▋   | 402/600 [00:03<00:01, 117.88it/s]extract waveforms memmap multi buffer:  70%|███████   | 420/600 [00:03<00:01, 124.25it/s]extract waveforms memmap multi buffer:  73%|███████▎  | 436/600 [00:03<00:01, 125.31it/s]extract waveforms memmap multi buffer:  75%|███████▍  | 449/600 [00:03<00:01, 124.17it/s]extract waveforms memmap multi buffer:  77%|███████▋  | 464/600 [00:03<00:01, 119.31it/s]extract waveforms memmap multi buffer:  81%|████████  | 485/600 [00:03<00:00, 128.82it/s]extract waveforms memmap multi buffer:  84%|████████▎ | 502/600 [00:03<00:00, 135.31it/s]extract waveforms memmap multi buffer:  86%|████████▌ | 516/600 [00:03<00:00, 127.94it/s]extract waveforms memmap multi buffer:  89%|████████▉ | 534/600 [00:04<00:00, 123.07it/s]extract waveforms memmap multi buffer:  92%|█████████▏| 550/600 [00:04<00:00, 108.20it/s]extract waveforms memmap multi buffer:  95%|█████████▌| 571/600 [00:04<00:00, 127.49it/s]extract waveforms memmap multi buffer: 100%|██████████| 600/600 [00:04<00:00, 134.24it/s]
+2025-07-20 19:36:07,809 - root - metadata.py - set_site_and_layer - INFO - Done extracting waveforms in 27.1
+2025-07-20 19:36:07,844 - root - metadata.py - set_site_and_layer - INFO - Saving layers and site contact metadata to SortingExtractor...
+2025-07-20 19:36:07,860 - root - metadata.py - set_site_and_layer - INFO - Saving done in 0.0
+2025-07-20 19:36:07,869 - root - sorting.py - sort_and_postprocess_10m - INFO - Done postprocessing for kilosort3- metadata written in: 27.3
+2025-07-20 19:36:07,869 - root - ks3.py - <module> - INFO - Sorting with drift correction...DONE
+2025-07-20 19:36:07,869 - root - ks3.py - <module> - INFO - Sorting without drift correction...
+2025-07-20 19:36:07,870 - root - sorting.py - sort_and_postprocess_10m - INFO - Started sorting 10 minutes recording.
+/home/steeve/steeve/epfl/code/spikebias/envs/spikesort_rtx5090/lib/python3.9/site-packages/spikeinterface/core/base.py:1079: UserWarning: Versions are not the same. This might lead to compatibility errors. Using spikeinterface==0.101.2 is recommended
+  warnings.warn(
+2025-07-20 19:36:07,871 - root - sorting.py - sort - INFO - Selected first 10.0 minutes in: 0.0
+2025-07-20 19:36:07,871 - root - sorting.py - sort - INFO - Done converting recording as int16 in: 0.0
+2025-07-20 19:36:07,871 - root - sorting.py - sort - INFO - Saving int16 binary recording...
+write_binary_recording with n_jobs = 32 and chunk_size = 300000
+write_binary_recording:   0%|          | 0/60 [00:00<?, ?it/s]write_binary_recording:   2%|▏         | 1/60 [00:07<06:59,  7.10s/it]write_binary_recording:  55%|█████▌    | 33/60 [00:12<00:08,  3.08it/s]write_binary_recording: 100%|██████████| 60/60 [00:12<00:00,  4.70it/s]
+2025-07-20 19:36:22,425 - root - sorting.py - sort - INFO - Done copying int16 binary recording in: 14.6
+2025-07-20 19:36:22,427 - root - sorting.py - sort - INFO - Start sorting...
+RUNNING SHELL SCRIPT: /home/steeve/steeve/epfl/code/spikebias/temp/npx_vivo/KS3_output_10m_RTX5090_NoDriftCorr/sorter_output/run_kilosort3.sh
+
+
+                            < M A T L A B (R) >
+
+                  Copyright 1984-2024 The MathWorks, Inc.
+
+                  R2025a (25.1.0.2943329) 64-bit (glnxa64)
+
+                               April 16, 2025
+
+
+
+ 
+
+To get started, type doc.
+
+For product information, visit www.mathworks.com.
+
+ 
+
+Steeve - forward compatibility enabled for more recent GPUs - edit startup.m file to disable
+
+Time   0s. Computing whitening matrix.. 
+
+Getting channel whitening matrix... 
+
+[Warning: Recompiling GPU libraries because your device is more recent than the
+
+libraries. Compilation can take several minutes.] 
+
+[> In get_whitening_matrix (line 25)
+
+In preprocessDataSub (line 62)
+
+In kilosort3_master (line 71)] 
+
+Channel-whitening matrix computed. 
+
+Time   2s. Loading raw data and applying filters... 
+
+Time  54s. Finished preprocessing 274 batches. 
+
+Drift correction DISABLED
+
+running datashift2...
+
+running extractTemplatesfromSnippets...
+
+running isolated_peaks_new...
+
+running isolated_peaks_new...
+
+running isolated_peaks_new...
+
+running isolated_peaks_new...
+
+running isolated_peaks_new...
+
+running isolated_peaks_new...
+
+running isolated_peaks_new...
+
+running isolated_peaks_new...
+
+running isolated_peaks_new...
+
+running isolated_peaks_new...
+
+running isolated_peaks_new...
+
+extractTemplatesfromSnippets done
+
+vertical pitch size is 20 
+
+horizontal pitch size is 32 
+
+    11    27    43    59
+
+
+
+   766
+
+
+
+0.08 sec, 1 batches, 712 spikes 
+
+6.40 sec, 101 batches, 112984 spikes 
+
+12.77 sec, 201 batches, 253524 spikes 
+
+17.38 sec, 274 batches, 356239 spikes 
+
+time 19.26, Skipped shifting 274 batches. 
+
+datashift2 done
+
+running extractTemplatesfromSnippets...
+
+running isolated_peaks_new...
+
+running isolated_peaks_new...
+
+running isolated_peaks_new...
+
+running isolated_peaks_new...
+
+running isolated_peaks_new...
+
+running isolated_peaks_new...
+
+running isolated_peaks_new...
+
+running isolated_peaks_new...
+
+running isolated_peaks_new...
+
+running isolated_peaks_new...
+
+running isolated_peaks_new...
+
+extractTemplatesfromSnippets done
+
+0.06 sec, 1 batches, 848 spikes 
+
+6.02 sec, 101 batches, 139751 spikes 
+
+12.05 sec, 201 batches, 313412 spikes 
+
+16.46 sec, 274 batches, 440599 spikes 
+
+time 0.00, GROUP 1/96, units 0 
+
+time 9.06, GROUP 6/96, units 37 
+
+time 11.77, GROUP 11/96, units 66 
+
+time 13.29, GROUP 16/96, units 91 
+
+time 16.29, GROUP 21/96, units 125 
+
+time 23.98, GROUP 26/96, units 208 
+
+time 26.54, GROUP 31/96, units 241 
+
+time 26.57, GROUP 36/96, units 246 
+
+time 27.31, GROUP 41/96, units 257 
+
+time 28.54, GROUP 46/96, units 277 
+
+time 30.01, GROUP 51/96, units 300 
+
+time 31.98, GROUP 56/96, units 326 
+
+time 36.03, GROUP 61/96, units 374 
+
+time 40.56, GROUP 66/96, units 422 
+
+time 44.60, GROUP 71/96, units 469 
+
+time 46.86, GROUP 76/96, units 502 
+
+time 46.98, GROUP 81/96, units 507 
+
+time 47.00, GROUP 86/96, units 512 
+
+time 47.03, GROUP 91/96, units 517 
+
+time 47.05, GROUP 96/96, units 522 
+
+Elapsed time is 47.058283 seconds.
+
+Time  48s. Final spike extraction ...
+
+47.94 sec, 1 / 274 batches, 523 units, nspks: 1276, mu: 12.6353, nst0: 1276 
+
+53.50 sec, 101 / 274 batches, 523 units, nspks: 189995, mu: 12.6353, nst0: 1924 
+
+58.96 sec, 201 / 274 batches, 523 units, nspks: 426735, mu: 12.6353, nst0: 2379 
+
+Elapsed time is 62.769497 seconds.
+
+time 0.00, GROUP 1/96, units 0 
+
+time 3.90, GROUP 6/96, units 42 
+
+time 7.43, GROUP 11/96, units 77 
+
+time 9.02, GROUP 16/96, units 101 
+
+time 12.16, GROUP 21/96, units 134 
+
+time 20.54, GROUP 26/96, units 211 
+
+time 23.59, GROUP 31/96, units 241 
+
+time 23.70, GROUP 36/96, units 247 
+
+time 24.08, GROUP 41/96, units 254 
+
+time 25.13, GROUP 46/96, units 270 
+
+time 26.24, GROUP 51/96, units 286 
+
+time 28.83, GROUP 56/96, units 319 
+
+time 34.50, GROUP 61/96, units 368 
+
+time 39.83, GROUP 66/96, units 415 
+
+time 44.91, GROUP 71/96, units 459 
+
+time 49.46, GROUP 76/96, units 513 
+
+time 49.62, GROUP 81/96, units 520 
+
+time 49.63, GROUP 86/96, units 525 
+
+time 49.70, GROUP 91/96, units 530 
+
+time 49.97, GROUP 96/96, units 538 
+
+Elapsed time is 49.973032 seconds.
+
+
+
+ans =
+
+
+
+   257
+
+
+
+initialized spike counts
+
+merged 335 into 327 
+
+merged 55 into 66 
+
+merged 506 into 497 
+
+merged 213 into 206 
+
+merged 224 into 228 
+
+merged 324 into 331 
+
+merged 49 into 61 
+
+merged 217 into 228 
+
+merged 309 into 318 
+
+merged 52 into 66 
+
+merged 312 into 318 
+
+merged 157 into 137 
+
+merged 478 into 475 
+
+merged 366 into 359 
+
+merged 412 into 417 
+
+merged 509 into 497 
+
+merged 293 into 288 
+
+merged 219 into 228 
+
+merged 166 into 165 
+
+merged 169 into 165 
+
+merged 420 into 430 
+
+merged 325 into 331 
+
+merged 173 into 155 
+
+merged 236 into 241 
+
+merged 51 into 61 
+
+merged 360 into 369 
+
+merged 85 into 91 
+
+merged 363 into 369 
+
+merged 330 into 331 
+
+merged 130 into 121 
+
+merged 155 into 172 
+
+merged 230 into 212 
+
+merged 191 into 204 
+
+merged 339 into 327 
+
+merged 362 into 369 
+
+merged 182 into 181 
+
+merged 237 into 241 
+
+merged 86 into 91 
+
+merged 174 into 172 
+
+merged 396 into 380 
+
+merged 494 into 496 
+
+merged 233 into 229 
+
+merged 231 into 229 
+
+merged 256 into 259 
+
+merged 479 into 461 
+
+merged 320 into 316 
+
+merged 352 into 351 
+
+merged 139 into 154 
+
+merged 343 into 336 
+
+merged 392 into 405 
+
+merged 329 into 328 
+
+merged 153 into 152 
+
+merged 378 into 395 
+
+merged 203 into 216 
+
+merged 376 into 375 
+
+merged 7 into 24 
+
+merged 342 into 346 
+
+merged 115 into 125 
+
+merged 431 into 416 
+
+merged 337 into 328 
+
+merged 359 into 357 
+
+merged 180 into 176 
+
+merged 272 into 273 
+
+merged 351 into 357 
+
+
+
+ans =
+
+
+
+   210
+
+
+
+Saving results to Phy
+
+kilosort3 run time 210.41s
+2025-07-20 19:39:52,988 - root - sorting.py - sort - INFO - Removing empty units...
+2025-07-20 19:39:53,024 - root - sorting.py - sort - INFO - Done removing empty units.
+2025-07-20 19:39:53,024 - root - sorting.py - sort - INFO - Done sorting: took 210.6
+2025-07-20 19:39:53,025 - root - sorting.py - sort - INFO - Done running kilosort3 in: 210.6
+2025-07-20 19:39:53,025 - root - sorting.py - sort - INFO - Saved sorting metadata.
+/home/steeve/steeve/epfl/code/spikebias/envs/spikesort_rtx5090/lib/python3.9/site-packages/spikeinterface/core/basesorting.py:239: UserWarning: The registered recording will not be persistent on disk, but only available in memory
+  warnings.warn("The registered recording will not be persistent on disk, but only available in memory")
+2025-07-20 19:39:53,037 - root - sorting.py - sort - INFO - Done saving kilosort3 in: 0.0
+2025-07-20 19:39:53,038 - root - sorting.py - sort_and_postprocess_10m - INFO - Done sorting with kilosort3 in: 225.2
+2025-07-20 19:39:53,038 - root - sorting.py - sort_and_postprocess_10m - INFO - Skipped postprocessing for kilosort3 in 225.2
+2025-07-20 19:39:53,038 - root - sorting.py - sort_and_postprocess_10m - INFO - Started sorting 10 minutes recording.
+/home/steeve/steeve/epfl/code/spikebias/envs/spikesort_rtx5090/lib/python3.9/site-packages/spikeinterface/core/base.py:1079: UserWarning: Versions are not the same. This might lead to compatibility errors. Using spikeinterface==0.101.2 is recommended
+  warnings.warn(
+2025-07-20 19:39:53,039 - root - sorting.py - sort_and_postprocess_10m - INFO - Skipped sorting for kilosort3 in 0.0
+2025-07-20 19:39:53,192 - root - metadata.py - set_site_and_layer - INFO - Extracting waveforms into a WaveformExtractor...
+2025-07-20 19:39:53,192 - root - metadata.py - set_site_and_layer - INFO - Opened file limits:
+2025-07-20 19:39:53,192 - root - metadata.py - set_site_and_layer - INFO - - soft: 1048576
+2025-07-20 19:39:53,192 - root - metadata.py - set_site_and_layer - INFO - - hard (max): 1048576
+2025-07-20 19:39:53,192 - root - metadata.py - set_site_and_layer - INFO - Max out limit
+extract waveforms shared_memory multi buffer:   0%|          | 0/600 [00:00<?, ?it/s]extract waveforms shared_memory multi buffer:  23%|██▎       | 138/600 [00:00<00:00, 1158.55it/s]extract waveforms shared_memory multi buffer:  42%|████▏     | 254/600 [00:00<00:00, 1142.77it/s]extract waveforms shared_memory multi buffer:  63%|██████▎   | 376/600 [00:00<00:00, 1041.38it/s]extract waveforms shared_memory multi buffer: 100%|██████████| 600/600 [00:00<00:00, 1475.03it/s]
+extract waveforms shared_memory multi buffer:   0%|          | 0/600 [00:00<?, ?it/s]extract waveforms shared_memory multi buffer:  34%|███▍      | 203/600 [00:00<00:00, 1937.07it/s]extract waveforms shared_memory multi buffer:  68%|██████▊   | 409/600 [00:00<00:00, 1917.12it/s]extract waveforms shared_memory multi buffer: 100%|██████████| 600/600 [00:00<00:00, 1921.18it/s]
+extract waveforms shared_memory multi buffer:   0%|          | 0/600 [00:00<?, ?it/s]extract waveforms shared_memory multi buffer:  38%|███▊      | 225/600 [00:00<00:00, 2004.49it/s]extract waveforms shared_memory multi buffer: 100%|██████████| 600/600 [00:00<00:00, 3560.01it/s]
+/home/steeve/steeve/epfl/code/spikebias/envs/spikesort_rtx5090/lib/python3.9/site-packages/spikeinterface/core/baserecordingsnippets.py:244: UserWarning: There is no Probe attached to this recording. Creating a dummy one with contact positions
+  warn("There is no Probe attached to this recording. Creating a dummy one with contact positions")
+extract waveforms memmap multi buffer:   0%|          | 0/600 [00:00<?, ?it/s]extract waveforms memmap multi buffer:  12%|█▏        | 74/600 [00:00<00:02, 199.02it/s]extract waveforms memmap multi buffer:  19%|█▉        | 115/600 [00:00<00:01, 245.79it/s]extract waveforms memmap multi buffer:  24%|██▍       | 144/600 [00:00<00:02, 189.99it/s]extract waveforms memmap multi buffer:  28%|██▊       | 171/600 [00:00<00:02, 200.88it/s]extract waveforms memmap multi buffer:  32%|███▏      | 194/600 [00:01<00:02, 167.31it/s]extract waveforms memmap multi buffer:  36%|███▌      | 216/600 [00:01<00:02, 163.44it/s]extract waveforms memmap multi buffer:  39%|███▉      | 234/600 [00:01<00:02, 152.11it/s]extract waveforms memmap multi buffer:  43%|████▎     | 259/600 [00:01<00:02, 167.82it/s]extract waveforms memmap multi buffer:  46%|████▌     | 277/600 [00:01<00:01, 165.08it/s]extract waveforms memmap multi buffer:  49%|████▉     | 294/600 [00:01<00:02, 149.16it/s]extract waveforms memmap multi buffer:  52%|█████▏    | 310/600 [00:01<00:01, 145.93it/s]extract waveforms memmap multi buffer:  54%|█████▍    | 325/600 [00:02<00:02, 116.69it/s]extract waveforms memmap multi buffer:  59%|█████▊    | 352/600 [00:02<00:02, 123.20it/s]extract waveforms memmap multi buffer:  62%|██████▏   | 370/600 [00:02<00:01, 129.26it/s]extract waveforms memmap multi buffer:  65%|██████▌   | 392/600 [00:02<00:01, 130.96it/s]extract waveforms memmap multi buffer:  70%|██████▉   | 417/600 [00:02<00:01, 148.80it/s]extract waveforms memmap multi buffer:  74%|███████▍  | 445/600 [00:02<00:00, 170.20it/s]extract waveforms memmap multi buffer:  77%|███████▋  | 463/600 [00:02<00:00, 171.40it/s]extract waveforms memmap multi buffer:  80%|████████  | 481/600 [00:03<00:00, 137.22it/s]extract waveforms memmap multi buffer:  84%|████████▍ | 503/600 [00:03<00:00, 151.77it/s]extract waveforms memmap multi buffer:  87%|████████▋ | 522/600 [00:03<00:00, 146.52it/s]extract waveforms memmap multi buffer:  90%|█████████ | 540/600 [00:03<00:00, 151.52it/s]extract waveforms memmap multi buffer:  93%|█████████▎| 556/600 [00:03<00:00, 117.51it/s]extract waveforms memmap multi buffer: 100%|██████████| 600/600 [00:03<00:00, 162.27it/s]
+2025-07-20 19:40:16,063 - root - metadata.py - set_site_and_layer - INFO - Done extracting waveforms in 22.9
+2025-07-20 19:40:16,094 - root - metadata.py - set_site_and_layer - INFO - Saving layers and site contact metadata to SortingExtractor...
+2025-07-20 19:40:16,107 - root - metadata.py - set_site_and_layer - INFO - Saving done in 0.0
+2025-07-20 19:40:16,114 - root - sorting.py - sort_and_postprocess_10m - INFO - Done postprocessing for kilosort3- metadata written in: 23.1
+2025-07-20 19:40:16,115 - root - ks3.py - <module> - INFO - Sorting without drift correction...DONE
+Total units:
+With correction: 547
+Without correction: 475
+
+Single units:
+With correction: 244
+Without correction: 210
+2025-07-20 19:40:16,117 - root - ks3.py - <module> - INFO - Pipeline completed successfully.
+spikeinterface 0.100.5
+2025-07-20 20:13:11,777 - root - ks4.py - <module> - INFO - Starting the sorting pipeline...
+2025-07-20 20:13:11,777 - root - ks4.py - <module> - INFO - Sorting with drift correction...
+2025-07-20 20:13:11,777 - root - sorting.py - sort_and_postprocess_10m - INFO - Started sorting 10 minutes recording.
+/home/steeve/steeve/epfl/code/spikebias/envs/spikesort_rtx5090/lib/python3.9/site-packages/spikeinterface/core/base.py:1079: UserWarning: Versions are not the same. This might lead to compatibility errors. Using spikeinterface==0.101.2 is recommended
+  warnings.warn(
+2025-07-20 20:13:11,779 - root - sorting.py - sort - INFO - Selected first 10.0 minutes in: 0.0
+2025-07-20 20:13:11,779 - root - sorting.py - sort - INFO - Done converting recording as int16 in: 0.0
+2025-07-20 20:13:11,779 - root - sorting.py - sort - INFO - Saving int16 binary recording...
+write_binary_recording with n_jobs = 32 and chunk_size = 300000
+write_binary_recording:   0%|          | 0/60 [00:00<?, ?it/s]write_binary_recording:   2%|▏         | 1/60 [00:06<06:52,  6.99s/it]write_binary_recording:  55%|█████▌    | 33/60 [00:12<00:08,  3.25it/s]write_binary_recording: 100%|██████████| 60/60 [00:12<00:00,  4.93it/s]
+2025-07-20 20:13:24,782 - root - sorting.py - sort - INFO - Done copying int16 binary recording in: 13.0
+2025-07-20 20:13:24,783 - root - sorting.py - sort - INFO - Start sorting...
+2025-07-20 20:13:25,156 - faiss.loader - loader.py - <module> - INFO - Loading faiss with AVX2 support.
+2025-07-20 20:13:25,169 - faiss.loader - loader.py - <module> - INFO - Successfully loaded faiss with AVX2 support.
+2025-07-20 20:13:25,171 - faiss - __init__.py - <module> - INFO - Failed to load GPU Faiss: name 'GpuIndexIVFFlat' is not defined. Will not load constructor refs for GPU indexes. This is only an error if you're trying to use GPU Faiss.
+/home/steeve/steeve/epfl/code/spikebias/envs/spikesort_rtx5090/lib/python3.9/site-packages/spikeinterface/core/baserecordingsnippets.py:244: UserWarning: There is no Probe attached to this recording. Creating a dummy one with contact positions
+  warn("There is no Probe attached to this recording. Creating a dummy one with contact positions")
+/home/steeve/steeve/epfl/code/spikebias/envs/spikesort_rtx5090/lib/python3.9/site-packages/torch/cuda/__init__.py:230: UserWarning: 
+NVIDIA GeForce RTX 5090 with CUDA capability sm_120 is not compatible with the current PyTorch installation.
+The current PyTorch install supports CUDA capabilities sm_50 sm_60 sm_61 sm_70 sm_75 sm_80 sm_86 sm_89 sm_90 compute_90.
+If you want to use the NVIDIA GeForce RTX 5090 GPU with PyTorch, please check the instructions at https://pytorch.org/get-started/locally/
+
+  warnings.warn(
+/home/steeve/steeve/epfl/code/spikebias/envs/spikesort_rtx5090/lib/python3.9/site-packages/kilosort/io.py:497: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /home/conda/feedstock_root/build_artifacts/libtorch_1724898583682/work/torch/csrc/utils/tensor_numpy.cpp:206.)
+  X[:, self.nt : self.nt+nsamp] = torch.from_numpy(data).to(self.device).float()
