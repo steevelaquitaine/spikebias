@@ -972,17 +972,11 @@ def plot_single_unit_ratio(ax, df_vivo, df_silico_sp, df_silico_sp_2X, df_silico
     return ax
 
 
-def plot_single_unit_ratio_by_drift_corr(ax, drift_corr_v100, drift_corr_rtx5090, no_drift_corr_rtx5090, legend_cfg):
+def plot_single_unit_ratio_by_drift_corr(ax, drift_corr_v100, drift_corr_rtx5090, no_drift_corr_rtx5090, legend_cfg, number_pos: dict):
     """plot the proportions of single and multi-units
     sorted from the neuropixels probe recording for three 
     conditions
     """
-    # setup figure
-    shift = 0.3
-    text_xpos_vivo = -0.3 + shift
-    text_xpos_sili_sp = 0.7 + shift
-    text_xpos_sili_sp_2X = 1.7 + shift
-
     # colors
     color = np.array(
         [
@@ -1010,11 +1004,6 @@ def plot_single_unit_ratio_by_drift_corr(ax, drift_corr_v100, drift_corr_rtx5090
     df["Uncorrected \n(rtx5090)"] = (
         np.array([n_su_3, n_mu_3]) / no_drift_corr_rtx5090.shape[0]
     )    
-    
-    
-    #from ipdb import set_trace as st; st()
-
-
 
     # bar plot
     df.T.plot.bar(
@@ -1024,14 +1013,14 @@ def plot_single_unit_ratio_by_drift_corr(ax, drift_corr_v100, drift_corr_rtx5090
     # add unit counts
     ax.annotate(
         f"""{n_mu_1}""",
-        (text_xpos_vivo, 0.6),
+        (number_pos['exp1_x'], number_pos['exp1_y_mu']),
         ha="center",
         color="w",
         rotation=0,
     )
     ax.annotate(
         f"""{n_su_1}""",
-        (text_xpos_vivo, 0.13),
+        (number_pos['exp1_x'], number_pos['exp1_y_su']),
         ha="center",
         color="k",
         rotation=0,
@@ -1039,14 +1028,14 @@ def plot_single_unit_ratio_by_drift_corr(ax, drift_corr_v100, drift_corr_rtx5090
     # Spontaneous NPX model
     ax.annotate(
         f"""{n_mu_2}""",
-        (text_xpos_sili_sp, 0.6),
+        (number_pos['exp2_x'], number_pos['exp2_y_mu']),
         ha="center",
         color="w",
         rotation=0,
     )
     ax.annotate(
         f"""{n_su_2}""",
-        (text_xpos_sili_sp, 0.13),
+        (number_pos['exp2_x'], number_pos['exp2_y_su']),
         ha="center",
         color="k",
         rotation=0,
@@ -1054,14 +1043,14 @@ def plot_single_unit_ratio_by_drift_corr(ax, drift_corr_v100, drift_corr_rtx5090
     # 2X
     ax.annotate(
         f"""{n_mu_3}""",
-        (text_xpos_sili_sp_2X, 0.6),
+        (number_pos['exp3_x'], number_pos['exp3_y_mu']),
         ha="center",
         color="w",
         rotation=0,
     )
     ax.annotate(
         f"""{n_su_3}""",
-        (text_xpos_sili_sp_2X, 0.13),
+        (number_pos['exp3_x'], number_pos['exp3_y_su']),
         ha="center",
         color="k",
         rotation=0,

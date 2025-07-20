@@ -31,7 +31,7 @@ def plot_unit_isolation(ax, df_nv, df_ns, df_ns_2X, df_ne, df_nb, legend_cfg: di
     return ax
 
 
-def plot_unit_isolation_by_drift_corr(ax, drift_corr_v100, drift_corr_rtx5090, no_drift_corr_rtx5090, legend_cfg: dict):
+def plot_unit_isolation_by_drift_corr(ax, drift_corr_v100, drift_corr_rtx5090, no_drift_corr_rtx5090, legend_cfg: dict, number_pos:dict):
     """stacked bar plot of the ratio of sorted single-units and multi-units
 
     Args:
@@ -46,7 +46,7 @@ def plot_unit_isolation_by_drift_corr(ax, drift_corr_v100, drift_corr_rtx5090, n
         _type_: _description_
     """
     # plot
-    ax = npx_fr.plot_single_unit_ratio_by_drift_corr(ax, drift_corr_v100, drift_corr_rtx5090, no_drift_corr_rtx5090, legend_cfg)
+    ax = npx_fr.plot_single_unit_ratio_by_drift_corr(ax, drift_corr_v100, drift_corr_rtx5090, no_drift_corr_rtx5090, legend_cfg, number_pos)
 
     # esthetics
     ax.spines[["top", "right"]].set_visible(False)
