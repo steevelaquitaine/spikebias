@@ -22,6 +22,7 @@ BOXPLOT_PMS = {
         },
 }
 
+
 def plot_fr_by_layer(axes, df_nv, df_ns, df_ne, df_nb, layers, log_x_min, log_x_max, nbins, t_dec, cl):
 
     # figure parameters
@@ -968,6 +969,111 @@ def plot_single_unit_ratio(ax, df_vivo, df_silico_sp, df_silico_sp_2X, df_silico
     )
     ax.set_ylabel("Proportion (ratio)")
     ax.set_xlabel("Experiment")
+    return ax
+
+
+def plot_single_unit_ratio_by_drift_corr(ax, drift_corr_v100, drift_corr_rtx5090, no_drift_corr_rtx5090, legend_cfg):
+    """plot the proportions of single and multi-units
+    sorted from the neuropixels probe recording for three 
+    conditions
+    """
+    # setup figure
+    shift = 0.3
+    text_xpos_vivo = -0.3 + shift
+    text_xpos_sili_sp = 0.7 + shift
+    text_xpos_sili_sp_2X = 1.7 + shift
+
+    # colors
+    color = np.array(
+        [
+            [1, 1, 1], # single-units
+            [0.2, 0.2, 0.2], # multi-units
+        ]
+    )
+
+    # single-unit count
+    n_su_1 = sum(drift_corr_v100["kslabel"] == "good")
+    n_su_2 = sum(drift_corr_rtx5090["kslabel"] == "good")
+    n_su_3 = sum(no_drift_corr_rtx5090["kslabel"] == "good")
+    
+    # multi-unit count
+    n_mu_1 = drift_corr_v100.shape[0] - n_su_1
+    n_mu_2 = drift_corr_rtx5090.shape[0] - n_su_2
+    n_mu_3 = no_drift_corr_rtx5090.shape[0] - n_su_3
+
+    # build dataset
+    df = pd.DataFrame()
+    df["Corrected \n(V100)"] = np.array([n_su_1, n_mu_1]) / drift_corr_v100.shape[0]
+    df["Corrected \n(rtx5090)"] = (
+        np.array([n_su_2, n_mu_2]) / drift_corr_rtx5090.shape[0]
+    )
+    df["Uncorrected \n(rtx5090)"] = (
+        np.array([n_su_3, n_mu_3]) / no_drift_corr_rtx5090.shape[0]
+    )    
+    
+    
+    #from ipdb import set_trace as st; st()
+
+
+
+    # bar plot
+    df.T.plot.bar(
+        ax=ax, stacked=True, color=color, edgecolor=(0.5, 0.5, 0.5), rot=0, width=0.8, linewidth=0.5
+    )
+    
+    # add unit counts
+    ax.annotate(
+        f"""{n_mu_1}""",
+        (text_xpos_vivo, 0.6),
+        ha="center",
+        color="w",
+        rotation=0,
+    )
+    ax.annotate(
+        f"""{n_su_1}""",
+        (text_xpos_vivo, 0.13),
+        ha="center",
+        color="k",
+        rotation=0,
+    )    
+    # Spontaneous NPX model
+    ax.annotate(
+        f"""{n_mu_2}""",
+        (text_xpos_sili_sp, 0.6),
+        ha="center",
+        color="w",
+        rotation=0,
+    )
+    ax.annotate(
+        f"""{n_su_2}""",
+        (text_xpos_sili_sp, 0.13),
+        ha="center",
+        color="k",
+        rotation=0,
+    )
+    # 2X
+    ax.annotate(
+        f"""{n_mu_3}""",
+        (text_xpos_sili_sp_2X, 0.6),
+        ha="center",
+        color="w",
+        rotation=0,
+    )
+    ax.annotate(
+        f"""{n_su_3}""",
+        (text_xpos_sili_sp_2X, 0.13),
+        ha="center",
+        color="k",
+        rotation=0,
+    )    
+    ax.legend(
+        ["single-unit", "multi-unit"],
+        loc="upper left",
+        bbox_to_anchor=(0, 1.25),
+        **legend_cfg,
+    )
+    ax.set_ylabel("Proportion (ratio)")
+    ax.set_xlabel("Drift correction")
     return ax
 
 

@@ -9,6 +9,9 @@ notebooks/0_demo/demo_sorting
 notebooks/0_demo/001250
 dataset/03_demo/study_npx_evoked
 
+#kilosort4
+faiss
+
 # to remove
 .nfs3284e2262de35b4000000018
 
@@ -23,6 +26,8 @@ envs/dandi/*
 envs/demo/*
 envs/spikebias/*
 envs/spikesort_rtx5090/*
+envs/kilosort4_rtx5090/*
+
 
 # logs
 cluster/logs/*

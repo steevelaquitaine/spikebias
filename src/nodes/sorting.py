@@ -26,7 +26,7 @@ logging.config.dictConfig(LOG_CONF)
 logger = logging.getLogger("root")
 
 
-def remove_the_bad_channels(Wired):
+def remove_the_bad_channels(Wired, bad_channel_ids=None):
     """removes the bad channels
     (outside cortex) from the recording
     to speed up recording and remove
@@ -34,6 +34,7 @@ def remove_the_bad_channels(Wired):
 
     Args:
         Wired (_type_): _description_
+        bad_channel_ids (np.array): None
 
     Returns:
         _type_: _description_
@@ -41,19 +42,27 @@ def remove_the_bad_channels(Wired):
     # copy RecordingExtractor
     Wired = Wired.clone()
     
-    # label the bad channels with -1 (outside the cortex)
-    layers = Wired.get_property("layers")
-    bad_channels = np.zeros(len(layers))
-    bad_channels[np.isin(layers, "Outside")] = -1
-    bad_channel_ids = Wired.channel_ids[np.where(bad_channels == -1)[0]]
+    # remove only manually selected bad channels 
+    if not bad_channel_ids is None:
+        logger.info('Removing manually selected channel_ids')
+        pass
+    else:
+        # remove all the channels outside the cortex
+        # label the bad channels with -1 (outside the cortex)
+        layers = Wired.get_property("layers")
+        bad_channels = np.zeros(len(layers))
+        bad_channels[np.isin(layers, "Outside")] = -1
+        bad_channel_ids = Wired.channel_ids[np.where(bad_channels == -1)[0]]
+        logger.info('Removing all channel_ids outside cortex')
     
     # remove the bad channel ids
     Wired = Wired.remove_channels(bad_channel_ids)
+    logger.info(f'New channel count: {Wired.get_num_channels()}')
     return Wired
 
     
 def sort(sorter, wired_path, sorting_path, output_path, params: dict, duration_s: float, 
-         copy_binary_recording=False, remove_bad_channels=False):
+         copy_binary_recording=False, remove_bad_channels=False, bad_channel_ids=None):
     """Spike sort
     Setup recording (copy as int16 binary, (setup_recording=True),
     take a shorter duration) and sort ...
@@ -92,7 +101,7 @@ def sort(sorter, wired_path, sorting_path, output_path, params: dict, duration_s
         # speeds up sorting, less memory intensive
         if remove_bad_channels:
             logger.info("Removing bad channels...")
-            Wired = remove_the_bad_channels(Wired)
+            Wired = remove_the_bad_channels(Wired, bad_channel_ids)
             logger.info(f"Done removing bad channels in: %s", round(time() - t0, 1))
         
         # select a shorter period of the recording
@@ -121,7 +130,7 @@ def sort(sorter, wired_path, sorting_path, output_path, params: dict, duration_s
     # speeds up sorting, less memory intensive
     if (not copy_binary_recording) and remove_bad_channels:
         logger.info("Removing bad channels...")
-        Wired = remove_the_bad_channels(Wired)
+        Wired = remove_the_bad_channels(Wired, bad_channel_ids)
         logger.info(f"Done removing bad channels in: %s", round(time() - t0, 1))
 
     # run sorting
@@ -155,18 +164,21 @@ def sort(sorter, wired_path, sorting_path, output_path, params: dict, duration_s
     return Sorting, Wired
 
 
-def sort_and_postprocess_10m(cfg, sorter, sorter_params: dict, duration_sec=600, is_sort=True,
-                             is_postpro=False, extract_wvf=False, copy_binary_recording=False,
-                             remove_bad_channels=False):
-    """Sort 10 minutes
+def sort_and_postprocess_10m(cfg:dict, sorter:str, sorter_params:dict, duration_sec:int=600, is_sort:bool=True,
+                             is_postpro:bool=False, extract_wvf:bool=False, copy_binary_recording:bool=False,
+                             remove_bad_channels:bool=False, bad_channel_ids: np.array=None):
+    """Sort 10-minute recording
 
     Args:
-        cfg (_type_): _description_
-        sorter (_type_): name of spike sorter from sorter_dict dictionary (e.g., kilosort2)
+        cfg (dict): data paths
+        sorter (str): name of spike sorter from sorter_dict dictionary (e.g., kilosort2)
         sorter_params (dict): _description_
-        duration_sec (int): default 600 sec
-        - duration of choosen period of recording in seconds
+        duration_sec (int): default 600 sec, duration of chosen period of recording in seconds
+        is_sort (bool): default True: sort or not
+        is_postpro (bool): default False: postprocess or not
+        extract_wvf (bool): default False: extract waveforms or not
         copy_binary_recording (bool): default False: copy recording as int16 binary or not
+        remove_bad_channels (bool): default False: remove bad channels or not
     """
     # track
     t0 = time()
@@ -192,7 +204,7 @@ def sort_and_postprocess_10m(cfg, sorter, sorter_params: dict, duration_sec=600,
     if is_sort:
         _, Wired = sort(
             sorter, WIRED_PATH, SORTING_PATH, OUTPUT_PATH, sorter_params, duration_sec,
-            copy_binary_recording, remove_bad_channels=remove_bad_channels
+            copy_binary_recording, remove_bad_channels=remove_bad_channels, bad_channel_ids=bad_channel_ids
             )
         logger.info(f"Done sorting with {sorter} in: %s", round(time() - t0, 1))
     else:

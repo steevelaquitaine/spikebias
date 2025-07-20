@@ -1,11 +1,17 @@
-
+# Spike sorting environment for RTX 5090
+#
+# Requirements: total download 1GB
+#
 # usage: 
-# 1. move to repo and create env with $ mamba env create -f envs/spikebias.yml --prefix ./envs/spikebias
-# 2. activate env: $ mamba activate ./envs/spikebias
+#
+# 1. move to repo and create env with $ mamba env create -f envs/spikesort_rtx5090.yml --prefix ./envs/spikesort_rtx5090
+# 2. activate env: $ mamba activate ./envs/spikesort_rtx5090
 
 name: spikebias
 channels:
   - conda-forge
+  - nvidia
+  - pytorch
 dependencies:
   - python=3.9.7
   - pynwb=2.8.2
@@ -31,6 +37,7 @@ dependencies:
   - pyarrow=16.1.0             # save parquet file
   - umap-learn=0.5.3           # for spike clusterclustering
   - python-louvain=0.16        # for spike clusterclustering
+  - pytorch==2.4.0
   - pip:
     - spikeinterface==0.100.8   # 0.100.8 critical for kilosort 4 (includes several merged fixes)
     - mpi4py-mpich==3.1.2       # distributed computing on multiple computer nodes
