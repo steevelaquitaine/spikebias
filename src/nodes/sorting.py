@@ -103,12 +103,14 @@ def sort(sorter, wired_path, sorting_path, output_path, params: dict, duration_s
             logger.info("Removing bad channels...")
             Wired = remove_the_bad_channels(Wired, bad_channel_ids)
             logger.info(f"Done removing bad channels in: %s", round(time() - t0, 1))
+            logger.info(f"New number of channels for sorting: {Wired.get_num_channels()}")
         
         # select a shorter period of the recording
         Wired = Wired.frame_slice(
             start_frame=0, end_frame=int(duration_s * Wired.get_sampling_frequency())
         )
         logger.info(f"Selected first {duration_s/60} minutes in: %s", round(time() - t0, 1))
+        logger.info(f"New recording duration: {Wired.get_duration()} secs")
         
         # convert to int16
         Wired = spre.astype(Wired, "int16")
