@@ -148,7 +148,7 @@ def sort(sorter, wired_path, sorting_path, output_path, params: dict, duration_s
     logger.info(f"Removing empty units...")
     Sorting = Sorting.remove_empty_units()
     logger.info(f"Done removing empty units.")    
-    Sorting = Sorting.frame_slice(start_frame=0, end_frame=end_frame)
+    Sorting = si.curation.remove_excess_spikes(Sorting, Wired)
     logger.info(f"Done removing excess spikes.")
     sorting_duration = round(time() - t0, 1)
     logger.info(f"Done sorting: took %s", sorting_duration)
