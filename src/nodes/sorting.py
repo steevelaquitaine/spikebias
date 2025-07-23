@@ -106,9 +106,8 @@ def sort(sorter, wired_path, sorting_path, output_path, params: dict, duration_s
             logger.info(f"New number of channels for sorting: {Wired.get_num_channels()}")
         
         # select a shorter period of the recording
-        Wired = Wired.frame_slice(
-            start_frame=0, end_frame=int(duration_s * Wired.get_sampling_frequency())
-        )
+        end_frame =int(duration_s * Wired.get_sampling_frequency())
+        Wired = Wired.frame_slice(start_frame=0, end_frame=end_frame)
         logger.info(f"Selected first {duration_s/60} minutes in: %s", round(time() - t0, 1))
         logger.info(f"New recording duration: {Wired.get_duration()} secs")
         
@@ -148,9 +147,8 @@ def sort(sorter, wired_path, sorting_path, output_path, params: dict, duration_s
     # remove the empty units
     logger.info(f"Removing empty units...")
     Sorting = Sorting.remove_empty_units()
-    logger.info(f"Done removing empty units.")
-    # in spikeinterface 0.100.8
-    Sorting = si.curation.remove_excess_spikes(Sorting)
+    logger.info(f"Done removing empty units.")    
+    Sorting = Sorting.frame_slice(start_frame=0, end_frame=end_frame)
     logger.info(f"Done removing excess spikes.")
     sorting_duration = round(time() - t0, 1)
     logger.info(f"Done sorting: took %s", sorting_duration)
