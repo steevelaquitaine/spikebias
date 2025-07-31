@@ -1,0 +1,21 @@
+
+# usage: 
+# 1. move to repo and create env with $ mamba env create -f envs/mearec.yml --prefix ./envs/mearec
+# 2. activate env: $ mamba activate ./envs/mearec
+
+name: mearec
+channels:
+  - conda-forge
+dependencies:
+  - python=3.9.7
+  - pynwb=2.8.2
+  - ipykernel=6.29.5                   
+  - ipywidgets=8.0.6           # version important; or notebook and bluepy fail
+  - jupyter=1.0.0              # version important: or notebook and and bluepy fail
+  - ipython=8.18.1
+  - pip:
+    - mearec==1.8.0
+    - LFPy==2.3.5
+    - neuron==8.2.7
+    - numpy<1.23.5
+    - spikeinterface==0.100.5
