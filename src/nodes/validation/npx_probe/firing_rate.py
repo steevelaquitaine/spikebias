@@ -997,11 +997,11 @@ def plot_single_unit_ratio_by_drift_corr(ax, drift_corr_v100, drift_corr_rtx5090
 
     # build dataset
     df = pd.DataFrame()
-    df["Corrected \n(V100)"] = np.array([n_su_1, n_mu_1]) / drift_corr_v100.shape[0]
-    df["Corrected \n(rtx5090)"] = (
+    df["+ \n(V100)"] = np.array([n_su_1, n_mu_1]) / drift_corr_v100.shape[0]
+    df["+ \n(rtx5090)"] = (
         np.array([n_su_2, n_mu_2]) / drift_corr_rtx5090.shape[0]
     )
-    df["Uncorrected \n(rtx5090)"] = (
+    df["- \n(rtx5090)"] = (
         np.array([n_su_3, n_mu_3]) / no_drift_corr_rtx5090.shape[0]
     )    
 

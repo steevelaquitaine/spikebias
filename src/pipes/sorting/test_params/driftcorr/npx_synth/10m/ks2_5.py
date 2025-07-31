@@ -1,5 +1,5 @@
-"""npx_evoked 20 KHz
-This script runs a spike sorting pipeline using Kilosort3 with and without drift correction. 
+"""
+This script runs a spike sorting pipeline using Kilosort2.5 with and without drift correction. 
 It includes preprocessing, sorting, and postprocessing steps for neural probe recordings.
 
 author: laquitainesteeve@gmail.com 
@@ -31,31 +31,6 @@ Pipeline Steps:
 3. Postprocessing: Extracts waveforms and analyzes sorted data.
 4. Comparison: Compares sorting results with/without drift correction.
 
-Sorting Parameters:
-- `detect_threshold`: Spike detection threshold.
-- `projection_threshold`: Projection threshold.
-- `preclust_threshold`: Pre-clustering threshold.
-- `car`: Common average referencing flag.
-- `minFR`: Minimum firing rate.
-- `nblocks`: Number of processing blocks.
-- `sig`: Signal standard deviation.
-- `freq_min`: Minimum frequency for filtering.
-- `sigmaMask`: Sigma mask for clustering.
-- `lam`: Lambda parameter for clustering.
-- `nPCs`: Number of principal components.
-- `ntbuff`: Buffer size for processing.
-- `nfilt_factor`: Filter factor.
-- `do_correction`: Drift correction flag.
-- `NT`: Buffer size for processing.
-- `AUCsplit`: AUC split threshold.
-- `wave_length`: Waveform length.
-- `keep_good_only`: Flag to keep only good units.
-- `skip_kilosort_preprocessing`: Flag to skip preprocessing.
-- `scaleproc`: Scaling factor for processing.
-- `save_rez_to_mat`: Flag to save results to .mat file.
-- `delete_tmp_files`: Temporary files to delete.
-- `delete_recording_dat`: Flag to delete recording data.
-
 Outputs:
 
 - Sorted data with/without drift correction.
@@ -63,31 +38,35 @@ Outputs:
 - Comparison of total and single units between corrected and non-corrected sorting.
 
 Usage:
+
 1. Enable forward compatibility for CUDA libraries:
+    
     ```bash
     sudo apt install gcc-11 g++-11
     sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-11 100
-    cd /path/to/Kilosort3/CUDA/
+    cd dataset/01_intermediate/sorters/Kilosort-2.5_forwcomp/CUDA/
     matlab -batch mexGPUall
     ```
+
 2. Activate `spikesort_rtx5090` environment.
 
-    conda activate envs/spikesort_rtx5090
+    ```bash
+    conda activate envs/spikesort_rtx5090/
+    ```
 
 3. Run the script with appropriate command-line arguments.
 
-    nohup python -m src.pipes.sorting.test_params.driftcorr.npx_evoked_20khz.10m.ks3 \
-        --recording-path dataset/00_raw/recording_npx_evoked \
-            --preprocess-path dataset/01_intermediate/preprocessing/recording_npx_evoked \
-                --sorting-path-corrected ./temp/npx_evoked_20khz/SortingKS3_10m_RTX5090_DriftCorr \
-                    --sorting-output-path-corrected ./temp/npx_evoked_20khz/KS3_output_10m_RTX5090_DriftCorr/ \
-                        --study-path-corrected ./temp/npx_evoked_20khz/study_ks3_10m_RTX5090_DriftCorr/ \
-                            --sorting-path-not-corrected ./temp/npx_evoked_20khz/SortingKS3_10m_RTX5090_NoDriftCorr \
-                                --sorting-output-path-not-corrected ./temp/npx_evoked_20khz/KS3_output_10m_RTX5090_NoDriftCorr/ \
-                                    --study-path-not-corrected ./temp/npx_evoked_20khz/study_ks3_10m_RTX5090_NoDriftCorr/ \
-                                            --extract-waveforms \
-                                                --remove-bad-channels \
-                                                    > out_ks3_e.log
+    nohup python -m src.pipes.sorting.test_params.driftcorr.npx_synth.10m.ks2_5 \
+        --recording-path dataset/00_raw/recording_buccino \
+            --preprocess-path dataset/01_intermediate/preprocessing/recording_buccino \
+                --sorting-path-corrected ./temp/npx_synth/SortingKS2_5_10m_RTX5090_DriftCorr \
+                    --sorting-output-path-corrected ./temp/npx_synth/KS2_5_output_10m_RTX5090_DriftCorr/ \
+                        --study-path-corrected ./temp/npx_synth/study_ks2_5_10m_RTX5090_DriftCorr/ \
+                            --sorting-path-not-corrected ./temp/npx_synth/SortingKS2_5_10m_RTX5090_NoDriftCorr \
+                                --sorting-output-path-not-corrected ./temp/npx_synth/KS2_5_output_10m_RTX5090_NoDriftCorr/ \
+                                    --study-path-not-corrected ./temp/npx_synth/study_ks2_5_10m_RTX5090_NoDriftCorr/ \
+                                        --extract-waveforms \
+                                            > out_ks25_s.log                                    
 """
 
 # import python packages
@@ -112,29 +91,30 @@ sys.path.append(os.path.join(PROJ_PATH, "src")) # enable custom package import
 from src.nodes.sorting import sort_and_postprocess_10m
 
 # recording parameters
-REC_SECS = 600
+REC_SECS = 600 
 
 # sorting parameters
-SORTER = "kilosort3"
-SORTER_PATH = "/home/steeve/steeve/epfl/code/spikebias/dataset/01_intermediate/sorters/Kilosort3_buttw_forwcomp"
+SORTER = "kilosort2_5"
+SORTER_PATH = "/home/steeve/steeve/epfl/code/spikebias/dataset/01_intermediate/sorters/Kilosort-2.5_forwcomp/"
 SORTER_PARAMS = {
     "detect_threshold": 6,
-    "projection_threshold": [9, 9],
+    "projection_threshold": [10, 4],
     "preclust_threshold": 8,
+    "momentum": [20.0, 400.0],
     "car": True,
-    "minFR": 0, # modified to get even the sparsest units
-    "minfr_goodchannels": 0, # modified to get even the sparsest units
+    "minFR": 0,
+    "minfr_goodchannels": 0,
     "nblocks": 5,
     "sig": 20,
-    "freq_min": 300,
+    "freq_min": 150,
     "sigmaMask": 30,
-    "lam": 20.0,
+    "lam": 10.0,
     "nPCs": 3,
     "ntbuff": 64,
     "nfilt_factor": 4,
+    "NT": None,
+    "AUCsplit": 0.9,
     "do_correction": True,
-    "NT": 65792, # solved CUDA memory error
-    "AUCsplit": 0.8,
     "wave_length": 61,
     "keep_good_only": False,
     "skip_kilosort_preprocessing": False,
@@ -148,7 +128,7 @@ SORTER_PARAMS = {
 bad_channel_ids = None
 
 # SET KS3 software environment variable
-ss.Kilosort3Sorter.set_kilosort3_path(SORTER_PATH)
+ss.Kilosort2_5Sorter.set_kilosort2_5_path(SORTER_PATH)
 
 # setup logging
 with open("conf/logging.yml", "r", encoding="utf-8") as logging_conf:
@@ -190,7 +170,6 @@ if __name__ == "__main__":
     logger.info(f"sorting_path_not_corrected: {args.sorting_path_not_corrected}")
     logger.info(f"sorting_output_path_not_corrected: {args.sorting_output_path_not_corrected}")
     logger.info(f"study_path_not_corrected: {args.study_path_not_corrected}")
-
     # configure read and write paths
 
     # with drift correction
@@ -306,7 +285,7 @@ if __name__ == "__main__":
 
     logger.info("Sorting without drift correction...DONE")
 
-    # # compare sorting results
+    # compare sorting results
     SortingCorr = si.load_extractor(args.sorting_path_corrected)
     SortingNoCorr = si.load_extractor(args.sorting_path_not_corrected)
     

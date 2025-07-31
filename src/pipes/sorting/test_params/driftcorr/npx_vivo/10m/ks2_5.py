@@ -38,14 +38,20 @@ Outputs:
 - Comparison of total and single units between corrected and non-corrected sorting.
 
 Usage:
+
 1. Enable forward compatibility for CUDA libraries:
+
     ```bash
     sudo apt install gcc-11 g++-11
     sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-11 100
     cd dataset/01_intermediate/sorters/Kilosort-2.5_forwcomp/CUDA/
     matlab -batch mexGPUall
     ```
+
 2. Activate `spikesort_rtx5090` environment.
+
+    conda activate envs/spikesort_rtx5090
+
 3. Run the script with appropriate command-line arguments.
 
     nohup python -m src.pipes.sorting.test_params.driftcorr.npx_vivo.10m.ks2_5 \
@@ -56,11 +62,15 @@ Usage:
                         --study-path-corrected ./temp/npx_vivo/study_ks2_5_10m_RTX5090_DriftCorr/ \
                             --sorting-path-not-corrected ./temp/npx_vivo/SortingKS2_5_10m_RTX5090_NoDriftCorr \
                                 --sorting-output-path-not-corrected ./temp/npx_vivo/KS2_5_output_10m_RTX5090_NoDriftCorr/ \
-                                    --study-path-not-corrected ./temp/npx_vivo/study_ks2_5_10m_RTX5090_NoDriftCorr/
+                                    --study-path-not-corrected ./temp/npx_vivo/study_ks2_5_10m_RTX5090_NoDriftCorr/ \
+                                            --extract-waveforms \
+                                                --remove-bad-channels \
+                                                    > out_ks25_m.log
 """
 
 # import python packages
 import os
+import numpy as np
 import sys
 import logging
 import logging.config
@@ -79,6 +89,10 @@ sys.path.append(os.path.join(PROJ_PATH, "src")) # enable custom package import
 
 # import spikebias package
 from src.nodes.sorting import sort_and_postprocess_10m
+
+# setup reproducibility
+torch.manual_seed(0)
+np.random.seed(0)
 
 # recording parameters
 REC_SECS = 600 
@@ -135,8 +149,10 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Run spike sorting pipeline with or without drift correction.")
     parser.add_argument("--recording-path", default= './dataset/00_raw/recording_npx_spont', help="wired probe recording path.")
     parser.add_argument("--preprocess-path", default= './dataset/01_intermediate/preprocessing/recording_npx_spont', help="preprocess recording path")
+    
     parser.add_argument("--remove-bad-channels", action='store_true', help="remove bad channels or not")
-
+    parser.add_argument("--extract-waveforms", action='store_true', help="whether to extract waveforms or not")
+    
     parser.add_argument("--sorting-path-corrected", default='./temp/SortingKS4_5m_RTX5090_DriftCorr', help="sorting output path")
     parser.add_argument("--sorting-output-path-corrected", default='./temp/KS4_output_5m_RTX5090_DriftCorr/', help="postprocess output path")
     parser.add_argument("--study-path-corrected", default='./temp/study_ks4_5m_RTX5090_DriftCorr/', help="study output path")
@@ -144,8 +160,20 @@ if __name__ == "__main__":
     parser.add_argument("--sorting-path-not-corrected", default='./temp/SortingKS4_5m_RTX5090_NoDriftCorr', help="sorting output path without correction")
     parser.add_argument("--sorting-output-path-not-corrected", default='./temp/KS4_output_5m_RTX5090_NoDriftCorr/', help="postprocess output path without correction")
     parser.add_argument("--study-path-not-corrected", default='./temp/study_ks4_5m_RTX5090_NoDriftCorr/', help="study output path without correction")
+    
     args = parser.parse_args()
     
+    # report parameters for visual check
+    logger.info(f"recording_path: {args.recording_path}")
+    logger.info(f"preprocess_path: {args.preprocess_path}")
+    logger.info(f"remove_bad_channels: {args.remove_bad_channels}")
+    logger.info(f"extract_waveforms: {args.extract_waveforms}")
+    logger.info(f"sorting_path_corrected: {args.sorting_path_corrected}")
+    logger.info(f"sorting_output_path_corrected: {args.sorting_output_path_corrected}")
+    logger.info(f"study_path_corrected: {args.study_path_corrected}")
+    logger.info(f"sorting_path_not_corrected: {args.sorting_path_not_corrected}")
+    logger.info(f"sorting_output_path_not_corrected: {args.sorting_output_path_not_corrected}")
+    logger.info(f"study_path_not_corrected: {args.study_path_not_corrected}")
     # configure read and write paths
 
     # with drift correction

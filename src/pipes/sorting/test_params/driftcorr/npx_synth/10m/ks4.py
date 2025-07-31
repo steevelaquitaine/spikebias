@@ -1,97 +1,36 @@
-"""npx_evoked 20 KHz
-This script runs a spike sorting pipeline using Kilosort3 with and without drift correction. 
-It includes preprocessing, sorting, and postprocessing steps for neural probe recordings.
+"""sort and post-process 10 min of spontaneous recording with Kilosort 4.0 with NVIDIA RTX 5090 GPU
 
-author: laquitainesteeve@gmail.com 
+author: laquitainesteeve@gmail.com
 
-Modules:
-- spikeinterface: For spike sorting and data extraction.
-- logging: For detailed pipeline execution logs.
-- argparse: For handling command-line arguments.
+Tested on Ubuntu 24 with NVIDIA RTX 5090 GPU, 
 
-Key Features:
-1. Drift correction: Sort data with or without drift correction.
-2. Configurable parameters: Customize sorting parameters for Kilosort3.
-3. Logging: Detailed logs for debugging and monitoring.
-4. Command-line arguments: Dynamic configuration of input/output paths.
+Resources: 21 GB of VRAM, 100% GPU-Util, 2TB storage
 
-Command-line Arguments:
-- `--recording-path`: Path to the wired probe recording.
-- `--preprocess-path`: Path to the preprocessed recording.
-- `--sorting-path-corrected`: Output path for sorting results with drift correction.
-- `--sorting-output-path-corrected`: Output path for postprocessed results with drift correction.
-- `--study-path-corrected`: Output path for study results with drift correction.
-- `--sorting-path-not-corrected`: Output path for sorting results without drift correction.
-- `--sorting-output-path-not-corrected`: Output path for postprocessed results without drift correction.
-- `--study-path-not-corrected`: Output path for study results without drift correction.
+Usage: 
 
-Pipeline Steps:
-1. Preprocessing: Prepares recording data for sorting.
-2. Sorting: Executes Kilosort3 spike sorting with/without drift correction.
-3. Postprocessing: Extracts waveforms and analyzes sorted data.
-4. Comparison: Compares sorting results with/without drift correction.
+    2. Activate `spikesort_rtx5090` environment.
+        
+        conda activate envs/kilosort4_rtx5090
+        
+    3. Run the script with appropriate command-line arguments.
 
-Sorting Parameters:
-- `detect_threshold`: Spike detection threshold.
-- `projection_threshold`: Projection threshold.
-- `preclust_threshold`: Pre-clustering threshold.
-- `car`: Common average referencing flag.
-- `minFR`: Minimum firing rate.
-- `nblocks`: Number of processing blocks.
-- `sig`: Signal standard deviation.
-- `freq_min`: Minimum frequency for filtering.
-- `sigmaMask`: Sigma mask for clustering.
-- `lam`: Lambda parameter for clustering.
-- `nPCs`: Number of principal components.
-- `ntbuff`: Buffer size for processing.
-- `nfilt_factor`: Filter factor.
-- `do_correction`: Drift correction flag.
-- `NT`: Buffer size for processing.
-- `AUCsplit`: AUC split threshold.
-- `wave_length`: Waveform length.
-- `keep_good_only`: Flag to keep only good units.
-- `skip_kilosort_preprocessing`: Flag to skip preprocessing.
-- `scaleproc`: Scaling factor for processing.
-- `save_rez_to_mat`: Flag to save results to .mat file.
-- `delete_tmp_files`: Temporary files to delete.
-- `delete_recording_dat`: Flag to delete recording data.
-
-Outputs:
-
-- Sorted data with/without drift correction.
-- Postprocessed waveforms and study results.
-- Comparison of total and single units between corrected and non-corrected sorting.
-
-Usage:
-1. Enable forward compatibility for CUDA libraries:
-    ```bash
-    sudo apt install gcc-11 g++-11
-    sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-11 100
-    cd /path/to/Kilosort3/CUDA/
-    matlab -batch mexGPUall
-    ```
-2. Activate `spikesort_rtx5090` environment.
-
-    conda activate envs/spikesort_rtx5090
-
-3. Run the script with appropriate command-line arguments.
-
-    nohup python -m src.pipes.sorting.test_params.driftcorr.npx_evoked_20khz.10m.ks3 \
-        --recording-path dataset/00_raw/recording_npx_evoked \
-            --preprocess-path dataset/01_intermediate/preprocessing/recording_npx_evoked \
-                --sorting-path-corrected ./temp/npx_evoked_20khz/SortingKS3_10m_RTX5090_DriftCorr \
-                    --sorting-output-path-corrected ./temp/npx_evoked_20khz/KS3_output_10m_RTX5090_DriftCorr/ \
-                        --study-path-corrected ./temp/npx_evoked_20khz/study_ks3_10m_RTX5090_DriftCorr/ \
-                            --sorting-path-not-corrected ./temp/npx_evoked_20khz/SortingKS3_10m_RTX5090_NoDriftCorr \
-                                --sorting-output-path-not-corrected ./temp/npx_evoked_20khz/KS3_output_10m_RTX5090_NoDriftCorr/ \
-                                    --study-path-not-corrected ./temp/npx_evoked_20khz/study_ks3_10m_RTX5090_NoDriftCorr/ \
+        nohup python -m src.pipes.sorting.test_params.driftcorr.npx_synth.10m.ks4 \
+            --recording-path dataset/00_raw/recording_buccino \
+                --preprocess-path dataset/01_intermediate/preprocessing/recording_buccino \
+                    --sorting-path-corrected ./temp/npx_synth/SortingKS4_10m_RTX5090_DriftCorr \
+                        --sorting-output-path-corrected ./temp/npx_synth/KS4_output_10m_RTX5090_DriftCorr/ \
+                            --study-path-corrected ./temp/npx_synth/study_ks4_10m_RTX5090_DriftCorr/ \
+                                --sorting-path-not-corrected ./temp/npx_synth/SortingKS4_10m_RTX5090_NoDriftCorr \
+                                    --sorting-output-path-not-corrected ./temp/npx_synth/KS4_output_10m_RTX5090_NoDriftCorr/ \
+                                        --study-path-not-corrected ./temp/npx_synth/study_ks4_10m_RTX5090_NoDriftCorr/
                                             --extract-waveforms \
                                                 --remove-bad-channels \
-                                                    > out_ks3_e.log
+                                                    > out_ks4_s.log                                        
 """
 
 # import python packages
 import os
+import numpy as np
 import sys
 import logging
 import logging.config
@@ -102,8 +41,9 @@ import spikeinterface as si
 import argparse
 import torch
 print("spikeinterface", si.__version__)
+torch.cuda.empty_cache()
 
-# project path
+# setup project path
 PROJ_PATH = "/home/steeve/steeve/epfl/code/spikebias/"
 os.chdir(PROJ_PATH)
 sys.path.append(os.path.join(PROJ_PATH, "src")) # enable custom package import
@@ -111,44 +51,64 @@ sys.path.append(os.path.join(PROJ_PATH, "src")) # enable custom package import
 # import spikebias package
 from src.nodes.sorting import sort_and_postprocess_10m
 
-# recording parameters
+# setup recording parameters
 REC_SECS = 600
 
-# sorting parameters
-SORTER = "kilosort3"
-SORTER_PATH = "/home/steeve/steeve/epfl/code/spikebias/dataset/01_intermediate/sorters/Kilosort3_buttw_forwcomp"
+# setup sorting parameters
+SORTER = "kilosort4"
+
+# these are the default parameters
+# for spikeinterface 0.100.5
+# note that there are no minFR and minFR_channels in ks4
+# - we set batch_size to 10,000 instead of 60,0000 due to memory constrains
+# - we set dminx to 25.6 um instead of None
 SORTER_PARAMS = {
-    "detect_threshold": 6,
-    "projection_threshold": [9, 9],
-    "preclust_threshold": 8,
-    "car": True,
-    "minFR": 0, # modified to get even the sparsest units
-    "minfr_goodchannels": 0, # modified to get even the sparsest units
-    "nblocks": 5,
-    "sig": 20,
-    "freq_min": 300,
-    "sigmaMask": 30,
-    "lam": 20.0,
-    "nPCs": 3,
-    "ntbuff": 64,
-    "nfilt_factor": 4,
+    "batch_size": 10000,
+    "nblocks": 1,
+    "Th_universal": 9,
+    "Th_learned": 8,
+    "do_CAR": True,
+    "invert_sign": False,
+    "nt": 61,
+    "artifact_threshold": None,
+    "nskip": 25,
+    "whitening_range": 32,
+    "binning_depth": 5,
+    "sig_interp": 20,
+    "nt0min": None,
+    "dmin": None,
+    "dminx": 25.6,
+    "min_template_size": 10,
+    "template_sizes": 5,
+    "nearest_chans": 10,
+    "nearest_templates": 100,
+    "templates_from_data": True,
+    "n_templates": 6,
+    "n_pcs": 6,
+    "Th_single_ch": 6,
+    "acg_threshold": 0.2,
+    "ccg_threshold": 0.25,
+    "cluster_downsampling": 20,
+    "cluster_pcs": 64,
+    "duplicate_spike_bins": 15,
     "do_correction": True,
-    "NT": 65792, # solved CUDA memory error
-    "AUCsplit": 0.8,
-    "wave_length": 61,
     "keep_good_only": False,
+    "save_extra_kwargs": False,
     "skip_kilosort_preprocessing": False,
     "scaleproc": None,
-    "save_rez_to_mat": False,
-    "delete_tmp_files": ("matlab_files",),
-    "delete_recording_dat": False,
 }
 
 # manually selected channels to remove (most outside the cortex)
 bad_channel_ids = None
-
-# SET KS3 software environment variable
-ss.Kilosort3Sorter.set_kilosort3_path(SORTER_PATH)
+# bad_channel_ids = np.array(['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10',
+#             '86', '87', '88', '89', '90', '91', '92', '93', '94', '95',
+#             '96', '97', '98', '99', '100', '101', '102', '103', '104', '105',
+#             '182', '183', '184', '185', '186', '187', '188', '189', '190', '191', 
+#             '192', '193', '194', '195', '196', '197', '198', '199', '200', '201',
+#             '278', '279', '280', '281', '282', '283', '284', '285', '286', '287',
+#             '288', '289', '290', '291', '292', '293', '294', '295', '296', '297',
+#             '374', '375', '376', '377', '378', '379', '380', '381', '382', '383'
+#             ])
 
 # setup logging
 with open("conf/logging.yml", "r", encoding="utf-8") as logging_conf:
@@ -190,7 +150,7 @@ if __name__ == "__main__":
     logger.info(f"sorting_path_not_corrected: {args.sorting_path_not_corrected}")
     logger.info(f"sorting_output_path_not_corrected: {args.sorting_output_path_not_corrected}")
     logger.info(f"study_path_not_corrected: {args.study_path_not_corrected}")
-
+    
     # configure read and write paths
 
     # with drift correction
@@ -306,7 +266,7 @@ if __name__ == "__main__":
 
     logger.info("Sorting without drift correction...DONE")
 
-    # # compare sorting results
+    # compare sorting results
     SortingCorr = si.load_extractor(args.sorting_path_corrected)
     SortingNoCorr = si.load_extractor(args.sorting_path_not_corrected)
     

@@ -71,9 +71,12 @@ Usage:
     matlab -batch mexGPUall
     ```
 2. Activate `spikesort_rtx5090` environment.
+
+    conda activate envs/spikesort_rtx5090
+
 3. Run the script with appropriate command-line arguments.
 
-    python -m src.pipes.sorting.test_params.driftcorr.npx_spont.10m.ks3 \
+    nohup python -m src.pipes.sorting.test_params.driftcorr.npx_spont.10m.ks3 \
         --recording-path dataset/00_raw/recording_npx_spont \
             --preprocess-path dataset/01_intermediate/preprocessing/recording_npx_spont \
                 --sorting-path-corrected ./temp/npx_spont/SortingKS3_10m_RTX5090_DriftCorr \
@@ -81,7 +84,10 @@ Usage:
                         --study-path-corrected ./temp/npx_spont/study_ks3_10m_RTX5090_DriftCorr/ \
                             --sorting-path-not-corrected ./temp/npx_spont/SortingKS3_10m_RTX5090_NoDriftCorr \
                                 --sorting-output-path-not-corrected ./temp/npx_spont/KS3_output_10m_RTX5090_NoDriftCorr/ \
-                                    --study-path-not-corrected ./temp/npx_spont/study_ks3_10m_RTX5090_NoDriftCorr/
+                                    --study-path-not-corrected ./temp/npx_spont/study_ks3_10m_RTX5090_NoDriftCorr/ \
+                                            --extract-waveforms \
+                                                --remove-bad-channels \
+                                                    > out_ks3_ns.log                                    
 """
 
 # import python packages
@@ -94,6 +100,7 @@ import spikeinterface.extractors as se
 import spikeinterface.sorters as ss
 import spikeinterface as si
 import argparse
+import torch
 print("spikeinterface", si.__version__)
 
 # project path
@@ -111,7 +118,6 @@ RECORDING_PATH = "./dataset/00_raw/recording_npx_spont/"
 # sorting parameters
 SORTER = "kilosort3"
 SORTER_PATH = "/home/steeve/steeve/epfl/code/spikebias/dataset/01_intermediate/sorters/Kilosort3_buttw_forwcomp"
-SORTING_OUTPUT = "./temp/SortingKS3/" 
 SORTER_PARAMS = {
     "detect_threshold": 6,
     "projection_threshold": [9, 9],
@@ -139,6 +145,9 @@ SORTER_PARAMS = {
     "delete_recording_dat": False,
 }
 
+# manually selected channels to remove (most outside the cortex)
+bad_channel_ids = None
+
 # SET KS3 software environment variable
 ss.Kilosort3Sorter.set_kilosort3_path(SORTER_PATH)
 
@@ -150,24 +159,43 @@ logger = logging.getLogger("root")
 
 
 if __name__ == "__main__":
+    """Entry point
+    """
     
     # Parse command-line arguments
     parser = argparse.ArgumentParser(description="Run spike sorting pipeline with or without drift correction.")
     parser.add_argument("--recording-path", default= './dataset/00_raw/recording_npx_spont', help="wired probe recording path.")
     parser.add_argument("--preprocess-path", default= './dataset/01_intermediate/preprocessing/recording_npx_spont', help="preprocess recording path")
     
-    parser.add_argument("--sorting-path-corrected", default='./temp/SortingKS3_10m_RTX5090_DriftCorr', help="sorting output path")
-    parser.add_argument("--sorting-output-path-corrected", default='./temp/KS3_output_10m_RTX5090_DriftCorr/', help="postprocess output path")
-    parser.add_argument("--study-path-corrected", default='./temp/study_ks3_10m_RTX5090_DriftCorr/', help="study output path")
+    parser.add_argument("--remove-bad-channels", action='store_true', help="remove bad channels or not")
+    parser.add_argument("--extract-waveforms", action='store_true', help="whether to extract waveforms or not")
+    
+    parser.add_argument("--sorting-path-corrected", default='./temp/SortingKS4_5m_RTX5090_DriftCorr', help="sorting output path")
+    parser.add_argument("--sorting-output-path-corrected", default='./temp/KS4_output_5m_RTX5090_DriftCorr/', help="postprocess output path")
+    parser.add_argument("--study-path-corrected", default='./temp/study_ks4_5m_RTX5090_DriftCorr/', help="study output path")
 
-    parser.add_argument("--sorting-path-not-corrected", default='./temp/SortingKS3_10m_RTX5090_NoDriftCorr', help="sorting output path without correction")
-    parser.add_argument("--sorting-output-path-not-corrected", default='./temp/KS3_output_10m_RTX5090_NoDriftCorr/', help="postprocess output path without correction")
-    parser.add_argument("--study-path-not-corrected", default='./temp/study_ks3_10m_RTX5090_NoDriftCorr/', help="study output path without correction")
+    parser.add_argument("--sorting-path-not-corrected", default='./temp/SortingKS4_5m_RTX5090_NoDriftCorr', help="sorting output path without correction")
+    parser.add_argument("--sorting-output-path-not-corrected", default='./temp/KS4_output_5m_RTX5090_NoDriftCorr/', help="postprocess output path without correction")
+    parser.add_argument("--study-path-not-corrected", default='./temp/study_ks4_5m_RTX5090_NoDriftCorr/', help="study output path without correction")
+    
     args = parser.parse_args()
     
-    # setup configuration
+    # report parameters for visual check
+    logger.info(f"recording_path: {args.recording_path}")
+    logger.info(f"preprocess_path: {args.preprocess_path}")
+    logger.info(f"remove_bad_channels: {args.remove_bad_channels}")
+    logger.info(f"extract_waveforms: {args.extract_waveforms}")
+    logger.info(f"sorting_path_corrected: {args.sorting_path_corrected}")
+    logger.info(f"sorting_output_path_corrected: {args.sorting_output_path_corrected}")
+    logger.info(f"study_path_corrected: {args.study_path_corrected}")
+    logger.info(f"sorting_path_not_corrected: {args.sorting_path_not_corrected}")
+    logger.info(f"sorting_output_path_not_corrected: {args.sorting_output_path_not_corrected}")
+    logger.info(f"study_path_not_corrected: {args.study_path_not_corrected}")
 
-    # WITH CORR.
+    # configure read and write paths
+
+    # with drift correction
+
     CFG_CORR = {
         'probe_wiring': {
             'full': {
@@ -204,7 +232,8 @@ if __name__ == "__main__":
         }
     }
 
-    # WITHOUT CORR.
+    # without drift correction
+
     CFG_NO_CORR = {
         'probe_wiring': {
             'full': {
@@ -241,49 +270,53 @@ if __name__ == "__main__":
         }
     }
 
-    # Ensure the script is executed as the main program
+    # ensure the script is executed as the main program
     logger.info("Starting the sorting pipeline...")
 
-    # WITH CORR.
+    # sort with drift correction
     logger.info("Sorting with drift correction...")
 
-    # spike sort
+    # spike sort    
     sort_and_postprocess_10m(CFG_CORR, SORTER, SORTER_PARAMS, duration_sec=REC_SECS, 
                             is_sort=True, is_postpro=False, extract_wvf=False, copy_binary_recording=True,
-                            remove_bad_channels=True)
+                            remove_bad_channels=args.remove_bad_channels, bad_channel_ids = bad_channel_ids)
     # post-process
+    torch.cuda.empty_cache()
     sort_and_postprocess_10m(CFG_CORR, SORTER, SORTER_PARAMS, duration_sec=REC_SECS,
                             is_sort=False, is_postpro=True, extract_wvf=True, copy_binary_recording=True,
                             remove_bad_channels=False)
 
     logger.info("Sorting with drift correction...DONE")
 
-    # WITHOUT CORR.
+    # sort without drift correction
 
     logger.info("Sorting without drift correction...")
 
     SORTER_PARAMS['do_correction'] = False
 
     # spike sort
+    torch.cuda.empty_cache()
     sort_and_postprocess_10m(CFG_NO_CORR, SORTER, SORTER_PARAMS, duration_sec=REC_SECS,
                             is_sort=True, is_postpro=False, extract_wvf=False, copy_binary_recording=True,
-                            remove_bad_channels=True)
+                            remove_bad_channels=args.remove_bad_channels, bad_channel_ids = bad_channel_ids)
     # post-process
+    torch.cuda.empty_cache()
     sort_and_postprocess_10m(CFG_NO_CORR, SORTER, SORTER_PARAMS, duration_sec=REC_SECS,
                             is_sort=False, is_postpro=True, extract_wvf=True, copy_binary_recording=True,
                             remove_bad_channels=False)
 
     logger.info("Sorting without drift correction...DONE")
 
-    # Compare sorting results
+    # # compare sorting results
     SortingCorr = si.load_extractor(args.sorting_path_corrected)
     SortingNoCorr = si.load_extractor(args.sorting_path_not_corrected)
-    # Display total units
+    
+    # display total units
     print("Total units:")
     print(f"With correction: {len(SortingCorr.unit_ids)}")
     print(f"Without correction: {len(SortingNoCorr.unit_ids)}")
 
-    # Display single units
+    # display single units
     print("\nSingle units:")
     print(f"With correction: {sum(SortingCorr.get_property('KSLabel') == 'good')}")
     print(f"Without correction: {sum(SortingNoCorr.get_property('KSLabel') == 'good')}")

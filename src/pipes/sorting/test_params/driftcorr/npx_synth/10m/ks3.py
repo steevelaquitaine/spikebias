@@ -1,4 +1,4 @@
-"""npx_evoked 20 KHz
+"""
 This script runs a spike sorting pipeline using Kilosort3 with and without drift correction. 
 It includes preprocessing, sorting, and postprocessing steps for neural probe recordings.
 
@@ -76,18 +76,17 @@ Usage:
 
 3. Run the script with appropriate command-line arguments.
 
-    nohup python -m src.pipes.sorting.test_params.driftcorr.npx_evoked_20khz.10m.ks3 \
-        --recording-path dataset/00_raw/recording_npx_evoked \
-            --preprocess-path dataset/01_intermediate/preprocessing/recording_npx_evoked \
-                --sorting-path-corrected ./temp/npx_evoked_20khz/SortingKS3_10m_RTX5090_DriftCorr \
-                    --sorting-output-path-corrected ./temp/npx_evoked_20khz/KS3_output_10m_RTX5090_DriftCorr/ \
-                        --study-path-corrected ./temp/npx_evoked_20khz/study_ks3_10m_RTX5090_DriftCorr/ \
-                            --sorting-path-not-corrected ./temp/npx_evoked_20khz/SortingKS3_10m_RTX5090_NoDriftCorr \
-                                --sorting-output-path-not-corrected ./temp/npx_evoked_20khz/KS3_output_10m_RTX5090_NoDriftCorr/ \
-                                    --study-path-not-corrected ./temp/npx_evoked_20khz/study_ks3_10m_RTX5090_NoDriftCorr/ \
+    nohup python -m src.pipes.sorting.test_params.driftcorr.npx_synth.10m.ks3 \
+        --recording-path dataset/00_raw/recording_buccino \
+            --preprocess-path dataset/01_intermediate/preprocessing/recording_buccino \
+                --sorting-path-corrected ./temp/npx_synth/SortingKS3_10m_RTX5090_DriftCorr \
+                    --sorting-output-path-corrected ./temp/npx_synth/KS3_output_10m_RTX5090_DriftCorr/ \
+                        --study-path-corrected ./temp/npx_synth/study_ks3_10m_RTX5090_DriftCorr/ \
+                            --sorting-path-not-corrected ./temp/npx_synth/SortingKS3_10m_RTX5090_NoDriftCorr \
+                                --sorting-output-path-not-corrected ./temp/npx_synth/KS3_output_10m_RTX5090_NoDriftCorr/ \
+                                    --study-path-not-corrected ./temp/npx_synth/study_ks3_10m_RTX5090_NoDriftCorr/ \
                                             --extract-waveforms \
-                                                --remove-bad-channels \
-                                                    > out_ks3_e.log
+                                                    > out_ks3_s.log
 """
 
 # import python packages
@@ -112,7 +111,7 @@ sys.path.append(os.path.join(PROJ_PATH, "src")) # enable custom package import
 from src.nodes.sorting import sort_and_postprocess_10m
 
 # recording parameters
-REC_SECS = 600
+REC_SECS = 600 
 
 # sorting parameters
 SORTER = "kilosort3"
@@ -122,8 +121,8 @@ SORTER_PARAMS = {
     "projection_threshold": [9, 9],
     "preclust_threshold": 8,
     "car": True,
-    "minFR": 0, # modified to get even the sparsest units
-    "minfr_goodchannels": 0, # modified to get even the sparsest units
+    "minFR": 0, # modified
+    "minfr_goodchannels": 0, # modified
     "nblocks": 5,
     "sig": 20,
     "freq_min": 300,
@@ -133,7 +132,7 @@ SORTER_PARAMS = {
     "ntbuff": 64,
     "nfilt_factor": 4,
     "do_correction": True,
-    "NT": 65792, # solved CUDA memory error
+    "NT": 65792, # modified
     "AUCsplit": 0.8,
     "wave_length": 61,
     "keep_good_only": False,
@@ -143,7 +142,6 @@ SORTER_PARAMS = {
     "delete_tmp_files": ("matlab_files",),
     "delete_recording_dat": False,
 }
-
 # manually selected channels to remove (most outside the cortex)
 bad_channel_ids = None
 

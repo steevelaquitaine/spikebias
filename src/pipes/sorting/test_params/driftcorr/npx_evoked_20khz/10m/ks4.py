@@ -2,7 +2,9 @@
 
 author: laquitainesteeve@gmail.com
 
-Tested on: 192 RAM Ubuntu 24 with 32 GB VRAM NVIDIA RTX 5090 GPU
+Tested on:
+- 192 RAM Ubuntu 24 with 32 GB VRAM NVIDIA RTX 5090 GPU
+- kilosort==4.0.6, spikeinterface 0.100.8, includes fix for kilosort4 (introduced in 0.100.5)
 
 Resources: takes 6GB RAM, 21 GB of VRAM, 100% GPU-Util
 
@@ -19,16 +21,15 @@ Usage:
         nohup python -m src.pipes.sorting.test_params.driftcorr.npx_evoked_20khz.10m.ks4 \
             --recording-path dataset/00_raw/recording_npx_evoked \
                 --preprocess-path dataset/01_intermediate/preprocessing/recording_npx_evoked \
-                    --sorting-path-corrected ./temp/npx_evoked_20khz/10m/SortingKS4_10m_RTX5090_DriftCorr \
-                        --sorting-output-path-corrected ./temp/npx_evoked_20khz/10m/KS4_output_10m_RTX5090_DriftCorr/ \
-                            --study-path-corrected ./temp/npx_evoked_20khz/10m/study_ks4_10m_RTX5090_DriftCorr/ \
-                                --sorting-path-not-corrected ./temp/npx_evoked_20khz/10m/SortingKS4_10m_RTX5090_NoDriftCorr \
-                                    --sorting-output-path-not-corrected ./temp/npx_evoked_20khz/10m/KS4_output_10m_RTX5090_NoDriftCorr/ \
-                                        --study-path-not-corrected ./temp/npx_evoked_20khz/10m/study_ks4_10m_RTX5090_NoDriftCorr/ \
-
-note:
-- recs 10 min - batch_size = 10000 - 268 sites - kilosort==4.0.6 - spikeinterface 0.100.8 - 476 units - 7 min sorting - OK
-    - includes fix for kilosort4 (introduced in 0.100.5)
+                    --sorting-path-corrected ./temp/npx_evoked_20khz/SortingKS4_10m_RTX5090_DriftCorr \
+                        --sorting-output-path-corrected ./temp/npx_evoked_20khz/KS4_output_10m_RTX5090_DriftCorr/ \
+                            --study-path-corrected ./temp/npx_evoked_20khz/study_ks4_10m_RTX5090_DriftCorr/ \
+                                --sorting-path-not-corrected ./temp/npx_evoked_20khz/SortingKS4_10m_RTX5090_NoDriftCorr \
+                                    --sorting-output-path-not-corrected ./temp/npx_evoked_20khz/KS4_output_10m_RTX5090_NoDriftCorr/ \
+                                        --study-path-not-corrected ./temp/npx_evoked_20khz/study_ks4_10m_RTX5090_NoDriftCorr/ \
+                                            --extract-waveforms \
+                                                --remove-bad-channels \
+                                                    > out_ks4_e.log
 """
 
 # import python packages
@@ -130,24 +131,6 @@ bad_channel_ids = None
 #             '288', '289', '290', '291', '292', '293', '294', '295', '296', '297',
 #             '374', '375', '376', '377', '378', '379', '380', '381', '382', '383'
 #             ])
-# bad_channel_ids = np.array(['0', '1', '2', '3', '4', '5', '6', '7',
-#             '89', '90', '91', '92', '93', '94', '95',
-#             '96', '97', '98', '99', '100', '101', '102',
-#             '185', '186', '187', '188', '189', '190', '191', 
-#             '192', '193', '194', '195', '196', '197', '198',
-#             '281', '282', '283', '284', '285', '286', '287',
-#             '288', '289', '290', '291', '292', '293', '294',
-#             '377', '378', '379', '380', '381', '382', '383'
-#             ])
-# bad_channel_ids = np.array(['0', '1', '2', '3', '4', '5',
-#             '91', '92', '93', '94', '95',
-#             '101', '102', '103', '104', '105',
-#             '187', '188', '189', '190', '191', 
-#             '192', '193', '194', '195', '196',
-#             '283', '284', '285', '286', '287',
-#             '288', '289', '290', '291', '292',
-#             '379', '380', '381', '382', '383'
-#             ])
 
 # setup logging
 with open("conf/logging.yml", "r", encoding="utf-8") as logging_conf:
@@ -164,8 +147,10 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Run spike sorting pipeline with or without drift correction.")
     parser.add_argument("--recording-path", default= './dataset/00_raw/recording_npx_spont', help="wired probe recording path.")
     parser.add_argument("--preprocess-path", default= './dataset/01_intermediate/preprocessing/recording_npx_spont', help="preprocess recording path")
+    
     parser.add_argument("--remove-bad-channels", action='store_true', help="remove bad channels or not")
-
+    parser.add_argument("--extract-waveforms", action='store_true', help="whether to extract waveforms or not")
+    
     parser.add_argument("--sorting-path-corrected", default='./temp/SortingKS4_5m_RTX5090_DriftCorr', help="sorting output path")
     parser.add_argument("--sorting-output-path-corrected", default='./temp/KS4_output_5m_RTX5090_DriftCorr/', help="postprocess output path")
     parser.add_argument("--study-path-corrected", default='./temp/study_ks4_5m_RTX5090_DriftCorr/', help="study output path")
@@ -173,7 +158,20 @@ if __name__ == "__main__":
     parser.add_argument("--sorting-path-not-corrected", default='./temp/SortingKS4_5m_RTX5090_NoDriftCorr', help="sorting output path without correction")
     parser.add_argument("--sorting-output-path-not-corrected", default='./temp/KS4_output_5m_RTX5090_NoDriftCorr/', help="postprocess output path without correction")
     parser.add_argument("--study-path-not-corrected", default='./temp/study_ks4_5m_RTX5090_NoDriftCorr/', help="study output path without correction")
+    
     args = parser.parse_args()
+    
+    # report parameters for visual check
+    logger.info(f"recording_path: {args.recording_path}")
+    logger.info(f"preprocess_path: {args.preprocess_path}")
+    logger.info(f"remove_bad_channels: {args.remove_bad_channels}")
+    logger.info(f"extract_waveforms: {args.extract_waveforms}")
+    logger.info(f"sorting_path_corrected: {args.sorting_path_corrected}")
+    logger.info(f"sorting_output_path_corrected: {args.sorting_output_path_corrected}")
+    logger.info(f"study_path_corrected: {args.study_path_corrected}")
+    logger.info(f"sorting_path_not_corrected: {args.sorting_path_not_corrected}")
+    logger.info(f"sorting_output_path_not_corrected: {args.sorting_output_path_not_corrected}")
+    logger.info(f"study_path_not_corrected: {args.study_path_not_corrected}")
     
     # configure read and write paths
 
