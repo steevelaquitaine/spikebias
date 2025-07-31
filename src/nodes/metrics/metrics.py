@@ -418,3 +418,22 @@ def plot_firing_rate_hist_vs_lognorm(
         "mean": mn_all,
         "std": sd_all
             }
+
+
+def mad(data):
+    mean_data = np.mean(data)
+    return np.mean(np.absolute(data - mean_data))
+
+def get_mad_ratio(spike_amp, noise_amp):
+    """calculate an sd_ratio robust to outliers
+
+    Args:
+        spike_amp (_type_): _description_
+        noise_amp (_type_): _description_
+
+    Returns:
+        _type_: _description_
+    """
+    mad_unit = mad(spike_amp)  # twice smaller than std
+    mad_noise = mad(noise_amp)
+    return mad_unit / mad_noise
