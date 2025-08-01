@@ -830,6 +830,81 @@ def plot_fr_std_stats_by_layer_vert(ax, df_nv, df_ns, df_ne, df_nb, layers, cl):
     return ax, plot_data
 
 
+def plot_single_unit_ratio_pros_of_added_details(ax, exp1, exp2, legend_cfg, number_pos: dict, exp_names=('exp1','exp2')):
+    """plot the proportions of single and multi-units
+    sorted from the neuropixels probe recording for three 
+    conditions
+    """
+    # colors
+    color = np.array(
+        [
+            [1, 1, 1], # single-units
+            [0.2, 0.2, 0.2], # multi-units
+        ]
+    )
+
+    # single-unit count
+    n_su_1 = sum(exp1["kslabel"] == "good")
+    n_su_2 = sum(exp2["kslabel"] == "good")
+    
+    # multi-unit count
+    n_mu_1 = exp1.shape[0] - n_su_1
+    n_mu_2 = exp2.shape[0] - n_su_2
+
+    # build dataset
+    df = pd.DataFrame()
+    df[exp_names[0]] = np.array([n_su_1, n_mu_1]) / exp1.shape[0]
+    df[exp_names[1]] = (
+        np.array([n_su_2, n_mu_2]) / exp2.shape[0]
+    )
+    # bar plot
+    df.T.plot.bar(
+        ax=ax, stacked=True, color=color, edgecolor=(0.5, 0.5, 0.5), rot=0, width=0.8, linewidth=0.5
+    )
+    
+    # add unit counts
+    ax.annotate(
+        f"""{n_mu_1}""",
+        (number_pos['exp1_x'], number_pos['exp1_y_mu']),
+        ha="center",
+        color="w",
+        rotation=0,
+    )
+    ax.annotate(
+        f"""{n_su_1}""",
+        (number_pos['exp1_x'], number_pos['exp1_y_su']),
+        ha="center",
+        color="k",
+        rotation=0,
+    )    
+    # Spontaneous NPX model
+    ax.annotate(
+        f"""{n_mu_2}""",
+        (number_pos['exp2_x'], number_pos['exp2_y_mu']),
+        ha="center",
+        color="w",
+        rotation=0,
+    )
+    ax.annotate(
+        f"""{n_su_2}""",
+        (number_pos['exp2_x'], number_pos['exp2_y_su']),
+        ha="center",
+        color="k",
+        rotation=0,
+    )
+
+    ax.legend(
+        ["single-unit", "multi-unit"],
+        loc="upper left",
+        bbox_to_anchor=(0, 1.25),
+        **legend_cfg,
+    )
+    ax.set_ylabel("Proportion (ratio)")
+    ax.set_xlabel("Intermediate datasets")
+    return ax
+
+
+
 def plot_single_unit_ratio(ax, df_vivo, df_silico_sp, df_silico_sp_2X, df_silico_ev, df_silico_nb, legend_cfg):
     """plot the proportions of single and multi-units
     sorted from the neuropixels probe recording

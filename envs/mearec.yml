@@ -13,6 +13,7 @@ dependencies:
   - ipywidgets=8.0.6           # version important; or notebook and bluepy fail
   - jupyter=1.0.0              # version important: or notebook and and bluepy fail
   - ipython=8.18.1
+  - seaborn=0.13.2
   - pip:
     - mearec==1.8.0
     - LFPy==2.3.5
