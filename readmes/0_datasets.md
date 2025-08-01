@@ -16,6 +16,8 @@ author: steeve.laquitaine@epfl.ch; laquitainesteeve@gmail.com
 
 ### Biophysical simulations
 
+There are metadata describing each ground truth unit in the raw .nwb file not the fitted one.
+
 **Spontaneous**
 
   - RecordingExtractor and Ground truth SortingExtractor files:
@@ -78,6 +80,8 @@ author: steeve.laquitaine@epfl.ch; laquitainesteeve@gmail.com
   - size: 
 
 ### Spontaneous biophysical simulation
+
+There are metadata describing each ground truth unit in the raw .nwb file not the fitted one.
 
 - DEPTH 1:
   - RecordingExtractor and Ground truth SortingExtractor files:
