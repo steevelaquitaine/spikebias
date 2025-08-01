@@ -34,6 +34,7 @@ Versions the software has been tested on: the versions referenced above.
 Any required non-standard hardware: 
 * most of the raw source code necessary to generate the small intermediate dataset were run on a supercomputer and require MPI and parallel computing on about ten computer nodes.
 * spike sorting requires GPU.
+* disk storage of about 2TB
 
 # Installation guide
 
