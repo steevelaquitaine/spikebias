@@ -1,0 +1,56 @@
+{
+    "sim_time": 1,
+    "target_spikes": [
+        3,
+        50
+    ],
+    "cut_out": [
+        2,
+        5
+    ],
+    "dt": 0.03125,
+    "delay": 10,
+    "weights": [
+        0.25,
+        1.75
+    ],
+    "rot": "physrot",
+    "probe": "Neuropixels-384",
+    "ncontacts": 10,
+    "overhang": 30,
+    "offset": 0,
+    "xlim": [
+        10,
+        80
+    ],
+    "ylim": null,
+    "zlim": null,
+    "x_distr": "uniform",
+    "beta_distr_params": [
+        1.5,
+        5
+    ],
+    "min_amp": 30,
+    "n": 1500,
+    "seed": 0,
+    "drifting": false,
+    "max_drift": 100,
+    "min_drift": 30,
+    "drift_steps": 31,
+    "drift_xlim": [
+        -10,
+        10
+    ],
+    "drift_ylim": [
+        -10,
+        10
+    ],
+    "drift_zlim": [
+        30,
+        80
+    ],
+    "check_for_drift_amp": false,
+    "drift_within_bounds": false,
+    "timeout": null,
+    "max_iterations": 1000
+}
