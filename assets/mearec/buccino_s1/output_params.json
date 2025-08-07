@@ -1,0 +1,116 @@
+{
+    "spiketrains": {
+        "n_exc": 200,
+        "n_inh": 17,
+        "f_exc": 5,
+        "f_inh": 15,
+        "st_exc": 1,
+        "st_inh": 3,
+        "min_rate": 0.5,
+        "ref_per": 2,
+        "process": "poisson",
+        "gamma_shape": 2,
+        "t_start": 0,
+        "duration": 60
+    },
+    "cell_types": {
+        "excitatory": [
+            "PC",
+            "SS",
+            "SP"
+        ],
+        "inhibitory": [
+            "AC",
+            "BP",
+            "BC",
+            "BTC",
+            "ChC",
+            "DBC",
+            "MC",
+            "NGC"
+        ]
+    },
+    "seeds": {
+        "spiketrains": 0,
+        "templates": 1,
+        "convolution": 3,
+        "noise": 2
+    },
+    "templates": {
+        "min_dist": 0,
+        "min_amp": 50,
+        "max_amp": 300,
+        "n_overlap_pairs": null,
+        "xlim": null,
+        "ylim": null,
+        "zlim": null,
+        "overlap_threshold": 0.9,
+        "n_jitters": 10,
+        "upsample": 8,
+        "pad_len": [
+            3,
+            3
+        ],
+        "smooth_percent": 0.5,
+        "smooth_strength": 1
+    },
+    "recordings": {
+        "fs": null,
+        "dtype": "float32",
+        "adc_bit_depth": null,
+        "lsb": null,
+        "gain": null,
+        "overlap": false,
+        "extract_waveforms": false,
+        "sync_rate": null,
+        "sync_jitt": 1,
+        "chunk_duration": 10,
+        "modulation": "electrode",
+        "sdrand": 0.05,
+        "bursting": false,
+        "bursting_units": null,
+        "exp_decay": 0.2,
+        "n_burst_spikes": 10,
+        "max_burst_duration": 100,
+        "shape_mod": false,
+        "shape_stretch": 30.0,
+        "n_bursting": null,
+        "noise_level": 10,
+        "noise_mode": "uncorrelated",
+        "noise_color": false,
+        "noise_half_distance": 30,
+        "far_neurons_n": 300,
+        "far_neurons_max_amp": 10,
+        "far_neurons_noise_floor": 0.5,
+        "far_neurons_exc_inh_ratio": 0.8,
+        "color_peak": 300,
+        "color_q": 2,
+        "color_noise_floor": 1,
+        "filter": true,
+        "filter_cutoff": [
+            300,
+            6000
+        ],
+        "filter_order": 3,
+        "drifting": false,
+        "n_drifting": null,
+        "preferred_dir": [
+            0,
+            0,
+            1
+        ],
+        "angle_tol": 15,
+        "drift_mode_speed": "slow",
+        "drift_mode_probe": "rigid",
+        "drift_fs": 100,
+        "non_rigid_gradient_mode": "linear",
+        "slow_drift_velocity": 5,
+        "slow_drift_amplitude": null,
+        "slow_drift_waveform": "triangluar",
+        "fast_drift_period": 10,
+        "fast_drift_max_jump": 20,
+        "fast_drift_min_jump": 5,
+        "t_start_drift": 0,
+        "t_end_drift": null
+    }
+}
