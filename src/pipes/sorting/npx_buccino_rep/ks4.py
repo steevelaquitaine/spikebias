@@ -1,8 +1,9 @@
-"""sort and post-process 10 min of spontaneous recording with Kilosort 4.0 with NVIDIA RTX 5090 GPU
+"""sort and post-process our replication of Buccino synthetic simulation
+with Kilosort 4.0 with NVIDIA RTX 5090 GPU
 
 author: laquitainesteeve@gmail.com
 
-Tested on Ubuntu 24.04.1 LTS (32 cores, 188 GB RAM, Intel(R) Core(TM) i9-14900K ＠3.2 GHz/5.8 GHz) with RTX 5090 GPU with 40GB VRAM
+Tested on Ubuntu 24.04.1 LTS (32 cores, 188 GB RAM, Intel(R) Core(TM) i9-14900K @3.2 GHz/5.8 GHz) with RTX 5090 GPU with 40GB VRAM
 
 GPU resources <3GB VRAM and 100% util
 
@@ -14,15 +15,15 @@ Usage:
         
     3. Run the script with appropriate command-line arguments.
 
-        nohup python -m src.pipes.sorting.npx_synth_clone.ks4 \
-            --recording-path dataset/00_raw/recording_buccino_clone \
-                --preprocess-path dataset/00_raw/recording_buccino_clone \
-                    --sorting-path-corrected ./temp/npx_synth_clone/SortingKS4_10m_RTX5090 \
-                        --sorting-output-path-corrected ./temp/npx_synth_clone/KS4_output_10m_RTX5090/ \
-                            --study-path-corrected ./temp/npx_synth_clone/study_ks4_10m_RTX5090/ \
+        nohup python -m src.pipes.sorting.npx_buccino_rep.ks4 \
+            --recording-path dataset/00_raw/recording_buccino_rep \
+                --preprocess-path dataset/00_raw/recording_buccino_rep \
+                    --sorting-path-corrected ./temp/npx_buccino_rep/SortingKS4_10m_RTX5090 \
+                        --sorting-output-path-corrected ./temp/npx_buccino_rep/KS4_output_10m_RTX5090/ \
+                            --study-path-corrected ./temp/npx_buccino_rep/study_ks4_10m_RTX5090/ \
                                 --extract-waveforms \
                                     --remove-bad-channels \
-                                        > out_ks4_synth_clone.log
+                                        > out_ks4_buccino_rep.log
 """
 
 # import python packages
