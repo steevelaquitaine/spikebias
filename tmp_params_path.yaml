@@ -26,9 +26,9 @@ max_iterations: 1000
 min_amp: 30
 min_drift: 30
 n: 1500
-ncontacts: 10
+ncontacts: 1
 offset: 0
-overhang: 20
+overhang: 50
 probe: Neuropixels-384
 rot: physrot
 seed: 0
@@ -43,7 +43,9 @@ weights:
 - 1.75
 x_distr: uniform
 xlim:
-- 10
-- 80
+- -50
+- 50
 ylim: null
-zlim: null
+zlim:
+- -1001
+- 1001
