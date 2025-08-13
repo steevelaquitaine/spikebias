@@ -81,3 +81,11 @@ How to run the software on the manuscript's data.
 ```bash
 python -m ipykernel install --user --name spikebias --display-name "spikebias"
 ```
+
+# Datasets
+
+* The full sonata circuit: https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/HISHXN **(300 GB)**
+    * this is the largest circuit which includes the cortical column cells used for all biophysical simulations
+* The O1 sonata circuit: https://zenodo.org/records/11113043 (51 GB)
+* The cell id in our experiments are the cell ids in the CELL_ID_SONATA - 1.
+* All the cell properties can be retrieved from these circuits.
