@@ -16,15 +16,18 @@
     ],
     "rot": "physrot",
     "probe": "Neuropixels-384",
-    "ncontacts": 10,
-    "overhang": 30,
+    "ncontacts": 1,
+    "overhang": 50,
     "offset": 0,
     "xlim": [
-        10,
-        80
+        -50,
+        50
     ],
     "ylim": null,
-    "zlim": null,
+    "zlim": [
+        -1001,
+        1001
+    ],
     "x_distr": "uniform",
     "beta_distr_params": [
         1.5,
