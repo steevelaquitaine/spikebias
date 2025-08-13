@@ -15,14 +15,14 @@ Usage:
     3. Run the script with appropriate command-line arguments.
 
         nohup python -m src.pipes.sorting.npx_synth2.ks4 \
-            --recording-path dataset/00_raw/recording_buccino_s2 \
-                --preprocess-path dataset/00_raw/recording_buccino_s2 \
-                    --sorting-path-corrected ./temp/npx_synth2/SortingKS4_10m_RTX5090 \
-                        --sorting-output-path-corrected ./temp/npx_synth2/KS4_output_10m_RTX5090/ \
-                            --study-path-corrected ./temp/npx_synth2/study_ks4_10m_RTX5090/ \
+            --recording-path dataset/00_raw/recording_synth2 \
+                --preprocess-path dataset/00_raw/recording_synth2 \
+                    --sorting-path-corrected ./temp/pros_of_details/npx_synth2/SortingKS4_10m_RTX5090 \
+                        --sorting-output-path-corrected ./temp/pros_of_details/npx_synth2/KS4_output_10m_RTX5090/ \
+                            --study-path-corrected ./temp/pros_of_details/npx_synth2/study_ks4_10m_RTX5090/ \
                                 --extract-waveforms \
                                     --remove-bad-channels \
-                                        > out_ks4_synth_s2.log
+                                        > out_ks4_synth2.log
 """
 
 # import python packages

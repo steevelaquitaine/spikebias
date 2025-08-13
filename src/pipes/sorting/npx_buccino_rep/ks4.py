@@ -18,9 +18,9 @@ Usage:
         nohup python -m src.pipes.sorting.npx_buccino_rep.ks4 \
             --recording-path dataset/00_raw/recording_buccino_rep \
                 --preprocess-path dataset/00_raw/recording_buccino_rep \
-                    --sorting-path-corrected ./temp/npx_buccino_rep/SortingKS4_10m_RTX5090 \
-                        --sorting-output-path-corrected ./temp/npx_buccino_rep/KS4_output_10m_RTX5090/ \
-                            --study-path-corrected ./temp/npx_buccino_rep/study_ks4_10m_RTX5090/ \
+                    --sorting-path-corrected ./temp/pros_of_details/npx_buccino_rep/SortingKS4_10m_RTX5090 \
+                        --sorting-output-path-corrected ./temp/pros_of_details/npx_buccino_rep/KS4_output_10m_RTX5090/ \
+                            --study-path-corrected ./temp/pros_of_details/npx_buccino_rep/study_ks4_10m_RTX5090/ \
                                 --extract-waveforms \
                                     --remove-bad-channels \
                                         > out_ks4_buccino_rep.log
