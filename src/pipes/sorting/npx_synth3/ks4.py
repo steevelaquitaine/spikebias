@@ -1,4 +1,4 @@
-"""sort and post-process 10 min of spontaneous recording with Kilosort 4.0 with NVIDIA RTX 5090 GPU
+"""sort and post-process 10 min of synthetic simulation 3 with Kilosort 4.0 with NVIDIA RTX 5090 GPU
 
 author: laquitainesteeve@gmail.com
 
@@ -15,14 +15,14 @@ Usage:
     3. Run the script with appropriate command-line arguments.
 
         nohup python -m src.pipes.sorting.npx_synth3.ks4 \
-            --recording-path dataset/00_raw/recording_buccino_s3 \
-                --preprocess-path dataset/00_raw/recording_buccino_s3 \
-                    --sorting-path-corrected ./temp/npx_synth3/SortingKS4_10m_RTX5090 \
-                        --sorting-output-path-corrected ./temp/npx_synth3/KS4_output_10m_RTX5090/ \
-                            --study-path-corrected ./temp/npx_synth3/study_ks4_10m_RTX5090/ \
+            --recording-path dataset/00_raw/recording_synth3 \
+                --preprocess-path dataset/00_raw/recording_synth3 \
+                    --sorting-path-corrected ./temp/pros_of_details/npx_synth3/SortingKS4_10m_RTX5090 \
+                        --sorting-output-path-corrected ./temp/pros_of_details/npx_synth3/KS4_output_10m_RTX5090/ \
+                            --study-path-corrected ./temp/pros_of_details/npx_synth3/study_ks4_10m_RTX5090/ \
                                 --extract-waveforms \
                                     --remove-bad-channels \
-                                        > out_ks4_synth_s3.log
+                                        > out_ks4_synth3.log
 """
 
 # import python packages
