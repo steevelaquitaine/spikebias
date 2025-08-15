@@ -19,7 +19,7 @@ dependencies:
     - neuron==8.2.7
     - numpy==1.23.4
     - pandas==2.3.1
-    - matplotlib=3.9.4
+    - matplotlib==3.9.4
     - scipy==1.13.1
     - seaborn==0.13.2
     - spikeinterface==0.100.5
