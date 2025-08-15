@@ -1,5 +1,3 @@
-
-
 import spikeinterface as si
 from spikeinterface import comparison
 import numpy as np
