@@ -1,4 +1,4 @@
-"""sort and post-process 10 min of spontaneous recording with Kilosort 4.0 with NVIDIA RTX 5090 GPU
+"""sort and post-process 10 min of mearec simulation synth5 with Kilosort 4.0 with NVIDIA RTX 5090 GPU
 
 author: laquitainesteeve@gmail.com
 
@@ -14,15 +14,15 @@ Usage:
         
     3. Run the script with appropriate command-line arguments.
 
-        nohup python -m src.pipes.sorting.npx_synth4.ks4 \
-            --recording-path dataset/00_raw/recording_synth4 \
-                --preprocess-path dataset/00_raw/recording_synth4 \
-                    --sorting-path-corrected ./temp/pros_of_details/npx_synth4/SortingKS4_10m_RTX5090 \
-                        --sorting-output-path-corrected ./temp/pros_of_details/npx_synth4/KS4_output_10m_RTX5090/ \
-                            --study-path-corrected ./temp/pros_of_details/npx_synth4/study_ks4_10m_RTX5090/ \
+        nohup python -m src.pipes.sorting.npx_synth5.ks4 \
+            --recording-path dataset/00_raw/recording_synth5 \
+                --preprocess-path dataset/00_raw/recording_synth5 \
+                    --sorting-path-corrected ./temp/pros_of_details/npx_synth5/SortingKS4_10m_RTX5090 \
+                        --sorting-output-path-corrected ./temp/pros_of_details/npx_synth5/KS4_output_10m_RTX5090/ \
+                            --study-path-corrected ./temp/pros_of_details/npx_synth5/study_ks4_10m_RTX5090/ \
                                 --extract-waveforms \
                                     --remove-bad-channels \
-                                        > out_ks4_synth4.log
+                                        > out_ks4_synth5.log
 """
 
 # import python packages

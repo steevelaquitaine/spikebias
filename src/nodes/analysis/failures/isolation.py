@@ -5,7 +5,7 @@ from src.nodes.validation.npx_probe import firing_rate as npx_fr
 from src.nodes.validation.dense_probe import firing_rate as dense_fr
 
 
-def plot_unit_isolation_pros_of_added_detailed(ax, exp1, exp2, exp3, exp4, exp5, exp6, 
+def plot_unit_isolation_pros_of_added_detailed(ax, exp1, exp2, exp3, exp4, exp5, exp6, exp7,
                                                legend_cfg: dict, number_pos: dict, exp_names: tuple):
     """stacked bar plot of the ratio of sorted single-units and multi-units
 
@@ -20,7 +20,7 @@ def plot_unit_isolation_pros_of_added_detailed(ax, exp1, exp2, exp3, exp4, exp5,
     """
     # plot
     ax = npx_fr.plot_single_unit_ratio_pros_of_added_details(ax, exp1, exp2, exp3, 
-                                                             exp4, exp5, exp6, legend_cfg, 
+                                                             exp4, exp5, exp6, exp7, legend_cfg, 
                                                              number_pos, exp_names)
 
     # esthetics

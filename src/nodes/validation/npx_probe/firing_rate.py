@@ -830,7 +830,7 @@ def plot_fr_std_stats_by_layer_vert(ax, df_nv, df_ns, df_ne, df_nb, layers, cl):
     return ax, plot_data
 
 
-def plot_single_unit_ratio_pros_of_added_details(ax, exp1, exp2, exp3, exp4, exp5, exp6,
+def plot_single_unit_ratio_pros_of_added_details(ax, exp1, exp2, exp3, exp4, exp5, exp6, exp7,
                                                  legend_cfg, number_pos: dict, 
                                                  exp_names=('exp1','exp2')):
     """plot the proportions of single and multi-units
@@ -852,6 +852,7 @@ def plot_single_unit_ratio_pros_of_added_details(ax, exp1, exp2, exp3, exp4, exp
     n_su_4 = sum(exp4["kslabel"] == "good")
     n_su_5 = sum(exp5["kslabel"] == "good")
     n_su_6 = sum(exp6["kslabel"] == "good")
+    n_su_7 = sum(exp7["kslabel"] == "good")
     
     # multi-unit count
     n_mu_1 = exp1.shape[0] - n_su_1
@@ -860,6 +861,7 @@ def plot_single_unit_ratio_pros_of_added_details(ax, exp1, exp2, exp3, exp4, exp
     n_mu_4 = exp4.shape[0] - n_su_4
     n_mu_5 = exp5.shape[0] - n_su_5
     n_mu_6 = exp6.shape[0] - n_su_6
+    n_mu_7 = exp7.shape[0] - n_su_7
 
     # build dataset
     df = pd.DataFrame()
@@ -879,6 +881,9 @@ def plot_single_unit_ratio_pros_of_added_details(ax, exp1, exp2, exp3, exp4, exp
     df[exp_names[5]] = (
         np.array([n_su_6, n_mu_6]) / exp6.shape[0]
     )            
+    df[exp_names[6]] = (
+        np.array([n_su_7, n_mu_7]) / exp7.shape[0]
+    )                
 
     # bar plot
     df.T.plot.bar(
@@ -978,6 +983,21 @@ def plot_single_unit_ratio_pros_of_added_details(ax, exp1, exp2, exp3, exp4, exp
         color="k",
         rotation=0,
     )    
+    # experiment 7
+    ax.annotate(
+        f"""{n_mu_7}""",
+        (number_pos['exp7_x'], number_pos['exp7_y_mu']),
+        ha="center",
+        color="w",
+        rotation=0,
+    )
+    ax.annotate(
+        f"""{n_su_7}""",
+        (number_pos['exp7_x'], number_pos['exp7_y_su']),
+        ha="center",
+        color="k",
+        rotation=0,
+    )        
     ax.legend(
         ["single-unit", "multi-unit"],
         loc="upper left",
