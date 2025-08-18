@@ -75,8 +75,8 @@ SORTER_PARAMS = {
     "nt0min": None,
     "dmin": None,
     "dminx": 25.6,
-    "min_template_size": 10,
-    "template_sizes": 5,
+    "min_template_size": 10, # um
+    "template_sizes": 5,     #  Number of sizes for universal spike templates (multiples of the min_template_size)
     "nearest_chans": 10,
     "nearest_templates": 100,
     "templates_from_data": True,
