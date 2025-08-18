@@ -34,6 +34,7 @@
         5
     ],
     "min_amp": 30,
+    "check_eap_shape": true,
     "n": 1500,
     "seed": 0,
     "drifting": false,
