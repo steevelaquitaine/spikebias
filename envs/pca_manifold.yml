@@ -1,0 +1,41 @@
+# Setup python virtual environment for cebra manifold analyses
+#
+# author: steeve.laquitaine@epfl.ch
+#
+# Duration: 5 min
+#
+# 4. Install Intel AI lab's manifold analysis library
+#
+#   cd /gpfs/bbp.cscs.ch/project/proj85/home/laquitai/spikebias/assets/
+#   git clone https://github.com/steevelaquitaine/neural_manifolds_replicaMFT_Cajal.git
+#   cd /neural_manifolds_replicaMFT_Cajal
+#   python -m pip install -e .
+
+# usage: 
+# 1. move to repo and create env with $ conda env create -f envs/pca_manifold.yml --prefix ./envs/pca_manifold
+# 2. activate env: $ conda activate ./envs/pca_manifold
+
+name: mearec
+channels:
+  - conda-forge
+dependencies:
+  - python=3.9.7
+  - pynwb=2.8.2
+  - ipykernel=6.29.5                   
+  - ipywidgets=8.0.6           # version important; or notebook and bluepy fail
+  - jupyter=1.0.0              # version important: or notebook and and bluepy fail
+  - ipython=8.18.1
+  - pip:
+    - pandas==1.3.4               # version important; bluepy fails with 1.5.3, works with 1.5.2
+    - pyyaml==6.0.2               # setup config
+    - scikit-learn==1.5.2         # machine learning
+    - networkx==3.2.1             # graph machine learning
+    - matplotlib==3.9.2           # plotting
+    - ipython-autotime==0.3.2     # time track colab notebook cells
+    - spikeinterface==0.100.5     # analysis and spike sorting of extracellular recordings
+    - cebra==0.4.0                # cebra 
+    - seaborn==0.13.2             # plotting
+    - numba==0.60.0               # parallel computing
+    - autograd==1.6.2             # calculation of information geometrics
+    - cvxopt==1.3.0               # calculation of information geometrics
+    - pymanopt==2.2.0             # calculation of information geometrics
