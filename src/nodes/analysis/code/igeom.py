@@ -1976,6 +1976,144 @@ def get_igeom_metrics_for_sorter_bootstrapped(sorter: str,
     print("Done bootstrapping.")
     return df
 
+
+def get_igeom_metrics_for_thresh_crossing_bootstrapped(
+                                   sorting_path: str,
+                                   stimulus_intervals_ms,
+                                   params: dict,
+                                   block=0,
+                                   n_boot=5):
+    """Calculate the information geometrics (manifold capacity, radius, 
+    direction dimensionality, centroid correlations, K)
+    for sorter "sorter", by bootstrapping the shuffled responses
+    to obtain a distribution of normalized capacity values.
+    
+    Note that the neural response capacity is the same value
+    over bootstraps. Only shuffled capacity changes.
+    
+    Args:
+        sorting_path (str): path of the SortingExtractor
+        
+        quality_path (str): path of the csv file containing sorted single units' 
+        - quality dataset
+        
+        stimulus_intervals_ms (_type_): _description_
+        
+        params (dict): _description_
+        
+        nb_units (int, optional): minimum number of units in condition
+        - for inclusion, 2 includes all with at least 2 units. capacity 
+        calculated from 1 unit.
+        meaningless
+        - Defaults to 0.
+        
+        sample_size (int): number of units to sample
+        
+        block (int): id of the run on the cluster. Each run 
+        - is launched on 7 nodes on the cluster (one per 
+        - spike sorter) and contains n_boot bootstrapped.
+        - the dataframe output of different runs can be 
+        concatenated to increase the bootstrapped sample size.
+
+    Returns:
+        pd.DataFrame: capacities for each boostrapped sample
+        by unit quality class (good and biased)
+    """
+    # create seeds for bootstrapping in this
+    # this run block
+    seeds = np.arange(0, n_boot, 1) + block * n_boot
+    
+    # preallocate dataset  
+    out_data = dict()
+    c_data = defaultdict(dict)
+    
+    # load pre-computed datasets
+    Sorting = si.load_extractor(sorting_path)
+    
+    # get all unit data because these sorters do not curate single-units
+    out_data = get_all_sorted_responses(Sorting, stimulus_intervals_ms)
+
+    c_data["unit_id"] = out_data["unit_ids"]
+    c_data["responses"] = out_data["responses"]
+        
+    # Calculate info geometrics ----------------------------------
+    
+    # preallocate datasets
+    igeom_data = dict()
+    df = pd.DataFrame()
+    df_c = pd.DataFrame()
+
+    # bootstrap to get different shuffled responses
+    # and a distribution of normalized capacity
+    # neural data capacity is identical for all bootstraps
+    # [TODO]: this can be sped up by calculating capacity
+    # once for the neural responses and for the
+    # shuffled responses in the bootstrapping loop
+    for boot in range(n_boot):
+        
+        # set a different seed for shuffling and 
+        # dimensionality reduction per bootstrap
+        params["seed_dim_red"] = seeds[boot]
+        params["seed_shuffling"] = seeds[boot]
+
+        # calculate information geometrics
+        try:
+            igeom_data[boot] = get_infogeometry_for_sorter(
+                c_data["responses"], **params
+            )
+        except:
+            igeom_data[boot]["data"] = None
+            igeom_data[boot]["shuffled"] = None
+        
+        # record the seed
+        igeom_data[boot]["seed"] = seeds[boot]
+        igeom_data[boot]["seed"] = seeds[boot]
+
+        # if metrics exists
+        if not igeom_data[boot]["data"] is None:
+            
+            # get data average capacity
+            data_cap = igeom_data[boot]["data"]["average_metrics"][
+                "capacity"
+            ]
+            
+            # get the shuffled response average capacity
+            shuffled_cap = igeom_data[boot]["shuffled"][
+                "average_metrics"
+            ]["capacity"]
+
+            # get geometrics
+            data_radius = igeom_data[boot]["data"]["average_metrics"][
+                "radius"
+            ]
+            data_dims = igeom_data[boot]["data"]["average_metrics"][
+                "dimensions"
+            ]
+            data_corr = igeom_data[boot]["data"]["average_metrics"][
+                "correlation"
+            ]
+            data_k = igeom_data[boot]["data"]["average_metrics"][
+                "K"
+            ]
+
+        # iteratively build the dataset
+        df_c["Capacity"] = [data_cap / shuffled_cap]
+        
+        # record geometrics
+        df_c["Radius"] = [data_radius]
+        df_c["Dimension"] = [data_dims]
+        df_c["Correlation"] = [data_corr]
+        df_c["K"] = [data_k]
+
+        # record metadata
+        df_c["Unit class"] = "sorted_unit"
+        df_c["Sorter"] = "thresh-crossing"
+        df_c["Sampling scheme"] = "None"
+        df = pd.concat([df, df_c])
+    print("Done bootstrapping.")
+    return df
+
+
 # By sampling bias nodes ---------------
 
 def get_igeom_metrics_bootstrapped_for_ground_truth(stimulus_intervals_ms, 

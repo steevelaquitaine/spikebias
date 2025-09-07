@@ -1,4 +1,4 @@
-# Setup python virtual environment for cebra manifold analyses
+# Setup python virtual environment for neural manifold analysis
 #
 # author: steeve.laquitaine@epfl.ch
 #
@@ -6,9 +6,9 @@
 #
 # 4. Install Intel AI lab's manifold analysis library
 #
-#   cd /gpfs/bbp.cscs.ch/project/proj85/home/laquitai/spikebias/assets/
+#   cd /home/steeve/steeve/epfl/code/spikebias/assets/
 #   git clone https://github.com/steevelaquitaine/neural_manifolds_replicaMFT_Cajal.git
-#   cd /neural_manifolds_replicaMFT_Cajal
+#   cd neural_manifolds_replicaMFT_Cajal
 #   python -m pip install -e .
 
 # usage: 
