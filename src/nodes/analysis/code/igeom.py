@@ -2030,6 +2030,11 @@ def get_igeom_metrics_for_thresh_crossing_bootstrapped(
     # load pre-computed datasets
     Sorting = si.load_extractor(sorting_path)
     
+    # curate spikes (sites) in cortex
+    is_in_ctx = Sorting.get_property('layer')!='Outside'
+    spikes_in_cortex = Sorting.unit_ids[is_in_ctx]
+    Sorting = Sorting.select_units(unit_ids=spikes_in_cortex)
+
     # get all unit data because these sorters do not curate single-units
     out_data = get_all_sorted_responses(Sorting, stimulus_intervals_ms)
 
