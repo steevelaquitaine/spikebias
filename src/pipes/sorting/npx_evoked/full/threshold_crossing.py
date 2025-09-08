@@ -31,6 +31,8 @@ from spikeinterface.sortingcomponents.peak_detection import detect_peaks
 
 REFERENCE = "global"       # common reference preprocessing
 OPERATOR = "median"        # common reference preprocessing
+DETECT_THRESH = 5          # peak detection threshold (times the noise (as mean absolute deviation))
+PEAK_SIGN = 'neg'          # peak to detect (trough)
 
 # set compute parameters
 job_kwargs = dict(chunk_duration='1s', n_jobs=8, progress_bar=True)
@@ -69,7 +71,7 @@ if __name__ == "__main__":
         recording=Recording,
         method='by_channel',
         peak_sign='neg',
-        detect_threshold=5,
+        detect_threshold=DETECT_THRESH,
         **job_kwargs,
     )
 
