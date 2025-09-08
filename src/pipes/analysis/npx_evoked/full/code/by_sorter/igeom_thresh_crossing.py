@@ -4,7 +4,8 @@ author: steeve.laquitaine@epfl.ch
 
 Usage:
 
-    nohup python3.9 -m src.pipes.analysis.npx_evoked.full.code.by_sorter.igeom_thresh_crossing > logs/igeom_thresh_crossing.log &
+    # 1. activate pca_manifold and 2. run:
+    nohup python3.9 -m src.pipes.analysis.npx_evoked.full.code.by_sorter.igeom_thresh_crossing > out_thresh_cross_igeom.log
 
 200 is the final used.
     * 200 boots -> 1h14
