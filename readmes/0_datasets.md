@@ -76,11 +76,13 @@ There are metadata describing each ground truth unit in the raw .nwb file not th
 
 ### Horvath et al., 
 
-Raw from https://doi.org/10.6084/m9.figshare.14555421: 
+Raw data were accessed here: https://gin.g-node.org/UlbertLab/High_Resolution_Cortical_Spikes/src/master/Rat01/Insertion1: 
 
 - horvath/Rat01/Insertion1/Depth1/Rat01_Insertion1_Depth1.nwb
 - horvath/Rat01/Insertion1/Depth1/Rat01_Insertion1_Depth2.nwb
 - horvath/Rat01/Insertion1/Depth1/Rat01_Insertion1_Depth3.nwb
+
+see paper https://doi.org/10.6084/m9.figshare.14555421
 
 ### Spontaneous biophysical simulation
 
