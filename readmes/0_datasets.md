@@ -76,8 +76,11 @@ There are metadata describing each ground truth unit in the raw .nwb file not th
 
 ### Horvath et al., 
 
-  - path: 
-  - size: 
+Raw from https://doi.org/10.6084/m9.figshare.14555421: 
+
+- horvath/Rat01/Insertion1/Depth1/Rat01_Insertion1_Depth1.nwb
+- horvath/Rat01/Insertion1/Depth1/Rat01_Insertion1_Depth2.nwb
+- horvath/Rat01/Insertion1/Depth1/Rat01_Insertion1_Depth3.nwb
 
 ### Spontaneous biophysical simulation
 
