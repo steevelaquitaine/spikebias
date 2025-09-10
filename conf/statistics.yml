@@ -7,7 +7,7 @@ fig2m_data_peak_amplitudes_npx: "/gpfs/bbp.cscs.ch/project/proj85/laquitai/spike
 fig2n_data_noise_npx: "/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/statistics/fig2n_data_noise_npx.parquet"
 
 # statistics (kruskal-Wallis and Mann-Whitney U test) dense probe peak amplitudes
-fig2o_data_peak_amplitudes_dense: "/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/statistics/fig2o_data_peak_amplitudes_dense.parquet"
+fig2o_data_peak_amplitudes_dense: "./dataset/01_intermediate/statistics/fig2o_data_peak_amplitudes_dense.parquet"
 
 # statistics (kruskal-Wallis and Mann-Whitney U test) dense probe peak amplitudes
 fig2p_data_noise_dense: "/gpfs/bbp.cscs.ch/project/proj85/laquitai/spikebias_paper/statistics/fig2p_data_noise_dense.parquet"
