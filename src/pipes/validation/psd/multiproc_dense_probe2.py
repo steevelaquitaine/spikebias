@@ -1,17 +1,20 @@
-"""Computs power spectral densities of dense probe 2
+"""Computes power spectral densities of biophysically-simulated dense 
+recording at depth 2
 
 Uses multiprocessing on a single machine to speed up 
 the computation
 
 Usage:
 
+    conda activate envs/spikebias
     python src/pipes/validation/psd/multiproc_dense_probe2.py
 
 Returns:
     (.npy): writes power spectral densities
 
-Execution time: 5 mins
+Execution time: 1 min
 
+Tested on Ubuntu 24.04.1 LTS (32 cores, 188 GB RAM, Intel(R) Core(TM) i9-14900K ＠3.2 GHz/5.8 GHz)
 """
 
 import warnings
@@ -49,10 +52,11 @@ logger = logging.getLogger("root")
 RAW_PATH = os.path.join(PROJ_PATH, "dataset/00_raw/recording_dense_probe2/")
 
 # setup save paths
-RAW_PSD_PATH = os.path.join(PROJ_PATH, "dataset/01_intermediate/psd_raw_dense_probe2.npy")
+RAW_PSD_PATH = os.path.join(PROJ_PATH, "dataset/01_intermediate/psds/psd_raw_dense_probe2.npy")
 
 # SETUP PARAMETERS
-SF = 20000
+SF = 20000         # voltage trace sampling frequency
+GAIN_TO_UV = 0.195 # gain to uV conversion gain
 
 # SETUP WELCH PSD PARAMETERS *******************
 FILT_WINDOW = "hann"
@@ -132,18 +136,26 @@ def main():
 
     logger.info(f"Started pipeline")
 
-    # compress from floats to integers
+    # load
     Raw = si.load_extractor(RAW_PATH)
+
+    # convert to uV (consistently with Horvath 2021)
+    Raw.set_channel_gains(GAIN_TO_UV)
+
+    # compress from floats to integers
     Raw = spre.astype(Raw, "int16")
-    logger.info("Compressed traces")
+    logger.info("Converted to uV and compressed traces")
 
     # select sites in cortex
     layers = ["L4", "L5"]
     sites = Raw.get_property("layers")
     sites = np.where(np.isin(sites, layers))[0]
-    
+
+    # get traces
+    traces_uV = Raw.get_traces(return_scaled=True)
+
     #- Remove DC component by subtracting the mean
-    raw_traces = demean(Raw.get_traces()[:, sites])
+    raw_traces = demean(traces_uV[:, sites])
     logger.info("Detrended")
 
     # compute psd

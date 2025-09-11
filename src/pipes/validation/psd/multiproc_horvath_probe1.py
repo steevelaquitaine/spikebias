@@ -1,18 +1,23 @@
-"""Computes power spectral densities of the entire
-recordings for the Horvath dense probe at depth 1
+"""Computes power spectral densities of Horvath dense 
+recording at depth 1
 
 Uses multiprocessing on a single machine to speed up 
 the computation
 
 Usage:
 
+    conda activate envs/spikebias
     python src/pipes/validation/psd/multiproc_horvath_probe1.py
 
 Returns:
     (.npy): writes power spectral densities
 
-Execution time: 5 mins
+Execution time: 1 min
 
+Requires:
+- >120 GB RAM
+
+Tested on Ubuntu 24.04.1 LTS (32 cores, 188 GB RAM, Intel(R) Core(TM) i9-14900K ＠3.2 GHz/5.8 GHz)
 """
 
 import warnings
@@ -50,10 +55,11 @@ logger = logging.getLogger("root")
 RAW_PATH = os.path.join(PROJ_PATH, "dataset/00_raw/recording_horvath_probe1/")
 
 # setup save paths
-RAW_PSD_PATH = os.path.join(PROJ_PATH, "dataset/01_intermediate/psd_raw_horvath_probe1.npy")
+RAW_PSD_PATH = os.path.join(PROJ_PATH, "dataset/01_intermediate/psds/psd_raw_horvath_probe1.npy")
 
 # SETUP PARAMETERS
-SF = 20000
+SF = 20000         # voltage trace sampling frequency
+GAIN_TO_UV = 0.195 # gain to uV conversion gain
 
 # SETUP WELCH PSD PARAMETERS *******************
 FILT_WINDOW = "hann"
@@ -131,12 +137,19 @@ def main():
     
     # Load datasets
     t0 = time.time()
-    logger.info(f"Started pipeline..")
-    
-    # compress from floats to integers    
+
+    logger.info(f"Started pipeline")
+
+    # load
     Raw = si.load_extractor(RAW_PATH)
+    logger.info(f"Recording info: {Raw}")
+
+    # convert to uV (consistently with Horvath 2021)
+    Raw.set_channel_gains(GAIN_TO_UV)
+
+    # compress from floats to integers
     Raw = spre.astype(Raw, "int16")
-    logger.info(f"Loaded and compressed traces.")
+    logger.info("Converted to uV and compressed traces")
 
     # select sites in cortex
     layers = ["L1", "L2_3"]
@@ -146,9 +159,12 @@ def main():
     ]
     sites = np.where(np.isin(sites, layers))[0]
 
+    # get traces
+    traces_uV = Raw.get_traces(return_scaled=True)
+
     #- Remove DC component by subtracting the mean
-    raw_traces = demean(Raw.get_traces()[:, sites])
-    logger.info(f"Detrended traces.")
+    raw_traces = demean(traces_uV[:, sites])
+    logger.info("Detrended")
 
     # compute psd
     out_raw = get_welch_psd_parallelized(raw_traces)
@@ -156,7 +172,7 @@ def main():
     
     # save
     save_psd(out_raw, RAW_PSD_PATH)
-    logger.info(f"Completed on rank in {np.round(time.time()-t0,2)} secs")
+    logger.info(f"Completed in {np.round(time.time()-t0,2)} secs")
 
 
 if __name__== "__main__":
