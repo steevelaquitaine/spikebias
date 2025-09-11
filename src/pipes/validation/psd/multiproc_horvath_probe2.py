@@ -1,4 +1,3 @@
-
 """Computes power spectral densities of Horvath dense 
 recording at depth 2
 
@@ -13,7 +12,7 @@ Usage:
 Returns:
     (.npy): writes power spectral densities
 
-Execution time: 1 min
+Execution time: 3 mins
 
 Requires:
 - >120 GB RAM
@@ -151,22 +150,22 @@ def main():
     logger.info("Converted to uV and compressed traces")
 
     layers = ["L4", "L5"]
-    sites_hv2 = Raw.get_property("layers")
-    sites_hv2 = np.where(np.isin(sites_hv2, layers))[0]
+    sites = Raw.get_property("layers")
+    sites = np.where(np.isin(sites, layers))[0]
 
     # get traces
     traces_uV = Raw.get_traces(return_scaled=True)
 
     # Remove DC component by subtracting the mean
-    raw_traces_hv2 = demean(traces_uV[:, sites_hv2])
+    raw_traces = demean(traces_uV[:, sites])
     logger.info(f"Detrended traces.")
 
     # compute psd
-    out_raw_hv2 = get_welch_psd_hv_parallelized(raw_traces_hv2)
+    out_raw = get_welch_psd_hv_parallelized(raw_traces)
     logger.info(f"Calculated PSDs.")
 
     # save
-    save_psd(out_raw_hv2, RAW_PSD_PATH)
+    save_psd(out_raw, RAW_PSD_PATH)
     logger.info(f"Completed in {np.round(time.time()-t0,2)} secs")
 
 # run
