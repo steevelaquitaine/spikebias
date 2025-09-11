@@ -3,8 +3,11 @@ dataset.zip
 dataset/00_raw/*
 dataset/01_intermediate/*
 
-# keep computed psds
-!data/01_intermediate/psds/**
+# intermediate datasets  --------------------------
+# - keep computed psds
+!dataset/01_intermediate/psds/
+!dataset/01_intermediate/psds/**
+dataset/01_intermediate/psds/old/
 
 # demo
 notebooks/0_demo/demo_recording

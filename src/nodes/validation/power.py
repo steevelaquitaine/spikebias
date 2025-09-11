@@ -1108,6 +1108,45 @@ def get_psd_data_prepro(layer, hv, hs, nv, ns, ne, sites_hv, sites_hs, sites_nv,
     return d
 
 
+def get_psd_data_prepro_dense(layer, hv, hs, sites_hv, sites_hs, norm=True):
+    
+    # return data structure
+    d = dict()
+    
+    # horvath vivo (probe 1)
+    d["psd_pre_hv_"] = copy.copy(hv)
+    d["psd_pre_hv_"]["power"] = hv["power"][sites_hv == layer, :]
+
+    # biophy
+    d["psd_pre_hs_"] = copy.copy(hs)
+    d["psd_pre_hs_"]["power"] = hs["power"][sites_hs == layer, :]
+
+    # (11s) Divide by total power ***********************
+    if norm:
+        d["psd_pre_hv_"]["power"] /= d["psd_pre_hv_"]["power"].sum(axis=1)[:, None]
+        d["psd_pre_hs_"]["power"] /= d["psd_pre_hs_"]["power"].sum(axis=1)[:, None]
+
+    # (11s) Median over sites ***********************
+
+    # horvath
+    # in vivo
+    d["mean_hv"] = np.median(d["psd_pre_hv_"]["power"], axis=0)
+    # biophy
+    d["mean_hs"] = np.median(d["psd_pre_hs_"]["power"], axis=0)
+
+    # Calculate 95% confidence intervals  ******************
+
+    # horvath
+    # vivo
+    n_samples = d["psd_pre_hv_"]["power"].shape[0]
+    d["ci_hv"] = 1.96 * np.std(d["psd_pre_hv_"]["power"], axis=0) / np.sqrt(n_samples)
+
+    # biophy.
+    n_samples = d["psd_pre_hs_"]["power"].shape[0]
+    d["ci_hs"] = 1.96 * np.std(d["psd_pre_hs_"]["power"], axis=0) / np.sqrt(n_samples)
+    return d
+
+
 def get_psd_data_prepro_demo(layer, ns, ne, sites_ns, sites_ne, norm=True):
     
     # return data structure
@@ -1220,6 +1259,45 @@ def get_psd_data_prepro_layer_5(layer, hv, hs, nv, ns, ne, nb, sites_hv, sites_h
     # synthetic Buccino
     n_samples = d["psd_pre_nb_"]["power"].shape[0]
     d["ci_nb"] = 1.96 * np.std(d["psd_pre_nb_"]["power"], axis=0) / np.sqrt(n_samples)
+    return d
+
+
+def get_psd_data_prepro_dense_layer_5(layer, hv, hs, sites_hv, sites_hs, norm=True):
+
+    # return data structure
+    d = dict()
+    
+    # horvath vivo (probe 1)
+    d["psd_pre_hv_"] = copy.copy(hv)
+    d["psd_pre_hv_"]["power"] = hv["power"][sites_hv == layer, :]
+
+    # biophy
+    d["psd_pre_hs_"] = copy.copy(hs)
+    d["psd_pre_hs_"]["power"] = hs["power"][sites_hs == layer, :]
+
+    # (11s) Divide by total power ***********************
+    if norm:
+        d["psd_pre_hv_"]["power"] /= d["psd_pre_hv_"]["power"].sum(axis=1)[:, None]
+        d["psd_pre_hs_"]["power"] /= d["psd_pre_hs_"]["power"].sum(axis=1)[:, None]
+
+    # (11s) Average over sites ***********************
+
+    # horvath
+    # in vivo
+    d["mean_hv"] = np.mean(d["psd_pre_hv_"]["power"], axis=0)
+    # biophy
+    d["mean_hs"] = np.mean(d["psd_pre_hs_"]["power"], axis=0)
+
+    # Calculate 95% confidence intervals  ******************
+
+    # horvath
+    # vivo
+    n_samples = d["psd_pre_hv_"]["power"].shape[0]
+    d["ci_hv"] = 1.96 * np.std(d["psd_pre_hv_"]["power"], axis=0) / np.sqrt(n_samples)
+
+    # biophy.
+    n_samples = d["psd_pre_hs_"]["power"].shape[0]
+    d["ci_hs"] = 1.96 * np.std(d["psd_pre_hs_"]["power"], axis=0) / np.sqrt(n_samples)
     return d
 
 
