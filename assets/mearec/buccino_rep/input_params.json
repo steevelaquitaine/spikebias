@@ -86,12 +86,13 @@
         "color_peak": 300,
         "color_q": 2,
         "color_noise_floor": 1,
-        "filter": true,
+        "filter": false,
         "filter_cutoff": [
             300,
             6000
         ],
         "filter_order": 3,
+        "filter_mode": "filtfilt",
         "drifting": false,
         "n_drifting": null,
         "preferred_dir": [
@@ -104,6 +105,10 @@
         "drift_mode_probe": "rigid",
         "drift_fs": 100,
         "non_rigid_gradient_mode": "linear",
+        "non_rigid_linear_min_factor": 0.5,
+        "non_rigid_linear_direction": 1,
+        "non_rigid_step_depth_boundary": null,
+        "non_rigid_step_factors": null,
         "slow_drift_velocity": 5,
         "slow_drift_amplitude": null,
         "slow_drift_waveform": "triangluar",
