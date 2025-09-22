@@ -212,9 +212,9 @@ if __name__ == "__main__":
     parser.add_argument("--recording-path", default= './dataset/00_raw/recording_dense_probe1', help="recording path.")
     parser.add_argument("--save-path", default='./dataset/01_intermediate/psds/psd_prep_dense_probe1.npy', help="psd save path")
     parser.add_argument("--preprocess", type=bool, default=False, help="apply highpass filtering and common referencing")
-    parser.add_argument("--duration", type=int, default=2400, help="recording duration in seconds for preprocessing")
+    parser.add_argument("--duration", type=int, default=3600, help="max recording duration in seconds for preprocessing (cheaper)")
     parser.add_argument("--freq-min", type=int, default=300, help="high pass filter cutoff")
-    parser.add_argument("--layers", nargs='+', help="list of layers to analyse")
+    parser.add_argument("--layers", nargs='+', help="list of layers to analyse")    
     args = parser.parse_args()
 
     # report parameters for visual check
@@ -239,7 +239,8 @@ if __name__ == "__main__":
 
     # preprocess
     if args.preprocess:
-        Recording = Recording.frame_slice(0, Recording.get_sampling_frequency() * args.duration)
+        if args.duration < Recording.get_total_duration():
+            Recording = Recording.frame_slice(0, Recording.get_sampling_frequency() * args.duration)
         Recording = spre.highpass_filter(Recording, freq_min=args.freq_min)
         Recording = spre.common_reference(Recording, reference="global", operator="median")
         logger.info(f"Recording for preprocessing: {Recording}")

@@ -853,8 +853,13 @@ def get_log_freq_and_powers(out_raw_vivo: dict):
     return log_powers, log_freq
 
 
-def plot_fits_all(axis, psd:dict, sf:int, color_hv:tuple, pm: dict, pm_fit_lfp:dict, pm_fit_spiking:dict):
-    """_summary_
+def plot_fits_all(axis, psd:dict, sf:int, color_hv:tuple, 
+                  pm: dict, pm_fit_lfp:dict, pm_fit_spiking:dict,
+                  lfp_band=(0, 90),
+                  spiking_band=(300, 6000), 
+                  plot_spiking_slope=True):
+    """fit power laws to low and high frequency bands of the voltage 
+    traces
 
     Two bands:
         lfp band: 0 - 90 Hz
@@ -876,22 +881,23 @@ def plot_fits_all(axis, psd:dict, sf:int, color_hv:tuple, pm: dict, pm_fit_lfp:d
     )
 
     # plot fit LFP band (0 - 90 Hz)
-    alpha_lfp, _, log_freq, interc = eval_freq_scaling(psd, freq_range=(0, 90))
+    alpha_lfp, _, log_freq, interc = eval_freq_scaling(psd, freq_range=lfp_band)
     axis.plot(
         10**log_freq,
         10 ** (log_freq * np.mean(alpha_lfp) + np.mean(interc)),
         **pm_fit_lfp,
     )
 
-    # plot fit spiking band (300 Hz - 6000 Hz (Nyquist))
+    # plot fit spiking band (e.g., 300 Hz - 6000 Hz)
     alpha_spiking, _, log_freq, interc = eval_freq_scaling(
-        psd, freq_range=(300, 6000)
+        psd, freq_range=spiking_band
     )
-    axis.plot(
-        10**log_freq,
-        10 ** (log_freq * np.mean(alpha_spiking) + np.mean(interc)),
-        **pm_fit_spiking
-    )
+    if plot_spiking_slope:
+        axis.plot(
+            10**log_freq,
+            10 ** (log_freq * np.mean(alpha_spiking) + np.mean(interc)),
+            **pm_fit_spiking
+        )
     return axis, alpha_lfp, alpha_spiking
 
 
@@ -1108,6 +1114,53 @@ def get_psd_data_prepro(layer, hv, hs, nv, ns, ne, sites_hv, sites_hs, sites_nv,
     return d
 
 
+def get_psd_data_prepro_npx(layer, nv, ns, ne, sites_nv, sites_ns, sites_ne, norm=True):
+    
+    # return data structure
+    d = dict()
+    
+    # neuropixels
+    # vivo
+    d["psd_pre_nv_"] = copy.copy(nv)
+    d["psd_pre_nv_"]["power"] = nv["power"][sites_nv == layer, :]
+
+    # biophy spont
+    d["psd_pre_ns_"] = copy.copy(ns)
+    d["psd_pre_ns_"]["power"] = ns["power"][sites_ns == layer, :]
+
+    # biophy evoked
+    d["psd_pre_ne_"] = copy.copy(ne)
+    d["psd_pre_ne_"]["power"] = ne["power"][sites_ne == layer, :]
+
+    # (11s) Divide by total power ***********************
+    if norm:
+        d["psd_pre_nv_"]["power"] /= d["psd_pre_nv_"]["power"].sum(axis=1)[:, None]
+        d["psd_pre_ns_"]["power"] /= d["psd_pre_ns_"]["power"].sum(axis=1)[:, None]
+        d["psd_pre_ne_"]["power"] /= d["psd_pre_ne_"]["power"].sum(axis=1)[:, None]
+
+    # (11s) Median over sites ***********************
+
+    # neuropixels
+    # pre
+    d["mean_nv"] = np.median(d["psd_pre_nv_"]["power"], axis=0)
+    d["mean_ns"] = np.median(d["psd_pre_ns_"]["power"], axis=0)
+    d["mean_ne"] = np.median(d["psd_pre_ne_"]["power"], axis=0)
+
+    # Calculate 95% confidence intervals  ******************
+
+    # neuropixels
+    # vivo
+    n_samples = d["psd_pre_nv_"]["power"].shape[0]
+    d["ci_nv"] = 1.96 * np.std(d["psd_pre_nv_"]["power"], axis=0) / np.sqrt(n_samples)
+    # biophy. spont.
+    n_samples = d["psd_pre_ns_"]["power"].shape[0]
+    d["ci_ns"] = 1.96 * np.std(d["psd_pre_ns_"]["power"], axis=0) / np.sqrt(n_samples)
+    # biophy. evoked
+    n_samples = d["psd_pre_ne_"]["power"].shape[0]
+    d["ci_ne"] = 1.96 * np.std(d["psd_pre_ne_"]["power"], axis=0) / np.sqrt(n_samples)
+    return d
+
+
 def get_psd_data_prepro_dense(layer, hv, hs, sites_hv, sites_hs, norm=True):
     
     # return data structure
@@ -1301,6 +1354,64 @@ def get_psd_data_prepro_dense_layer_5(layer, hv, hs, sites_hv, sites_hs, norm=Tr
     return d
 
 
+
+def get_psd_data_prepro_npx_layer_5(layer, nv, ns, ne, nb, sites_nv, sites_ns, sites_ne, norm=True):
+
+    # return data structure
+    d = dict()
+    
+    # neuropixels
+    # vivo
+    d["psd_pre_nv_"] = copy.copy(nv)
+    d["psd_pre_nv_"]["power"] = nv["power"][sites_nv == layer, :]
+
+    # biophy spont
+    d["psd_pre_ns_"] = copy.copy(ns)
+    d["psd_pre_ns_"]["power"] = ns["power"][sites_ns == layer, :]
+
+    # biophy evoked
+    d["psd_pre_ne_"] = copy.copy(ne)
+    d["psd_pre_ne_"]["power"] = ne["power"][sites_ne == layer, :]
+
+    # synthetic buccino
+    d["psd_pre_nb_"] = copy.copy(ne)
+    d["psd_pre_nb_"]["power"] = nb["power"]
+    
+    # (11s) Divide by total power ***********************
+    if norm:
+        d["psd_pre_nv_"]["power"] /= d["psd_pre_nv_"]["power"].sum(axis=1)[:, None]
+        d["psd_pre_ns_"]["power"] /= d["psd_pre_ns_"]["power"].sum(axis=1)[:, None]
+        d["psd_pre_ne_"]["power"] /= d["psd_pre_ne_"]["power"].sum(axis=1)[:, None]
+        d["psd_pre_nb_"]["power"] /= d["psd_pre_nb_"]["power"].sum(axis=1)[:, None]
+
+    # (11s) Average over sites ***********************
+
+    # neuropixels
+    # pre
+    d["mean_nv"] = np.mean(d["psd_pre_nv_"]["power"], axis=0)
+    d["mean_ns"] = np.mean(d["psd_pre_ns_"]["power"], axis=0)
+    d["mean_ne"] = np.mean(d["psd_pre_ne_"]["power"], axis=0)
+    d["mean_nb"] = np.mean(d["psd_pre_nb_"]["power"], axis=0)
+
+    # Calculate 95% confidence intervals  ******************
+
+    # neuropixels
+    # vivo
+    n_samples = d["psd_pre_nv_"]["power"].shape[0]
+    d["ci_nv"] = 1.96 * np.std(d["psd_pre_nv_"]["power"], axis=0) / np.sqrt(n_samples)
+    # biophy. spont.
+    n_samples = d["psd_pre_ns_"]["power"].shape[0]
+    d["ci_ns"] = 1.96 * np.std(d["psd_pre_ns_"]["power"], axis=0) / np.sqrt(n_samples)
+    # biophy. evoked
+    n_samples = d["psd_pre_ne_"]["power"].shape[0]
+    d["ci_ne"] = 1.96 * np.std(d["psd_pre_ne_"]["power"], axis=0) / np.sqrt(n_samples)
+    # synthetic Buccino
+    n_samples = d["psd_pre_nb_"]["power"].shape[0]
+    d["ci_nb"] = 1.96 * np.std(d["psd_pre_nb_"]["power"], axis=0) / np.sqrt(n_samples)
+    return d
+
+
+
 def get_psd_data_prepro_layer_5_demo(layer, ns, ne, sites_ns, sites_ne, norm=True):
 
     # return data structure
@@ -1336,8 +1447,10 @@ def get_psd_data_prepro_layer_5_demo(layer, ns, ne, sites_ns, sites_ne, norm=Tru
     return d
 
 
-def plot_power_law_fits(ax, d, prms, cl, pm, pm_fit1, pm_fit2):
-    """_summary_
+def plot_power_law_fits(ax, d, prms, cl, pm, pm_fit1, pm_fit2, 
+                        lfp_band=(0,90), spiking_band=(300, 6000)):
+    """plot power law fit to low and high frequency bands of the 
+    voltage trace
 
     Args:
         ax (axis): _description_
@@ -1357,19 +1470,24 @@ def plot_power_law_fits(ax, d, prms, cl, pm, pm_fit1, pm_fit2):
     # Fitting ************************************************************
 
     ax, dd["alphas_lfp_hv"], dd["alphas_spiking_hv"] = plot_fits_all(
-        ax, d["psd_pre_hv_"], prms["SFREQ_HV"], cl["COLOR_HV"], pm, pm_fit1, pm_fit2
+        ax, d["psd_pre_hv_"], prms["SFREQ_HV"], cl["COLOR_HV"], pm, pm_fit1, pm_fit2,
+        lfp_band=lfp_band, spiking_band=spiking_band
     )
     ax, dd["alphas_lfp_nv"], dd["alphas_spiking_nv"] = plot_fits_all(
-        ax, d["psd_pre_nv_"], prms["SFREQ_NV"], cl["COLOR_NV"], pm, pm_fit1, pm_fit2
+        ax, d["psd_pre_nv_"], prms["SFREQ_NV"], cl["COLOR_NV"], pm, pm_fit1, pm_fit2,
+        lfp_band=lfp_band, spiking_band=spiking_band
     )
     ax, dd["alphas_lfp_ns"], dd["alphas_spiking_ns"] = plot_fits_all(
-        ax, d["psd_pre_ns_"], prms["SFREQ_NS"], cl["COLOR_NS"], pm, pm_fit1, pm_fit2
+        ax, d["psd_pre_ns_"], prms["SFREQ_NS"], cl["COLOR_NS"], pm, pm_fit1, pm_fit2,
+        lfp_band=lfp_band, spiking_band=spiking_band
     )
     ax, dd["alphas_lfp_ne"], dd["alphas_spiking_ne"] = plot_fits_all(
-        ax, d["psd_pre_ne_"], prms["SFREQ_NE"], cl["COLOR_NE"], pm, pm_fit1, pm_fit2
+        ax, d["psd_pre_ne_"], prms["SFREQ_NE"], cl["COLOR_NE"], pm, pm_fit1, pm_fit2,
+        lfp_band=lfp_band, spiking_band=spiking_band
     )
     ax, dd["alphas_lfp_hs"], dd["alphas_spiking_hs"] = plot_fits_all(
-        ax, d["psd_pre_hs_"], prms["SFREQ_HS"], cl["COLOR_HS"], pm, pm_fit1, pm_fit2
+        ax, d["psd_pre_hs_"], prms["SFREQ_HS"], cl["COLOR_HS"], pm, pm_fit1, pm_fit2,
+        lfp_band=lfp_band, spiking_band=spiking_band
     )
     
     # axes legend
@@ -1429,6 +1547,184 @@ def plot_power_law_fits(ax, d, prms, cl, pm, pm_fit1, pm_fit2):
     )
     print(
         f"""hs: \u03B1={np.round(np.mean(dd["alphas_spiking_hs"]),1)}\u00B1{np.round(np.std(dd["alphas_spiking_hs"]),1)}"""
+    )
+
+    # Power SNR **************************
+
+    # print("\nPower SNR")
+
+    # o_hv_l1 = get_power_snr(
+    #     d["psd_pre_hv_"]["power"], d["psd_pre_hv_"]["freq"], 300, 6000, 90
+    # )
+    # o_nv_l1 = get_power_snr(
+    #     d["psd_pre_nv_"]["power"], d["psd_pre_nv_"]["freq"], 300, 6000, 90
+    # )
+    # o_ns_l1 = get_power_snr(
+    #     d["psd_pre_ns_"]["power"], d["psd_pre_ns_"]["freq"], 300, 6000, 90
+    # )
+    # o_ne_l1 = get_power_snr(
+    #     d["psd_pre_ne_"]["power"], d["psd_pre_ne_"]["freq"], 300, 6000, 90
+    # )
+    # o_hs_l1 = get_power_snr(
+    #     d["psd_pre_hs_"]["power"], d["psd_pre_hs_"]["freq"], 300, 6000, 90
+    # )
+    return ax, dd
+
+
+def plot_power_law_fits_dense(ax, d, prms, cl, pm, pm_fit1, pm_fit2,
+                              lfp_band=(0,90), spiking_band=(300, 6000)):
+    """_summary_
+
+    Args:
+        ax (axis): _description_
+        d (dict): power spectral density data dictionary
+        prms (dict): experiment frequencies
+        cl (dict): experiment colors
+        pm (dict): _description_
+        pm_fit1 (dict): _description_
+        pm_fit2 (dict): _description_
+
+    Returns:
+        _type_: _description_
+    """
+    # return data structure
+    dd = dict()
+    
+    # Fitting ************************************************************
+
+    ax, dd["alphas_lfp_hv"], dd["alphas_spiking_hv"] = plot_fits_all(
+        ax, d["psd_pre_hv_"], prms["SFREQ_HV"], cl["COLOR_HV"], pm, pm_fit1, pm_fit2,
+        lfp_band=lfp_band, spiking_band=spiking_band
+    )
+    ax, dd["alphas_lfp_hs"], dd["alphas_spiking_hs"] = plot_fits_all(
+        ax, d["psd_pre_hs_"], prms["SFREQ_HS"], cl["COLOR_HS"], pm, pm_fit1, pm_fit2,
+        lfp_band=lfp_band, spiking_band=spiking_band
+    )
+    
+    # axes legend
+    # esthetics
+    ax.set_xscale("log")
+    ax.set_yscale("log")
+    # minor ticks
+    locmaj = matplotlib.ticker.LogLocator(base=10, numticks=5)
+    locmin = matplotlib.ticker.LogLocator(
+        base=10.0,
+        subs=(0.2, 0.4, 0.6, 0.8),
+        numticks=5,
+    )
+    ax.tick_params(which="both")
+    ax.xaxis.set_major_locator(locmaj)
+    ax.xaxis.set_minor_locator(locmin)
+    ax.xaxis.set_minor_formatter(matplotlib.ticker.NullFormatter())
+    ax.spines[["top", "right"]].set_visible(False)
+    ax.legend("", frameon=False)
+    # disconnect axes (R style)
+    ax.spines["bottom"].set_position(("axes", -0.05))
+    ax.yaxis.set_ticks_position("left")
+    ax.spines["left"].set_position(("axes", -0.05))
+
+    # report slopes
+    # lfp band
+    print("\nLFP band")
+    print(
+        f"""hv: \u03B1={np.round(np.mean(dd["alphas_lfp_hv"]),1)}\u00B1{np.round(np.std(dd["alphas_lfp_hv"]),1)}"""
+    )
+    print(
+        f"""hs: \u03B1={np.round(np.mean(dd["alphas_lfp_hs"]),1)}\u00B1{np.round(np.std(dd["alphas_lfp_hs"]),1)}"""
+    )
+
+    # spiking band
+    print("\nSpiking band")
+    print(
+        f"""hv: \u03B1={np.round(np.mean(dd["alphas_spiking_hv"]),1)}\u00B1{np.round(np.std(dd["alphas_spiking_hv"]),1)}"""
+    )
+    print(
+        f"""hs: \u03B1={np.round(np.mean(dd["alphas_spiking_hs"]),1)}\u00B1{np.round(np.std(dd["alphas_spiking_hs"]),1)}"""
+    )
+    return ax, dd
+
+
+
+def plot_power_law_fits_npx(ax, d, prms, cl, pm, pm_fit1, pm_fit2, 
+                        lfp_band=(0,90), spiking_band=(300, 6000)):
+    """plot power law fit to low and high frequency bands of the 
+    voltage trace
+
+    Args:
+        ax (axis): _description_
+        d (dict): power spectral density data dictionary
+        prms (dict): experiment frequencies
+        cl (dict): experiment colors
+        pm (dict): _description_
+        pm_fit1 (dict): _description_
+        pm_fit2 (dict): _description_
+
+    Returns:
+        _type_: _description_
+    """
+    # return data structure
+    dd = dict()
+    
+    # Fitting ************************************************************
+
+    ax, dd["alphas_lfp_nv"], dd["alphas_spiking_nv"] = plot_fits_all(
+        ax, d["psd_pre_nv_"], prms["SFREQ_NV"], cl["COLOR_NV"], pm, pm_fit1, pm_fit2,
+        lfp_band=lfp_band, spiking_band=spiking_band
+    )
+    ax, dd["alphas_lfp_ns"], dd["alphas_spiking_ns"] = plot_fits_all(
+        ax, d["psd_pre_ns_"], prms["SFREQ_NS"], cl["COLOR_NS"], pm, pm_fit1, pm_fit2,
+        lfp_band=lfp_band, spiking_band=spiking_band
+    )
+    ax, dd["alphas_lfp_ne"], dd["alphas_spiking_ne"] = plot_fits_all(
+        ax, d["psd_pre_ne_"], prms["SFREQ_NE"], cl["COLOR_NE"], pm, pm_fit1, pm_fit2,
+        lfp_band=lfp_band, spiking_band=spiking_band
+    )
+
+    # axes legend
+    # esthetics
+    ax.set_xscale("log")
+    ax.set_yscale("log")
+    # minor ticks
+    locmaj = matplotlib.ticker.LogLocator(base=10, numticks=5)
+    locmin = matplotlib.ticker.LogLocator(
+        base=10.0,
+        subs=(0.2, 0.4, 0.6, 0.8),
+        numticks=5,
+    )
+    ax.tick_params(which="both")
+    ax.xaxis.set_major_locator(locmaj)
+    ax.xaxis.set_minor_locator(locmin)
+    ax.xaxis.set_minor_formatter(matplotlib.ticker.NullFormatter())
+    ax.spines[["top", "right"]].set_visible(False)
+    ax.legend("", frameon=False)
+    # disconnect axes (R style)
+    ax.spines["bottom"].set_position(("axes", -0.05))
+    ax.yaxis.set_ticks_position("left")
+    ax.spines["left"].set_position(("axes", -0.05))
+
+    # report slopes
+    # lfp band
+    print("\nLFP band")
+    print(    
+        f"""nv: \u03B1={np.round(np.mean(dd["alphas_lfp_nv"]),1)}\u00B1{np.round(np.std(dd["alphas_lfp_nv"]),1)}"""
+    )
+    print(
+        f"""ns: \u03B1={np.round(np.mean(dd["alphas_lfp_ns"]),1)}\u00B1{np.round(np.std(dd["alphas_lfp_ns"]),1)}"""
+    )
+    print(
+        f"""ne: \u03B1={np.round(np.mean(dd["alphas_lfp_ne"]),1)}\u00B1{np.round(np.std(dd["alphas_lfp_ne"]),1)}"""
+    )
+
+    # spiking band
+    print("\nSpiking band")
+    print(
+        f"""nv: \u03B1={np.round(np.mean(dd["alphas_spiking_nv"]),1)}\u00B1{np.round(np.std(dd["alphas_spiking_nv"]),1)}"""
+    )
+    print(
+        f"""ns: \u03B1={np.round(np.mean(dd["alphas_spiking_ns"]),1)}\u00B1{np.round(np.std(dd["alphas_spiking_ns"]),1)}"""
+    )
+    print(
+        f"""ne: \u03B1={np.round(np.mean(dd["alphas_spiking_ne"]),1)}\u00B1{np.round(np.std(dd["alphas_spiking_ne"]),1)}"""
     )
 
     # Power SNR **************************
@@ -1523,7 +1819,8 @@ def plot_power_law_fits_demo(ax, d, prms, cl, pm, pm_fit1, pm_fit2):
     return ax, dd
 
 
-def plot_power_law_fits_layer_5(ax, d, prms, cl, pm, pm_fit1, pm_fit2):
+def plot_power_law_fits_layer_5(ax, d, prms, cl, pm, pm_fit1, pm_fit2,
+                                lfp_band=(0,90), spiking_band=(300,6000)):
     """_summary_
 
     Args:
@@ -1544,22 +1841,28 @@ def plot_power_law_fits_layer_5(ax, d, prms, cl, pm, pm_fit1, pm_fit2):
     # Fitting ************************************************************
 
     ax, dd["alphas_lfp_hv"], dd["alphas_spiking_hv"] = plot_fits_all(
-        ax, d["psd_pre_hv_"], prms["SFREQ_HV"], cl["COLOR_HV"], pm, pm_fit1, pm_fit2
+        ax, d["psd_pre_hv_"], prms["SFREQ_HV"], cl["COLOR_HV"], pm, pm_fit1, pm_fit2,
+        lfp_band=lfp_band, spiking_band=spiking_band
     )
     ax, dd["alphas_lfp_nv"], dd["alphas_spiking_nv"] = plot_fits_all(
-        ax, d["psd_pre_nv_"], prms["SFREQ_NV"], cl["COLOR_NV"], pm, pm_fit1, pm_fit2
+        ax, d["psd_pre_nv_"], prms["SFREQ_NV"], cl["COLOR_NV"], pm, pm_fit1, pm_fit2,
+        lfp_band=lfp_band, spiking_band=spiking_band
     )
     ax, dd["alphas_lfp_ns"], dd["alphas_spiking_ns"] = plot_fits_all(
-        ax, d["psd_pre_ns_"], prms["SFREQ_NS"], cl["COLOR_NS"], pm, pm_fit1, pm_fit2
+        ax, d["psd_pre_ns_"], prms["SFREQ_NS"], cl["COLOR_NS"], pm, pm_fit1, pm_fit2,
+        lfp_band=lfp_band, spiking_band=spiking_band
     )
     ax, dd["alphas_lfp_ne"], dd["alphas_spiking_ne"] = plot_fits_all(
-        ax, d["psd_pre_ne_"], prms["SFREQ_NE"], cl["COLOR_NE"], pm, pm_fit1, pm_fit2
+        ax, d["psd_pre_ne_"], prms["SFREQ_NE"], cl["COLOR_NE"], pm, pm_fit1, pm_fit2,
+        lfp_band=lfp_band, spiking_band=spiking_band
     )
     ax, dd["alphas_lfp_hs"], dd["alphas_spiking_hs"] = plot_fits_all(
-        ax, d["psd_pre_hs_"], prms["SFREQ_HS"], cl["COLOR_HS"], pm, pm_fit1, pm_fit2
+        ax, d["psd_pre_hs_"], prms["SFREQ_HS"], cl["COLOR_HS"], pm, pm_fit1, pm_fit2,
+        lfp_band=lfp_band, spiking_band=spiking_band
     )
     ax, dd["alphas_lfp_nb"], dd["alphas_spiking_nb"] = plot_fits_all(
-        ax, d["psd_pre_nb_"], prms["SFREQ_NB"], cl["COLOR_NB"], pm, pm_fit1, pm_fit2
+        ax, d["psd_pre_nb_"], prms["SFREQ_NB"], cl["COLOR_NB"], pm, pm_fit1, pm_fit2,
+        lfp_band=lfp_band, spiking_band=spiking_band
     )
     
     # axes legend
@@ -1652,6 +1955,202 @@ def plot_power_law_fits_layer_5(ax, d, prms, cl, pm, pm_fit1, pm_fit2):
     )    
     return ax, dd
 
+
+
+def plot_power_law_fits_npx_layer_5(ax, d, prms, cl, pm, pm_fit1, pm_fit2,
+                                lfp_band=(0,90), spiking_band=(300,6000)):
+    """_summary_
+
+    Args:
+        ax (axis): _description_
+        d (dict): power spectral density data dictionary
+        prms (dict): experiment frequencies
+        cl (dict): experiment colors
+        pm (dict): _description_
+        pm_fit1 (dict): _description_
+        pm_fit2 (dict): _description_
+
+    Returns:
+        _type_: _description_
+    """
+    # return data structure
+    dd = dict()
+    
+    # Fitting ************************************************************
+
+    ax, dd["alphas_lfp_nv"], dd["alphas_spiking_nv"] = plot_fits_all(
+        ax, d["psd_pre_nv_"], prms["SFREQ_NV"], cl["COLOR_NV"], pm, pm_fit1, pm_fit2,
+        lfp_band=lfp_band, spiking_band=spiking_band
+    )
+    ax, dd["alphas_lfp_ns"], dd["alphas_spiking_ns"] = plot_fits_all(
+        ax, d["psd_pre_ns_"], prms["SFREQ_NS"], cl["COLOR_NS"], pm, pm_fit1, pm_fit2,
+        lfp_band=lfp_band, spiking_band=spiking_band
+    )
+    ax, dd["alphas_lfp_ne"], dd["alphas_spiking_ne"] = plot_fits_all(
+        ax, d["psd_pre_ne_"], prms["SFREQ_NE"], cl["COLOR_NE"], pm, pm_fit1, pm_fit2,
+        lfp_band=lfp_band, spiking_band=spiking_band
+    )
+    ax, dd["alphas_lfp_nb"], dd["alphas_spiking_nb"] = plot_fits_all(
+        ax, d["psd_pre_nb_"], prms["SFREQ_NB"], cl["COLOR_NB"], pm, pm_fit1, pm_fit2,
+        lfp_band=lfp_band, spiking_band=spiking_band
+    )
+    
+    # axes legend
+    # esthetics
+    ax.set_xscale("log")
+    ax.set_yscale("log")
+    # minor ticks
+    locmaj = matplotlib.ticker.LogLocator(base=10, numticks=5)
+    locmin = matplotlib.ticker.LogLocator(
+        base=10.0,
+        subs=(0.2, 0.4, 0.6, 0.8),
+        numticks=5,
+    )
+    ax.tick_params(which="both")
+    ax.xaxis.set_major_locator(locmaj)
+    ax.xaxis.set_minor_locator(locmin)
+    ax.xaxis.set_minor_formatter(matplotlib.ticker.NullFormatter())
+
+    ax.spines[["top", "right"]].set_visible(False)
+    ax.legend("", frameon=False)
+    # disconnect axes (R style)
+    ax.spines["bottom"].set_position(("axes", -0.05))
+    ax.yaxis.set_ticks_position("left")
+    ax.spines["left"].set_position(("axes", -0.05))
+
+    # report slopes
+    # lfp band
+    print("\nLFP band")
+    print(
+        f"""\u03B1={np.round(np.mean(dd["alphas_lfp_nv"]),1)}\u00B1{np.round(np.std(dd["alphas_lfp_nv"]),1)}"""
+    )
+    print(
+        f"""\u03B1={np.round(np.mean(dd["alphas_lfp_ns"]),1)}\u00B1{np.round(np.std(dd["alphas_lfp_ns"]),1)}"""
+    )
+    print(
+        f"""\u03B1={np.round(np.mean(dd["alphas_lfp_ne"]),1)}\u00B1{np.round(np.std(dd["alphas_lfp_ne"]),1)}"""
+    )
+    print(
+        f"""\u03B1={np.round(np.mean(dd["alphas_lfp_nb"]),1)}\u00B1{np.round(np.std(dd["alphas_lfp_nb"]),1)}"""
+    )    
+
+    # spiking band
+    print("\nSpiking band")
+    print(
+        f"""\u03B1={np.round(np.mean(dd["alphas_spiking_nv"]),1)}\u00B1{np.round(np.std(dd["alphas_spiking_nv"]),1)}"""
+    )
+    print(
+        f"""\u03B1={np.round(np.mean(dd["alphas_spiking_ns"]),1)}\u00B1{np.round(np.std(dd["alphas_spiking_ns"]),1)}"""
+    )
+    print(
+        f"""\u03B1={np.round(np.mean(dd["alphas_spiking_ne"]),1)}\u00B1{np.round(np.std(dd["alphas_spiking_ne"]),1)}"""
+    )
+    print(
+        f"""\u03B1={np.round(np.mean(dd["alphas_spiking_nb"]),1)}\u00B1{np.round(np.std(dd["alphas_spiking_nb"]),1)}"""
+    )
+
+    # Power SNR **************************
+
+    print("\nPower SNR")
+
+    o_nv_l1 = get_power_snr(
+        d["psd_pre_nv_"]["power"], d["psd_pre_nv_"]["freq"], 300, 6000, 90
+    )
+    o_ns_l1 = get_power_snr(
+        d["psd_pre_ns_"]["power"], d["psd_pre_ns_"]["freq"], 300, 6000, 90
+    )
+    o_ne_l1 = get_power_snr(
+        d["psd_pre_ne_"]["power"], d["psd_pre_ne_"]["freq"], 300, 6000, 90
+    )
+    o_nb_l1 = get_power_snr(
+        d["psd_pre_nb_"]["power"], d["psd_pre_nb_"]["freq"], 300, 6000, 90
+    )    
+    return ax, dd
+
+
+def plot_power_law_fits_dense_layer_5(ax, d, prms, cl, pm, pm_fit1, pm_fit2,
+                                      lfp_band=(0,90), spiking_band=(300,6000)):
+    """_summary_
+
+    Args:
+        ax (axis): _description_
+        d (dict): power spectral density data dictionary
+        prms (dict): experiment frequencies
+        cl (dict): experiment colors
+        pm (dict): _description_
+        pm_fit1 (dict): _description_
+        pm_fit2 (dict): _description_
+
+    Returns:
+        _type_: _description_
+    """
+    # return data structure
+    dd = dict()
+    
+    # Fitting ************************************************************
+
+    ax, dd["alphas_lfp_hv"], dd["alphas_spiking_hv"] = plot_fits_all(
+        ax, d["psd_pre_hv_"], prms["SFREQ_HV"], cl["COLOR_HV"], pm, pm_fit1, pm_fit2,
+        lfp_band=lfp_band, spiking_band=spiking_band
+    )
+    ax, dd["alphas_lfp_hs"], dd["alphas_spiking_hs"] = plot_fits_all(
+        ax, d["psd_pre_hs_"], prms["SFREQ_HS"], cl["COLOR_HS"], pm, pm_fit1, pm_fit2,
+        lfp_band=lfp_band, spiking_band=spiking_band
+    )
+    
+    # axes legend
+    # esthetics
+    ax.set_xscale("log")
+    ax.set_yscale("log")
+    # minor ticks
+    locmaj = matplotlib.ticker.LogLocator(base=10, numticks=5)
+    locmin = matplotlib.ticker.LogLocator(
+        base=10.0,
+        subs=(0.2, 0.4, 0.6, 0.8),
+        numticks=5,
+    )
+    ax.tick_params(which="both")
+    ax.xaxis.set_major_locator(locmaj)
+    ax.xaxis.set_minor_locator(locmin)
+    ax.xaxis.set_minor_formatter(matplotlib.ticker.NullFormatter())
+
+    ax.spines[["top", "right"]].set_visible(False)
+    ax.legend("", frameon=False)
+    # disconnect axes (R style)
+    ax.spines["bottom"].set_position(("axes", -0.05))
+    ax.yaxis.set_ticks_position("left")
+    ax.spines["left"].set_position(("axes", -0.05))
+
+    # report slopes
+    # lfp band
+    print("\nLFP band")
+    print(
+        f"""\u03B1={np.round(np.mean(dd["alphas_lfp_hv"]),1)}\u00B1{np.round(np.std(dd["alphas_lfp_hv"]),1)}"""
+    )
+    print(
+        f"""\u03B1={np.round(np.mean(dd["alphas_lfp_hs"]),1)}\u00B1{np.round(np.std(dd["alphas_lfp_hs"]),1)}"""
+    )
+
+    # spiking band
+    print("\nSpiking band")
+    print(
+        f"""\u03B1={np.round(np.mean(dd["alphas_spiking_hv"]),1)}\u00B1{np.round(np.std(dd["alphas_spiking_hv"]),1)}"""
+    )
+    print(
+        f"""\u03B1={np.round(np.mean(dd["alphas_spiking_hs"]),1)}\u00B1{np.round(np.std(dd["alphas_spiking_hs"]),1)}"""
+    )
+
+    # Power SNR **************************
+
+    print("\nPower SNR")
+
+    _ = get_power_snr(
+        d["psd_pre_hv_"]["power"], d["psd_pre_hv_"]["freq"], 300, 6000, 90
+    )
+    _ = get_power_snr(
+        d["psd_pre_hs_"]["power"], d["psd_pre_hs_"]["freq"], 300, 6000, 90
+    )    
+    return ax, dd
 
 
 def plot_power_law_fits_layer_5_demo(ax, d, prms, cl, pm, pm_fit1, pm_fit2):
