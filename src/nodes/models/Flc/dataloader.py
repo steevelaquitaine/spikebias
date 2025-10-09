@@ -10,7 +10,7 @@ from matplotlib import pyplot as plt
 import sklearn
 import seaborn as sns
 from sklearn import metrics
-import cebra.models
+# import cebra.models
 import pickle
 import copy
 from sklearn.preprocessing import StandardScaler

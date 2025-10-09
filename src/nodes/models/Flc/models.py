@@ -8,11 +8,11 @@ from spikeinterface import comparison
 from spikeinterface.qualitymetrics import compute_quality_metrics as qm
 from spikeinterface import qualitymetrics
 import pandas as pd
-from cebra import CEBRA
+# from cebra import CEBRA
 import numpy as np
 import sklearn
 import seaborn as sns
-import cebra.models
+# import cebra.models
 import shutil
 from src.nodes import utils
 from src.nodes.models.Flc import utils as mutils
