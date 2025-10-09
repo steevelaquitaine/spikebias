@@ -188,8 +188,6 @@ def set_site_and_layer(
         Sorting.save(folder=sorting_path)
     logger.info("Saving done in %s", round(time() - t0, 1))
     return Sorting
-
-
 def set_firing_rates(Sorting, duration: float, sorting_path: str, save: bool):
     """Save sorted units' firing rate property in Sorting Extractor
 
@@ -297,6 +295,35 @@ def get_gt_unit_meta_df(sorted_path: str):
     # load ground truth extractor
     Sorting = si.load_extractor(sorted_path)
 
+    # record
+    unit_id_all = Sorting.unit_ids.tolist()
+    firing_rate_all = (
+        Sorting.get_property("firing_rates").astype(np.float32).tolist()
+    )
+    layer_all = Sorting.get_property("layer").tolist()
+    layer_all = utils.standardize_gt_layers(layer_all)
+
+    # store in dataframe
+    return pd.DataFrame(
+        np.array(
+            [
+                layer_all,
+                firing_rate_all,
+            ]
+        ).T,
+        index=unit_id_all,
+        columns=[
+            "layer",
+            "firing_rate",
+        ],
+    )
+
+def get_gt_unit_meta_df_from_extractor(Sorting):
+    """get ground truth unit metadata
+
+    Returns:
+        pd.DataFrame: _description_
+    """
     # record
     unit_id_all = Sorting.unit_ids.tolist()
     firing_rate_all = (
