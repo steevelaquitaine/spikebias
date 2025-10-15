@@ -3,7 +3,9 @@
 
 # Weights files
 assets/validation/*.h5
+assets/validation/output/
 assets/validation/*.npy
+assets/validation.zip
 # dataset
 dataset.zip
 dataset/00_raw/*
