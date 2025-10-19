@@ -1,6 +1,9 @@
-# Blue Brain Project spike sorting scripts
+# Spikebias
 
-author: laquitainesteeve@gmail.com
+[![DOI](https://zenodo.org/badge/885915678.svg)](https://doi.org/10.5281/zenodo.17389967)
+
+author: laquitainesteeve@gmail.com  
+contributors: tharayiljoe@gmail.com; milo.imbeni@gmail.com; james.isbister@openbraininstitute.org; michael.reimann@openbraininstitute.org
 
 # System requirements
 
