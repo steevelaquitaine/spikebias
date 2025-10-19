@@ -10,6 +10,7 @@ assets/validation.zip
 dataset.zip
 dataset/00_raw/*
 dataset/01_intermediate/*
+!dataset/01_intermediate/realism/0_silico/4_spikesorting_stimulus_test_neuropixels_8-1-24__8slc_80f_360r_50t_200ms_1_smallest_fiber_gids/**
 
 # intermediate datasets  --------------------------
 # - keep computed psds
