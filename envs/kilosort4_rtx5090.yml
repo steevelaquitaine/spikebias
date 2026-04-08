@@ -27,6 +27,7 @@ dependencies:
   - fastparquet=2024.11.0      # save parquet file
   - pyarrow=16.1.0
   - h5py=3.13.0                # read H5 files
+  - pip
   - pip:
     - spikeinterface==0.100.8   # 0.100.8 critical for kilosort 4 (includes several merged fixes)
     - kilosort==4.0.6           # spike sorter inst all Kilosort 4.0.6
