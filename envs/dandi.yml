@@ -13,7 +13,7 @@ channels:
   - conda-forge
 dependencies:
   - python=3.10.8
-  - dandi=0.67.2               # download and upload nwb files to dandiarchive
+  - dandi=0.74.3                # download and upload nwb files to dandiarchive
   - ipykernel=6.29.5                   
   - matplotlib=3.8.4
   - nwbinspector

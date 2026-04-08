@@ -32,6 +32,7 @@ dependencies:
   - umap-learn=0.5.3           # for spike clusterclustering
   - python-louvain=0.16        # for spike clusterclustering
   - pip=25.2.0                 # to install some packages
+  - openpyxl=3.1.5             # save source data file in excel                   
   - pip:
     - spikeinterface==0.100.8   # 0.100.8 critical for kilosort 4 (includes several merged fixes)
     - mpi4py-mpich==3.1.2       # distributed computing on multiple computer nodes
