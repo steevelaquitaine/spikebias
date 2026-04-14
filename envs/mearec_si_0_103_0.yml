@@ -263,3 +263,6 @@ dependencies:
       - pyparsing==3.2.4
       - scipy==1.13.1
       - zipp==3.23.0
+      - LFPy==2.3.5
+      - neuron==8.2.4   # specify the neuron version
+      - mearec==1.9.0      
