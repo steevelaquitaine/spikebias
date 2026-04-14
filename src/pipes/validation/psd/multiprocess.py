@@ -90,24 +90,6 @@ Usage:
     nohup python -m src.pipes.validation.psd.multiprocess \
         --recording-path dataset/00_raw/recording_npx_spont --save-path dataset/01_intermediate/psds/psd_prep_npx_spont_cutoff_300_layer_1.npy \
             --duration 10000000000 --layers L1 --gain-to-uv 1 --preprocess True --bandpass-filter True --freq-min 300 --freq-max 19999 --filter_window hann > out_psds_l1.log
-    
-    nohup python -m src.pipes.validation.psd.multiprocess \
-        --recording-path dataset/00_raw/recording_npx_spont --save-path dataset/01_intermediate/psds/psd_prep_npx_spont_cutoff_300_layer_2_3.npy \
-            --duration 10000000000 --layers L2_3 --gain-to-uv 1 --preprocess True --bandpass-filter True --freq-min 300 --freq-max 19999 --filter_window hann > out_psds_l2_3.log
-            
-    nohup python -m src.pipes.validation.psd.multiprocess \
-        --recording-path dataset/00_raw/recording_npx_spont --save-path dataset/01_intermediate/psds/psd_prep_npx_spont_cutoff_300_layer_4.npy \
-            --duration 10000000000 --layers L4 --gain-to-uv 1 --preprocess True --bandpass-filter True --freq-min 300 --freq-max 19999 --filter_window hann > out_psds_l4.log
-
-    nohup python -m src.pipes.validation.psd.multiprocess \
-        --recording-path dataset/00_raw/recording_npx_spont --save-path dataset/01_intermediate/psds/psd_prep_npx_spont_cutoff_300_layer_5.npy \
-            --duration 10000000000 --layers L5 --gain-to-uv 1 --preprocess True --bandpass-filter True --freq-min 300 --freq-max 19999 --filter_window hann > out_psds_l5.log
-
-    nohup python -m src.pipes.validation.psd.multiprocess \
-        --recording-path dataset/00_raw/recording_npx_spont --save-path dataset/01_intermediate/psds/psd_prep_npx_spont_cutoff_300_layer_6.npy \
-            --duration 10000000000 --layers L6 --gain-to-uv 1 --preprocess True --bandpass-filter True --freq-min 300 --freq-max 19999 --filter_window hann > out_psds_l6.log
-
-
 
     # npx-evoked --------------------
     nohup python -m src.pipes.validation.psd.multiprocess \
@@ -118,54 +100,12 @@ Usage:
         --recording-path dataset/00_raw/recording_npx_evoked --save-path dataset/01_intermediate/psds/psd_prep_npx_evoked_cutoff_300_layer_1.npy \
             --duration 1000000 --layers L1 --gain-to-uv 1 --preprocess True --freq-min 300 --filter_window hann > out_psds_l1.log    
 
-    nohup python -m src.pipes.validation.psd.multiprocess \
-        --recording-path dataset/00_raw/recording_npx_evoked --save-path dataset/01_intermediate/psds/psd_prep_npx_evoked_cutoff_300_layer_2_3.npy \
-            --duration 1000000 --layers L2_3 --gain-to-uv 1 --preprocess True --freq-min 300 --filter_window hann > out_psds_l2_3.log
-
-    nohup python -m src.pipes.validation.psd.multiprocess \
-        --recording-path dataset/00_raw/recording_npx_evoked --save-path dataset/01_intermediate/psds/psd_prep_npx_evoked_cutoff_300_layer_4.npy \
-            --duration 1000000 --layers L4 --gain-to-uv 1 --preprocess True --freq-min 300 --filter_window hann > out_psds_l4.log
-
-    nohup python -m src.pipes.validation.psd.multiprocess \
-        --recording-path dataset/00_raw/recording_npx_evoked --save-path dataset/01_intermediate/psds/psd_prep_npx_evoked_cutoff_300_layer_5.npy \
-            --duration 1000000 --layers L5 --gain-to-uv 1 --preprocess True --freq-min 300 --filter_window hann > out_psds_l5.log
-
-    nohup python -m src.pipes.validation.psd.multiprocess \
-        --recording-path dataset/00_raw/recording_npx_evoked --save-path dataset/01_intermediate/psds/psd_prep_npx_evoked_cutoff_300_layer_6.npy \
-            --duration 1000000 --layers L6 --gain-to-uv 1 --preprocess True --freq-min 300 --filter_window hann > out_psds_l6.log
-
-            
     # marques-smith --------------------
     nohup python -m src.pipes.validation.psd.multiprocess \
-        --recording-path dataset/00_raw/recording_marques_smith --save-path dataset/01_intermediate/psds/psd_prep_marques_smith_cutoff_300_layer_1.npy \
-            --duration 100000 --layers L1 --gain-to-uv 1 --preprocess True --bandpass-filter True --freq-min 300 --freq-max 14999 --filter_window hann > out_psds_L1.log
-    
-    nohup python -m src.pipes.validation.psd.multiprocess \
-        --recording-path dataset/00_raw/recording_marques_smith --save-path dataset/01_intermediate/psds/psd_prep_marques_smith_cutoff_300_layer_2_3.npy \
-            --duration 100000 --layers L2_3 --gain-to-uv 1 --preprocess True --bandpass-filter True --freq-min 300 --freq-max 14999 --filter_window hann > out_psds_L2_3.log
-
-    nohup python -m src.pipes.validation.psd.multiprocess \
-        --recording-path dataset/00_raw/recording_marques_smith --save-path dataset/01_intermediate/psds/psd_prep_marques_smith_cutoff_300_layer_4.npy \
-            --duration 100000 --layers L4 --gain-to-uv 1 --preprocess True --bandpass-filter True --freq-min 300 --freq-max 14999 --filter_window hann > out_psds_L4.log            
-
-    nohup python -m src.pipes.validation.psd.multiprocess \
-        --recording-path dataset/00_raw/recording_marques_smith --save-path dataset/01_intermediate/psds/psd_prep_marques_smith_cutoff_300_layer_5.npy \
-            --duration 100000 --layers L5 --gain-to-uv 1 --preprocess True --bandpass-filter True --freq-min 300 --freq-max 14999 --filter_window hann > out_psds_L5.log                        
-
-    nohup python -m src.pipes.validation.psd.multiprocess \
-        --recording-path dataset/00_raw/recording_marques_smith --save-path dataset/01_intermediate/psds/psd_prep_marques_smith_cutoff_300_layer_6.npy \
-            --duration 100000 --layers L6 --gain-to-uv 1 --preprocess True --bandpass-filter True --freq-min 300 --freq-max 14999 --filter_window hann > out_psds_L6.log                        
-
-            
-    # synthetic (Buccino rep) --------------------
-    nohup python -m src.pipes.validation.psd.multiprocess \
-        --recording-path dataset/00_raw/recording_buccino_rep --save-path dataset/01_intermediate/psds/psd_raw_buccino_layer.npy \
-            --duration 600 --keep-first-n-sites 200 --gain-to-uv 1 > out_psds.log
-     
+        --recording-path dataset/00_raw/recording_marques_smith --save-path dataset/01_intermediate/psds/psd_prep_marques_smith_cutoff_100_layer_1.npy \
+            --duration 100000 --layers L1 --gain-to-uv 1 --preprocess True --freq-min 100 --filter_window hann > out_psds_L1.log
+         
     # synthetic (Buccino) --------------------
-    nohup python -m src.pipes.validation.psd.multiprocess \
-        --recording-path dataset/00_raw/recording_buccino --save-path dataset/01_intermediate/psds/psd_prep_buccino_cutoff_100.npy \
-            --duration 600 --keep-first-n-sites 200 --gain-to-uv 1 --preprocess True --freq-min 100 --filter_window hann > out_psds.log
 
     nohup python -m src.pipes.validation.psd.multiprocess \
         --recording-path dataset/00_raw/recording_buccino --save-path dataset/01_intermediate/psds/psd_prep_buccino_cutoff_300_sites_0_200.npy \
@@ -176,7 +116,29 @@ Usage:
             --duration 100000 --keep-last-n-sites 201 --gain-to-uv 1 --bandpass-filter True --preprocess True --freq-min 300 --freq-max 15999 --filter_window hann > out_psds_last.log
 
 
-            
+    # fig2s  =======================================
+
+    # npx-spont (10 min are 9 GB)
+    nohup python -m src.pipes.validation.psd.multiprocess \
+        --recording-path dataset/00_raw/recording_npx_spont --save-path dataset/01_intermediate/psds/psd_prep_npx_spont_cutoff_100.npy \
+            --duration 600 --layers L1 L2_3 L4 L5 L6 --gain-to-uv 1 --preprocess True --freq-min 100 --filter_window hann > out_psds.log
+
+    # npx-evoked
+    nohup python -m src.pipes.validation.psd.multiprocess \
+        --recording-path dataset/00_raw/recording_npx_evoked --save-path dataset/01_intermediate/psds/psd_prep_npx_evoked_cutoff_100.npy \
+            --duration 600 --layers L1 L2_3 L4 L5 L6 --gain-to-uv 1 --preprocess True --freq-min 100 --filter_window hann > out_psds.log
+
+    # marques-smith 
+    nohup python -m src.pipes.validation.psd.multiprocess \
+        --recording-path dataset/00_raw/recording_marques_smith --save-path dataset/01_intermediate/psds/psd_prep_marques_smith_cutoff_100.npy \
+            --duration 600 --layers L1 L2_3 L4 L5 L6 --gain-to-uv 1 --preprocess True --freq-min 100 --filter_window hann > out_psds.log            
+
+    # synthetic (Buccino)
+    nohup python -m src.pipes.validation.psd.multiprocess \
+        --recording-path dataset/00_raw/recording_buccino_rep --save-path dataset/01_intermediate/psds/psd_prep_buccino_cutoff_100.npy \
+            --duration 600 --keep-first-n-sites 200 --gain-to-uv 1 --preprocess True --freq-min 100 --filter_window hann > out_psds.log
+
+                        
 Returns:
     (.npy): writes power spectral densities
 
