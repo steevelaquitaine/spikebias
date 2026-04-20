@@ -11,9 +11,10 @@ Warning:
 
 Usage:
 
-    # activate virtual environment and run one of the example commands
+    # activate virtual environment and run one of the commands below
     conda activate envs/spikebias
 
+Useful commands: htop, free -h
 
     # ============================ Dense recordings ============================
 
@@ -47,6 +48,8 @@ Usage:
         --recording-path dataset/00_raw/recording_horvath_probe3 --save-path dataset/01_intermediate/psds/psd_raw_horvath_probe3.npy \
             --gain-to-uv 0.195 --duration 2400 --layers L6 > out_psds.log
 
+
+            
     # fig2t: preprocessed traces ---------
 
     # simulation depth 1 (preprocessed)
@@ -91,6 +94,64 @@ Usage:
 
     sudo -S sh -c 'echo 1 > /proc/sys/vm/drop_caches'         
 
+
+    
+
+    # fig2u: preprocessed traces ---------
+
+    # simulation depth 1 (preprocessed)
+    # note: set a limit pof 100G on RAM used to avoid crash and run in the background
+
+    # pid 3400073        
+    nohup python -m src.pipes.validation.psd.multiprocess \
+        --recording-path dataset/00_raw/recording_dense_probe1 \
+        --save-path dataset/01_intermediate/psds/psd_prep_dense_probe1_cutoff_100.npy \
+        --gain-to-uv 0.195 --duration 2400 --preprocess True \
+        --freq-min 100 --layers L1 L2_3 > out_psds_sim_depth1.log 2>&1 &
+
+    sudo -S sh -c 'echo 1 > /proc/sys/vm/drop_caches' # clear RAM
+
+    # simulation depth 2 (preprocessed) - pid 1302036
+    nohup python -m src.pipes.validation.psd.multiprocess \
+        --recording-path dataset/00_raw/recording_dense_probe2 \
+        --save-path dataset/01_intermediate/psds/psd_prep_dense_probe2_cutoff_100.npy \
+        --gain-to-uv 0.195 --duration 2400 --preprocess True \
+        --freq-min 100 --layers L4 L5 > out_psds_sim_depth2.log 2>&1 &
+    
+    sudo -S sh -c 'echo 1 > /proc/sys/vm/drop_caches'
+    
+    # simulation depth 3 (preprocessed) - pid 1311004
+    nohup python -m src.pipes.validation.psd.multiprocess \
+        --recording-path dataset/00_raw/recording_dense_probe3 --save-path dataset/01_intermediate/psds/psd_prep_dense_probe3_cutoff_100.npy \
+        --gain-to-uv 0.195 --duration 2400 --preprocess True \
+        --freq-min 100 --layers L6 > out_psds_sim_depth3.log 2>&1 &
+
+    sudo -S sh -c 'echo 1 > /proc/sys/vm/drop_caches'
+
+    # horvath depth 1 (preprocessed) - pid 1323237
+    nohup python -m src.pipes.validation.psd.multiprocess \
+        --recording-path dataset/00_raw/recording_horvath_probe1 --save-path dataset/01_intermediate/psds/psd_prep_horvath_probe1_cutoff_100.npy \
+        --gain-to-uv 0.195 --duration 2400 --preprocess True \
+        --freq-min 100 --layers L1 L2_3 > out_psds_horvath_depth1.log 2>&1 &
+
+    sudo -S sh -c 'echo 1 > /proc/sys/vm/drop_caches'                            
+
+    # horvath depth 2 (preprocessed) - pid 1330822
+    # requires 140GB RAM
+    nohup python -m src.pipes.validation.psd.multiprocess \
+        --recording-path dataset/00_raw/recording_horvath_probe2 --save-path dataset/01_intermediate/psds/psd_prep_horvath_probe2_cutoff_100.npy \
+        --gain-to-uv 0.195 --duration 2400 --preprocess True \
+        --freq-min 100 --layers L4 L5 > out_psds_horvath_depth2.log 2>&1 &
+
+    sudo -S sh -c 'echo 1 > /proc/sys/vm/drop_caches'
+
+    # horvath depth 3 (preprocessed) - pid 1341975
+    nohup python -m src.pipes.validation.psd.multiprocess \
+        --recording-path dataset/00_raw/recording_horvath_probe3 --save-path dataset/01_intermediate/psds/psd_prep_horvath_probe3_cutoff_100.npy \
+        --gain-to-uv 0.195 --duration 2400 --preprocess True \
+        --freq-min 100 --layers L6 > out_psds_horvath_depth3.log 2>&1 &
+
+    sudo -S sh -c 'echo 1 > /proc/sys/vm/drop_caches'         
 
 
     # ========================= Neuropixels =========================
@@ -188,6 +249,9 @@ import argparse
 from concurrent.futures import ProcessPoolExecutor
 from functools import partial
 
+import resource
+import os
+
 
 # move to PROJECT PATH
 PROJ_PATH = "/home/steeve/steeve/epfl/code/spikebias/"
@@ -203,6 +267,13 @@ with open("conf/logging.yml", "r", encoding="utf-8") as logging_conf:
     LOG_CONF = yaml.load(logging_conf, Loader=yaml.FullLoader)
 logging.config.dictConfig(LOG_CONF)
 logger = logging.getLogger("root")
+
+
+def limit_memory(max_gb=120):
+    limit = max_gb * 1024**3
+    resource.setrlimit(resource.RLIMIT_AS, (limit, limit))
+    # also apply to child processes
+    os.environ["MALLOC_ARENA_MAX"] = "4"
 
 
 def get_welch_psd_parallelized(traces: np.ndarray, sfreq: int, filter_wind: str):
@@ -275,6 +346,10 @@ def save_psd(data, write_path: str):
 
 if __name__ == "__main__":
     """Entry point"""
+
+    # add a limitation on RAM usage
+    # of 100 GB to prevent crash
+    limit_memory(160)
 
     # Parse command-line arguments
     parser = argparse.ArgumentParser(description="Compute psds")
