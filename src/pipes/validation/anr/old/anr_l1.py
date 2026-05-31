@@ -48,6 +48,7 @@ logger = logging.getLogger("root")
 
 FIG_SIZE = (1.8, 1)
 
+
 def main(rank, n_ranks):
     """Pipeline's entry point
 

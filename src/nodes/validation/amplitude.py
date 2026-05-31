@@ -5,15 +5,16 @@ Returns:
 """
 
 # import libs
+import os
 import numpy as np
 import pandas as pd
 import spikeinterface.extractors as se
 import spikeinterface as si
 import spikeinterface.preprocessing as spre
-import shutil 
+import shutil
 import matplotlib
-from scipy.stats import mannwhitneyu # stats
-from scipy.stats import kruskal # stats
+from scipy.stats import mannwhitneyu  # stats
+from scipy.stats import kruskal  # stats
 import scikit_posthocs as sp
 
 N_MAJOR_TICKS = 4
@@ -33,9 +34,9 @@ def preprocess_reyes(raw_path, prepro_path, freq_min=300, freq_max=6000):
     """
     trace = se.read_mcsraw(raw_path)
     prepro = spre.bandpass_filter(trace, freq_min=freq_min, freq_max=freq_max)
-    prepro = spre.common_reference(prepro, reference='global', operator='median')
+    prepro = spre.common_reference(prepro, reference="global", operator="median")
     print("is filtered:", prepro.is_filtered())
-    
+
     # rewrite
     shutil.rmtree(prepro_path, ignore_errors=True)
     prepro.save(folder=prepro_path, format="binary")
@@ -56,9 +57,9 @@ def preprocess_horvath(raw_path, prepro_path, freq_min=300, freq_max=9999):
     """
     trace = se.NwbRecordingExtractor(raw_path)
     prepro = spre.bandpass_filter(trace, freq_min=freq_min, freq_max=freq_max)
-    prepro = spre.common_reference(prepro, reference='global', operator='median')
+    prepro = spre.common_reference(prepro, reference="global", operator="median")
     print("is filtered:", prepro.is_filtered())
-    
+
     # rewrite
     shutil.rmtree(prepro_path, ignore_errors=True)
     prepro.save(folder=prepro_path, format="binary")
@@ -79,7 +80,7 @@ def preprocess_silico(raw_path, prepro_path, freq_min=300, freq_max=4999):
     """
     trace = si.load_extractor(raw_path)
     prepro = spre.bandpass_filter(trace, freq_min=freq_min, freq_max=freq_max)
-    prepro = spre.common_reference(prepro, reference='global', operator='median')
+    prepro = spre.common_reference(prepro, reference="global", operator="median")
     print("is filtered:", prepro.is_filtered())
 
     # rewrite
@@ -88,9 +89,7 @@ def preprocess_silico(raw_path, prepro_path, freq_min=300, freq_max=4999):
     return prepro
 
 
-def plot_dist_stats(
-        axis, trace, n_sites: int, color: list, ci_color: list, label: str
-        ):
+def plot_dist_stats(axis, trace, n_sites: int, color: list, ci_color: list, label: str):
     """plot amplitude mean distributions with confidence intervals
 
     Args:
@@ -101,14 +100,14 @@ def plot_dist_stats(
         label (_type_): _description_
     """
     # set parameters
-    contact_ids = np.arange(0, n_sites,1)
+    contact_ids = np.arange(0, n_sites, 1)
     step = 0.1
-    bins = np.arange(-1,1.1,step)
+    bins = np.arange(-1, 1.1, step)
 
-    # plot    
+    # plot
     counts_all = []
     for c_i in contact_ids:
-        
+
         # trace
         reyes_trace = trace.get_traces()[:, c_i]
 
@@ -121,11 +120,18 @@ def plot_dist_stats(
 
     # mean
     mean_count = np.array(counts_all).mean(axis=0)
-    axis.plot(bins[:-1]+step/2, mean_count, color=color, label=label);
+    axis.plot(bins[:-1] + step / 2, mean_count, color=color, label=label)
 
     # confidence interval
     ci = 1.96 * np.std(counts_all, axis=0) / np.sqrt(len(counts_all[0]))
-    axis.fill_between(bins[:-1]+step/2, (mean_count-ci), (mean_count+ci), color=ci_color, linewidth=1, alpha=0.2)
+    axis.fill_between(
+        bins[:-1] + step / 2,
+        (mean_count - ci),
+        (mean_count + ci),
+        color=ci_color,
+        linewidth=1,
+        alpha=0.2,
+    )
 
 
 def compute_proba_dist_stats(trace, contact_ids: np.array, abs: bool = True):
@@ -206,7 +212,7 @@ def compute_snr(traces: np.array, cols: list):
 def get_snr_pdfs(norm_traces: np.ndarray, bins):
     """calculate amplitude-to-noise ratio distributions,
     their median and 95% confidence interval
-    
+
     Args:
         norm_traces (np.ndarray): _description_
         bins (_type_): _description_
@@ -232,39 +238,52 @@ def get_snr_pdfs(norm_traces: np.ndarray, bins):
 
     # return stats
     dist_mean = np.median(np.array(proba_all), axis=0)
-    #dist_mean = np.array(proba_all).mean(axis=0)
+    # dist_mean = np.array(proba_all).mean(axis=0)
     dist_ci = 1.96 * np.std(proba_all, axis=0) / np.sqrt(len(proba_all[0]))
-    
+
     # store sites' data
     data = {"pdf_by_site": proba_all}
     return dist_mean, dist_ci, data
 
 
 def plot_snr_pdf_all(
-    axis, mean_v, mean_s, mean_e, ci_v, ci_s, ci_e, bins, color_v:tuple, color_s:tuple, color_e:tuple, pm: dict
+    axis,
+    mean_v,
+    mean_s,
+    mean_e,
+    ci_v,
+    ci_s,
+    ci_e,
+    bins,
+    color_v: tuple,
+    color_s: tuple,
+    color_e: tuple,
+    pm: dict,
+    save_path="",
 ):
     """Plot distribution of voltage trace signal-to-noise ratio
-    with mean and 95% confidence intervals for the in vivo data and the biophysical 
+    with mean and 95% confidence intervals for the in vivo data and the biophysical
     model
-    
+
     Args:
-    
+
     Returns
     """
 
     # vivo
-    plot_proba_dist_stats(
+    plot_x_value_v, plot_means_v, plot_cis_v = plot_proba_dist_stats(
         axis,
         mean_v[mean_v > 0],
         ci_v[mean_v > 0],
-        bins[:-1][mean_v > 0], # plot non-zero because of logscale
+        bins[:-1][mean_v > 0],  # plot non-zero because of logscale
         color=color_v,
         ci_color=color_v,
         label="vivo",
-        pm=pm
+        pm=pm,
     )
+
     # silico
-    plot_proba_dist_stats(
+    plot_x_value_s, plot_means_s, plot_cis_s = plot_proba_dist_stats(
         axis,
         mean_s[mean_s > 0],
         ci_s[mean_s > 0],
@@ -272,11 +291,11 @@ def plot_snr_pdf_all(
         color=color_s,
         ci_color=color_s,
         label="silico",
-        pm=pm
+        pm=pm,
     )
     # evoked
     if len(mean_e) > 1:
-        plot_proba_dist_stats(
+        plot_x_value_e, plot_means_e, plot_cis_e = plot_proba_dist_stats(
             axis,
             mean_e[mean_e > 0],
             ci_e[mean_e > 0],
@@ -284,9 +303,9 @@ def plot_snr_pdf_all(
             color=color_e,
             ci_color=color_e,
             label="evoked",
-            pm=pm
+            pm=pm,
         )
-    
+
     # legend
     axis.set_yscale("log")
     axis.spines[["right", "top"]].set_visible(False)
@@ -309,25 +328,55 @@ def plot_snr_pdf_all(
     axis.spines["bottom"].set_position(("axes", -0.05))
     axis.yaxis.set_ticks_position("left")
     axis.spines["left"].set_position(("axes", -0.05))
-    # square axis
-    #axis.set_box_aspect(1)
+
+    # save figure source data
+    # in vivo
+    pd.DataFrame(
+        {"x": plot_x_value_v, "mean": plot_means_v, "ci": plot_cis_v}
+    ).to_excel(save_path + "_v.xlsx", index=False)
+
+    # spontaneous
+    pd.DataFrame(
+        {"x": plot_x_value_s, "mean": plot_means_s, "ci": plot_cis_s}
+    ).to_excel(save_path + "_s.xlsx", index=False)
+
+    # evoked
+    if len(mean_e) > 1:
+        pd.DataFrame(
+            {"x": plot_x_value_e, "mean": plot_means_e, "ci": plot_cis_e}
+        ).to_excel(save_path + "_e.xlsx", index=False)
     return axis
 
 
 def plot_anr_pdf_l5(
-    axis, mean_v, mean_s, mean_e, mean_b, ci_v, ci_s, ci_e, ci_b, bins, color_v:tuple, color_s:tuple, color_e:tuple, color_b:tuple , pm: dict
+    axis,
+    mean_v,
+    mean_s,
+    mean_e,
+    mean_b,
+    ci_v,
+    ci_s,
+    ci_e,
+    ci_b,
+    bins,
+    color_v: tuple,
+    color_s: tuple,
+    color_e: tuple,
+    color_b: tuple,
+    pm: dict,
+    save_path="",
 ):
     """Plot distribution of voltage trace signal-to-noise ratio
-    with mean and 95% confidence intervals for the in vivo data and the biophysical 
+    with mean and 95% confidence intervals for the in vivo data and the biophysical
     model
-    
+
     Args:
-    
+
     Returns
     """
 
     # vivo
-    plot_proba_dist_stats(
+    plot_x_value_v, plot_means_v, plot_cis_v = plot_proba_dist_stats(
         axis,
         mean_v[mean_v > 0],
         ci_v[mean_v > 0],
@@ -335,10 +384,10 @@ def plot_anr_pdf_l5(
         color=color_v,
         ci_color=color_v,
         label="vivo",
-        pm=pm
+        pm=pm,
     )
     # silico
-    plot_proba_dist_stats(
+    plot_x_value_s, plot_means_s, plot_cis_s = plot_proba_dist_stats(
         axis,
         mean_s[mean_s > 0],
         ci_s[mean_s > 0],
@@ -346,11 +395,11 @@ def plot_anr_pdf_l5(
         color=color_s,
         ci_color=color_s,
         label="silico",
-        pm=pm
+        pm=pm,
     )
     # evoked
     if len(mean_e) > 1:
-        plot_proba_dist_stats(
+        plot_x_value_e, plot_means_e, plot_cis_e = plot_proba_dist_stats(
             axis,
             mean_e[mean_e > 0],
             ci_e[mean_e > 0],
@@ -358,11 +407,11 @@ def plot_anr_pdf_l5(
             color=color_e,
             ci_color=color_e,
             label="evoked",
-            pm=pm
+            pm=pm,
         )
     # synthetic
     if len(mean_b) > 1:
-        plot_proba_dist_stats(
+        plot_x_value_b, plot_means_b, plot_cis_b = plot_proba_dist_stats(
             axis,
             mean_b[mean_b > 0],
             ci_b[mean_b > 0],
@@ -370,9 +419,9 @@ def plot_anr_pdf_l5(
             color=color_b,
             ci_color=color_b,
             label="synth.",
-            pm=pm
-        )   
-         
+            pm=pm,
+        )
+
     # legend
     axis.set_yscale("log")
     axis.spines[["right", "top"]].set_visible(False)
@@ -395,20 +444,41 @@ def plot_anr_pdf_l5(
     axis.spines["bottom"].set_position(("axes", -0.05))
     axis.yaxis.set_ticks_position("left")
     axis.spines["left"].set_position(("axes", -0.05))
-    # square axis
-    #axis.set_box_aspect(1)
+
+    # save figure source data
+    # in vivo
+    pd.DataFrame(
+        {"x": plot_x_value_v, "mean": plot_means_v, "ci": plot_cis_v}
+    ).to_excel(save_path + "_v.xlsx", index=False)
+
+    # spontaneous
+    pd.DataFrame(
+        {"x": plot_x_value_s, "mean": plot_means_s, "ci": plot_cis_s}
+    ).to_excel(save_path + "_s.xlsx", index=False)
+
+    # evoked
+    if len(mean_e) > 1:
+        pd.DataFrame(
+            {"x": plot_x_value_e, "mean": plot_means_e, "ci": plot_cis_e}
+        ).to_excel(save_path + "_e.xlsx", index=False)
+
+    # buccino
+    if len(mean_b) > 1:
+        pd.DataFrame(
+            {"x": plot_x_value_b, "mean": plot_means_b, "ci": plot_cis_b}
+        ).to_excel(save_path + "_b.xlsx", index=False)
     return axis
 
 
 def plot_anr_pdf_l5_demo(
-    axis, mean_s, mean_e, ci_s, ci_e, bins, color_s:tuple, color_e:tuple, pm: dict
+    axis, mean_s, mean_e, ci_s, ci_e, bins, color_s: tuple, color_e: tuple, pm: dict
 ):
     """Plot distribution of voltage trace signal-to-noise ratio
-    with mean and 95% confidence intervals for the in vivo data and the biophysical 
+    with mean and 95% confidence intervals for the in vivo data and the biophysical
     model
-    
+
     Args:
-    
+
     Returns
     """
 
@@ -421,7 +491,7 @@ def plot_anr_pdf_l5_demo(
         color=color_s,
         ci_color=color_s,
         label="silico",
-        pm=pm
+        pm=pm,
     )
     # evoked
     if len(mean_e) > 1:
@@ -433,9 +503,9 @@ def plot_anr_pdf_l5_demo(
             color=color_e,
             ci_color=color_e,
             label="evoked",
-            pm=pm
+            pm=pm,
         )
-         
+
     # legend
     axis.set_yscale("log")
     axis.spines[["right", "top"]].set_visible(False)
@@ -462,8 +532,15 @@ def plot_anr_pdf_l5_demo(
 
 
 def plot_proba_dist_stats(
-        axis, dist_mean, dist_ci, bins, color: list, ci_color: list, label: str, pm:dict
-        ):
+    axis,
+    dist_mean,
+    dist_ci,
+    bins,
+    color: list,
+    ci_color: list,
+    label: str,
+    pm: dict,
+):
     """plot amplitude mean distributions with confidence intervals
 
     Args:
@@ -474,31 +551,35 @@ def plot_proba_dist_stats(
     # set parameters
     step = 0.1
 
+    # set plot daat
+    x_value = bins + step / 2
+
     # plot mean and ci
-    axis.plot(
-        bins+step/2, dist_mean, color=color, label=label, **pm
-        )
+    axis.plot(x_value, dist_mean, color=color, label=label, **pm)
 
     # correct for meaningless negative bottom ci lines
     # because this is the probability space
-    # don't set to 0 but to a small number. 0 produces meaningless 
+    # don't set to 0 but to a small number. 0 produces meaningless
     # bottom CI toward -inf on a log scale
-    # we set bottom ci to 0 because on the probability space (y-axis)
+    # we set bottom ci to 0  on the probability space (y-axis)
     # bottom ci <= 0 produce meaningless values toward -inf on a log scale
     # we set bottom ci to the mean
-    
+
     # add confidence interval
     axis.fill_between(
-        bins+step/2,
+        x_value,
         (dist_mean),
         (dist_mean + dist_ci),
         color=ci_color,
-        linewidth=0.1,        
+        linewidth=0.1,
         alpha=0.4,
-        rasterized=True
-        )
-    
-    
+        rasterized=True,
+    )
+
+    # source data
+    return x_value, dist_mean, dist_ci
+
+
 def count_sites(df, exp, layer):
     return len(df[(df["experiment"] == exp) & (df["layer"] == layer)])
 
@@ -523,8 +604,7 @@ def get_mwu(df, exp1, exp2, layer):
 
 
 def get_kk(df, exp):
-    """kruskall wallis test
-    """
+    """kruskall wallis test"""
     h, p = kruskal(
         get_amplitude(df, exp, "L1"),
         get_amplitude(df, exp, "L2/3"),
@@ -541,8 +621,7 @@ def get_kk(df, exp):
 
 
 def get_kk_demo(df, exp):
-    """kruskall wallis test
-    """
+    """kruskall wallis test"""
     h, p = kruskal(
         get_amplitude(df, exp, "L5"),
         get_amplitude(df, exp, "L6"),
@@ -551,7 +630,7 @@ def get_kk_demo(df, exp):
     print(f"""N_L5 = {count_sites(df, exp, "L5")} sites""")
     print(f"""N_L6 = {count_sites(df, exp, "L6")} sites""")
 
-    
+
 def get_posthoc_dunn_holm_sidak(plot_data, exp):
     """posthoc test after kruskall wallis with Dunn and holm_sidak
     multiple comparison correction of p-values
@@ -602,6 +681,6 @@ def get_posthoc_dunn_holm_sidak_demo(plot_data, exp):
     # while retaining power.
     # we can still look at the p-values to identify trends.
     df = sp.posthoc_dunn(data, p_adjust="holm-sidak")
-    df.columns = [ "L5", "L6"]
+    df.columns = ["L5", "L6"]
     df.index = ["L5", "L6"]
     return df

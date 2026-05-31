@@ -4,8 +4,10 @@ author: steeve.laquitaine@epfl.ch
 Returns:
     _type_: _description_
 """
+
 import warnings
-warnings.simplefilter(action='ignore', category=FutureWarning)
+
+warnings.simplefilter(action="ignore", category=FutureWarning)
 
 import pandas as pd
 import numpy as np
@@ -16,12 +18,12 @@ from src.nodes.validation import amplitude as amp
 import numpy as np
 
 # SETUP PARAMETERS
-RND_SEED = 0                # random seed
-SFREQ_VIVO = 30000          # sampling frequency
-SFREQ_SILICO = 40000        # sampling frequency
+RND_SEED = 0  # random seed
+SFREQ_VIVO = 30000  # sampling frequency
+SFREQ_SILICO = 40000  # sampling frequency
 
 # FIGURE SETTINGS
-COLOR_V = np.array([153,153,153]) / 255
+COLOR_V = np.array([153, 153, 153]) / 255
 COLOR_S = (0.84, 0.27, 0.2)
 N_MAJOR_TICKS = 4
 N_MINOR_TICKS = 12
@@ -64,37 +66,29 @@ def plot_layer_snr_npx(
 
     # 2 - calculate common bins (2 mins)
     snr_max_layer_i = np.max(
-        [np.array(snr_vivo_layer_i).max(),
-         np.array(snr_sili_layer_i).max(),
-         np.array(snr_e_layer_i).max()]
+        [
+            np.array(snr_vivo_layer_i).max(),
+            np.array(snr_sili_layer_i).max(),
+            np.array(snr_e_layer_i).max(),
+        ]
     )
     snr_min_layer_i = np.min(
-        [np.array(snr_vivo_layer_i).min(),
-         np.array(snr_sili_layer_i).min(),
-         np.array(snr_e_layer_i).min()]
+        [
+            np.array(snr_vivo_layer_i).min(),
+            np.array(snr_sili_layer_i).min(),
+            np.array(snr_e_layer_i).min(),
+        ]
     )
     step_layer_i = (snr_max_layer_i - snr_min_layer_i) / n_bins
-    bins = np.arange(
-        snr_min_layer_i, snr_max_layer_i + step_layer_i / 2, step_layer_i
-    )
+    bins = np.arange(snr_min_layer_i, snr_max_layer_i + step_layer_i / 2, step_layer_i)
 
     # 3 - Compute the snr pdf stats over sites (1 min)
     # vivo
-    mean_vivo_layer_i, ci_vivo_layer_i, _ = amp.get_snr_pdfs(
-        snr_vivo_layer_i, bins
-    )
+    mean_vivo_layer_i, ci_vivo_layer_i, _ = amp.get_snr_pdfs(snr_vivo_layer_i, bins)
     # silico
-    (
-        mean_sili_layer_i,
-        ci_sili_layer_i, 
-        _
-    ) = amp.get_snr_pdfs(snr_sili_layer_i, bins)
+    (mean_sili_layer_i, ci_sili_layer_i, _) = amp.get_snr_pdfs(snr_sili_layer_i, bins)
     # evoked
-    (
-        mean_e_layer_i,
-        ci_e_layer_i, 
-        _
-    ) = amp.get_snr_pdfs(snr_e_layer_i, bins)
+    (mean_e_layer_i, ci_e_layer_i, _) = amp.get_snr_pdfs(snr_e_layer_i, bins)
 
     # vivo
     amp.plot_proba_dist_stats(
@@ -105,7 +99,7 @@ def plot_layer_snr_npx(
         color=color_v,
         ci_color=color_v,
         label=label_v,
-        pm=pm
+        pm=pm,
     )
     # silico
     amp.plot_proba_dist_stats(
@@ -116,8 +110,8 @@ def plot_layer_snr_npx(
         color=color_s,
         ci_color=color_s,
         label=label_s,
-        pm=pm
-    )    
+        pm=pm,
+    )
     # evoked
     amp.plot_proba_dist_stats(
         axis,
@@ -127,8 +121,8 @@ def plot_layer_snr_npx(
         color=color_e,
         ci_color=color_e,
         label=label_e,
-        pm=pm
-    )        
+        pm=pm,
+    )
     # legend
     axis.set_yscale("log")
     axis.spines[["right", "top"]].set_visible(False)
@@ -137,9 +131,7 @@ def plot_layer_snr_npx(
     # show minor ticks
     axis.tick_params(which="major")
     locmaj = matplotlib.ticker.LogLocator(base=10, numticks=N_MAJOR_TICKS)
-    locmin = matplotlib.ticker.LogLocator(
-        base=10.0, subs=(0.5, 1), numticks=2
-    )    
+    locmin = matplotlib.ticker.LogLocator(base=10.0, subs=(0.5, 1), numticks=2)
     axis.yaxis.set_major_locator(locmaj)
     axis.yaxis.set_minor_locator(locmin)
     axis.yaxis.set_minor_formatter(matplotlib.ticker.NullFormatter())
@@ -191,21 +183,13 @@ def plot_layer_snr_horv(
         [np.array(snr_vivo_layer_i).min(), np.array(snr_sili_layer_i).min()]
     )
     step_layer_i = (snr_max_layer_i - snr_min_layer_i) / n_bins
-    bins = np.arange(
-        snr_min_layer_i, snr_max_layer_i + step_layer_i / 2, step_layer_i
-    )
+    bins = np.arange(snr_min_layer_i, snr_max_layer_i + step_layer_i / 2, step_layer_i)
 
     # 3 - Compute the snr pdf stats over sites (1 min)
     # vivo
-    mean_vivo_layer_i, ci_vivo_layer_i, _ = amp.get_snr_pdfs(
-        snr_vivo_layer_i, bins
-    )
+    mean_vivo_layer_i, ci_vivo_layer_i, _ = amp.get_snr_pdfs(snr_vivo_layer_i, bins)
     # silico
-    (
-        mean_sili_layer_i,
-        ci_sili_layer_i, 
-        _
-    ) = amp.get_snr_pdfs(snr_sili_layer_i, bins)
+    (mean_sili_layer_i, ci_sili_layer_i, _) = amp.get_snr_pdfs(snr_sili_layer_i, bins)
 
     # vivo
     amp.plot_proba_dist_stats(
@@ -216,7 +200,7 @@ def plot_layer_snr_horv(
         color=color_v,
         ci_color=color_v,
         label=label_v,
-        pm=pm
+        pm=pm,
     )
     # silico
     amp.plot_proba_dist_stats(
@@ -227,8 +211,8 @@ def plot_layer_snr_horv(
         color=color_s,
         ci_color=color_s,
         label=label_s,
-        pm=pm
-    )    
+        pm=pm,
+    )
     # legend
     axis.set_yscale("log")
     axis.spines[["right", "top"]].set_visible(False)
@@ -237,9 +221,7 @@ def plot_layer_snr_horv(
     # show minor ticks
     axis.tick_params(which="major")
     locmaj = matplotlib.ticker.LogLocator(base=10, numticks=N_MAJOR_TICKS)
-    locmin = matplotlib.ticker.LogLocator(
-        base=10.0, subs=(0.5, 1), numticks=2
-    )    
+    locmin = matplotlib.ticker.LogLocator(base=10.0, subs=(0.5, 1), numticks=2)
     axis.yaxis.set_major_locator(locmaj)
     axis.yaxis.set_minor_locator(locmin)
     axis.yaxis.set_minor_formatter(matplotlib.ticker.NullFormatter())
@@ -268,9 +250,9 @@ def plot_snr_for_layer_5_npx(
     color_e: tuple,
     color_b: tuple,
     label_s: str,
-    label_v: str,  
+    label_v: str,
     label_e: str,
-    label_b: str, 
+    label_b: str,
     pm: dict,
 ):
     """plot distribution of signal-to-noise ratio
@@ -281,8 +263,8 @@ def plot_snr_for_layer_5_npx(
         snr_sili (list): sites x timepoints
         snr_vivo (list): _description_
         n_bins (int): _description_
-    
-    note: lasts 3 mins because the Synthetic model 
+
+    note: lasts 3 mins because the Synthetic model
     has 384 sites
     """
     # 1 - get this layer
@@ -292,40 +274,34 @@ def plot_snr_for_layer_5_npx(
 
     # 2 - calculate common bins (2 mins)
     snr_max_layer_i = np.nanmax(
-        [np.array(snr_v_layer_i).max(), np.array(snr_s_layer_i).max(), np.max(snr_e_layer_i), np.max(snr_b)]
+        [
+            np.array(snr_v_layer_i).max(),
+            np.array(snr_s_layer_i).max(),
+            np.max(snr_e_layer_i),
+            np.max(snr_b),
+        ]
     )
     snr_min_layer_i = np.nanmin(
-        [np.array(snr_v_layer_i).min(), np.array(snr_s_layer_i).min(), np.min(snr_e_layer_i), np.min(snr_b)]
+        [
+            np.array(snr_v_layer_i).min(),
+            np.array(snr_s_layer_i).min(),
+            np.min(snr_e_layer_i),
+            np.min(snr_b),
+        ]
     )
     step_layer_i = (snr_max_layer_i - snr_min_layer_i) / n_bins
-    bins = np.arange(
-        snr_min_layer_i, snr_max_layer_i + step_layer_i / 2, step_layer_i
-    )
+    bins = np.arange(snr_min_layer_i, snr_max_layer_i + step_layer_i / 2, step_layer_i)
 
     # 3 - Compute the snr pdf stats over sites (1 min)
     # vivo
-    mean_v, ci_v,_ = amp.get_snr_pdfs(
-        snr_v_layer_i, bins
-    )
+    mean_v, ci_v, _ = amp.get_snr_pdfs(snr_v_layer_i, bins)
     # buccino
-    (
-        mean_b,
-        ci_b,
-        _
-    ) = amp.get_snr_pdfs(snr_b, bins)
+    (mean_b, ci_b, _) = amp.get_snr_pdfs(snr_b, bins)
     # silico
-    (
-        mean_s_layer_i,
-        ci_s_layer_i,
-        _
-    ) = amp.get_snr_pdfs(snr_s_layer_i, bins)
+    (mean_s_layer_i, ci_s_layer_i, _) = amp.get_snr_pdfs(snr_s_layer_i, bins)
     # evoked
-    (
-        mean_e_layer_i,
-        ci_e_layer_i,
-        _
-    ) = amp.get_snr_pdfs(snr_e_layer_i, bins)
-    
+    (mean_e_layer_i, ci_e_layer_i, _) = amp.get_snr_pdfs(snr_e_layer_i, bins)
+
     # plot *****************************
     # vivo
     amp.plot_proba_dist_stats(
@@ -336,7 +312,7 @@ def plot_snr_for_layer_5_npx(
         color=color_v,
         ci_color=color_v,
         label=label_v,
-        pm=pm, 
+        pm=pm,
     )
     # silico
     amp.plot_proba_dist_stats(
@@ -347,7 +323,7 @@ def plot_snr_for_layer_5_npx(
         color=color_s,
         ci_color=color_s,
         label=label_s,
-        pm=pm
+        pm=pm,
     )
     # evoked
     amp.plot_proba_dist_stats(
@@ -358,8 +334,8 @@ def plot_snr_for_layer_5_npx(
         color=color_e,
         ci_color=color_e,
         label=label_e,
-        pm=pm
-    )    
+        pm=pm,
+    )
     # buccino
     amp.plot_proba_dist_stats(
         axis,
@@ -369,7 +345,7 @@ def plot_snr_for_layer_5_npx(
         color=color_b,
         ci_color=color_b,
         label=label_b,
-        pm=pm
+        pm=pm,
     )
 
     # legend
@@ -381,9 +357,7 @@ def plot_snr_for_layer_5_npx(
     # show minor ticks
     axis.tick_params(which="major")
     locmaj = matplotlib.ticker.LogLocator(base=10, numticks=N_MAJOR_TICKS)
-    locmin = matplotlib.ticker.LogLocator(
-        base=10.0, subs=(0.5, 1), numticks=2
-    )    
+    locmin = matplotlib.ticker.LogLocator(base=10.0, subs=(0.5, 1), numticks=2)
     axis.yaxis.set_major_locator(locmaj)
     axis.yaxis.set_minor_locator(locmin)
     axis.yaxis.set_minor_formatter(matplotlib.ticker.NullFormatter())
@@ -406,7 +380,7 @@ def plot_snr_for_layer_5_horv(
     color_s: tuple,
     color_v: tuple,
     label_s: str,
-    label_v: str,  
+    label_v: str,
     pm: dict,
 ):
     """plot snr distribution for specified layer
@@ -429,21 +403,13 @@ def plot_snr_for_layer_5_horv(
         [np.array(snr_v_layer_i).min(), np.array(snr_s_layer_i).min()]
     )
     step_layer_i = (snr_max_layer_i - snr_min_layer_i) / n_bins
-    bins = np.arange(
-        snr_min_layer_i, snr_max_layer_i + step_layer_i / 2, step_layer_i
-    )
+    bins = np.arange(snr_min_layer_i, snr_max_layer_i + step_layer_i / 2, step_layer_i)
 
     # 3 - Compute the snr pdf stats over sites (1 min)
     # vivo
-    mean_v_layer_i, ci_v_layer_i,_ = amp.get_snr_pdfs(
-        snr_v_layer_i, bins
-    )
+    mean_v_layer_i, ci_v_layer_i, _ = amp.get_snr_pdfs(snr_v_layer_i, bins)
     # silico
-    (
-        mean_s_layer_i,
-        ci_s_layer_i,
-        _
-    ) = amp.get_snr_pdfs(snr_s_layer_i, bins)
+    (mean_s_layer_i, ci_s_layer_i, _) = amp.get_snr_pdfs(snr_s_layer_i, bins)
 
     # vivo
     amp.plot_proba_dist_stats(
@@ -454,7 +420,7 @@ def plot_snr_for_layer_5_horv(
         color=color_v,
         ci_color=color_v,
         label=label_v,
-        pm=pm, 
+        pm=pm,
     )
     # silico
     amp.plot_proba_dist_stats(
@@ -465,7 +431,7 @@ def plot_snr_for_layer_5_horv(
         color=color_s,
         ci_color=color_s,
         label=label_s,
-        pm=pm
+        pm=pm,
     )
 
     # legend
@@ -477,9 +443,7 @@ def plot_snr_for_layer_5_horv(
     # show minor ticks
     axis.tick_params(which="major")
     locmaj = matplotlib.ticker.LogLocator(base=10, numticks=N_MAJOR_TICKS)
-    locmin = matplotlib.ticker.LogLocator(
-        base=10.0, subs=(0.5, 1), numticks=2
-    )    
+    locmin = matplotlib.ticker.LogLocator(base=10.0, subs=(0.5, 1), numticks=2)
     axis.yaxis.set_major_locator(locmaj)
     axis.yaxis.set_minor_locator(locmin)
     axis.yaxis.set_minor_formatter(matplotlib.ticker.NullFormatter())
@@ -495,13 +459,13 @@ def plot_snr_for_layer_5_horv(
 def get_site_snr(trace: np.array, site: int):
     """calculate signal-to-noise ratio
     of a single site
-    
+
     Noise is the mean absolute deviation
     of the entire trace
-    
+
     Args:
         trace (np.array):
-        site: silent argument used by 
+        site: silent argument used by
         ProcessPoolExecutor()
     """
     # mad = pd.DataFrame(trace).mad().values
@@ -524,6 +488,9 @@ def get_snrs_parallel(traces: np.ndarray):
     Returns:
         _type_: _description_
     """
+    # report multi-processing
+    print("Using multi-processing")
+
     # takes 2 min (instead of 70 min w/o multiprocessing)
     nsites = traces.shape[1]
 
