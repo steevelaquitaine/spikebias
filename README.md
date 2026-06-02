@@ -92,3 +92,8 @@ python -m ipykernel install --user --name spikebias --display-name "spikebias"
 * The O1 sonata circuit: https://zenodo.org/records/11113043 (51 GB)
 * The cell id in our experiments are the cell ids in the CELL_ID_SONATA - 1.
 * All the cell properties can be retrieved from these circuits.
+
+```bash
+dataset/
+    00_raw/ (505 GB)
+```
