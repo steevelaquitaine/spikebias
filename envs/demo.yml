@@ -17,9 +17,9 @@ dependencies:
   - nwbinspector=0.6.3         # validate nwb file
   - scikit-posthocs=0.9.0      # post-hoc tests 
   - pytorch=2.4.0              # pytorch on cpu only
-  - numpy=2.1                  # numerical computing, version<=2.1 required by umap
+  - numpy=1.26.4               # numerical computing, version<=2.1 required by umap
   - scikit-learn=1.6.1         # machine learning  
-  - umap-learn=0.5.3           # machine learning: spike waveform clustering
+  - umap-learn=0.5.12          # machine learning: spike waveform clustering
   - python-louvain=0.16        # machine learning: Louvain community detection  
   - pip==26.1.2
   - pip:
