@@ -242,6 +242,8 @@ import pandas as pd
 #     return nmc_firing_rates, pyramidal_firing_rate, interneuron_firing_rate
 
 
+
+
 def compute_spike_rate_npx384(data_conf, NMC_RECORDING_PATH, NMC_GT_SORTING_PATH, NMC_FR_FILE_PATH, save=False):
 
     print("\nnpx384")
@@ -613,3 +615,88 @@ def get_layerwise_fr_all_depths(fr_1:dict, fr_2:dict, fr_3:dict, meta_1:pd.DataF
     fr_layer_6 = np.hstack([layer_6_fr_horvath_1, layer_6_fr_horvath_2, layer_6_fr_horvath_3])
     outside_fr = np.hstack([outside_fr_horvath_1, outside_fr_horvath_2, outside_fr_horvath_3])
     return fr_layer_1, fr_layer_2_3, fr_layer_4, fr_layer_5, fr_layer_6, outside_fr
+
+
+def plot_firing_rate_hist_vs_lognorm(
+        data_all: np.array, 
+        log_x_min, 
+        log_x_max, 
+        nbins, 
+        t_dec, 
+        ax, 
+        label, 
+        color=(0.13, 0.23, 0.98), 
+        markerfacecolor=(0.13, 0.23, 0.98), 
+        markeredgecolor="w", 
+        markeredgewidth=0.5, 
+        linestyle="-",
+        markersize=3, 
+        dashes=(5,0), 
+        legend=True, 
+        lognormal=True
+        ):
+
+    """_summary_
+
+    Returns:
+        dict: _description_
+        
+    """
+    p_pickup = lambda _freq: 1.0 - poisson(_freq * t_dec).cdf(0)
+
+    x_bins = np.logspace(log_x_min, log_x_max, nbins)
+    p_hist = p_pickup(x_bins[1:])
+    p_all = p_pickup(data_all)
+
+    H_all = np.histogram(data_all, bins=x_bins)[0] * p_hist
+
+    # mean and standard deviation of log(x), which we expect to be distributed normally
+    mn_all = np.sum(np.log10(data_all) * p_all) / np.sum(p_all)
+    sd_all = np.sum(np.abs(np.log10(data_all) * p_all - mn_all)) / np.sum(p_all)
+
+    # data points
+    ax.plot(
+        x_bins[1:], 
+        H_all/H_all.sum(), 
+        marker="o", 
+        ls="none", 
+        markersize=markersize, 
+        label=label, 
+        markerfacecolor=markerfacecolor, 
+        markeredgecolor=markeredgecolor,
+        markeredgewidth=markeredgewidth
+        )
+
+    # lognormal fit
+    y_fit = norm(mn_all, sd_all).pdf(np.log10(x_bins[1:]))
+    y_fit_all = H_all.sum() * y_fit / y_fit.sum()
+    y_fit = []
+    if lognormal:
+        y_fit = y_fit_all/sum(y_fit_all)
+        ax.plot(x_bins[1:], y_fit, color=color, linestyle=linestyle, dashes=dashes)
+        ax.spines[["right", "top"]].set_visible(False)
+        ax.set_xscale("log")
+
+    # show minor ticks
+    #ax.tick_params(which='both')
+    #locmaj = matplotlib.ticker.LogLocator(base=10, numticks=3) 
+    #ax.xaxis.set_major_locator(locmaj)    
+    #locmin = matplotlib.ticker.LogLocator(base=10.0, subs=(0.2,0.4,0.6,0.8), numticks=12)
+    #ax.xaxis.set_minor_locator(locmin)
+    #ax.xaxis.set_minor_formatter(matplotlib.ticker.NullFormatter())
+    #ax.set_yticks([0, 0.4, 0.8, 1])
+    #ax.set_yticklabels([0, 0.4, 0.8, 1])
+
+    # if legend:
+    #     plt.legend(frameon=False, loc='center left', bbox_to_anchor=(1, 0.5))
+    #     plt.xlabel("spontaneous firing rate (Hz)")
+    #     plt.ylabel("probability (ratio)")
+    #ax.set_xticklabels([])
+    
+    return {
+        "x_data": x_bins[1:],
+        "y_data": H_all/H_all.sum(),
+        "y_fit": y_fit_all/sum(y_fit_all),
+        "mean": mn_all,
+        "std": sd_all
+            }

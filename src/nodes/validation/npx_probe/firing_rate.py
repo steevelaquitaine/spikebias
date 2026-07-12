@@ -3,7 +3,7 @@ import pandas as pd
 from src.nodes.validation import spikestats
 import copy
 import seaborn as sns
-from random import choices
+import random
 import matplotlib
 import collections 
 from scipy.stats import mannwhitneyu
@@ -23,6 +23,22 @@ BOXPLOT_PMS = {
 }
 
 
+def _hist_lognorm_rows(out, layer, experiment, n):
+    """flatten a plot_firing_rate_hist_vs_lognorm() output dict into
+    long-format rows: one row per x-bin, for the source dataset export"""
+    return [
+        {
+            "x": x,
+            "y_data": y_data,
+            "y_fit": y_fit,
+            "layer": layer,
+            "experiment": experiment,
+            "n": n,
+        }
+        for x, y_data, y_fit in zip(out["x_data"], out["y_data"], out["y_fit"])
+    ]
+
+
 def plot_fr_by_layer(axes, df_nv, df_ns, df_ne, df_nb, layers, log_x_min, log_x_max, nbins, t_dec, cl):
 
     # figure parameters
@@ -34,9 +50,12 @@ def plot_fr_by_layer(axes, df_nv, df_ns, df_ne, df_nb, layers, log_x_min, log_x_
     N_MJ_TCKS = 5
     N_MN_TCKS = 11
 
+    # collect the plotted data for the source dataset export
+    rows = []
+
     # vivo
     y = df_nv["firing_rate"][df_nv["layer"].isin(layers)].values.astype(np.float32)
-    _ = spikestats.plot_firing_rate_hist_vs_lognorm(
+    out = spikestats.plot_firing_rate_hist_vs_lognorm(
         y,
         log_x_min,
         log_x_max,
@@ -51,10 +70,11 @@ def plot_fr_by_layer(axes, df_nv, df_ns, df_ne, df_nb, layers, log_x_min, log_x_
         legend=False,
         lognormal=True,
     )
+    rows += _hist_lognorm_rows(out, "Column", "M", len(y))
 
     # silico spontaneous
     y = df_ns["firing_rate"][df_ns["layer"].isin(layers)].values.astype(np.float32)
-    _ = spikestats.plot_firing_rate_hist_vs_lognorm(
+    out = spikestats.plot_firing_rate_hist_vs_lognorm(
         y,
         log_x_min,
         log_x_max,
@@ -69,10 +89,11 @@ def plot_fr_by_layer(axes, df_nv, df_ns, df_ne, df_nb, layers, log_x_min, log_x_
         legend=False,
         lognormal=True,
     )
+    rows += _hist_lognorm_rows(out, "Column", "NS", len(y))
 
     # silico evoked
     y = df_ne["firing_rate"][df_ne["layer"].isin(layers)].values.astype(np.float32)
-    _ = spikestats.plot_firing_rate_hist_vs_lognorm(
+    out = spikestats.plot_firing_rate_hist_vs_lognorm(
         y,
         log_x_min,
         log_x_max,
@@ -87,6 +108,7 @@ def plot_fr_by_layer(axes, df_nv, df_ns, df_ne, df_nb, layers, log_x_min, log_x_
         legend=False,
         lognormal=True,
     )
+    rows += _hist_lognorm_rows(out, "Column", "E", len(y))
     axes[0].set_xticklabels([])
     axes[0].set_xlim([X_MIN, X_MAX])
     axes[0].tick_params(axis="y")
@@ -137,66 +159,66 @@ def plot_fr_by_layer(axes, df_nv, df_ns, df_ne, df_nb, layers, log_x_min, log_x_
 
         # vivo
         y = df_nv["firing_rate"][df_nv["layer"] == layers[ix]].values.astype(np.float32)
-        out_vivo_all.append(
-            spikestats.plot_firing_rate_hist_vs_lognorm(
-                y,
-                log_x_min,
-                log_x_max,
-                nbins,
-                t_dec,
-                axes[ix + 1],
-                label=f"{len(y)}",
-                color=cl["COLOR_NV"],
-                markerfacecolor=cl["COLOR_NV"],
-                markersize=MARKERSIZE,
-                markeredgewidth=EDGEWIDTH,
-                legend=False,
-                lognormal=True,
-            )
+        out = spikestats.plot_firing_rate_hist_vs_lognorm(
+            y,
+            log_x_min,
+            log_x_max,
+            nbins,
+            t_dec,
+            axes[ix + 1],
+            label=f"{len(y)}",
+            color=cl["COLOR_NV"],
+            markerfacecolor=cl["COLOR_NV"],
+            markersize=MARKERSIZE,
+            markeredgewidth=EDGEWIDTH,
+            legend=False,
+            lognormal=True,
         )
+        out_vivo_all.append(out)
+        rows += _hist_lognorm_rows(out, layers[ix], "M", len(y))
         n_nvs.append(len(y))
 
         # silico spont
         y = df_ns["firing_rate"][df_ns["layer"] == layers[ix]].values.astype(np.float32)
-        out_sili_spont_all.append(
-            spikestats.plot_firing_rate_hist_vs_lognorm(
-                y,
-                log_x_min,
-                log_x_max,
-                nbins,
-                t_dec,
-                axes[ix + 1],
-                label=f"{len(y)}",
-                color=cl["COLOR_NS"],
-                markerfacecolor=cl["COLOR_NS"],
-                markersize=MARKERSIZE,
-                markeredgewidth=EDGEWIDTH,
-                legend=False,
-                lognormal=True,
-            )
+        out = spikestats.plot_firing_rate_hist_vs_lognorm(
+            y,
+            log_x_min,
+            log_x_max,
+            nbins,
+            t_dec,
+            axes[ix + 1],
+            label=f"{len(y)}",
+            color=cl["COLOR_NS"],
+            markerfacecolor=cl["COLOR_NS"],
+            markersize=MARKERSIZE,
+            markeredgewidth=EDGEWIDTH,
+            legend=False,
+            lognormal=True,
         )
+        out_sili_spont_all.append(out)
+        rows += _hist_lognorm_rows(out, layers[ix], "NS", len(y))
         n_nss.append(len(y))
         axes[ix + 1].set_xlim([X_MIN, X_MAX])
 
         # silico evoked
         y = df_ne["firing_rate"][df_ne["layer"] == layers[ix]].values.astype(np.float32)
-        out_sili_ev_all.append(
-            spikestats.plot_firing_rate_hist_vs_lognorm(
-                y,
-                log_x_min,
-                log_x_max,
-                nbins,
-                t_dec,
-                axes[ix + 1],
-                label=f"{len(y)}",
-                color=cl["COLOR_NE"],
-                markerfacecolor=cl["COLOR_NE"],
-                markersize=MARKERSIZE,
-                markeredgewidth=EDGEWIDTH,
-                legend=False,
-                lognormal=True,
-            )
+        out = spikestats.plot_firing_rate_hist_vs_lognorm(
+            y,
+            log_x_min,
+            log_x_max,
+            nbins,
+            t_dec,
+            axes[ix + 1],
+            label=f"{len(y)}",
+            color=cl["COLOR_NE"],
+            markerfacecolor=cl["COLOR_NE"],
+            markersize=MARKERSIZE,
+            markeredgewidth=EDGEWIDTH,
+            legend=False,
+            lognormal=True,
         )
+        out_sili_ev_all.append(out)
+        rows += _hist_lognorm_rows(out, layers[ix], "E", len(y))
         n_nes.append(len(y))
         axes[ix + 1].set_xlim([X_MIN, X_MAX])
 
@@ -211,7 +233,7 @@ def plot_fr_by_layer(axes, df_nv, df_ns, df_ne, df_nb, layers, log_x_min, log_x_
 
             # add synthetic model
             y = df_nb["firing_rate"].values.astype(np.float32)
-            spikestats.plot_firing_rate_hist_vs_lognorm(
+            out = spikestats.plot_firing_rate_hist_vs_lognorm(
                 y,
                 log_x_min,
                 log_x_max,
@@ -226,6 +248,7 @@ def plot_fr_by_layer(axes, df_nv, df_ns, df_ne, df_nb, layers, log_x_min, log_x_
                 legend=False,
                 lognormal=True,
             )
+            rows += _hist_lognorm_rows(out, layers[ix], "S", len(y))
             n_nb = len(y)
             axes[ix + 1].set_xticklabels([])
 
@@ -266,7 +289,111 @@ def plot_fr_by_layer(axes, df_nv, df_ns, df_ne, df_nb, layers, log_x_min, log_x_
     assert sum(n_nss) == df_ns.shape[0], "total # of units is wrong"
     assert sum(n_nes) == df_ne.shape[0], "total # of units is wrong"
     assert n_nb == df_nb.shape[0], "total # of units is wrong"
-    
+
+    df_hist = pd.DataFrame(rows)
+    return axes, df_hist
+
+
+def plot_fr_by_layer_from_df(axes, df_hist, layers, cl):
+    """re-draw the plot_fr_by_layer() panels from its exported
+    source dataset (df_hist), without recomputing the histograms
+    and lognormal fits"""
+
+    MARKERSIZE = 3
+    EDGEWIDTH = 0.5
+    X_MIN = 1e-3
+    X_MAX = 1e3
+    layer_loc = 0.01
+    N_MJ_TCKS = 5
+    N_MN_TCKS = 11
+
+    exp_colors = {
+        "M": cl["COLOR_NV"],
+        "NS": cl["COLOR_NS"],
+        "E": cl["COLOR_NE"],
+        "S": cl["COLOR_NB"],
+    }
+
+    def _draw(ax, panel_layer):
+        panel_df = df_hist[df_hist["layer"] == panel_layer]
+        for exp, color in exp_colors.items():
+            exp_df = panel_df[panel_df["experiment"] == exp].sort_values("x")
+            if exp_df.empty:
+                continue
+            n = exp_df["n"].iloc[0]
+            ax.plot(
+                exp_df["x"],
+                exp_df["y_data"],
+                marker="o",
+                ls="none",
+                markersize=MARKERSIZE,
+                label=f"{n}",
+                markerfacecolor=color,
+                markeredgecolor="w",
+                markeredgewidth=EDGEWIDTH,
+            )
+            ax.plot(exp_df["x"], exp_df["y_fit"], color=color)
+        ax.set_xscale("log")
+
+    def _format(ax, title):
+        ax.spines[["top", "right"]].set_visible(False)
+        ax.spines["bottom"].set_position(("axes", -0.05))
+        ax.yaxis.set_ticks_position("left")
+        ax.spines["left"].set_position(("axes", -0.05))
+        locmaj = matplotlib.ticker.LogLocator(base=10, numticks=N_MJ_TCKS)
+        locmin = matplotlib.ticker.LogLocator(base=10.0, subs=np.arange(0, 10, 1), numticks=N_MN_TCKS)
+        ax.tick_params(which="both")
+        ax.xaxis.set_major_locator(locmaj)
+        ax.xaxis.set_minor_locator(locmin)
+        ax.xaxis.set_minor_formatter(matplotlib.ticker.NullFormatter())
+        ax.annotate(
+            title,
+            (layer_loc, 1 if title == "Column" else 0.8),
+            xycoords="axes fraction",
+            fontweight="bold",
+            fontsize=7,
+        )
+
+    # column panel
+    _draw(axes[0], "Column")
+    axes[0].set_xticklabels([])
+    axes[0].set_xlim([X_MIN, X_MAX])
+    axes[0].tick_params(axis="y")
+    axes[0].legend(
+        frameon=False,
+        loc="upper left",
+        bbox_to_anchor=(0.65, 1),
+        handletextpad=-0.5,
+        labelspacing=0,
+        title="unit count",
+    )
+    _format(axes[0], "Column")
+
+    # per-layer panels
+    for ix, layer in enumerate(layers):
+        ax = axes[ix + 1]
+        _draw(ax, layer)
+        ax.set_xlim([X_MIN, X_MAX])
+
+        if ix == 2:
+            ax.set_ylabel("Probability (ratio)")
+        if ix == 4:
+            ax.set_xlabel("Firing rate (spikes/sec)")
+        else:
+            ax.set_xticklabels([])
+
+        ax.legend(
+            frameon=False,
+            loc="upper left",
+            bbox_to_anchor=(0.65, 1),
+            handletextpad=-0.5,
+            labelspacing=0,
+        )
+        _format(ax, layer)
+        ax.set_xticks([0.01, 1, 100])
+
+    return axes
+
 
 def plot_fr_stats_by_layer(ax, df_nv, df_ns, df_ne, df_nb, layers, cl):
     
@@ -503,25 +630,28 @@ def plot_fr_stats_by_layer_vert(ax, df_nv, df_ns, df_ne, df_nb, layers, cl):
     return ax, plot_data2
 
 
-def bootstrap_varlogfr(firing_rate: list, N_BOOT: int):
+def bootstrap_varlogfr(firing_rate: list, N_BOOT: int, seed: int = 0):
     """Calculate the variance of each log(firing rate) distribution
     bootstrapped from the provided "firing_rate" list.
 
     Args:
         firing_rate (list): _description_
         N_BOOT (int): _description_
+        seed (int, optional): seed for the bootstrap RNG, for
+            reproducibility. Defaults to 0.
 
     Returns:
-        std_boot_all (list): "N_BOOT" variances. One for each 
-        distribution of firing rate bootstrapped from the 
+        std_boot_all (list): "N_BOOT" variances. One for each
+        distribution of firing rate bootstrapped from the
         provided "firing_rate" list
     """
+    rng = random.Random(seed)
     std_boot_all = []
     # - sample firing rates
     # - log transform
     # - calculate variance and repeat N_BOOT
     for ix in range(N_BOOT):
-        fr_boot_i = choices(firing_rate, k=len(firing_rate))
+        fr_boot_i = rng.choices(firing_rate, k=len(firing_rate))
         log_fr_boot_i = np.log10(fr_boot_i)
         std_boot_all.append(np.var(log_fr_boot_i))
     return std_boot_all
@@ -567,7 +697,7 @@ def set_aes_boxes(ax, alpha):
     return ax
 
     
-def plot_fr_std_stats_by_layer(ax, df_nv, df_ns, df_ne, df_nb, layers, cl):
+def plot_fr_std_stats_by_layer(ax, df_nv, df_ns, df_ne, df_nb, layers, cl, seed=0):
     
     N_BOOT = 100
 
@@ -585,7 +715,7 @@ def plot_fr_std_stats_by_layer(ax, df_nv, df_ns, df_ne, df_nb, layers, cl):
         # vivo
         log_fr_vars_i = bootstrap_varlogfr(
             df_nv["firing_rate"][df_nv["layer"] == layer].astype(np.float32).tolist(),
-            N_BOOT,
+            N_BOOT=N_BOOT, seed=seed
         )
         log_fr_vars_vivo += log_fr_vars_i
         layer_vivo += [layer] * len(log_fr_vars_i)
@@ -593,7 +723,7 @@ def plot_fr_std_stats_by_layer(ax, df_nv, df_ns, df_ne, df_nb, layers, cl):
         # silico spontaneous
         log_fr_vars_sp_i = bootstrap_varlogfr(
             df_ns["firing_rate"][df_ns["layer"] == layer].astype(np.float32).tolist(),
-            N_BOOT,
+            N_BOOT=N_BOOT,seed=seed
         )
         log_fr_vars_sili_sp += log_fr_vars_sp_i
         layer_sili_sp += [layer] * len(log_fr_vars_sp_i)
@@ -601,7 +731,7 @@ def plot_fr_std_stats_by_layer(ax, df_nv, df_ns, df_ne, df_nb, layers, cl):
         # silico evoked
         log_fr_vars_ev_i = bootstrap_varlogfr(
             df_ne["firing_rate"][df_ne["layer"] == layer].astype(np.float32).tolist(),
-            N_BOOT,
+            N_BOOT=N_BOOT,seed=seed
         )
         log_fr_vars_sili_ev += log_fr_vars_ev_i
         layer_sili_ev += [layer] * len(log_fr_vars_ev_i)
@@ -632,7 +762,7 @@ def plot_fr_std_stats_by_layer(ax, df_nv, df_ns, df_ne, df_nb, layers, cl):
     # synthetic
     log_fr_vars_sili_nb = bootstrap_varlogfr(
         df_nb["firing_rate"].astype(np.float32).tolist(),
-        N_BOOT,
+        N_BOOT=N_BOOT,seed=seed
     )
     sili_data_nb = pd.DataFrame(
         data=np.array(log_fr_vars_sili_nb), columns=["Var(log(firing rate))"]
@@ -697,7 +827,7 @@ def plot_fr_std_stats_by_layer(ax, df_nv, df_ns, df_ne, df_nb, layers, cl):
     return ax, plot_data
 
 
-def plot_fr_std_stats_by_layer_vert(ax, df_nv, df_ns, df_ne, df_nb, layers, cl):
+def plot_fr_std_stats_by_layer_vert(ax, df_nv, df_ns, df_ne, df_nb, layers, cl, seed=0):
     
     # 100 bootstrap
     N_BOOT = 100
@@ -732,7 +862,7 @@ def plot_fr_std_stats_by_layer_vert(ax, df_nv, df_ns, df_ne, df_nb, layers, cl):
         # vivo
         log_fr_vars_i = bootstrap_varlogfr(
             df_nv["firing_rate"][df_nv["layer"] == layer].astype(np.float32).tolist(),
-            N_BOOT,
+            N_BOOT=N_BOOT, seed=seed
         )
         log_fr_vars_vivo += log_fr_vars_i
         layer_vivo += [layer] * len(log_fr_vars_i)
@@ -740,7 +870,7 @@ def plot_fr_std_stats_by_layer_vert(ax, df_nv, df_ns, df_ne, df_nb, layers, cl):
         # silico spontaneous
         log_fr_vars_sp_i = bootstrap_varlogfr(
             df_ns["firing_rate"][df_ns["layer"] == layer].astype(np.float32).tolist(),
-            N_BOOT,
+            N_BOOT=N_BOOT, seed=seed
         )
         log_fr_vars_sili_sp += log_fr_vars_sp_i
         layer_sili_sp += [layer] * len(log_fr_vars_sp_i)
@@ -748,7 +878,7 @@ def plot_fr_std_stats_by_layer_vert(ax, df_nv, df_ns, df_ne, df_nb, layers, cl):
         # silico evoked
         log_fr_vars_ev_i = bootstrap_varlogfr(
             df_ne["firing_rate"][df_ne["layer"] == layer].astype(np.float32).tolist(),
-            N_BOOT,
+            N_BOOT=N_BOOT, seed=seed
         )
         log_fr_vars_sili_ev += log_fr_vars_ev_i
         layer_sili_ev += [layer] * len(log_fr_vars_ev_i)
@@ -779,7 +909,7 @@ def plot_fr_std_stats_by_layer_vert(ax, df_nv, df_ns, df_ne, df_nb, layers, cl):
     # synthetic
     log_fr_vars_sili_nb = bootstrap_varlogfr(
         df_nb["firing_rate"].astype(np.float32).tolist(),
-        N_BOOT,
+        N_BOOT=N_BOOT, seed=seed
     )
     sili_data_nb = pd.DataFrame(
         data=np.array(log_fr_vars_sili_nb), columns=["Var(log(firing rate))"]
