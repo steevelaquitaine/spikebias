@@ -19,7 +19,9 @@ dataset/01_intermediate/waveforms/npx_spont/**
 dataset/01_intermediate/waveforms/npx_evoked/**
 dataset/01_intermediate/waveforms/marques_smith/**
 
+# un-ignore
 !dataset/01_intermediate/realism/0_silico/4_spikesorting_stimulus_test_neuropixels_8-1-24__8slc_80f_360r_50t_200ms_1_smallest_fiber_gids/**
+!dataset/01_intermediate/sorting/buccino/SortingKS4/
 
 # intermediate datasets  --------------------------
 # - keep computed psds
