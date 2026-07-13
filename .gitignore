@@ -15,10 +15,18 @@ dataset/01_intermediate/0_silico
 dataset/01_intermediate/copyscripts
 dataset/01_intermediate/sorters/**
 
-# dataset: sorting
+# intermediate dataset: sortings
 dataset/01_intermediate/sorting/*
 !dataset/01_intermediate/sorting/buccino/
 
+# intermediate dataset - these are the paper's 
+# original sortings for the simulation of Horvath 
+# dense probe with the initial GPU setup
+!dataset/01_intermediate/sorting/dense_probe1/ 
+!dataset/01_intermediate/sorting/dense_probe2/
+!dataset/01_intermediate/sorting/dense_probe3/
+
+# intermediate dataset: waveforms
 dataset/01_intermediate/waveforms/npx_spont/**
 dataset/01_intermediate/waveforms/npx_evoked/**
 dataset/01_intermediate/waveforms/marques_smith/**
