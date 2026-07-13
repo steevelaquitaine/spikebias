@@ -1,0 +1,20 @@
+{
+    "class": "spikeinterface.extractors.nwbextractors.NwbSortingExtractor",
+    "module": "spikeinterface",
+    "version": "0.101.2",
+    "kwargs": {
+        "file_path": "https://dandiarchive.s3.amazonaws.com/blobs/58f/6d3/58f6d320-39c3-4687-9d7d-4697e4e516fa",
+        "electrical_series_path": null,
+        "sampling_frequency": 20000,
+        "samples_for_rate_estimation": 1000,
+        "cache": false,
+        "stream_mode": "remfile",
+        "stream_cache_path": null,
+        "storage_options": null,
+        "load_unit_properties": true,
+        "t_start": 0
+    },
+    "annotations": {},
+    "properties": {},
+    "relative_paths": false
+}
