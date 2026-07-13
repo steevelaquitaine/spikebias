@@ -1282,6 +1282,163 @@ def plot_single_unit_ratio(ax, df_vivo, df_silico_sp, df_silico_sp_2X, df_silico
     return ax
 
 
+def plot_single_unit_ratio_fixed_ns2x(
+    ax,
+    df_vivo,
+    df_silico_sp,
+    df_silico_ev,
+    df_silico_nb,
+    legend_cfg,
+    n_single_units_sili_sp_2X: int = 193,
+    n_mu_sili_sp_2X: int = 315,
+):
+    """plot the proportions of single and multi-units
+    sorted from the neuropixels probe recording
+
+    Same as plot_single_unit_ratio() but the NS-2X unit counts are
+    hardcoded (n_single_units_sili_sp_2X, n_mu_sili_sp_2X) instead of
+    being computed from a df_silico_sp_2X dataframe, because the raw
+    sorted units for that condition are no longer available.
+    """
+    # setup figure
+    shift = 0.3
+    text_xpos_vivo = -0.3 + shift
+    text_xpos_sili_sp = 0.7 + shift
+    text_xpos_sili_sp_2X = 1.7 + shift
+    text_xpos_sili_ev = 2.7 + shift
+    text_xpos_sili_nb = 3.7 + shift
+
+    # multi-unit and single unit
+    # colors
+    color = np.array(
+        [
+            [1, 1, 1],
+            [0.2, 0.2, 0.2],
+        ]
+    )
+
+    # single-unit count
+    n_single_units_vivo = sum(df_vivo["kslabel"] == "good")
+    n_single_units_sili_sp = sum(df_silico_sp["kslabel"] == "good")
+    n_single_units_sili_ev = sum(df_silico_ev["kslabel"] == "good")
+    n_single_units_sili_nb = sum(df_silico_nb["kslabel"] == "good")
+
+    # multi-unit count
+    n_mu_vivo = df_vivo.shape[0] - n_single_units_vivo
+    n_mu_sili_sp = df_silico_sp.shape[0] - n_single_units_sili_sp
+    n_mu_sili_ev = df_silico_ev.shape[0] - n_single_units_sili_ev
+    n_mu_sili_nb = df_silico_nb.shape[0] - n_single_units_sili_nb
+
+    # NS-2X total (raw data unavailable, counts are hardcoded)
+    n_sili_sp_2X = n_single_units_sili_sp_2X + n_mu_sili_sp_2X
+
+    # build dataset
+    df = pd.DataFrame()
+    df["M"] = np.array([n_single_units_vivo, n_mu_vivo]) / df_vivo.shape[0]
+    df["NS"] = (
+        np.array([n_single_units_sili_sp, n_mu_sili_sp]) / df_silico_sp.shape[0]
+    )
+    df["NS-2X"] = (
+        np.array([n_single_units_sili_sp_2X, n_mu_sili_sp_2X]) / n_sili_sp_2X
+    )
+    df["E"] = (
+        np.array([n_single_units_sili_ev, n_mu_sili_ev]) / df_silico_ev.shape[0]
+    )
+    df["S"] = (
+        np.array([n_single_units_sili_nb, n_mu_sili_nb]) / df_silico_nb.shape[0]
+    )
+
+    # bar plot
+    df.T.plot.bar(
+        ax=ax, stacked=True, color=color, edgecolor=(0.5, 0.5, 0.5), rot=0, width=0.8, linewidth=0.5
+    )
+
+    # add unit counts
+    ax.annotate(
+        f"""{n_mu_vivo}""",
+        (text_xpos_vivo, 0.6),
+        ha="center",
+        color="w",
+        rotation=0,
+    )
+    ax.annotate(
+        f"""{n_single_units_vivo}""",
+        (text_xpos_vivo, 0.13),
+        ha="center",
+        color="k",
+        rotation=0,
+    )
+    # Spontaneous NPX model
+    ax.annotate(
+        f"""{n_mu_sili_sp}""",
+        (text_xpos_sili_sp, 0.6),
+        ha="center",
+        color="w",
+        rotation=0,
+    )
+    ax.annotate(
+        f"""{n_single_units_sili_sp}""",
+        (text_xpos_sili_sp, 0.13),
+        ha="center",
+        color="k",
+        rotation=0,
+    )
+    # 2X
+    ax.annotate(
+        f"""{n_mu_sili_sp_2X}""",
+        (text_xpos_sili_sp_2X, 0.6),
+        ha="center",
+        color="w",
+        rotation=0,
+    )
+    ax.annotate(
+        f"""{n_single_units_sili_sp_2X}""",
+        (text_xpos_sili_sp_2X, 0.13),
+        ha="center",
+        color="k",
+        rotation=0,
+    )
+    # evoked
+    ax.annotate(
+        f"""{n_mu_sili_ev}""",
+        (text_xpos_sili_ev, 0.6),
+        ha="center",
+        color="w",
+        rotation=0,
+    )
+    ax.annotate(
+        f"""{n_single_units_sili_ev}""",
+        (text_xpos_sili_ev, 0.02),
+        ha="center",
+        color="k",
+        rotation=0,
+    )
+    # synthetic
+    ax.annotate(
+        f"""{n_mu_sili_nb}""",
+        (text_xpos_sili_nb, 0.8),
+        ha="center",
+        color="w",
+        rotation=0,
+    )
+    ax.annotate(
+        f"""{n_single_units_sili_nb}""",
+        (text_xpos_sili_nb, 0.1),
+        ha="center",
+        color="k",
+        rotation=0,
+    )
+    ax.legend(
+        ["single-unit", "multi-unit"],
+        loc="upper left",
+        bbox_to_anchor=(0, 1.25),
+        **legend_cfg,
+    )
+    ax.set_ylabel("Proportion (ratio)")
+    ax.set_xlabel("Experiment")
+    return ax
+
+
 def plot_single_unit_ratio_by_drift_corr(ax, drift_corr_v100, drift_corr_rtx5090, no_drift_corr_rtx5090, legend_cfg, number_pos: dict):
     """plot the proportions of single and multi-units
     sorted from the neuropixels probe recording for three 

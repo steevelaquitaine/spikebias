@@ -62,6 +62,52 @@ def plot_unit_isolation(ax, df_nv, df_ns, df_ns_2X, df_ne, df_nb, legend_cfg: di
     return ax
 
 
+def plot_unit_isolation_fixed_ns2x(
+    ax,
+    df_nv,
+    df_ns,
+    df_ne,
+    df_nb,
+    legend_cfg: dict,
+    n_single_units_ns2x: int = 193,
+    n_mu_ns2x: int = 315,
+):
+    """stacked bar plot of the ratio of sorted single-units and multi-units
+
+    Same as plot_unit_isolation() but NS-2X is plotted from hardcoded
+    unit counts (315 multi-units, 193 single-units) instead of a
+    df_ns_2X dataframe, because the raw sorted units for that
+    condition are no longer available.
+
+    Args:
+        ax (_type_): _description_
+        df_nv (_type_): _description_
+        df_ns (_type_): _description_
+        df_ne (_type_): _description_
+        df_nb (_type_): _description_
+        legend_cfg (dict): _description_
+
+    Returns:
+        _type_: _description_
+    """
+    # plot
+    ax = npx_fr.plot_single_unit_ratio_fixed_ns2x(
+        ax, df_nv, df_ns, df_ne, df_nb, legend_cfg,
+        n_single_units_sili_sp_2X=n_single_units_ns2x,
+        n_mu_sili_sp_2X=n_mu_ns2x,
+    )
+
+    # esthetics
+    ax.spines[["top", "right"]].set_visible(False)
+    ax.legend("", frameon=False)
+
+    # disconnect axes (R style)
+    ax.spines["bottom"].set_position(("axes", -0.05))
+    ax.yaxis.set_ticks_position("left")
+    ax.spines["left"].set_position(("axes", -0.05))
+    return ax
+
+
 def plot_unit_isolation_by_drift_corr(ax, drift_corr_v100, drift_corr_rtx5090, no_drift_corr_rtx5090, legend_cfg: dict, number_pos:dict):
     """stacked bar plot of the ratio of sorted single-units and multi-units
 
