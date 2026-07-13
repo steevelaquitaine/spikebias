@@ -1436,7 +1436,35 @@ def plot_single_unit_ratio_fixed_ns2x(
     )
     ax.set_ylabel("Proportion (ratio)")
     ax.set_xlabel("Experiment")
-    return ax
+
+    # tidy source dataset: one row per experiment x unit type
+    n_single = {
+        "M": n_single_units_vivo,
+        "NS": n_single_units_sili_sp,
+        "NS-2X": n_single_units_sili_sp_2X,
+        "E": n_single_units_sili_ev,
+        "S": n_single_units_sili_nb,
+    }
+    n_multi = {
+        "M": n_mu_vivo,
+        "NS": n_mu_sili_sp,
+        "NS-2X": n_mu_sili_sp_2X,
+        "E": n_mu_sili_ev,
+        "S": n_mu_sili_nb,
+    }
+    df_source = pd.DataFrame(
+        [
+            {
+                "experiment": exp,
+                "unit_type": unit_type,
+                "n_units": n_map[exp],
+                "ratio": df.loc[row, exp],
+            }
+            for exp in df.columns
+            for row, unit_type, n_map in [(0, "single-unit", n_single), (1, "multi-unit", n_multi)]
+        ]
+    )
+    return ax, df_source
 
 
 def plot_single_unit_ratio_by_drift_corr(ax, drift_corr_v100, drift_corr_rtx5090, no_drift_corr_rtx5090, legend_cfg, number_pos: dict):

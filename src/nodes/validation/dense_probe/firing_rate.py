@@ -104,3 +104,38 @@ def plot_single_unit_ratio(
     ax.set_ylabel("Proportion (ratio)")
     ax.set_xlabel("Experiment")
     return ax
+
+
+def plot_single_unit_ratio_with_df(
+    ax, df_hv1, df_hv2, df_hv3, df_hs1, df_hs2, df_hs3
+):
+    """same as plot_single_unit_ratio() but also returns the tidy
+    source dataset (one row per experiment x unit type) used to draw
+    the figure, for export as a source dataset
+    """
+    ax = plot_single_unit_ratio(ax, df_hv1, df_hv2, df_hv3, df_hs1, df_hs2, df_hs3)
+
+    n_su_hv = sum(sum(d["kslabel"] == "good") for d in (df_hv1, df_hv2, df_hv3))
+    n_su_hs = sum(sum(d["kslabel"] == "good") for d in (df_hs1, df_hs2, df_hs3))
+    n_hv = df_hv1.shape[0] + df_hv2.shape[0] + df_hv3.shape[0]
+    n_hs = df_hs1.shape[0] + df_hs2.shape[0] + df_hs3.shape[0]
+    n_mu_hv = n_hv - n_su_hv
+    n_mu_hs = n_hs - n_su_hs
+
+    n_single = {"H": n_su_hv, "DS": n_su_hs}
+    n_multi = {"H": n_mu_hv, "DS": n_mu_hs}
+    n_total = {"H": n_hv, "DS": n_hs}
+
+    df_source = pd.DataFrame(
+        [
+            {
+                "experiment": exp,
+                "unit_type": unit_type,
+                "n_units": n_map[exp],
+                "ratio": n_map[exp] / n_total[exp],
+            }
+            for exp in ("H", "DS")
+            for unit_type, n_map in [("single-unit", n_single), ("multi-unit", n_multi)]
+        ]
+    )
+    return ax, df_source

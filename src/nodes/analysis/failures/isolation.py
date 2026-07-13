@@ -91,7 +91,7 @@ def plot_unit_isolation_fixed_ns2x(
         _type_: _description_
     """
     # plot
-    ax = npx_fr.plot_single_unit_ratio_fixed_ns2x(
+    ax, df_source = npx_fr.plot_single_unit_ratio_fixed_ns2x(
         ax, df_nv, df_ns, df_ne, df_nb, legend_cfg,
         n_single_units_sili_sp_2X=n_single_units_ns2x,
         n_mu_sili_sp_2X=n_mu_ns2x,
@@ -105,7 +105,7 @@ def plot_unit_isolation_fixed_ns2x(
     ax.spines["bottom"].set_position(("axes", -0.05))
     ax.yaxis.set_ticks_position("left")
     ax.spines["left"].set_position(("axes", -0.05))
-    return ax
+    return ax, df_source
 
 
 def plot_unit_isolation_by_drift_corr(ax, drift_corr_v100, drift_corr_rtx5090, no_drift_corr_rtx5090, legend_cfg: dict, number_pos:dict):
@@ -137,7 +137,7 @@ def plot_unit_isolation_by_drift_corr(ax, drift_corr_v100, drift_corr_rtx5090, n
 
 
 def plot_unit_isolation_dense_probe(ax, df_hv1, df_hv2, df_hv3, df_hs1, df_hs2, df_hs3):
-    
+
     # plot
     ax = dense_fr.plot_single_unit_ratio(
         ax, df_hv1, df_hv2, df_hv3, df_hs1, df_hs2, df_hs3
@@ -151,3 +151,22 @@ def plot_unit_isolation_dense_probe(ax, df_hv1, df_hv2, df_hv3, df_hs1, df_hs2, 
     ax.yaxis.set_ticks_position("left")
     ax.spines["left"].set_position(("axes", -0.05))
     return ax
+
+
+def plot_unit_isolation_dense_probe_with_df(ax, df_hv1, df_hv2, df_hv3, df_hs1, df_hs2, df_hs3):
+    """same as plot_unit_isolation_dense_probe() but also returns the
+    tidy source dataset used to draw the figure, for export"""
+
+    # plot
+    ax, df_source = dense_fr.plot_single_unit_ratio_with_df(
+        ax, df_hv1, df_hv2, df_hv3, df_hs1, df_hs2, df_hs3
+    )
+    # esthetics
+    ax.spines[["top", "right"]].set_visible(False)
+    ax.legend("", frameon=False)
+
+    # disconnect axes (R style)
+    ax.spines["bottom"].set_position(("axes", -0.05))
+    ax.yaxis.set_ticks_position("left")
+    ax.spines["left"].set_position(("axes", -0.05))
+    return ax, df_source
