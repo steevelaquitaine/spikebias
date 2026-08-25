@@ -16,8 +16,10 @@ dependencies:
   - dandi=0.74.3                # download and upload nwb files to dandiarchive
   - ipykernel=6.29.5                   
   - matplotlib=3.8.4
-  - nwbinspector
-  - pip
+  - nwbinspector=0.7.0
+  - pip=26.0.1
+  - pytables=3.10.1
   - pip:
     - spikeinterface==0.101.2 # newly released compatible with neuroconv (spikebias works with 0.100.5, not compatible with neuroconv)
     - remfile==0.1.13
+    - numpy==1.26.4

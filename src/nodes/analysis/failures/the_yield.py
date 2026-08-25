@@ -62,8 +62,9 @@ def get_yield_per_site(sorters: list, exps: list, sort_paths: list, rec_path: st
     """get yield per site for each sorter, experiment and layer
 
     Args:
-        sorters (list): _description_
-        exps (list): _description_
+        sorters (list): the spike sorters to test ["ks4", "ks3"...].
+        exps (list): the experiments, "S": Buccino's synthetic simulation, 
+        ... "NS": our biophysical simulation in spontaneous regime. etc..
         sort_paths (list): paths of the SortingExtractors
 
     Usage:
@@ -112,8 +113,14 @@ def get_yield_per_site(sorters: list, exps: list, sort_paths: list, rec_path: st
         df2["sorters"] = sorters[s_i]
 
         # record number of site metadata
-        rec_ns = si.load_extractor(rec_path)
-        layers = utils.standardize_layers(rec_ns.get_property("layers"))
+        Recording = si.load_extractor(rec_path)
+
+        # name site layers
+        if exps[s_i][0]=="S":
+            layers = ["L5"]*Recording.get_num_channels()
+        else:
+            layers = utils.standardize_layers(Recording.get_property("layers"))
+
         n_sites_df = (
             pd.DataFrame(layers, columns=["layer"]).groupby("layer", as_index=False).size()
         )
@@ -165,6 +172,50 @@ def get_gt_yield_per_site(exp: str, gt_path: str, rec_path: str):
     df3 = df3.rename({"yield_theory": "yield per site (theory)"}, axis="columns")
     return df3
 
+
+def get_gt_yield_per_site_from_extractors(exp: str, SortingTrue, Recording):
+    """calculate ground truth yield per site from SpikeInterface Extractors
+
+    Args:
+        exp (str): _description_
+        SortingTrue (_type_): _description_
+        Recording (_type_): _description_
+
+    Returns:
+        _type_: _description_
+
+    Yields:
+        _type_: _description_
+    """
+
+    # layers of each true unit withing 50 ums of the probe
+    df3 = pd.DataFrame()
+    df3["layer"] = utils.standardize_layers(SortingTrue.get_property("layer"))
+    print(df3.shape[0])
+    
+    # drop silent units (can't be detected)
+    n_spikes = SortingTrue.get_total_num_spikes()
+    not_silent = np.where(pd.DataFrame.from_dict(n_spikes, orient="index") > 0)[0]
+    df3 = df3.iloc[not_silent]
+    print("nb of silent gt units:", len(df3) - len(not_silent))
+    
+    # count units per layer
+    df3 = df3.groupby("layer", as_index=False).size()
+    df3 = df3.rename({"size": "yield_theory"}, axis="columns")
+
+    # record nb of site metadata    
+    layers = utils.standardize_layers(Recording.get_property("layers"))
+    n_sites_df = (
+        pd.DataFrame(layers, columns=["layer"]).groupby("layer", as_index=False).size()
+    )
+    n_sites_df = n_sites_df.rename({"size": "n_sites"}, axis="columns")
+    df3 = n_sites_df.merge(df3)
+
+    # record metadata
+    df3["experiments"] = exp
+    df3["yield_theory"] /= df3["n_sites"]
+    df3 = df3.rename({"yield_theory": "yield per site (theory)"}, axis="columns")
+    return df3
 
 def count_ctx_sites(record_path: str):
     """count the number of electrode sites in the cortex
