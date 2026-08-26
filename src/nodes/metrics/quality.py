@@ -1014,7 +1014,7 @@ def _plot_ratio_by_layer(ax, df, cl, legend_cfg, lgd: bool, ylabel: bool, xlabel
 
     Args:
         df (_type_): _description_
-        cl (_type_): _description_
+        cl (_type_): color
         legend_cfg (_type_): _description_
 
     Returns:
