@@ -234,7 +234,7 @@ def get_scores(
     Sorting,
     delta_time: float,
 ):
-    """get agreement scores between 
+    """Compute agreement scores between 
     ground truth and sorted units
 
     Args:
