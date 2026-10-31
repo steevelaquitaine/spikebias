@@ -97,3 +97,9 @@ python -m ipykernel install --user --name spikebias --display-name "spikebias"
 dataset/
     00_raw/ (505 GB)
 ```
+
+# [TODO]
+
+- update the dense_probe1 SortingExtractors uploaded on dandiarchive (dandiset 001250, `sub-003-fitted`). The KS3, KS2.5, KS2, KS and HS 10-minute sortings (`sub-003-fitted_ses-ks3-10m.nwb`, `ses-ks25-10m`, `ses-ks2-10m`, `ses-ks-10m`, `ses-hs-10m`) are duplicates of the dense_probe2 sortings (`sub-004-fitted`, same ses-* files): same number of units and same spike trains. They do not match the dense_probe1 ground truth (`sub-003-fitted_ecephys.nwb`), so all well-sorted ground truth counts are about 0 for depth 1.
+    - the correct dense_probe1 sortings are in `dataset/01_intermediate/sorting/dense_probe1/`. Number of units (KS4, KS3, KS2.5, KS2, KS, HS): 94, 238, 518, 512, 693, 29 (dandiarchive duplicates of dense_probe2: 131, 293, 530, 533, 498, 88)
+    - the dandiarchive KS4 sorting of dense_probe1 is also a duplicate of dense_probe2 (131 units; the DANDI copy `dataset/01_intermediate/sorting/dense_probe1/SortingKS4_10m_` was removed from the working tree, it is still in git history (commit a6e5958); the correct one has 94 units, in `SortingKS4_10m`). The dandiarchive KS4 sortings of dense_probe2 and dense_probe3 (`SortingKS4_10m_`) are identical to the GitHub ones (all spike trains compared) and were removed from the working tree, they are still in git history (commit a6e5958)
