@@ -18,7 +18,10 @@ dataset/01_intermediate/sorters/**
 
 # intermediate dataset: sortings
 dataset/01_intermediate/sorting/*
+
+# keep on github
 !dataset/01_intermediate/sorting/buccino/
+!dataset/01_intermediate/sorting/npx_evoked_40khz/
 
 # intermediate dataset - these are the paper's 
 # original sortings for the simulation of Horvath 
@@ -249,3 +252,4 @@ spack-stage
 
 CLAUDE.md
 paper
+test_sortings
