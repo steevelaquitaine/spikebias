@@ -36,9 +36,12 @@ def feature_sets(base_predictors):
 
 
 def pipeline(kind):
-    qt = QuantileTransformer(n_quantiles=100, output_distribution="normal")     # heavy-tailed features
     if kind == LOGISTIC:
+        # features are replaced by their percentile rank (uniform on [0, 1]): the model is linear in the rank, so the
+        # extreme values of the heavy-tailed features cannot dominate (a normal-score transform gave a much lower recall)
+        qt = QuantileTransformer(n_quantiles=100, output_distribution="uniform")
         return make_pipeline(qt, LogisticRegression(C=0.3, max_iter=5000))
+    qt = QuantileTransformer(n_quantiles=100, output_distribution="normal")     # heavy-tailed features
     return make_pipeline(qt, ExtraTreesClassifier(n_estimators=300, min_samples_leaf=3, random_state=0))
 
 
@@ -68,12 +71,13 @@ def _one_fold(k, tr, te, X_by_model, y):
     return rows
 
 
-def nested_cv(dataset, base_predictors, n_repeats=10, n_jobs=1):
+def nested_cv(dataset, base_predictors, models=None, n_repeats=10, n_jobs=1):
     """per-fold precision and recall of the two models (repeated stratified 4-fold: 75% train / 25% test).
+    models: list of models to evaluate (default: all of them, [LOGISTIC, TREES]).
     n_jobs=1 by default: in a notebook that already started worker processes (spikeinterface) the joblib workers fail with
     BrokenProcessPool; the 40 folds take a few minutes sequentially."""
     y = dataset[LABEL].values.astype(int)
-    X_by_model = {kind: dataset[cols].values for kind, cols in feature_sets(base_predictors).items()}
+    X_by_model = {kind: dataset[cols].values for kind, cols in feature_sets(base_predictors).items() if models is None or kind in models}
     folds = list(RepeatedStratifiedKFold(n_splits=4, n_repeats=n_repeats, random_state=0).split(np.zeros(len(y)), y))
     res = Parallel(n_jobs=n_jobs)(delayed(_one_fold)(k, tr, te, X_by_model, y) for k, (tr, te) in enumerate(folds))
     return pd.DataFrame([r for rows in res for r in rows])
