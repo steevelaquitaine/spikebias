@@ -10,7 +10,7 @@ Usage:
 
         nohup python -m src.pipes.sorting.npx_evoked.full.treshold_crossing \
             --recording-path dataset/00_raw/recording_npx_evoked \
-                --save-path temp/no_spike_sorting/sorting_peak_npx_evoked \
+                --save-path dataset/01_intermediate/sorting/npx_evoked/SortingTC \
                     --freq-min 300 \
                         > out_peak_detect.log
 
@@ -51,7 +51,7 @@ if __name__ == "__main__":
     # Parse command-line arguments
     parser = argparse.ArgumentParser(description="Run spike sorting threshold crossing pipeline.")
     parser.add_argument("--recording-path", default= './dataset/00_raw/recording_npx_evoked', help="wired probe recording path.")
-    parser.add_argument("--save-path", default='./temp/no_spike_sorting/sorting_peak_npx_evoked', help="output extractor save path")
+    parser.add_argument("--save-path", default='./dataset/01_intermediate/sorting/npx_evoked/SortingTC', help="output extractor save path")
     parser.add_argument("--freq-min", type=int, default=300, help="high pass filter cutoff")
     args = parser.parse_args()
     
