@@ -349,7 +349,7 @@ if __name__ == "__main__":
 
     # add a limitation on RAM usage
     # of 100 GB to prevent crash
-    limit_memory(160)
+    limit_memory(float(os.environ.get("PSD_MAX_GB", 160)))      # address-space limit (GB); lower it with the environment variable PSD_MAX_GB to avoid exhausting the RAM of the machine
 
     # Parse command-line arguments
     parser = argparse.ArgumentParser(description="Compute psds")
@@ -400,6 +400,11 @@ if __name__ == "__main__":
     )
     parser.add_argument(
         "--filter_window", type=str, default="hann", help="welch psd filter window"
+    )
+    parser.add_argument(
+        "--slice-raw",
+        action="store_true",
+        help="cut raw (not preprocessed) traces to the first --duration seconds (saves RAM)",
     )
 
     args = parser.parse_args()
@@ -469,6 +474,11 @@ if __name__ == "__main__":
     # remove irrelevant sites (eases processing)
     Recording = Recording.remove_channels(site_ids_to_remove)
     logger.info(f"Recording after site curation: {Recording}")
+
+    # raw traces: keep the first `duration` seconds only if requested (whole recording otherwise)
+    if args.slice_raw and not args.preprocess and args.duration < Recording.get_total_duration():
+        Recording = Recording.frame_slice(0, int(Recording.get_sampling_frequency() * args.duration))
+        logger.info(f"Raw recording cut to the first {args.duration} s")
 
     # preprocess
     if args.preprocess:
