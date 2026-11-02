@@ -45,7 +45,7 @@ SAMPLE_DIR = np.arange(0, 360, 45) # sample 8 directions out of the 360; (4, 5, 
 # SETUP CONFIG
 GT = "dataset/00_raw/ground_truth_npx_evoked"
 TC = "temp/no_spike_sorting/sorting_peak_npx_evoked" # threshold crossing
-IGEOM = "dataset/01_intermediate/realism/0_silico/4_spikesorting_stimulus_test_neuropixels_8-1-24__8slc_80f_360r_50t_200ms_1_smallest_fiber_gids/0fcb7709-b1e9-4d84-b056-5801f20d55af/analysis/neural_code/igeometrics_thresh_crossing.csv"
+IGEOM = "dataset/01_intermediate/neural_code/npx_evoked/igeometrics_thresh_crossing.csv"
 
 # COMMON DATASETS
 # get task epoch infos
