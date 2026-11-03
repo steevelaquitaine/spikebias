@@ -3,6 +3,10 @@
 # 1. move to repo and create env with $ conda env create -f envs/mearec_si_0_103_0.yml --prefix ./envs/mearec_si_0_103_0
 # 2. activate env: $ conda activate ./envs/mearec_si_0_103_0
 # 3. export detailed list of dependencies with conda export
+# 4. for the synthetic recordings S2-S5 of the paper (Supplementary Fig. 6c-e), MEArec 1.8.0 (the version that simulated them; the
+#    environment has 1.9.0) is installed next to the environment, by src/pipes/validation/synthetic/run_all.py
+# 5. the packages after "scikit-learn" in the pip section below are those that the feature computation of Supplementary Fig. 6c needs
+#    (spikeinterface's template metrics import pandas and scikit-learn; without them the exponential decay and velocities are all NaN)
 
 name: mearec_si_0_103_0
 channels:
@@ -265,4 +269,14 @@ dependencies:
       - zipp==3.23.0
       - LFPy==2.3.5
       - neuron==8.2.4   # specify the neuron version
+      - LFPykit==0.5.1
+      - Cython==3.2.4
+      - find_libpython==0.5.1
+      - mpmath==1.3.0
+      - sympy==1.14.0
+      - PyQt6==6.7.1
+      - pytz==2026.6
+      - tzdata==2026.6
+      - pandas==2.2.3
+      - scikit-learn==1.5.2
       - mearec==1.9.0      
