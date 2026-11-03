@@ -9,6 +9,50 @@ def save_dict(data, file_path: str):
     
     with open(file_path, 'wb') as handle:
         pickle.dump(data, handle, protocol=pickle.HIGHEST_PROTOCOL)
+
+
+def save_crossval(metric_data: list, save_path: str, unit_ids=None, labels=None):
+    """save the cross-validated CEBRA models of a run in a folder
+
+    The folder contains:
+    - fold_000.pt, fold_001.pt, ...: the weights of the CEBRA model of each fold
+      (load with cebra.CEBRA.load(path, weights_only=False))
+    - folds.csv: for each fold, its precision and recall and the row indices of the units used for
+      training and testing (space-separated), their labels and predictions
+    - units.csv (if unit_ids is given): the sorted unit id and the label of each row of the dataset
+
+    Args:
+        metric_data (list): output of get_crossval_metrics
+        save_path (str): folder
+        unit_ids (array, optional): sorted unit id of each row of the dataset
+        labels (array, optional): label (1: good, 0: degraded) of each row of the dataset
+    """
+    import os
+    import pandas as pd
+
+    os.makedirs(save_path, exist_ok=True)
+    rows = []
+    for fold, m in enumerate(metric_data):
+        m["model"]["model"].save(os.path.join(save_path, f"fold_{fold:03d}.pt"))
+        rows.append({
+            "fold": fold,
+            "precision": m["precision"],
+            "recall": m["recall"],
+            "train_unit_ix": " ".join(map(str, m["train_unit_ix"])),
+            "test_unit_ix": " ".join(map(str, m["test_unit_ix"])),
+            "test_label": " ".join(map(str, np.asarray(m["test_label"]).astype(int))),
+            "predictions": " ".join(map(str, np.asarray(m["predictions"]).astype(int))),
+        })
+    pd.DataFrame(rows).to_csv(os.path.join(save_path, "folds.csv"), index=False)
+    if unit_ids is not None:
+        pd.DataFrame({"unit_id": unit_ids, "label": labels}).to_csv(os.path.join(save_path, "units.csv"), index=False)
+
+
+def load_crossval_model(save_path: str, fold: int):
+    """load the CEBRA model of a fold saved by save_crossval (the file is a torch checkpoint:
+    only load files that you trust)"""
+    import os
+    return cebra.CEBRA.load(os.path.join(save_path, f"fold_{fold:03d}.pt"), weights_only=False)
     
     
 def cv_split(label, split, seed):
@@ -208,7 +252,7 @@ def get_crossval_metrics(cfg: dict, dataset: dict, save_path: str,
             )
     
     # save
-    save_dict(metric_data, save_path)
+    save_crossval(metric_data, save_path, unit_ids=dataset["unit_ids"], labels=dataset["label"])
     return metric_data
 
 

@@ -253,3 +253,5 @@ spack-stage
 CLAUDE.md
 paper
 v100_sortings
+# trained models (weights are published with the dataset; folds.csv and README.md are tracked)
+models/**/*.pt
