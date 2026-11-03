@@ -1155,3 +1155,95 @@ def plot_ratio_by_layer(ax, df, color, lgd_cfg):
         ax[4], df[df["layer"] == "L6"], color, lgd_cfg, False, False
     )
     return ax
+
+# spike assignment biases (stacked from the bottom of the bar), colors as in Supplementary Fig. 5b
+BIAS_ORDER = [
+    "false positive",
+    "good",
+    "mixed: good + overmerger + oversplitter",
+    "mixed: good + oversplitter",
+    "mixed: overmerger + oversplitter",
+    "oversplitter",
+]
+BIAS_COLORS = {
+    "false positive": (0, 0, 0),
+    "good": (1, 1, 1),
+    "mixed: good + overmerger + oversplitter": (0.9529, 0.5059, 0.5137),
+    "mixed: good + oversplitter": (0.6470, 0.5020, 0.3490),
+    "mixed: overmerger + oversplitter": (1, 1, 1),
+    "oversplitter": (0.6235, 0.8196, 0.5843),
+}
+BIAS_LABELS = {
+    "oversplitter": "partial",
+    "mixed: good + oversplitter": "good + partial",
+    "mixed: overmerger + oversplitter": "merged + partial",
+    "mixed: good + overmerger + oversplitter": "good + merged + partial",
+    "false positive": "false positive",
+}
+
+
+def plot_spike_assignment_biases_grid(df_counts, sorters, sorter_titles, experiments, layers, fig_size=(6.4, 2.8)):
+    """Ratios of 'single-unit' spike assignment biases by layer (x-axis), spike sorter (columns) and ground truth simulation (rows)
+
+    Args:
+        df_counts (pd.DataFrame): number of units ("count") by "sorter", "experiment", "layer" and "quality" (spike assignment bias)
+        sorters (list): sorters (columns)
+        sorter_titles (list): titles of the columns
+        experiments (list): experiments (rows), e.g. ["S", "NS", "DS", "E"]
+        layers (list): layers (x-axis)
+        fig_size (tuple): figure size in inches
+
+    Returns:
+        fig, axes
+    """
+    from matplotlib.patches import Patch
+
+    fig, axes = plt.subplots(len(experiments), len(sorters), figsize=fig_size, sharex=True, sharey=True)
+    for r, exp in enumerate(experiments):
+        for c, sorter in enumerate(sorters):
+            ax = axes[r, c]
+            d = df_counts[(df_counts["sorter"] == sorter) & (df_counts["experiment"] == exp)]
+            for x, layer in enumerate(layers):
+                dl = d[d["layer"] == layer].set_index("quality")["count"]
+                if dl.sum() == 0:
+                    continue
+                bottom = 0
+                for quality in BIAS_ORDER:
+                    count = dl.get(quality, 0)
+                    pct = count / dl.sum() * 100
+                    if pct == 0:
+                        continue
+                    ax.bar(x, pct, bottom=bottom, width=0.75, color=BIAS_COLORS[quality], edgecolor="k", linewidth=0.3)
+                    if pct > 5:        # only counts of segments above 5% are annotated
+                        ax.text(x, bottom + pct / 2, str(int(count)), ha="center", va="center", fontsize=5, fontweight="bold" if "good" in quality else None)
+                    bottom += pct
+
+            # axes (R style)
+            ax.spines[["top", "right"]].set_visible(False)
+            ax.spines["bottom"].set_visible(r == len(experiments) - 1)
+            ax.spines["left"].set_visible(c == 0)
+            ax.spines["bottom"].set_position(("axes", -0.05))
+            ax.spines["left"].set_position(("axes", -0.05))
+            ax.set_ylim([0, 100])
+            ax.set_xlim([-0.6, len(layers) - 0.4])
+            if c == 0:
+                ax.set_yticks([0, 50, 100], [0, 0.5, 1])
+                ax.set_ylabel(exp, rotation=0, labelpad=12, va="center", fontsize=6)
+            else:
+                ax.set_yticks([])
+            if r == len(experiments) - 1:
+                ax.set_xticks(range(len(layers)), layers, fontsize=5.5)
+            else:
+                ax.set_xticks([])
+            if r == 0:
+                ax.set_title(sorter_titles[c], fontsize=6, pad=6)
+
+    # shared labels and legend
+    fig.text(0.0, 0.5, "Experiment", rotation=90, va="center", fontsize=6)
+    fig.text(0.04, 0.5, "Single-unit ratio", rotation=90, va="center", fontsize=6)
+    handles = [Patch(facecolor=BIAS_COLORS[q], edgecolor="k", linewidth=0.3, label=BIAS_LABELS[q]) for q in ["oversplitter", "mixed: good + oversplitter", "mixed: overmerger + oversplitter", "mixed: good + overmerger + oversplitter", "false positive"]]
+    leg = axes[len(experiments) // 2, -1].legend(handles=handles, title="Spike assignment biases", loc="center left", bbox_to_anchor=(1.1, 1.0), frameon=False, handlelength=2.2, handleheight=0.9, fontsize=5.5)
+    leg.get_title().set_fontweight("bold")
+    leg.get_title().set_fontsize(6)
+    plt.subplots_adjust(left=0.1, right=0.82, wspace=0.25, hspace=0.35)
+    return fig, axes

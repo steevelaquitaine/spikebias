@@ -331,11 +331,15 @@ def get_spike_dataset_for(
     # get all units nearest channels (with extremum amplitude)
     max_chids = ttools.get_template_extremum_channel(we, peak_sign="both")
 
+    # unit ids as they are named in the waveform extractor (integers or strings)
+    we_ids = {int(u): u for u in we.unit_ids}
+
     # loop over good units
     # 240 samples (-3 to 3 ms at 40KHz)
-    wvs = np.zeros((int(max_spikes * we.nbefore * 2 / downsample), 1))
+    wvs = np.zeros((int(max_spikes * len(interval[::downsample])), 1))      # (spikes x samples, units)
     unit_label = []
-    for unit in unit_ids:
+    for unit_int in unit_ids:
+        unit = we_ids[int(unit_int)]
 
         # get its waveforms (num_spikes, num_samples, num_channels)
         wv = we.get_waveforms(unit_id=unit)
@@ -498,11 +502,13 @@ def get_dataset_by_layer(
 
     # select unit ids with at least num_spikes
     n_spike = [unit_spike[key] for key in unit_spike]
+    # note: unit ids are cast to integers (the sorting_quality dataset has integer ids, the sortings
+    # downloaded from DANDI have string ids)
     if num_spike == None:
         num_spike = min(n_spike)
-        flt_unit = [unit for unit in unit_spike]
+        flt_unit = [int(unit) for unit in unit_spike]
     else:
-        flt_unit = [unit for unit in unit_spike if unit_spike[unit] > num_spike]
+        flt_unit = [int(unit) for unit in unit_spike if unit_spike[unit] > num_spike]
 
     # get waveformExtractor
     we = si.WaveformExtractor.load_from_folder(study)
@@ -645,7 +651,9 @@ def join_waveform_and_qmetrics(dataset: dict, qmetrics: pd.DataFrame):
     Returns:
         dict: join dataset
     """
-    # get the common unit ids
+    # get the common unit ids (integers)
+    qmetrics = qmetrics.copy()
+    qmetrics.index = qmetrics.index.astype(int)
     same_units = np.intersect1d(dataset["unit_ids"], qmetrics.index)
     
     # filter waveform dataset's units
