@@ -51,6 +51,9 @@ notebooks/0_demo/demo_sorting
 notebooks/0_demo/001250
 dataset/03_demo/study_npx_evoked
 
+# waveforms
+dataset/01_intermediate/waveforms/reyes_summed/
+
 #kilosort4
 faiss
 
@@ -255,3 +258,6 @@ paper
 v100_sortings
 # trained models (weights are published with the dataset; folds.csv and README.md are tracked)
 models/**/*.pt
+
+# source data file
+figures/8_source_data/Source_Data.xlsx

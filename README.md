@@ -127,3 +127,49 @@ models/
     - the dandiarchive KS4 sorting of dense_probe1 is also a duplicate of dense_probe2 (131 units; the DANDI copy `dataset/01_intermediate/sorting/dense_probe1/SortingKS4_10m_` was removed from the working tree, it is still in git history (commit a6e5958); the correct one has 94 units, in `SortingKS4_10m`). The dandiarchive KS4 sortings of dense_probe2 and dense_probe3 (`SortingKS4_10m_`) are identical to the GitHub ones (all spike trains compared) and were removed from the working tree, they are still in git history (commit a6e5958)
 - save spikecurate regression models in models/
 - upload models to huggingface
+
+## [TODO] Editor's revision requests, per figure
+
+Source: `paper/NCOMMS-25-22328B_Laquitaine_Author_Checklist_1771884331_25.docx`. Source data and svg of each panel: `figures/8_source_data/<panel>/`.
+
+- All figures
+    - [done] merge the per-panel source data (`figures/8_source_data/*/*.xlsx`) into one file, one sheet per figure: `figures/8_source_data/Source_Data.xlsx` (`src/pipes/source_data/merge_source_data.py`; rerun it after any panel changes). It is 64 MB, above the journal's limit of about 30 MB per file: deposit it in a repository (e.g. Zenodo) or reduce the largest sheets (Supplementary Fig. 2, Fig. 7, Fig. 2, Fig. 3)
+    - add "Source data are provided as a Source Data file." to every legend with source data, and "Source data are provided with this paper." to Data Availability
+    - [done for all panels] Nature artwork guide (Arial, 5-7 pt, editable text, images of at least 300 dpi, .pdf next to each .svg): `src/nodes/figure_style.py`, applied in every panel notebook; the template panels are replotted from their source data with `src/pipes/figures/replot_from_source_data.py`. `fig3h/fig3h_clusters.svg` is an old duplicate of `fig3h/fig3h.svg` (same clusters panel), to be removed
+    - main figures: one vector file per figure with editable text (.ai, .eps or .pdf), all panels labelled, no legend in the file
+    - supplementary figures: all in one Supplementary Information PDF, each with a title and a legend of at most 350 words
+    - bar graphs with one value per bar (Fig. 5a, 5d, 6b; Supplementary Figs. 1c, 5b, 6d, 6e, 9): state in the legend what one bar is (e.g. "each bar is one sorting")
+- Fig. 1
+    - suspected third-party content in panel c: provide the rights documentation or replace it
+    - check that no panel is a bar graph that needs individual data points (no notebook)
+- Fig. 2
+    - 2q, 2u: update figure and text
+    - 2m-p, 2r-u: give the n (precise value), define the box plots (centre, box bounds, whiskers, outliers), give exact P values
+- Fig. 3
+    - 3a, 3b: create the source data (notebooks are empty); "check reply natcomm"
+    - 3f: update figure and text
+- Fig. 4
+    - 4a: update figure (one more L2/3 dot)
+    - 4c: update figure and text (different seed)
+    - 4b: give the n; 4b-c: define the box plots, state one- or two-sided tests, give exact P values
+- Fig. 5
+    - 5b: individual data points overlaid (done); legend: "medians (bars)" -> "means (bars)", dots are individual layers, the yield of 0 of E in L1 is not shown on the logarithmic scale; give the n
+    - 5e, 5f, 5g: update figures and text (10-minute correction of the recording, see CLAUDE.md)
+    - 5a, 5g: state one- or two-sided tests, give exact P values
+- Fig. 6
+    - 6c, 6d: update R-squared and the model (see CLAUDE.md); 6e, 6f: update weights
+    - 6b: state whether the chi-square test is one- or two-sided
+    - 6e-f: name the statistical test (two-sided Wald test) and give exact P values
+- Fig. 7
+    - 7h: give the n
+    - 7b, 7f-j: define the box plots
+- Supplementary Fig. 4
+    - Methods or legend: the Kilosort3 evoked sorting is the one on DANDI (its counts and marks differ from the paper's run)
+- Supplementary Fig. 5
+    - 5a: individual data points overlaid (done); legend: "median yield (bar)" -> "mean yield (bar)", dots are individual layers, the yields of 0 (KS3 M, KS3 NS, KS4 E) are not shown on the logarithmic scale
+- Supplementary Fig. 6
+    - 6a: figure marker at 1.3 ms (done); main text, Methods and legend: 1.3 ms gives 96% of the maximum accuracy of Kilosort4 (maximum at 1.8 ms), not the maximum
+    - 6b: legend: no peak of correctly detected units, a tail of intermediate scores (up to 0.4)
+- Supplementary Fig. 9
+    - the Kilosort 2.5 / S panel shows the Kilosort 3 numbers (bug in the paper's notebook): the V100 bar is 413 single-units / 1,162 multi-units; re-run Kilosort 2.5 on S on the RTX 5090 (with and without drift correction) or remove those two bars
+    - Data Availability: the 18 RTX 5090 sortings (with and without drift correction) were not deposited

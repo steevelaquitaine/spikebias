@@ -6,7 +6,7 @@
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2026-04-08T16:01:56.746183</dc:date>
+    <dc:date>2026-11-03T21:32:11.091485</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
@@ -41,80 +41,80 @@ z
     <g id="xtick_1">
      <g id="line2d_1">
       <defs>
-       <path id="m5d086a24e9" d="M 0 0 
+       <path id="m5f23a76d10" d="M 0 0 
 L 0 3.85 
 " style="stroke: #000000; stroke-width: 0.5"/>
       </defs>
       <g>
-       <use xlink:href="#m5d086a24e9" x="38.699125" y="50.095744" style="stroke: #000000; stroke-width: 0.5"/>
+       <use xlink:href="#m5f23a76d10" x="38.699125" y="50.095744" style="stroke: #000000; stroke-width: 0.5"/>
       </g>
      </g>
      <g id="text_1">
-      <text style="font: 6px 'Arial'; text-anchor: middle" x="38.699125" y="61.740431" transform="rotate(-0 38.699125 61.740431)">0</text>
+      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="38.699125" y="61.740431" transform="rotate(-0 38.699125 61.740431)">0</text>
      </g>
     </g>
     <g id="xtick_2">
      <g id="line2d_2">
       <g>
-       <use xlink:href="#m5d086a24e9" x="63.809125" y="50.095744" style="stroke: #000000; stroke-width: 0.5"/>
+       <use xlink:href="#m5f23a76d10" x="63.809125" y="50.095744" style="stroke: #000000; stroke-width: 0.5"/>
       </g>
      </g>
      <g id="text_2">
-      <text style="font: 6px 'Arial'; text-anchor: middle" x="63.809125" y="61.740431" transform="rotate(-0 63.809125 61.740431)">500</text>
+      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="63.809125" y="61.740431" transform="rotate(-0 63.809125 61.740431)">500</text>
      </g>
     </g>
     <g id="xtick_3">
      <g id="line2d_3">
       <g>
-       <use xlink:href="#m5d086a24e9" x="88.919125" y="50.095744" style="stroke: #000000; stroke-width: 0.5"/>
+       <use xlink:href="#m5f23a76d10" x="88.919125" y="50.095744" style="stroke: #000000; stroke-width: 0.5"/>
       </g>
      </g>
      <g id="text_3">
-      <text style="font: 6px 'Arial'; text-anchor: middle" x="88.919125" y="61.740431" transform="rotate(-0 88.919125 61.740431)">1000</text>
+      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="88.919125" y="61.740431" transform="rotate(-0 88.919125 61.740431)">1000</text>
      </g>
     </g>
     <g id="text_4">
-     <text style="font: 6px 'Arial'; text-anchor: middle" x="63.809125" y="71.300744" transform="rotate(-0 63.809125 71.300744)">Time (ms)</text>
+     <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="63.809125" y="71.300744" transform="rotate(-0 63.809125 71.300744)">Time (ms)</text>
     </g>
    </g>
    <g id="matplotlib.axis_2">
     <g id="ytick_1">
      <g id="line2d_4">
       <defs>
-       <path id="md87eb760f8" d="M 0 0 
+       <path id="m3475002a86" d="M 0 0 
 L -3.85 0 
 " style="stroke: #000000; stroke-width: 0.5"/>
       </defs>
       <g>
-       <use xlink:href="#md87eb760f8" x="36.188125" y="48.155344" style="stroke: #000000; stroke-width: 0.5"/>
+       <use xlink:href="#m3475002a86" x="36.188125" y="48.155344" style="stroke: #000000; stroke-width: 0.5"/>
       </g>
      </g>
      <g id="text_5">
-      <text style="font: 6px 'Arial'; text-anchor: end" x="28.838125" y="50.302687" transform="rotate(-0 28.838125 50.302687)">-243</text>
+      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: end" x="28.838125" y="50.302687" transform="rotate(-0 28.838125 50.302687)">-243</text>
      </g>
     </g>
     <g id="ytick_2">
      <g id="line2d_5">
       <g>
-       <use xlink:href="#md87eb760f8" x="36.188125" y="24.281055" style="stroke: #000000; stroke-width: 0.5"/>
+       <use xlink:href="#m3475002a86" x="36.188125" y="24.281055" style="stroke: #000000; stroke-width: 0.5"/>
       </g>
      </g>
      <g id="text_6">
-      <text style="font: 6px 'Arial'; text-anchor: end" x="28.838125" y="26.428399" transform="rotate(-0 28.838125 26.428399)">0</text>
+      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: end" x="28.838125" y="26.428399" transform="rotate(-0 28.838125 26.428399)">0</text>
      </g>
     </g>
     <g id="ytick_3">
      <g id="line2d_6">
       <g>
-       <use xlink:href="#md87eb760f8" x="36.188125" y="9.347344" style="stroke: #000000; stroke-width: 0.5"/>
+       <use xlink:href="#m3475002a86" x="36.188125" y="9.347344" style="stroke: #000000; stroke-width: 0.5"/>
       </g>
      </g>
      <g id="text_7">
-      <text style="font: 6px 'Arial'; text-anchor: end" x="28.838125" y="11.494687" transform="rotate(-0 28.838125 11.494687)">152</text>
+      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: end" x="28.838125" y="11.494687" transform="rotate(-0 28.838125 11.494687)">152</text>
      </g>
     </g>
     <g id="text_8">
-     <text style="font: 6px 'Arial'; text-anchor: middle" x="11.567812" y="28.751344" transform="rotate(-90 11.567812 28.751344)">Voltage (μV)</text>
+     <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="11.567812" y="28.751344" transform="rotate(-90 11.567812 28.751344)">Voltage (μV)</text>
     </g>
    </g>
    <g id="line2d_7">
@@ -1487,7 +1487,7 @@ L 88.866394 24.936921
 L 88.868905 23.399599 
 L 88.891504 25.453931 
 L 88.916614 23.836067 
-" clip-path="url(#p914bb83e25)" style="fill: none; stroke: #4c4c4c; stroke-width: 0.5; stroke-linecap: square"/>
+" clip-path="url(#peec13e7937)" style="fill: none; stroke: #4c4c4c; stroke-width: 0.5; stroke-linecap: square"/>
    </g>
    <g id="patch_3">
     <path d="M 36.188125 48.155344 
@@ -1502,7 +1502,7 @@ L 88.919125 50.095744
   </g>
  </g>
  <defs>
-  <clipPath id="p914bb83e25">
+  <clipPath id="peec13e7937">
    <rect x="38.699125" y="9.347344" width="50.22" height="38.808"/>
   </clipPath>
  </defs>
