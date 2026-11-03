@@ -30,6 +30,9 @@ Use --n 20 for a quick test (about 3 min). The templates of a smaller n are not 
 import argparse
 import hashlib
 import json
+import os
+import shutil
+import tempfile
 import time
 from pathlib import Path
 
@@ -90,6 +93,12 @@ if __name__ == "__main__":
     out = Path(args.output)
     out.parent.mkdir(parents=True, exist_ok=True)
 
+    # MEArec writes and removes a file "tmp_params_path.yaml" in the working directory: run in a private directory so that two runs
+    # started from the same directory cannot delete each other's file (this made a first 55 min run fail at its last step)
+    out = out.resolve()
+    cells = cells.resolve()
+    work_dir = tempfile.mkdtemp(prefix="gen_templates_")
+    os.chdir(work_dir)
     t0 = time.time()
     tpl_gen = mr.gen_templates(cell_models_folder=str(cells), params=params, n_jobs=args.n_jobs, parallel=True)
     mr.save_template_generator(tpl_gen, str(out))
@@ -103,4 +112,6 @@ if __name__ == "__main__":
         "duration_s": round(time.time() - t0),
     }
     json.dump(provenance, open(str(out) + ".json", "w"), indent=2)
+    os.chdir(out.parent)
+    shutil.rmtree(work_dir, ignore_errors=True)
     print(f"saved {out} in {provenance['duration_s']} s")
