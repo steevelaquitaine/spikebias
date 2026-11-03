@@ -244,3 +244,30 @@ def plot_single_unit_ratio(ax, df_vivo, df_silico_sp, df_silico_ev, df_silico_nb
     ax.set_ylabel("Proportion (ratio)")
     ax.set_xlabel("Experiment")
     return ax
+
+
+def fix_firing_rates(df, Sorting, path, duration_sec=600, verbose=True):
+    """Recompute the firing rates (spikes/s) of a sorting whose stored `firing_rates` were not divided by the duration of the sorting
+
+    The stored firing rates of the DANDI sorting of the evoked regime sorted with Kilosort3 (10 minutes) are the spike counts divided
+    by the duration of the whole 1-hour recording (3,618 s) instead of 10 minutes (about 6 times too low). A sorting is corrected when
+    the duration implied by its stored rates (spike count / stored rate) is more than 1.5 times longer than `duration_sec`.
+
+    Args:
+        df (pd.DataFrame): unit metadata of the sorting (get_sorted_unit_meta), indexed by unit id
+        Sorting: the SortingExtractor
+        path (str): path of the sorting (for the message)
+        duration_sec (float): duration of the sorting
+
+    Returns:
+        pd.DataFrame: df with corrected "firing_rate" if needed
+    """
+    counts = Sorting.count_num_spikes_per_unit()
+    n_spikes = np.array([counts[u] for u in Sorting.unit_ids])
+    implied_duration = n_spikes.sum() / np.nansum(Sorting.get_property("firing_rates").astype(float))
+    if implied_duration > 1.5 * duration_sec:
+        if verbose:
+            print(f"  corrected {path}: stored rates imply a duration of {implied_duration:.0f} s, recomputed over {duration_sec} s")
+        df = df.copy()
+        df["firing_rate"] = (pd.Series(n_spikes, index=Sorting.unit_ids).loc[df.index.astype(Sorting.unit_ids.dtype)].values / duration_sec).astype(np.float32)
+    return df
