@@ -98,8 +98,32 @@ dataset/
     00_raw/ (505 GB)
 ```
 
+# Models
+
+Trained models are in `models/` (see `models/README.md`).
+
+* `models/cebra/`: 100 cross-validated CEBRA models (`.pt` files, about 4.6 MB each) for each of three runs that classify the sorted single-units of Kilosort4 into 'good' and degraded units from their full spike waveforms and quality metrics (Supplementary Fig. 5c-e):
+    * `spont_40_iterations/` (spontaneous regime, Supplementary Fig. 5c)
+    * `evoked_40_iterations/` (evoked regime, Supplementary Fig. 5d)
+    * `spont_100_iterations/` (spontaneous regime, training loss of Supplementary Fig. 5e)
+* each folder also holds `folds.csv` (precision, recall, training and test unit indices and predictions of each fold) and `units.csv` (sorted unit id and label of each row of the dataset)
+* the `.pt` weights are not tracked by git (see `.gitignore`)
+* load a model (torch checkpoints: only load files that you trust) with `cebra==0.4.0` and `scikit-learn==1.5.2` (see `envs/cebraspike.txt`):
+
+```python
+from src.nodes.models.CebraSpike import utils
+model = utils.load_crossval_model("models/cebra/spont_40_iterations", fold=0)
+```
+
+```bash
+models/
+    cebra/ (1.1 GB)
+```
+
 # [TODO]
 
 - update the dense_probe1 SortingExtractors uploaded on dandiarchive (dandiset 001250, `sub-003-fitted`). The KS3, KS2.5, KS2, KS and HS 10-minute sortings (`sub-003-fitted_ses-ks3-10m.nwb`, `ses-ks25-10m`, `ses-ks2-10m`, `ses-ks-10m`, `ses-hs-10m`) are duplicates of the dense_probe2 sortings (`sub-004-fitted`, same ses-* files): same number of units and same spike trains. They do not match the dense_probe1 ground truth (`sub-003-fitted_ecephys.nwb`), so all well-sorted ground truth counts are about 0 for depth 1.
     - the correct dense_probe1 sortings are in `dataset/01_intermediate/sorting/dense_probe1/`. Number of units (KS4, KS3, KS2.5, KS2, KS, HS): 94, 238, 518, 512, 693, 29 (dandiarchive duplicates of dense_probe2: 131, 293, 530, 533, 498, 88)
     - the dandiarchive KS4 sorting of dense_probe1 is also a duplicate of dense_probe2 (131 units; the DANDI copy `dataset/01_intermediate/sorting/dense_probe1/SortingKS4_10m_` was removed from the working tree, it is still in git history (commit a6e5958); the correct one has 94 units, in `SortingKS4_10m`). The dandiarchive KS4 sortings of dense_probe2 and dense_probe3 (`SortingKS4_10m_`) are identical to the GitHub ones (all spike trains compared) and were removed from the working tree, they are still in git history (commit a6e5958)
+- save spikecurate regression models in models/
+- upload models to huggingface
