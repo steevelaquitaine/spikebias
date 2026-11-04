@@ -71,28 +71,44 @@ def format_text(fig: Figure):
                 text.set_fontweight("bold" if weight >= 600 else "normal")
 
 
-_FONT_STYLE = re.compile(r'style="font:\s*((?:(?:italic|oblique|bold|normal|\d00)\s+)*)([\d.]+)px\s+([^;"]+?)\s*(;[^"]*)?"')
+_STYLE = re.compile(r'style="([^"]*\bfont:[^"]*)"')
+_FONT = re.compile(r"font:\s*((?:(?:italic|oblique|bold|normal|\d00)\s+)*)([\d.]+)px\s+[^;]+")
 
 
 def _font_attributes(match):
-    flags, size, rest = match.group(1).split(), match.group(2), match.group(4) or ""
-    attrs = [f'font-family="{FONT}"', f'font-size="{size}"']
-    if "bold" in flags or any(f.isdigit() and int(f) >= 600 for f in flags):
-        attrs.append('font-weight="bold"')
-    if "italic" in flags or "oblique" in flags:
-        attrs.append('font-style="italic"')
-    for decl in rest.strip("; ").split(";"):                # keep the other declarations (e.g. text-anchor) as attributes
-        if ":" in decl:
+    """style="fill: #888; font: 5px 'Arial', ...; text-anchor: start"  ->  explicit attributes (fill, font-family, font-size, ...)"""
+    attrs = []
+    for decl in match.group(1).split(";"):
+        decl = decl.strip()
+        if not decl:
+            continue
+        font = _FONT.fullmatch(decl)
+        if font:
+            flags, size = font.group(1).split(), font.group(2)
+            attrs += [f'font-family="{FONT}"', f'font-size="{size}"']
+            if "bold" in flags or any(f.isdigit() and int(f) >= 600 for f in flags):
+                attrs.append('font-weight="bold"')
+            if "italic" in flags or "oblique" in flags:
+                attrs.append('font-style="italic"')
+        elif ":" in decl:
             key, value = (x.strip() for x in decl.split(":", 1))
             attrs.append(f'{key}="{value}"')
     return " ".join(attrs)
 
 
+_SVG_SIZE = re.compile(r'(<svg[^>]*?)\swidth="([\d.]+)pt"\s+height="([\d.]+)pt"')
+
+
 def fix_svg_fonts(path):
-    """Replace the CSS font shorthand of matplotlib's svg text by explicit attributes, which Adobe Illustrator reads"""
+    """Make a matplotlib svg import correctly in Adobe Illustrator:
+    * the CSS font shorthand of the text is replaced by explicit attributes (font-family, font-size, ...),
+    * the size is written in unitless user units (width="176.75" instead of "176.75pt"): Illustrator reads 1 pt of a svg as 1.333 px of its
+      72 ppi canvas and places the figure 33% too large, whereas the unitless size is read as is (1 unit = 1 pt)."""
     with open(path, encoding="utf-8") as f:
         svg = f.read()
-    fixed, n = _FONT_STYLE.subn(_font_attributes, svg)
+    fixed, n = _STYLE.subn(_font_attributes, svg)
+    fixed, m = _SVG_SIZE.subn(lambda x: f'{x.group(1)} width="{x.group(2)}" height="{x.group(3)}"', fixed, count=1)
+    n += m
     if n:
         with open(path, "w", encoding="utf-8") as f:
             f.write(fixed)

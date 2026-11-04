@@ -10,6 +10,7 @@ install : MEArec 1.8.0 (the version that simulated S2-S5; envs/mearec_si_0_103_0
           The patch (mearec_1_8_0_spike_traces.patch, optional) skips storing the 106 GB of unused spike traces when
           MEAREC_SKIP_SPIKE_TRACES=1; the recordings are unchanged.
 simulate: S2-S5 with MEArec (8 jobs; 7-15 min each, S2 about 70 min), templates in temp/pros_of_details/templates.h5
+buccino_rep: Buccino's model replicated with MEArec (Fig. 2s), dataset/00_raw/recording_buccino_rep (about 23 min, 28 GB), see simulate_buccino_rep.py
 features: ground truth features of ns, buccino and S2-S5 (1-2 min each)
 sort    : Kilosort4 on S2-S5 (about 10 min each), sortings in dataset/01_intermediate/sorting/synth<N>/SortingKS4_10m
 """
@@ -46,6 +47,12 @@ def simulate():
             MEAREC_SKIP_SPIKE_TRACES="1", PYTHONPATH=f"{ROOT}:{ROOT / MEAREC}")
 
 
+def buccino_rep():
+    if (ROOT / "dataset/00_raw/recording_buccino_rep").exists():
+        return print("buccino_rep already simulated")
+    run([f"{SI_ENV}/bin/python", f"{HERE}/simulate_buccino_rep.py"], PYTHONPATH=str(ROOT))
+
+
 def features():
     for s in ("ns", "buccino", "s2", "s3", "s4", "s5"):
         if (ROOT / f"dataset/01_intermediate/supplementary/synthetic_features/{s}.npz").exists():
@@ -62,7 +69,7 @@ def sort():
         run(["envs/spikebias/bin/python", f"{HERE}/sort_ks4.py", "--name", s], PYTHONPATH=str(ROOT))
 
 
-STEPS = {"install": install, "simulate": simulate, "features": features, "sort": sort}
+STEPS = {"install": install, "simulate": simulate, "buccino_rep": buccino_rep, "features": features, "sort": sort}
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
