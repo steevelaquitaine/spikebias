@@ -207,3 +207,155 @@ def plot_model_accuracy(df, df_r2, panel="c"):
     _text(ax, g["r2"][0], g["r2"][1], f"R\u00b2={df_r2['r2_median'].iloc[0]:.2f}", ha="left")
     _text(ax, *g["title_xy"], g["title"], bold=True, size=TITLE)
     return fig
+
+
+# ---------------------------------------------------------------------------------------------------------------------------------
+# Fig. 6e-f: weights of the z-scored unit features of the model of sorting accuracy (bars), the weights and their stars written on the right
+# Geometry measured on panels e and f of the paper's figure (page 19). Panel f has the rows (features) of panel e: it has no feature labels.
+PINK_W = (0.95, 0.40, 0.49)
+WEIGHTS = {
+    "e": dict(region=(45.0, 420.0, 252.0, 652.0), spine=108.29, spine_y=(455.05, 617.05), tick_y0=460.0, tick_dy=7.607, bar_h=6.09, zero=148.72, ppu=22.58, axis=(112.36, 193.89, 625.15),
+              label_right=100.8, value_x=171.6, star_x=189.5, ylabel=(54.4, 532.3), subtitle="Spontaneous model", subtitle_xy=(143.2, 448.2),
+              title="ks4 sorting accuracy biases for unit features (Biophy, NPX)", title_xy=(156.05, 430.8), xlabel_xy=(207.4, 647.5), xtick_baseline=636.8, xticks=(-1, 0, 1, 2)),
+    "f": dict(region=(205.0, 436.0, 300.0, 645.0), spine=None, spine_y=None, tick_y0=460.0, tick_dy=7.607, bar_h=6.09, zero=243.91, ppu=23.2, axis=(208.79, 290.31, 625.13),
+              label_right=None, value_x=260.4, star_x=276.6, ylabel=None, subtitle="Evoked model", subtitle_xy=(238.4, 448.4), title=None, title_xy=None, xlabel_xy=None,
+              xtick_baseline=636.75, xticks=(-1, 0, 1, 2)),
+}
+
+
+def plot_feature_weights(df, panel="e", order=None):
+    """Fig. 6e or 6f from the source data (columns feature, weight, std_error, p_value, significance, n_neurons).
+    The rows are the features sorted by weight (panel e); panel f has the order of panel e (`order`: list of features)."""
+    g = WEIGHTS[panel]
+    x0, y0, x1, y1 = g["region"]
+    fig = plt.figure(figsize=((x1 - x0) / 72, (y1 - y0) / 72))
+    ax = fig.add_axes([0, 0, 1, 1])
+    ax.set_xlim(x0, x1)
+    ax.set_ylim(y1, y0)
+    ax.axis("off")
+    if order is None:
+        d = df.sort_values("weight").reset_index(drop=True)
+    else:
+        d = df.set_index("feature").loc[order].reset_index()
+    if g["spine"] is not None:
+        _line(ax, [g["spine"]] * 2, list(g["spine_y"]))
+    for i, r in d.iterrows():
+        yc = g["tick_y0"] + i * g["tick_dy"]
+        sig = isinstance(r["significance"], str) and r["significance"] != ""
+        xe = g["zero"] + r["weight"] * g["ppu"]
+        ax.add_patch(plt.Rectangle((min(g["zero"], xe), yc - g["bar_h"] / 2), abs(xe - g["zero"]), g["bar_h"], facecolor=PINK_W if sig else (0.06, 0.06, 0.05), edgecolor="none"))
+        if g["spine"] is not None:
+            _line(ax, [g["spine"] - 3.75, g["spine"]], [yc, yc])
+            _text(ax, g["label_right"], yc + 1.79, r["feature"], ha="right")
+        _text(ax, g["value_x"], yc + 1.79, f"{round(r['weight'], 2):g}", ha="left")
+        if sig:
+            _text(ax, g["star_x"], yc + 2.6, r["significance"], ha="left")
+    xa0, xa1, ya = g["axis"]
+    _line(ax, [xa0, xa1], [ya, ya])
+    for v in g["xticks"]:
+        xt = g["zero"] + v * g["ppu"]
+        _line(ax, [xt, xt], [ya, ya + 3.75])
+        _text(ax, xt, g["xtick_baseline"], f"{v:d}".replace("-", "\u2212"))
+    if g["xlabel_xy"]:
+        _text(ax, *g["xlabel_xy"], "Weights of z-scored features")
+    if g["ylabel"]:
+        _text(ax, *g["ylabel"], "Unit features", rotation=90)
+    _text(ax, *g["subtitle_xy"], g["subtitle"], bold=True, size=TITLE)
+    if g["title"]:
+        _text(ax, *g["title_xy"], g["title"], bold=True, size=TITLE)
+    return fig
+
+
+# ---------------------------------------------------------------------------------------------------------------------------------
+# Fig. 6g: probability distribution of the model neuron types of the evoked biophysical ground truth (blue line) and number of neurons of each type
+# Geometry measured on panel g of the paper's figure (page 19). Text is Arial 5 pt, the title 7 pt (bold).
+# canvas: the bounding box of the panel of the paper (x from the left of 'EXC' to the right of the largest count, y from the top of the title to the bottom of the
+# x label of panel h), so that panels g and h have the same height and the same vertical origin: their rows are aligned when they are placed at the same y
+FIG6GH_Y = (233.8, 643.4)
+TYPES_REGION = (299.5, FIG6GH_Y[0], 428.62, FIG6GH_Y[1])
+TYPES = dict(spine_x=372.08, y0=300.28, dy=9.0545, x0=375.46, ppu=23.02 / 0.2, axis=(374.3, 418.77, 612.74), label_right=363.7, count_dx=1.6)
+BLUE = (0.22, 0.46, 0.73)
+
+
+def plot_neuron_type_distribution(df):
+    """Fig. 6g from the source data (columns synapse_class, layer, etype, count, probability, n_neurons), rows in the order of the file"""
+    g = TYPES
+    x0, y0, x1, y1 = TYPES_REGION
+    fig = plt.figure(figsize=((x1 - x0) / 72, (y1 - y0) / 72))
+    ax = fig.add_axes([0, 0, 1, 1])
+    ax.set_xlim(x0, x1)
+    ax.set_ylim(y1, y0)
+    ax.axis("off")
+    n = len(df)
+    yr = g["y0"] + np.arange(n) * g["dy"]
+    xr = g["x0"] + df["probability"].values * g["ppu"]
+    ax.plot(xr, yr, color=BLUE, linewidth=1.0, solid_joinstyle="round", zorder=2)
+    _line(ax, [g["spine_x"]] * 2, [yr[0], yr[-1]])
+    for i in range(n):
+        _line(ax, [g["spine_x"] - 1.46, g["spine_x"]], [yr[i]] * 2, lw=0.3)
+        _text(ax, g["label_right"], yr[i] + 1.79, f"'{df['layer'].iloc[i]}', {df['etype'].iloc[i]}", ha="right")
+        _text(ax, xr[i] + g["count_dx"], yr[i] + 0.1, str(df["count"].iloc[i]), ha="left")
+    # probability axis
+    xa0, xa1, ya = g["axis"]
+    _line(ax, [xa0, xa1], [ya, ya])
+    for v in (0.0, 0.2):
+        xt = g["x0"] + v * g["ppu"]
+        _line(ax, [xt, xt], [ya, ya + 1.46], lw=0.3)
+        _text(ax, xt, 621.0, f"{v:.1f}")
+    _text(ax, 395.8, 631.4, "Probability")
+    _text(ax, 396.55, 637.7, "(ratio)")
+    # synapse classes
+    for syn, (xc, yc) in {"EXC": (308.95, 315.15), "INH": (309.55, 455.35)}.items():
+        _text(ax, xc, yc + 1.79, syn)
+    _line(ax, [323.17] * 2, [296.96, 330.91])
+    _line(ax, [323.38, 324.08], [335.79, 607.12])
+    _text(ax, 334.45, 286.3, "Model neuron type")
+    # titles
+    _text(ax, 372.95, 241.5, "Biophysical ground truth", bold=True, size=TITLE)
+    _text(ax, 373.9, 249.7, "neuron type distribution", bold=True, size=TITLE)
+    _text(ax, 374.0, 257.8, "(evoked model)")
+    return fig
+
+
+# Fig. 6h: same rows (y) and canvas height as Fig. 6g so that the two panels line up
+BIAS_COLORS = {"increased": (0.93, 0.12, 0.14), "same": (0.0, 0.0, 0.0), "reduced": (0.23, 0.30, 0.66)}
+BIAS_REGION = (432.69, FIG6GH_Y[0], 542.75, FIG6GH_Y[1])
+BIAS = dict(spine_x=433.69, x_end=542.75, y_axis=612.69, col_x0=443.0, col_dx=18.12, tick=1.46, label_dx=1.5, label_y=620.8)
+
+
+def plot_selection_biases(df):
+    """Fig. 6h from the source data (columns type_index, sorter, ratio, bias): ratio of the probability of each neuron type after spike sorting to that in
+    the ground truth, by sorter (columns) and neuron type (rows, same y positions as Fig. 6g); red/blue bold: increased/reduced probability (p < 0.05)"""
+    g, gg = BIAS, TYPES
+    x0, y0, x1, y1 = BIAS_REGION
+    fig = plt.figure(figsize=((x1 - x0) / 72, (y1 - y0) / 72))
+    ax = fig.add_axes([0, 0, 1, 1])
+    ax.set_xlim(x0, x1)
+    ax.set_ylim(y1, y0)
+    ax.axis("off")
+    sorters = list(dict.fromkeys(df["sorter"]))
+    n = df["type_index"].nunique()
+    yr = gg["y0"] + np.arange(n) * gg["dy"]
+    xc = g["col_x0"] + np.arange(len(sorters)) * g["col_dx"]
+    for j, sorter in enumerate(sorters):
+        d = df[df["sorter"] == sorter].sort_values("type_index")
+        for i, (ratio, bias) in enumerate(zip(d["ratio"], d["bias"])):
+            _text(ax, xc[j], yr[i] + 1.79, f"{ratio:.1f}", bold=bias != "same", color=BIAS_COLORS[bias])
+        _line(ax, [xc[j]] * 2, [g["y_axis"], g["y_axis"] + g["tick"]], lw=0.3)
+        _text(ax, xc[j] + g["label_dx"], g["label_y"], sorter, ha="right", rotation=45)
+    _line(ax, [g["spine_x"]] * 2, [yr[0] - gg["dy"] / 2, g["y_axis"]])
+    _line(ax, [g["spine_x"], g["x_end"]], [g["y_axis"]] * 2)
+    for y in yr:
+        _line(ax, [g["spine_x"] - g["tick"], g["spine_x"]], [y, y], lw=0.3)
+    _text(ax, 492.8, 641.95, "Spike sorters")
+    # title, subtitle and legend
+    _text(ax, 490.05, 241.5, "Selection biases", bold=True, size=TITLE)
+    _text(ax, 490.3, 252.2, "Probability after spike sorting divided")
+    _text(ax, 491.1, 259.2, "by probability in ground truth (ratio)")
+    for (xs, ys, label, key, base) in [(446.28, 266.36, "Increased probability (p<0.05)", "increased", 270.5),
+                                       (446.28, 274.11, "Same probability (p>=0.05)", None, 278.1),
+                                       (446.28, 281.68, "Reduced probability (p<0.05)", "reduced", 285.85)]:
+        color = (0.69, 0.69, 0.68) if key is None else BIAS_COLORS[key]
+        ax.add_patch(plt.Rectangle((xs, ys), 9.64, 3.58, color=color, linewidth=0))
+        _text(ax, 459.2, base, label, ha="left", color="k" if key is None else color)
+    return fig
