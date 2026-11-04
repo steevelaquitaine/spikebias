@@ -58,8 +58,8 @@ L 3.85 0
       <!-- $\mathdefault{10^{-4}}$ -->
       <g transform="translate(20.13 56.531181)">
        <text>
-        <tspan style="font: 6px 'Arial'" x="0 3.336914" y="-0.8105625000000005">10</tspan>
-        <tspan style="font: 4.2px 'Arial'" x="6.778369 9.231103" y="-4.9921875">−4</tspan>
+        <tspan font-family="Arial" font-size="6" x="0 3.336914" y="-0.8105625000000005">10</tspan>
+        <tspan font-family="Arial" font-size="4.2" x="6.778369 9.231103" y="-4.9921875">−4</tspan>
        </text>
       </g>
      </g>
@@ -74,8 +74,8 @@ L 3.85 0
       <!-- $\mathdefault{10^{-3}}$ -->
       <g transform="translate(20.13 38.951897)">
        <text>
-        <tspan style="font: 6px 'Arial'" x="0 3.336914" y="-0.7996250000000007">10</tspan>
-        <tspan style="font: 4.2px 'Arial'" x="6.778369 9.231103" y="-4.98125">−3</tspan>
+        <tspan font-family="Arial" font-size="6" x="0 3.336914" y="-0.7996250000000007">10</tspan>
+        <tspan font-family="Arial" font-size="4.2" x="6.778369 9.231103" y="-4.98125">−3</tspan>
        </text>
       </g>
      </g>
@@ -90,8 +90,8 @@ L 3.85 0
       <!-- $\mathdefault{10^{-2}}$ -->
       <g transform="translate(20.13 21.342613)">
        <text>
-        <tspan style="font: 6px 'Arial'" x="0 3.336914" y="-0.7996250000000007">10</tspan>
-        <tspan style="font: 4.2px 'Arial'" x="6.778369 9.231103" y="-4.98125">−2</tspan>
+        <tspan font-family="Arial" font-size="6" x="0 3.336914" y="-0.7996250000000007">10</tspan>
+        <tspan font-family="Arial" font-size="4.2" x="6.778369 9.231103" y="-4.98125">−2</tspan>
        </text>
       </g>
      </g>
@@ -280,7 +280,7 @@ L 2.2 0
      <!-- $\mu V$ -->
      <g transform="translate(40.33 38.31) rotate(-90)">
       <text>
-       <tspan style="font: 6px 'Arial'" x="0 3.457031" y="-0.703125">μV</tspan>
+       <tspan font-family="Arial" font-size="6" x="0 3.457031" y="-0.703125">μV</tspan>
       </text>
      </g>
     </g>

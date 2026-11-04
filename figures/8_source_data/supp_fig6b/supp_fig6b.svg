@@ -212,7 +212,7 @@ L 0 3.85
       </g>
      </g>
      <g id="text_1">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="31.813501" y="79.374562" transform="rotate(-0 31.813501 79.374562)">0.0</text>
+      <text font-family="Arial" font-size="6" text-anchor="middle" x="31.813501" y="79.374562" transform="rotate(-0 31.813501 79.374562)">0.0</text>
      </g>
     </g>
     <g id="xtick_2">
@@ -222,7 +222,7 @@ L 0 3.85
       </g>
      </g>
      <g id="text_2">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="55.376631" y="79.374562" transform="rotate(-0 55.376631 79.374562)">0.5</text>
+      <text font-family="Arial" font-size="6" text-anchor="middle" x="55.376631" y="79.374562" transform="rotate(-0 55.376631 79.374562)">0.5</text>
      </g>
     </g>
     <g id="xtick_3">
@@ -232,15 +232,15 @@ L 0 3.85
       </g>
      </g>
      <g id="text_3">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="78.939761" y="79.374562" transform="rotate(-0 78.939761 79.374562)">1.0</text>
+      <text font-family="Arial" font-size="6" text-anchor="middle" x="78.939761" y="79.374562" transform="rotate(-0 78.939761 79.374562)">1.0</text>
      </g>
     </g>
     <g id="text_4">
      <!-- $\Delta_{acc}$ -->
      <g transform="translate(49.886631 84.887062)">
       <text>
-       <tspan style="font: 6px 'Arial'" x="0" y="-0.703125">Δ</tspan>
-       <tspan style="font: 4.2px 'Arial'" x="4.112353 6.448193 8.548193" y="1.0890000000000004">acc</tspan>
+       <tspan font-family="Arial" font-size="6" x="0" y="-0.703125">Δ</tspan>
+       <tspan font-family="Arial" font-size="4.2" x="4.112353 6.448193 8.548193" y="1.0890000000000004">acc</tspan>
       </text>
      </g>
     </g>
@@ -261,8 +261,8 @@ L -3.85 0
       <!-- $\mathdefault{10^{0}}$ -->
       <g transform="translate(12.687188 67.334727)">
        <text>
-        <tspan style="font: 6px 'Arial'" x="0 3.336914" y="-0.7996250000000007">10</tspan>
-        <tspan style="font: 4.2px 'Arial'" x="6.778369" y="-4.98125">0</tspan>
+        <tspan font-family="Arial" font-size="6" x="0 3.336914" y="-0.7996250000000007">10</tspan>
+        <tspan font-family="Arial" font-size="4.2" x="6.778369" y="-4.98125">0</tspan>
        </text>
       </g>
      </g>
@@ -277,8 +277,8 @@ L -3.85 0
       <!-- $\mathdefault{10^{1}}$ -->
       <g transform="translate(12.687188 45.054688)">
        <text>
-        <tspan style="font: 6px 'Arial'" x="0 3.336914" y="-0.7996250000000007">10</tspan>
-        <tspan style="font: 4.2px 'Arial'" x="6.778369" y="-4.98125">1</tspan>
+        <tspan font-family="Arial" font-size="6" x="0 3.336914" y="-0.7996250000000007">10</tspan>
+        <tspan font-family="Arial" font-size="4.2" x="6.778369" y="-4.98125">1</tspan>
        </text>
       </g>
      </g>
@@ -366,7 +366,7 @@ L -2.2 0
      </g>
     </g>
     <g id="text_7">
-     <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="11.494688" y="47.627179" transform="rotate(-90 11.494688 47.627179)">True unit count</text>
+     <text font-family="Arial" font-size="6" text-anchor="middle" x="11.494688" y="47.627179" transform="rotate(-90 11.494688 47.627179)">True unit count</text>
     </g>
    </g>
    <g id="patch_23">
@@ -383,7 +383,7 @@ L 78.939761 67.729875
     <!-- $\Delta t:$0.2 -->
     <g transform="translate(45.051631 23.352)">
      <text>
-      <tspan style="font: 7px 'Arial'" x="0 4.675781 7.786816 10.897852 14.790918 16.735742" y="-0.96875">Δt:0.2</tspan>
+      <tspan font-family="Arial" font-size="7" x="0 4.675781 7.786816 10.897852 14.790918 16.735742" y="-0.96875">Δt:0.2</tspan>
      </text>
     </g>
    </g>
@@ -566,7 +566,7 @@ z
       </g>
      </g>
      <g id="text_9">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="89.505088" y="79.374562" transform="rotate(-0 89.505088 79.374562)">0.0</text>
+      <text font-family="Arial" font-size="6" text-anchor="middle" x="89.505088" y="79.374562" transform="rotate(-0 89.505088 79.374562)">0.0</text>
      </g>
     </g>
     <g id="xtick_5">
@@ -576,7 +576,7 @@ z
       </g>
      </g>
      <g id="text_10">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="113.068218" y="79.374562" transform="rotate(-0 113.068218 79.374562)">0.5</text>
+      <text font-family="Arial" font-size="6" text-anchor="middle" x="113.068218" y="79.374562" transform="rotate(-0 113.068218 79.374562)">0.5</text>
      </g>
     </g>
     <g id="xtick_6">
@@ -586,15 +586,15 @@ z
       </g>
      </g>
      <g id="text_11">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="136.631348" y="79.374562" transform="rotate(-0 136.631348 79.374562)">1.0</text>
+      <text font-family="Arial" font-size="6" text-anchor="middle" x="136.631348" y="79.374562" transform="rotate(-0 136.631348 79.374562)">1.0</text>
      </g>
     </g>
     <g id="text_12">
      <!-- $\Delta_{acc}$ -->
      <g transform="translate(107.578218 84.887062)">
       <text>
-       <tspan style="font: 6px 'Arial'" x="0" y="-0.703125">Δ</tspan>
-       <tspan style="font: 4.2px 'Arial'" x="4.112353 6.448193 8.548193" y="1.0890000000000004">acc</tspan>
+       <tspan font-family="Arial" font-size="6" x="0" y="-0.703125">Δ</tspan>
+       <tspan font-family="Arial" font-size="4.2" x="4.112353 6.448193 8.548193" y="1.0890000000000004">acc</tspan>
       </text>
      </g>
     </g>
@@ -706,7 +706,7 @@ L 136.631348 67.729875
     <!-- $\Delta t:$0.4 -->
     <g transform="translate(102.743218 23.352)">
      <text>
-      <tspan style="font: 7px 'Arial'" x="0 4.675781 7.786816 10.897852 14.790918 16.735742" y="-0.96875">Δt:0.4</tspan>
+      <tspan font-family="Arial" font-size="7" x="0 4.675781 7.786816 10.897852 14.790918 16.735742" y="-0.96875">Δt:0.4</tspan>
      </text>
     </g>
    </g>
@@ -889,7 +889,7 @@ z
       </g>
      </g>
      <g id="text_14">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="147.196675" y="79.374562" transform="rotate(-0 147.196675 79.374562)">0.0</text>
+      <text font-family="Arial" font-size="6" text-anchor="middle" x="147.196675" y="79.374562" transform="rotate(-0 147.196675 79.374562)">0.0</text>
      </g>
     </g>
     <g id="xtick_8">
@@ -899,7 +899,7 @@ z
       </g>
      </g>
      <g id="text_15">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="170.759805" y="79.374562" transform="rotate(-0 170.759805 79.374562)">0.5</text>
+      <text font-family="Arial" font-size="6" text-anchor="middle" x="170.759805" y="79.374562" transform="rotate(-0 170.759805 79.374562)">0.5</text>
      </g>
     </g>
     <g id="xtick_9">
@@ -909,15 +909,15 @@ z
       </g>
      </g>
      <g id="text_16">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="194.322935" y="79.374562" transform="rotate(-0 194.322935 79.374562)">1.0</text>
+      <text font-family="Arial" font-size="6" text-anchor="middle" x="194.322935" y="79.374562" transform="rotate(-0 194.322935 79.374562)">1.0</text>
      </g>
     </g>
     <g id="text_17">
      <!-- $\Delta_{acc}$ -->
      <g transform="translate(165.269805 84.887062)">
       <text>
-       <tspan style="font: 6px 'Arial'" x="0" y="-0.703125">Δ</tspan>
-       <tspan style="font: 4.2px 'Arial'" x="4.112353 6.448193 8.548193" y="1.0890000000000004">acc</tspan>
+       <tspan font-family="Arial" font-size="6" x="0" y="-0.703125">Δ</tspan>
+       <tspan font-family="Arial" font-size="4.2" x="4.112353 6.448193 8.548193" y="1.0890000000000004">acc</tspan>
       </text>
      </g>
     </g>
@@ -1029,7 +1029,7 @@ L 194.322935 67.729875
     <!-- $\Delta t:$0.6 -->
     <g transform="translate(160.434805 23.352)">
      <text>
-      <tspan style="font: 7px 'Arial'" x="0 4.675781 7.786816 10.897852 14.790918 16.735742" y="-0.96875">Δt:0.6</tspan>
+      <tspan font-family="Arial" font-size="7" x="0 4.675781 7.786816 10.897852 14.790918 16.735742" y="-0.96875">Δt:0.6</tspan>
      </text>
     </g>
    </g>
@@ -1212,7 +1212,7 @@ z
       </g>
      </g>
      <g id="text_19">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="204.888262" y="79.374562" transform="rotate(-0 204.888262 79.374562)">0.0</text>
+      <text font-family="Arial" font-size="6" text-anchor="middle" x="204.888262" y="79.374562" transform="rotate(-0 204.888262 79.374562)">0.0</text>
      </g>
     </g>
     <g id="xtick_11">
@@ -1222,7 +1222,7 @@ z
       </g>
      </g>
      <g id="text_20">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="228.451393" y="79.374562" transform="rotate(-0 228.451393 79.374562)">0.5</text>
+      <text font-family="Arial" font-size="6" text-anchor="middle" x="228.451393" y="79.374562" transform="rotate(-0 228.451393 79.374562)">0.5</text>
      </g>
     </g>
     <g id="xtick_12">
@@ -1232,15 +1232,15 @@ z
       </g>
      </g>
      <g id="text_21">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="252.014523" y="79.374562" transform="rotate(-0 252.014523 79.374562)">1.0</text>
+      <text font-family="Arial" font-size="6" text-anchor="middle" x="252.014523" y="79.374562" transform="rotate(-0 252.014523 79.374562)">1.0</text>
      </g>
     </g>
     <g id="text_22">
      <!-- $\Delta_{acc}$ -->
      <g transform="translate(222.961393 84.887062)">
       <text>
-       <tspan style="font: 6px 'Arial'" x="0" y="-0.703125">Δ</tspan>
-       <tspan style="font: 4.2px 'Arial'" x="4.112353 6.448193 8.548193" y="1.0890000000000004">acc</tspan>
+       <tspan font-family="Arial" font-size="6" x="0" y="-0.703125">Δ</tspan>
+       <tspan font-family="Arial" font-size="4.2" x="4.112353 6.448193 8.548193" y="1.0890000000000004">acc</tspan>
       </text>
      </g>
     </g>
@@ -1352,7 +1352,7 @@ L 252.014523 67.729875
     <!-- $\Delta t:$0.8 -->
     <g transform="translate(218.126393 23.352)">
      <text>
-      <tspan style="font: 7px 'Arial'" x="0 4.675781 7.786816 10.897852 14.790918 16.735742" y="-0.96875">Δt:0.8</tspan>
+      <tspan font-family="Arial" font-size="7" x="0 4.675781 7.786816 10.897852 14.790918 16.735742" y="-0.96875">Δt:0.8</tspan>
      </text>
     </g>
    </g>
@@ -1535,7 +1535,7 @@ z
       </g>
      </g>
      <g id="text_24">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="262.57985" y="79.374562" transform="rotate(-0 262.57985 79.374562)">0.0</text>
+      <text font-family="Arial" font-size="6" text-anchor="middle" x="262.57985" y="79.374562" transform="rotate(-0 262.57985 79.374562)">0.0</text>
      </g>
     </g>
     <g id="xtick_14">
@@ -1545,7 +1545,7 @@ z
       </g>
      </g>
      <g id="text_25">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="286.14298" y="79.374562" transform="rotate(-0 286.14298 79.374562)">0.5</text>
+      <text font-family="Arial" font-size="6" text-anchor="middle" x="286.14298" y="79.374562" transform="rotate(-0 286.14298 79.374562)">0.5</text>
      </g>
     </g>
     <g id="xtick_15">
@@ -1555,15 +1555,15 @@ z
       </g>
      </g>
      <g id="text_26">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="309.70611" y="79.374562" transform="rotate(-0 309.70611 79.374562)">1.0</text>
+      <text font-family="Arial" font-size="6" text-anchor="middle" x="309.70611" y="79.374562" transform="rotate(-0 309.70611 79.374562)">1.0</text>
      </g>
     </g>
     <g id="text_27">
      <!-- $\Delta_{acc}$ -->
      <g transform="translate(280.65298 84.887062)">
       <text>
-       <tspan style="font: 6px 'Arial'" x="0" y="-0.703125">Δ</tspan>
-       <tspan style="font: 4.2px 'Arial'" x="4.112353 6.448193 8.548193" y="1.0890000000000004">acc</tspan>
+       <tspan font-family="Arial" font-size="6" x="0" y="-0.703125">Δ</tspan>
+       <tspan font-family="Arial" font-size="4.2" x="4.112353 6.448193 8.548193" y="1.0890000000000004">acc</tspan>
       </text>
      </g>
     </g>
@@ -1675,7 +1675,7 @@ L 309.70611 67.729875
     <!-- $\Delta t:$1.3 -->
     <g transform="translate(275.81798 23.352)">
      <text>
-      <tspan style="font: 7px 'Arial'" x="0 4.675781 7.786816 10.897852 14.790918 16.735742" y="-0.96875">Δt:1.3</tspan>
+      <tspan font-family="Arial" font-size="7" x="0 4.675781 7.786816 10.897852 14.790918 16.735742" y="-0.96875">Δt:1.3</tspan>
      </text>
     </g>
    </g>
@@ -1858,7 +1858,7 @@ z
       </g>
      </g>
      <g id="text_29">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="320.271437" y="79.374562" transform="rotate(-0 320.271437 79.374562)">0.0</text>
+      <text font-family="Arial" font-size="6" text-anchor="middle" x="320.271437" y="79.374562" transform="rotate(-0 320.271437 79.374562)">0.0</text>
      </g>
     </g>
     <g id="xtick_17">
@@ -1868,7 +1868,7 @@ z
       </g>
      </g>
      <g id="text_30">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="343.834567" y="79.374562" transform="rotate(-0 343.834567 79.374562)">0.5</text>
+      <text font-family="Arial" font-size="6" text-anchor="middle" x="343.834567" y="79.374562" transform="rotate(-0 343.834567 79.374562)">0.5</text>
      </g>
     </g>
     <g id="xtick_18">
@@ -1878,15 +1878,15 @@ z
       </g>
      </g>
      <g id="text_31">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="367.397697" y="79.374562" transform="rotate(-0 367.397697 79.374562)">1.0</text>
+      <text font-family="Arial" font-size="6" text-anchor="middle" x="367.397697" y="79.374562" transform="rotate(-0 367.397697 79.374562)">1.0</text>
      </g>
     </g>
     <g id="text_32">
      <!-- $\Delta_{acc}$ -->
      <g transform="translate(338.344567 84.887062)">
       <text>
-       <tspan style="font: 6px 'Arial'" x="0" y="-0.703125">Δ</tspan>
-       <tspan style="font: 4.2px 'Arial'" x="4.112353 6.448193 8.548193" y="1.0890000000000004">acc</tspan>
+       <tspan font-family="Arial" font-size="6" x="0" y="-0.703125">Δ</tspan>
+       <tspan font-family="Arial" font-size="4.2" x="4.112353 6.448193 8.548193" y="1.0890000000000004">acc</tspan>
       </text>
      </g>
     </g>
@@ -1998,7 +1998,7 @@ L 367.397697 67.729875
     <!-- $\Delta t:$5 -->
     <g transform="translate(336.414567 23.352)">
      <text>
-      <tspan style="font: 7px 'Arial'" x="0 4.675781 7.786816 10.897852" y="-0.984375">Δt:5</tspan>
+      <tspan font-family="Arial" font-size="7" x="0 4.675781 7.786816 10.897852" y="-0.984375">Δt:5</tspan>
      </text>
     </g>
    </g>
@@ -2181,7 +2181,7 @@ z
       </g>
      </g>
      <g id="text_34">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="377.963024" y="79.374562" transform="rotate(-0 377.963024 79.374562)">0.0</text>
+      <text font-family="Arial" font-size="6" text-anchor="middle" x="377.963024" y="79.374562" transform="rotate(-0 377.963024 79.374562)">0.0</text>
      </g>
     </g>
     <g id="xtick_20">
@@ -2191,7 +2191,7 @@ z
       </g>
      </g>
      <g id="text_35">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="401.526155" y="79.374562" transform="rotate(-0 401.526155 79.374562)">0.5</text>
+      <text font-family="Arial" font-size="6" text-anchor="middle" x="401.526155" y="79.374562" transform="rotate(-0 401.526155 79.374562)">0.5</text>
      </g>
     </g>
     <g id="xtick_21">
@@ -2201,15 +2201,15 @@ z
       </g>
      </g>
      <g id="text_36">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="425.089285" y="79.374562" transform="rotate(-0 425.089285 79.374562)">1.0</text>
+      <text font-family="Arial" font-size="6" text-anchor="middle" x="425.089285" y="79.374562" transform="rotate(-0 425.089285 79.374562)">1.0</text>
      </g>
     </g>
     <g id="text_37">
      <!-- $\Delta_{acc}$ -->
      <g transform="translate(396.036155 84.887062)">
       <text>
-       <tspan style="font: 6px 'Arial'" x="0" y="-0.703125">Δ</tspan>
-       <tspan style="font: 4.2px 'Arial'" x="4.112353 6.448193 8.548193" y="1.0890000000000004">acc</tspan>
+       <tspan font-family="Arial" font-size="6" x="0" y="-0.703125">Δ</tspan>
+       <tspan font-family="Arial" font-size="4.2" x="4.112353 6.448193 8.548193" y="1.0890000000000004">acc</tspan>
       </text>
      </g>
     </g>
@@ -2328,13 +2328,13 @@ L 425.089285 67.729875
     <!-- $\Delta t:$30 -->
     <g transform="translate(392.181155 23.352)">
      <text>
-      <tspan style="font: 7px 'Arial'" x="0 4.675781 7.786816 10.897852 14.790918" y="-0.96875">Δt:30</tspan>
+      <tspan font-family="Arial" font-size="7" x="0 4.675781 7.786816 10.897852 14.790918" y="-0.96875">Δt:30</tspan>
      </text>
     </g>
    </g>
   </g>
   <g id="text_39">
-   <text style="font: 700 6.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="217.474285" y="11.852578" transform="rotate(-0 217.474285 11.852578)">Delta time</text>
+   <text font-family="Arial" font-size="6.5" font-weight="bold" text-anchor="middle" x="217.474285" y="11.852578" transform="rotate(-0 217.474285 11.852578)">Delta time</text>
   </g>
  </g>
  <defs>

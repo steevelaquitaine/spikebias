@@ -52,7 +52,7 @@ L 0 3.85
       </g>
      </g>
      <g id="text_1">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="41.727625" y="99.430884" transform="rotate(-0 41.727625 99.430884)">0</text>
+      <text font-family="Arial" font-size="6" text-anchor="middle" x="41.727625" y="99.430884" transform="rotate(-0 41.727625 99.430884)">0</text>
      </g>
     </g>
     <g id="xtick_2">
@@ -62,7 +62,7 @@ L 0 3.85
       </g>
      </g>
      <g id="text_2">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="63.351722" y="99.430884" transform="rotate(-0 63.351722 99.430884)">200</text>
+      <text font-family="Arial" font-size="6" text-anchor="middle" x="63.351722" y="99.430884" transform="rotate(-0 63.351722 99.430884)">200</text>
      </g>
     </g>
     <g id="xtick_3">
@@ -72,7 +72,7 @@ L 0 3.85
       </g>
      </g>
      <g id="text_3">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="84.975819" y="99.430884" transform="rotate(-0 84.975819 99.430884)">400</text>
+      <text font-family="Arial" font-size="6" text-anchor="middle" x="84.975819" y="99.430884" transform="rotate(-0 84.975819 99.430884)">400</text>
      </g>
     </g>
     <g id="xtick_4">
@@ -82,7 +82,7 @@ L 0 3.85
       </g>
      </g>
      <g id="text_4">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="106.599917" y="99.430884" transform="rotate(-0 106.599917 99.430884)">600</text>
+      <text font-family="Arial" font-size="6" text-anchor="middle" x="106.599917" y="99.430884" transform="rotate(-0 106.599917 99.430884)">600</text>
      </g>
     </g>
     <g id="xtick_5">
@@ -92,7 +92,7 @@ L 0 3.85
       </g>
      </g>
      <g id="text_5">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="128.224014" y="99.430884" transform="rotate(-0 128.224014 99.430884)">800</text>
+      <text font-family="Arial" font-size="6" text-anchor="middle" x="128.224014" y="99.430884" transform="rotate(-0 128.224014 99.430884)">800</text>
      </g>
     </g>
     <g id="xtick_6">
@@ -102,7 +102,7 @@ L 0 3.85
       </g>
      </g>
      <g id="text_6">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="149.848111" y="99.430884" transform="rotate(-0 149.848111 99.430884)">1000</text>
+      <text font-family="Arial" font-size="6" text-anchor="middle" x="149.848111" y="99.430884" transform="rotate(-0 149.848111 99.430884)">1000</text>
      </g>
     </g>
     <g id="xtick_7">
@@ -112,7 +112,7 @@ L 0 3.85
       </g>
      </g>
      <g id="text_7">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="171.472208" y="99.430884" transform="rotate(-0 171.472208 99.430884)">1200</text>
+      <text font-family="Arial" font-size="6" text-anchor="middle" x="171.472208" y="99.430884" transform="rotate(-0 171.472208 99.430884)">1200</text>
      </g>
     </g>
     <g id="xtick_8">
@@ -122,7 +122,7 @@ L 0 3.85
       </g>
      </g>
      <g id="text_8">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="193.096306" y="99.430884" transform="rotate(-0 193.096306 99.430884)">1400</text>
+      <text font-family="Arial" font-size="6" text-anchor="middle" x="193.096306" y="99.430884" transform="rotate(-0 193.096306 99.430884)">1400</text>
      </g>
     </g>
     <g id="xtick_9">
@@ -132,11 +132,11 @@ L 0 3.85
       </g>
      </g>
      <g id="text_9">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="214.720403" y="99.430884" transform="rotate(-0 214.720403 99.430884)">1600</text>
+      <text font-family="Arial" font-size="6" text-anchor="middle" x="214.720403" y="99.430884" transform="rotate(-0 214.720403 99.430884)">1600</text>
      </g>
     </g>
     <g id="text_10">
-     <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="133.797625" y="108.918072" transform="rotate(-0 133.797625 108.918072)">True units ranked by model sorting accuracy</text>
+     <text font-family="Arial" font-size="6" text-anchor="middle" x="133.797625" y="108.918072" transform="rotate(-0 133.797625 108.918072)">True units ranked by model sorting accuracy</text>
     </g>
    </g>
    <g id="matplotlib.axis_2">
@@ -152,7 +152,7 @@ L -3.85 0
       </g>
      </g>
      <g id="text_11">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: end" x="25.170625" y="86.607141" transform="rotate(-0 25.170625 86.607141)">0.0</text>
+      <text font-family="Arial" font-size="6" text-anchor="end" x="25.170625" y="86.607141" transform="rotate(-0 25.170625 86.607141)">0.0</text>
      </g>
     </g>
     <g id="ytick_2">
@@ -162,7 +162,7 @@ L -3.85 0
       </g>
      </g>
      <g id="text_12">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: end" x="25.170625" y="54.927141" transform="rotate(-0 25.170625 54.927141)">0.5</text>
+      <text font-family="Arial" font-size="6" text-anchor="end" x="25.170625" y="54.927141" transform="rotate(-0 25.170625 54.927141)">0.5</text>
      </g>
     </g>
     <g id="ytick_3">
@@ -172,11 +172,11 @@ L -3.85 0
       </g>
      </g>
      <g id="text_13">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: end" x="25.170625" y="23.247141" transform="rotate(-0 25.170625 23.247141)">1.0</text>
+      <text font-family="Arial" font-size="6" text-anchor="end" x="25.170625" y="23.247141" transform="rotate(-0 25.170625 23.247141)">1.0</text>
      </g>
     </g>
     <g id="text_14">
-     <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="11.567813" y="51.195797" transform="rotate(-90 11.567813 51.195797)">Sorting accuracy (ratio)</text>
+     <text font-family="Arial" font-size="6" text-anchor="middle" x="11.567813" y="51.195797" transform="rotate(-90 11.567813 51.195797)">Sorting accuracy (ratio)</text>
     </g>
    </g>
    <g id="line2d_13">
@@ -2019,13 +2019,13 @@ L 225.867625 87.786197
     <!-- $R^2=$0.34 -->
     <g transform="translate(178.601673 55.947797)">
      <text>
-      <tspan style="font: 7px 'Arial'" x="0 9.416966 14.671068 18.564134 20.508958 24.402025" y="-0.5995625000000011">R=0.34</tspan>
-      <tspan style="font: 4.9px 'Arial'" x="5.17714" y="-5.478125">2</tspan>
+      <tspan font-family="Arial" font-size="7" x="0 9.416966 14.671068 18.564134 20.508958 24.402025" y="-0.5995625000000011">R=0.34</tspan>
+      <tspan font-family="Arial" font-size="4.9" x="5.17714" y="-5.478125">2</tspan>
      </text>
     </g>
    </g>
    <g id="text_16">
-    <text style="font: 700 6.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="133.797625" y="11.931797" transform="rotate(-0 133.797625 11.931797)">Model of sorting accuracy for ks4 (Biophy. Evoked, NPX)</text>
+    <text font-family="Arial" font-size="6.5" font-weight="bold" text-anchor="middle" x="133.797625" y="11.931797" transform="rotate(-0 133.797625 11.931797)">Model of sorting accuracy for ks4 (Biophy. Evoked, NPX)</text>
    </g>
    <g id="legend_1">
     <g id="line2d_15">
@@ -2047,7 +2047,7 @@ z
      </g>
     </g>
     <g id="text_17">
-     <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="173.894425" y="24.300084" transform="rotate(-0 173.894425 24.300084)">Data</text>
+     <text font-family="Arial" font-size="6" text-anchor="start" x="173.894425" y="24.300084" transform="rotate(-0 173.894425 24.300084)">Data</text>
     </g>
     <g id="line2d_16">
      <path d="M 161.294425 30.687272 
@@ -2056,7 +2056,7 @@ L 170.894425 30.687272
 " style="fill: none; stroke: #ed2126; stroke-width: 3.5; stroke-linecap: square"/>
     </g>
     <g id="text_18">
-     <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="173.894425" y="32.787272" transform="rotate(-0 173.894425 32.787272)">Regression model</text>
+     <text font-family="Arial" font-size="6" text-anchor="start" x="173.894425" y="32.787272" transform="rotate(-0 173.894425 32.787272)">Regression model</text>
     </g>
    </g>
   </g>

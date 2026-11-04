@@ -68,7 +68,7 @@ L 0 3.85
       </g>
      </g>
      <g id="text_1">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="26.244" y="78.496688" transform="rotate(-0 26.244 78.496688)">L1</text>
+      <text font-family="Arial" font-size="6" text-anchor="middle" x="26.244" y="78.496688" transform="rotate(-0 26.244 78.496688)">L1</text>
      </g>
     </g>
     <g id="xtick_2">
@@ -78,7 +78,7 @@ L 0 3.85
       </g>
      </g>
      <g id="text_2">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="46.332" y="78.496688" transform="rotate(-0 46.332 78.496688)">L2/3</text>
+      <text font-family="Arial" font-size="6" text-anchor="middle" x="46.332" y="78.496688" transform="rotate(-0 46.332 78.496688)">L2/3</text>
      </g>
     </g>
     <g id="xtick_3">
@@ -88,7 +88,7 @@ L 0 3.85
       </g>
      </g>
      <g id="text_3">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="66.42" y="78.496688" transform="rotate(-0 66.42 78.496688)">L4</text>
+      <text font-family="Arial" font-size="6" text-anchor="middle" x="66.42" y="78.496688" transform="rotate(-0 66.42 78.496688)">L4</text>
      </g>
     </g>
     <g id="xtick_4">
@@ -98,7 +98,7 @@ L 0 3.85
       </g>
      </g>
      <g id="text_4">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="86.508" y="78.496688" transform="rotate(-0 86.508 78.496688)">L5</text>
+      <text font-family="Arial" font-size="6" text-anchor="middle" x="86.508" y="78.496688" transform="rotate(-0 86.508 78.496688)">L5</text>
      </g>
     </g>
     <g id="xtick_5">
@@ -108,11 +108,11 @@ L 0 3.85
       </g>
      </g>
      <g id="text_5">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="106.596" y="78.496688" transform="rotate(-0 106.596 78.496688)">L6</text>
+      <text font-family="Arial" font-size="6" text-anchor="middle" x="106.596" y="78.496688" transform="rotate(-0 106.596 78.496688)">L6</text>
      </g>
     </g>
     <g id="text_6">
-     <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="66.42" y="87.983875" transform="rotate(-0 66.42 87.983875)">Layer</text>
+     <text font-family="Arial" font-size="6" text-anchor="middle" x="66.42" y="87.983875" transform="rotate(-0 66.42 87.983875)">Layer</text>
     </g>
    </g>
    <g id="matplotlib.axis_2">
@@ -131,8 +131,8 @@ L -3.85 0
       <!-- $\mathdefault{10^{2}}$ -->
       <g transform="translate(-5.592 45.66954)">
        <text>
-        <tspan style="font: 6px 'Arial'" x="0 3.336914" y="-0.7996250000000007">10</tspan>
-        <tspan style="font: 4.2px 'Arial'" x="6.778369" y="-4.98125">2</tspan>
+        <tspan font-family="Arial" font-size="6" x="0 3.336914" y="-0.7996250000000007">10</tspan>
+        <tspan font-family="Arial" font-size="4.2" x="6.778369" y="-4.98125">2</tspan>
        </text>
       </g>
      </g>
@@ -248,7 +248,7 @@ L -2.2 0
      </g>
     </g>
     <g id="text_8">
-     <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="-10.854813" y="36.36" transform="rotate(-90 -10.854813 36.36)">Amplitude (μV)</text>
+     <text font-family="Arial" font-size="6" text-anchor="middle" x="-10.854813" y="36.36" transform="rotate(-90 -10.854813 36.36)">Amplitude (μV)</text>
     </g>
    </g>
    <g id="patch_5">

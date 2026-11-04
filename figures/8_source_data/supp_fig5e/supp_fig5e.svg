@@ -52,7 +52,7 @@ L 0 3.85
       </g>
      </g>
      <g id="text_1">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="38.78275" y="102.655887" transform="rotate(-0 38.78275 102.655887)">0</text>
+      <text font-family="Arial" font-size="6" text-anchor="middle" x="38.78275" y="102.655887" transform="rotate(-0 38.78275 102.655887)">0</text>
      </g>
     </g>
     <g id="xtick_2">
@@ -62,7 +62,7 @@ L 0 3.85
       </g>
      </g>
      <g id="text_2">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="69.47275" y="102.655887" transform="rotate(-0 69.47275 102.655887)">50</text>
+      <text font-family="Arial" font-size="6" text-anchor="middle" x="69.47275" y="102.655887" transform="rotate(-0 69.47275 102.655887)">50</text>
      </g>
     </g>
     <g id="xtick_3">
@@ -72,11 +72,11 @@ L 0 3.85
       </g>
      </g>
      <g id="text_3">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="100.16275" y="102.655887" transform="rotate(-0 100.16275 102.655887)">100</text>
+      <text font-family="Arial" font-size="6" text-anchor="middle" x="100.16275" y="102.655887" transform="rotate(-0 100.16275 102.655887)">100</text>
      </g>
     </g>
     <g id="text_4">
-     <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="69.47275" y="112.143075" transform="rotate(-0 69.47275 112.143075)">Iterations</text>
+     <text font-family="Arial" font-size="6" text-anchor="middle" x="69.47275" y="112.143075" transform="rotate(-0 69.47275 112.143075)">Iterations</text>
     </g>
    </g>
    <g id="matplotlib.axis_2">
@@ -92,7 +92,7 @@ L -3.85 0
       </g>
      </g>
      <g id="text_5">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: end" x="28.36375" y="77.286907" transform="rotate(-0 28.36375 77.286907)">8.25</text>
+      <text font-family="Arial" font-size="6" text-anchor="end" x="28.36375" y="77.286907" transform="rotate(-0 28.36375 77.286907)">8.25</text>
      </g>
     </g>
     <g id="ytick_2">
@@ -102,7 +102,7 @@ L -3.85 0
       </g>
      </g>
      <g id="text_6">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: end" x="28.36375" y="58.926511" transform="rotate(-0 28.36375 58.926511)">8.50</text>
+      <text font-family="Arial" font-size="6" text-anchor="end" x="28.36375" y="58.926511" transform="rotate(-0 28.36375 58.926511)">8.50</text>
      </g>
     </g>
     <g id="ytick_3">
@@ -112,11 +112,11 @@ L -3.85 0
       </g>
      </g>
      <g id="text_7">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: end" x="28.36375" y="40.566114" transform="rotate(-0 28.36375 40.566114)">8.75</text>
+      <text font-family="Arial" font-size="6" text-anchor="end" x="28.36375" y="40.566114" transform="rotate(-0 28.36375 40.566114)">8.75</text>
      </g>
     </g>
     <g id="text_8">
-     <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="11.494688" y="57.47" transform="rotate(-90 11.494688 57.47)">InfoNCE loss</text>
+     <text font-family="Arial" font-size="6" text-anchor="middle" x="11.494688" y="57.47" transform="rotate(-90 11.494688 57.47)">InfoNCE loss</text>
     </g>
    </g>
    <g id="line2d_7">
@@ -10431,8 +10431,8 @@ L 100.16275 91.0112
 " style="fill: none; stroke: #000000; stroke-width: 0.5; stroke-linejoin: miter; stroke-linecap: square"/>
    </g>
    <g id="text_9">
-    <text style="font: 700 6.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(34.209742 11.931797)">CEBRA's training loss,</text>
-    <text style="font: 700 6.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(46.185484 18.978)">goodness of fit</text>
+    <text font-family="Arial" font-size="6.5" font-weight="bold" transform="translate(34.209742 11.931797)">CEBRA's training loss,</text>
+    <text font-family="Arial" font-size="6.5" font-weight="bold" transform="translate(46.185484 18.978)">goodness of fit</text>
    </g>
    <g id="legend_1">
     <g id="line2d_108">
@@ -10442,8 +10442,8 @@ L 64.845359 37.395
 " style="fill: none; stroke: #808080; stroke-linecap: square"/>
     </g>
     <g id="text_10">
-     <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(69.245359 35.864797)">bootstrapped</text>
-     <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(69.245359 41.682078)">sample</text>
+     <text font-family="Arial" font-size="5.5" transform="translate(69.245359 35.864797)">bootstrapped</text>
+     <text font-family="Arial" font-size="5.5" transform="translate(69.245359 41.682078)">sample</text>
     </g>
    </g>
   </g>

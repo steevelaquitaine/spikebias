@@ -52,7 +52,7 @@ L 0 7
       </g>
      </g>
      <g id="text_1">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="43.192187" y="86.543997" transform="rotate(-0 43.192187 86.543997)">0</text>
+      <text font-family="Arial" font-size="6" text-anchor="middle" x="43.192187" y="86.543997" transform="rotate(-0 43.192187 86.543997)">0</text>
      </g>
     </g>
     <g id="xtick_2">
@@ -62,7 +62,7 @@ L 0 7
       </g>
      </g>
      <g id="text_2">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="71.185499" y="86.543997" transform="rotate(-0 71.185499 86.543997)">10</text>
+      <text font-family="Arial" font-size="6" text-anchor="middle" x="71.185499" y="86.543997" transform="rotate(-0 71.185499 86.543997)">10</text>
      </g>
     </g>
     <g id="xtick_3">
@@ -72,11 +72,11 @@ L 0 7
       </g>
      </g>
      <g id="text_3">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="99.17881" y="86.543997" transform="rotate(-0 99.17881 86.543997)">20</text>
+      <text font-family="Arial" font-size="6" text-anchor="middle" x="99.17881" y="86.543997" transform="rotate(-0 99.17881 86.543997)">20</text>
      </g>
     </g>
     <g id="text_4">
-     <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="85.042187" y="96.10431" transform="rotate(-0 85.042187 96.10431)">Delta time (ms)</text>
+     <text font-family="Arial" font-size="6" text-anchor="middle" x="85.042187" y="96.10431" transform="rotate(-0 85.042187 96.10431)">Delta time (ms)</text>
     </g>
    </g>
    <g id="matplotlib.axis_2">
@@ -92,7 +92,7 @@ L -7 0
       </g>
      </g>
      <g id="text_5">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: end" x="28.507187" y="68.340054" transform="rotate(-0 28.507187 68.340054)">0.00</text>
+      <text font-family="Arial" font-size="6" text-anchor="end" x="28.507187" y="68.340054" transform="rotate(-0 28.507187 68.340054)">0.00</text>
      </g>
     </g>
     <g id="ytick_2">
@@ -102,7 +102,7 @@ L -7 0
       </g>
      </g>
      <g id="text_6">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: end" x="28.507187" y="44.5428" transform="rotate(-0 28.507187 44.5428)">0.05</text>
+      <text font-family="Arial" font-size="6" text-anchor="end" x="28.507187" y="44.5428" transform="rotate(-0 28.507187 44.5428)">0.05</text>
      </g>
     </g>
     <g id="ytick_3">
@@ -112,11 +112,11 @@ L -7 0
       </g>
      </g>
      <g id="text_7">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: end" x="28.507187" y="20.745547" transform="rotate(-0 28.507187 20.745547)">0.10</text>
+      <text font-family="Arial" font-size="6" text-anchor="end" x="28.507187" y="20.745547" transform="rotate(-0 28.507187 20.745547)">0.10</text>
      </g>
     </g>
     <g id="text_8">
-     <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="11.567812" y="39.73271" transform="rotate(-90 11.567812 39.73271)">Sorting accuracy (ratio)</text>
+     <text font-family="Arial" font-size="6" text-anchor="middle" x="11.567812" y="39.73271" transform="rotate(-90 11.567812 39.73271)">Sorting accuracy (ratio)</text>
     </g>
    </g>
    <g id="line2d_7">
@@ -157,10 +157,10 @@ L 126.892187 71.74931
 " style="fill: none; stroke: #000000; stroke-linejoin: miter; stroke-linecap: square"/>
    </g>
    <g id="text_9">
-    <text style="font: 700 6.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="43.192187" y="11.852578" transform="rotate(-0 43.192187 11.852578)">0.11</text>
+    <text font-family="Arial" font-size="6.5" font-weight="bold" text-anchor="start" x="43.192187" y="11.852578" transform="rotate(-0 43.192187 11.852578)">0.11</text>
    </g>
    <g id="text_10">
-    <text style="font: 700 6.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="52.42998" y="64.764875" transform="rotate(-0 52.42998 64.764875)">1.3 ms</text>
+    <text font-family="Arial" font-size="6.5" font-weight="bold" text-anchor="start" x="52.42998" y="64.764875" transform="rotate(-0 52.42998 64.764875)">1.3 ms</text>
    </g>
   </g>
  </g>

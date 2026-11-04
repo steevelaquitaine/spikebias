@@ -55,8 +55,8 @@ L 0 3.85
       <!-- $\mathdefault{10^{1}}$ -->
       <g transform="translate(51.895319 90.5919)">
        <text>
-        <tspan style="font: 6px 'Arial'" x="0 3.336914" y="-0.7996250000000007">10</tspan>
-        <tspan style="font: 4.2px 'Arial'" x="6.778369" y="-4.98125">1</tspan>
+        <tspan font-family="Arial" font-size="6" x="0 3.336914" y="-0.7996250000000007">10</tspan>
+        <tspan font-family="Arial" font-size="4.2" x="6.778369" y="-4.98125">1</tspan>
        </text>
       </g>
      </g>
@@ -71,8 +71,8 @@ L 0 3.85
       <!-- $\mathdefault{10^{3}}$ -->
       <g transform="translate(80.201436 90.5919)">
        <text>
-        <tspan style="font: 6px 'Arial'" x="0 3.336914" y="-0.7996250000000007">10</tspan>
-        <tspan style="font: 4.2px 'Arial'" x="6.778369" y="-4.98125">3</tspan>
+        <tspan font-family="Arial" font-size="6" x="0 3.336914" y="-0.7996250000000007">10</tspan>
+        <tspan font-family="Arial" font-size="4.2" x="6.778369" y="-4.98125">3</tspan>
        </text>
       </g>
      </g>
@@ -209,7 +209,7 @@ L 0 2.2
      </g>
     </g>
     <g id="text_3">
-     <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="72.888625" y="100.152212" transform="rotate(-0 72.888625 100.152212)">Frequency (Hz)</text>
+     <text font-family="Arial" font-size="6" text-anchor="middle" x="72.888625" y="100.152212" transform="rotate(-0 72.888625 100.152212)">Frequency (Hz)</text>
     </g>
    </g>
    <g id="matplotlib.axis_2">
@@ -228,8 +228,8 @@ L -3.85 0
       <!-- $\mathdefault{10^{-3}}$ -->
       <g transform="translate(16.830625 68.171141)">
        <text>
-        <tspan style="font: 6px 'Arial'" x="0 3.336914" y="-0.7996250000000007">10</tspan>
-        <tspan style="font: 4.2px 'Arial'" x="6.778369 9.231103" y="-4.98125">−3</tspan>
+        <tspan font-family="Arial" font-size="6" x="0 3.336914" y="-0.7996250000000007">10</tspan>
+        <tspan font-family="Arial" font-size="4.2" x="6.778369 9.231103" y="-4.98125">−3</tspan>
        </text>
       </g>
      </g>
@@ -244,8 +244,8 @@ L -3.85 0
       <!-- $\mathdefault{10^{-1}}$ -->
       <g transform="translate(16.830625 53.500458)">
        <text>
-        <tspan style="font: 6px 'Arial'" x="0 3.336914" y="-0.7996250000000007">10</tspan>
-        <tspan style="font: 4.2px 'Arial'" x="6.778369 9.231103" y="-4.98125">−1</tspan>
+        <tspan font-family="Arial" font-size="6" x="0 3.336914" y="-0.7996250000000007">10</tspan>
+        <tspan font-family="Arial" font-size="4.2" x="6.778369 9.231103" y="-4.98125">−1</tspan>
        </text>
       </g>
      </g>
@@ -260,8 +260,8 @@ L -3.85 0
       <!-- $\mathdefault{10^{1}}$ -->
       <g transform="translate(19.290625 38.829775)">
        <text>
-        <tspan style="font: 6px 'Arial'" x="0 3.336914" y="-0.7996250000000007">10</tspan>
-        <tspan style="font: 4.2px 'Arial'" x="6.778369" y="-4.98125">1</tspan>
+        <tspan font-family="Arial" font-size="6" x="0 3.336914" y="-0.7996250000000007">10</tspan>
+        <tspan font-family="Arial" font-size="4.2" x="6.778369" y="-4.98125">1</tspan>
        </text>
       </g>
      </g>
@@ -276,14 +276,14 @@ L -3.85 0
       <!-- $\mathdefault{10^{3}}$ -->
       <g transform="translate(19.290625 24.159092)">
        <text>
-        <tspan style="font: 6px 'Arial'" x="0 3.336914" y="-0.7996250000000007">10</tspan>
-        <tspan style="font: 4.2px 'Arial'" x="6.778369" y="-4.98125">3</tspan>
+        <tspan font-family="Arial" font-size="6" x="0 3.336914" y="-0.7996250000000007">10</tspan>
+        <tspan font-family="Arial" font-size="4.2" x="6.778369" y="-4.98125">3</tspan>
        </text>
       </g>
      </g>
     </g>
     <g id="text_8">
-     <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="11.567813" y="40.464" transform="rotate(-90 11.567813 40.464)">Normalzed power (ratio)</text>
+     <text font-family="Arial" font-size="6" text-anchor="middle" x="11.567813" y="40.464" transform="rotate(-90 11.567813 40.464)">Normalzed power (ratio)</text>
     </g>
    </g>
    <image xlink:href="data:image/png;base64,
@@ -790,7 +790,7 @@ z
      </g>
     </g>
     <g id="text_9">
-     <text style="font: 5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="46.212625" y="114.681844" transform="rotate(-0 46.212625 114.681844)">M : Marques-Smith</text>
+     <text font-family="Arial" font-size="5" text-anchor="start" x="46.212625" y="114.681844" transform="rotate(-0 46.212625 114.681844)">M : Marques-Smith</text>
     </g>
     <g id="line2d_31">
      <path d="M 36.762625 118.640437 
@@ -815,7 +815,7 @@ z
      </g>
     </g>
     <g id="text_10">
-     <text style="font: 5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="46.212625" y="120.215437" transform="rotate(-0 46.212625 120.215437)">NS : Biophy. spont.</text>
+     <text font-family="Arial" font-size="5" text-anchor="start" x="46.212625" y="120.215437" transform="rotate(-0 46.212625 120.215437)">NS : Biophy. spont.</text>
     </g>
     <g id="line2d_32">
      <path d="M 36.762625 124.171687 
@@ -840,7 +840,7 @@ z
      </g>
     </g>
     <g id="text_11">
-     <text style="font: 5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="46.212625" y="125.746687" transform="rotate(-0 46.212625 125.746687)">E: Biophy. evoked</text>
+     <text font-family="Arial" font-size="5" text-anchor="start" x="46.212625" y="125.746687" transform="rotate(-0 46.212625 125.746687)">E: Biophy. evoked</text>
     </g>
     <g id="line2d_33">
      <path d="M 36.762625 129.702937 
@@ -865,7 +865,7 @@ z
      </g>
     </g>
     <g id="text_12">
-     <text style="font: 5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="46.212625" y="131.277937" transform="rotate(-0 46.212625 131.277937)">H: Horvath</text>
+     <text font-family="Arial" font-size="5" text-anchor="start" x="46.212625" y="131.277937" transform="rotate(-0 46.212625 131.277937)">H: Horvath</text>
     </g>
     <g id="line2d_34">
      <path d="M 36.762625 135.236531 
@@ -890,7 +890,7 @@ z
      </g>
     </g>
     <g id="text_13">
-     <text style="font: 5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="46.212625" y="136.811531" transform="rotate(-0 46.212625 136.811531)">DS: Biophy. spont</text>
+     <text font-family="Arial" font-size="5" text-anchor="start" x="46.212625" y="136.811531" transform="rotate(-0 46.212625 136.811531)">DS: Biophy. spont</text>
     </g>
     <g id="line2d_35">
      <path d="M 36.762625 140.767781 
@@ -899,7 +899,7 @@ L 45.762625 140.767781
 " style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linecap: square"/>
     </g>
     <g id="text_14">
-     <text style="font: 5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="46.212625" y="142.342781" transform="rotate(-0 46.212625 142.342781)">Power law fit</text>
+     <text font-family="Arial" font-size="5" text-anchor="start" x="46.212625" y="142.342781" transform="rotate(-0 46.212625 142.342781)">Power law fit</text>
     </g>
    </g>
   </g>

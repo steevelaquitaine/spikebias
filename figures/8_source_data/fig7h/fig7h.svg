@@ -52,8 +52,8 @@ L 0 3.85
       </g>
      </g>
      <g id="text_1">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(31.22661 86.486777) rotate(-30)">Ground</text>
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(41.333288 87.979558) rotate(-30)">truth</text>
+      <text font-family="Arial" font-size="6" transform="translate(31.22661 86.486777) rotate(-30)">Ground</text>
+      <text font-family="Arial" font-size="6" transform="translate(41.333288 87.979558) rotate(-30)">truth</text>
      </g>
     </g>
     <g id="xtick_2">
@@ -63,7 +63,7 @@ L 0 3.85
       </g>
      </g>
      <g id="text_2">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: end" x="58.403649" y="76.481308" transform="rotate(-30 58.403649 76.481308)">KS4</text>
+      <text font-family="Arial" font-size="6" text-anchor="end" x="58.403649" y="76.481308" transform="rotate(-30 58.403649 76.481308)">KS4</text>
      </g>
     </g>
     <g id="xtick_3">
@@ -73,7 +73,7 @@ L 0 3.85
       </g>
      </g>
      <g id="text_3">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: end" x="68.250708" y="76.481308" transform="rotate(-30 68.250708 76.481308)">KS3</text>
+      <text font-family="Arial" font-size="6" text-anchor="end" x="68.250708" y="76.481308" transform="rotate(-30 68.250708 76.481308)">KS3</text>
      </g>
     </g>
     <g id="xtick_4">
@@ -83,7 +83,7 @@ L 0 3.85
       </g>
      </g>
      <g id="text_4">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: end" x="78.097767" y="76.481308" transform="rotate(-30 78.097767 76.481308)">KS2.5</text>
+      <text font-family="Arial" font-size="6" text-anchor="end" x="78.097767" y="76.481308" transform="rotate(-30 78.097767 76.481308)">KS2.5</text>
      </g>
     </g>
     <g id="xtick_5">
@@ -93,7 +93,7 @@ L 0 3.85
       </g>
      </g>
      <g id="text_5">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: end" x="87.944825" y="76.481308" transform="rotate(-30 87.944825 76.481308)">KS2</text>
+      <text font-family="Arial" font-size="6" text-anchor="end" x="87.944825" y="76.481308" transform="rotate(-30 87.944825 76.481308)">KS2</text>
      </g>
     </g>
     <g id="xtick_6">
@@ -103,7 +103,7 @@ L 0 3.85
       </g>
      </g>
      <g id="text_6">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: end" x="97.791884" y="76.481308" transform="rotate(-30 97.791884 76.481308)">KS</text>
+      <text font-family="Arial" font-size="6" text-anchor="end" x="97.791884" y="76.481308" transform="rotate(-30 97.791884 76.481308)">KS</text>
      </g>
     </g>
     <g id="xtick_7">
@@ -113,7 +113,7 @@ L 0 3.85
       </g>
      </g>
      <g id="text_7">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: end" x="107.638943" y="76.481308" transform="rotate(-30 107.638943 76.481308)">HS</text>
+      <text font-family="Arial" font-size="6" text-anchor="end" x="107.638943" y="76.481308" transform="rotate(-30 107.638943 76.481308)">HS</text>
      </g>
     </g>
     <g id="xtick_8">
@@ -123,11 +123,11 @@ L 0 3.85
       </g>
      </g>
      <g id="text_8">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: end" x="117.486002" y="76.481308" transform="rotate(-30 117.486002 76.481308)">TC</text>
+      <text font-family="Arial" font-size="6" text-anchor="end" x="117.486002" y="76.481308" transform="rotate(-30 117.486002 76.481308)">TC</text>
      </g>
     </g>
     <g id="text_9">
-     <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="78.412187" y="101.38323" transform="rotate(-0 78.412187 101.38323)">Spike sorter</text>
+     <text font-family="Arial" font-size="6" text-anchor="middle" x="78.412187" y="101.38323" transform="rotate(-0 78.412187 101.38323)">Spike sorter</text>
     </g>
    </g>
    <g id="matplotlib.axis_2">
@@ -143,7 +143,7 @@ L -3.85 0
       </g>
      </g>
      <g id="text_10">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: end" x="25.027187" y="52.645731" transform="rotate(-0 25.027187 52.645731)">0.7</text>
+      <text font-family="Arial" font-size="6" text-anchor="end" x="25.027187" y="52.645731" transform="rotate(-0 25.027187 52.645731)">0.7</text>
      </g>
     </g>
     <g id="ytick_2">
@@ -153,11 +153,11 @@ L -3.85 0
       </g>
      </g>
      <g id="text_11">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: end" x="25.027187" y="29.238906" transform="rotate(-0 25.027187 29.238906)">0.8</text>
+      <text font-family="Arial" font-size="6" text-anchor="end" x="25.027187" y="29.238906" transform="rotate(-0 25.027187 29.238906)">0.8</text>
      </g>
     </g>
     <g id="text_12">
-     <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="11.494687" y="34.92" transform="rotate(-90 11.494687 34.92)">Manifold radius</text>
+     <text font-family="Arial" font-size="6" text-anchor="middle" x="11.494687" y="34.92" transform="rotate(-90 11.494687 34.92)">Manifold radius</text>
     </g>
    </g>
    <g id="LineCollection_1">

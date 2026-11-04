@@ -52,7 +52,7 @@ L 0 3
       </g>
      </g>
      <g id="text_1">
-      <text style="font: 7px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="56.360014" y="170.419047" transform="rotate(-0 56.360014 170.419047)">0</text>
+      <text font-family="Arial" font-size="7" text-anchor="middle" x="56.360014" y="170.419047" transform="rotate(-0 56.360014 170.419047)">0</text>
      </g>
     </g>
     <g id="xtick_2">
@@ -62,7 +62,7 @@ L 0 3
       </g>
      </g>
      <g id="text_2">
-      <text style="font: 7px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="122.307117" y="170.419047" transform="rotate(-0 122.307117 170.419047)">1000</text>
+      <text font-family="Arial" font-size="7" text-anchor="middle" x="122.307117" y="170.419047" transform="rotate(-0 122.307117 170.419047)">1000</text>
      </g>
     </g>
     <g id="xtick_3">
@@ -72,11 +72,11 @@ L 0 3
       </g>
      </g>
      <g id="text_3">
-      <text style="font: 7px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="188.25422" y="170.419047" transform="rotate(-0 188.25422 170.419047)">2000</text>
+      <text font-family="Arial" font-size="7" text-anchor="middle" x="188.25422" y="170.419047" transform="rotate(-0 188.25422 170.419047)">2000</text>
      </g>
     </g>
     <g id="text_4">
-     <text style="font: 7px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="122.305469" y="180.906078" transform="rotate(-0 122.305469 180.906078)">Time (ms)</text>
+     <text font-family="Arial" font-size="7" text-anchor="middle" x="122.305469" y="180.906078" transform="rotate(-0 122.305469 180.906078)">Time (ms)</text>
     </g>
    </g>
    <g id="matplotlib.axis_2">
@@ -92,7 +92,7 @@ L -3 0
       </g>
      </g>
      <g id="text_5">
-      <text style="font: 7px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: end" x="43.265469" y="52.627821" transform="rotate(-0 43.265469 52.627821)">0.0001</text>
+      <text font-family="Arial" font-size="7" text-anchor="end" x="43.265469" y="52.627821" transform="rotate(-0 43.265469 52.627821)">0.0001</text>
      </g>
     </g>
     <g id="ytick_2">
@@ -102,7 +102,7 @@ L -3 0
       </g>
      </g>
      <g id="text_6">
-      <text style="font: 7px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: end" x="43.265469" y="77.992172" transform="rotate(-0 43.265469 77.992172)">0.0000</text>
+      <text font-family="Arial" font-size="7" text-anchor="end" x="43.265469" y="77.992172" transform="rotate(-0 43.265469 77.992172)">0.0000</text>
      </g>
     </g>
     <g id="ytick_3">
@@ -112,7 +112,7 @@ L -3 0
       </g>
      </g>
      <g id="text_7">
-      <text style="font: 7px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: end" x="43.265469" y="103.356523" transform="rotate(-0 43.265469 103.356523)">−0.0001</text>
+      <text font-family="Arial" font-size="7" text-anchor="end" x="43.265469" y="103.356523" transform="rotate(-0 43.265469 103.356523)">−0.0001</text>
      </g>
     </g>
     <g id="ytick_4">
@@ -122,7 +122,7 @@ L -3 0
       </g>
      </g>
      <g id="text_8">
-      <text style="font: 7px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: end" x="43.265469" y="128.720874" transform="rotate(-0 43.265469 128.720874)">−0.0002</text>
+      <text font-family="Arial" font-size="7" text-anchor="end" x="43.265469" y="128.720874" transform="rotate(-0 43.265469 128.720874)">−0.0002</text>
      </g>
     </g>
     <g id="ytick_5">
@@ -132,11 +132,11 @@ L -3 0
       </g>
      </g>
      <g id="text_9">
-      <text style="font: 7px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: end" x="43.265469" y="154.085225" transform="rotate(-0 43.265469 154.085225)">−0.0003</text>
+      <text font-family="Arial" font-size="7" text-anchor="end" x="43.265469" y="154.085225" transform="rotate(-0 43.265469 154.085225)">−0.0003</text>
      </g>
     </g>
     <g id="text_10">
-     <text style="font: 7px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="12.295781" y="92.380578" transform="rotate(-90 12.295781 92.380578)">Voltage trace (V)</text>
+     <text font-family="Arial" font-size="7" text-anchor="middle" x="12.295781" y="92.380578" transform="rotate(-90 12.295781 92.380578)">Voltage trace (V)</text>
     </g>
    </g>
    <g id="line2d_9">
@@ -2700,8 +2700,8 @@ L 135.090625 41.771698
 " style="fill: none; stroke: #1f77b4; stroke-width: 0.7; stroke-linecap: square"/>
     </g>
     <g id="text_12">
-     <text style="font: 7px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(140.690625 39.824167)">Infinitesimal</text>
-     <text style="font: 7px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(140.690625 47.227979)">electrode</text>
+     <text font-family="Arial" font-size="7" transform="translate(140.690625 39.824167)">Infinitesimal</text>
+     <text font-family="Arial" font-size="7" transform="translate(140.690625 47.227979)">electrode</text>
     </g>
     <g id="line2d_12">
      <path d="M 119.690625 53.279698 
@@ -2710,7 +2710,7 @@ L 135.090625 53.279698
 " style="fill: none; stroke: #ff7f0e; stroke-width: 0.7; stroke-linecap: square"/>
     </g>
     <g id="text_13">
-     <text style="font: 7px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="140.690625" y="55.729698" transform="rotate(-0 140.690625 55.729698)">Finite electrode</text>
+     <text font-family="Arial" font-size="7" text-anchor="start" x="140.690625" y="55.729698" transform="rotate(-0 140.690625 55.729698)">Finite electrode</text>
     </g>
    </g>
   </g>

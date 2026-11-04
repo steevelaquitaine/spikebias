@@ -53,13 +53,13 @@ z
 " style="stroke: #000000; stroke-linecap: round"/>
    </g>
    <g id="text_1">
-    <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="24.115978" y="106.189208" transform="rotate(-0 24.115978 106.189208)">Latent 1</text>
+    <text font-family="Arial" font-size="5.5" text-anchor="middle" x="24.115978" y="106.189208" transform="rotate(-0 24.115978 106.189208)">Latent 1</text>
    </g>
    <g id="text_2">
-    <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(11.136797 100.154386) rotate(-90)">Latent 2</text>
+    <text font-family="Arial" font-size="5.5" transform="translate(11.136797 100.154386) rotate(-90)">Latent 2</text>
    </g>
    <g id="text_3">
-    <text style="font: 700 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="42.203455" y="38.497922" transform="rotate(-0 42.203455 38.497922)">Ground truth</text>
+    <text font-family="Arial" font-size="5.5" font-weight="bold" text-anchor="middle" x="42.203455" y="38.497922" transform="rotate(-0 42.203455 38.497922)">Ground truth</text>
    </g>
   </g>
   <g id="patch_4">
@@ -107,13 +107,13 @@ z
 " style="stroke: #000000; stroke-linecap: round"/>
    </g>
    <g id="text_4">
-    <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="18.431342" y="161.290238" transform="rotate(-0 18.431342 161.290238)">Latent 3</text>
+    <text font-family="Arial" font-size="5.5" text-anchor="start" x="18.431342" y="161.290238" transform="rotate(-0 18.431342 161.290238)">Latent 3</text>
    </g>
    <g id="text_5">
-    <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="26.751582" y="167.060945" transform="rotate(-0 26.751582 167.060945)">Latent 2</text>
+    <text font-family="Arial" font-size="5.5" text-anchor="start" x="26.751582" y="167.060945" transform="rotate(-0 26.751582 167.060945)">Latent 2</text>
    </g>
    <g id="text_6">
-    <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="26.751582" y="174.270096" transform="rotate(-0 26.751582 174.270096)">Latent 1</text>
+    <text font-family="Arial" font-size="5.5" text-anchor="start" x="26.751582" y="174.270096" transform="rotate(-0 26.751582 174.270096)">Latent 1</text>
    </g>
   </g>
   <g id="axes_4">
@@ -140,8 +140,8 @@ z
 " style="stroke: #000000; stroke-linecap: round"/>
    </g>
    <g id="text_7">
-    <text style="font: 700 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(85.334443 32.607938)">Kilosort 4</text>
-    <text style="font: 700 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(90.835302 38.497922)">(KS4)</text>
+    <text font-family="Arial" font-size="5.5" font-weight="bold" transform="translate(85.334443 32.607938)">Kilosort 4</text>
+    <text font-family="Arial" font-size="5.5" font-weight="bold" transform="translate(90.835302 38.497922)">(KS4)</text>
    </g>
   </g>
   <g id="patch_10">
@@ -213,8 +213,8 @@ z
 " style="stroke: #000000; stroke-linecap: round"/>
    </g>
    <g id="text_8">
-    <text style="font: 700 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(141.147228 32.607938)">Kilosort 3</text>
-    <text style="font: 700 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(146.648087 38.497922)">(KS3)</text>
+    <text font-family="Arial" font-size="5.5" font-weight="bold" transform="translate(141.147228 32.607938)">Kilosort 3</text>
+    <text font-family="Arial" font-size="5.5" font-weight="bold" transform="translate(146.648087 38.497922)">(KS3)</text>
    </g>
   </g>
   <g id="patch_16">
@@ -286,8 +286,8 @@ z
 " style="stroke: #000000; stroke-linecap: round"/>
    </g>
    <g id="text_9">
-    <text style="font: 700 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(194.666771 32.607938)">Kilosort 2.5</text>
-    <text style="font: 700 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(200.16763 38.497922)">(KS2.5)</text>
+    <text font-family="Arial" font-size="5.5" font-weight="bold" transform="translate(194.666771 32.607938)">Kilosort 2.5</text>
+    <text font-family="Arial" font-size="5.5" font-weight="bold" transform="translate(200.16763 38.497922)">(KS2.5)</text>
    </g>
   </g>
   <g id="patch_22">
@@ -359,8 +359,8 @@ z
 " style="stroke: #000000; stroke-linecap: round"/>
    </g>
    <g id="text_10">
-    <text style="font: 700 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(252.772798 32.607938)">Kilosort 2</text>
-    <text style="font: 700 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(258.273657 38.497922)">(KS2)</text>
+    <text font-family="Arial" font-size="5.5" font-weight="bold" transform="translate(252.772798 32.607938)">Kilosort 2</text>
+    <text font-family="Arial" font-size="5.5" font-weight="bold" transform="translate(258.273657 38.497922)">(KS2)</text>
    </g>
   </g>
   <g id="patch_28">
@@ -432,8 +432,8 @@ z
 " style="stroke: #000000; stroke-linecap: round"/>
    </g>
    <g id="text_11">
-    <text style="font: 700 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(310.878825 32.607938)">Kilosort</text>
-    <text style="font: 700 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(315.6157 38.497922)">(KS)</text>
+    <text font-family="Arial" font-size="5.5" font-weight="bold" transform="translate(310.878825 32.607938)">Kilosort</text>
+    <text font-family="Arial" font-size="5.5" font-weight="bold" transform="translate(315.6157 38.497922)">(KS)</text>
    </g>
   </g>
   <g id="patch_34">
@@ -505,8 +505,8 @@ z
 " style="stroke: #000000; stroke-linecap: round"/>
    </g>
    <g id="text_12">
-    <text style="font: 700 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(358.130946 32.53575)">Herdingspikes</text>
-    <text style="font: 700 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(371.428485 38.497922)">(HS)</text>
+    <text font-family="Arial" font-size="5.5" font-weight="bold" transform="translate(358.130946 32.53575)">Herdingspikes</text>
+    <text font-family="Arial" font-size="5.5" font-weight="bold" transform="translate(371.428485 38.497922)">(HS)</text>
    </g>
   </g>
   <g id="patch_40">
@@ -578,8 +578,8 @@ z
 " style="stroke: #000000; stroke-linecap: round"/>
    </g>
    <g id="text_13">
-    <text style="font: 700 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(408.148966 32.607938)">Multiunit threshold</text>
-    <text style="font: 700 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(415.170919 38.497922)">crossing (TC)</text>
+    <text font-family="Arial" font-size="5.5" font-weight="bold" transform="translate(408.148966 32.607938)">Multiunit threshold</text>
+    <text font-family="Arial" font-size="5.5" font-weight="bold" transform="translate(415.170919 38.497922)">crossing (TC)</text>
    </g>
   </g>
   <g id="patch_46">
@@ -652,7 +652,7 @@ L 0 1.5
       </g>
      </g>
      <g id="text_14">
-      <text style="font: 5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="184.556202" y="217.476828" transform="rotate(-0 184.556202 217.476828)">359</text>
+      <text font-family="Arial" font-size="5" text-anchor="middle" x="184.556202" y="217.476828" transform="rotate(-0 184.556202 217.476828)">359</text>
      </g>
     </g>
     <g id="xtick_2">
@@ -662,7 +662,7 @@ L 0 1.5
       </g>
      </g>
      <g id="text_15">
-      <text style="font: 5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="207.403667" y="217.476828" transform="rotate(-0 207.403667 217.476828)">270</text>
+      <text font-family="Arial" font-size="5" text-anchor="middle" x="207.403667" y="217.476828" transform="rotate(-0 207.403667 217.476828)">270</text>
      </g>
     </g>
     <g id="xtick_3">
@@ -672,7 +672,7 @@ L 0 1.5
       </g>
      </g>
      <g id="text_16">
-      <text style="font: 5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="230.507846" y="217.476828" transform="rotate(-0 230.507846 217.476828)">180</text>
+      <text font-family="Arial" font-size="5" text-anchor="middle" x="230.507846" y="217.476828" transform="rotate(-0 230.507846 217.476828)">180</text>
      </g>
     </g>
     <g id="xtick_4">
@@ -682,7 +682,7 @@ L 0 1.5
       </g>
      </g>
      <g id="text_17">
-      <text style="font: 5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="253.612024" y="217.476828" transform="rotate(-0 253.612024 217.476828)">90</text>
+      <text font-family="Arial" font-size="5" text-anchor="middle" x="253.612024" y="217.476828" transform="rotate(-0 253.612024 217.476828)">90</text>
      </g>
     </g>
     <g id="xtick_5">
@@ -692,7 +692,7 @@ L 0 1.5
       </g>
      </g>
      <g id="text_18">
-      <text style="font: 5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="276.716202" y="217.476828" transform="rotate(-0 276.716202 217.476828)">0</text>
+      <text font-family="Arial" font-size="5" text-anchor="middle" x="276.716202" y="217.476828" transform="rotate(-0 276.716202 217.476828)">0</text>
      </g>
     </g>
    </g>
@@ -710,11 +710,11 @@ z
 " style="fill: none; stroke: #000000; stroke-width: 0.3; stroke-linejoin: miter; stroke-linecap: square"/>
    </g>
    <g id="text_19">
-    <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="230.636202" y="201.987522" transform="rotate(-0 230.636202 201.987522)">Stimulus direction (deg)</text>
+    <text font-family="Arial" font-size="5.5" text-anchor="middle" x="230.636202" y="201.987522" transform="rotate(-0 230.636202 201.987522)">Stimulus direction (deg)</text>
    </g>
   </g>
   <g id="text_20">
-   <text style="font: 700 6.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="230.636202" y="11.931797" transform="rotate(-0 230.636202 11.931797)">Spike sorting distorts the neural manifolds evoked by 360 stimulus directions</text>
+   <text font-family="Arial" font-size="6.5" font-weight="bold" text-anchor="middle" x="230.636202" y="11.931797" transform="rotate(-0 230.636202 11.931797)">Spike sorting distorts the neural manifolds evoked by 360 stimulus directions</text>
   </g>
  </g>
 </svg>

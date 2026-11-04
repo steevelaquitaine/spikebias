@@ -162,11 +162,11 @@ L 0 3.85
       </g>
      </g>
      <g id="text_1">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="67.116813" y="144.742687" transform="rotate(-0 67.116813 144.742687)">ks4</text>
+      <text font-family="Arial" font-size="6" text-anchor="middle" x="67.116813" y="144.742687" transform="rotate(-0 67.116813 144.742687)">ks4</text>
      </g>
     </g>
     <g id="text_2">
-     <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="67.116813" y="154.303" transform="rotate(-0 67.116813 154.303)">Spike sorters</text>
+     <text font-family="Arial" font-size="6" text-anchor="middle" x="67.116813" y="154.303" transform="rotate(-0 67.116813 154.303)">Spike sorters</text>
     </g>
    </g>
    <g id="matplotlib.axis_2">
@@ -185,8 +185,8 @@ L -3.85 0
       <!-- $\mathdefault{10^{-1}}$ -->
       <g transform="translate(23.334813 109.774143)">
        <text>
-        <tspan style="font: 6px 'Arial'" x="0 3.336914" y="-0.7996250000000007">10</tspan>
-        <tspan style="font: 4.2px 'Arial'" x="6.778369 9.231103" y="-4.98125">−1</tspan>
+        <tspan font-family="Arial" font-size="6" x="0 3.336914" y="-0.7996250000000007">10</tspan>
+        <tspan font-family="Arial" font-size="4.2" x="6.778369 9.231103" y="-4.98125">−1</tspan>
        </text>
       </g>
      </g>
@@ -201,8 +201,8 @@ L -3.85 0
       <!-- $\mathdefault{10^{0}}$ -->
       <g transform="translate(25.794812 80.123718)">
        <text>
-        <tspan style="font: 6px 'Arial'" x="0 3.336914" y="-0.7996250000000007">10</tspan>
-        <tspan style="font: 4.2px 'Arial'" x="6.778369" y="-4.98125">0</tspan>
+        <tspan font-family="Arial" font-size="6" x="0 3.336914" y="-0.7996250000000007">10</tspan>
+        <tspan font-family="Arial" font-size="4.2" x="6.778369" y="-4.98125">0</tspan>
        </text>
       </g>
      </g>
@@ -217,8 +217,8 @@ L -3.85 0
       <!-- $\mathdefault{10^{1}}$ -->
       <g transform="translate(25.794812 50.473293)">
        <text>
-        <tspan style="font: 6px 'Arial'" x="0 3.336914" y="-0.7996250000000007">10</tspan>
-        <tspan style="font: 4.2px 'Arial'" x="6.778369" y="-4.98125">1</tspan>
+        <tspan font-family="Arial" font-size="6" x="0 3.336914" y="-0.7996250000000007">10</tspan>
+        <tspan font-family="Arial" font-size="4.2" x="6.778369" y="-4.98125">1</tspan>
        </text>
       </g>
      </g>
@@ -397,8 +397,8 @@ L -2.2 0
      </g>
     </g>
     <g id="text_6">
-     <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(11.567813 129.377812) rotate(-90)">Number of isolated single-units </text>
-     <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(18.072 106.697344) rotate(-90)"> per site (ratio)</text>
+     <text font-family="Arial" font-size="6" transform="translate(11.567813 129.377812) rotate(-90)">Number of isolated single-units </text>
+     <text font-family="Arial" font-size="6" transform="translate(18.072 106.697344) rotate(-90)"> per site (ratio)</text>
     </g>
    </g>
    <g id="line2d_29">
@@ -620,7 +620,7 @@ z
 " style="fill: #999999; opacity: 0.4"/>
     </g>
     <g id="text_7">
-     <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="65.196812" y="13.894687" transform="rotate(-0 65.196812 13.894687)">M</text>
+     <text font-family="Arial" font-size="6" text-anchor="start" x="65.196812" y="13.894687" transform="rotate(-0 65.196812 13.894687)">M</text>
     </g>
     <g id="patch_18">
      <path d="M 50.196813 22.381875 
@@ -631,7 +631,7 @@ z
 " style="fill: #cd3c3e; opacity: 0.4"/>
     </g>
     <g id="text_8">
-     <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="65.196812" y="22.381875" transform="rotate(-0 65.196812 22.381875)">NS</text>
+     <text font-family="Arial" font-size="6" text-anchor="start" x="65.196812" y="22.381875" transform="rotate(-0 65.196812 22.381875)">NS</text>
     </g>
     <g id="patch_19">
      <path d="M 50.196813 30.869062 
@@ -642,7 +642,7 @@ z
 " style="fill: #df7e20; opacity: 0.4"/>
     </g>
     <g id="text_9">
-     <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="65.196812" y="30.869062" transform="rotate(-0 65.196812 30.869062)">E</text>
+     <text font-family="Arial" font-size="6" text-anchor="start" x="65.196812" y="30.869062" transform="rotate(-0 65.196812 30.869062)">E</text>
     </g>
     <g id="patch_20">
      <path d="M 85.532125 13.894687 
@@ -653,7 +653,7 @@ z
 " style="fill: #487ea8; opacity: 0.4"/>
     </g>
     <g id="text_10">
-     <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="100.532125" y="13.894687" transform="rotate(-0 100.532125 13.894687)">S</text>
+     <text font-family="Arial" font-size="6" text-anchor="start" x="100.532125" y="13.894687" transform="rotate(-0 100.532125 13.894687)">S</text>
     </g>
     <g id="patch_21">
      <path d="M 85.532125 22.381875 
@@ -664,7 +664,7 @@ z
 " style="opacity: 0.4"/>
     </g>
     <g id="text_11">
-     <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="100.532125" y="22.381875" transform="rotate(-0 100.532125 22.381875)">H</text>
+     <text font-family="Arial" font-size="6" text-anchor="start" x="100.532125" y="22.381875" transform="rotate(-0 100.532125 22.381875)">H</text>
     </g>
     <g id="patch_22">
      <path d="M 85.532125 30.869062 
@@ -675,7 +675,7 @@ z
 " style="fill: #2a8852; opacity: 0.4"/>
     </g>
     <g id="text_12">
-     <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="100.532125" y="30.869062" transform="rotate(-0 100.532125 30.869062)">DS</text>
+     <text font-family="Arial" font-size="6" text-anchor="start" x="100.532125" y="30.869062" transform="rotate(-0 100.532125 30.869062)">DS</text>
     </g>
    </g>
   </g>

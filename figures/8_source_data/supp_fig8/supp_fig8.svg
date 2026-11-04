@@ -76,7 +76,7 @@ L 0 3.85
       </g>
      </g>
      <g id="text_1">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="57.464293" y="118.204687" transform="rotate(-0 57.464293 118.204687)">50</text>
+      <text font-family="Arial" font-size="6" text-anchor="middle" x="57.464293" y="118.204687" transform="rotate(-0 57.464293 118.204687)">50</text>
      </g>
     </g>
     <g id="xtick_2">
@@ -86,7 +86,7 @@ L 0 3.85
       </g>
      </g>
      <g id="text_2">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="79.1578" y="118.204687" transform="rotate(-0 79.1578 118.204687)">100</text>
+      <text font-family="Arial" font-size="6" text-anchor="middle" x="79.1578" y="118.204687" transform="rotate(-0 79.1578 118.204687)">100</text>
      </g>
     </g>
     <g id="xtick_3">
@@ -96,7 +96,7 @@ L 0 3.85
       </g>
      </g>
      <g id="text_3">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="100.851306" y="118.204687" transform="rotate(-0 100.851306 118.204687)">200</text>
+      <text font-family="Arial" font-size="6" text-anchor="middle" x="100.851306" y="118.204687" transform="rotate(-0 100.851306 118.204687)">200</text>
      </g>
     </g>
     <g id="xtick_4">
@@ -106,7 +106,7 @@ L 0 3.85
       </g>
      </g>
      <g id="text_4">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="122.544813" y="118.204687" transform="rotate(-0 122.544813 118.204687)">400</text>
+      <text font-family="Arial" font-size="6" text-anchor="middle" x="122.544813" y="118.204687" transform="rotate(-0 122.544813 118.204687)">400</text>
      </g>
     </g>
     <g id="xtick_5">
@@ -116,7 +116,7 @@ L 0 3.85
       </g>
      </g>
      <g id="text_5">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="144.238319" y="118.204687" transform="rotate(-0 144.238319 118.204687)">800</text>
+      <text font-family="Arial" font-size="6" text-anchor="middle" x="144.238319" y="118.204687" transform="rotate(-0 144.238319 118.204687)">800</text>
      </g>
     </g>
     <g id="xtick_6">
@@ -126,11 +126,11 @@ L 0 3.85
       </g>
      </g>
      <g id="text_6">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="165.931825" y="118.204687" transform="rotate(-0 165.931825 118.204687)">1600</text>
+      <text font-family="Arial" font-size="6" text-anchor="middle" x="165.931825" y="118.204687" transform="rotate(-0 165.931825 118.204687)">1600</text>
      </g>
     </g>
     <g id="text_7">
-     <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="122.544813" y="127.765" transform="rotate(-0 122.544813 127.765)">Cortical population dimensionality</text>
+     <text font-family="Arial" font-size="6" text-anchor="middle" x="122.544813" y="127.765" transform="rotate(-0 122.544813 127.765)">Cortical population dimensionality</text>
     </g>
    </g>
    <g id="matplotlib.axis_2">
@@ -146,7 +146,7 @@ L -3.85 0
       </g>
      </g>
      <g id="text_8">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: end" x="31.674813" y="93.036835" transform="rotate(-0 31.674813 93.036835)">1.0</text>
+      <text font-family="Arial" font-size="6" text-anchor="end" x="31.674813" y="93.036835" transform="rotate(-0 31.674813 93.036835)">1.0</text>
      </g>
     </g>
     <g id="ytick_2">
@@ -156,7 +156,7 @@ L -3.85 0
       </g>
      </g>
      <g id="text_9">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: end" x="31.674813" y="74.906292" transform="rotate(-0 31.674813 74.906292)">1.1</text>
+      <text font-family="Arial" font-size="6" text-anchor="end" x="31.674813" y="74.906292" transform="rotate(-0 31.674813 74.906292)">1.1</text>
      </g>
     </g>
     <g id="ytick_3">
@@ -166,7 +166,7 @@ L -3.85 0
       </g>
      </g>
      <g id="text_10">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: end" x="31.674813" y="56.775749" transform="rotate(-0 31.674813 56.775749)">1.2</text>
+      <text font-family="Arial" font-size="6" text-anchor="end" x="31.674813" y="56.775749" transform="rotate(-0 31.674813 56.775749)">1.2</text>
      </g>
     </g>
     <g id="ytick_4">
@@ -176,7 +176,7 @@ L -3.85 0
       </g>
      </g>
      <g id="text_11">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: end" x="31.674813" y="38.645205" transform="rotate(-0 31.674813 38.645205)">1.3</text>
+      <text font-family="Arial" font-size="6" text-anchor="end" x="31.674813" y="38.645205" transform="rotate(-0 31.674813 38.645205)">1.3</text>
      </g>
     </g>
     <g id="ytick_5">
@@ -186,12 +186,12 @@ L -3.85 0
       </g>
      </g>
      <g id="text_12">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: end" x="31.674813" y="20.514662" transform="rotate(-0 31.674813 20.514662)">1.4</text>
+      <text font-family="Arial" font-size="6" text-anchor="end" x="31.674813" y="20.514662" transform="rotate(-0 31.674813 20.514662)">1.4</text>
      </g>
     </g>
     <g id="text_13">
-     <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(11.567813 82.557187) rotate(-90)">Manifold capacity / </text>
-     <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(18.072 81.890156) rotate(-90)">lower bound (ratio)</text>
+     <text font-family="Arial" font-size="6" transform="translate(11.567813 82.557187) rotate(-90)">Manifold capacity / </text>
+     <text font-family="Arial" font-size="6" transform="translate(18.072 81.890156) rotate(-90)">lower bound (ratio)</text>
     </g>
    </g>
    <g id="patch_6">
@@ -1391,7 +1391,7 @@ z
 " style="fill: #3274a1; stroke: #3d3d3d; stroke-width: 0.5; stroke-linejoin: miter"/>
     </g>
     <g id="text_15">
-     <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="223.253613" y="14.907487" transform="rotate(-0 223.253613 14.907487)">ground truth</text>
+     <text font-family="Arial" font-size="6" text-anchor="start" x="223.253613" y="14.907487" transform="rotate(-0 223.253613 14.907487)">ground truth</text>
     </g>
     <g id="patch_22">
      <path d="M 206.453613 27.304612 
@@ -1402,8 +1402,8 @@ z
 " style="fill: #e1812c; stroke: #3d3d3d; stroke-width: 0.5; stroke-linejoin: miter"/>
     </g>
     <g id="text_16">
-     <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(223.253613 23.464987)">ground truth undersampled</text>
-     <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(223.253613 29.881425)">with Kilosort4's yield</text>
+     <text font-family="Arial" font-size="6" transform="translate(223.253613 23.464987)">ground truth undersampled</text>
+     <text font-family="Arial" font-size="6" transform="translate(223.253613 29.881425)">with Kilosort4's yield</text>
     </g>
     <g id="patch_23">
      <path d="M 206.453613 42.27855 
@@ -1414,8 +1414,8 @@ z
 " style="fill: #3a923a; stroke: #3d3d3d; stroke-width: 0.5; stroke-linejoin: miter"/>
     </g>
     <g id="text_17">
-     <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(223.253613 38.438925)">ground truth with Kilosort4</text>
-     <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(223.253613 44.855362)">undersampling and selection bias</text>
+     <text font-family="Arial" font-size="6" transform="translate(223.253613 38.438925)">ground truth with Kilosort4</text>
+     <text font-family="Arial" font-size="6" transform="translate(223.253613 44.855362)">undersampling and selection bias</text>
     </g>
    </g>
   </g>

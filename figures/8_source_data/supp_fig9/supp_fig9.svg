@@ -100,8 +100,8 @@ L 0 3.85
       </g>
      </g>
      <g id="text_1">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(55.864843 80.907021)">+ </text>
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(49.446718 87.340896)">(V100)</text>
+      <text font-family="Arial" font-size="6" transform="translate(55.864843 80.907021)">+ </text>
+      <text font-family="Arial" font-size="6" transform="translate(49.446718 87.340896)">(V100)</text>
      </g>
     </g>
     <g id="xtick_2">
@@ -111,8 +111,8 @@ L 0 3.85
       </g>
      </g>
      <g id="text_2">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(88.626684 80.907021)">+ </text>
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(79.209028 87.340896)">(rtx5090)</text>
+      <text font-family="Arial" font-size="6" transform="translate(88.626684 80.907021)">+ </text>
+      <text font-family="Arial" font-size="6" transform="translate(79.209028 87.340896)">(rtx5090)</text>
      </g>
     </g>
     <g id="xtick_3">
@@ -122,12 +122,12 @@ L 0 3.85
       </g>
      </g>
      <g id="text_3">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(122.141806 80.907021)">- </text>
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(111.970869 87.340896)">(rtx5090)</text>
+      <text font-family="Arial" font-size="6" transform="translate(122.141806 80.907021)">- </text>
+      <text font-family="Arial" font-size="6" transform="translate(111.970869 87.340896)">(rtx5090)</text>
      </g>
     </g>
     <g id="text_4">
-     <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="91.212309" y="96.898396" transform="rotate(-0 91.212309 96.898396)">Drift correction</text>
+     <text font-family="Arial" font-size="6" text-anchor="middle" x="91.212309" y="96.898396" transform="rotate(-0 91.212309 96.898396)">Drift correction</text>
     </g>
    </g>
    <g id="matplotlib.axis_2">
@@ -143,7 +143,7 @@ L -3.85 0
       </g>
      </g>
      <g id="text_5">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: end" x="28.36375" y="68.978636" transform="rotate(-0 28.36375 68.978636)">0</text>
+      <text font-family="Arial" font-size="6" text-anchor="end" x="28.36375" y="68.978636" transform="rotate(-0 28.36375 68.978636)">0</text>
      </g>
     </g>
     <g id="ytick_2">
@@ -153,7 +153,7 @@ L -3.85 0
       </g>
      </g>
      <g id="text_6">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: end" x="28.36375" y="57.402249" transform="rotate(-0 28.36375 57.402249)">0.25</text>
+      <text font-family="Arial" font-size="6" text-anchor="end" x="28.36375" y="57.402249" transform="rotate(-0 28.36375 57.402249)">0.25</text>
      </g>
     </g>
     <g id="ytick_3">
@@ -163,7 +163,7 @@ L -3.85 0
       </g>
      </g>
      <g id="text_7">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: end" x="28.36375" y="45.825863" transform="rotate(-0 28.36375 45.825863)">0.5</text>
+      <text font-family="Arial" font-size="6" text-anchor="end" x="28.36375" y="45.825863" transform="rotate(-0 28.36375 45.825863)">0.5</text>
      </g>
     </g>
     <g id="ytick_4">
@@ -173,7 +173,7 @@ L -3.85 0
       </g>
      </g>
      <g id="text_8">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: end" x="28.36375" y="34.249476" transform="rotate(-0 28.36375 34.249476)">0.75</text>
+      <text font-family="Arial" font-size="6" text-anchor="end" x="28.36375" y="34.249476" transform="rotate(-0 28.36375 34.249476)">0.75</text>
      </g>
     </g>
     <g id="ytick_5">
@@ -183,11 +183,11 @@ L -3.85 0
       </g>
      </g>
      <g id="text_9">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: end" x="28.36375" y="22.67309" transform="rotate(-0 28.36375 22.67309)">1</text>
+      <text font-family="Arial" font-size="6" text-anchor="end" x="28.36375" y="22.67309" transform="rotate(-0 28.36375 22.67309)">1</text>
      </g>
     </g>
     <g id="text_10">
-     <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="11.494688" y="42.520881" transform="rotate(-90 11.494688 42.520881)">ks4</text>
+     <text font-family="Arial" font-size="6" text-anchor="middle" x="11.494688" y="42.520881" transform="rotate(-90 11.494688 42.520881)">ks4</text>
     </g>
    </g>
    <g id="patch_9">
@@ -204,22 +204,22 @@ L 141.665544 69.262333
     <text style="fill: #ffffff; font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="58.450468" y="39.047965" transform="rotate(-0 58.450468 39.047965)">104</text>
    </g>
    <g id="text_12">
-    <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="58.450468" y="66.368237" transform="rotate(-0 58.450468 66.368237)">96</text>
+    <text font-family="Arial" font-size="6" text-anchor="middle" x="58.450468" y="66.368237" transform="rotate(-0 58.450468 66.368237)">96</text>
    </g>
    <g id="text_13">
     <text style="fill: #ffffff; font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="91.212309" y="39.047965" transform="rotate(-0 91.212309 39.047965)">100</text>
    </g>
    <g id="text_14">
-    <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="91.212309" y="66.368237" transform="rotate(-0 91.212309 66.368237)">92</text>
+    <text font-family="Arial" font-size="6" text-anchor="middle" x="91.212309" y="66.368237" transform="rotate(-0 91.212309 66.368237)">92</text>
    </g>
    <g id="text_15">
     <text style="fill: #ffffff; font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="123.97415" y="39.047965" transform="rotate(-0 123.97415 39.047965)">105</text>
    </g>
    <g id="text_16">
-    <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="123.97415" y="66.368237" transform="rotate(-0 123.97415 66.368237)">97</text>
+    <text font-family="Arial" font-size="6" text-anchor="middle" x="123.97415" y="66.368237" transform="rotate(-0 123.97415 66.368237)">97</text>
    </g>
    <g id="text_17">
-    <text style="font: 7px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="91.212309" y="12.210469" transform="rotate(-0 91.212309 12.210469)">M</text>
+    <text font-family="Arial" font-size="7" text-anchor="middle" x="91.212309" y="12.210469" transform="rotate(-0 91.212309 12.210469)">M</text>
    </g>
   </g>
   <g id="axes_2">
@@ -288,8 +288,8 @@ z
       </g>
      </g>
      <g id="text_18">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(197.704843 80.907021)">+ </text>
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(191.286718 87.340896)">(V100)</text>
+      <text font-family="Arial" font-size="6" transform="translate(197.704843 80.907021)">+ </text>
+      <text font-family="Arial" font-size="6" transform="translate(191.286718 87.340896)">(V100)</text>
      </g>
     </g>
     <g id="xtick_5">
@@ -299,8 +299,8 @@ z
       </g>
      </g>
      <g id="text_19">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(230.466684 80.907021)">+ </text>
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(221.049028 87.340896)">(rtx5090)</text>
+      <text font-family="Arial" font-size="6" transform="translate(230.466684 80.907021)">+ </text>
+      <text font-family="Arial" font-size="6" transform="translate(221.049028 87.340896)">(rtx5090)</text>
      </g>
     </g>
     <g id="xtick_6">
@@ -310,12 +310,12 @@ z
       </g>
      </g>
      <g id="text_20">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(263.981806 80.907021)">- </text>
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(253.810869 87.340896)">(rtx5090)</text>
+      <text font-family="Arial" font-size="6" transform="translate(263.981806 80.907021)">- </text>
+      <text font-family="Arial" font-size="6" transform="translate(253.810869 87.340896)">(rtx5090)</text>
      </g>
     </g>
     <g id="text_21">
-     <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="233.052309" y="96.898396" transform="rotate(-0 233.052309 96.898396)">Drift correction</text>
+     <text font-family="Arial" font-size="6" text-anchor="middle" x="233.052309" y="96.898396" transform="rotate(-0 233.052309 96.898396)">Drift correction</text>
     </g>
    </g>
    <g id="matplotlib.axis_4">
@@ -326,7 +326,7 @@ z
       </g>
      </g>
      <g id="text_22">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: end" x="170.20375" y="68.978636" transform="rotate(-0 170.20375 68.978636)">0</text>
+      <text font-family="Arial" font-size="6" text-anchor="end" x="170.20375" y="68.978636" transform="rotate(-0 170.20375 68.978636)">0</text>
      </g>
     </g>
     <g id="ytick_7">
@@ -336,7 +336,7 @@ z
       </g>
      </g>
      <g id="text_23">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: end" x="170.20375" y="57.402249" transform="rotate(-0 170.20375 57.402249)">0.25</text>
+      <text font-family="Arial" font-size="6" text-anchor="end" x="170.20375" y="57.402249" transform="rotate(-0 170.20375 57.402249)">0.25</text>
      </g>
     </g>
     <g id="ytick_8">
@@ -346,7 +346,7 @@ z
       </g>
      </g>
      <g id="text_24">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: end" x="170.20375" y="45.825863" transform="rotate(-0 170.20375 45.825863)">0.5</text>
+      <text font-family="Arial" font-size="6" text-anchor="end" x="170.20375" y="45.825863" transform="rotate(-0 170.20375 45.825863)">0.5</text>
      </g>
     </g>
     <g id="ytick_9">
@@ -356,7 +356,7 @@ z
       </g>
      </g>
      <g id="text_25">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: end" x="170.20375" y="34.249476" transform="rotate(-0 170.20375 34.249476)">0.75</text>
+      <text font-family="Arial" font-size="6" text-anchor="end" x="170.20375" y="34.249476" transform="rotate(-0 170.20375 34.249476)">0.75</text>
      </g>
     </g>
     <g id="ytick_10">
@@ -366,11 +366,11 @@ z
       </g>
      </g>
      <g id="text_26">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: end" x="170.20375" y="22.67309" transform="rotate(-0 170.20375 22.67309)">1</text>
+      <text font-family="Arial" font-size="6" text-anchor="end" x="170.20375" y="22.67309" transform="rotate(-0 170.20375 22.67309)">1</text>
      </g>
     </g>
     <g id="text_27">
-     <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="153.334688" y="42.520881" transform="rotate(-90 153.334688 42.520881)">ks4</text>
+     <text font-family="Arial" font-size="6" text-anchor="middle" x="153.334688" y="42.520881" transform="rotate(-90 153.334688 42.520881)">ks4</text>
     </g>
    </g>
    <g id="patch_18">
@@ -387,22 +387,22 @@ L 283.505544 69.262333
     <text style="fill: #ffffff; font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="200.290468" y="39.047965" transform="rotate(-0 200.290468 39.047965)">336</text>
    </g>
    <g id="text_29">
-    <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="200.290468" y="66.368237" transform="rotate(-0 200.290468 66.368237)">184</text>
+    <text font-family="Arial" font-size="6" text-anchor="middle" x="200.290468" y="66.368237" transform="rotate(-0 200.290468 66.368237)">184</text>
    </g>
    <g id="text_30">
     <text style="fill: #ffffff; font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="233.052309" y="39.047965" transform="rotate(-0 233.052309 39.047965)">367</text>
    </g>
    <g id="text_31">
-    <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="233.052309" y="66.368237" transform="rotate(-0 233.052309 66.368237)">206</text>
+    <text font-family="Arial" font-size="6" text-anchor="middle" x="233.052309" y="66.368237" transform="rotate(-0 233.052309 66.368237)">206</text>
    </g>
    <g id="text_32">
     <text style="fill: #ffffff; font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="265.81415" y="39.047965" transform="rotate(-0 265.81415 39.047965)">363</text>
    </g>
    <g id="text_33">
-    <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="265.81415" y="66.368237" transform="rotate(-0 265.81415 66.368237)">240</text>
+    <text font-family="Arial" font-size="6" text-anchor="middle" x="265.81415" y="66.368237" transform="rotate(-0 265.81415 66.368237)">240</text>
    </g>
    <g id="text_34">
-    <text style="font: 7px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="233.052309" y="12.210469" transform="rotate(-0 233.052309 12.210469)">NS</text>
+    <text font-family="Arial" font-size="7" text-anchor="middle" x="233.052309" y="12.210469" transform="rotate(-0 233.052309 12.210469)">NS</text>
    </g>
   </g>
   <g id="axes_3">
@@ -471,8 +471,8 @@ z
       </g>
      </g>
      <g id="text_35">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(339.544843 80.907021)">+ </text>
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(333.126718 87.340896)">(V100)</text>
+      <text font-family="Arial" font-size="6" transform="translate(339.544843 80.907021)">+ </text>
+      <text font-family="Arial" font-size="6" transform="translate(333.126718 87.340896)">(V100)</text>
      </g>
     </g>
     <g id="xtick_8">
@@ -482,8 +482,8 @@ z
       </g>
      </g>
      <g id="text_36">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(372.306684 80.907021)">+ </text>
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(362.889028 87.340896)">(rtx5090)</text>
+      <text font-family="Arial" font-size="6" transform="translate(372.306684 80.907021)">+ </text>
+      <text font-family="Arial" font-size="6" transform="translate(362.889028 87.340896)">(rtx5090)</text>
      </g>
     </g>
     <g id="xtick_9">
@@ -493,12 +493,12 @@ z
       </g>
      </g>
      <g id="text_37">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(405.821806 80.907021)">- </text>
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(395.650869 87.340896)">(rtx5090)</text>
+      <text font-family="Arial" font-size="6" transform="translate(405.821806 80.907021)">- </text>
+      <text font-family="Arial" font-size="6" transform="translate(395.650869 87.340896)">(rtx5090)</text>
      </g>
     </g>
     <g id="text_38">
-     <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="374.892309" y="96.898396" transform="rotate(-0 374.892309 96.898396)">Drift correction</text>
+     <text font-family="Arial" font-size="6" text-anchor="middle" x="374.892309" y="96.898396" transform="rotate(-0 374.892309 96.898396)">Drift correction</text>
     </g>
    </g>
    <g id="matplotlib.axis_6">
@@ -509,7 +509,7 @@ z
       </g>
      </g>
      <g id="text_39">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: end" x="312.04375" y="68.978636" transform="rotate(-0 312.04375 68.978636)">0</text>
+      <text font-family="Arial" font-size="6" text-anchor="end" x="312.04375" y="68.978636" transform="rotate(-0 312.04375 68.978636)">0</text>
      </g>
     </g>
     <g id="ytick_12">
@@ -519,7 +519,7 @@ z
       </g>
      </g>
      <g id="text_40">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: end" x="312.04375" y="57.402249" transform="rotate(-0 312.04375 57.402249)">0.25</text>
+      <text font-family="Arial" font-size="6" text-anchor="end" x="312.04375" y="57.402249" transform="rotate(-0 312.04375 57.402249)">0.25</text>
      </g>
     </g>
     <g id="ytick_13">
@@ -529,7 +529,7 @@ z
       </g>
      </g>
      <g id="text_41">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: end" x="312.04375" y="45.825863" transform="rotate(-0 312.04375 45.825863)">0.5</text>
+      <text font-family="Arial" font-size="6" text-anchor="end" x="312.04375" y="45.825863" transform="rotate(-0 312.04375 45.825863)">0.5</text>
      </g>
     </g>
     <g id="ytick_14">
@@ -539,7 +539,7 @@ z
       </g>
      </g>
      <g id="text_42">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: end" x="312.04375" y="34.249476" transform="rotate(-0 312.04375 34.249476)">0.75</text>
+      <text font-family="Arial" font-size="6" text-anchor="end" x="312.04375" y="34.249476" transform="rotate(-0 312.04375 34.249476)">0.75</text>
      </g>
     </g>
     <g id="ytick_15">
@@ -549,11 +549,11 @@ z
       </g>
      </g>
      <g id="text_43">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: end" x="312.04375" y="22.67309" transform="rotate(-0 312.04375 22.67309)">1</text>
+      <text font-family="Arial" font-size="6" text-anchor="end" x="312.04375" y="22.67309" transform="rotate(-0 312.04375 22.67309)">1</text>
      </g>
     </g>
     <g id="text_44">
-     <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="295.104375" y="42.520881" transform="rotate(-90 295.104375 42.520881)">Proportion (ratio)</text>
+     <text font-family="Arial" font-size="6" text-anchor="middle" x="295.104375" y="42.520881" transform="rotate(-90 295.104375 42.520881)">Proportion (ratio)</text>
     </g>
    </g>
    <g id="patch_27">
@@ -570,22 +570,22 @@ L 425.345544 69.262333
     <text style="fill: #ffffff; font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="342.130468" y="34.41741" transform="rotate(-0 342.130468 34.41741)">163</text>
    </g>
    <g id="text_46">
-    <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="342.130468" y="66.368237" transform="rotate(-0 342.130468 66.368237)">377</text>
+    <text font-family="Arial" font-size="6" text-anchor="middle" x="342.130468" y="66.368237" transform="rotate(-0 342.130468 66.368237)">377</text>
    </g>
    <g id="text_47">
     <text style="fill: #ffffff; font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="374.892309" y="34.41741" transform="rotate(-0 374.892309 34.41741)">153</text>
    </g>
    <g id="text_48">
-    <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="374.892309" y="66.368237" transform="rotate(-0 374.892309 66.368237)">359</text>
+    <text font-family="Arial" font-size="6" text-anchor="middle" x="374.892309" y="66.368237" transform="rotate(-0 374.892309 66.368237)">359</text>
    </g>
    <g id="text_49">
     <text style="fill: #ffffff; font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="407.65415" y="34.41741" transform="rotate(-0 407.65415 34.41741)">174</text>
    </g>
    <g id="text_50">
-    <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="407.65415" y="66.368237" transform="rotate(-0 407.65415 66.368237)">334</text>
+    <text font-family="Arial" font-size="6" text-anchor="middle" x="407.65415" y="66.368237" transform="rotate(-0 407.65415 66.368237)">334</text>
    </g>
    <g id="text_51">
-    <text style="font: 7px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="374.892309" y="12.210469" transform="rotate(-0 374.892309 12.210469)">S</text>
+    <text font-family="Arial" font-size="7" text-anchor="middle" x="374.892309" y="12.210469" transform="rotate(-0 374.892309 12.210469)">S</text>
    </g>
   </g>
   <g id="axes_4">
@@ -654,8 +654,8 @@ z
       </g>
      </g>
      <g id="text_52">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(55.864843 171.067021)">+ </text>
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(49.446718 177.500896)">(V100)</text>
+      <text font-family="Arial" font-size="6" transform="translate(55.864843 171.067021)">+ </text>
+      <text font-family="Arial" font-size="6" transform="translate(49.446718 177.500896)">(V100)</text>
      </g>
     </g>
     <g id="xtick_11">
@@ -665,8 +665,8 @@ z
       </g>
      </g>
      <g id="text_53">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(88.626684 171.067021)">+ </text>
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(79.209028 177.500896)">(rtx5090)</text>
+      <text font-family="Arial" font-size="6" transform="translate(88.626684 171.067021)">+ </text>
+      <text font-family="Arial" font-size="6" transform="translate(79.209028 177.500896)">(rtx5090)</text>
      </g>
     </g>
     <g id="xtick_12">
@@ -676,12 +676,12 @@ z
       </g>
      </g>
      <g id="text_54">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(122.141806 171.067021)">- </text>
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(111.970869 177.500896)">(rtx5090)</text>
+      <text font-family="Arial" font-size="6" transform="translate(122.141806 171.067021)">- </text>
+      <text font-family="Arial" font-size="6" transform="translate(111.970869 177.500896)">(rtx5090)</text>
      </g>
     </g>
     <g id="text_55">
-     <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="91.212309" y="187.058396" transform="rotate(-0 91.212309 187.058396)">Drift correction</text>
+     <text font-family="Arial" font-size="6" text-anchor="middle" x="91.212309" y="187.058396" transform="rotate(-0 91.212309 187.058396)">Drift correction</text>
     </g>
    </g>
    <g id="matplotlib.axis_8">
@@ -692,7 +692,7 @@ z
       </g>
      </g>
      <g id="text_56">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: end" x="28.36375" y="159.138636" transform="rotate(-0 28.36375 159.138636)">0</text>
+      <text font-family="Arial" font-size="6" text-anchor="end" x="28.36375" y="159.138636" transform="rotate(-0 28.36375 159.138636)">0</text>
      </g>
     </g>
     <g id="ytick_17">
@@ -702,7 +702,7 @@ z
       </g>
      </g>
      <g id="text_57">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: end" x="28.36375" y="147.562249" transform="rotate(-0 28.36375 147.562249)">0.25</text>
+      <text font-family="Arial" font-size="6" text-anchor="end" x="28.36375" y="147.562249" transform="rotate(-0 28.36375 147.562249)">0.25</text>
      </g>
     </g>
     <g id="ytick_18">
@@ -712,7 +712,7 @@ z
       </g>
      </g>
      <g id="text_58">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: end" x="28.36375" y="135.985863" transform="rotate(-0 28.36375 135.985863)">0.5</text>
+      <text font-family="Arial" font-size="6" text-anchor="end" x="28.36375" y="135.985863" transform="rotate(-0 28.36375 135.985863)">0.5</text>
      </g>
     </g>
     <g id="ytick_19">
@@ -722,7 +722,7 @@ z
       </g>
      </g>
      <g id="text_59">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: end" x="28.36375" y="124.409476" transform="rotate(-0 28.36375 124.409476)">0.75</text>
+      <text font-family="Arial" font-size="6" text-anchor="end" x="28.36375" y="124.409476" transform="rotate(-0 28.36375 124.409476)">0.75</text>
      </g>
     </g>
     <g id="ytick_20">
@@ -732,11 +732,11 @@ z
       </g>
      </g>
      <g id="text_60">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: end" x="28.36375" y="112.83309" transform="rotate(-0 28.36375 112.83309)">1</text>
+      <text font-family="Arial" font-size="6" text-anchor="end" x="28.36375" y="112.83309" transform="rotate(-0 28.36375 112.83309)">1</text>
      </g>
     </g>
     <g id="text_61">
-     <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="11.494688" y="132.680881" transform="rotate(-90 11.494688 132.680881)">ks3</text>
+     <text font-family="Arial" font-size="6" text-anchor="middle" x="11.494688" y="132.680881" transform="rotate(-90 11.494688 132.680881)">ks3</text>
     </g>
    </g>
    <g id="patch_36">
@@ -753,19 +753,19 @@ L 141.665544 159.422333
     <text style="fill: #ffffff; font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="58.450468" y="129.207965" transform="rotate(-0 58.450468 129.207965)">164</text>
    </g>
    <g id="text_63">
-    <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="58.450468" y="152.360738" transform="rotate(-0 58.450468 152.360738)">111</text>
+    <text font-family="Arial" font-size="6" text-anchor="middle" x="58.450468" y="152.360738" transform="rotate(-0 58.450468 152.360738)">111</text>
    </g>
    <g id="text_64">
     <text style="fill: #ffffff; font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="91.212309" y="129.207965" transform="rotate(-0 91.212309 129.207965)">134</text>
    </g>
    <g id="text_65">
-    <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="91.212309" y="152.360738" transform="rotate(-0 91.212309 152.360738)">112</text>
+    <text font-family="Arial" font-size="6" text-anchor="middle" x="91.212309" y="152.360738" transform="rotate(-0 91.212309 152.360738)">112</text>
    </g>
    <g id="text_66">
     <text style="fill: #ffffff; font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="123.97415" y="129.207965" transform="rotate(-0 123.97415 129.207965)">134</text>
    </g>
    <g id="text_67">
-    <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="123.97415" y="152.360738" transform="rotate(-0 123.97415 152.360738)">110</text>
+    <text font-family="Arial" font-size="6" text-anchor="middle" x="123.97415" y="152.360738" transform="rotate(-0 123.97415 152.360738)">110</text>
    </g>
   </g>
   <g id="axes_5">
@@ -834,8 +834,8 @@ z
       </g>
      </g>
      <g id="text_68">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(197.704843 171.067021)">+ </text>
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(191.286718 177.500896)">(V100)</text>
+      <text font-family="Arial" font-size="6" transform="translate(197.704843 171.067021)">+ </text>
+      <text font-family="Arial" font-size="6" transform="translate(191.286718 177.500896)">(V100)</text>
      </g>
     </g>
     <g id="xtick_14">
@@ -845,8 +845,8 @@ z
       </g>
      </g>
      <g id="text_69">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(230.466684 171.067021)">+ </text>
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(221.049028 177.500896)">(rtx5090)</text>
+      <text font-family="Arial" font-size="6" transform="translate(230.466684 171.067021)">+ </text>
+      <text font-family="Arial" font-size="6" transform="translate(221.049028 177.500896)">(rtx5090)</text>
      </g>
     </g>
     <g id="xtick_15">
@@ -856,12 +856,12 @@ z
       </g>
      </g>
      <g id="text_70">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(263.981806 171.067021)">- </text>
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(253.810869 177.500896)">(rtx5090)</text>
+      <text font-family="Arial" font-size="6" transform="translate(263.981806 171.067021)">- </text>
+      <text font-family="Arial" font-size="6" transform="translate(253.810869 177.500896)">(rtx5090)</text>
      </g>
     </g>
     <g id="text_71">
-     <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="233.052309" y="187.058396" transform="rotate(-0 233.052309 187.058396)">Drift correction</text>
+     <text font-family="Arial" font-size="6" text-anchor="middle" x="233.052309" y="187.058396" transform="rotate(-0 233.052309 187.058396)">Drift correction</text>
     </g>
    </g>
    <g id="matplotlib.axis_10">
@@ -872,7 +872,7 @@ z
       </g>
      </g>
      <g id="text_72">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: end" x="170.20375" y="159.138636" transform="rotate(-0 170.20375 159.138636)">0</text>
+      <text font-family="Arial" font-size="6" text-anchor="end" x="170.20375" y="159.138636" transform="rotate(-0 170.20375 159.138636)">0</text>
      </g>
     </g>
     <g id="ytick_22">
@@ -882,7 +882,7 @@ z
       </g>
      </g>
      <g id="text_73">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: end" x="170.20375" y="147.562249" transform="rotate(-0 170.20375 147.562249)">0.25</text>
+      <text font-family="Arial" font-size="6" text-anchor="end" x="170.20375" y="147.562249" transform="rotate(-0 170.20375 147.562249)">0.25</text>
      </g>
     </g>
     <g id="ytick_23">
@@ -892,7 +892,7 @@ z
       </g>
      </g>
      <g id="text_74">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: end" x="170.20375" y="135.985863" transform="rotate(-0 170.20375 135.985863)">0.5</text>
+      <text font-family="Arial" font-size="6" text-anchor="end" x="170.20375" y="135.985863" transform="rotate(-0 170.20375 135.985863)">0.5</text>
      </g>
     </g>
     <g id="ytick_24">
@@ -902,7 +902,7 @@ z
       </g>
      </g>
      <g id="text_75">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: end" x="170.20375" y="124.409476" transform="rotate(-0 170.20375 124.409476)">0.75</text>
+      <text font-family="Arial" font-size="6" text-anchor="end" x="170.20375" y="124.409476" transform="rotate(-0 170.20375 124.409476)">0.75</text>
      </g>
     </g>
     <g id="ytick_25">
@@ -912,11 +912,11 @@ z
       </g>
      </g>
      <g id="text_76">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: end" x="170.20375" y="112.83309" transform="rotate(-0 170.20375 112.83309)">1</text>
+      <text font-family="Arial" font-size="6" text-anchor="end" x="170.20375" y="112.83309" transform="rotate(-0 170.20375 112.83309)">1</text>
      </g>
     </g>
     <g id="text_77">
-     <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="153.334688" y="132.680881" transform="rotate(-90 153.334688 132.680881)">ks3</text>
+     <text font-family="Arial" font-size="6" text-anchor="middle" x="153.334688" y="132.680881" transform="rotate(-90 153.334688 132.680881)">ks3</text>
     </g>
    </g>
    <g id="patch_45">
@@ -933,19 +933,19 @@ L 283.505544 159.422333
     <text style="fill: #ffffff; font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="200.290468" y="129.207965" transform="rotate(-0 200.290468 129.207965)">570</text>
    </g>
    <g id="text_79">
-    <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="200.290468" y="152.360738" transform="rotate(-0 200.290468 152.360738)">233</text>
+    <text font-family="Arial" font-size="6" text-anchor="middle" x="200.290468" y="152.360738" transform="rotate(-0 200.290468 152.360738)">233</text>
    </g>
    <g id="text_80">
     <text style="fill: #ffffff; font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="233.052309" y="129.207965" transform="rotate(-0 233.052309 129.207965)">495</text>
    </g>
    <g id="text_81">
-    <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="233.052309" y="152.360738" transform="rotate(-0 233.052309 152.360738)">222</text>
+    <text font-family="Arial" font-size="6" text-anchor="middle" x="233.052309" y="152.360738" transform="rotate(-0 233.052309 152.360738)">222</text>
    </g>
    <g id="text_82">
     <text style="fill: #ffffff; font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="265.81415" y="129.207965" transform="rotate(-0 265.81415 129.207965)">508</text>
    </g>
    <g id="text_83">
-    <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="265.81415" y="152.360738" transform="rotate(-0 265.81415 152.360738)">238</text>
+    <text font-family="Arial" font-size="6" text-anchor="middle" x="265.81415" y="152.360738" transform="rotate(-0 265.81415 152.360738)">238</text>
    </g>
   </g>
   <g id="axes_6">
@@ -1014,8 +1014,8 @@ z
       </g>
      </g>
      <g id="text_84">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(339.544843 171.067021)">+ </text>
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(333.126718 177.500896)">(V100)</text>
+      <text font-family="Arial" font-size="6" transform="translate(339.544843 171.067021)">+ </text>
+      <text font-family="Arial" font-size="6" transform="translate(333.126718 177.500896)">(V100)</text>
      </g>
     </g>
     <g id="xtick_17">
@@ -1025,8 +1025,8 @@ z
       </g>
      </g>
      <g id="text_85">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(372.306684 171.067021)">+ </text>
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(362.889028 177.500896)">(rtx5090)</text>
+      <text font-family="Arial" font-size="6" transform="translate(372.306684 171.067021)">+ </text>
+      <text font-family="Arial" font-size="6" transform="translate(362.889028 177.500896)">(rtx5090)</text>
      </g>
     </g>
     <g id="xtick_18">
@@ -1036,12 +1036,12 @@ z
       </g>
      </g>
      <g id="text_86">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(405.821806 171.067021)">- </text>
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(395.650869 177.500896)">(rtx5090)</text>
+      <text font-family="Arial" font-size="6" transform="translate(405.821806 171.067021)">- </text>
+      <text font-family="Arial" font-size="6" transform="translate(395.650869 177.500896)">(rtx5090)</text>
      </g>
     </g>
     <g id="text_87">
-     <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="374.892309" y="187.058396" transform="rotate(-0 374.892309 187.058396)">Drift correction</text>
+     <text font-family="Arial" font-size="6" text-anchor="middle" x="374.892309" y="187.058396" transform="rotate(-0 374.892309 187.058396)">Drift correction</text>
     </g>
    </g>
    <g id="matplotlib.axis_12">
@@ -1052,7 +1052,7 @@ z
       </g>
      </g>
      <g id="text_88">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: end" x="312.04375" y="159.138636" transform="rotate(-0 312.04375 159.138636)">0</text>
+      <text font-family="Arial" font-size="6" text-anchor="end" x="312.04375" y="159.138636" transform="rotate(-0 312.04375 159.138636)">0</text>
      </g>
     </g>
     <g id="ytick_27">
@@ -1062,7 +1062,7 @@ z
       </g>
      </g>
      <g id="text_89">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: end" x="312.04375" y="147.562249" transform="rotate(-0 312.04375 147.562249)">0.25</text>
+      <text font-family="Arial" font-size="6" text-anchor="end" x="312.04375" y="147.562249" transform="rotate(-0 312.04375 147.562249)">0.25</text>
      </g>
     </g>
     <g id="ytick_28">
@@ -1072,7 +1072,7 @@ z
       </g>
      </g>
      <g id="text_90">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: end" x="312.04375" y="135.985863" transform="rotate(-0 312.04375 135.985863)">0.5</text>
+      <text font-family="Arial" font-size="6" text-anchor="end" x="312.04375" y="135.985863" transform="rotate(-0 312.04375 135.985863)">0.5</text>
      </g>
     </g>
     <g id="ytick_29">
@@ -1082,7 +1082,7 @@ z
       </g>
      </g>
      <g id="text_91">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: end" x="312.04375" y="124.409476" transform="rotate(-0 312.04375 124.409476)">0.75</text>
+      <text font-family="Arial" font-size="6" text-anchor="end" x="312.04375" y="124.409476" transform="rotate(-0 312.04375 124.409476)">0.75</text>
      </g>
     </g>
     <g id="ytick_30">
@@ -1092,11 +1092,11 @@ z
       </g>
      </g>
      <g id="text_92">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: end" x="312.04375" y="112.83309" transform="rotate(-0 312.04375 112.83309)">1</text>
+      <text font-family="Arial" font-size="6" text-anchor="end" x="312.04375" y="112.83309" transform="rotate(-0 312.04375 112.83309)">1</text>
      </g>
     </g>
     <g id="text_93">
-     <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="295.104375" y="132.680881" transform="rotate(-90 295.104375 132.680881)">Proportion (ratio)</text>
+     <text font-family="Arial" font-size="6" text-anchor="middle" x="295.104375" y="132.680881" transform="rotate(-90 295.104375 132.680881)">Proportion (ratio)</text>
     </g>
    </g>
    <g id="patch_54">
@@ -1113,19 +1113,19 @@ L 425.345544 159.422333
     <text style="fill: #ffffff; font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="342.130468" y="124.57741" transform="rotate(-0 342.130468 124.57741)">166</text>
    </g>
    <g id="text_95">
-    <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="342.130468" y="156.528237" transform="rotate(-0 342.130468 156.528237)">349</text>
+    <text font-family="Arial" font-size="6" text-anchor="middle" x="342.130468" y="156.528237" transform="rotate(-0 342.130468 156.528237)">349</text>
    </g>
    <g id="text_96">
     <text style="fill: #ffffff; font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="374.892309" y="124.57741" transform="rotate(-0 374.892309 124.57741)">177</text>
    </g>
    <g id="text_97">
-    <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="374.892309" y="156.528237" transform="rotate(-0 374.892309 156.528237)">349</text>
+    <text font-family="Arial" font-size="6" text-anchor="middle" x="374.892309" y="156.528237" transform="rotate(-0 374.892309 156.528237)">349</text>
    </g>
    <g id="text_98">
     <text style="fill: #ffffff; font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="407.65415" y="124.57741" transform="rotate(-0 407.65415 124.57741)">189</text>
    </g>
    <g id="text_99">
-    <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="407.65415" y="156.528237" transform="rotate(-0 407.65415 156.528237)">355</text>
+    <text font-family="Arial" font-size="6" text-anchor="middle" x="407.65415" y="156.528237" transform="rotate(-0 407.65415 156.528237)">355</text>
    </g>
   </g>
   <g id="axes_7">
@@ -1194,8 +1194,8 @@ z
       </g>
      </g>
      <g id="text_100">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(55.864843 261.227021)">+ </text>
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(49.446718 267.660896)">(V100)</text>
+      <text font-family="Arial" font-size="6" transform="translate(55.864843 261.227021)">+ </text>
+      <text font-family="Arial" font-size="6" transform="translate(49.446718 267.660896)">(V100)</text>
      </g>
     </g>
     <g id="xtick_20">
@@ -1205,8 +1205,8 @@ z
       </g>
      </g>
      <g id="text_101">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(88.626684 261.227021)">+ </text>
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(79.209028 267.660896)">(rtx5090)</text>
+      <text font-family="Arial" font-size="6" transform="translate(88.626684 261.227021)">+ </text>
+      <text font-family="Arial" font-size="6" transform="translate(79.209028 267.660896)">(rtx5090)</text>
      </g>
     </g>
     <g id="xtick_21">
@@ -1216,12 +1216,12 @@ z
       </g>
      </g>
      <g id="text_102">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(122.141806 261.227021)">- </text>
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(111.970869 267.660896)">(rtx5090)</text>
+      <text font-family="Arial" font-size="6" transform="translate(122.141806 261.227021)">- </text>
+      <text font-family="Arial" font-size="6" transform="translate(111.970869 267.660896)">(rtx5090)</text>
      </g>
     </g>
     <g id="text_103">
-     <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="91.212309" y="277.218396" transform="rotate(-0 91.212309 277.218396)">Drift correction</text>
+     <text font-family="Arial" font-size="6" text-anchor="middle" x="91.212309" y="277.218396" transform="rotate(-0 91.212309 277.218396)">Drift correction</text>
     </g>
    </g>
    <g id="matplotlib.axis_14">
@@ -1232,7 +1232,7 @@ z
       </g>
      </g>
      <g id="text_104">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: end" x="28.36375" y="249.298636" transform="rotate(-0 28.36375 249.298636)">0</text>
+      <text font-family="Arial" font-size="6" text-anchor="end" x="28.36375" y="249.298636" transform="rotate(-0 28.36375 249.298636)">0</text>
      </g>
     </g>
     <g id="ytick_32">
@@ -1242,7 +1242,7 @@ z
       </g>
      </g>
      <g id="text_105">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: end" x="28.36375" y="237.722249" transform="rotate(-0 28.36375 237.722249)">0.25</text>
+      <text font-family="Arial" font-size="6" text-anchor="end" x="28.36375" y="237.722249" transform="rotate(-0 28.36375 237.722249)">0.25</text>
      </g>
     </g>
     <g id="ytick_33">
@@ -1252,7 +1252,7 @@ z
       </g>
      </g>
      <g id="text_106">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: end" x="28.36375" y="226.145863" transform="rotate(-0 28.36375 226.145863)">0.5</text>
+      <text font-family="Arial" font-size="6" text-anchor="end" x="28.36375" y="226.145863" transform="rotate(-0 28.36375 226.145863)">0.5</text>
      </g>
     </g>
     <g id="ytick_34">
@@ -1262,7 +1262,7 @@ z
       </g>
      </g>
      <g id="text_107">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: end" x="28.36375" y="214.569476" transform="rotate(-0 28.36375 214.569476)">0.75</text>
+      <text font-family="Arial" font-size="6" text-anchor="end" x="28.36375" y="214.569476" transform="rotate(-0 28.36375 214.569476)">0.75</text>
      </g>
     </g>
     <g id="ytick_35">
@@ -1272,11 +1272,11 @@ z
       </g>
      </g>
      <g id="text_108">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: end" x="28.36375" y="202.99309" transform="rotate(-0 28.36375 202.99309)">1</text>
+      <text font-family="Arial" font-size="6" text-anchor="end" x="28.36375" y="202.99309" transform="rotate(-0 28.36375 202.99309)">1</text>
      </g>
     </g>
     <g id="text_109">
-     <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="11.494688" y="222.840881" transform="rotate(-90 11.494688 222.840881)">ks2.5</text>
+     <text font-family="Arial" font-size="6" text-anchor="middle" x="11.494688" y="222.840881" transform="rotate(-90 11.494688 222.840881)">ks2.5</text>
     </g>
    </g>
    <g id="patch_63">
@@ -1293,19 +1293,19 @@ L 141.665544 249.582333
     <text style="fill: #ffffff; font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="58.450468" y="219.367965" transform="rotate(-0 58.450468 219.367965)">905</text>
    </g>
    <g id="text_111">
-    <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="58.450468" y="246.688237" transform="rotate(-0 58.450468 246.688237)">186</text>
+    <text font-family="Arial" font-size="6" text-anchor="middle" x="58.450468" y="246.688237" transform="rotate(-0 58.450468 246.688237)">186</text>
    </g>
    <g id="text_112">
     <text style="fill: #ffffff; font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="91.212309" y="219.367965" transform="rotate(-0 91.212309 219.367965)">903</text>
    </g>
    <g id="text_113">
-    <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="91.212309" y="246.688237" transform="rotate(-0 91.212309 246.688237)">179</text>
+    <text font-family="Arial" font-size="6" text-anchor="middle" x="91.212309" y="246.688237" transform="rotate(-0 91.212309 246.688237)">179</text>
    </g>
    <g id="text_114">
     <text style="fill: #ffffff; font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="123.97415" y="219.367965" transform="rotate(-0 123.97415 219.367965)">927</text>
    </g>
    <g id="text_115">
-    <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="123.97415" y="246.688237" transform="rotate(-0 123.97415 246.688237)">167</text>
+    <text font-family="Arial" font-size="6" text-anchor="middle" x="123.97415" y="246.688237" transform="rotate(-0 123.97415 246.688237)">167</text>
    </g>
   </g>
   <g id="axes_8">
@@ -1374,8 +1374,8 @@ z
       </g>
      </g>
      <g id="text_116">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(197.704843 261.227021)">+ </text>
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(191.286718 267.660896)">(V100)</text>
+      <text font-family="Arial" font-size="6" transform="translate(197.704843 261.227021)">+ </text>
+      <text font-family="Arial" font-size="6" transform="translate(191.286718 267.660896)">(V100)</text>
      </g>
     </g>
     <g id="xtick_23">
@@ -1385,8 +1385,8 @@ z
       </g>
      </g>
      <g id="text_117">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(230.466684 261.227021)">+ </text>
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(221.049028 267.660896)">(rtx5090)</text>
+      <text font-family="Arial" font-size="6" transform="translate(230.466684 261.227021)">+ </text>
+      <text font-family="Arial" font-size="6" transform="translate(221.049028 267.660896)">(rtx5090)</text>
      </g>
     </g>
     <g id="xtick_24">
@@ -1396,12 +1396,12 @@ z
       </g>
      </g>
      <g id="text_118">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(263.981806 261.227021)">- </text>
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(253.810869 267.660896)">(rtx5090)</text>
+      <text font-family="Arial" font-size="6" transform="translate(263.981806 261.227021)">- </text>
+      <text font-family="Arial" font-size="6" transform="translate(253.810869 267.660896)">(rtx5090)</text>
      </g>
     </g>
     <g id="text_119">
-     <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="233.052309" y="277.218396" transform="rotate(-0 233.052309 277.218396)">Drift correction</text>
+     <text font-family="Arial" font-size="6" text-anchor="middle" x="233.052309" y="277.218396" transform="rotate(-0 233.052309 277.218396)">Drift correction</text>
     </g>
    </g>
    <g id="matplotlib.axis_16">
@@ -1412,7 +1412,7 @@ z
       </g>
      </g>
      <g id="text_120">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: end" x="170.20375" y="249.298636" transform="rotate(-0 170.20375 249.298636)">0</text>
+      <text font-family="Arial" font-size="6" text-anchor="end" x="170.20375" y="249.298636" transform="rotate(-0 170.20375 249.298636)">0</text>
      </g>
     </g>
     <g id="ytick_37">
@@ -1422,7 +1422,7 @@ z
       </g>
      </g>
      <g id="text_121">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: end" x="170.20375" y="237.722249" transform="rotate(-0 170.20375 237.722249)">0.25</text>
+      <text font-family="Arial" font-size="6" text-anchor="end" x="170.20375" y="237.722249" transform="rotate(-0 170.20375 237.722249)">0.25</text>
      </g>
     </g>
     <g id="ytick_38">
@@ -1432,7 +1432,7 @@ z
       </g>
      </g>
      <g id="text_122">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: end" x="170.20375" y="226.145863" transform="rotate(-0 170.20375 226.145863)">0.5</text>
+      <text font-family="Arial" font-size="6" text-anchor="end" x="170.20375" y="226.145863" transform="rotate(-0 170.20375 226.145863)">0.5</text>
      </g>
     </g>
     <g id="ytick_39">
@@ -1442,7 +1442,7 @@ z
       </g>
      </g>
      <g id="text_123">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: end" x="170.20375" y="214.569476" transform="rotate(-0 170.20375 214.569476)">0.75</text>
+      <text font-family="Arial" font-size="6" text-anchor="end" x="170.20375" y="214.569476" transform="rotate(-0 170.20375 214.569476)">0.75</text>
      </g>
     </g>
     <g id="ytick_40">
@@ -1452,11 +1452,11 @@ z
       </g>
      </g>
      <g id="text_124">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: end" x="170.20375" y="202.99309" transform="rotate(-0 170.20375 202.99309)">1</text>
+      <text font-family="Arial" font-size="6" text-anchor="end" x="170.20375" y="202.99309" transform="rotate(-0 170.20375 202.99309)">1</text>
      </g>
     </g>
     <g id="text_125">
-     <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="153.264375" y="222.840881" transform="rotate(-90 153.264375 222.840881)">Proportion (ratio)</text>
+     <text font-family="Arial" font-size="6" text-anchor="middle" x="153.264375" y="222.840881" transform="rotate(-90 153.264375 222.840881)">Proportion (ratio)</text>
     </g>
    </g>
    <g id="patch_72">
@@ -1473,19 +1473,19 @@ L 283.505544 249.582333
     <text style="fill: #ffffff; font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="200.290468" y="219.367965" transform="rotate(-0 200.290468 219.367965)">958</text>
    </g>
    <g id="text_127">
-    <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="200.290468" y="242.520738" transform="rotate(-0 200.290468 242.520738)">578</text>
+    <text font-family="Arial" font-size="6" text-anchor="middle" x="200.290468" y="242.520738" transform="rotate(-0 200.290468 242.520738)">578</text>
    </g>
    <g id="text_128">
     <text style="fill: #ffffff; font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="233.052309" y="219.367965" transform="rotate(-0 233.052309 219.367965)">489</text>
    </g>
    <g id="text_129">
-    <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="233.052309" y="242.520738" transform="rotate(-0 233.052309 242.520738)">378</text>
+    <text font-family="Arial" font-size="6" text-anchor="middle" x="233.052309" y="242.520738" transform="rotate(-0 233.052309 242.520738)">378</text>
    </g>
    <g id="text_130">
     <text style="fill: #ffffff; font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="265.81415" y="219.367965" transform="rotate(-0 265.81415 219.367965)">470</text>
    </g>
    <g id="text_131">
-    <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="265.81415" y="242.520738" transform="rotate(-0 265.81415 242.520738)">386</text>
+    <text font-family="Arial" font-size="6" text-anchor="middle" x="265.81415" y="242.520738" transform="rotate(-0 265.81415 242.520738)">386</text>
    </g>
   </g>
   <g id="axes_9">
@@ -1554,8 +1554,8 @@ z
       </g>
      </g>
      <g id="text_132">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(339.544843 261.227021)">+ </text>
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(333.126718 267.660896)">(V100)</text>
+      <text font-family="Arial" font-size="6" transform="translate(339.544843 261.227021)">+ </text>
+      <text font-family="Arial" font-size="6" transform="translate(333.126718 267.660896)">(V100)</text>
      </g>
     </g>
     <g id="xtick_26">
@@ -1565,8 +1565,8 @@ z
       </g>
      </g>
      <g id="text_133">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(372.306684 261.227021)">+ </text>
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(362.889028 267.660896)">(rtx5090)</text>
+      <text font-family="Arial" font-size="6" transform="translate(372.306684 261.227021)">+ </text>
+      <text font-family="Arial" font-size="6" transform="translate(362.889028 267.660896)">(rtx5090)</text>
      </g>
     </g>
     <g id="xtick_27">
@@ -1576,12 +1576,12 @@ z
       </g>
      </g>
      <g id="text_134">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(405.821806 261.227021)">- </text>
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(395.650869 267.660896)">(rtx5090)</text>
+      <text font-family="Arial" font-size="6" transform="translate(405.821806 261.227021)">- </text>
+      <text font-family="Arial" font-size="6" transform="translate(395.650869 267.660896)">(rtx5090)</text>
      </g>
     </g>
     <g id="text_135">
-     <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="374.892309" y="277.218396" transform="rotate(-0 374.892309 277.218396)">Drift correction</text>
+     <text font-family="Arial" font-size="6" text-anchor="middle" x="374.892309" y="277.218396" transform="rotate(-0 374.892309 277.218396)">Drift correction</text>
     </g>
    </g>
    <g id="matplotlib.axis_18">
@@ -1592,7 +1592,7 @@ z
       </g>
      </g>
      <g id="text_136">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: end" x="312.04375" y="249.298636" transform="rotate(-0 312.04375 249.298636)">0</text>
+      <text font-family="Arial" font-size="6" text-anchor="end" x="312.04375" y="249.298636" transform="rotate(-0 312.04375 249.298636)">0</text>
      </g>
     </g>
     <g id="ytick_42">
@@ -1602,7 +1602,7 @@ z
       </g>
      </g>
      <g id="text_137">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: end" x="312.04375" y="237.722249" transform="rotate(-0 312.04375 237.722249)">0.25</text>
+      <text font-family="Arial" font-size="6" text-anchor="end" x="312.04375" y="237.722249" transform="rotate(-0 312.04375 237.722249)">0.25</text>
      </g>
     </g>
     <g id="ytick_43">
@@ -1612,7 +1612,7 @@ z
       </g>
      </g>
      <g id="text_138">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: end" x="312.04375" y="226.145863" transform="rotate(-0 312.04375 226.145863)">0.5</text>
+      <text font-family="Arial" font-size="6" text-anchor="end" x="312.04375" y="226.145863" transform="rotate(-0 312.04375 226.145863)">0.5</text>
      </g>
     </g>
     <g id="ytick_44">
@@ -1622,7 +1622,7 @@ z
       </g>
      </g>
      <g id="text_139">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: end" x="312.04375" y="214.569476" transform="rotate(-0 312.04375 214.569476)">0.75</text>
+      <text font-family="Arial" font-size="6" text-anchor="end" x="312.04375" y="214.569476" transform="rotate(-0 312.04375 214.569476)">0.75</text>
      </g>
     </g>
     <g id="ytick_45">
@@ -1632,11 +1632,11 @@ z
       </g>
      </g>
      <g id="text_140">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: end" x="312.04375" y="202.99309" transform="rotate(-0 312.04375 202.99309)">1</text>
+      <text font-family="Arial" font-size="6" text-anchor="end" x="312.04375" y="202.99309" transform="rotate(-0 312.04375 202.99309)">1</text>
      </g>
     </g>
     <g id="text_141">
-     <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="295.104375" y="222.840881" transform="rotate(-90 295.104375 222.840881)">Proportion (ratio)</text>
+     <text font-family="Arial" font-size="6" text-anchor="middle" x="295.104375" y="222.840881" transform="rotate(-90 295.104375 222.840881)">Proportion (ratio)</text>
     </g>
    </g>
    <g id="patch_81">
@@ -1653,19 +1653,19 @@ L 425.345544 249.582333
     <text style="fill: #ffffff; font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="342.130468" y="214.73741" transform="rotate(-0 342.130468 214.73741)">166</text>
    </g>
    <g id="text_143">
-    <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="342.130468" y="246.688237" transform="rotate(-0 342.130468 246.688237)">349</text>
+    <text font-family="Arial" font-size="6" text-anchor="middle" x="342.130468" y="246.688237" transform="rotate(-0 342.130468 246.688237)">349</text>
    </g>
    <g id="text_144">
     <text style="fill: #ffffff; font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="374.892309" y="214.73741" transform="rotate(-0 374.892309 214.73741)">177</text>
    </g>
    <g id="text_145">
-    <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="374.892309" y="246.688237" transform="rotate(-0 374.892309 246.688237)">349</text>
+    <text font-family="Arial" font-size="6" text-anchor="middle" x="374.892309" y="246.688237" transform="rotate(-0 374.892309 246.688237)">349</text>
    </g>
    <g id="text_146">
     <text style="fill: #ffffff; font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="407.65415" y="214.73741" transform="rotate(-0 407.65415 214.73741)">189</text>
    </g>
    <g id="text_147">
-    <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="407.65415" y="246.688237" transform="rotate(-0 407.65415 246.688237)">355</text>
+    <text font-family="Arial" font-size="6" text-anchor="middle" x="407.65415" y="246.688237" transform="rotate(-0 407.65415 246.688237)">355</text>
    </g>
    <g id="legend_1">
     <g id="patch_83">
@@ -1677,7 +1677,7 @@ z
 " style="fill: #ffffff; stroke: #808080; stroke-width: 0.5; stroke-linejoin: miter"/>
     </g>
     <g id="text_148">
-     <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="447.545544" y="208.225156" transform="rotate(-0 447.545544 208.225156)">single-unit</text>
+     <text font-family="Arial" font-size="6" text-anchor="start" x="447.545544" y="208.225156" transform="rotate(-0 447.545544 208.225156)">single-unit</text>
     </g>
     <g id="patch_84">
      <path d="M 430.745544 216.782656 
@@ -1688,7 +1688,7 @@ z
 " style="fill: #333333; stroke: #808080; stroke-width: 0.5; stroke-linejoin: miter"/>
     </g>
     <g id="text_149">
-     <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="447.545544" y="216.782656" transform="rotate(-0 447.545544 216.782656)">multi-unit</text>
+     <text font-family="Arial" font-size="6" text-anchor="start" x="447.545544" y="216.782656" transform="rotate(-0 447.545544 216.782656)">multi-unit</text>
     </g>
    </g>
   </g>

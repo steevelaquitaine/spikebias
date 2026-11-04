@@ -132,7 +132,7 @@ L 0 3.85
       </g>
      </g>
      <g id="text_1">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="83.957573" y="138.182531" transform="rotate(-0 83.957573 138.182531)">−8</text>
+      <text font-family="Arial" font-size="6" text-anchor="middle" x="83.957573" y="138.182531" transform="rotate(-0 83.957573 138.182531)">−8</text>
      </g>
     </g>
     <g id="xtick_2">
@@ -142,7 +142,7 @@ L 0 3.85
       </g>
      </g>
      <g id="text_2">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="112.772714" y="138.182531" transform="rotate(-0 112.772714 138.182531)">−4</text>
+      <text font-family="Arial" font-size="6" text-anchor="middle" x="112.772714" y="138.182531" transform="rotate(-0 112.772714 138.182531)">−4</text>
      </g>
     </g>
     <g id="xtick_3">
@@ -152,11 +152,11 @@ L 0 3.85
       </g>
      </g>
      <g id="text_3">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="141.587854" y="138.182531" transform="rotate(-0 141.587854 138.182531)">0</text>
+      <text font-family="Arial" font-size="6" text-anchor="middle" x="141.587854" y="138.182531" transform="rotate(-0 141.587854 138.182531)">0</text>
      </g>
     </g>
     <g id="text_4">
-     <text style="font: 7px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="119.238438" y="148.470813" transform="rotate(-0 119.238438 148.470813)">Weights of z-scored features</text>
+     <text font-family="Arial" font-size="7" text-anchor="middle" x="119.238438" y="148.470813" transform="rotate(-0 119.238438 148.470813)">Weights of z-scored features</text>
     </g>
    </g>
    <g id="matplotlib.axis_2">
@@ -172,7 +172,7 @@ L -3.85 0
       </g>
      </g>
      <g id="text_5">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: end" x="65.853438" y="117.661473" transform="rotate(-0 65.853438 117.661473)">mad_ratio</text>
+      <text font-family="Arial" font-size="6" text-anchor="end" x="65.853438" y="117.661473" transform="rotate(-0 65.853438 117.661473)">mad_ratio</text>
      </g>
     </g>
     <g id="ytick_2">
@@ -182,7 +182,7 @@ L -3.85 0
       </g>
      </g>
      <g id="text_6">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: end" x="65.853438" y="109.98375" transform="rotate(-0 65.853438 109.98375)">firing_range</text>
+      <text font-family="Arial" font-size="6" text-anchor="end" x="65.853438" y="109.98375" transform="rotate(-0 65.853438 109.98375)">firing_range</text>
      </g>
     </g>
     <g id="ytick_3">
@@ -192,7 +192,7 @@ L -3.85 0
       </g>
      </g>
      <g id="text_7">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: end" x="65.853438" y="102.269464" transform="rotate(-0 65.853438 102.269464)">amplitude_cutoff</text>
+      <text font-family="Arial" font-size="6" text-anchor="end" x="65.853438" y="102.269464" transform="rotate(-0 65.853438 102.269464)">amplitude_cutoff</text>
      </g>
     </g>
     <g id="ytick_4">
@@ -202,7 +202,7 @@ L -3.85 0
       </g>
      </g>
      <g id="text_8">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: end" x="65.853438" y="94.518616" transform="rotate(-0 65.853438 94.518616)">rp_violations</text>
+      <text font-family="Arial" font-size="6" text-anchor="end" x="65.853438" y="94.518616" transform="rotate(-0 65.853438 94.518616)">rp_violations</text>
      </g>
     </g>
     <g id="ytick_5">
@@ -212,7 +212,7 @@ L -3.85 0
       </g>
      </g>
      <g id="text_9">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: end" x="65.853438" y="86.80433" transform="rotate(-0 65.853438 86.80433)">silhouette</text>
+      <text font-family="Arial" font-size="6" text-anchor="end" x="65.853438" y="86.80433" transform="rotate(-0 65.853438 86.80433)">silhouette</text>
      </g>
     </g>
     <g id="ytick_6">
@@ -222,7 +222,7 @@ L -3.85 0
       </g>
      </g>
      <g id="text_10">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: end" x="65.853438" y="79.090045" transform="rotate(-0 65.853438 79.090045)">isi_violations_ratio</text>
+      <text font-family="Arial" font-size="6" text-anchor="end" x="65.853438" y="79.090045" transform="rotate(-0 65.853438 79.090045)">isi_violations_ratio</text>
      </g>
     </g>
     <g id="ytick_7">
@@ -232,7 +232,7 @@ L -3.85 0
       </g>
      </g>
      <g id="text_11">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: end" x="65.853438" y="71.375759" transform="rotate(-0 65.853438 71.375759)">rp_contamination</text>
+      <text font-family="Arial" font-size="6" text-anchor="end" x="65.853438" y="71.375759" transform="rotate(-0 65.853438 71.375759)">rp_contamination</text>
      </g>
     </g>
     <g id="ytick_8">
@@ -242,7 +242,7 @@ L -3.85 0
       </g>
      </g>
      <g id="text_12">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: end" x="65.853438" y="63.661473" transform="rotate(-0 65.853438 63.661473)">snr</text>
+      <text font-family="Arial" font-size="6" text-anchor="end" x="65.853438" y="63.661473" transform="rotate(-0 65.853438 63.661473)">snr</text>
      </g>
     </g>
     <g id="ytick_9">
@@ -252,7 +252,7 @@ L -3.85 0
       </g>
      </g>
      <g id="text_13">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: end" x="65.853438" y="55.98375" transform="rotate(-0 65.853438 55.98375)">firing_rate</text>
+      <text font-family="Arial" font-size="6" text-anchor="end" x="65.853438" y="55.98375" transform="rotate(-0 65.853438 55.98375)">firing_rate</text>
      </g>
     </g>
     <g id="ytick_10">
@@ -262,11 +262,11 @@ L -3.85 0
       </g>
      </g>
      <g id="text_14">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: end" x="65.853438" y="48.232902" transform="rotate(-0 65.853438 48.232902)">sd_ratio</text>
+      <text font-family="Arial" font-size="6" text-anchor="end" x="65.853438" y="48.232902" transform="rotate(-0 65.853438 48.232902)">sd_ratio</text>
      </g>
     </g>
     <g id="text_15">
-     <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="11.567813" y="80.799844" transform="rotate(-90 11.567813 80.799844)">Spiking features</text>
+     <text font-family="Arial" font-size="6" text-anchor="middle" x="11.567813" y="80.799844" transform="rotate(-90 11.567813 80.799844)">Spiking features</text>
     </g>
    </g>
    <g id="patch_13">
@@ -280,20 +280,20 @@ L 161.088438 126.537844
 " style="fill: none; stroke: #000000; stroke-width: 0.5; stroke-linejoin: miter; stroke-linecap: square"/>
    </g>
    <g id="text_16">
-    <text style="font: 700 7px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="159.638298" y="117.328661" transform="rotate(-0 159.638298 117.328661)">***</text>
+    <text font-family="Arial" font-size="7" font-weight="bold" text-anchor="start" x="159.638298" y="117.328661" transform="rotate(-0 159.638298 117.328661)">***</text>
    </g>
    <g id="text_17">
-    <text style="font: 700 7px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="159.638298" y="109.614375" transform="rotate(-0 159.638298 109.614375)">***</text>
+    <text font-family="Arial" font-size="7" font-weight="bold" text-anchor="start" x="159.638298" y="109.614375" transform="rotate(-0 159.638298 109.614375)">***</text>
    </g>
    <g id="text_18">
-    <text style="font: 700 7px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="159.638298" y="55.614375" transform="rotate(-0 159.638298 55.614375)">***</text>
+    <text font-family="Arial" font-size="7" font-weight="bold" text-anchor="start" x="159.638298" y="55.614375" transform="rotate(-0 159.638298 55.614375)">***</text>
    </g>
   </g>
   <g id="text_19">
-   <text style="font: 700 6.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="117.888438" y="11.931797" transform="rotate(-0 117.888438 11.931797)">Spiking features predictive of good units</text>
+   <text font-family="Arial" font-size="6.5" font-weight="bold" text-anchor="middle" x="117.888438" y="11.931797" transform="rotate(-0 117.888438 11.931797)">Spiking features predictive of good units</text>
   </g>
   <g id="text_20">
-   <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="117.888438" y="21.757031" transform="rotate(-0 117.888438 21.757031)">(Regression model for the spontaneous regime)</text>
+   <text font-family="Arial" font-size="6" text-anchor="middle" x="117.888438" y="21.757031" transform="rotate(-0 117.888438 21.757031)">(Regression model for the spontaneous regime)</text>
   </g>
  </g>
  <defs>

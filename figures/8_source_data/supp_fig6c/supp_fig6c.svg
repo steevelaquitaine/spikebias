@@ -52,7 +52,7 @@ L 0 2.5
       </g>
      </g>
      <g id="text_1">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="90.288" y="51.373285" transform="rotate(-0 90.288 51.373285)">0</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="90.288" y="51.373285" transform="rotate(-0 90.288 51.373285)">0</text>
      </g>
     </g>
     <g id="xtick_2">
@@ -62,7 +62,7 @@ L 0 2.5
       </g>
      </g>
      <g id="text_2">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="120.946065" y="51.373285" transform="rotate(-0 120.946065 51.373285)">50</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="120.946065" y="51.373285" transform="rotate(-0 120.946065 51.373285)">50</text>
      </g>
     </g>
     <g id="xtick_3">
@@ -72,7 +72,7 @@ L 0 2.5
       </g>
      </g>
      <g id="text_3">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="151.604129" y="51.373285" transform="rotate(-0 151.604129 51.373285)">100</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="151.604129" y="51.373285" transform="rotate(-0 151.604129 51.373285)">100</text>
      </g>
     </g>
    </g>
@@ -92,8 +92,8 @@ L -2.5 0
       <!-- $\mathdefault{10^{1}}$ -->
       <g transform="translate(78.153 42.891005)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">1</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">1</tspan>
        </text>
       </g>
      </g>
@@ -108,8 +108,8 @@ L -2.5 0
       <!-- $\mathdefault{10^{2}}$ -->
       <g transform="translate(78.153 35.467828)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">2</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">2</tspan>
        </text>
       </g>
      </g>
@@ -333,7 +333,7 @@ L 151.604129 43.936489
 " style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
    </g>
    <g id="text_6">
-    <text style="font: 700 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="120.946065" y="19.24" transform="rotate(-0 120.946065 19.24)">Buccino model (2020)</text>
+    <text font-family="Arial" font-size="5.5" font-weight="bold" text-anchor="middle" x="120.946065" y="19.24" transform="rotate(-0 120.946065 19.24)">Buccino model (2020)</text>
    </g>
   </g>
   <g id="axes_2">
@@ -354,7 +354,7 @@ z
       </g>
      </g>
      <g id="text_7">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="169.998968" y="51.373285" transform="rotate(-0 169.998968 51.373285)">0</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="169.998968" y="51.373285" transform="rotate(-0 169.998968 51.373285)">0</text>
      </g>
     </g>
     <g id="xtick_5">
@@ -364,7 +364,7 @@ z
       </g>
      </g>
      <g id="text_8">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="200.657032" y="51.373285" transform="rotate(-0 200.657032 51.373285)">50</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="200.657032" y="51.373285" transform="rotate(-0 200.657032 51.373285)">50</text>
      </g>
     </g>
     <g id="xtick_6">
@@ -374,7 +374,7 @@ z
       </g>
      </g>
      <g id="text_9">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="231.315097" y="51.373285" transform="rotate(-0 231.315097 51.373285)">100</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="231.315097" y="51.373285" transform="rotate(-0 231.315097 51.373285)">100</text>
      </g>
     </g>
    </g>
@@ -389,8 +389,8 @@ z
       <!-- $\mathdefault{10^{0}}$ -->
       <g transform="translate(157.863968 46.772426)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">0</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">0</tspan>
        </text>
       </g>
      </g>
@@ -405,8 +405,8 @@ z
       <!-- $\mathdefault{10^{1}}$ -->
       <g transform="translate(157.863968 40.874409)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">1</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">1</tspan>
        </text>
       </g>
      </g>
@@ -421,8 +421,8 @@ z
       <!-- $\mathdefault{10^{2}}$ -->
       <g transform="translate(157.863968 34.976392)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">2</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">2</tspan>
        </text>
       </g>
      </g>
@@ -651,7 +651,7 @@ L 231.315097 43.936489
     <text style="fill: #ff0000; font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: end" x="231.008516" y="34.808617" transform="rotate(-0 231.008516 34.808617)">Matched</text>
    </g>
    <g id="text_14">
-    <text style="font: 700 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="200.657032" y="19.24" transform="rotate(-0 200.657032 19.24)">Mearec model 2 (S2)</text>
+    <text font-family="Arial" font-size="5.5" font-weight="bold" text-anchor="middle" x="200.657032" y="19.24" transform="rotate(-0 200.657032 19.24)">Mearec model 2 (S2)</text>
    </g>
   </g>
   <g id="axes_3">
@@ -672,7 +672,7 @@ z
       </g>
      </g>
      <g id="text_15">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="249.709935" y="51.373285" transform="rotate(-0 249.709935 51.373285)">0</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="249.709935" y="51.373285" transform="rotate(-0 249.709935 51.373285)">0</text>
      </g>
     </g>
     <g id="xtick_8">
@@ -682,7 +682,7 @@ z
       </g>
      </g>
      <g id="text_16">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="280.368" y="51.373285" transform="rotate(-0 280.368 51.373285)">50</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="280.368" y="51.373285" transform="rotate(-0 280.368 51.373285)">50</text>
      </g>
     </g>
     <g id="xtick_9">
@@ -692,7 +692,7 @@ z
       </g>
      </g>
      <g id="text_17">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="311.026065" y="51.373285" transform="rotate(-0 311.026065 51.373285)">100</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="311.026065" y="51.373285" transform="rotate(-0 311.026065 51.373285)">100</text>
      </g>
     </g>
    </g>
@@ -707,8 +707,8 @@ z
       <!-- $\mathdefault{10^{0}}$ -->
       <g transform="translate(237.574935 46.772426)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">0</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">0</tspan>
        </text>
       </g>
      </g>
@@ -723,8 +723,8 @@ z
       <!-- $\mathdefault{10^{1}}$ -->
       <g transform="translate(237.574935 40.874409)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">1</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">1</tspan>
        </text>
       </g>
      </g>
@@ -739,8 +739,8 @@ z
       <!-- $\mathdefault{10^{2}}$ -->
       <g transform="translate(237.574935 34.976392)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">2</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">2</tspan>
        </text>
       </g>
      </g>
@@ -969,7 +969,7 @@ L 311.026065 43.936489
     <text style="fill: #ff0000; font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: end" x="310.719484" y="34.808617" transform="rotate(-0 310.719484 34.808617)">Matched</text>
    </g>
    <g id="text_22">
-    <text style="font: 700 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="280.368" y="19.24" transform="rotate(-0 280.368 19.24)">Mearec model 3 (S3)</text>
+    <text font-family="Arial" font-size="5.5" font-weight="bold" text-anchor="middle" x="280.368" y="19.24" transform="rotate(-0 280.368 19.24)">Mearec model 3 (S3)</text>
    </g>
   </g>
   <g id="axes_4">
@@ -990,7 +990,7 @@ z
       </g>
      </g>
      <g id="text_23">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="329.420903" y="51.373285" transform="rotate(-0 329.420903 51.373285)">0</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="329.420903" y="51.373285" transform="rotate(-0 329.420903 51.373285)">0</text>
      </g>
     </g>
     <g id="xtick_11">
@@ -1000,7 +1000,7 @@ z
       </g>
      </g>
      <g id="text_24">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="360.078968" y="51.373285" transform="rotate(-0 360.078968 51.373285)">50</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="360.078968" y="51.373285" transform="rotate(-0 360.078968 51.373285)">50</text>
      </g>
     </g>
     <g id="xtick_12">
@@ -1010,7 +1010,7 @@ z
       </g>
      </g>
      <g id="text_25">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="390.737032" y="51.373285" transform="rotate(-0 390.737032 51.373285)">100</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="390.737032" y="51.373285" transform="rotate(-0 390.737032 51.373285)">100</text>
      </g>
     </g>
    </g>
@@ -1025,8 +1025,8 @@ z
       <!-- $\mathdefault{10^{0}}$ -->
       <g transform="translate(317.285903 46.772426)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">0</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">0</tspan>
        </text>
       </g>
      </g>
@@ -1041,8 +1041,8 @@ z
       <!-- $\mathdefault{10^{1}}$ -->
       <g transform="translate(317.285903 40.874409)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">1</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">1</tspan>
        </text>
       </g>
      </g>
@@ -1057,8 +1057,8 @@ z
       <!-- $\mathdefault{10^{2}}$ -->
       <g transform="translate(317.285903 34.976392)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">2</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">2</tspan>
        </text>
       </g>
      </g>
@@ -1287,7 +1287,7 @@ L 390.737032 43.936489
     <text style="fill: #ff0000; font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: end" x="390.430452" y="34.808617" transform="rotate(-0 390.430452 34.808617)">Matched</text>
    </g>
    <g id="text_30">
-    <text style="font: 700 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="360.078968" y="19.24" transform="rotate(-0 360.078968 19.24)">Mearec model 4 (S4)</text>
+    <text font-family="Arial" font-size="5.5" font-weight="bold" text-anchor="middle" x="360.078968" y="19.24" transform="rotate(-0 360.078968 19.24)">Mearec model 4 (S4)</text>
    </g>
   </g>
   <g id="axes_5">
@@ -1308,7 +1308,7 @@ z
       </g>
      </g>
      <g id="text_31">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="409.131871" y="51.373285" transform="rotate(-0 409.131871 51.373285)">0</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="409.131871" y="51.373285" transform="rotate(-0 409.131871 51.373285)">0</text>
      </g>
     </g>
     <g id="xtick_14">
@@ -1318,7 +1318,7 @@ z
       </g>
      </g>
      <g id="text_32">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="439.789935" y="51.373285" transform="rotate(-0 439.789935 51.373285)">50</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="439.789935" y="51.373285" transform="rotate(-0 439.789935 51.373285)">50</text>
      </g>
     </g>
     <g id="xtick_15">
@@ -1328,7 +1328,7 @@ z
       </g>
      </g>
      <g id="text_33">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="470.448" y="51.373285" transform="rotate(-0 470.448 51.373285)">100</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="470.448" y="51.373285" transform="rotate(-0 470.448 51.373285)">100</text>
      </g>
     </g>
    </g>
@@ -1343,8 +1343,8 @@ z
       <!-- $\mathdefault{10^{1}}$ -->
       <g transform="translate(396.996871 44.804541)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">1</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">1</tspan>
        </text>
       </g>
      </g>
@@ -1359,8 +1359,8 @@ z
       <!-- $\mathdefault{10^{2}}$ -->
       <g transform="translate(396.996871 35.934149)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">2</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">2</tspan>
        </text>
       </g>
      </g>
@@ -1561,7 +1561,7 @@ L 470.448 43.936489
     <text style="fill: #ff0000; font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: end" x="470.141419" y="34.808617" transform="rotate(-0 470.141419 34.808617)">Matched</text>
    </g>
    <g id="text_37">
-    <text style="font: 700 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="439.789935" y="19.24" transform="rotate(-0 439.789935 19.24)">Mearec model 5 (S5)</text>
+    <text font-family="Arial" font-size="5.5" font-weight="bold" text-anchor="middle" x="439.789935" y="19.24" transform="rotate(-0 439.789935 19.24)">Mearec model 5 (S5)</text>
    </g>
   </g>
   <g id="axes_6">
@@ -1582,7 +1582,7 @@ z
       </g>
      </g>
      <g id="text_38">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="90.288" y="80.135911" transform="rotate(-0 90.288 80.135911)">0</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="90.288" y="80.135911" transform="rotate(-0 90.288 80.135911)">0</text>
      </g>
     </g>
     <g id="xtick_17">
@@ -1592,7 +1592,7 @@ z
       </g>
      </g>
      <g id="text_39">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="120.946065" y="80.135911" transform="rotate(-0 120.946065 80.135911)">50</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="120.946065" y="80.135911" transform="rotate(-0 120.946065 80.135911)">50</text>
      </g>
     </g>
     <g id="xtick_18">
@@ -1602,7 +1602,7 @@ z
       </g>
      </g>
      <g id="text_40">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="151.604129" y="80.135911" transform="rotate(-0 151.604129 80.135911)">100</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="151.604129" y="80.135911" transform="rotate(-0 151.604129 80.135911)">100</text>
      </g>
     </g>
    </g>
@@ -1617,8 +1617,8 @@ z
       <!-- $\mathdefault{10^{0}}$ -->
       <g transform="translate(78.153 75.535052)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">0</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">0</tspan>
        </text>
       </g>
      </g>
@@ -1633,8 +1633,8 @@ z
       <!-- $\mathdefault{10^{1}}$ -->
       <g transform="translate(78.153 69.637035)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">1</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">1</tspan>
        </text>
       </g>
      </g>
@@ -1649,8 +1649,8 @@ z
       <!-- $\mathdefault{10^{2}}$ -->
       <g transform="translate(78.153 63.739018)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">2</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">2</tspan>
        </text>
       </g>
      </g>
@@ -1894,7 +1894,7 @@ z
       </g>
      </g>
      <g id="text_44">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="169.998968" y="80.135911" transform="rotate(-0 169.998968 80.135911)">0</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="169.998968" y="80.135911" transform="rotate(-0 169.998968 80.135911)">0</text>
      </g>
     </g>
     <g id="xtick_20">
@@ -1904,7 +1904,7 @@ z
       </g>
      </g>
      <g id="text_45">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="200.657032" y="80.135911" transform="rotate(-0 200.657032 80.135911)">50</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="200.657032" y="80.135911" transform="rotate(-0 200.657032 80.135911)">50</text>
      </g>
     </g>
     <g id="xtick_21">
@@ -1914,7 +1914,7 @@ z
       </g>
      </g>
      <g id="text_46">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="231.315097" y="80.135911" transform="rotate(-0 231.315097 80.135911)">100</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="231.315097" y="80.135911" transform="rotate(-0 231.315097 80.135911)">100</text>
      </g>
     </g>
    </g>
@@ -1929,8 +1929,8 @@ z
       <!-- $\mathdefault{10^{0}}$ -->
       <g transform="translate(157.863968 75.535052)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">0</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">0</tspan>
        </text>
       </g>
      </g>
@@ -1945,8 +1945,8 @@ z
       <!-- $\mathdefault{10^{1}}$ -->
       <g transform="translate(157.863968 69.637035)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">1</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">1</tspan>
        </text>
       </g>
      </g>
@@ -1961,8 +1961,8 @@ z
       <!-- $\mathdefault{10^{2}}$ -->
       <g transform="translate(157.863968 63.739018)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">2</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">2</tspan>
        </text>
       </g>
      </g>
@@ -2209,7 +2209,7 @@ z
       </g>
      </g>
      <g id="text_51">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="249.709935" y="80.135911" transform="rotate(-0 249.709935 80.135911)">0</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="249.709935" y="80.135911" transform="rotate(-0 249.709935 80.135911)">0</text>
      </g>
     </g>
     <g id="xtick_23">
@@ -2219,7 +2219,7 @@ z
       </g>
      </g>
      <g id="text_52">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="280.368" y="80.135911" transform="rotate(-0 280.368 80.135911)">50</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="280.368" y="80.135911" transform="rotate(-0 280.368 80.135911)">50</text>
      </g>
     </g>
     <g id="xtick_24">
@@ -2229,7 +2229,7 @@ z
       </g>
      </g>
      <g id="text_53">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="311.026065" y="80.135911" transform="rotate(-0 311.026065 80.135911)">100</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="311.026065" y="80.135911" transform="rotate(-0 311.026065 80.135911)">100</text>
      </g>
     </g>
    </g>
@@ -2244,8 +2244,8 @@ z
       <!-- $\mathdefault{10^{0}}$ -->
       <g transform="translate(237.574935 75.535052)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">0</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">0</tspan>
        </text>
       </g>
      </g>
@@ -2260,8 +2260,8 @@ z
       <!-- $\mathdefault{10^{1}}$ -->
       <g transform="translate(237.574935 69.637035)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">1</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">1</tspan>
        </text>
       </g>
      </g>
@@ -2276,8 +2276,8 @@ z
       <!-- $\mathdefault{10^{2}}$ -->
       <g transform="translate(237.574935 63.739018)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">2</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">2</tspan>
        </text>
       </g>
      </g>
@@ -2524,7 +2524,7 @@ z
       </g>
      </g>
      <g id="text_58">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="329.420903" y="80.135911" transform="rotate(-0 329.420903 80.135911)">0</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="329.420903" y="80.135911" transform="rotate(-0 329.420903 80.135911)">0</text>
      </g>
     </g>
     <g id="xtick_26">
@@ -2534,7 +2534,7 @@ z
       </g>
      </g>
      <g id="text_59">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="360.078968" y="80.135911" transform="rotate(-0 360.078968 80.135911)">50</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="360.078968" y="80.135911" transform="rotate(-0 360.078968 80.135911)">50</text>
      </g>
     </g>
     <g id="xtick_27">
@@ -2544,7 +2544,7 @@ z
       </g>
      </g>
      <g id="text_60">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="390.737032" y="80.135911" transform="rotate(-0 390.737032 80.135911)">100</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="390.737032" y="80.135911" transform="rotate(-0 390.737032 80.135911)">100</text>
      </g>
     </g>
    </g>
@@ -2559,8 +2559,8 @@ z
       <!-- $\mathdefault{10^{0}}$ -->
       <g transform="translate(317.285903 75.535052)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">0</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">0</tspan>
        </text>
       </g>
      </g>
@@ -2575,8 +2575,8 @@ z
       <!-- $\mathdefault{10^{1}}$ -->
       <g transform="translate(317.285903 69.637035)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">1</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">1</tspan>
        </text>
       </g>
      </g>
@@ -2591,8 +2591,8 @@ z
       <!-- $\mathdefault{10^{2}}$ -->
       <g transform="translate(317.285903 63.739018)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">2</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">2</tspan>
        </text>
       </g>
      </g>
@@ -2839,7 +2839,7 @@ z
       </g>
      </g>
      <g id="text_65">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="409.131871" y="80.135911" transform="rotate(-0 409.131871 80.135911)">0</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="409.131871" y="80.135911" transform="rotate(-0 409.131871 80.135911)">0</text>
      </g>
     </g>
     <g id="xtick_29">
@@ -2849,7 +2849,7 @@ z
       </g>
      </g>
      <g id="text_66">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="439.789935" y="80.135911" transform="rotate(-0 439.789935 80.135911)">50</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="439.789935" y="80.135911" transform="rotate(-0 439.789935 80.135911)">50</text>
      </g>
     </g>
     <g id="xtick_30">
@@ -2859,7 +2859,7 @@ z
       </g>
      </g>
      <g id="text_67">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="470.448" y="80.135911" transform="rotate(-0 470.448 80.135911)">100</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="470.448" y="80.135911" transform="rotate(-0 470.448 80.135911)">100</text>
      </g>
     </g>
    </g>
@@ -2874,8 +2874,8 @@ z
       <!-- $\mathdefault{10^{0}}$ -->
       <g transform="translate(396.996871 75.535052)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">0</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">0</tspan>
        </text>
       </g>
      </g>
@@ -2890,8 +2890,8 @@ z
       <!-- $\mathdefault{10^{1}}$ -->
       <g transform="translate(396.996871 69.637035)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">1</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">1</tspan>
        </text>
       </g>
      </g>
@@ -2906,8 +2906,8 @@ z
       <!-- $\mathdefault{10^{2}}$ -->
       <g transform="translate(396.996871 63.739018)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">2</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">2</tspan>
        </text>
       </g>
      </g>
@@ -3154,7 +3154,7 @@ z
       </g>
      </g>
      <g id="text_72">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="90.288" y="108.898537" transform="rotate(-0 90.288 108.898537)">0</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="90.288" y="108.898537" transform="rotate(-0 90.288 108.898537)">0</text>
      </g>
     </g>
     <g id="xtick_32">
@@ -3164,7 +3164,7 @@ z
       </g>
      </g>
      <g id="text_73">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="114.814452" y="108.898537" transform="rotate(-0 114.814452 108.898537)">10</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="114.814452" y="108.898537" transform="rotate(-0 114.814452 108.898537)">10</text>
      </g>
     </g>
     <g id="xtick_33">
@@ -3174,7 +3174,7 @@ z
       </g>
      </g>
      <g id="text_74">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="139.340903" y="108.898537" transform="rotate(-0 139.340903 108.898537)">20</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="139.340903" y="108.898537" transform="rotate(-0 139.340903 108.898537)">20</text>
      </g>
     </g>
    </g>
@@ -3189,8 +3189,8 @@ z
       <!-- $\mathdefault{10^{0}}$ -->
       <g transform="translate(78.153 104.297678)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">0</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">0</tspan>
        </text>
       </g>
      </g>
@@ -3205,8 +3205,8 @@ z
       <!-- $\mathdefault{10^{2}}$ -->
       <g transform="translate(78.153 95.999366)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">2</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">2</tspan>
        </text>
       </g>
      </g>
@@ -3331,7 +3331,7 @@ z
       </g>
      </g>
      <g id="text_77">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="169.998968" y="108.898537" transform="rotate(-0 169.998968 108.898537)">0</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="169.998968" y="108.898537" transform="rotate(-0 169.998968 108.898537)">0</text>
      </g>
     </g>
     <g id="xtick_35">
@@ -3341,7 +3341,7 @@ z
       </g>
      </g>
      <g id="text_78">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="194.525419" y="108.898537" transform="rotate(-0 194.525419 108.898537)">10</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="194.525419" y="108.898537" transform="rotate(-0 194.525419 108.898537)">10</text>
      </g>
     </g>
     <g id="xtick_36">
@@ -3351,7 +3351,7 @@ z
       </g>
      </g>
      <g id="text_79">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="219.051871" y="108.898537" transform="rotate(-0 219.051871 108.898537)">20</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="219.051871" y="108.898537" transform="rotate(-0 219.051871 108.898537)">20</text>
      </g>
     </g>
    </g>
@@ -3366,8 +3366,8 @@ z
       <!-- $\mathdefault{10^{0}}$ -->
       <g transform="translate(157.863968 104.297678)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">0</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">0</tspan>
        </text>
       </g>
      </g>
@@ -3382,8 +3382,8 @@ z
       <!-- $\mathdefault{10^{2}}$ -->
       <g transform="translate(157.863968 95.999366)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">2</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">2</tspan>
        </text>
       </g>
      </g>
@@ -3508,7 +3508,7 @@ z
       </g>
      </g>
      <g id="text_82">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="249.709935" y="108.898537" transform="rotate(-0 249.709935 108.898537)">0</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="249.709935" y="108.898537" transform="rotate(-0 249.709935 108.898537)">0</text>
      </g>
     </g>
     <g id="xtick_38">
@@ -3518,7 +3518,7 @@ z
       </g>
      </g>
      <g id="text_83">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="274.236387" y="108.898537" transform="rotate(-0 274.236387 108.898537)">10</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="274.236387" y="108.898537" transform="rotate(-0 274.236387 108.898537)">10</text>
      </g>
     </g>
     <g id="xtick_39">
@@ -3528,7 +3528,7 @@ z
       </g>
      </g>
      <g id="text_84">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="298.762839" y="108.898537" transform="rotate(-0 298.762839 108.898537)">20</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="298.762839" y="108.898537" transform="rotate(-0 298.762839 108.898537)">20</text>
      </g>
     </g>
    </g>
@@ -3543,8 +3543,8 @@ z
       <!-- $\mathdefault{10^{0}}$ -->
       <g transform="translate(237.574935 104.297678)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">0</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">0</tspan>
        </text>
       </g>
      </g>
@@ -3559,8 +3559,8 @@ z
       <!-- $\mathdefault{10^{2}}$ -->
       <g transform="translate(237.574935 95.999366)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">2</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">2</tspan>
        </text>
       </g>
      </g>
@@ -3684,7 +3684,7 @@ z
       </g>
      </g>
      <g id="text_88">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="329.420903" y="108.898537" transform="rotate(-0 329.420903 108.898537)">0</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="329.420903" y="108.898537" transform="rotate(-0 329.420903 108.898537)">0</text>
      </g>
     </g>
     <g id="xtick_41">
@@ -3694,7 +3694,7 @@ z
       </g>
      </g>
      <g id="text_89">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="353.947355" y="108.898537" transform="rotate(-0 353.947355 108.898537)">10</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="353.947355" y="108.898537" transform="rotate(-0 353.947355 108.898537)">10</text>
      </g>
     </g>
     <g id="xtick_42">
@@ -3704,7 +3704,7 @@ z
       </g>
      </g>
      <g id="text_90">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="378.473806" y="108.898537" transform="rotate(-0 378.473806 108.898537)">20</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="378.473806" y="108.898537" transform="rotate(-0 378.473806 108.898537)">20</text>
      </g>
     </g>
    </g>
@@ -3719,8 +3719,8 @@ z
       <!-- $\mathdefault{10^{0}}$ -->
       <g transform="translate(317.285903 104.297678)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">0</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">0</tspan>
        </text>
       </g>
      </g>
@@ -3735,8 +3735,8 @@ z
       <!-- $\mathdefault{10^{2}}$ -->
       <g transform="translate(317.285903 95.999366)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">2</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">2</tspan>
        </text>
       </g>
      </g>
@@ -3862,7 +3862,7 @@ z
       </g>
      </g>
      <g id="text_94">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="409.131871" y="108.898537" transform="rotate(-0 409.131871 108.898537)">0</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="409.131871" y="108.898537" transform="rotate(-0 409.131871 108.898537)">0</text>
      </g>
     </g>
     <g id="xtick_44">
@@ -3872,7 +3872,7 @@ z
       </g>
      </g>
      <g id="text_95">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="433.658323" y="108.898537" transform="rotate(-0 433.658323 108.898537)">10</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="433.658323" y="108.898537" transform="rotate(-0 433.658323 108.898537)">10</text>
      </g>
     </g>
     <g id="xtick_45">
@@ -3882,7 +3882,7 @@ z
       </g>
      </g>
      <g id="text_96">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="458.184774" y="108.898537" transform="rotate(-0 458.184774 108.898537)">20</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="458.184774" y="108.898537" transform="rotate(-0 458.184774 108.898537)">20</text>
      </g>
     </g>
    </g>
@@ -3897,8 +3897,8 @@ z
       <!-- $\mathdefault{10^{0}}$ -->
       <g transform="translate(396.996871 104.297678)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">0</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">0</tspan>
        </text>
       </g>
      </g>
@@ -3913,8 +3913,8 @@ z
       <!-- $\mathdefault{10^{2}}$ -->
       <g transform="translate(396.996871 95.999366)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">2</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">2</tspan>
        </text>
       </g>
      </g>
@@ -4040,7 +4040,7 @@ z
       </g>
      </g>
      <g id="text_100">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="90.288" y="137.661163" transform="rotate(-0 90.288 137.661163)">0</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="90.288" y="137.661163" transform="rotate(-0 90.288 137.661163)">0</text>
      </g>
     </g>
     <g id="xtick_47">
@@ -4050,7 +4050,7 @@ z
       </g>
      </g>
      <g id="text_101">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="128.610581" y="137.661163" transform="rotate(-0 128.610581 137.661163)">5</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="128.610581" y="137.661163" transform="rotate(-0 128.610581 137.661163)">5</text>
      </g>
     </g>
    </g>
@@ -4065,8 +4065,8 @@ z
       <!-- $\mathdefault{10^{0}}$ -->
       <g transform="translate(78.153 133.060304)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">0</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">0</tspan>
        </text>
       </g>
      </g>
@@ -4081,8 +4081,8 @@ z
       <!-- $\mathdefault{10^{2}}$ -->
       <g transform="translate(78.153 124.761992)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">2</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">2</tspan>
        </text>
       </g>
      </g>
@@ -4205,7 +4205,7 @@ z
       </g>
      </g>
      <g id="text_104">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="169.998968" y="137.661163" transform="rotate(-0 169.998968 137.661163)">0</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="169.998968" y="137.661163" transform="rotate(-0 169.998968 137.661163)">0</text>
      </g>
     </g>
     <g id="xtick_49">
@@ -4215,7 +4215,7 @@ z
       </g>
      </g>
      <g id="text_105">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="208.321548" y="137.661163" transform="rotate(-0 208.321548 137.661163)">5</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="208.321548" y="137.661163" transform="rotate(-0 208.321548 137.661163)">5</text>
      </g>
     </g>
    </g>
@@ -4230,8 +4230,8 @@ z
       <!-- $\mathdefault{10^{1}}$ -->
       <g transform="translate(157.863968 129.869159)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">1</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">1</tspan>
        </text>
       </g>
      </g>
@@ -4246,8 +4246,8 @@ z
       <!-- $\mathdefault{10^{2}}$ -->
       <g transform="translate(157.863968 125.303663)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">2</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">2</tspan>
        </text>
       </g>
      </g>
@@ -4262,8 +4262,8 @@ z
       <!-- $\mathdefault{10^{3}}$ -->
       <g transform="translate(157.863968 120.738167)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">3</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">3</tspan>
        </text>
       </g>
      </g>
@@ -4561,7 +4561,7 @@ z
       </g>
      </g>
      <g id="text_109">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="249.709935" y="137.661163" transform="rotate(-0 249.709935 137.661163)">0</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="249.709935" y="137.661163" transform="rotate(-0 249.709935 137.661163)">0</text>
      </g>
     </g>
     <g id="xtick_51">
@@ -4571,7 +4571,7 @@ z
       </g>
      </g>
      <g id="text_110">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="288.032516" y="137.661163" transform="rotate(-0 288.032516 137.661163)">5</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="288.032516" y="137.661163" transform="rotate(-0 288.032516 137.661163)">5</text>
      </g>
     </g>
    </g>
@@ -4586,8 +4586,8 @@ z
       <!-- $\mathdefault{10^{0}}$ -->
       <g transform="translate(237.574935 133.060304)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">0</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">0</tspan>
        </text>
       </g>
      </g>
@@ -4602,8 +4602,8 @@ z
       <!-- $\mathdefault{10^{2}}$ -->
       <g transform="translate(237.574935 124.761992)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">2</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">2</tspan>
        </text>
       </g>
      </g>
@@ -4724,7 +4724,7 @@ z
       </g>
      </g>
      <g id="text_113">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="329.420903" y="137.661163" transform="rotate(-0 329.420903 137.661163)">0</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="329.420903" y="137.661163" transform="rotate(-0 329.420903 137.661163)">0</text>
      </g>
     </g>
     <g id="xtick_53">
@@ -4734,7 +4734,7 @@ z
       </g>
      </g>
      <g id="text_114">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="367.743484" y="137.661163" transform="rotate(-0 367.743484 137.661163)">5</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="367.743484" y="137.661163" transform="rotate(-0 367.743484 137.661163)">5</text>
      </g>
     </g>
    </g>
@@ -4749,8 +4749,8 @@ z
       <!-- $\mathdefault{10^{0}}$ -->
       <g transform="translate(317.285903 133.060304)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">0</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">0</tspan>
        </text>
       </g>
      </g>
@@ -4765,8 +4765,8 @@ z
       <!-- $\mathdefault{10^{2}}$ -->
       <g transform="translate(317.285903 124.761992)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">2</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">2</tspan>
        </text>
       </g>
      </g>
@@ -4892,7 +4892,7 @@ z
       </g>
      </g>
      <g id="text_118">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="409.131871" y="137.661163" transform="rotate(-0 409.131871 137.661163)">0</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="409.131871" y="137.661163" transform="rotate(-0 409.131871 137.661163)">0</text>
      </g>
     </g>
     <g id="xtick_55">
@@ -4902,7 +4902,7 @@ z
       </g>
      </g>
      <g id="text_119">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="447.454452" y="137.661163" transform="rotate(-0 447.454452 137.661163)">5</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="447.454452" y="137.661163" transform="rotate(-0 447.454452 137.661163)">5</text>
      </g>
     </g>
    </g>
@@ -4917,8 +4917,8 @@ z
       <!-- $\mathdefault{10^{0}}$ -->
       <g transform="translate(396.996871 133.060304)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">0</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">0</tspan>
        </text>
       </g>
      </g>
@@ -4933,8 +4933,8 @@ z
       <!-- $\mathdefault{10^{2}}$ -->
       <g transform="translate(396.996871 124.761992)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">2</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">2</tspan>
        </text>
       </g>
      </g>
@@ -5060,7 +5060,7 @@ z
       </g>
      </g>
      <g id="text_123">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="90.288" y="166.423789" transform="rotate(-0 90.288 166.423789)">0</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="90.288" y="166.423789" transform="rotate(-0 90.288 166.423789)">0</text>
      </g>
     </g>
     <g id="xtick_57">
@@ -5070,7 +5070,7 @@ z
       </g>
      </g>
      <g id="text_124">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="128.610581" y="166.423789" transform="rotate(-0 128.610581 166.423789)">50</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="128.610581" y="166.423789" transform="rotate(-0 128.610581 166.423789)">50</text>
      </g>
     </g>
    </g>
@@ -5085,8 +5085,8 @@ z
       <!-- $\mathdefault{10^{0}}$ -->
       <g transform="translate(78.153 161.82293)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">0</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">0</tspan>
        </text>
       </g>
      </g>
@@ -5101,8 +5101,8 @@ z
       <!-- $\mathdefault{10^{2}}$ -->
       <g transform="translate(78.153 153.524618)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">2</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">2</tspan>
        </text>
       </g>
      </g>
@@ -5223,7 +5223,7 @@ z
       </g>
      </g>
      <g id="text_127">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="169.998968" y="166.423789" transform="rotate(-0 169.998968 166.423789)">0</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="169.998968" y="166.423789" transform="rotate(-0 169.998968 166.423789)">0</text>
      </g>
     </g>
     <g id="xtick_59">
@@ -5233,7 +5233,7 @@ z
       </g>
      </g>
      <g id="text_128">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="208.321548" y="166.423789" transform="rotate(-0 208.321548 166.423789)">50</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="208.321548" y="166.423789" transform="rotate(-0 208.321548 166.423789)">50</text>
      </g>
     </g>
    </g>
@@ -5248,8 +5248,8 @@ z
       <!-- $\mathdefault{10^{0}}$ -->
       <g transform="translate(157.863968 161.82293)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">0</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">0</tspan>
        </text>
       </g>
      </g>
@@ -5264,8 +5264,8 @@ z
       <!-- $\mathdefault{10^{2}}$ -->
       <g transform="translate(157.863968 153.524618)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">2</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">2</tspan>
        </text>
       </g>
      </g>
@@ -5386,7 +5386,7 @@ z
       </g>
      </g>
      <g id="text_131">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="249.709935" y="166.423789" transform="rotate(-0 249.709935 166.423789)">0</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="249.709935" y="166.423789" transform="rotate(-0 249.709935 166.423789)">0</text>
      </g>
     </g>
     <g id="xtick_61">
@@ -5396,7 +5396,7 @@ z
       </g>
      </g>
      <g id="text_132">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="288.032516" y="166.423789" transform="rotate(-0 288.032516 166.423789)">50</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="288.032516" y="166.423789" transform="rotate(-0 288.032516 166.423789)">50</text>
      </g>
     </g>
    </g>
@@ -5411,8 +5411,8 @@ z
       <!-- $\mathdefault{10^{0}}$ -->
       <g transform="translate(237.574935 161.82293)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">0</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">0</tspan>
        </text>
       </g>
      </g>
@@ -5427,8 +5427,8 @@ z
       <!-- $\mathdefault{10^{2}}$ -->
       <g transform="translate(237.574935 153.524618)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">2</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">2</tspan>
        </text>
       </g>
      </g>
@@ -5549,7 +5549,7 @@ z
       </g>
      </g>
      <g id="text_135">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="329.420903" y="166.423789" transform="rotate(-0 329.420903 166.423789)">0</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="329.420903" y="166.423789" transform="rotate(-0 329.420903 166.423789)">0</text>
      </g>
     </g>
     <g id="xtick_63">
@@ -5559,7 +5559,7 @@ z
       </g>
      </g>
      <g id="text_136">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="367.743484" y="166.423789" transform="rotate(-0 367.743484 166.423789)">50</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="367.743484" y="166.423789" transform="rotate(-0 367.743484 166.423789)">50</text>
      </g>
     </g>
    </g>
@@ -5574,8 +5574,8 @@ z
       <!-- $\mathdefault{10^{0}}$ -->
       <g transform="translate(317.285903 161.82293)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">0</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">0</tspan>
        </text>
       </g>
      </g>
@@ -5590,8 +5590,8 @@ z
       <!-- $\mathdefault{10^{2}}$ -->
       <g transform="translate(317.285903 153.524618)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">2</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">2</tspan>
        </text>
       </g>
      </g>
@@ -5712,7 +5712,7 @@ z
       </g>
      </g>
      <g id="text_139">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="409.131871" y="166.423789" transform="rotate(-0 409.131871 166.423789)">0</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="409.131871" y="166.423789" transform="rotate(-0 409.131871 166.423789)">0</text>
      </g>
     </g>
     <g id="xtick_65">
@@ -5722,7 +5722,7 @@ z
       </g>
      </g>
      <g id="text_140">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="447.454452" y="166.423789" transform="rotate(-0 447.454452 166.423789)">50</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="447.454452" y="166.423789" transform="rotate(-0 447.454452 166.423789)">50</text>
      </g>
     </g>
    </g>
@@ -5737,8 +5737,8 @@ z
       <!-- $\mathdefault{10^{0}}$ -->
       <g transform="translate(396.996871 161.82293)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">0</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">0</tspan>
        </text>
       </g>
      </g>
@@ -5753,8 +5753,8 @@ z
       <!-- $\mathdefault{10^{2}}$ -->
       <g transform="translate(396.996871 153.524618)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">2</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">2</tspan>
        </text>
       </g>
      </g>
@@ -5878,7 +5878,7 @@ z
       </g>
      </g>
      <g id="text_144">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="90.288" y="195.186415" transform="rotate(-0 90.288 195.186415)">−400</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="90.288" y="195.186415" transform="rotate(-0 90.288 195.186415)">−400</text>
      </g>
     </g>
     <g id="xtick_67">
@@ -5888,7 +5888,7 @@ z
       </g>
      </g>
      <g id="text_145">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="118.158968" y="195.186415" transform="rotate(-0 118.158968 195.186415)">−200</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="118.158968" y="195.186415" transform="rotate(-0 118.158968 195.186415)">−200</text>
      </g>
     </g>
     <g id="xtick_68">
@@ -5898,7 +5898,7 @@ z
       </g>
      </g>
      <g id="text_146">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="146.029935" y="195.186415" transform="rotate(-0 146.029935 195.186415)">0</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="146.029935" y="195.186415" transform="rotate(-0 146.029935 195.186415)">0</text>
      </g>
     </g>
    </g>
@@ -5913,8 +5913,8 @@ z
       <!-- $\mathdefault{10^{0}}$ -->
       <g transform="translate(78.153 190.585556)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">0</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">0</tspan>
        </text>
       </g>
      </g>
@@ -5929,8 +5929,8 @@ z
       <!-- $\mathdefault{10^{2}}$ -->
       <g transform="translate(78.153 182.287244)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">2</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">2</tspan>
        </text>
       </g>
      </g>
@@ -6051,7 +6051,7 @@ z
       </g>
      </g>
      <g id="text_149">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="169.998968" y="195.186415" transform="rotate(-0 169.998968 195.186415)">−400</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="169.998968" y="195.186415" transform="rotate(-0 169.998968 195.186415)">−400</text>
      </g>
     </g>
     <g id="xtick_70">
@@ -6061,7 +6061,7 @@ z
       </g>
      </g>
      <g id="text_150">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="197.869935" y="195.186415" transform="rotate(-0 197.869935 195.186415)">−200</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="197.869935" y="195.186415" transform="rotate(-0 197.869935 195.186415)">−200</text>
      </g>
     </g>
     <g id="xtick_71">
@@ -6071,7 +6071,7 @@ z
       </g>
      </g>
      <g id="text_151">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="225.740903" y="195.186415" transform="rotate(-0 225.740903 195.186415)">0</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="225.740903" y="195.186415" transform="rotate(-0 225.740903 195.186415)">0</text>
      </g>
     </g>
    </g>
@@ -6086,8 +6086,8 @@ z
       <!-- $\mathdefault{10^{0}}$ -->
       <g transform="translate(157.863968 190.585556)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">0</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">0</tspan>
        </text>
       </g>
      </g>
@@ -6102,8 +6102,8 @@ z
       <!-- $\mathdefault{10^{2}}$ -->
       <g transform="translate(157.863968 182.287244)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">2</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">2</tspan>
        </text>
       </g>
      </g>
@@ -6224,7 +6224,7 @@ z
       </g>
      </g>
      <g id="text_154">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="249.709935" y="195.186415" transform="rotate(-0 249.709935 195.186415)">−400</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="249.709935" y="195.186415" transform="rotate(-0 249.709935 195.186415)">−400</text>
      </g>
     </g>
     <g id="xtick_73">
@@ -6234,7 +6234,7 @@ z
       </g>
      </g>
      <g id="text_155">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="277.580903" y="195.186415" transform="rotate(-0 277.580903 195.186415)">−200</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="277.580903" y="195.186415" transform="rotate(-0 277.580903 195.186415)">−200</text>
      </g>
     </g>
     <g id="xtick_74">
@@ -6244,7 +6244,7 @@ z
       </g>
      </g>
      <g id="text_156">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="305.451871" y="195.186415" transform="rotate(-0 305.451871 195.186415)">0</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="305.451871" y="195.186415" transform="rotate(-0 305.451871 195.186415)">0</text>
      </g>
     </g>
    </g>
@@ -6259,8 +6259,8 @@ z
       <!-- $\mathdefault{10^{0}}$ -->
       <g transform="translate(237.574935 190.585556)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">0</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">0</tspan>
        </text>
       </g>
      </g>
@@ -6275,8 +6275,8 @@ z
       <!-- $\mathdefault{10^{2}}$ -->
       <g transform="translate(237.574935 182.287244)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">2</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">2</tspan>
        </text>
       </g>
      </g>
@@ -6397,7 +6397,7 @@ z
       </g>
      </g>
      <g id="text_159">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="329.420903" y="195.186415" transform="rotate(-0 329.420903 195.186415)">−400</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="329.420903" y="195.186415" transform="rotate(-0 329.420903 195.186415)">−400</text>
      </g>
     </g>
     <g id="xtick_76">
@@ -6407,7 +6407,7 @@ z
       </g>
      </g>
      <g id="text_160">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="357.291871" y="195.186415" transform="rotate(-0 357.291871 195.186415)">−200</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="357.291871" y="195.186415" transform="rotate(-0 357.291871 195.186415)">−200</text>
      </g>
     </g>
     <g id="xtick_77">
@@ -6417,7 +6417,7 @@ z
       </g>
      </g>
      <g id="text_161">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="385.162839" y="195.186415" transform="rotate(-0 385.162839 195.186415)">0</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="385.162839" y="195.186415" transform="rotate(-0 385.162839 195.186415)">0</text>
      </g>
     </g>
    </g>
@@ -6432,8 +6432,8 @@ z
       <!-- $\mathdefault{10^{0}}$ -->
       <g transform="translate(317.285903 190.585556)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">0</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">0</tspan>
        </text>
       </g>
      </g>
@@ -6448,8 +6448,8 @@ z
       <!-- $\mathdefault{10^{2}}$ -->
       <g transform="translate(317.285903 182.287244)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">2</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">2</tspan>
        </text>
       </g>
      </g>
@@ -6570,7 +6570,7 @@ z
       </g>
      </g>
      <g id="text_164">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="409.131871" y="195.186415" transform="rotate(-0 409.131871 195.186415)">−400</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="409.131871" y="195.186415" transform="rotate(-0 409.131871 195.186415)">−400</text>
      </g>
     </g>
     <g id="xtick_79">
@@ -6580,7 +6580,7 @@ z
       </g>
      </g>
      <g id="text_165">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="437.002839" y="195.186415" transform="rotate(-0 437.002839 195.186415)">−200</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="437.002839" y="195.186415" transform="rotate(-0 437.002839 195.186415)">−200</text>
      </g>
     </g>
     <g id="xtick_80">
@@ -6590,7 +6590,7 @@ z
       </g>
      </g>
      <g id="text_166">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="464.873806" y="195.186415" transform="rotate(-0 464.873806 195.186415)">0</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="464.873806" y="195.186415" transform="rotate(-0 464.873806 195.186415)">0</text>
      </g>
     </g>
    </g>
@@ -6605,8 +6605,8 @@ z
       <!-- $\mathdefault{10^{0}}$ -->
       <g transform="translate(396.996871 190.585556)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">0</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">0</tspan>
        </text>
       </g>
      </g>
@@ -6621,8 +6621,8 @@ z
       <!-- $\mathdefault{10^{2}}$ -->
       <g transform="translate(396.996871 182.287244)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">2</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">2</tspan>
        </text>
       </g>
      </g>
@@ -6743,7 +6743,7 @@ z
       </g>
      </g>
      <g id="text_169">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="90.288" y="223.949041" transform="rotate(-0 90.288 223.949041)">0</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="90.288" y="223.949041" transform="rotate(-0 90.288 223.949041)">0</text>
      </g>
     </g>
     <g id="xtick_82">
@@ -6753,7 +6753,7 @@ z
       </g>
      </g>
      <g id="text_170">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="110.72671" y="223.949041" transform="rotate(-0 110.72671 223.949041)">5</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="110.72671" y="223.949041" transform="rotate(-0 110.72671 223.949041)">5</text>
      </g>
     </g>
     <g id="xtick_83">
@@ -6763,7 +6763,7 @@ z
       </g>
      </g>
      <g id="text_171">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="131.165419" y="223.949041" transform="rotate(-0 131.165419 223.949041)">10</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="131.165419" y="223.949041" transform="rotate(-0 131.165419 223.949041)">10</text>
      </g>
     </g>
     <g id="xtick_84">
@@ -6773,7 +6773,7 @@ z
       </g>
      </g>
      <g id="text_172">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="151.604129" y="223.949041" transform="rotate(-0 151.604129 223.949041)">15</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="151.604129" y="223.949041" transform="rotate(-0 151.604129 223.949041)">15</text>
      </g>
     </g>
    </g>
@@ -6788,8 +6788,8 @@ z
       <!-- $\mathdefault{10^{0}}$ -->
       <g transform="translate(78.153 219.348182)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">0</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">0</tspan>
        </text>
       </g>
      </g>
@@ -6804,8 +6804,8 @@ z
       <!-- $\mathdefault{10^{2}}$ -->
       <g transform="translate(78.153 211.04987)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">2</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">2</tspan>
        </text>
       </g>
      </g>
@@ -6914,7 +6914,7 @@ z
       </g>
      </g>
      <g id="text_175">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="169.998968" y="223.949041" transform="rotate(-0 169.998968 223.949041)">0</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="169.998968" y="223.949041" transform="rotate(-0 169.998968 223.949041)">0</text>
      </g>
     </g>
     <g id="xtick_86">
@@ -6924,7 +6924,7 @@ z
       </g>
      </g>
      <g id="text_176">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="190.437677" y="223.949041" transform="rotate(-0 190.437677 223.949041)">5</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="190.437677" y="223.949041" transform="rotate(-0 190.437677 223.949041)">5</text>
      </g>
     </g>
     <g id="xtick_87">
@@ -6934,7 +6934,7 @@ z
       </g>
      </g>
      <g id="text_177">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="210.876387" y="223.949041" transform="rotate(-0 210.876387 223.949041)">10</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="210.876387" y="223.949041" transform="rotate(-0 210.876387 223.949041)">10</text>
      </g>
     </g>
     <g id="xtick_88">
@@ -6944,7 +6944,7 @@ z
       </g>
      </g>
      <g id="text_178">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="231.315097" y="223.949041" transform="rotate(-0 231.315097 223.949041)">15</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="231.315097" y="223.949041" transform="rotate(-0 231.315097 223.949041)">15</text>
      </g>
     </g>
    </g>
@@ -6959,8 +6959,8 @@ z
       <!-- $\mathdefault{10^{0}}$ -->
       <g transform="translate(157.863968 219.348182)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">0</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">0</tspan>
        </text>
       </g>
      </g>
@@ -6975,8 +6975,8 @@ z
       <!-- $\mathdefault{10^{2}}$ -->
       <g transform="translate(157.863968 211.04987)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">2</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">2</tspan>
        </text>
       </g>
      </g>
@@ -7085,7 +7085,7 @@ z
       </g>
      </g>
      <g id="text_181">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="249.709935" y="223.949041" transform="rotate(-0 249.709935 223.949041)">0</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="249.709935" y="223.949041" transform="rotate(-0 249.709935 223.949041)">0</text>
      </g>
     </g>
     <g id="xtick_90">
@@ -7095,7 +7095,7 @@ z
       </g>
      </g>
      <g id="text_182">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="270.148645" y="223.949041" transform="rotate(-0 270.148645 223.949041)">5</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="270.148645" y="223.949041" transform="rotate(-0 270.148645 223.949041)">5</text>
      </g>
     </g>
     <g id="xtick_91">
@@ -7105,7 +7105,7 @@ z
       </g>
      </g>
      <g id="text_183">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="290.587355" y="223.949041" transform="rotate(-0 290.587355 223.949041)">10</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="290.587355" y="223.949041" transform="rotate(-0 290.587355 223.949041)">10</text>
      </g>
     </g>
     <g id="xtick_92">
@@ -7115,7 +7115,7 @@ z
       </g>
      </g>
      <g id="text_184">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="311.026065" y="223.949041" transform="rotate(-0 311.026065 223.949041)">15</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="311.026065" y="223.949041" transform="rotate(-0 311.026065 223.949041)">15</text>
      </g>
     </g>
    </g>
@@ -7130,8 +7130,8 @@ z
       <!-- $\mathdefault{10^{0}}$ -->
       <g transform="translate(237.574935 219.348182)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">0</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">0</tspan>
        </text>
       </g>
      </g>
@@ -7146,8 +7146,8 @@ z
       <!-- $\mathdefault{10^{2}}$ -->
       <g transform="translate(237.574935 211.04987)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">2</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">2</tspan>
        </text>
       </g>
      </g>
@@ -7248,7 +7248,7 @@ z
       </g>
      </g>
      <g id="text_187">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="329.420903" y="223.949041" transform="rotate(-0 329.420903 223.949041)">0</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="329.420903" y="223.949041" transform="rotate(-0 329.420903 223.949041)">0</text>
      </g>
     </g>
     <g id="xtick_94">
@@ -7258,7 +7258,7 @@ z
       </g>
      </g>
      <g id="text_188">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="349.859613" y="223.949041" transform="rotate(-0 349.859613 223.949041)">5</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="349.859613" y="223.949041" transform="rotate(-0 349.859613 223.949041)">5</text>
      </g>
     </g>
     <g id="xtick_95">
@@ -7268,7 +7268,7 @@ z
       </g>
      </g>
      <g id="text_189">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="370.298323" y="223.949041" transform="rotate(-0 370.298323 223.949041)">10</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="370.298323" y="223.949041" transform="rotate(-0 370.298323 223.949041)">10</text>
      </g>
     </g>
     <g id="xtick_96">
@@ -7278,7 +7278,7 @@ z
       </g>
      </g>
      <g id="text_190">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="390.737032" y="223.949041" transform="rotate(-0 390.737032 223.949041)">15</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="390.737032" y="223.949041" transform="rotate(-0 390.737032 223.949041)">15</text>
      </g>
     </g>
    </g>
@@ -7293,8 +7293,8 @@ z
       <!-- $\mathdefault{10^{0}}$ -->
       <g transform="translate(317.285903 219.348182)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">0</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">0</tspan>
        </text>
       </g>
      </g>
@@ -7309,8 +7309,8 @@ z
       <!-- $\mathdefault{10^{2}}$ -->
       <g transform="translate(317.285903 211.04987)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">2</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">2</tspan>
        </text>
       </g>
      </g>
@@ -7419,7 +7419,7 @@ z
       </g>
      </g>
      <g id="text_193">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="409.131871" y="223.949041" transform="rotate(-0 409.131871 223.949041)">0</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="409.131871" y="223.949041" transform="rotate(-0 409.131871 223.949041)">0</text>
      </g>
     </g>
     <g id="xtick_98">
@@ -7429,7 +7429,7 @@ z
       </g>
      </g>
      <g id="text_194">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="429.570581" y="223.949041" transform="rotate(-0 429.570581 223.949041)">5</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="429.570581" y="223.949041" transform="rotate(-0 429.570581 223.949041)">5</text>
      </g>
     </g>
     <g id="xtick_99">
@@ -7439,7 +7439,7 @@ z
       </g>
      </g>
      <g id="text_195">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="450.00929" y="223.949041" transform="rotate(-0 450.00929 223.949041)">10</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="450.00929" y="223.949041" transform="rotate(-0 450.00929 223.949041)">10</text>
      </g>
     </g>
     <g id="xtick_100">
@@ -7449,7 +7449,7 @@ z
       </g>
      </g>
      <g id="text_196">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="470.448" y="223.949041" transform="rotate(-0 470.448 223.949041)">15</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="470.448" y="223.949041" transform="rotate(-0 470.448 223.949041)">15</text>
      </g>
     </g>
    </g>
@@ -7464,8 +7464,8 @@ z
       <!-- $\mathdefault{10^{0}}$ -->
       <g transform="translate(396.996871 219.348182)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">0</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">0</tspan>
        </text>
       </g>
      </g>
@@ -7480,8 +7480,8 @@ z
       <!-- $\mathdefault{10^{2}}$ -->
       <g transform="translate(396.996871 211.04987)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">2</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">2</tspan>
        </text>
       </g>
      </g>
@@ -7564,7 +7564,7 @@ z
       </g>
      </g>
      <g id="text_199">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="90.288" y="252.711667" transform="rotate(-0 90.288 252.711667)">0</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="90.288" y="252.711667" transform="rotate(-0 90.288 252.711667)">0</text>
      </g>
     </g>
     <g id="xtick_102">
@@ -7574,7 +7574,7 @@ z
       </g>
      </g>
      <g id="text_200">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="120.946065" y="252.711667" transform="rotate(-0 120.946065 252.711667)">5</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="120.946065" y="252.711667" transform="rotate(-0 120.946065 252.711667)">5</text>
      </g>
     </g>
     <g id="xtick_103">
@@ -7584,7 +7584,7 @@ z
       </g>
      </g>
      <g id="text_201">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="151.604129" y="252.711667" transform="rotate(-0 151.604129 252.711667)">10</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="151.604129" y="252.711667" transform="rotate(-0 151.604129 252.711667)">10</text>
      </g>
     </g>
    </g>
@@ -7599,8 +7599,8 @@ z
       <!-- $\mathdefault{10^{0}}$ -->
       <g transform="translate(78.153 248.110808)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">0</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">0</tspan>
        </text>
       </g>
      </g>
@@ -7615,8 +7615,8 @@ z
       <!-- $\mathdefault{10^{2}}$ -->
       <g transform="translate(78.153 239.812496)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">2</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">2</tspan>
        </text>
       </g>
      </g>
@@ -7737,7 +7737,7 @@ z
       </g>
      </g>
      <g id="text_204">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="169.998968" y="252.711667" transform="rotate(-0 169.998968 252.711667)">0</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="169.998968" y="252.711667" transform="rotate(-0 169.998968 252.711667)">0</text>
      </g>
     </g>
     <g id="xtick_105">
@@ -7747,7 +7747,7 @@ z
       </g>
      </g>
      <g id="text_205">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="200.657032" y="252.711667" transform="rotate(-0 200.657032 252.711667)">5</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="200.657032" y="252.711667" transform="rotate(-0 200.657032 252.711667)">5</text>
      </g>
     </g>
     <g id="xtick_106">
@@ -7757,7 +7757,7 @@ z
       </g>
      </g>
      <g id="text_206">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="231.315097" y="252.711667" transform="rotate(-0 231.315097 252.711667)">10</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="231.315097" y="252.711667" transform="rotate(-0 231.315097 252.711667)">10</text>
      </g>
     </g>
    </g>
@@ -7772,8 +7772,8 @@ z
       <!-- $\mathdefault{10^{0}}$ -->
       <g transform="translate(157.863968 248.110808)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">0</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">0</tspan>
        </text>
       </g>
      </g>
@@ -7788,8 +7788,8 @@ z
       <!-- $\mathdefault{10^{2}}$ -->
       <g transform="translate(157.863968 239.812496)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">2</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">2</tspan>
        </text>
       </g>
      </g>
@@ -7906,7 +7906,7 @@ z
       </g>
      </g>
      <g id="text_209">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="249.709935" y="252.711667" transform="rotate(-0 249.709935 252.711667)">0</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="249.709935" y="252.711667" transform="rotate(-0 249.709935 252.711667)">0</text>
      </g>
     </g>
     <g id="xtick_108">
@@ -7916,7 +7916,7 @@ z
       </g>
      </g>
      <g id="text_210">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="280.368" y="252.711667" transform="rotate(-0 280.368 252.711667)">5</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="280.368" y="252.711667" transform="rotate(-0 280.368 252.711667)">5</text>
      </g>
     </g>
     <g id="xtick_109">
@@ -7926,7 +7926,7 @@ z
       </g>
      </g>
      <g id="text_211">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="311.026065" y="252.711667" transform="rotate(-0 311.026065 252.711667)">10</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="311.026065" y="252.711667" transform="rotate(-0 311.026065 252.711667)">10</text>
      </g>
     </g>
    </g>
@@ -7941,8 +7941,8 @@ z
       <!-- $\mathdefault{10^{0}}$ -->
       <g transform="translate(237.574935 248.110808)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">0</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">0</tspan>
        </text>
       </g>
      </g>
@@ -7957,8 +7957,8 @@ z
       <!-- $\mathdefault{10^{2}}$ -->
       <g transform="translate(237.574935 239.812496)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">2</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">2</tspan>
        </text>
       </g>
      </g>
@@ -8069,7 +8069,7 @@ z
       </g>
      </g>
      <g id="text_214">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="329.420903" y="252.711667" transform="rotate(-0 329.420903 252.711667)">0</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="329.420903" y="252.711667" transform="rotate(-0 329.420903 252.711667)">0</text>
      </g>
     </g>
     <g id="xtick_111">
@@ -8079,7 +8079,7 @@ z
       </g>
      </g>
      <g id="text_215">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="360.078968" y="252.711667" transform="rotate(-0 360.078968 252.711667)">5</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="360.078968" y="252.711667" transform="rotate(-0 360.078968 252.711667)">5</text>
      </g>
     </g>
     <g id="xtick_112">
@@ -8089,7 +8089,7 @@ z
       </g>
      </g>
      <g id="text_216">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="390.737032" y="252.711667" transform="rotate(-0 390.737032 252.711667)">10</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="390.737032" y="252.711667" transform="rotate(-0 390.737032 252.711667)">10</text>
      </g>
     </g>
    </g>
@@ -8104,8 +8104,8 @@ z
       <!-- $\mathdefault{10^{0}}$ -->
       <g transform="translate(317.285903 248.110808)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">0</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">0</tspan>
        </text>
       </g>
      </g>
@@ -8120,8 +8120,8 @@ z
       <!-- $\mathdefault{10^{2}}$ -->
       <g transform="translate(317.285903 239.812496)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">2</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">2</tspan>
        </text>
       </g>
      </g>
@@ -8234,7 +8234,7 @@ z
       </g>
      </g>
      <g id="text_219">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="409.131871" y="252.711667" transform="rotate(-0 409.131871 252.711667)">0</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="409.131871" y="252.711667" transform="rotate(-0 409.131871 252.711667)">0</text>
      </g>
     </g>
     <g id="xtick_114">
@@ -8244,7 +8244,7 @@ z
       </g>
      </g>
      <g id="text_220">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="439.789935" y="252.711667" transform="rotate(-0 439.789935 252.711667)">5</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="439.789935" y="252.711667" transform="rotate(-0 439.789935 252.711667)">5</text>
      </g>
     </g>
     <g id="xtick_115">
@@ -8254,7 +8254,7 @@ z
       </g>
      </g>
      <g id="text_221">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="470.448" y="252.711667" transform="rotate(-0 470.448 252.711667)">10</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="470.448" y="252.711667" transform="rotate(-0 470.448 252.711667)">10</text>
      </g>
     </g>
    </g>
@@ -8269,8 +8269,8 @@ z
       <!-- $\mathdefault{10^{0}}$ -->
       <g transform="translate(396.996871 248.110808)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">0</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">0</tspan>
        </text>
       </g>
      </g>
@@ -8285,8 +8285,8 @@ z
       <!-- $\mathdefault{10^{2}}$ -->
       <g transform="translate(396.996871 239.812496)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">2</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">2</tspan>
        </text>
       </g>
      </g>
@@ -8399,7 +8399,7 @@ z
       </g>
      </g>
      <g id="text_224">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="90.288" y="281.474293" transform="rotate(-0 90.288 281.474293)">0</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="90.288" y="281.474293" transform="rotate(-0 90.288 281.474293)">0</text>
      </g>
     </g>
     <g id="xtick_117">
@@ -8409,7 +8409,7 @@ z
       </g>
      </g>
      <g id="text_225">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="120.946065" y="281.474293" transform="rotate(-0 120.946065 281.474293)">2</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="120.946065" y="281.474293" transform="rotate(-0 120.946065 281.474293)">2</text>
      </g>
     </g>
     <g id="xtick_118">
@@ -8419,11 +8419,11 @@ z
       </g>
      </g>
      <g id="text_226">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="151.604129" y="281.474293" transform="rotate(-0 151.604129 281.474293)">4</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="151.604129" y="281.474293" transform="rotate(-0 151.604129 281.474293)">4</text>
      </g>
     </g>
     <g id="text_227">
-     <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: end" x="151.604129" y="289.862106" transform="rotate(-0 151.604129 289.862106)">1e6</text>
+     <text font-family="Arial" font-size="6" text-anchor="end" x="151.604129" y="289.862106" transform="rotate(-0 151.604129 289.862106)">1e6</text>
     </g>
    </g>
    <g id="matplotlib.axis_82">
@@ -8437,8 +8437,8 @@ z
       <!-- $\mathdefault{10^{0}}$ -->
       <g transform="translate(78.153 276.873434)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">0</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">0</tspan>
        </text>
       </g>
      </g>
@@ -8453,8 +8453,8 @@ z
       <!-- $\mathdefault{10^{2}}$ -->
       <g transform="translate(78.153 268.995372)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">2</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">2</tspan>
        </text>
       </g>
      </g>
@@ -8551,7 +8551,7 @@ z
       </g>
      </g>
      <g id="text_230">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="169.998968" y="281.474293" transform="rotate(-0 169.998968 281.474293)">0</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="169.998968" y="281.474293" transform="rotate(-0 169.998968 281.474293)">0</text>
      </g>
     </g>
     <g id="xtick_120">
@@ -8561,7 +8561,7 @@ z
       </g>
      </g>
      <g id="text_231">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="200.657032" y="281.474293" transform="rotate(-0 200.657032 281.474293)">2</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="200.657032" y="281.474293" transform="rotate(-0 200.657032 281.474293)">2</text>
      </g>
     </g>
     <g id="xtick_121">
@@ -8571,11 +8571,11 @@ z
       </g>
      </g>
      <g id="text_232">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="231.315097" y="281.474293" transform="rotate(-0 231.315097 281.474293)">4</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="231.315097" y="281.474293" transform="rotate(-0 231.315097 281.474293)">4</text>
      </g>
     </g>
     <g id="text_233">
-     <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: end" x="231.315097" y="289.862106" transform="rotate(-0 231.315097 289.862106)">1e6</text>
+     <text font-family="Arial" font-size="6" text-anchor="end" x="231.315097" y="289.862106" transform="rotate(-0 231.315097 289.862106)">1e6</text>
     </g>
    </g>
    <g id="matplotlib.axis_84">
@@ -8589,8 +8589,8 @@ z
       <!-- $\mathdefault{10^{0}}$ -->
       <g transform="translate(157.863968 276.873434)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">0</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">0</tspan>
        </text>
       </g>
      </g>
@@ -8605,8 +8605,8 @@ z
       <!-- $\mathdefault{10^{2}}$ -->
       <g transform="translate(157.863968 268.995372)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">2</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">2</tspan>
        </text>
       </g>
      </g>
@@ -8695,7 +8695,7 @@ z
       </g>
      </g>
      <g id="text_236">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="249.709935" y="281.474293" transform="rotate(-0 249.709935 281.474293)">0</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="249.709935" y="281.474293" transform="rotate(-0 249.709935 281.474293)">0</text>
      </g>
     </g>
     <g id="xtick_123">
@@ -8705,7 +8705,7 @@ z
       </g>
      </g>
      <g id="text_237">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="280.368" y="281.474293" transform="rotate(-0 280.368 281.474293)">2</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="280.368" y="281.474293" transform="rotate(-0 280.368 281.474293)">2</text>
      </g>
     </g>
     <g id="xtick_124">
@@ -8715,11 +8715,11 @@ z
       </g>
      </g>
      <g id="text_238">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="311.026065" y="281.474293" transform="rotate(-0 311.026065 281.474293)">4</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="311.026065" y="281.474293" transform="rotate(-0 311.026065 281.474293)">4</text>
      </g>
     </g>
     <g id="text_239">
-     <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: end" x="311.026065" y="289.862106" transform="rotate(-0 311.026065 289.862106)">1e6</text>
+     <text font-family="Arial" font-size="6" text-anchor="end" x="311.026065" y="289.862106" transform="rotate(-0 311.026065 289.862106)">1e6</text>
     </g>
    </g>
    <g id="matplotlib.axis_86">
@@ -8733,8 +8733,8 @@ z
       <!-- $\mathdefault{10^{0}}$ -->
       <g transform="translate(237.574935 276.873434)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">0</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">0</tspan>
        </text>
       </g>
      </g>
@@ -8749,8 +8749,8 @@ z
       <!-- $\mathdefault{10^{2}}$ -->
       <g transform="translate(237.574935 268.995372)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">2</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">2</tspan>
        </text>
       </g>
      </g>
@@ -8837,7 +8837,7 @@ z
       </g>
      </g>
      <g id="text_242">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="329.420903" y="281.474293" transform="rotate(-0 329.420903 281.474293)">0</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="329.420903" y="281.474293" transform="rotate(-0 329.420903 281.474293)">0</text>
      </g>
     </g>
     <g id="xtick_126">
@@ -8847,7 +8847,7 @@ z
       </g>
      </g>
      <g id="text_243">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="360.078968" y="281.474293" transform="rotate(-0 360.078968 281.474293)">2</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="360.078968" y="281.474293" transform="rotate(-0 360.078968 281.474293)">2</text>
      </g>
     </g>
     <g id="xtick_127">
@@ -8857,11 +8857,11 @@ z
       </g>
      </g>
      <g id="text_244">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="390.737032" y="281.474293" transform="rotate(-0 390.737032 281.474293)">4</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="390.737032" y="281.474293" transform="rotate(-0 390.737032 281.474293)">4</text>
      </g>
     </g>
     <g id="text_245">
-     <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: end" x="390.737032" y="289.862106" transform="rotate(-0 390.737032 289.862106)">1e6</text>
+     <text font-family="Arial" font-size="6" text-anchor="end" x="390.737032" y="289.862106" transform="rotate(-0 390.737032 289.862106)">1e6</text>
     </g>
    </g>
    <g id="matplotlib.axis_88">
@@ -8875,8 +8875,8 @@ z
       <!-- $\mathdefault{10^{0}}$ -->
       <g transform="translate(317.285903 276.873434)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">0</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">0</tspan>
        </text>
       </g>
      </g>
@@ -8891,8 +8891,8 @@ z
       <!-- $\mathdefault{10^{2}}$ -->
       <g transform="translate(317.285903 268.995372)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">2</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">2</tspan>
        </text>
       </g>
      </g>
@@ -8983,7 +8983,7 @@ z
       </g>
      </g>
      <g id="text_248">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="409.131871" y="281.474293" transform="rotate(-0 409.131871 281.474293)">0</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="409.131871" y="281.474293" transform="rotate(-0 409.131871 281.474293)">0</text>
      </g>
     </g>
     <g id="xtick_129">
@@ -8993,7 +8993,7 @@ z
       </g>
      </g>
      <g id="text_249">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="439.789935" y="281.474293" transform="rotate(-0 439.789935 281.474293)">2</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="439.789935" y="281.474293" transform="rotate(-0 439.789935 281.474293)">2</text>
      </g>
     </g>
     <g id="xtick_130">
@@ -9003,11 +9003,11 @@ z
       </g>
      </g>
      <g id="text_250">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="470.448" y="281.474293" transform="rotate(-0 470.448 281.474293)">4</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="470.448" y="281.474293" transform="rotate(-0 470.448 281.474293)">4</text>
      </g>
     </g>
     <g id="text_251">
-     <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: end" x="470.448" y="289.862106" transform="rotate(-0 470.448 289.862106)">1e6</text>
+     <text font-family="Arial" font-size="6" text-anchor="end" x="470.448" y="289.862106" transform="rotate(-0 470.448 289.862106)">1e6</text>
     </g>
    </g>
    <g id="matplotlib.axis_90">
@@ -9021,8 +9021,8 @@ z
       <!-- $\mathdefault{10^{0}}$ -->
       <g transform="translate(396.996871 276.873434)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">0</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">0</tspan>
        </text>
       </g>
      </g>
@@ -9037,8 +9037,8 @@ z
       <!-- $\mathdefault{10^{2}}$ -->
       <g transform="translate(396.996871 268.995372)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">2</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">2</tspan>
        </text>
       </g>
      </g>
@@ -9129,7 +9129,7 @@ z
       </g>
      </g>
      <g id="text_254">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="90.288" y="310.236919" transform="rotate(-0 90.288 310.236919)">0.0</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="90.288" y="310.236919" transform="rotate(-0 90.288 310.236919)">0.0</text>
      </g>
     </g>
     <g id="xtick_132">
@@ -9139,7 +9139,7 @@ z
       </g>
      </g>
      <g id="text_255">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="120.946065" y="310.236919" transform="rotate(-0 120.946065 310.236919)">0.2</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="120.946065" y="310.236919" transform="rotate(-0 120.946065 310.236919)">0.2</text>
      </g>
     </g>
     <g id="xtick_133">
@@ -9149,7 +9149,7 @@ z
       </g>
      </g>
      <g id="text_256">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="151.604129" y="310.236919" transform="rotate(-0 151.604129 310.236919)">0.4</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="151.604129" y="310.236919" transform="rotate(-0 151.604129 310.236919)">0.4</text>
      </g>
     </g>
    </g>
@@ -9164,8 +9164,8 @@ z
       <!-- $\mathdefault{10^{0}}$ -->
       <g transform="translate(78.153 305.63606)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">0</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">0</tspan>
        </text>
       </g>
      </g>
@@ -9180,8 +9180,8 @@ z
       <!-- $\mathdefault{10^{2}}$ -->
       <g transform="translate(78.153 297.337748)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">2</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">2</tspan>
        </text>
       </g>
      </g>
@@ -9294,7 +9294,7 @@ z
       </g>
      </g>
      <g id="text_259">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="169.998968" y="310.236919" transform="rotate(-0 169.998968 310.236919)">0.0</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="169.998968" y="310.236919" transform="rotate(-0 169.998968 310.236919)">0.0</text>
      </g>
     </g>
     <g id="xtick_135">
@@ -9304,7 +9304,7 @@ z
       </g>
      </g>
      <g id="text_260">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="200.657032" y="310.236919" transform="rotate(-0 200.657032 310.236919)">0.2</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="200.657032" y="310.236919" transform="rotate(-0 200.657032 310.236919)">0.2</text>
      </g>
     </g>
     <g id="xtick_136">
@@ -9314,7 +9314,7 @@ z
       </g>
      </g>
      <g id="text_261">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="231.315097" y="310.236919" transform="rotate(-0 231.315097 310.236919)">0.4</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="231.315097" y="310.236919" transform="rotate(-0 231.315097 310.236919)">0.4</text>
      </g>
     </g>
    </g>
@@ -9329,8 +9329,8 @@ z
       <!-- $\mathdefault{10^{0}}$ -->
       <g transform="translate(157.863968 305.63606)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">0</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">0</tspan>
        </text>
       </g>
      </g>
@@ -9345,8 +9345,8 @@ z
       <!-- $\mathdefault{10^{2}}$ -->
       <g transform="translate(157.863968 297.337748)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">2</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">2</tspan>
        </text>
       </g>
      </g>
@@ -9459,7 +9459,7 @@ z
       </g>
      </g>
      <g id="text_264">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="249.709935" y="310.236919" transform="rotate(-0 249.709935 310.236919)">0.0</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="249.709935" y="310.236919" transform="rotate(-0 249.709935 310.236919)">0.0</text>
      </g>
     </g>
     <g id="xtick_138">
@@ -9469,7 +9469,7 @@ z
       </g>
      </g>
      <g id="text_265">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="280.368" y="310.236919" transform="rotate(-0 280.368 310.236919)">0.2</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="280.368" y="310.236919" transform="rotate(-0 280.368 310.236919)">0.2</text>
      </g>
     </g>
     <g id="xtick_139">
@@ -9479,7 +9479,7 @@ z
       </g>
      </g>
      <g id="text_266">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="311.026065" y="310.236919" transform="rotate(-0 311.026065 310.236919)">0.4</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="311.026065" y="310.236919" transform="rotate(-0 311.026065 310.236919)">0.4</text>
      </g>
     </g>
    </g>
@@ -9494,8 +9494,8 @@ z
       <!-- $\mathdefault{10^{0}}$ -->
       <g transform="translate(237.574935 305.63606)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">0</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">0</tspan>
        </text>
       </g>
      </g>
@@ -9510,8 +9510,8 @@ z
       <!-- $\mathdefault{10^{2}}$ -->
       <g transform="translate(237.574935 297.337748)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">2</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">2</tspan>
        </text>
       </g>
      </g>
@@ -9615,7 +9615,7 @@ z
       </g>
      </g>
      <g id="text_269">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="329.420903" y="310.236919" transform="rotate(-0 329.420903 310.236919)">0.0</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="329.420903" y="310.236919" transform="rotate(-0 329.420903 310.236919)">0.0</text>
      </g>
     </g>
     <g id="xtick_141">
@@ -9625,7 +9625,7 @@ z
       </g>
      </g>
      <g id="text_270">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="360.078968" y="310.236919" transform="rotate(-0 360.078968 310.236919)">0.2</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="360.078968" y="310.236919" transform="rotate(-0 360.078968 310.236919)">0.2</text>
      </g>
     </g>
     <g id="xtick_142">
@@ -9635,7 +9635,7 @@ z
       </g>
      </g>
      <g id="text_271">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="390.737032" y="310.236919" transform="rotate(-0 390.737032 310.236919)">0.4</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="390.737032" y="310.236919" transform="rotate(-0 390.737032 310.236919)">0.4</text>
      </g>
     </g>
    </g>
@@ -9650,8 +9650,8 @@ z
       <!-- $\mathdefault{10^{0}}$ -->
       <g transform="translate(317.285903 305.63606)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">0</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">0</tspan>
        </text>
       </g>
      </g>
@@ -9666,8 +9666,8 @@ z
       <!-- $\mathdefault{10^{2}}$ -->
       <g transform="translate(317.285903 297.337748)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">2</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">2</tspan>
        </text>
       </g>
      </g>
@@ -9764,7 +9764,7 @@ z
       </g>
      </g>
      <g id="text_274">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="409.131871" y="310.236919" transform="rotate(-0 409.131871 310.236919)">0.0</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="409.131871" y="310.236919" transform="rotate(-0 409.131871 310.236919)">0.0</text>
      </g>
     </g>
     <g id="xtick_144">
@@ -9774,7 +9774,7 @@ z
       </g>
      </g>
      <g id="text_275">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="439.789935" y="310.236919" transform="rotate(-0 439.789935 310.236919)">0.2</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="439.789935" y="310.236919" transform="rotate(-0 439.789935 310.236919)">0.2</text>
      </g>
     </g>
     <g id="xtick_145">
@@ -9784,7 +9784,7 @@ z
       </g>
      </g>
      <g id="text_276">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="470.448" y="310.236919" transform="rotate(-0 470.448 310.236919)">0.4</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="470.448" y="310.236919" transform="rotate(-0 470.448 310.236919)">0.4</text>
      </g>
     </g>
    </g>
@@ -9799,8 +9799,8 @@ z
       <!-- $\mathdefault{10^{0}}$ -->
       <g transform="translate(396.996871 305.63606)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">0</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">0</tspan>
        </text>
       </g>
      </g>
@@ -9815,8 +9815,8 @@ z
       <!-- $\mathdefault{10^{2}}$ -->
       <g transform="translate(396.996871 297.337748)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">2</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">2</tspan>
        </text>
       </g>
      </g>
@@ -9910,7 +9910,7 @@ z
       </g>
      </g>
      <g id="text_279">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="90.288" y="338.999545" transform="rotate(-0 90.288 338.999545)">0</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="90.288" y="338.999545" transform="rotate(-0 90.288 338.999545)">0</text>
      </g>
     </g>
     <g id="xtick_147">
@@ -9920,7 +9920,7 @@ z
       </g>
      </g>
      <g id="text_280">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="115.836387" y="338.999545" transform="rotate(-0 115.836387 338.999545)">500</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="115.836387" y="338.999545" transform="rotate(-0 115.836387 338.999545)">500</text>
      </g>
     </g>
     <g id="xtick_148">
@@ -9930,7 +9930,7 @@ z
       </g>
      </g>
      <g id="text_281">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="141.384774" y="338.999545" transform="rotate(-0 141.384774 338.999545)">1000</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="141.384774" y="338.999545" transform="rotate(-0 141.384774 338.999545)">1000</text>
      </g>
     </g>
    </g>
@@ -9945,8 +9945,8 @@ z
       <!-- $\mathdefault{10^{0}}$ -->
       <g transform="translate(78.153 334.398686)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">0</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">0</tspan>
        </text>
       </g>
      </g>
@@ -9961,8 +9961,8 @@ z
       <!-- $\mathdefault{10^{2}}$ -->
       <g transform="translate(78.153 326.100374)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">2</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">2</tspan>
        </text>
       </g>
      </g>
@@ -10087,7 +10087,7 @@ z
       </g>
      </g>
      <g id="text_284">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="169.998968" y="338.999545" transform="rotate(-0 169.998968 338.999545)">0</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="169.998968" y="338.999545" transform="rotate(-0 169.998968 338.999545)">0</text>
      </g>
     </g>
     <g id="xtick_150">
@@ -10097,7 +10097,7 @@ z
       </g>
      </g>
      <g id="text_285">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="195.547355" y="338.999545" transform="rotate(-0 195.547355 338.999545)">500</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="195.547355" y="338.999545" transform="rotate(-0 195.547355 338.999545)">500</text>
      </g>
     </g>
     <g id="xtick_151">
@@ -10107,7 +10107,7 @@ z
       </g>
      </g>
      <g id="text_286">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="221.095742" y="338.999545" transform="rotate(-0 221.095742 338.999545)">1000</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="221.095742" y="338.999545" transform="rotate(-0 221.095742 338.999545)">1000</text>
      </g>
     </g>
    </g>
@@ -10122,8 +10122,8 @@ z
       <!-- $\mathdefault{10^{0}}$ -->
       <g transform="translate(157.863968 334.398686)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">0</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">0</tspan>
        </text>
       </g>
      </g>
@@ -10138,8 +10138,8 @@ z
       <!-- $\mathdefault{10^{2}}$ -->
       <g transform="translate(157.863968 326.100374)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">2</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">2</tspan>
        </text>
       </g>
      </g>
@@ -10264,7 +10264,7 @@ z
       </g>
      </g>
      <g id="text_289">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="249.709935" y="338.999545" transform="rotate(-0 249.709935 338.999545)">0</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="249.709935" y="338.999545" transform="rotate(-0 249.709935 338.999545)">0</text>
      </g>
     </g>
     <g id="xtick_153">
@@ -10274,7 +10274,7 @@ z
       </g>
      </g>
      <g id="text_290">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="275.258323" y="338.999545" transform="rotate(-0 275.258323 338.999545)">500</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="275.258323" y="338.999545" transform="rotate(-0 275.258323 338.999545)">500</text>
      </g>
     </g>
     <g id="xtick_154">
@@ -10284,7 +10284,7 @@ z
       </g>
      </g>
      <g id="text_291">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="300.80671" y="338.999545" transform="rotate(-0 300.80671 338.999545)">1000</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="300.80671" y="338.999545" transform="rotate(-0 300.80671 338.999545)">1000</text>
      </g>
     </g>
    </g>
@@ -10299,8 +10299,8 @@ z
       <!-- $\mathdefault{10^{0}}$ -->
       <g transform="translate(237.574935 334.398686)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">0</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">0</tspan>
        </text>
       </g>
      </g>
@@ -10315,8 +10315,8 @@ z
       <!-- $\mathdefault{10^{2}}$ -->
       <g transform="translate(237.574935 326.100374)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">2</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">2</tspan>
        </text>
       </g>
      </g>
@@ -10441,7 +10441,7 @@ z
       </g>
      </g>
      <g id="text_294">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="329.420903" y="338.999545" transform="rotate(-0 329.420903 338.999545)">0</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="329.420903" y="338.999545" transform="rotate(-0 329.420903 338.999545)">0</text>
      </g>
     </g>
     <g id="xtick_156">
@@ -10451,7 +10451,7 @@ z
       </g>
      </g>
      <g id="text_295">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="354.96929" y="338.999545" transform="rotate(-0 354.96929 338.999545)">500</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="354.96929" y="338.999545" transform="rotate(-0 354.96929 338.999545)">500</text>
      </g>
     </g>
     <g id="xtick_157">
@@ -10461,7 +10461,7 @@ z
       </g>
      </g>
      <g id="text_296">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="380.517677" y="338.999545" transform="rotate(-0 380.517677 338.999545)">1000</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="380.517677" y="338.999545" transform="rotate(-0 380.517677 338.999545)">1000</text>
      </g>
     </g>
    </g>
@@ -10476,8 +10476,8 @@ z
       <!-- $\mathdefault{10^{0}}$ -->
       <g transform="translate(317.285903 334.398686)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">0</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">0</tspan>
        </text>
       </g>
      </g>
@@ -10492,8 +10492,8 @@ z
       <!-- $\mathdefault{10^{2}}$ -->
       <g transform="translate(317.285903 326.100374)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">2</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">2</tspan>
        </text>
       </g>
      </g>
@@ -10618,7 +10618,7 @@ z
       </g>
      </g>
      <g id="text_299">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="409.131871" y="338.999545" transform="rotate(-0 409.131871 338.999545)">0</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="409.131871" y="338.999545" transform="rotate(-0 409.131871 338.999545)">0</text>
      </g>
     </g>
     <g id="xtick_159">
@@ -10628,7 +10628,7 @@ z
       </g>
      </g>
      <g id="text_300">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="434.680258" y="338.999545" transform="rotate(-0 434.680258 338.999545)">500</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="434.680258" y="338.999545" transform="rotate(-0 434.680258 338.999545)">500</text>
      </g>
     </g>
     <g id="xtick_160">
@@ -10638,7 +10638,7 @@ z
       </g>
      </g>
      <g id="text_301">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="460.228645" y="338.999545" transform="rotate(-0 460.228645 338.999545)">1000</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="460.228645" y="338.999545" transform="rotate(-0 460.228645 338.999545)">1000</text>
      </g>
     </g>
    </g>
@@ -10653,8 +10653,8 @@ z
       <!-- $\mathdefault{10^{0}}$ -->
       <g transform="translate(396.996871 334.398686)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">0</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">0</tspan>
        </text>
       </g>
      </g>
@@ -10669,8 +10669,8 @@ z
       <!-- $\mathdefault{10^{2}}$ -->
       <g transform="translate(396.996871 326.100374)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">2</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">2</tspan>
        </text>
       </g>
      </g>
@@ -10792,7 +10792,7 @@ z
       </g>
      </g>
      <g id="text_304">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="90.288" y="367.762171" transform="rotate(-0 90.288 367.762171)">−500</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="90.288" y="367.762171" transform="rotate(-0 90.288 367.762171)">−500</text>
      </g>
     </g>
     <g id="xtick_162">
@@ -10802,7 +10802,7 @@ z
       </g>
      </g>
      <g id="text_305">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="120.946065" y="367.762171" transform="rotate(-0 120.946065 367.762171)">0</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="120.946065" y="367.762171" transform="rotate(-0 120.946065 367.762171)">0</text>
      </g>
     </g>
     <g id="xtick_163">
@@ -10812,7 +10812,7 @@ z
       </g>
      </g>
      <g id="text_306">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="151.604129" y="367.762171" transform="rotate(-0 151.604129 367.762171)">500</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="151.604129" y="367.762171" transform="rotate(-0 151.604129 367.762171)">500</text>
      </g>
     </g>
    </g>
@@ -10827,8 +10827,8 @@ z
       <!-- $\mathdefault{10^{0}}$ -->
       <g transform="translate(78.153 363.161312)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">0</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">0</tspan>
        </text>
       </g>
      </g>
@@ -10843,8 +10843,8 @@ z
       <!-- $\mathdefault{10^{2}}$ -->
       <g transform="translate(78.153 354.862999)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">2</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">2</tspan>
        </text>
       </g>
      </g>
@@ -10955,7 +10955,7 @@ z
       </g>
      </g>
      <g id="text_309">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="169.998968" y="367.762171" transform="rotate(-0 169.998968 367.762171)">−500</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="169.998968" y="367.762171" transform="rotate(-0 169.998968 367.762171)">−500</text>
      </g>
     </g>
     <g id="xtick_165">
@@ -10965,7 +10965,7 @@ z
       </g>
      </g>
      <g id="text_310">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="200.657032" y="367.762171" transform="rotate(-0 200.657032 367.762171)">0</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="200.657032" y="367.762171" transform="rotate(-0 200.657032 367.762171)">0</text>
      </g>
     </g>
     <g id="xtick_166">
@@ -10975,7 +10975,7 @@ z
       </g>
      </g>
      <g id="text_311">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="231.315097" y="367.762171" transform="rotate(-0 231.315097 367.762171)">500</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="231.315097" y="367.762171" transform="rotate(-0 231.315097 367.762171)">500</text>
      </g>
     </g>
    </g>
@@ -10990,8 +10990,8 @@ z
       <!-- $\mathdefault{10^{0}}$ -->
       <g transform="translate(157.863968 363.161312)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">0</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">0</tspan>
        </text>
       </g>
      </g>
@@ -11006,8 +11006,8 @@ z
       <!-- $\mathdefault{10^{2}}$ -->
       <g transform="translate(157.863968 354.862999)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">2</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">2</tspan>
        </text>
       </g>
      </g>
@@ -11116,7 +11116,7 @@ z
       </g>
      </g>
      <g id="text_314">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="249.709935" y="367.762171" transform="rotate(-0 249.709935 367.762171)">−500</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="249.709935" y="367.762171" transform="rotate(-0 249.709935 367.762171)">−500</text>
      </g>
     </g>
     <g id="xtick_168">
@@ -11126,7 +11126,7 @@ z
       </g>
      </g>
      <g id="text_315">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="280.368" y="367.762171" transform="rotate(-0 280.368 367.762171)">0</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="280.368" y="367.762171" transform="rotate(-0 280.368 367.762171)">0</text>
      </g>
     </g>
     <g id="xtick_169">
@@ -11136,7 +11136,7 @@ z
       </g>
      </g>
      <g id="text_316">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="311.026065" y="367.762171" transform="rotate(-0 311.026065 367.762171)">500</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="311.026065" y="367.762171" transform="rotate(-0 311.026065 367.762171)">500</text>
      </g>
     </g>
    </g>
@@ -11151,8 +11151,8 @@ z
       <!-- $\mathdefault{10^{0}}$ -->
       <g transform="translate(237.574935 363.161312)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">0</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">0</tspan>
        </text>
       </g>
      </g>
@@ -11167,8 +11167,8 @@ z
       <!-- $\mathdefault{10^{2}}$ -->
       <g transform="translate(237.574935 354.862999)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">2</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">2</tspan>
        </text>
       </g>
      </g>
@@ -11277,7 +11277,7 @@ z
       </g>
      </g>
      <g id="text_319">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="329.420903" y="367.762171" transform="rotate(-0 329.420903 367.762171)">−500</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="329.420903" y="367.762171" transform="rotate(-0 329.420903 367.762171)">−500</text>
      </g>
     </g>
     <g id="xtick_171">
@@ -11287,7 +11287,7 @@ z
       </g>
      </g>
      <g id="text_320">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="360.078968" y="367.762171" transform="rotate(-0 360.078968 367.762171)">0</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="360.078968" y="367.762171" transform="rotate(-0 360.078968 367.762171)">0</text>
      </g>
     </g>
     <g id="xtick_172">
@@ -11297,7 +11297,7 @@ z
       </g>
      </g>
      <g id="text_321">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="390.737032" y="367.762171" transform="rotate(-0 390.737032 367.762171)">500</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="390.737032" y="367.762171" transform="rotate(-0 390.737032 367.762171)">500</text>
      </g>
     </g>
    </g>
@@ -11312,8 +11312,8 @@ z
       <!-- $\mathdefault{10^{0}}$ -->
       <g transform="translate(317.285903 363.161312)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">0</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">0</tspan>
        </text>
       </g>
      </g>
@@ -11328,8 +11328,8 @@ z
       <!-- $\mathdefault{10^{2}}$ -->
       <g transform="translate(317.285903 354.862999)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">2</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">2</tspan>
        </text>
       </g>
      </g>
@@ -11446,7 +11446,7 @@ z
       </g>
      </g>
      <g id="text_324">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="409.131871" y="367.762171" transform="rotate(-0 409.131871 367.762171)">−500</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="409.131871" y="367.762171" transform="rotate(-0 409.131871 367.762171)">−500</text>
      </g>
     </g>
     <g id="xtick_174">
@@ -11456,7 +11456,7 @@ z
       </g>
      </g>
      <g id="text_325">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="439.789935" y="367.762171" transform="rotate(-0 439.789935 367.762171)">0</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="439.789935" y="367.762171" transform="rotate(-0 439.789935 367.762171)">0</text>
      </g>
     </g>
     <g id="xtick_175">
@@ -11466,7 +11466,7 @@ z
       </g>
      </g>
      <g id="text_326">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="470.448" y="367.762171" transform="rotate(-0 470.448 367.762171)">500</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="470.448" y="367.762171" transform="rotate(-0 470.448 367.762171)">500</text>
      </g>
     </g>
    </g>
@@ -11481,8 +11481,8 @@ z
       <!-- $\mathdefault{10^{0}}$ -->
       <g transform="translate(396.996871 363.161312)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">0</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">0</tspan>
        </text>
       </g>
      </g>
@@ -11497,8 +11497,8 @@ z
       <!-- $\mathdefault{10^{2}}$ -->
       <g transform="translate(396.996871 354.862999)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">2</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">2</tspan>
        </text>
       </g>
      </g>
@@ -11600,7 +11600,7 @@ z
       </g>
      </g>
      <g id="text_329">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="90.288" y="396.524797" transform="rotate(-0 90.288 396.524797)">−500</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="90.288" y="396.524797" transform="rotate(-0 90.288 396.524797)">−500</text>
      </g>
     </g>
     <g id="xtick_177">
@@ -11610,7 +11610,7 @@ z
       </g>
      </g>
      <g id="text_330">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="120.946065" y="396.524797" transform="rotate(-0 120.946065 396.524797)">0</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="120.946065" y="396.524797" transform="rotate(-0 120.946065 396.524797)">0</text>
      </g>
     </g>
     <g id="xtick_178">
@@ -11620,7 +11620,7 @@ z
       </g>
      </g>
      <g id="text_331">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="151.604129" y="396.524797" transform="rotate(-0 151.604129 396.524797)">500</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="151.604129" y="396.524797" transform="rotate(-0 151.604129 396.524797)">500</text>
      </g>
     </g>
    </g>
@@ -11635,8 +11635,8 @@ z
       <!-- $\mathdefault{10^{0}}$ -->
       <g transform="translate(78.153 391.923938)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">0</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">0</tspan>
        </text>
       </g>
      </g>
@@ -11651,8 +11651,8 @@ z
       <!-- $\mathdefault{10^{2}}$ -->
       <g transform="translate(78.153 383.625625)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">2</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">2</tspan>
        </text>
       </g>
      </g>
@@ -11754,7 +11754,7 @@ z
       </g>
      </g>
      <g id="text_334">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="169.998968" y="396.524797" transform="rotate(-0 169.998968 396.524797)">−500</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="169.998968" y="396.524797" transform="rotate(-0 169.998968 396.524797)">−500</text>
      </g>
     </g>
     <g id="xtick_180">
@@ -11764,7 +11764,7 @@ z
       </g>
      </g>
      <g id="text_335">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="200.657032" y="396.524797" transform="rotate(-0 200.657032 396.524797)">0</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="200.657032" y="396.524797" transform="rotate(-0 200.657032 396.524797)">0</text>
      </g>
     </g>
     <g id="xtick_181">
@@ -11774,7 +11774,7 @@ z
       </g>
      </g>
      <g id="text_336">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="231.315097" y="396.524797" transform="rotate(-0 231.315097 396.524797)">500</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="231.315097" y="396.524797" transform="rotate(-0 231.315097 396.524797)">500</text>
      </g>
     </g>
    </g>
@@ -11789,8 +11789,8 @@ z
       <!-- $\mathdefault{10^{0}}$ -->
       <g transform="translate(157.863968 391.923938)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">0</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">0</tspan>
        </text>
       </g>
      </g>
@@ -11805,8 +11805,8 @@ z
       <!-- $\mathdefault{10^{2}}$ -->
       <g transform="translate(157.863968 383.625625)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">2</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">2</tspan>
        </text>
       </g>
      </g>
@@ -11918,7 +11918,7 @@ z
       </g>
      </g>
      <g id="text_339">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="249.709935" y="396.524797" transform="rotate(-0 249.709935 396.524797)">−500</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="249.709935" y="396.524797" transform="rotate(-0 249.709935 396.524797)">−500</text>
      </g>
     </g>
     <g id="xtick_183">
@@ -11928,7 +11928,7 @@ z
       </g>
      </g>
      <g id="text_340">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="280.368" y="396.524797" transform="rotate(-0 280.368 396.524797)">0</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="280.368" y="396.524797" transform="rotate(-0 280.368 396.524797)">0</text>
      </g>
     </g>
     <g id="xtick_184">
@@ -11938,7 +11938,7 @@ z
       </g>
      </g>
      <g id="text_341">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="311.026065" y="396.524797" transform="rotate(-0 311.026065 396.524797)">500</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="311.026065" y="396.524797" transform="rotate(-0 311.026065 396.524797)">500</text>
      </g>
     </g>
    </g>
@@ -11953,8 +11953,8 @@ z
       <!-- $\mathdefault{10^{0}}$ -->
       <g transform="translate(237.574935 391.923938)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">0</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">0</tspan>
        </text>
       </g>
      </g>
@@ -11969,8 +11969,8 @@ z
       <!-- $\mathdefault{10^{2}}$ -->
       <g transform="translate(237.574935 383.625625)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">2</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">2</tspan>
        </text>
       </g>
      </g>
@@ -12083,7 +12083,7 @@ z
       </g>
      </g>
      <g id="text_344">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="329.420903" y="396.524797" transform="rotate(-0 329.420903 396.524797)">−500</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="329.420903" y="396.524797" transform="rotate(-0 329.420903 396.524797)">−500</text>
      </g>
     </g>
     <g id="xtick_186">
@@ -12093,7 +12093,7 @@ z
       </g>
      </g>
      <g id="text_345">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="360.078968" y="396.524797" transform="rotate(-0 360.078968 396.524797)">0</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="360.078968" y="396.524797" transform="rotate(-0 360.078968 396.524797)">0</text>
      </g>
     </g>
     <g id="xtick_187">
@@ -12103,7 +12103,7 @@ z
       </g>
      </g>
      <g id="text_346">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="390.737032" y="396.524797" transform="rotate(-0 390.737032 396.524797)">500</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="390.737032" y="396.524797" transform="rotate(-0 390.737032 396.524797)">500</text>
      </g>
     </g>
    </g>
@@ -12118,8 +12118,8 @@ z
       <!-- $\mathdefault{10^{0}}$ -->
       <g transform="translate(317.285903 391.923938)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">0</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">0</tspan>
        </text>
       </g>
      </g>
@@ -12134,8 +12134,8 @@ z
       <!-- $\mathdefault{10^{2}}$ -->
       <g transform="translate(317.285903 383.625625)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">2</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">2</tspan>
        </text>
       </g>
      </g>
@@ -12240,7 +12240,7 @@ z
       </g>
      </g>
      <g id="text_349">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="409.131871" y="396.524797" transform="rotate(-0 409.131871 396.524797)">−500</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="409.131871" y="396.524797" transform="rotate(-0 409.131871 396.524797)">−500</text>
      </g>
     </g>
     <g id="xtick_189">
@@ -12250,7 +12250,7 @@ z
       </g>
      </g>
      <g id="text_350">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="439.789935" y="396.524797" transform="rotate(-0 439.789935 396.524797)">0</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="439.789935" y="396.524797" transform="rotate(-0 439.789935 396.524797)">0</text>
      </g>
     </g>
     <g id="xtick_190">
@@ -12260,7 +12260,7 @@ z
       </g>
      </g>
      <g id="text_351">
-      <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="470.448" y="396.524797" transform="rotate(-0 470.448 396.524797)">500</text>
+      <text font-family="Arial" font-size="5.5" text-anchor="middle" x="470.448" y="396.524797" transform="rotate(-0 470.448 396.524797)">500</text>
      </g>
     </g>
    </g>
@@ -12275,8 +12275,8 @@ z
       <!-- $\mathdefault{10^{0}}$ -->
       <g transform="translate(396.996871 391.923938)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">0</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">0</tspan>
        </text>
       </g>
      </g>
@@ -12291,8 +12291,8 @@ z
       <!-- $\mathdefault{10^{2}}$ -->
       <g transform="translate(396.996871 383.625625)">
        <text>
-        <tspan style="font: 5.5px 'Arial'" x="0 3.058838" y="-0.3996562500000005">10</tspan>
-        <tspan style="font: 3.85px 'Arial'" x="6.213505" y="-4.2328125">2</tspan>
+        <tspan font-family="Arial" font-size="5.5" x="0 3.058838" y="-0.3996562500000005">10</tspan>
+        <tspan font-family="Arial" font-size="3.85" x="6.213505" y="-4.2328125">2</tspan>
        </text>
       </g>
      </g>
@@ -12371,52 +12371,52 @@ L 470.448 389.088
    </g>
   </g>
   <g id="text_354">
-   <text style="font: 700 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(49.964234 35.532861)">Cell-to-</text>
-   <text style="font: 700 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(22.147125 41.422846)">site distance (um)</text>
+   <text font-family="Arial" font-size="5.5" font-weight="bold" transform="translate(49.964234 35.532861)">Cell-to-</text>
+   <text font-family="Arial" font-size="5.5" font-weight="bold" transform="translate(22.147125 41.422846)">site distance (um)</text>
   </g>
   <g id="text_355">
-   <text style="font: 700 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: end" x="68.904" y="67.273995" transform="rotate(-0 68.904 67.273995)">Cell distances (um)</text>
+   <text font-family="Arial" font-size="5.5" font-weight="bold" text-anchor="end" x="68.904" y="67.273995" transform="rotate(-0 68.904 67.273995)">Cell distances (um)</text>
   </g>
   <g id="text_356">
-   <text style="font: 700 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: end" x="68.904" y="96.036621" transform="rotate(-0 68.904 96.036621)">Firing rate (Hz)</text>
+   <text font-family="Arial" font-size="5.5" font-weight="bold" text-anchor="end" x="68.904" y="96.036621" transform="rotate(-0 68.904 96.036621)">Firing rate (Hz)</text>
   </g>
   <g id="text_357">
-   <text style="font: 700 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: end" x="68.904" y="124.799247" transform="rotate(-0 68.904 124.799247)">Firing range (Hz)</text>
+   <text font-family="Arial" font-size="5.5" font-weight="bold" text-anchor="end" x="68.904" y="124.799247" transform="rotate(-0 68.904 124.799247)">Firing range (Hz)</text>
   </g>
   <g id="text_358">
-   <text style="font: 700 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: end" x="68.904" y="153.564451" transform="rotate(-0 68.904 153.564451)">SNR</text>
+   <text font-family="Arial" font-size="5.5" font-weight="bold" text-anchor="end" x="68.904" y="153.564451" transform="rotate(-0 68.904 153.564451)">SNR</text>
   </g>
   <g id="text_359">
-   <text style="font: 700 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: end" x="68.904" y="182.324499" transform="rotate(-0 68.904 182.324499)">Amplitudes (uV)</text>
+   <text font-family="Arial" font-size="5.5" font-weight="bold" text-anchor="end" x="68.904" y="182.324499" transform="rotate(-0 68.904 182.324499)">Amplitudes (uV)</text>
   </g>
   <g id="text_360">
-   <text style="font: 700 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: end" x="68.904" y="211.087125" transform="rotate(-0 68.904 211.087125)">MAD ratios (a.u)</text>
+   <text font-family="Arial" font-size="5.5" font-weight="bold" text-anchor="end" x="68.904" y="211.087125" transform="rotate(-0 68.904 211.087125)">MAD ratios (a.u)</text>
   </g>
   <g id="text_361">
-   <text style="font: 700 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: end" x="68.904" y="239.849751" transform="rotate(-0 68.904 239.849751)">Peak-to-valley (ms)</text>
+   <text font-family="Arial" font-size="5.5" font-weight="bold" text-anchor="end" x="68.904" y="239.849751" transform="rotate(-0 68.904 239.849751)">Peak-to-valley (ms)</text>
   </g>
   <g id="text_362">
-   <text style="font: 700 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(31.013297 265.633869)">Repolarization</text>
-   <text style="font: 700 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(37.735328 271.523853)">slope (uV/s)</text>
+   <text font-family="Arial" font-size="5.5" font-weight="bold" transform="translate(31.013297 265.633869)">Repolarization</text>
+   <text font-family="Arial" font-size="5.5" font-weight="bold" transform="translate(37.735328 271.523853)">slope (uV/s)</text>
   </g>
   <g id="text_363">
-   <text style="font: 700 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(37.735328 294.396495)">Exponential</text>
-   <text style="font: 700 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(39.870016 300.286479)">decay (um)</text>
+   <text font-family="Arial" font-size="5.5" font-weight="bold" transform="translate(37.735328 294.396495)">Exponential</text>
+   <text font-family="Arial" font-size="5.5" font-weight="bold" transform="translate(39.870016 300.286479)">decay (um)</text>
   </g>
   <g id="text_364">
-   <text style="font: 700 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: end" x="68.904" y="326.137629" transform="rotate(-0 68.904 326.137629)">Spread (a.u)</text>
+   <text font-family="Arial" font-size="5.5" font-weight="bold" text-anchor="end" x="68.904" y="326.137629" transform="rotate(-0 68.904 326.137629)">Spread (a.u)</text>
   </g>
   <g id="text_365">
-   <text style="font: 700 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: end" x="68.904" y="354.900255" transform="rotate(-0 68.904 354.900255)">Velocity above (um/s)</text>
+   <text font-family="Arial" font-size="5.5" font-weight="bold" text-anchor="end" x="68.904" y="354.900255" transform="rotate(-0 68.904 354.900255)">Velocity above (um/s)</text>
   </g>
   <g id="text_366">
-   <text style="font: 700 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: end" x="68.904" y="383.662881" transform="rotate(-0 68.904 383.662881)">Velocity below (um/s)</text>
+   <text font-family="Arial" font-size="5.5" font-weight="bold" text-anchor="end" x="68.904" y="383.662881" transform="rotate(-0 68.904 383.662881)">Velocity below (um/s)</text>
   </g>
   <g id="text_367">
-   <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(11.055094 215.106562) rotate(-90)">Unit count</text>
+   <text font-family="Arial" font-size="6" transform="translate(11.055094 215.106562) rotate(-90)">Unit count</text>
   </g>
   <g id="text_368">
-   <text style="font: 700 7px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="285.12" y="11.143781" transform="rotate(-0 285.12 11.143781)">Increasingly detailed MEAREC models vs our model</text>
+   <text font-family="Arial" font-size="7" font-weight="bold" text-anchor="middle" x="285.12" y="11.143781" transform="rotate(-0 285.12 11.143781)">Increasingly detailed MEAREC models vs our model</text>
   </g>
  </g>
  <defs>

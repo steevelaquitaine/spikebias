@@ -57,7 +57,7 @@ L 0 3.85
       </g>
      </g>
      <g id="text_1">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="40.427771" y="109.530466" transform="rotate(-0 40.427771 109.530466)">precision</text>
+      <text font-family="Arial" font-size="6" text-anchor="middle" x="40.427771" y="109.530466" transform="rotate(-0 40.427771 109.530466)">precision</text>
      </g>
     </g>
     <g id="xtick_2">
@@ -67,12 +67,12 @@ L 0 3.85
       </g>
      </g>
      <g id="text_2">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="92.11683" y="109.530466" transform="rotate(-0 92.11683 109.530466)">recall</text>
+      <text font-family="Arial" font-size="6" text-anchor="middle" x="92.11683" y="109.530466" transform="rotate(-0 92.11683 109.530466)">recall</text>
      </g>
     </g>
     <g id="text_3">
-     <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(34.524625 119.017653)">Full waveform + metrics</text>
-     <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif" transform="translate(45.106656 125.451528)">(CEBRA model)</text>
+     <text font-family="Arial" font-size="6" transform="translate(34.524625 119.017653)">Full waveform + metrics</text>
+     <text font-family="Arial" font-size="6" transform="translate(45.106656 125.451528)">(CEBRA model)</text>
     </g>
    </g>
    <g id="matplotlib.axis_2">
@@ -88,7 +88,7 @@ L -3.85 0
       </g>
      </g>
      <g id="text_4">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: end" x="25.170625" y="96.983922" transform="rotate(-0 25.170625 96.983922)">0.0</text>
+      <text font-family="Arial" font-size="6" text-anchor="end" x="25.170625" y="96.983922" transform="rotate(-0 25.170625 96.983922)">0.0</text>
      </g>
     </g>
     <g id="ytick_2">
@@ -98,7 +98,7 @@ L -3.85 0
       </g>
      </g>
      <g id="text_5">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: end" x="25.170625" y="84.787122" transform="rotate(-0 25.170625 84.787122)">0.2</text>
+      <text font-family="Arial" font-size="6" text-anchor="end" x="25.170625" y="84.787122" transform="rotate(-0 25.170625 84.787122)">0.2</text>
      </g>
     </g>
     <g id="ytick_3">
@@ -108,7 +108,7 @@ L -3.85 0
       </g>
      </g>
      <g id="text_6">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: end" x="25.170625" y="72.590322" transform="rotate(-0 25.170625 72.590322)">0.4</text>
+      <text font-family="Arial" font-size="6" text-anchor="end" x="25.170625" y="72.590322" transform="rotate(-0 25.170625 72.590322)">0.4</text>
      </g>
     </g>
     <g id="ytick_4">
@@ -118,7 +118,7 @@ L -3.85 0
       </g>
      </g>
      <g id="text_7">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: end" x="25.170625" y="60.393522" transform="rotate(-0 25.170625 60.393522)">0.6</text>
+      <text font-family="Arial" font-size="6" text-anchor="end" x="25.170625" y="60.393522" transform="rotate(-0 25.170625 60.393522)">0.6</text>
      </g>
     </g>
     <g id="ytick_5">
@@ -128,7 +128,7 @@ L -3.85 0
       </g>
      </g>
      <g id="text_8">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: end" x="25.170625" y="48.196722" transform="rotate(-0 25.170625 48.196722)">0.8</text>
+      <text font-family="Arial" font-size="6" text-anchor="end" x="25.170625" y="48.196722" transform="rotate(-0 25.170625 48.196722)">0.8</text>
      </g>
     </g>
     <g id="ytick_6">
@@ -138,11 +138,11 @@ L -3.85 0
       </g>
      </g>
      <g id="text_9">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: end" x="25.170625" y="35.999922" transform="rotate(-0 25.170625 35.999922)">1.0</text>
+      <text font-family="Arial" font-size="6" text-anchor="end" x="25.170625" y="35.999922" transform="rotate(-0 25.170625 35.999922)">1.0</text>
      </g>
     </g>
     <g id="text_10">
-     <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="11.567813" y="64.344578" transform="rotate(-90 11.567813 64.344578)">Decoding performance (ratio)</text>
+     <text font-family="Arial" font-size="6" text-anchor="middle" x="11.567813" y="64.344578" transform="rotate(-90 11.567813 64.344578)">Decoding performance (ratio)</text>
     </g>
    </g>
    <g id="line2d_10"/>
@@ -379,7 +379,7 @@ z
     </g>
    </g>
    <g id="text_11">
-    <text style="font: 700 6.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="66.279625" y="11.852578" transform="rotate(-0 66.279625 11.852578)">Evoked regime</text>
+    <text font-family="Arial" font-size="6.5" font-weight="bold" text-anchor="middle" x="66.279625" y="11.852578" transform="rotate(-0 66.279625 11.852578)">Evoked regime</text>
    </g>
    <g id="legend_1">
     <g id="line2d_12">
@@ -401,7 +401,7 @@ z
      </g>
     </g>
     <g id="text_12">
-     <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="52.089625" y="29.322895" transform="rotate(-0 52.089625 29.322895)">Median over 100 folds</text>
+     <text font-family="Arial" font-size="5.5" text-anchor="start" x="52.089625" y="29.322895" transform="rotate(-0 52.089625 29.322895)">Median over 100 folds</text>
     </g>
     <g id="line2d_13">
      <defs>
@@ -422,7 +422,7 @@ z
      </g>
     </g>
     <g id="text_13">
-     <text style="font: 5.5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="52.089625" y="35.519848" transform="rotate(-0 52.089625 35.519848)">A single fold</text>
+     <text font-family="Arial" font-size="5.5" text-anchor="start" x="52.089625" y="35.519848" transform="rotate(-0 52.089625 35.519848)">A single fold</text>
     </g>
    </g>
    <g id="line2d_14">

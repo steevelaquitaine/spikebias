@@ -68,7 +68,7 @@ L 0 3.85
       </g>
      </g>
      <g id="text_1">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="54.076" y="77.056688" transform="rotate(-0 54.076 77.056688)">L1</text>
+      <text font-family="Arial" font-size="6" text-anchor="middle" x="54.076" y="77.056688" transform="rotate(-0 54.076 77.056688)">L1</text>
      </g>
     </g>
     <g id="xtick_2">
@@ -78,7 +78,7 @@ L 0 3.85
       </g>
      </g>
      <g id="text_2">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="74.164" y="77.056688" transform="rotate(-0 74.164 77.056688)">L2/3</text>
+      <text font-family="Arial" font-size="6" text-anchor="middle" x="74.164" y="77.056688" transform="rotate(-0 74.164 77.056688)">L2/3</text>
      </g>
     </g>
     <g id="xtick_3">
@@ -88,7 +88,7 @@ L 0 3.85
       </g>
      </g>
      <g id="text_3">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="94.252" y="77.056688" transform="rotate(-0 94.252 77.056688)">L4</text>
+      <text font-family="Arial" font-size="6" text-anchor="middle" x="94.252" y="77.056688" transform="rotate(-0 94.252 77.056688)">L4</text>
      </g>
     </g>
     <g id="xtick_4">
@@ -98,7 +98,7 @@ L 0 3.85
       </g>
      </g>
      <g id="text_4">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="114.34" y="77.056688" transform="rotate(-0 114.34 77.056688)">L5</text>
+      <text font-family="Arial" font-size="6" text-anchor="middle" x="114.34" y="77.056688" transform="rotate(-0 114.34 77.056688)">L5</text>
      </g>
     </g>
     <g id="xtick_5">
@@ -108,11 +108,11 @@ L 0 3.85
       </g>
      </g>
      <g id="text_5">
-      <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="134.428" y="77.056688" transform="rotate(-0 134.428 77.056688)">L6</text>
+      <text font-family="Arial" font-size="6" text-anchor="middle" x="134.428" y="77.056688" transform="rotate(-0 134.428 77.056688)">L6</text>
      </g>
     </g>
     <g id="text_6">
-     <text style="font: 6px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: middle" x="94.252" y="86.543875" transform="rotate(-0 94.252 86.543875)">Layer</text>
+     <text font-family="Arial" font-size="6" text-anchor="middle" x="94.252" y="86.543875" transform="rotate(-0 94.252 86.543875)">Layer</text>
     </g>
    </g>
    <g id="matplotlib.axis_2">
@@ -131,8 +131,8 @@ L -3.85 0
       <!-- $\mathdefault{10^{-2}}$ -->
       <g transform="translate(19.78 50.592076)">
        <text>
-        <tspan style="font: 6px 'Arial'" x="0 3.336914" y="-0.7996250000000007">10</tspan>
-        <tspan style="font: 4.2px 'Arial'" x="6.778369 9.231103" y="-4.98125">−2</tspan>
+        <tspan font-family="Arial" font-size="6" x="0 3.336914" y="-0.7996250000000007">10</tspan>
+        <tspan font-family="Arial" font-size="4.2" x="6.778369 9.231103" y="-4.98125">−2</tspan>
        </text>
       </g>
      </g>
@@ -147,8 +147,8 @@ L -3.85 0
       <!-- $\mathdefault{10^{-1}}$ -->
       <g transform="translate(19.78 28.065987)">
        <text>
-        <tspan style="font: 6px 'Arial'" x="0 3.336914" y="-0.7996250000000007">10</tspan>
-        <tspan style="font: 4.2px 'Arial'" x="6.778369 9.231103" y="-4.98125">−1</tspan>
+        <tspan font-family="Arial" font-size="6" x="0 3.336914" y="-0.7996250000000007">10</tspan>
+        <tspan font-family="Arial" font-size="4.2" x="6.778369 9.231103" y="-4.98125">−1</tspan>
        </text>
       </g>
      </g>
@@ -302,8 +302,8 @@ L -2.2 0
      <!-- Power ($μV^2$/Hz) -->
      <g transform="translate(14.46 55.86) rotate(-90)">
       <text>
-       <tspan style="font: 6px 'Arial'" x="0 4.001953 7.338867 11.671875 15.008789 17.006836 18.673828 20.671875 24.128906 30.869927 32.53692 36.869927 39.869927" y="-0.7996250000000007">Power (μV/Hz)</tspan>
-       <tspan style="font: 4.2px 'Arial'" x="28.2354" y="-4.98125">2</tspan>
+       <tspan font-family="Arial" font-size="6" x="0 4.001953 7.338867 11.671875 15.008789 17.006836 18.673828 20.671875 24.128906 30.869927 32.53692 36.869927 39.869927" y="-0.7996250000000007">Power (μV/Hz)</tspan>
+       <tspan font-family="Arial" font-size="4.2" x="28.2354" y="-4.98125">2</tspan>
       </text>
      </g>
     </g>
