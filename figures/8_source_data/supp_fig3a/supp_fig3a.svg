@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
   "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="226.72504pt" height="513.961623pt" viewBox="0 0 226.72504 513.961623" xmlns="http://www.w3.org/2000/svg" version="1.1">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="226.72504" height="513.961623" viewBox="0 0 226.72504 513.961623" xmlns="http://www.w3.org/2000/svg" version="1.1">
  <metadata>
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
@@ -168,10 +168,10 @@ L 116.60004 93.463884
     <text font-family="Arial" font-size="7" text-anchor="end" x="115.128831" y="88.617342" transform="rotate(-0 115.128831 88.617342)">L6_TPC:C</text>
    </g>
    <g id="text_5">
-    <text style="fill: #d62728; font: 5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="68.785744" y="44.102561" transform="rotate(-0 68.785744 44.102561)">Positive spikes</text>
+    <text fill="#d62728" font-family="Arial" font-size="5" text-anchor="start" x="68.785744" y="44.102561" transform="rotate(-0 68.785744 44.102561)">Positive spikes</text>
    </g>
    <g id="text_6">
-    <text style="fill: #ff7f0e; font: 5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="83.497835" y="60.391798" transform="rotate(-0 83.497835 60.391798)">Regular spike</text>
+    <text fill="#ff7f0e" font-family="Arial" font-size="5" text-anchor="start" x="83.497835" y="60.391798" transform="rotate(-0 83.497835 60.391798)">Regular spike</text>
    </g>
   </g>
   <g id="axes_2">
@@ -1537,10 +1537,10 @@ L 116.60004 372.628118
     <text font-family="Arial" font-size="7" text-anchor="end" x="115.128831" y="367.781575" transform="rotate(-0 115.128831 367.781575)">L2_IPC</text>
    </g>
    <g id="text_51">
-    <text style="fill: #d62728; font: 5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="61.429699" y="322.279568" transform="rotate(-0 61.429699 322.279568)">Triphasic spike</text>
+    <text fill="#d62728" font-family="Arial" font-size="5" text-anchor="start" x="61.429699" y="322.279568" transform="rotate(-0 61.429699 322.279568)">Triphasic spike</text>
    </g>
    <g id="text_52">
-    <text style="fill: #ff7f0e; font: 5px 'Arial', 'Helvetica', 'Liberation Sans', 'DejaVu Sans', sans-serif; text-anchor: start" x="61.429699" y="369.172825" transform="rotate(-0 61.429699 369.172825)">Regular spike</text>
+    <text fill="#ff7f0e" font-family="Arial" font-size="5" text-anchor="start" x="61.429699" y="369.172825" transform="rotate(-0 61.429699 369.172825)">Regular spike</text>
    </g>
   </g>
   <g id="axes_12">
