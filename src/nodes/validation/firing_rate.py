@@ -52,9 +52,10 @@ def get_sorted_unit_meta(sorted_path: str):
 
     # record
     unit_id_all = Sorting.unit_ids.tolist()
-    firing_rate_all = (
-        Sorting.get_property("firing_rates").astype(np.float32).tolist()
-    )
+    # spike count / duration of the sorting (600 s): the stored "firing_rates" property of some sortings (e.g. the evoked regime
+    # sampled at 40 kHz) were computed over 606 s
+    counts = Sorting.count_num_spikes_per_unit()
+    firing_rate_all = [counts[u] / 600 for u in Sorting.unit_ids]
     layer_all = Sorting.get_property("layer").tolist()
     layer_all = utils.standardize_layers(layer_all)
     KSLabel_all = utils.get_kslabel(Sorting)
