@@ -11,7 +11,9 @@ sans-serif text, preferably Helvetica or Arial, from 5 to 7 pt; graphs as vector
 * has its text sizes clipped to 5-7 pt,
 * keeps its text as text (svg: `svg.fonttype = "none"`; pdf and eps: TrueType fonts, `fonttype = 42`),
 * rasterizes its images at no less than 300 dpi,
-* is also saved as a .pdf next to each .svg.
+* is also saved as a .pdf next to each .svg,
+* writes the svg text with explicit font attributes (font-family="Arial", font-size, font-weight) instead of the CSS shorthand
+  "font: 5px 'Arial', ..." that Adobe Illustrator does not read (see fix_svg_fonts).
 
 Usage, at the top of a notebook (after moving to the repository):
 
@@ -20,6 +22,7 @@ Usage, at the top of a notebook (after moving to the repository):
 """
 
 import os
+import re
 
 import matplotlib
 from matplotlib.figure import Figure
@@ -68,6 +71,34 @@ def format_text(fig: Figure):
                 text.set_fontweight("bold" if weight >= 600 else "normal")
 
 
+_FONT_STYLE = re.compile(r'style="font:\s*((?:(?:italic|oblique|bold|normal|\d00)\s+)*)([\d.]+)px\s+([^;"]+?)\s*(;[^"]*)?"')
+
+
+def _font_attributes(match):
+    flags, size, rest = match.group(1).split(), match.group(2), match.group(4) or ""
+    attrs = [f'font-family="{FONT}"', f'font-size="{size}"']
+    if "bold" in flags or any(f.isdigit() and int(f) >= 600 for f in flags):
+        attrs.append('font-weight="bold"')
+    if "italic" in flags or "oblique" in flags:
+        attrs.append('font-style="italic"')
+    for decl in rest.strip("; ").split(";"):                # keep the other declarations (e.g. text-anchor) as attributes
+        if ":" in decl:
+            key, value = (x.strip() for x in decl.split(":", 1))
+            attrs.append(f'{key}="{value}"')
+    return " ".join(attrs)
+
+
+def fix_svg_fonts(path):
+    """Replace the CSS font shorthand of matplotlib's svg text by explicit attributes, which Adobe Illustrator reads"""
+    with open(path, encoding="utf-8") as f:
+        svg = f.read()
+    fixed, n = _FONT_STYLE.subn(_font_attributes, svg)
+    if n:
+        with open(path, "w", encoding="utf-8") as f:
+            f.write(fixed)
+    return n
+
+
 def savefig(self, fname, *args, **kwargs):
     """Figure.savefig with the guidelines; a .svg is also saved as .pdf"""
     with matplotlib.rc_context(RC):
@@ -77,6 +108,7 @@ def savefig(self, fname, *args, **kwargs):
             kwargs["dpi"] = MIN_DPI
         _original_savefig(self, fname, *args, **kwargs)
         if isinstance(fname, (str, os.PathLike)) and str(fname).lower().endswith(".svg"):
+            fix_svg_fonts(fname)
             kwargs.pop("format", None)
             _original_savefig(self, str(fname)[:-4] + ".pdf", *args, **kwargs)
 
