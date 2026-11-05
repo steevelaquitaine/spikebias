@@ -263,6 +263,8 @@ def fix_firing_rates(df, Sorting, path, duration_sec=600, verbose=True):
     Returns:
         pd.DataFrame: df with corrected "firing_rate" if needed
     """
+    if Sorting.get_property("firing_rates") is None:        # no stored rates (e.g. sortings cut to their first 10 minutes): nothing to correct
+        return df
     counts = Sorting.count_num_spikes_per_unit()
     n_spikes = np.array([counts[u] for u in Sorting.unit_ids])
     implied_duration = n_spikes.sum() / np.nansum(Sorting.get_property("firing_rates").astype(float))
