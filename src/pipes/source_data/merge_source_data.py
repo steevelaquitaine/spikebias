@@ -3,7 +3,7 @@
 author: laquitainesteeve@gmail.com
 
 Input: figures/8_source_data/<panel>/*.xlsx (e.g. fig2a/fig2a.xlsx, supp_fig6c/supp_fig6c.xlsx), written by the notebooks of
-notebooks/2_results_editorial_requests/. Output: figures/8_source_data/Source_Data.xlsx with the sheets "Fig. 2", ..., "Supplementary Fig. 9".
+notebooks/2_results_editorial_requests/. Output: paper/Source_Data.xlsx (the file requested by the editor) with the sheets "Fig. 2", ..., "Supplementary Fig. 9".
 In each sheet, the panels follow each other from top to bottom: a title row ("Fig. 2a", followed by the file and the sheet when a panel has
 several tables), the column names, the data and an empty row.
 
@@ -24,7 +24,7 @@ from openpyxl.cell import WriteOnlyCell
 from openpyxl.styles import Font
 
 SOURCE_DIR = "figures/8_source_data"
-OUTPUT = os.path.join(SOURCE_DIR, "Source_Data.xlsx")
+OUTPUT = os.path.join("paper", "Source_Data.xlsx")      # the Source Data file requested by the editor, next to the manuscript
 MAX_ROWS = 1_048_576  # rows of an Excel sheet
 
 
