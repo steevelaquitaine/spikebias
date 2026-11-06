@@ -41,4 +41,4 @@ dependencies:
     - kilosort==4.0.6           # spike sorter install Kilosort 4.0
     - neurom[plotly]==4.0.4     # simulate cell morphologies
     - neuroconv==0.6.5          # convert to nwb
-    - spikecurate==0.1.0        # spikecurate package (curate well-sorted single-units)
+    - spikecurate==0.2.0        # spikecurate package (curate well-sorted single-units)
